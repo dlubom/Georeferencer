@@ -1287,6 +1287,19 @@
 
             console.log('✅ Assignment successful:', data.cave_id);
 
+            // AUTO-LOAD first image
+            if (state.selectedCave.plan_images.length > 0) {
+                const firstImage = state.selectedCave.plan_images[0];
+                const useOriginal = document.getElementById('useOriginal').checked;
+                const imagePath = useOriginal ? firstImage.image_path_original : firstImage.image_path_upscaled;
+
+                state.currentImagePath = imagePath;
+                state.isFromGitHub = true;
+
+                console.log('🖼️ Auto-loading image:', GITHUB_RAW_BASE + imagePath);
+                loadImage(GITHUB_RAW_BASE + imagePath);
+            }
+
         } catch (error) {
             console.error('Assignment failed:', error);
             btn.innerHTML = originalText;
