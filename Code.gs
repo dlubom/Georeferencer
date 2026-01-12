@@ -22,6 +22,21 @@ const CONFIG = {
 // ===========================================
 
 /**
+ * Handle GET requests (CORS preflight and test endpoint)
+ */
+function doGet(e) {
+  return ContentService
+    .createTextOutput(JSON.stringify({
+      ok: true,
+      message: 'Cave Georeferencer API',
+      version: '1.0.0',
+      methods: ['POST'],
+      actions: ['ping', 'assign', 'submit', 'skip', 'progress']
+    }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+/**
  * Main POST handler for all API requests
  * Handles actions: ping, assign, submit, skip, progress
  */
