@@ -1,0 +1,2645 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cave Plan Georeferencer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.9.0/proj4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/utif@3.1.0/UTIF.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --success: #16a34a;
+            --warning: #ca8a04;
+            --danger: #dc2626;
+            --bg-dark: #1e293b;
+            --bg-sidebar: #f8fafc;
+            --border: #e2e8f0;
+            --text: #334155;
+            --text-light: #64748b;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            display: flex;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            color: var(--text);
+        }
+
+        /* Sidebar */
+        #sidebar {
+            width: 280px;
+            min-width: 240px;
+            max-height: 100vh;
+            background: var(--bg-sidebar);
+            padding: 8px;
+            overflow-y: auto;
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-size: 0.8rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--bg-dark);
+            padding-bottom: 6px;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .logo span { font-size: 1.2rem; }
+
+        /* Sections */
+        .section {
+            background: white;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: var(--bg-dark);
+            color: white;
+            padding: 6px 10px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .section-header:hover {
+            background: #334155;
+        }
+
+        .section-header .toggle-icon {
+            margin-left: auto;
+            transition: transform 0.2s;
+            font-size: 0.6rem;
+        }
+
+        .section.collapsed .section-header .toggle-icon {
+            transform: rotate(-90deg);
+        }
+
+        .section.collapsed .section-body {
+            display: none;
+        }
+
+        .section-body {
+            padding: 6px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        /* Form elements */
+        label {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--text-light);
+            margin-bottom: 1px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 5px 6px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        input[type="number"] { font-variant-numeric: tabular-nums; }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .input-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        /* Search */
+        #searchInput {
+            padding-left: 30px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'/%3E%3C/svg%3E") no-repeat 8px center;
+            background-size: 14px;
+        }
+
+        #caveSelect {
+            max-height: 80px;
+        }
+
+        .cave-count {
+            font-size: 0.7rem;
+            color: var(--text-light);
+            text-align: right;
+        }
+
+        /* Buttons */
+        button {
+            padding: 5px 8px;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover { background: var(--primary-dark); }
+        .btn-primary:disabled { background: #94a3b8; cursor: not-allowed; }
+
+        .btn-success {
+            background: var(--success);
+            color: white;
+        }
+
+        .btn-success:hover { background: #15803d; }
+
+        .btn-outline {
+            background: white;
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .btn-outline:hover { background: #f1f5f9; }
+
+        .btn-small {
+            padding: 4px 8px;
+            font-size: 0.65rem;
+        }
+
+        /* Instructions panel */
+        #instructionPanel {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border-radius: 5px;
+            padding: 8px;
+        }
+
+        #instructionPanel .step-indicator {
+            font-size: 0.65rem;
+            opacity: 0.8;
+            margin-bottom: 2px;
+        }
+
+        #instructionPanel .instruction-text {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        #instructionPanel.complete {
+            background: linear-gradient(135deg, var(--success) 0%, #15803d 100%);
+        }
+
+        /* Progress steps */
+        .progress-steps {
+            display: flex;
+            gap: 2px;
+            margin-top: 6px;
+        }
+
+        .progress-step {
+            flex: 1;
+            height: 2px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 1px;
+            transition: background 0.3s;
+        }
+
+        .progress-step.done { background: white; }
+        .progress-step.current { background: rgba(255,255,255,0.7); }
+
+        /* Results panel */
+        #resultsPanel {
+            display: none;
+        }
+
+        #resultsPanel.visible { display: block; }
+
+        .result-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px;
+        }
+
+        .result-item {
+            background: #f1f5f9;
+            padding: 5px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .result-item .value {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--bg-dark);
+        }
+
+        .result-item .label {
+            font-size: 0.6rem;
+            color: var(--text-light);
+            margin-top: 1px;
+        }
+
+        /* Main canvas area */
+        #main {
+            flex-grow: 1;
+            position: relative;
+            background: var(--bg-dark);
+            overflow: hidden;
+            cursor: crosshair;
+        }
+
+        #canvas-container {
+            transform-origin: 0 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        canvas {
+            display: block;
+            box-shadow: 0 0 40px rgba(0,0,0,0.5);
+        }
+
+        /* Toolbar */
+        #toolbar {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            display: flex;
+            gap: 8px;
+            z-index: 100;
+        }
+
+        .toolbar-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.95);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+
+        .toolbar-btn:hover { transform: scale(1.1); }
+
+        /* Zoom indicator */
+        #zoomIndicator {
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Empty state */
+        #emptyState {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #94a3b8;
+        }
+
+        #emptyState .icon { font-size: 4rem; margin-bottom: 16px; }
+        #emptyState h2 { font-size: 1.5rem; margin-bottom: 8px; color: #cbd5e1; }
+        #emptyState p { font-size: 0.95rem; }
+
+        /* Loading overlay */
+        #loadingOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(30, 41, 59, 0.9);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            color: white;
+        }
+
+        #loadingOverlay.hidden { display: none; }
+
+        .spinner {
+            width: 48px;
+            height: 48px;
+            border: 4px solid rgba(255,255,255,0.2);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Checkbox */
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .checkbox-wrapper input[type="checkbox"] {
+            width: 14px;
+            height: 14px;
+            cursor: pointer;
+        }
+
+        .checkbox-wrapper span {
+            font-size: 0.7rem;
+        }
+
+        /* Image select */
+        #imageSelect {
+            font-size: 0.7rem;
+        }
+
+        /* File input */
+        input[type="file"] {
+            font-size: 0.65rem;
+            padding: 4px;
+        }
+
+        /* Help tooltip */
+        .help-text {
+            font-size: 0.55rem;
+            color: var(--text-light);
+            line-height: 1.2;
+            padding: 4px 6px;
+            background: white;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            margin-top: auto;
+            flex-shrink: 0;
+        }
+
+        /* Modal */
+        #cmdModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        #cmdModal.visible { display: flex; }
+        .modal-content {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        .modal-content h3 {
+            margin-bottom: 12px;
+            color: var(--bg-dark);
+        }
+        .modal-content p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+        .cmd-box {
+            background: var(--bg-dark);
+            color: #10b981;
+            padding: 12px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.8rem;
+            margin-bottom: 12px;
+            word-break: break-all;
+        }
+        .modal-buttons {
+            display: flex;
+            gap: 8px;
+        }
+        .modal-buttons button { flex: 1; }
+    </style>
+</head>
+<body>
+
+<div id="cmdModal">
+    <div class="modal-content">
+        <h3 id="cmdModalTitle">📋 Komenda GDAL</h3>
+        <p id="cmdModalInfo"></p>
+        <div class="cmd-box" id="cmdBox"></div>
+        <div class="modal-buttons">
+            <button class="btn-primary" id="copyCmd">📋 Kopiuj komendę</button>
+            <button class="btn-outline" id="closeModal">Zamknij</button>
+        </div>
+    </div>
+</div>
+
+<!-- Skip Modal -->
+<div id="skipModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 2000; align-items: center; justify-content: center;">
+    <div class="modal-content">
+        <h3>🔄 Pomiń jaskinię</h3>
+        <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 12px;">
+            Dlaczego chcesz pominąć tę jaskinię?
+        </p>
+        <select id="skipReason" style="width: 100%; margin-bottom: 12px; padding: 8px;">
+            <option value="">-- Wybierz powód --</option>
+            <option value="no_scale_bar">Brak wyraźnej podziałki skali</option>
+            <option value="poor_quality">Niska jakość obrazu</option>
+            <option value="unclear_entrance">Niewyraźne oznaczenie wejścia</option>
+            <option value="multiple_plans">Wiele planów na jednym obrazie</option>
+            <option value="no_north_arrow">Brak strzałki północy (jeśli wymagana)</option>
+            <option value="other">Inny powód</option>
+        </select>
+        <div class="modal-buttons">
+            <button class="btn-primary" id="confirmSkip">Pomiń</button>
+            <button class="btn-outline" id="cancelSkip">Anuluj</button>
+        </div>
+    </div>
+</div>
+
+<!-- Submit Confirmation Modal -->
+<div id="submitModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 2000; align-items: center; justify-content: center;">
+    <div class="modal-content">
+        <h3>📤 Potwierdzenie wysłania</h3>
+        <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 12px;">
+            Czy na pewno chcesz wysłać georeferencję dla:
+        </p>
+        <div id="submitSummary" style="background: #f1f5f9; padding: 12px; border-radius: 6px; margin-bottom: 12px; font-size: 0.8rem;">
+            <div style="font-weight: 600; margin-bottom: 8px;" id="submitCaveName"></div>
+            <div style="display: grid; grid-template-columns: auto 1fr; gap: 4px 8px; font-size: 0.7rem;">
+                <span style="color: var(--text-light);">Obraz:</span><span id="submitImageName"></span>
+                <span style="color: var(--text-light);">Skala:</span><span id="submitScale"></span>
+                <span style="color: var(--text-light);">Obrót:</span><span id="submitRotation"></span>
+                <span style="color: var(--text-light);">Punkty:</span><span id="submitPoints"></span>
+            </div>
+        </div>
+        <div class="modal-buttons">
+            <button class="btn-success" id="confirmSubmit">✅ Wyślij</button>
+            <button class="btn-outline" id="cancelSubmit">Anuluj</button>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Notification -->
+<div id="toast" style="display: none; position: fixed; bottom: 20px; right: 20px; background: white; padding: 12px 16px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 3000; max-width: 300px; border-left: 4px solid var(--success);">
+    <div id="toastMessage" style="font-size: 0.85rem; color: var(--bg-dark);"></div>
+</div>
+
+<div id="loadingOverlay">
+    <div class="spinner"></div>
+    <div>Ładowanie danych jaskiń...</div>
+</div>
+
+<div id="sidebar">
+    <div class="logo">
+        <span>🦇</span>
+        <div>Cave Georeferencer</div>
+    </div>
+
+    <!-- Progress Section -->
+    <div id="progressSection" class="section">
+        <div class="section-header" onclick="toggleSection(this)">
+            <span>📊</span> Postęp Globalny
+            <span id="progressRefreshBtn" class="toggle-icon" style="cursor: pointer;" onclick="event.stopPropagation(); refreshProgress();">🔄</span>
+        </div>
+        <div class="section-body">
+            <div style="background: #f1f5f9; border-radius: 4px; overflow: hidden; height: 20px; position: relative; margin-bottom: 8px;">
+                <div id="progressBarFill" style="background: linear-gradient(90deg, var(--success) 0%, #15803d 100%); height: 100%; width: 0%; transition: width 0.3s;"></div>
+                <div id="progressBarText" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 600; color: var(--bg-dark);">Ładowanie...</div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; font-size: 0.65rem;">
+                <div style="background: #f8fafc; padding: 4px; border-radius: 3px; text-align: center;">
+                    <div style="font-weight: 600; color: var(--bg-dark);" id="statGe5">-</div>
+                    <div style="color: var(--text-light);">≥5 submisji</div>
+                </div>
+                <div style="background: #f8fafc; padding: 4px; border-radius: 3px; text-align: center;">
+                    <div style="font-weight: 600; color: var(--bg-dark);" id="statRemaining">-</div>
+                    <div style="color: var(--text-light);">Pozostało</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Assignment Section -->
+    <div id="assignmentSection" class="section">
+        <div class="section-header" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);">
+            <span>🎯</span> Przydzielenie
+        </div>
+        <div class="section-body">
+            <button id="giveMeCaveBtn" class="btn-primary" style="width: 100%; padding: 8px;">
+                <span>🎲</span> Daj mi jaskinię
+            </button>
+            <div id="currentAssignmentInfo" style="display: none; margin-top: 8px; padding: 8px; background: #f1f5f9; border-radius: 4px; border-left: 3px solid var(--primary);">
+                <div style="font-size: 0.7rem; color: var(--text-light); margin-bottom: 2px;">Aktualne:</div>
+                <div id="assignmentCaveName" style="font-size: 0.75rem; font-weight: 600; color: var(--bg-dark); margin-bottom: 4px;"></div>
+                <div style="font-size: 0.65rem; color: var(--text-light);">
+                    <div id="assignmentTime"></div>
+                    <div id="assignmentProgress"></div>
+                </div>
+            </div>
+            <button id="skipCaveBtn" class="btn-outline btn-small" style="width: 100%; margin-top: 6px; display: none;">
+                <span>🔄</span> Pomiń tę jaskinię
+            </button>
+        </div>
+    </div>
+
+    <!-- Cave Search Section -->
+    <div class="section">
+        <div class="section-header" onclick="toggleSection(this)">
+            <span>📍</span> Wybór Jaskini
+            <span class="toggle-icon">▼</span>
+        </div>
+        <div class="section-body">
+            <div class="input-group">
+                <input type="text" id="searchInput" placeholder="Szukaj po nazwie lub ID...">
+            </div>
+            <div class="input-group">
+                <select id="caveSelect" size="6">
+                    <option value="">-- Wybierz jaskinię --</option>
+                </select>
+                <div class="cave-count" id="caveCount">Ładowanie...</div>
+            </div>
+            <div class="input-group">
+                <label>Plan do georeferencji</label>
+                <select id="imageSelect" disabled>
+                    <option value="">-- Najpierw wybierz jaskinię --</option>
+                </select>
+            </div>
+            <label class="checkbox-wrapper">
+                <input type="checkbox" id="useOriginal">
+                <span>Użyj oryginału (mniejszy, szybszy)</span>
+            </label>
+            <button id="loadCaveBtn" class="btn-primary" disabled>
+                <span>📂</span> Załaduj Plan z GitHub
+            </button>
+            <div style="text-align: center; font-size: 0.65rem; color: var(--text-light);">— lub —</div>
+            <div class="input-group">
+                <label>Wgraj plan z dysku <span style="font-weight: normal;">(JPG, PNG, TIFF)</span></label>
+                <input type="file" id="fileInput" accept="image/*,.tif,.tiff">
+            </div>
+        </div>
+    </div>
+
+    <!-- Configuration Section -->
+    <div class="section">
+        <div class="section-header" onclick="toggleSection(this)">
+            <span>⚙️</span> Konfiguracja
+            <span class="toggle-icon">▼</span>
+        </div>
+        <div class="section-body">
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Szerokość (Lat)</label>
+                    <input type="number" id="lat" step="0.000001" placeholder="np. 49.2435">
+                </div>
+                <div class="input-group">
+                    <label>Długość (Lon)</label>
+                    <input type="number" id="lon" step="0.000001" placeholder="np. 19.9023">
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Długość skali (m)</label>
+                    <input type="number" id="realScale" value="50" min="0.1" step="0.1">
+                </div>
+                <div class="input-group">
+                    <label>Deklinacja (°)</label>
+                    <input type="number" id="declination" value="0" step="0.1">
+                </div>
+            </div>
+            <label class="checkbox-wrapper">
+                <input type="checkbox" id="skipNorth" checked>
+                <span>Pomiń strzałkę północy (domyślnie 0°)</span>
+            </label>
+            <div class="input-group">
+                <label>Definicja projekcji (PROJ4)</label>
+                <input type="text" id="proj4Def" value="+proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs" style="font-size: 0.6rem; font-family: monospace;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Panel -->
+    <div id="resultsPanel" class="section">
+        <div class="section-header" onclick="toggleSection(this)">
+            <span>📊</span> Wyniki
+            <span class="toggle-icon">▼</span>
+        </div>
+        <div class="section-body">
+            <div class="result-grid">
+                <div class="result-item">
+                    <div class="value" id="resultScale">-</div>
+                    <div class="label">Skala (px/m)</div>
+                </div>
+                <div class="result-item">
+                    <div class="value" id="resultNorth">-</div>
+                    <div class="label">Kąt północy</div>
+                </div>
+                <div class="result-item">
+                    <div class="value" id="resultConvergence">-</div>
+                    <div class="label">Konwergencja</div>
+                </div>
+                <div class="result-item">
+                    <div class="value" id="resultTotal">-</div>
+                    <div class="label">Całkowity obrót</div>
+                </div>
+            </div>
+            <button id="submitToSheetsBtn" class="btn-success" style="width: 100%; display: none; margin-bottom: 8px; padding: 8px; font-size: 0.8rem;">
+                <span>📤</span> Wyślij do Google Sheets
+            </button>
+            <div class="btn-group" style="display: flex; gap: 6px;">
+                <button id="downloadImageBtn" class="btn-outline" style="flex: 1;" disabled>
+                    <span>🖼️</span> Obraz
+                </button>
+                <button id="downloadTfwBtn" class="btn-success" style="flex: 1;">
+                    <span>⬇️</span> World File
+                </button>
+            </div>
+            <button id="showGdalMonoCmd" class="btn-primary">
+                <span>🔲</span> GDAL mono
+            </button>
+            <button id="showGdalCmd" class="btn-outline">
+                <span>🚀</span> GDAL
+            </button>
+            <button id="resetBtn" class="btn-outline btn-small">
+                <span>🔄</span> Zacznij od nowa
+            </button>
+        </div>
+    </div>
+
+    <!-- Instructions Panel -->
+    <div id="instructionPanel">
+        <div class="step-indicator">Krok <span id="currentStep">0</span>/<span id="totalSteps">5</span></div>
+        <div class="instruction-text" id="instructionText">Wybierz jaskinię aby rozpocząć</div>
+        <div class="progress-steps" id="progressSteps">
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+        </div>
+    </div>
+
+    <div class="help-text">
+        🖱️ Scroll=Zoom | Shift+Drag=Pan | Klik=Punkt
+    </div>
+</div>
+
+<div id="main">
+    <div id="emptyState">
+        <div class="icon">🗺️</div>
+        <h2>Brak załadowanego planu</h2>
+        <p>Wybierz jaskinię z listy po lewej stronie</p>
+    </div>
+
+    <div id="canvas-container">
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <div id="toolbar">
+        <button class="toolbar-btn" id="zoomInBtn" title="Przybliż">➕</button>
+        <button class="toolbar-btn" id="zoomOutBtn" title="Oddal">➖</button>
+        <button class="toolbar-btn" id="resetViewBtn" title="Resetuj widok">🏠</button>
+        <button class="toolbar-btn" id="undoBtn" title="Cofnij ostatni punkt">↩️</button>
+    </div>
+
+    <div id="zoomIndicator">100%</div>
+</div>
+
+<script>
+    // ===========================================
+    // 1. CONFIGURATION & STATE
+    // ===========================================
+
+    // Toggle section collapse
+    function toggleSection(header) {
+        const section = header.parentElement;
+        section.classList.toggle('collapsed');
+        // Save state to localStorage
+        const sectionId = section.id || header.textContent.trim();
+        localStorage.setItem('section_' + sectionId, section.classList.contains('collapsed'));
+    }
+
+    // Restore collapsed state from localStorage
+    function restoreCollapsedState() {
+        document.querySelectorAll('.section').forEach(section => {
+            const sectionId = section.id || section.querySelector('.section-header').textContent.trim();
+            const isCollapsed = localStorage.getItem('section_' + sectionId) === 'true';
+            if (isCollapsed) {
+                section.classList.add('collapsed');
+            }
+        });
+    }
+
+    // GitHub raw URL base
+    const GITHUB_RAW_BASE = 'https://raw.githubusercontent.com/dlubom/Polish-Cave-Data-Scraper/refs/heads/main/';
+
+    // PL-1992 (EPSG:2180) definition - will be updated from input field
+    const DEFAULT_PROJ4_DEF = "+proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs";
+    proj4.defs("EPSG:2180", DEFAULT_PROJ4_DEF);
+
+    function updateProj4Definition() {
+        const def = document.getElementById('proj4Def').value.trim() || DEFAULT_PROJ4_DEF;
+        proj4.defs("EPSG:2180", def);
+    }
+
+    // ===========================================
+    // CROWDSOURCING CONFIGURATION
+    // ===========================================
+
+    const CROWDSOURCE_CONFIG = {
+        // Feature flags
+        ENABLED: true,
+
+        // API
+        API_ENDPOINT: 'https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec',
+        API_TIMEOUT: 30000,
+        API_RETRY_ATTEMPTS: 2,
+        API_RETRY_DELAY: 1000,
+
+        // App metadata
+        APP_VERSION: '1.0.0-crowdsource',
+
+        // Assignment
+        TARGET_K: 5,
+        ASSIGNMENT_EXPIRY_HOURS: 24,
+        ASSIGNMENT_WARNING_HOURS: 1,
+
+        // Filters
+        REGIONS_TATRY: ['Tatry', 'Tat', 'Wysokie Tatry', 'Zachodnie Tatry', 'Tatrzański Park Narodowy'],
+
+        // UI
+        PROGRESS_REFRESH_INTERVAL: 60000, // 60 seconds
+        TOAST_DURATION: 5000 // 5 seconds
+    };
+
+    // LocalStorage keys
+    const LS_KEYS = {
+        USER_ID: 'crowdsource_user_id',
+        DISPLAY_NAME: 'crowdsource_display_name',
+        CURRENT_ASSIGNMENT: 'crowdsource_current_assignment',
+        ASSIGNMENT_HISTORY: 'crowdsource_assignment_history',
+        DEBUG_MODE: 'crowdsource_debug_mode',
+        API_ENDPOINT_OVERRIDE: 'api_endpoint_override',
+        TEST_MODE: 'test_mode'
+    };
+
+    // Helper: Get API endpoint (allow override for testing)
+    function getApiEndpoint() {
+        return localStorage.getItem(LS_KEYS.API_ENDPOINT_OVERRIDE) || CROWDSOURCE_CONFIG.API_ENDPOINT;
+    }
+
+    const state = {
+        step: 0,
+        points: [],
+        img: null,
+        transform: null,
+        scaleFactor: 1,
+        panX: 0,
+        panY: 0,
+        isDragging: false,
+        lastMouseX: 0,
+        lastMouseY: 0,
+        caves: [],
+        selectedCave: null,
+        skipNorth: true,
+        currentImagePath: null,
+        isFromGitHub: false,
+        localFileName: null,  // Name of locally uploaded file (without extension)
+        localFileBlob: null,  // Blob of locally uploaded file for re-download
+
+        // Crowdsourcing fields
+        userId: null,                    // UUID from localStorage
+        currentAssignment: null,         // {assignment_id, cave_id, expires_at, n_submissions}
+        calculatedMetrics: null,         // Store intermediate calculation values
+        appVersion: CROWDSOURCE_CONFIG.APP_VERSION,
+        isSubmitting: false,             // Prevent double-submit
+        lastProgress: null               // Cache progress data
+    };
+
+    // DOM elements
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const container = document.getElementById('canvas-container');
+    const mainArea = document.getElementById('main');
+
+    // ===========================================
+    // 1B. CROWDSOURCING FUNCTIONS
+    // ===========================================
+
+    // ============ USER MANAGEMENT ============
+
+    function initializeUserId() {
+        let userId = localStorage.getItem(LS_KEYS.USER_ID);
+
+        if (!userId) {
+            // Generate UUID v4
+            userId = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                const r = Math.random() * 16 | 0;
+                const v = c === 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+
+            localStorage.setItem(LS_KEYS.USER_ID, userId);
+            console.log('Generated new user ID:', userId);
+        }
+
+        state.userId = userId;
+        return userId;
+    }
+
+    function getUserId() {
+        return state.userId || initializeUserId();
+    }
+
+    // ============ ASSIGNMENT MANAGEMENT ============
+
+    function saveCurrentAssignment(assignment) {
+        localStorage.setItem(LS_KEYS.CURRENT_ASSIGNMENT, JSON.stringify(assignment));
+        state.currentAssignment = assignment;
+        console.log('Saved current assignment:', assignment.cave_id);
+    }
+
+    function loadCurrentAssignment() {
+        const stored = localStorage.getItem(LS_KEYS.CURRENT_ASSIGNMENT);
+        if (!stored) return null;
+
+        try {
+            const assignment = JSON.parse(stored);
+
+            // Check if expired (24h expiry from PRD)
+            if (new Date(assignment.expires_at) < new Date()) {
+                console.log('Assignment expired, clearing');
+                clearCurrentAssignment();
+                return null;
+            }
+
+            state.currentAssignment = assignment;
+            console.log('Restored assignment:', assignment.cave_id);
+            return assignment;
+        } catch (e) {
+            console.error('Failed to parse current assignment:', e);
+            localStorage.removeItem(LS_KEYS.CURRENT_ASSIGNMENT);
+            return null;
+        }
+    }
+
+    function clearCurrentAssignment() {
+        localStorage.removeItem(LS_KEYS.CURRENT_ASSIGNMENT);
+        state.currentAssignment = null;
+    }
+
+    function checkAssignmentExpiry() {
+        if (!state.currentAssignment) return null;
+
+        const expiresAt = new Date(state.currentAssignment.expires_at);
+        const now = new Date();
+        const hoursRemaining = (expiresAt - now) / (1000 * 60 * 60);
+
+        if (hoursRemaining < 0) {
+            return 'expired';
+        } else if (hoursRemaining < CROWDSOURCE_CONFIG.ASSIGNMENT_WARNING_HOURS) {
+            return 'expiring_soon';
+        }
+        return 'valid';
+    }
+
+    // ============ ASSIGNMENT HISTORY ============
+
+    function addToAssignmentHistory(caveId) {
+        const history = JSON.parse(localStorage.getItem(LS_KEYS.ASSIGNMENT_HISTORY) || '[]');
+        if (!history.includes(caveId)) {
+            history.push(caveId);
+            localStorage.setItem(LS_KEYS.ASSIGNMENT_HISTORY, JSON.stringify(history));
+        }
+    }
+
+    function getAssignmentHistory() {
+        return JSON.parse(localStorage.getItem(LS_KEYS.ASSIGNMENT_HISTORY) || '[]');
+    }
+
+    // ============ API INTEGRATION ============
+
+    async function callApi(action, payload, retryCount = 0) {
+        try {
+            const response = await fetch(getApiEndpoint(), {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    action: action,
+                    ...payload
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+
+            const data = await response.json();
+
+            if (!data.ok) {
+                throw new Error(data.message || data.error || 'API returned error');
+            }
+
+            return data;
+
+        } catch (error) {
+            console.error(`API call failed (attempt ${retryCount + 1}):`, error);
+
+            // Retry logic
+            if (retryCount < CROWDSOURCE_CONFIG.API_RETRY_ATTEMPTS) {
+                await new Promise(resolve => setTimeout(resolve, CROWDSOURCE_CONFIG.API_RETRY_DELAY));
+                return callApi(action, payload, retryCount + 1);
+            }
+
+            throw error;
+        }
+    }
+
+    async function apiPing() {
+        return await callApi('ping', {
+            user_id: getUserId(),
+            display_name: localStorage.getItem(LS_KEYS.DISPLAY_NAME) || null
+        });
+    }
+
+    async function apiAssign() {
+        return await callApi('assign', {
+            user_id: getUserId()
+        });
+    }
+
+    async function apiSubmit(payload) {
+        return await callApi('submit', payload);
+    }
+
+    async function apiSkip(reason) {
+        return await callApi('skip', {
+            assignment_id: state.currentAssignment.assignment_id,
+            user_id: getUserId(),
+            cave_id: state.selectedCave.cave_id,
+            reason: reason
+        });
+    }
+
+    async function apiProgress() {
+        return await callApi('progress', {
+            user_id: getUserId()
+        });
+    }
+
+    // ============ DATA COLLECTION ============
+
+    function collectClientTelemetry() {
+        return {
+            app_version: state.appVersion,
+            client_time_iso: new Date().toISOString(),
+            tz: Intl.DateTimeFormat().resolvedOptions().timeZone,
+            user_agent: navigator.userAgent,
+            screen_w: window.screen.width,
+            screen_h: window.screen.height,
+            window_w: window.innerWidth,
+            window_h: window.innerHeight,
+            language: navigator.language,
+            platform: navigator.platform
+        };
+    }
+
+    function buildSubmissionPayload() {
+        if (!state.currentAssignment || !state.transform || !state.calculatedMetrics) {
+            throw new Error('Missing required data for submission');
+        }
+
+        const selectedImageIdx = parseInt(document.getElementById('imageSelect').value) || 0;
+        const selectedImage = state.selectedCave.plan_images[selectedImageIdx];
+        const useOriginal = document.getElementById('useOriginal').checked;
+
+        // Generate GDAL command (extracted from showGdalCommand logic)
+        const baseName = getBaseFileName();
+        const imgExt = getImageExtension();
+        const inputFile = `${baseName}.${imgExt}`;
+        const outputFile = `${baseName}_georef.tif`;
+        const gdalCommandStandard = `gdal_translate -of GTiff -a_srs EPSG:2180 -co COMPRESS=DEFLATE -co PREDICTOR=2 -co TILED=YES "${inputFile}" "${outputFile}"`;
+
+        return {
+            // Identification
+            submitted_at: new Date().toISOString(),
+            assignment_id: state.currentAssignment.assignment_id,
+            user_id: getUserId(),
+            cave_id: state.selectedCave.cave_id,
+
+            // Selected plan
+            image_id: selectedImage.image_id,
+            image_path_original: selectedImage.image_path_original,
+            image_path_upscaled: selectedImage.image_path_upscaled,
+            image_used_path: useOriginal ? selectedImage.image_path_original : selectedImage.image_path_upscaled,
+            image_selected_index: selectedImageIdx,
+            use_original: useOriginal,
+            image_description: selectedImage.description,
+            image_author: selectedImage.author,
+
+            // Input configuration
+            lat_input: state.calculatedMetrics.lat,
+            lon_input: state.calculatedMetrics.lon,
+            lat_db: state.selectedCave.latitude,
+            lon_db: state.selectedCave.longitude,
+            realScale_m: state.calculatedMetrics.realScale,
+            declination_deg: state.calculatedMetrics.declination,
+            skipNorth: state.calculatedMetrics.skipNorth,
+            proj4def: state.calculatedMetrics.proj4def,
+
+            // Points geometry
+            points_canvas_json: JSON.stringify(state.calculatedMetrics.pointsCanvas),
+            points_orig_json: JSON.stringify(state.calculatedMetrics.pointsOriginal),
+
+            // World File results
+            A: state.transform.A,
+            D: state.transform.D,
+            B: state.transform.B,
+            E: state.transform.E,
+            C: state.transform.C,
+            F: state.transform.F,
+            worldfile_ext: state.calculatedMetrics.worldFileExtension,
+            worldfile_text: state.calculatedMetrics.worldFileText,
+            gdal_cmd_standard: gdalCommandStandard,
+
+            // Calculated metrics
+            pixels_per_meter: state.calculatedMetrics.pixelsPerMeter,
+            north_deg: state.calculatedMetrics.northDeg,
+            convergence_deg: state.calculatedMetrics.convergenceDeg,
+            total_deg: state.calculatedMetrics.totalAngleClockwise,
+
+            // Telemetry
+            ...collectClientTelemetry(),
+
+            // Status
+            submit_type: 'NORMAL',
+            skip_reason: null,
+            freeform_comment: null,
+            errors_json: null
+        };
+    }
+
+    function buildSkipPayload(reason) {
+        return {
+            assignment_id: state.currentAssignment.assignment_id,
+            user_id: getUserId(),
+            cave_id: state.selectedCave.cave_id,
+            reason: reason,
+            ...collectClientTelemetry(),
+            submit_type: 'SKIP',
+            skip_reason: reason
+        };
+    }
+
+    // ============ UI HELPERS ============
+
+    function showToast(message, type = 'success') {
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toastMessage');
+
+        toastMessage.textContent = message;
+
+        // Set border color based on type
+        const colors = {
+            success: 'var(--success)',
+            error: 'var(--danger)',
+            warning: 'var(--warning)',
+            info: 'var(--primary)'
+        };
+        toast.style.borderLeftColor = colors[type] || colors.success;
+
+        toast.style.display = 'block';
+
+        setTimeout(() => {
+            toast.style.display = 'none';
+        }, CROWDSOURCE_CONFIG.TOAST_DURATION);
+    }
+
+    function updateProgressDisplay(progressData) {
+        if (!progressData) return;
+
+        const { total, ge_5, remaining_lt_5 } = progressData;
+        const percentage = total > 0 ? Math.round((ge_5 / total) * 100) : 0;
+
+        document.getElementById('progressBarFill').style.width = percentage + '%';
+        document.getElementById('progressBarText').textContent = `${percentage}% (${ge_5}/${total})`;
+        document.getElementById('statGe5').textContent = ge_5 || '0';
+        document.getElementById('statRemaining').textContent = remaining_lt_5 || '0';
+
+        state.lastProgress = progressData;
+    }
+
+    async function refreshProgress() {
+        try {
+            const data = await apiProgress();
+            updateProgressDisplay(data);
+        } catch (error) {
+            console.error('Failed to refresh progress:', error);
+        }
+    }
+
+    function updateAssignmentDisplay(assignment) {
+        if (!assignment) {
+            document.getElementById('currentAssignmentInfo').style.display = 'none';
+            document.getElementById('skipCaveBtn').style.display = 'none';
+            document.getElementById('giveMeCaveBtn').innerHTML = '<span>🎲</span> Daj mi jaskinię';
+            document.getElementById('giveMeCaveBtn').disabled = false;
+            return;
+        }
+
+        const cave = state.selectedCave;
+        if (!cave) return;
+
+        document.getElementById('assignmentCaveName').textContent = cave.name || cave.cave_id;
+
+        const assignedDate = new Date(assignment.assigned_at || Date.now());
+        document.getElementById('assignmentTime').textContent =
+            'Przydzielono: ' + assignedDate.toLocaleString('pl-PL');
+
+        document.getElementById('assignmentProgress').textContent =
+            `Submisje: ${assignment.n_submissions || 0}/${CROWDSOURCE_CONFIG.TARGET_K}`;
+
+        document.getElementById('currentAssignmentInfo').style.display = 'block';
+        document.getElementById('skipCaveBtn').style.display = 'block';
+        document.getElementById('giveMeCaveBtn').innerHTML = '<span>✅</span> Masz przydzieloną jaskinię';
+        document.getElementById('giveMeCaveBtn').disabled = true;
+    }
+
+    // ============ WORKFLOW FUNCTIONS ============
+
+    async function handleGiveMeCave() {
+        const btn = document.getElementById('giveMeCaveBtn');
+        const originalText = btn.innerHTML;
+
+        try {
+            btn.innerHTML = '<span>⏳</span> Przydzielanie...';
+            btn.disabled = true;
+
+            // Check assignment expiry first
+            const expiryStatus = checkAssignmentExpiry();
+            if (expiryStatus === 'expired') {
+                clearCurrentAssignment();
+                updateAssignmentDisplay(null);
+            }
+
+            // Call assign API
+            const data = await apiAssign();
+
+            if (!data.cave_id) {
+                throw new Error('No cave_id in response');
+            }
+
+            // Save assignment
+            const assignment = {
+                assignment_id: data.assignment_id,
+                cave_id: data.cave_id,
+                n_submissions: data.n_submissions || 0,
+                expires_at: data.expires_at,
+                assigned_at: new Date().toISOString()
+            };
+            saveCurrentAssignment(assignment);
+
+            // Find cave in loaded data
+            state.selectedCave = state.caves.find(c => c.cave_id === data.cave_id);
+
+            if (!state.selectedCave) {
+                throw new Error('Cave not found in loaded data');
+            }
+
+            // Auto-populate cave selection UI
+            document.getElementById('caveSelect').value = data.cave_id;
+            document.getElementById('lat').value = state.selectedCave.latitude.toFixed(6);
+            document.getElementById('lon').value = state.selectedCave.longitude.toFixed(6);
+
+            // Populate image select
+            const imageSelect = document.getElementById('imageSelect');
+            imageSelect.innerHTML = '';
+            imageSelect.disabled = false;
+
+            state.selectedCave.plan_images.forEach((img, idx) => {
+                const option = document.createElement('option');
+                option.value = idx;
+                option.textContent = `${img.description}${img.author ? ' - ' + img.author : ''}`;
+                imageSelect.appendChild(option);
+            });
+
+            // Update UI
+            updateAssignmentDisplay(assignment);
+            showToast(`Przydzielono: ${state.selectedCave.name}`, 'success');
+
+            console.log('✅ Assignment successful:', data.cave_id);
+
+        } catch (error) {
+            console.error('Assignment failed:', error);
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+
+            if (error.message && error.message.includes('no_caves_available')) {
+                showToast('🎉 Wszystkie jaskinie ukończone! Dziękujemy!', 'info');
+            } else {
+                showToast('Błąd przydzielania jaskini. Spróbuj ponownie.', 'error');
+            }
+        }
+    }
+
+    async function handleSubmit() {
+        if (!state.currentAssignment || !state.transform || !state.calculatedMetrics) {
+            showToast('Brak wymaganych danych do wysłania', 'error');
+            return;
+        }
+
+        // Check assignment expiry
+        const expiryStatus = checkAssignmentExpiry();
+        if (expiryStatus === 'expired') {
+            showToast('Przydzielenie wygasło. Pobierz nową jaskinię.', 'error');
+            clearCurrentAssignment();
+            updateAssignmentDisplay(null);
+            return;
+        }
+
+        // Show confirmation modal
+        document.getElementById('submitCaveName').textContent = state.selectedCave.name;
+        const selectedImageIdx = parseInt(document.getElementById('imageSelect').value) || 0;
+        const selectedImage = state.selectedCave.plan_images[selectedImageIdx];
+        document.getElementById('submitImageName').textContent = selectedImage.description;
+        document.getElementById('submitScale').textContent =
+            `${state.calculatedMetrics.pixelsPerMeter.toFixed(2)} px/m`;
+        document.getElementById('submitRotation').textContent =
+            `${state.calculatedMetrics.totalAngleClockwise.toFixed(2)}°`;
+        document.getElementById('submitPoints').textContent =
+            `${state.points.length} punktów`;
+
+        document.getElementById('submitModal').style.display = 'flex';
+    }
+
+    async function confirmSubmit() {
+        const btn = document.getElementById('confirmSubmit');
+        const originalText = btn.innerHTML;
+
+        try {
+            state.isSubmitting = true;
+            btn.innerHTML = '⏳ Wysyłanie...';
+            btn.disabled = true;
+
+            // Build payload
+            const payload = buildSubmissionPayload();
+
+            // Submit to API
+            const result = await apiSubmit(payload);
+
+            console.log('✅ Submission successful:', result);
+
+            // Clear current assignment
+            addToAssignmentHistory(state.currentAssignment.cave_id);
+            clearCurrentAssignment();
+
+            // Reset georeferencing state
+            state.step = 0;
+            state.points = [];
+            state.transform = null;
+            state.calculatedMetrics = null;
+            state.selectedCave = null;
+
+            // Reset UI
+            document.getElementById('resultsPanel').classList.remove('visible');
+            document.getElementById('submitToSheetsBtn').style.display = 'none';
+            document.getElementById('caveSelect').value = '';
+            document.getElementById('imageSelect').innerHTML = '<option value="">-- Najpierw wybierz jaskinię --</option>';
+            document.getElementById('imageSelect').disabled = true;
+            updateAssignmentDisplay(null);
+            updateInstructions();
+            updateProgressSteps();
+
+            // Clear canvas
+            if (state.img) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                state.img = null;
+                document.getElementById('emptyState').style.display = 'block';
+            }
+
+            // Close modal
+            document.getElementById('submitModal').style.display = 'none';
+
+            // Show success and refresh progress
+            showToast('✅ Wysłano pomyślnie!', 'success');
+            refreshProgress();
+
+        } catch (error) {
+            console.error('Submission failed:', error);
+
+            // Offer JSON download fallback
+            if (confirm('Nie udało się wysłać do serwera. Czy chcesz pobrać dane jako JSON?')) {
+                try {
+                    const payload = buildSubmissionPayload();
+                    const jsonStr = JSON.stringify(payload, null, 2);
+                    const blob = new Blob([jsonStr], { type: 'application/json' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `submission_${state.selectedCave.cave_id}_${Date.now()}.json`;
+                    a.click();
+                    URL.revokeObjectURL(url);
+                    showToast('Pobrano backup JSON', 'warning');
+                } catch (e) {
+                    showToast('Błąd tworzenia backupu', 'error');
+                }
+            }
+
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        } finally {
+            state.isSubmitting = false;
+        }
+    }
+
+    async function handleSkip() {
+        document.getElementById('skipModal').style.display = 'flex';
+    }
+
+    async function confirmSkip() {
+        const reason = document.getElementById('skipReason').value;
+
+        if (!reason) {
+            showToast('Wybierz powód pominięcia', 'warning');
+            return;
+        }
+
+        const btn = document.getElementById('confirmSkip');
+        const originalText = btn.textContent;
+
+        try {
+            btn.textContent = 'Pominowanie...';
+            btn.disabled = true;
+
+            await apiSkip(reason);
+
+            // Clear assignment
+            addToAssignmentHistory(state.currentAssignment.cave_id);
+            clearCurrentAssignment();
+
+            // Reset state
+            state.selectedCave = null;
+            state.step = 0;
+            state.points = [];
+            state.transform = null;
+
+            // Reset UI
+            document.getElementById('skipModal').style.display = 'none';
+            document.getElementById('skipReason').value = '';
+            updateAssignmentDisplay(null);
+            showToast('Jaskinia pominięta', 'info');
+
+        } catch (error) {
+            console.error('Skip failed:', error);
+            showToast('Błąd pomijania jaskini', 'error');
+            btn.textContent = originalText;
+            btn.disabled = false;
+        }
+    }
+
+    async function restoreSessionOnLoad() {
+        // Initialize user ID
+        initializeUserId();
+
+        // Try to restore assignment
+        const assignment = loadCurrentAssignment();
+
+        if (assignment) {
+            console.log('Restoring assignment:', assignment.cave_id);
+
+            // Wait for caves data to load
+            await new Promise(resolve => {
+                const checkLoaded = setInterval(() => {
+                    if (state.caves.length > 0) {
+                        clearInterval(checkLoaded);
+                        resolve();
+                    }
+                }, 100);
+            });
+
+            // Find and select the cave
+            state.selectedCave = state.caves.find(c => c.cave_id === assignment.cave_id);
+
+            if (state.selectedCave) {
+                // Update UI to reflect assignment
+                document.getElementById('caveSelect').value = assignment.cave_id;
+                document.getElementById('lat').value = state.selectedCave.latitude.toFixed(6);
+                document.getElementById('lon').value = state.selectedCave.longitude.toFixed(6);
+
+                // Populate image select
+                const imageSelect = document.getElementById('imageSelect');
+                imageSelect.innerHTML = '';
+                imageSelect.disabled = false;
+
+                state.selectedCave.plan_images.forEach((img, idx) => {
+                    const option = document.createElement('option');
+                    option.value = idx;
+                    option.textContent = `${img.description}${img.author ? ' - ' + img.author : ''}`;
+                    imageSelect.appendChild(option);
+                });
+
+                updateAssignmentDisplay(assignment);
+                showToast('Przywrócono poprzednie przydzielenie', 'info');
+            }
+        }
+
+        // Ping API
+        try {
+            await apiPing();
+        } catch (e) {
+            console.warn('Ping failed (backend may not be ready):', e);
+        }
+
+        // Load progress
+        try {
+            await refreshProgress();
+        } catch (e) {
+            console.warn('Progress failed (backend may not be ready):', e);
+        }
+    }
+
+    // ===========================================
+    // 2. DATA LOADING
+    // ===========================================
+
+    async function loadCavesData() {
+        try {
+            const response = await fetch(GITHUB_RAW_BASE + 'caves_transformed.jsonl');
+            const text = await response.text();
+            const lines = text.trim().split('\n');
+
+            state.caves = [];
+
+            for (const line of lines) {
+                try {
+                    const data = JSON.parse(line);
+
+                    // Filter for plan images
+                    const planImages = (data.images || []).filter(img =>
+                        img.metadata?.graphics_type_name === 'plan' ||
+                        img.metadata?.graphics_type_name === 'plan i przekrój'
+                    );
+
+                    // Check if cave is in Tatry region
+                    const isTatry = data.region && CROWDSOURCE_CONFIG.REGIONS_TATRY.some(r =>
+                        data.region.includes(r)
+                    );
+
+                    // Only include Tatry caves with valid coordinates and plan images
+                    if (planImages.length > 0 && data.latitude && data.longitude && isTatry) {
+                        state.caves.push({
+                            cave_id: data.cave_id,
+                            name: data.name,
+                            inventory_number: data.inventory_number || '',
+                            region: data.region || '',
+                            latitude: data.latitude,
+                            longitude: data.longitude,
+                            plan_images: planImages.map(img => ({
+                                image_id: img.metadata?.graphics_id,
+                                image_path_upscaled: (img.image_path || '').replace('caves/', 'caves_upscaled/'),
+                                image_path_original: img.image_path || '',
+                                description: img.description || 'plan',
+                                author: img.metadata?.author_name || ''
+                            }))
+                        });
+                    }
+                } catch (e) {
+                    // Skip malformed lines
+                }
+            }
+
+            populateCaveSelect(state.caves);
+            document.getElementById('loadingOverlay').classList.add('hidden');
+            document.getElementById('caveCount').textContent = `${state.caves.length} jaskiń z planami`;
+
+        } catch (error) {
+            console.error('Failed to load caves data:', error);
+            document.getElementById('loadingOverlay').innerHTML = `
+                <div style="text-align:center; color: #f87171;">
+                    <div style="font-size: 3rem; margin-bottom: 16px;">❌</div>
+                    <div>Błąd ładowania danych</div>
+                    <div style="font-size: 0.85rem; opacity: 0.7; margin-top: 8px;">${error.message}</div>
+                    <button onclick="location.reload()" style="margin-top: 20px; padding: 10px 20px; cursor: pointer;">Spróbuj ponownie</button>
+                </div>
+            `;
+        }
+    }
+
+    function populateCaveSelect(caves) {
+        const select = document.getElementById('caveSelect');
+        select.innerHTML = '<option value="">-- Wybierz jaskinię --</option>';
+
+        caves.forEach(cave => {
+            const option = document.createElement('option');
+            option.value = cave.cave_id;
+            option.textContent = `${cave.cave_id} - ${cave.name}`;
+            if (cave.inventory_number) {
+                option.textContent += ` (${cave.inventory_number})`;
+            }
+            select.appendChild(option);
+        });
+    }
+
+    // ===========================================
+    // 3. SEARCH & FILTERING
+    // ===========================================
+
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+
+        if (!query) {
+            populateCaveSelect(state.caves);
+            return;
+        }
+
+        const filtered = state.caves.filter(cave =>
+            cave.cave_id.toLowerCase().includes(query) ||
+            cave.name.toLowerCase().includes(query) ||
+            cave.inventory_number.toLowerCase().includes(query)
+        );
+
+        populateCaveSelect(filtered);
+        document.getElementById('caveCount').textContent = `${filtered.length} z ${state.caves.length} jaskiń`;
+    });
+
+    // ===========================================
+    // 4. CAVE SELECTION
+    // ===========================================
+
+    document.getElementById('caveSelect').addEventListener('change', (e) => {
+        const caveId = e.target.value;
+        if (!caveId) {
+            state.selectedCave = null;
+            document.getElementById('imageSelect').disabled = true;
+            document.getElementById('imageSelect').innerHTML = '<option value="">-- Najpierw wybierz jaskinię --</option>';
+            document.getElementById('loadCaveBtn').disabled = true;
+            return;
+        }
+
+        state.selectedCave = state.caves.find(c => c.cave_id === caveId);
+
+        if (state.selectedCave) {
+            // Populate image select
+            const imageSelect = document.getElementById('imageSelect');
+            imageSelect.innerHTML = '';
+            imageSelect.disabled = false;
+
+            state.selectedCave.plan_images.forEach((img, idx) => {
+                const option = document.createElement('option');
+                option.value = idx;
+                option.textContent = `${img.description}${img.author ? ' - ' + img.author : ''}`;
+                imageSelect.appendChild(option);
+            });
+
+            // Fill coordinates
+            document.getElementById('lat').value = state.selectedCave.latitude.toFixed(6);
+            document.getElementById('lon').value = state.selectedCave.longitude.toFixed(6);
+
+            document.getElementById('loadCaveBtn').disabled = false;
+        }
+    });
+
+    // ===========================================
+    // 5. IMAGE LOADING
+    // ===========================================
+
+    document.getElementById('loadCaveBtn').addEventListener('click', () => {
+        if (!state.selectedCave) return;
+
+        const imageIdx = parseInt(document.getElementById('imageSelect').value) || 0;
+        const img = state.selectedCave.plan_images[imageIdx];
+
+        if (!img) {
+            alert('Brak ścieżki do obrazka');
+            return;
+        }
+
+        // Choose upscaled or original based on checkbox
+        const useOriginal = document.getElementById('useOriginal').checked;
+        const imagePath = useOriginal ? img.image_path_original : img.image_path_upscaled;
+
+        // Store the image path for later use in commands
+        state.currentImagePath = imagePath;
+        state.isFromGitHub = true;
+
+        loadImage(GITHUB_RAW_BASE + imagePath);
+    });
+
+    // Local file upload
+    document.getElementById('fileInput').addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        // Store the local file info
+        state.currentImagePath = file.name;
+        state.isFromGitHub = false;
+
+        // Extract filename without extension for downloads
+        const lastDot = file.name.lastIndexOf('.');
+        state.localFileName = lastDot > 0 ? file.name.substring(0, lastDot) : file.name;
+
+        // Store blob for re-download with correct name
+        state.localFileBlob = file;
+
+        // Show loading overlay
+        document.getElementById('loadingOverlay').classList.remove('hidden');
+        document.getElementById('loadingOverlay').innerHTML = `
+            <div class="spinner"></div>
+            <div>Ładowanie planu z dysku...</div>
+            <div style="font-size: 0.8rem; opacity: 0.7; margin-top: 8px;">${file.name} (${(file.size / 1024 / 1024).toFixed(1)} MB)</div>
+        `;
+
+        // Check if file is TIFF
+        const ext = file.name.split('.').pop().toLowerCase();
+        if (ext === 'tif' || ext === 'tiff') {
+            // Use UTIF.js to decode TIFF
+            loadTiffFile(file);
+        } else {
+            // Use createObjectURL instead of base64 - more efficient for large files
+            const objectUrl = URL.createObjectURL(file);
+            loadImage(objectUrl, true);  // true = revoke URL after load
+        }
+    });
+
+    // TIFF file loading using UTIF.js
+    function loadTiffFile(file) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            try {
+                const arrayBuffer = e.target.result;
+
+                // Decode TIFF
+                const ifds = UTIF.decode(arrayBuffer);
+                if (!ifds || ifds.length === 0) {
+                    throw new Error('Nie można odczytać pliku TIFF');
+                }
+
+                // Use first page
+                const page = ifds[0];
+                UTIF.decodeImage(arrayBuffer, page);
+
+                const width = page.width;
+                const height = page.height;
+                const rgba = UTIF.toRGBA8(page);
+
+                // Create canvas with decoded image data
+                const tempCanvas = document.createElement('canvas');
+                tempCanvas.width = width;
+                tempCanvas.height = height;
+                const tempCtx = tempCanvas.getContext('2d');
+                const imageData = tempCtx.createImageData(width, height);
+                imageData.data.set(new Uint8ClampedArray(rgba));
+                tempCtx.putImageData(imageData, 0, 0);
+
+                // Convert canvas to blob and then to object URL
+                tempCanvas.toBlob((blob) => {
+                    if (!blob) {
+                        document.getElementById('loadingOverlay').classList.add('hidden');
+                        alert('Błąd konwersji pliku TIFF');
+                        return;
+                    }
+
+                    const objectUrl = URL.createObjectURL(blob);
+                    loadImage(objectUrl, true);
+                }, 'image/png');
+
+            } catch (error) {
+                console.error('TIFF decode error:', error);
+                document.getElementById('loadingOverlay').classList.add('hidden');
+                alert('Błąd dekodowania TIFF: ' + error.message);
+            }
+        };
+
+        reader.onerror = function() {
+            document.getElementById('loadingOverlay').classList.add('hidden');
+            alert('Błąd odczytu pliku');
+        };
+
+        reader.readAsArrayBuffer(file);
+    }
+
+    function loadImage(url, revokeAfterLoad = false) {
+        document.getElementById('loadingOverlay').classList.remove('hidden');
+        document.getElementById('loadingOverlay').innerHTML = `
+            <div class="spinner"></div>
+            <div>Ładowanie planu jaskini...</div>
+        `;
+
+        state.img = new Image();
+        state.img.crossOrigin = 'anonymous';
+
+        state.img.onload = () => {
+            // Revoke object URL if needed (for local files)
+            if (revokeAfterLoad) {
+                URL.revokeObjectURL(url);
+            }
+
+            // Check if image is too large for canvas
+            // Most browsers limit canvas to ~16384px or ~268MP
+            const MAX_DIMENSION = 6000;  // Safe limit
+            const MAX_PIXELS = 36 * 1000 * 1000;  // 36 megapixels
+
+            const origW = state.img.width;
+            const origH = state.img.height;
+            const totalPixels = origW * origH;
+            const maxDim = Math.max(origW, origH);
+
+            let displayScale = 1;
+
+            if (maxDim > MAX_DIMENSION || totalPixels > MAX_PIXELS) {
+                const scaleByDim = MAX_DIMENSION / maxDim;
+                const scaleByPixels = Math.sqrt(MAX_PIXELS / totalPixels);
+                displayScale = Math.min(scaleByDim, scaleByPixels);
+                console.log(`Obraz ${origW}x${origH} za duży, skalowanie do ${Math.round(displayScale*100)}%`);
+            }
+
+            // Store for calculations - points are in canvas coords, need to convert to original
+            state.displayScale = displayScale;
+            state.originalWidth = origW;
+            state.originalHeight = origH;
+
+            const canvasW = Math.floor(origW * displayScale);
+            const canvasH = Math.floor(origH * displayScale);
+
+            canvas.width = canvasW;
+            canvas.height = canvasH;
+
+            // Reset state
+            state.step = 1;
+            state.points = [];
+            state.transform = null;
+            state.scaleFactor = 1;
+            state.panX = 0;
+            state.panY = 0;
+
+            // Fit image to view
+            fitImageToView();
+
+            // Update UI
+            document.getElementById('emptyState').style.display = 'none';
+            document.getElementById('resultsPanel').classList.remove('visible');
+            updateInstructions();
+            updateProgressSteps();
+            draw();
+
+            document.getElementById('loadingOverlay').classList.add('hidden');
+
+            // Show info if scaled
+            if (displayScale < 1) {
+                console.info(`Podgląd: ${canvasW}x${canvasH}, Oryginał: ${origW}x${origH}`);
+            }
+        };
+
+        state.img.onerror = () => {
+            // Revoke object URL if needed
+            if (revokeAfterLoad) {
+                URL.revokeObjectURL(url);
+            }
+            document.getElementById('loadingOverlay').classList.add('hidden');
+            if (state.isFromGitHub) {
+                alert('Nie udało się załadować obrazka. Sprawdź czy plik istnieje na GitHub.');
+            } else {
+                alert('Nie udało się załadować obrazka. Sprawdź format pliku (obsługiwane: JPG, PNG, TIFF).');
+            }
+        };
+
+        state.img.src = url;
+    }
+
+    function fitImageToView() {
+        const padding = 40;
+        const maxW = mainArea.clientWidth - padding * 2;
+        const maxH = mainArea.clientHeight - padding * 2;
+
+        const scaleX = maxW / canvas.width;
+        const scaleY = maxH / canvas.height;
+        state.scaleFactor = Math.min(scaleX, scaleY, 1);
+
+        // Center the image
+        state.panX = (mainArea.clientWidth - canvas.width * state.scaleFactor) / 2;
+        state.panY = (mainArea.clientHeight - canvas.height * state.scaleFactor) / 2;
+
+        updateTransform();
+    }
+
+    // ===========================================
+    // 6. CANVAS INTERACTION
+    // ===========================================
+
+    // Zoom
+    mainArea.addEventListener('wheel', (e) => {
+        e.preventDefault();
+
+        const rect = mainArea.getBoundingClientRect();
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+
+        const zoomSpeed = 0.1;
+        const direction = e.deltaY > 0 ? -1 : 1;
+        const newScale = state.scaleFactor * (1 + direction * zoomSpeed);
+
+        if (newScale > 0.05 && newScale < 20) {
+            // Zoom towards mouse position
+            const scaleChange = newScale / state.scaleFactor;
+            state.panX = mouseX - (mouseX - state.panX) * scaleChange;
+            state.panY = mouseY - (mouseY - state.panY) * scaleChange;
+            state.scaleFactor = newScale;
+            updateTransform();
+        }
+    });
+
+    // Pan (Shift + drag)
+    mainArea.addEventListener('mousedown', (e) => {
+        if (e.shiftKey || e.button === 1) {
+            state.isDragging = true;
+            state.lastMouseX = e.clientX;
+            state.lastMouseY = e.clientY;
+            mainArea.style.cursor = 'grabbing';
+            e.preventDefault();
+        }
+    });
+
+    window.addEventListener('mouseup', () => {
+        state.isDragging = false;
+        mainArea.style.cursor = 'crosshair';
+    });
+
+    window.addEventListener('mousemove', (e) => {
+        if (state.isDragging) {
+            state.panX += e.clientX - state.lastMouseX;
+            state.panY += e.clientY - state.lastMouseY;
+            state.lastMouseX = e.clientX;
+            state.lastMouseY = e.clientY;
+            updateTransform();
+        }
+    });
+
+    function updateTransform() {
+        container.style.transform = `translate(${state.panX}px, ${state.panY}px) scale(${state.scaleFactor})`;
+        document.getElementById('zoomIndicator').textContent = `${Math.round(state.scaleFactor * 100)}%`;
+    }
+
+    // Point clicking
+    canvas.addEventListener('mousedown', (e) => {
+        if (e.button !== 0 || e.shiftKey) return;
+
+        const maxSteps = state.skipNorth ? 3 : 5;
+        if (state.step === 0 || state.step > maxSteps) return;
+
+        const rect = canvas.getBoundingClientRect();
+        const scaleX = canvas.width / rect.width;
+        const scaleY = canvas.height / rect.height;
+
+        const x = (e.clientX - rect.left) * scaleX;
+        const y = (e.clientY - rect.top) * scaleY;
+
+        state.points.push({ x, y });
+        nextStep();
+        draw();
+    });
+
+    // ===========================================
+    // 7. WORKFLOW LOGIC
+    // ===========================================
+
+    document.getElementById('skipNorth').addEventListener('change', (e) => {
+        const wasSkipping = state.skipNorth;
+        state.skipNorth = e.target.checked;
+        updateProgressSteps();
+
+        // Handle state changes if image is loaded and we've started clicking
+        if (state.step > 0 && state.img) {
+            if (wasSkipping && !state.skipNorth) {
+                // Unchecked "skip north" - user wants to ADD north arrow points
+                // Keep existing points, allow clicking north arrow
+                if (state.points.length >= 3) {
+                    // Already have entrance + scale, continue to north arrow (step 4)
+                    state.step = 4;
+                    state.transform = null;
+                    document.getElementById('resultsPanel').classList.remove('visible');
+                }
+                // If fewer than 3 points, continue from current step (no change needed)
+            } else if (!wasSkipping && state.skipNorth) {
+                // Checked "skip north" - user wants to SKIP north arrow
+                if (state.points.length > 3) {
+                    // Remove any north arrow points (keep only entrance + scale)
+                    state.points = state.points.slice(0, 3);
+                }
+                if (state.points.length >= 3) {
+                    // Have all required points, recalculate without north
+                    calculate();
+                }
+                // If fewer than 3 points, continue from current step (no change needed)
+            }
+            updateInstructions();
+            draw();
+        }
+    });
+
+    function nextStep() {
+        state.step++;
+        const maxSteps = state.skipNorth ? 3 : 5;
+
+        if (state.step <= maxSteps) {
+            updateInstructions();
+            updateProgressSteps();
+        } else {
+            calculate();
+        }
+    }
+
+    function updateInstructions() {
+        const instructions = state.skipNorth ? [
+            "Wybierz jaskinię aby rozpocząć",
+            "Kliknij OTWÓR WEJŚCIOWY",
+            "Kliknij POCZĄTEK SKALI",
+            "Kliknij KONIEC SKALI",
+            "Gotowe!"
+        ] : [
+            "Wybierz jaskinię aby rozpocząć",
+            "Kliknij OTWÓR WEJŚCIOWY",
+            "Kliknij POCZĄTEK SKALI",
+            "Kliknij KONIEC SKALI",
+            "Kliknij BAZĘ STRZAŁKI PÓŁNOCY",
+            "Kliknij GROT STRZAŁKI PÓŁNOCY",
+            "Gotowe!"
+        ];
+
+        const maxSteps = state.skipNorth ? 3 : 5;
+        const panel = document.getElementById('instructionPanel');
+
+        document.getElementById('currentStep').textContent = Math.min(state.step, maxSteps);
+        document.getElementById('totalSteps').textContent = maxSteps;
+        document.getElementById('instructionText').textContent = instructions[state.step] || instructions[0];
+
+        if (state.step > maxSteps) {
+            panel.classList.add('complete');
+        } else {
+            panel.classList.remove('complete');
+        }
+    }
+
+    function updateProgressSteps() {
+        const container = document.getElementById('progressSteps');
+        const maxSteps = state.skipNorth ? 3 : 5;
+
+        container.innerHTML = '';
+        for (let i = 1; i <= maxSteps; i++) {
+            const step = document.createElement('div');
+            step.className = 'progress-step';
+            if (i < state.step) step.classList.add('done');
+            if (i === state.step) step.classList.add('current');
+            container.appendChild(step);
+        }
+    }
+
+    // ===========================================
+    // 8. DRAWING
+    // ===========================================
+
+    function draw() {
+        if (!state.img) return;
+
+        // Draw scaled image to fit canvas
+        ctx.drawImage(state.img, 0, 0, canvas.width, canvas.height);
+
+        // Draw points
+        const colors = ['#ef4444', '#f97316', '#eab308', '#22c55e', '#3b82f6'];
+        const labels = state.skipNorth
+            ? ['Wejście', 'Skala 1', 'Skala 2']
+            : ['Wejście', 'Skala 1', 'Skala 2', 'Północ 1', 'Północ 2'];
+
+        state.points.forEach((p, idx) => {
+            // Circle
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 12, 0, Math.PI * 2);
+            ctx.fillStyle = colors[idx] || '#fff';
+            ctx.fill();
+            ctx.strokeStyle = '#000';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Label
+            ctx.fillStyle = '#000';
+            ctx.font = 'bold 14px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText(idx + 1, p.x, p.y + 5);
+
+            // Label text
+            ctx.fillStyle = '#fff';
+            ctx.font = '12px sans-serif';
+            ctx.fillText(labels[idx], p.x, p.y - 20);
+        });
+
+        // Draw scale line
+        if (state.points.length >= 3) {
+            ctx.beginPath();
+            ctx.moveTo(state.points[1].x, state.points[1].y);
+            ctx.lineTo(state.points[2].x, state.points[2].y);
+            ctx.strokeStyle = '#eab308';
+            ctx.lineWidth = 4;
+            ctx.stroke();
+        }
+
+        // Draw north arrow line
+        if (!state.skipNorth && state.points.length >= 5) {
+            ctx.beginPath();
+            ctx.moveTo(state.points[3].x, state.points[3].y);
+            ctx.lineTo(state.points[4].x, state.points[4].y);
+            ctx.strokeStyle = '#3b82f6';
+            ctx.lineWidth = 4;
+            ctx.stroke();
+
+            // Arrow head
+            const dx = state.points[4].x - state.points[3].x;
+            const dy = state.points[4].y - state.points[3].y;
+            const angle = Math.atan2(dy, dx);
+            const headLen = 20;
+
+            ctx.beginPath();
+            ctx.moveTo(state.points[4].x, state.points[4].y);
+            ctx.lineTo(
+                state.points[4].x - headLen * Math.cos(angle - Math.PI / 6),
+                state.points[4].y - headLen * Math.sin(angle - Math.PI / 6)
+            );
+            ctx.moveTo(state.points[4].x, state.points[4].y);
+            ctx.lineTo(
+                state.points[4].x - headLen * Math.cos(angle + Math.PI / 6),
+                state.points[4].y - headLen * Math.sin(angle + Math.PI / 6)
+            );
+            ctx.strokeStyle = '#3b82f6';
+            ctx.lineWidth = 3;
+            ctx.stroke();
+        }
+    }
+
+    // ===========================================
+    // 9. CALCULATIONS
+    // ===========================================
+
+    // Reactive recalculation on input changes
+    ['lat', 'lon', 'realScale', 'declination', 'proj4Def'].forEach(id => {
+        document.getElementById(id).addEventListener('input', () => {
+            if (id === 'proj4Def') {
+                updateProj4Definition();
+            }
+            if (state.transform) {
+                recalculate();
+            }
+        });
+    });
+
+    function recalculate() {
+        const maxSteps = state.skipNorth ? 3 : 5;
+        if (state.points.length < maxSteps) return;
+        calculate();
+    }
+
+    function calculate() {
+        // Update projection definition from input field
+        updateProj4Definition();
+
+        const lat = parseFloat(document.getElementById('lat').value);
+        const lon = parseFloat(document.getElementById('lon').value);
+        const realScale = parseFloat(document.getElementById('realScale').value);
+        const declination = parseFloat(document.getElementById('declination').value) || 0;
+
+        console.group('🧮 Georeferencer Calculation Debug');
+        console.log('=== INPUT PARAMETERS ===');
+        console.log('Latitude (WGS84):', lat);
+        console.log('Longitude (WGS84):', lon);
+        console.log('Scale bar length (m):', realScale);
+        console.log('Declination (°):', declination);
+        console.log('Skip north arrow:', state.skipNorth);
+
+        if (!lat || !lon || !realScale) {
+            console.warn('Missing required inputs!');
+            console.groupEnd();
+            alert('Uzupełnij współrzędne i długość skali');
+            return;
+        }
+
+        // Convert canvas points to original image coordinates
+        const ds = state.displayScale || 1;
+        const toOrig = (p) => ({ x: p.x / ds, y: p.y / ds });
+
+        console.log('\n=== IMAGE SCALING ===');
+        console.log('Display scale factor:', ds);
+        console.log('Original image size:', state.originalWidth, 'x', state.originalHeight, 'px');
+        console.log('Canvas size:', canvas.width, 'x', canvas.height, 'px');
+
+        console.log('\n=== CLICKED POINTS (canvas coords) ===');
+        state.points.forEach((p, i) => {
+            const labels = state.skipNorth
+                ? ['Entrance', 'Scale Start', 'Scale End']
+                : ['Entrance', 'Scale Start', 'Scale End', 'North Base', 'North Tip'];
+            console.log(`Point ${i + 1} (${labels[i]}): x=${p.x.toFixed(2)}, y=${p.y.toFixed(2)}`);
+        });
+
+        console.log('\n=== CLICKED POINTS (original image coords) ===');
+        state.points.forEach((p, i) => {
+            const orig = toOrig(p);
+            const labels = state.skipNorth
+                ? ['Entrance', 'Scale Start', 'Scale End']
+                : ['Entrance', 'Scale Start', 'Scale End', 'North Base', 'North Tip'];
+            console.log(`Point ${i + 1} (${labels[i]}): x=${orig.x.toFixed(2)}, y=${orig.y.toFixed(2)}`);
+        });
+
+        // Project WGS84 -> PL-1992
+        const [worldX, worldY] = proj4("EPSG:4326", "EPSG:2180", [lon, lat]);
+
+        console.log('\n=== COORDINATE PROJECTION ===');
+        console.log('WGS84 input: lat=', lat, ', lon=', lon);
+        console.log('PL-1992 (EPSG:2180) output: X=', worldX.toFixed(3), ', Y=', worldY.toFixed(3));
+
+        // Scale calculation (in original image pixels)
+        const pScale1 = toOrig(state.points[1]);
+        const pScale2 = toOrig(state.points[2]);
+        const pixelDist = Math.sqrt(Math.pow(pScale2.x - pScale1.x, 2) + Math.pow(pScale2.y - pScale1.y, 2));
+        const pixelsPerMeter = pixelDist / realScale;
+        const metersPerPixel = 1.0 / pixelsPerMeter;
+
+        console.log('\n=== SCALE CALCULATION ===');
+        console.log('Scale point 1 (orig):', pScale1.x.toFixed(2), pScale1.y.toFixed(2));
+        console.log('Scale point 2 (orig):', pScale2.x.toFixed(2), pScale2.y.toFixed(2));
+        console.log('Pixel distance:', pixelDist.toFixed(2), 'px');
+        console.log('Real distance:', realScale, 'm');
+        console.log('Pixels per meter:', pixelsPerMeter.toFixed(4), 'px/m');
+        console.log('Meters per pixel:', metersPerPixel.toFixed(6), 'm/px');
+
+        // Meridian convergence for PL-1992
+        const lambda0 = 19.0;
+        const convergenceDeg = (lambda0 - lon) * Math.sin(lat * (Math.PI / 180));
+
+        console.log('\n=== MERIDIAN CONVERGENCE ===');
+        console.log('Central meridian (λ₀):', lambda0, '°');
+        console.log('Longitude difference (λ₀ - λ):', (lambda0 - lon).toFixed(6), '°');
+        console.log('sin(latitude):', Math.sin(lat * (Math.PI / 180)).toFixed(6));
+        console.log('Convergence:', convergenceDeg.toFixed(4), '°');
+
+        // North angle calculation
+        let northDeg = 0;
+        if (!state.skipNorth && state.points.length >= 5) {
+            const pN1 = toOrig(state.points[3]);
+            const pN2 = toOrig(state.points[4]);
+            const dx = pN2.x - pN1.x;
+            const dy = pN2.y - pN1.y;
+            const angleRad = Math.atan2(dx, -dy);
+            northDeg = angleRad * (180 / Math.PI);
+
+            console.log('\n=== NORTH ARROW CALCULATION ===');
+            console.log('North base (orig):', pN1.x.toFixed(2), pN1.y.toFixed(2));
+            console.log('North tip (orig):', pN2.x.toFixed(2), pN2.y.toFixed(2));
+            console.log('dx:', dx.toFixed(2), ', dy:', dy.toFixed(2));
+            console.log('atan2(dx, -dy):', angleRad.toFixed(6), 'rad');
+            console.log('North angle:', northDeg.toFixed(2), '°');
+        } else {
+            console.log('\n=== NORTH ARROW ===');
+            console.log('Skipped (assuming 0°)');
+        }
+
+        // Total rotation
+        const totalAngleClockwise = northDeg + declination + convergenceDeg;
+        const rotRadCCW = +totalAngleClockwise * (Math.PI / 180);
+
+        console.log('\n=== TOTAL ROTATION ===');
+        console.log('North angle:', northDeg.toFixed(4), '°');
+        console.log('Declination:', declination.toFixed(4), '°');
+        console.log('Convergence:', convergenceDeg.toFixed(4), '°');
+        console.log('Total clockwise:', totalAngleClockwise.toFixed(4), '°');
+        console.log('Rotation CCW (for transform):', rotRadCCW.toFixed(6), 'rad');
+
+        // World File parameters
+        const cosA = Math.cos(rotRadCCW);
+        const sinA = Math.sin(rotRadCCW);
+
+        const wf_A = metersPerPixel * cosA;
+        const wf_D = metersPerPixel * sinA;
+        const wf_B = metersPerPixel * sinA;
+        const wf_E = -metersPerPixel * cosA;
+
+        // Calculate C and F (using original image coordinates)
+        const pEnt = toOrig(state.points[0]);
+        const wf_C = worldX - (wf_A * pEnt.x + wf_B * pEnt.y);
+        const wf_F = worldY - (wf_D * pEnt.x + wf_E * pEnt.y);
+
+        console.log('\n=== WORLD FILE PARAMETERS ===');
+        console.log('cos(rotation):', cosA.toFixed(10));
+        console.log('sin(rotation):', sinA.toFixed(10));
+        console.log('Entrance point (orig):', pEnt.x.toFixed(2), pEnt.y.toFixed(2));
+        console.log('A (x scale * cos):', wf_A.toFixed(10));
+        console.log('D (y rotation):', wf_D.toFixed(10));
+        console.log('B (x rotation):', wf_B.toFixed(10));
+        console.log('E (y scale * -cos):', wf_E.toFixed(10));
+        console.log('C (x origin):', wf_C.toFixed(6));
+        console.log('F (y origin):', wf_F.toFixed(6));
+
+        console.log('\n=== WORLD FILE CONTENT ===');
+        console.log(`${wf_A.toFixed(10)}\n${wf_D.toFixed(10)}\n${wf_B.toFixed(10)}\n${wf_E.toFixed(10)}\n${wf_C.toFixed(6)}\n${wf_F.toFixed(6)}`);
+        console.groupEnd();
+
+        state.transform = { A: wf_A, D: wf_D, B: wf_B, E: wf_E, C: wf_C, F: wf_F };
+
+        // Store all calculated metrics for submission
+        const worldFileText = `${wf_A.toFixed(10)}\n${wf_D.toFixed(10)}\n${wf_B.toFixed(10)}\n${wf_E.toFixed(10)}\n${wf_C.toFixed(6)}\n${wf_F.toFixed(6)}`;
+        const imageExt = getImageExtension();
+        const worldFileExt = getWorldFileExtension(imageExt);
+
+        state.calculatedMetrics = {
+            // Scale metrics
+            pixelsPerMeter: pixelsPerMeter,
+            metersPerPixel: metersPerPixel,
+
+            // Angles
+            northDeg: northDeg,
+            convergenceDeg: convergenceDeg,
+            totalAngleClockwise: totalAngleClockwise,
+
+            // Points in different coordinate systems
+            pointsCanvas: state.points.map(p => ({x: p.x, y: p.y})),
+            pointsOriginal: state.points.map(p => ({
+                x: p.x / (state.displayScale || 1),
+                y: p.y / (state.displayScale || 1)
+            })),
+
+            // World File content
+            worldFileText: worldFileText,
+            worldFileExtension: worldFileExt,
+
+            // Input parameters
+            lat: lat,
+            lon: lon,
+            realScale: realScale,
+            declination: declination,
+            skipNorth: state.skipNorth,
+            proj4def: document.getElementById('proj4Def').value.trim(),
+
+            // Projection results
+            worldX: worldX,
+            worldY: worldY,
+
+            // Calculation timestamp
+            calculatedAt: new Date().toISOString()
+        };
+
+        console.log('✅ Stored calculatedMetrics for submission');
+
+        // Update UI
+        document.getElementById('resultScale').textContent = pixelsPerMeter.toFixed(2);
+        document.getElementById('resultNorth').textContent = northDeg.toFixed(2) + '°';
+        document.getElementById('resultConvergence').textContent = convergenceDeg.toFixed(4) + '°';
+        document.getElementById('resultTotal').textContent = totalAngleClockwise.toFixed(2) + '°';
+
+        document.getElementById('resultsPanel').classList.add('visible');
+        // Enable image download button for both GitHub and local files
+        document.getElementById('downloadImageBtn').disabled = false;
+
+        // Show Submit to Sheets button if there's an active assignment
+        if (state.currentAssignment) {
+            document.getElementById('submitToSheetsBtn').style.display = 'block';
+        }
+
+        updateInstructions();
+    }
+
+    // ===========================================
+    // 10. FILE EXPORT
+    // ===========================================
+
+    document.getElementById('downloadTfwBtn').addEventListener('click', downloadWorldFile);
+    document.getElementById('downloadImageBtn').addEventListener('click', downloadOriginalImage);
+    document.getElementById('showGdalCmd').addEventListener('click', showGdalCommand);
+    document.getElementById('showGdalMonoCmd').addEventListener('click', showGdalMonoCommand);
+
+    function getBaseFileName() {
+        // For local files, use the original filename
+        if (!state.isFromGitHub && state.localFileName) {
+            return state.localFileName;
+        }
+        // For GitHub files, use cave inventory number or ID
+        if (state.selectedCave) {
+            return (state.selectedCave.inventory_number || state.selectedCave.cave_id).replace(/\//g, '_');
+        }
+        return 'plan';
+    }
+
+    function getImageExtension() {
+        if (state.currentImagePath) {
+            return state.currentImagePath.split('.').pop().toLowerCase() || 'jpg';
+        }
+        return 'jpg';
+    }
+
+    function getWorldFileExtension(imageExt) {
+        // World file extensions: first and last letter of image extension + 'w'
+        // .jpg -> .jgw, .jpeg -> .jgw, .tif -> .tfw, .png -> .pgw, .gif -> .gfw
+        const ext = imageExt.toLowerCase();
+        if (ext === 'jpeg' || ext === 'jpg') return 'jgw';
+        if (ext === 'tif' || ext === 'tiff') return 'tfw';
+        if (ext === 'png') return 'pgw';
+        if (ext === 'gif') return 'gfw';
+        if (ext === 'bmp') return 'bpw';
+        // Default: first char + last char + 'w'
+        return ext.charAt(0) + ext.charAt(ext.length - 1) + 'w';
+    }
+
+    function downloadWorldFile() {
+        if (!state.transform) return;
+        const t = state.transform;
+        const baseName = getBaseFileName();
+        const imgExt = getImageExtension();
+        const wfExt = getWorldFileExtension(imgExt);
+
+        const wfContent = `${t.A.toFixed(10)}\n${t.D.toFixed(10)}\n${t.B.toFixed(10)}\n${t.E.toFixed(10)}\n${t.C.toFixed(6)}\n${t.F.toFixed(6)}`;
+        downloadFile(wfContent, `${baseName}.${wfExt}`, 'text/plain');
+    }
+
+    async function downloadOriginalImage() {
+        if (!state.currentImagePath) return;
+
+        const baseName = getBaseFileName();
+        const btn = document.getElementById('downloadImageBtn');
+        const originalText = btn.innerHTML;
+        const ext = state.currentImagePath.split('.').pop() || 'jpg';
+        const fileName = `${baseName}.${ext}`;
+
+        try {
+            btn.innerHTML = '<span>⏳</span> Pobieranie...';
+            btn.disabled = true;
+
+            let blob;
+
+            if (state.isFromGitHub) {
+                // Fetch from GitHub
+                const imageUrl = GITHUB_RAW_BASE + state.currentImagePath;
+                const response = await fetch(imageUrl);
+                if (!response.ok) throw new Error('Nie można pobrać obrazu');
+                blob = await response.blob();
+            } else if (state.localFileBlob) {
+                // Use stored local file blob
+                blob = state.localFileBlob;
+            } else {
+                throw new Error('Brak pliku do pobrania');
+            }
+
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = fileName;
+            a.click();
+            URL.revokeObjectURL(url);
+
+            btn.innerHTML = '<span>✅</span> Pobrano!';
+            setTimeout(() => { btn.innerHTML = originalText; btn.disabled = false; }, 2000);
+        } catch (error) {
+            alert('Błąd pobierania: ' + error.message);
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        }
+    }
+
+    function showGdalCommand() {
+        if (!state.transform) return;
+
+        const baseName = getBaseFileName();
+        const imgExt = getImageExtension();
+        const wfExt = getWorldFileExtension(imgExt);
+        const inputFile = `${baseName}.${imgExt}`;
+        const outputFile = `${baseName}_georef.tif`;
+
+        // GDAL command that uses World File (auto-detected when in same folder)
+        // Optimized for scans: deflate compression, tiled
+        const cmd = `gdal_translate -of GTiff -a_srs EPSG:2180 -co COMPRESS=DEFLATE -co PREDICTOR=2 -co TILED=YES "${inputFile}" "${outputFile}"`;
+
+        document.getElementById('cmdModalTitle').textContent = '🚀 Komenda GDAL';
+        document.getElementById('cmdModalInfo').innerHTML = `
+            Pobierz <b>${inputFile}</b> i <b>${baseName}.${wfExt}</b> do tego samego folderu, a następnie uruchom komendę.<br>
+            <small style="color: var(--text-light);">GDAL automatycznie użyje pliku .${wfExt} do georeferencji.</small>
+        `;
+        document.getElementById('cmdBox').textContent = cmd;
+        document.getElementById('cmdModal').classList.add('visible');
+    }
+
+    function showGdalMonoCommand() {
+        if (!state.transform) return;
+
+        const baseName = getBaseFileName();
+        const imgExt = getImageExtension();
+        const wfExt = getWorldFileExtension(imgExt);
+        const inputFile = `${baseName}.${imgExt}`;
+        const tempFile = `${baseName}_mono_raw.tif`;
+        const outputFile = `${baseName}_mono_georef.tif`;
+
+        // Three commands: 1) ImageMagick: grayscale + dithering + mono, 2) copy World File, 3) GDAL: add georef
+        const cmdUnix = `magick "${inputFile}" -colorspace Gray -dither FloydSteinberg -monochrome -compress Group4 "${tempFile}" && cp "${baseName}.${wfExt}" "${baseName}_mono_raw.tfw" && gdal_translate -of GTiff -a_srs EPSG:2180 -co COMPRESS=CCITTFAX4 "${tempFile}" "${outputFile}"`;
+        const cmdWindows = `magick "${inputFile}" -colorspace Gray -dither FloydSteinberg -monochrome -compress Group4 "${tempFile}" && copy "${baseName}.${wfExt}" "${baseName}_mono_raw.tfw" && gdal_translate -of GTiff -a_srs EPSG:2180 -co COMPRESS=CCITTFAX4 "${tempFile}" "${outputFile}"`;
+
+        document.getElementById('cmdModalTitle').textContent = '🔲 Komenda GDAL (mono dla WMSA)';
+        document.getElementById('cmdModalInfo').innerHTML = `
+            Pobierz <b>${inputFile}</b> i <b>${baseName}.${wfExt}</b> do tego samego folderu, a następnie uruchom komendę.<br>
+            <small style="color: var(--text-light);">
+                Wymaga: GDAL + ImageMagick (<code>brew install imagemagick</code> lub instalator Windows)<br>
+                Krok 1: Grayscale + Floyd-Steinberg dithering → mono TIFF<br>
+                Krok 2: Kopiowanie World File dla pliku tymczasowego<br>
+                Krok 3: Georeferencja z World File → ${outputFile}<br>
+                Po zakończeniu możesz usunąć ${tempFile} i ${baseName}_mono_raw.tfw.<br><br>
+                <b>QGIS:</b> Jeśli obraz ma dziwne kolory, kliknij prawym → Properties → Symbology → Render type: Singleband gray → Apply
+            </small>
+        `;
+        document.getElementById('cmdBox').innerHTML = `<b>macOS/Linux:</b><br><code>${cmdUnix}</code><br><br><b>Windows:</b><br><code>${cmdWindows}</code>`;
+        document.getElementById('cmdModal').classList.add('visible');
+    }
+
+    function downloadWorldFileAndImage() {
+        // Legacy function - now just downloads TFW
+        downloadWorldFile();
+    }
+
+    function downloadFile(content, fileName, mimeType) {
+        const a = document.createElement('a');
+        const file = new Blob([content], { type: mimeType });
+        a.href = URL.createObjectURL(file);
+        a.download = fileName;
+        a.click();
+        URL.revokeObjectURL(a.href);
+    }
+
+    // ===========================================
+    // 11. COMMAND MODAL
+    // ===========================================
+
+    document.getElementById('copyCmd').addEventListener('click', () => {
+        const cmd = document.getElementById('cmdBox').textContent;
+        navigator.clipboard.writeText(cmd).then(() => {
+            document.getElementById('copyCmd').textContent = '✓ Skopiowano!';
+            setTimeout(() => {
+                document.getElementById('copyCmd').textContent = '📋 Kopiuj komendę';
+            }, 2000);
+        });
+    });
+
+    document.getElementById('closeModal').addEventListener('click', () => {
+        document.getElementById('cmdModal').classList.remove('visible');
+    });
+
+    document.getElementById('cmdModal').addEventListener('click', (e) => {
+        if (e.target.id === 'cmdModal') {
+            document.getElementById('cmdModal').classList.remove('visible');
+        }
+    });
+
+    // ===========================================
+    // 12. TOOLBAR BUTTONS
+    // ===========================================
+
+    document.getElementById('zoomInBtn').addEventListener('click', () => {
+        state.scaleFactor *= 1.25;
+        updateTransform();
+    });
+
+    document.getElementById('zoomOutBtn').addEventListener('click', () => {
+        state.scaleFactor *= 0.8;
+        updateTransform();
+    });
+
+    document.getElementById('resetViewBtn').addEventListener('click', () => {
+        if (state.img) fitImageToView();
+    });
+
+    document.getElementById('undoBtn').addEventListener('click', () => {
+        if (state.points.length > 0) {
+            state.points.pop();
+            state.step = Math.max(1, state.step - 1);
+            state.transform = null;
+            document.getElementById('resultsPanel').classList.remove('visible');
+            updateInstructions();
+            updateProgressSteps();
+            draw();
+        }
+    });
+
+    document.getElementById('resetBtn').addEventListener('click', () => {
+        state.step = 1;
+        state.points = [];
+        state.transform = null;
+        document.getElementById('resultsPanel').classList.remove('visible');
+        document.getElementById('submitToSheetsBtn').style.display = 'none';
+        updateInstructions();
+        updateProgressSteps();
+        draw();
+    });
+
+    // ===========================================
+    // 12B. CROWDSOURCING EVENT LISTENERS
+    // ===========================================
+
+    // Give me a cave button
+    document.getElementById('giveMeCaveBtn').addEventListener('click', handleGiveMeCave);
+
+    // Skip button
+    document.getElementById('skipCaveBtn').addEventListener('click', handleSkip);
+
+    // Submit to Sheets button
+    document.getElementById('submitToSheetsBtn').addEventListener('click', handleSubmit);
+
+    // Modal event listeners
+    document.getElementById('confirmSubmit').addEventListener('click', confirmSubmit);
+    document.getElementById('cancelSubmit').addEventListener('click', () => {
+        document.getElementById('submitModal').style.display = 'none';
+    });
+
+    document.getElementById('confirmSkip').addEventListener('click', confirmSkip);
+    document.getElementById('cancelSkip').addEventListener('click', () => {
+        document.getElementById('skipModal').style.display = 'none';
+    });
+
+    // Close modals on background click
+    document.getElementById('submitModal').addEventListener('click', (e) => {
+        if (e.target.id === 'submitModal') {
+            document.getElementById('submitModal').style.display = 'none';
+        }
+    });
+
+    document.getElementById('skipModal').addEventListener('click', (e) => {
+        if (e.target.id === 'skipModal') {
+            document.getElementById('skipModal').style.display = 'none';
+        }
+    });
+
+    // Beforeunload warning for unsaved work
+    window.addEventListener('beforeunload', (e) => {
+        if (state.currentAssignment && state.transform && !state.isSubmitting) {
+            e.preventDefault();
+            e.returnValue = 'Masz niewyśłane dane georeferencji. Czy na pewno chcesz opuścić stronę?';
+            return e.returnValue;
+        }
+    });
+
+    // ===========================================
+    // 13. INITIALIZATION
+    // ===========================================
+
+    // Initial setup
+    restoreCollapsedState();
+    updateProgressSteps();
+    loadCavesData().then(() => {
+        // After caves are loaded, restore session
+        restoreSessionOnLoad();
+    });
+</script>
+
+</body>
+</html>
