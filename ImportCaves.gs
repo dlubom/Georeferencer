@@ -44,14 +44,8 @@ function importTatryCaves(jsonlData) {
       // Check if Tatry region
       const isTatry = cave.region && tatryRegions.some(r => cave.region.includes(r));
 
-      // Check if has plan images
-      const planImages = (cave.images || []).filter(img =>
-        img.metadata?.graphics_type_name === 'plan' ||
-        img.metadata?.graphics_type_name === 'plan i przekrój'
-      );
-
-      // Only import if: Tatry + has coordinates + has plan images
-      if (isTatry && cave.latitude && cave.longitude && planImages.length > 0) {
+      // Only import if: Tatry + has coordinates (plan images optional)
+      if (isTatry && cave.latitude && cave.longitude) {
         tatryCaves.push([
           cave.cave_id,
           cave.name,

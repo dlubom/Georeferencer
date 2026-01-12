@@ -104,7 +104,7 @@ Your project should now have two files:
 - disabled (all FALSE)
 - disabled_reason (empty)
 
-**Expected result:** Approximately 50-100 Tatry caves imported (exact number depends on the data source).
+**Expected result:** Approximately 860 Tatry caves imported (all caves from Tatry region with GPS coordinates).
 
 ### 4.3 Optional: Verify Import Stats
 
