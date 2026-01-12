@@ -4,12 +4,12 @@ Narzędzie webowe do georeferencji planów jaskiń. Pozwala przekształcić skan
 
 ## Wersje aplikacji
 
-**Crowdsourcing (produkcja):** [https://YOUR_GITHUB_USERNAME.github.io/Georeferencer/index.html](https://YOUR_GITHUB_USERNAME.github.io/Georeferencer/index.html)
+**Crowdsourcing (produkcja):** [https://dlubom.github.io/Georeferencer/index.html](https://dlubom.github.io/Georeferencer/index.html)
 - Zbieranie k=5 niezależnych wyników georeferencji dla każdej jaskini z Tatr
 - Przydzielanie jaskiń użytkownikom przez system
 - Zapisywanie wyników do Google Sheets
 
-**Debug (testy):** [https://YOUR_GITHUB_USERNAME.github.io/Georeferencer/debug.html](https://YOUR_GITHUB_USERNAME.github.io/Georeferencer/debug.html)
+**Debug (testy):** [https://dlubom.github.io/Georeferencer/debug.html](https://dlubom.github.io/Georeferencer/debug.html)
 - Ręczny wybór dowolnej jaskini z bazy
 - Wszystkie regiony (nie tylko Tatry)
 - Bez zapisywania do Google Sheets
@@ -39,7 +39,7 @@ Jeśli chcesz pomóc w projekcie georeferencji planów jaskiń Tatr:
 
 #### Proces (krok po kroku)
 
-1. **Wejdź na stronę:** [index.html](https://YOUR_GITHUB_USERNAME.github.io/Georeferencer/index.html)
+1. **Wejdź na stronę:** [index.html](https://dlubom.github.io/Georeferencer/index.html)
    - System wygeneruje Ci unikalny ID użytkownika (UUID) i zapisze w przeglądarce
 
 2. **Kliknij "🎲 Daj mi jaskinię"**
