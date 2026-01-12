@@ -432,13 +432,13 @@ Wysyłka do 50 osób.
 
 **Google Apps Script API Endpoint:**
 ```
-https://script.google.com/macros/s/AKfycbwNberPmCUz2p_rjv3Vi1Bjuw94VmrGPAGLJUNEZ_b8c1keTn0isYU2AoBP67Kpi2fXCg/exec
+https://script.google.com/macros/s/AKfycbyKQbzM_LbtFk13xWpEnRpcWur6hdGYDzd-m9wh4k52HSL18Us0rEUEXRJwzubnFaoQ8A/exec
 ```
 
 **Frontend (GitHub Pages):**
 ```
-Produkcja:   https://YOUR_GITHUB_USERNAME.github.io/Georeferencer/index.html
-Debug:       https://YOUR_GITHUB_USERNAME.github.io/Georeferencer/debug.html
+Produkcja:   https://dlubom.github.io/Georeferencer/index.html
+Debug:       https://dlubom.github.io/Georeferencer/debug.html
 ```
 
 **Google Sheets (dane):**
