@@ -57,11 +57,13 @@ function doPost(e) {
 
     // Parse request - support both JSON and form-encoded data
     let data;
-    if (e.postData && e.postData.contents) {
-      // JSON request (legacy)
+    const contentType = e.postData ? e.postData.type : '';
+
+    if (contentType === 'application/json') {
+      // JSON request
       data = JSON.parse(e.postData.contents);
     } else {
-      // Form-encoded request (new, avoids CORS preflight)
+      // Form-encoded request or GET parameters (avoids CORS preflight)
       data = e.parameter || {};
 
       // Parse JSON strings back to objects (for complex fields)
