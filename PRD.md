@@ -432,7 +432,7 @@ Wysyłka do 50 osób.
 
 **Google Apps Script API Endpoint:**
 ```
-https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID_HERE/exec
+https://script.google.com/macros/s/AKfycbwNberPmCUz2p_rjv3Vi1Bjuw94VmrGPAGLJUNEZ_b8c1keTn0isYU2AoBP67Kpi2fXCg/exec
 ```
 
 **Frontend (GitHub Pages):**
@@ -447,20 +447,15 @@ https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID_HERE/edit
 ```
 
 **Uwagi:**
-1. Po wdrożeniu należy zastąpić placeholdery w `index.html` (linia ~779):
-   ```javascript
-   API_ENDPOINT: 'https://script.google.com/macros/s/YOUR_ACTUAL_ID/exec'
-   ```
+1. Zaktualizować linki w `GEOREFERENCER.md` (linie 7, 12, 42) z rzeczywistą nazwą użytkownika GitHub po wdrożeniu na GitHub Pages.
 
-2. Zaktualizować linki w `GEOREFERENCER.md` (linie 7, 12, 42) z rzeczywistą nazwą użytkownika GitHub.
-
-3. Szczegółowe instrukcje wdrożenia znajdują się w `DEPLOYMENT.md` (500+ linii instrukcji krok po kroku).
+2. Szczegółowe instrukcje wdrożenia znajdują się w `DEPLOYMENT.md` (500+ linii instrukcji krok po kroku).
 
 **Następne kroki:**
-1. Wdrożyć backend według `DEPLOYMENT.md` (Steps 1-5)
-2. Zaktualizować `API_ENDPOINT` w `index.html`
+1. ✅ Wdrożyć backend według `DEPLOYMENT.md` (Steps 1-5)
+2. ✅ Zaktualizować `API_ENDPOINT` w `index.html`
 3. Wdrożyć frontend na GitHub Pages
-4. Przetestować workflow (Steps 7-8)
+4. Przetestować workflow (Steps 7-8 w DEPLOYMENT.md)
 5. Zebrać dane od 50 kontrybutorów
 
 **Metryki do monitorowania:**

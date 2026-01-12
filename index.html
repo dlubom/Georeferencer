@@ -800,7 +800,7 @@
         ENABLED: true,
 
         // API
-        API_ENDPOINT: 'https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec',
+        API_ENDPOINT: 'https://script.google.com/macros/s/AKfycbwNberPmCUz2p_rjv3Vi1Bjuw94VmrGPAGLJUNEZ_b8c1keTn0isYU2AoBP67Kpi2fXCg/exec',
         API_TIMEOUT: 30000,
         API_RETRY_ATTEMPTS: 2,
         API_RETRY_DELAY: 1000,
@@ -1526,7 +1526,7 @@
                 try {
                     const data = JSON.parse(line);
 
-                    // Filter for plan images
+                    // Filter for plan images (may be empty array)
                     const planImages = (data.images || []).filter(img =>
                         img.metadata?.graphics_type_name === 'plan' ||
                         img.metadata?.graphics_type_name === 'plan i przekrój'
@@ -1537,8 +1537,8 @@
                         data.region.includes(r)
                     );
 
-                    // Only include Tatry caves with valid coordinates and plan images
-                    if (planImages.length > 0 && data.latitude && data.longitude && isTatry) {
+                    // Include all Tatry caves with valid coordinates (plan images optional)
+                    if (data.latitude && data.longitude && isTatry) {
                         state.caves.push({
                             cave_id: data.cave_id,
                             name: data.name,
@@ -1562,7 +1562,7 @@
 
             populateCaveSelect(state.caves);
             document.getElementById('loadingOverlay').classList.add('hidden');
-            document.getElementById('caveCount').textContent = `${state.caves.length} jaskiń z planami`;
+            document.getElementById('caveCount').textContent = `${state.caves.length} jaskiń z Tatr`;
 
         } catch (error) {
             console.error('Failed to load caves data:', error);

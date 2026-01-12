@@ -1,0 +1,20 @@
+# Claude Code
+.claude/
+
+# macOS
+.DS_Store
+
+# Node modules (if added later)
+node_modules/
+
+# Environment variables
+.env
+.env.local
+
+# Editor directories
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
