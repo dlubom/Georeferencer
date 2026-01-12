@@ -432,7 +432,7 @@ Wysyłka do 50 osób.
 
 **Google Apps Script API Endpoint:**
 ```
-https://script.google.com/macros/s/AKfycbyKQbzM_LbtFk13xWpEnRpcWur6hdGYDzd-m9wh4k52HSL18Us0rEUEXRJwzubnFaoQ8A/exec
+https://script.google.com/macros/s/AKfycbyfNRkU-UGUQ3qh9MTgG1EzuISKfvj0BQjv5iIU-YTLsQS9sTifKVL7f4QFgzehrUzSyg/exec
 ```
 
 **Frontend (GitHub Pages):**
