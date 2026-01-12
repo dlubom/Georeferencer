@@ -55,8 +55,27 @@ function doPost(e) {
       });
     }
 
-    // Parse request
-    const data = JSON.parse(e.postData.contents);
+    // Parse request - support both JSON and form-encoded data
+    let data;
+    if (e.postData && e.postData.contents) {
+      // JSON request (legacy)
+      data = JSON.parse(e.postData.contents);
+    } else {
+      // Form-encoded request (new, avoids CORS preflight)
+      data = e.parameter || {};
+
+      // Parse JSON strings back to objects (for complex fields)
+      for (const key in data) {
+        if (typeof data[key] === 'string' && (data[key].startsWith('{') || data[key].startsWith('['))) {
+          try {
+            data[key] = JSON.parse(data[key]);
+          } catch (err) {
+            // Keep as string if not valid JSON
+          }
+        }
+      }
+    }
+
     const action = data.action;
 
     Logger.log('API Request: ' + action);
