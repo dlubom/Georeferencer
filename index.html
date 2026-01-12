@@ -970,16 +970,22 @@
 
     async function callApi(action, payload, retryCount = 0) {
         try {
+            // Use URLSearchParams to avoid CORS preflight (form-encoded instead of JSON)
+            const params = new URLSearchParams();
+            params.append('action', action);
+
+            // Flatten payload into URLSearchParams
+            for (const [key, value] of Object.entries(payload)) {
+                if (value !== null && value !== undefined) {
+                    params.append(key, typeof value === 'object' ? JSON.stringify(value) : value);
+                }
+            }
+
             const response = await fetch(getApiEndpoint(), {
                 method: 'POST',
-                mode: 'cors',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    action: action,
-                    ...payload
-                })
+                body: params
+                // No Content-Type header - browser will set it to application/x-www-form-urlencoded
+                // This avoids CORS preflight OPTIONS request
             });
 
             if (!response.ok) {
