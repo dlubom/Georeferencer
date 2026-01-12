@@ -1511,6 +1511,19 @@
 
                 updateAssignmentDisplay(assignment);
                 showToast('Przywrócono poprzednie przydzielenie', 'info');
+
+                // AUTO-LOAD first image on restore
+                if (state.selectedCave.plan_images.length > 0) {
+                    const firstImage = state.selectedCave.plan_images[0];
+                    const useOriginal = document.getElementById('useOriginal').checked;
+                    const imagePath = useOriginal ? firstImage.image_path_original : firstImage.image_path_upscaled;
+
+                    state.currentImagePath = imagePath;
+                    state.isFromGitHub = true;
+
+                    console.log('🖼️ Auto-loading image on restore:', GITHUB_RAW_BASE + imagePath);
+                    loadImage(GITHUB_RAW_BASE + imagePath);
+                }
             }
         }
 
