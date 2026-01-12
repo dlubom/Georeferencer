@@ -46,8 +46,12 @@ function importTatryCaves(jsonlData) {
 
       // Only import if: Tatry + has coordinates (plan images optional)
       if (isTatry && cave.latitude && cave.longitude) {
+        // Use inventory_number as cave_id (more stable, won't be converted to number)
+        // Fallback to cave_id if inventory_number is missing
+        const caveId = cave.inventory_number || cave.cave_id;
+
         tatryCaves.push([
-          cave.cave_id,
+          caveId,
           cave.name,
           cave.region,
           cave.latitude,

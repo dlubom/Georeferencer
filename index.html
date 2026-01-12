@@ -1545,8 +1545,12 @@
 
                     // Include all Tatry caves with valid coordinates (plan images optional)
                     if (data.latitude && data.longitude && isTatry) {
+                        // Use inventory_number as cave_id (matches backend)
+                        // Fallback to data.cave_id if inventory_number is missing
+                        const caveId = data.inventory_number || data.cave_id;
+
                         state.caves.push({
-                            cave_id: data.cave_id,
+                            cave_id: caveId,
                             name: data.name,
                             inventory_number: data.inventory_number || '',
                             region: data.region || '',
