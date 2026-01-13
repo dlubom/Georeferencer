@@ -67,7 +67,12 @@ function doPost(e) {
       data = e.parameter || {};
 
       // Parse JSON strings back to objects (for complex fields)
+      // EXCEPT for fields ending in _json which should stay as strings
       for (const key in data) {
+        if (key.endsWith('_json')) {
+          // Keep JSON fields as strings for proper storage in Sheets
+          continue;
+        }
         if (typeof data[key] === 'string' && (data[key].startsWith('{') || data[key].startsWith('['))) {
           try {
             data[key] = JSON.parse(data[key]);
@@ -316,9 +321,9 @@ function handleSubmit(data) {
       data.realScale_m || 0,
       data.declination_deg || 0,
       data.skipNorth || true,
-      data.proj4def || '',
+      "'" + (data.proj4def || ''),  // Prefix with ' to prevent Google Sheets formula interpretation
 
-      // Points geometry
+      // Points geometry (keep as JSON strings)
       data.points_canvas_json || '',
       data.points_orig_json || '',
 
