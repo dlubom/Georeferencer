@@ -622,12 +622,20 @@ function updateCounters(caveId, changes) {
       const rowIndex = i + 1;
 
       if (changes.n_submissions !== undefined) {
-        const currentValue = data[i][5] || 0;
+        let currentValue = data[i][5] || 0;
+        // Handle Google Sheets errors like #NUM!, #VALUE!, etc.
+        if (typeof currentValue !== 'number' || isNaN(currentValue)) {
+          currentValue = 0;
+        }
         cavesSheet.getRange(rowIndex, 6).setValue(currentValue + changes.n_submissions);
       }
 
       if (changes.n_open_assignments !== undefined) {
-        const currentValue = data[i][6] || 0;
+        let currentValue = data[i][6] || 0;
+        // Handle Google Sheets errors like #NUM!, #VALUE!, etc.
+        if (typeof currentValue !== 'number' || isNaN(currentValue)) {
+          currentValue = 0;
+        }
         cavesSheet.getRange(rowIndex, 7).setValue(Math.max(0, currentValue + changes.n_open_assignments));
       }
 
