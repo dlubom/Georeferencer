@@ -970,6 +970,8 @@
 
     async function callApi(action, payload, retryCount = 0) {
         try {
+            console.log(`📡 callApi: action=${action}, attempt=${retryCount + 1}`);
+
             // Use URLSearchParams to avoid CORS preflight (form-encoded instead of JSON)
             const params = new URLSearchParams();
             params.append('action', action);
@@ -981,6 +983,8 @@
                 }
             }
 
+            console.log(`📡 Sending ${params.toString().length} chars to ${getApiEndpoint()}`);
+
             const response = await fetch(getApiEndpoint(), {
                 method: 'POST',
                 body: params
@@ -988,11 +992,15 @@
                 // This avoids CORS preflight OPTIONS request
             });
 
+            console.log(`📡 Response status: ${response.status} ${response.statusText}`);
+
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status}: ${response.statusText}`);
             }
 
             const data = await response.json();
+
+            console.log(`📡 Response data:`, data);
 
             if (!data.ok) {
                 throw new Error(data.message || data.error || 'API returned error');
@@ -1001,14 +1009,16 @@
             return data;
 
         } catch (error) {
-            console.error(`API call failed (attempt ${retryCount + 1}):`, error);
+            console.error(`❌ API call failed (attempt ${retryCount + 1}):`, error);
 
             // Retry logic
             if (retryCount < CROWDSOURCE_CONFIG.API_RETRY_ATTEMPTS) {
+                console.log(`🔄 Retrying in ${CROWDSOURCE_CONFIG.API_RETRY_DELAY}ms...`);
                 await new Promise(resolve => setTimeout(resolve, CROWDSOURCE_CONFIG.API_RETRY_DELAY));
                 return callApi(action, payload, retryCount + 1);
             }
 
+            console.error(`❌ All retry attempts exhausted for action: ${action}`);
             throw error;
         }
     }
@@ -1063,13 +1073,35 @@
     }
 
     function buildSubmissionPayload() {
+        console.log('📦 buildSubmissionPayload: Validating state...');
+
         if (!state.currentAssignment || !state.transform || !state.calculatedMetrics) {
-            throw new Error('Missing required data for submission');
+            const missing = [];
+            if (!state.currentAssignment) missing.push('currentAssignment');
+            if (!state.transform) missing.push('transform');
+            if (!state.calculatedMetrics) missing.push('calculatedMetrics');
+            throw new Error('Missing required data for submission: ' + missing.join(', '));
+        }
+
+        if (!state.selectedCave) {
+            throw new Error('No cave selected');
+        }
+
+        if (!state.selectedCave.plan_images || state.selectedCave.plan_images.length === 0) {
+            throw new Error('No plan images available for selected cave');
         }
 
         const selectedImageIdx = parseInt(document.getElementById('imageSelect').value) || 0;
         const selectedImage = state.selectedCave.plan_images[selectedImageIdx];
+
+        if (!selectedImage) {
+            throw new Error(`No image at index ${selectedImageIdx}`);
+        }
+
         const useOriginal = document.getElementById('useOriginal').checked;
+
+        console.log('📦 Building payload for cave:', state.selectedCave.cave_id);
+        console.log('📦 Image:', selectedImage.description, 'at index', selectedImageIdx);
 
         // Generate GDAL command (extracted from showGdalCommand logic)
         const baseName = getBaseFileName();
@@ -1314,33 +1346,61 @@
     }
 
     async function handleSubmit() {
-        if (!state.currentAssignment || !state.transform || !state.calculatedMetrics) {
-            showToast('Brak wymaganych danych do wysłania', 'error');
-            return;
+        try {
+            console.log('🔍 handleSubmit: Starting validation...');
+
+            if (!state.currentAssignment || !state.transform || !state.calculatedMetrics) {
+                console.error('❌ Missing required data:', {
+                    assignment: !!state.currentAssignment,
+                    transform: !!state.transform,
+                    calculatedMetrics: !!state.calculatedMetrics
+                });
+                showToast('Brak wymaganych danych do wysłania', 'error');
+                return;
+            }
+
+            // Check assignment expiry
+            const expiryStatus = checkAssignmentExpiry();
+            if (expiryStatus === 'expired') {
+                console.error('❌ Assignment expired');
+                showToast('Przydzielenie wygasło. Pobierz nową jaskinię.', 'error');
+                clearCurrentAssignment();
+                updateAssignmentDisplay(null);
+                return;
+            }
+
+            if (!state.selectedCave || !state.selectedCave.plan_images) {
+                console.error('❌ No selected cave or images');
+                showToast('Brak wybranej jaskini lub obrazów', 'error');
+                return;
+            }
+
+            // Show confirmation modal
+            document.getElementById('submitCaveName').textContent = state.selectedCave.name;
+            const selectedImageIdx = parseInt(document.getElementById('imageSelect').value) || 0;
+            const selectedImage = state.selectedCave.plan_images[selectedImageIdx];
+
+            if (!selectedImage) {
+                console.error('❌ No image selected at index:', selectedImageIdx);
+                showToast('Nie wybrano obrazu', 'error');
+                return;
+            }
+
+            document.getElementById('submitImageName').textContent = selectedImage.description;
+            document.getElementById('submitScale').textContent =
+                `${state.calculatedMetrics.pixelsPerMeter.toFixed(2)} px/m`;
+            document.getElementById('submitRotation').textContent =
+                `${state.calculatedMetrics.totalAngleClockwise.toFixed(2)}°`;
+            document.getElementById('submitPoints').textContent =
+                `${state.points.length} punktów`;
+
+            console.log('✅ Validation passed, showing modal');
+            document.getElementById('submitModal').style.display = 'flex';
+
+        } catch (error) {
+            console.error('❌ handleSubmit error:', error);
+            showToast('Błąd przygotowania zgłoszenia: ' + error.message, 'error');
         }
-
-        // Check assignment expiry
-        const expiryStatus = checkAssignmentExpiry();
-        if (expiryStatus === 'expired') {
-            showToast('Przydzielenie wygasło. Pobierz nową jaskinię.', 'error');
-            clearCurrentAssignment();
-            updateAssignmentDisplay(null);
-            return;
-        }
-
-        // Show confirmation modal
-        document.getElementById('submitCaveName').textContent = state.selectedCave.name;
-        const selectedImageIdx = parseInt(document.getElementById('imageSelect').value) || 0;
-        const selectedImage = state.selectedCave.plan_images[selectedImageIdx];
-        document.getElementById('submitImageName').textContent = selectedImage.description;
-        document.getElementById('submitScale').textContent =
-            `${state.calculatedMetrics.pixelsPerMeter.toFixed(2)} px/m`;
-        document.getElementById('submitRotation').textContent =
-            `${state.calculatedMetrics.totalAngleClockwise.toFixed(2)}°`;
-        document.getElementById('submitPoints').textContent =
-            `${state.points.length} punktów`;
-
-        document.getElementById('submitModal').style.display = 'flex';
     }
 
     async function confirmSubmit() {
@@ -1348,14 +1408,18 @@
         const originalText = btn.innerHTML;
 
         try {
+            console.log('🚀 confirmSubmit: Starting submission...');
             state.isSubmitting = true;
             btn.innerHTML = '⏳ Wysyłanie...';
             btn.disabled = true;
 
             // Build payload
+            console.log('📦 Building submission payload...');
             const payload = buildSubmissionPayload();
+            console.log('✅ Payload built successfully, size:', JSON.stringify(payload).length, 'chars');
 
             // Submit to API
+            console.log('📡 Sending to API...');
             const result = await apiSubmit(payload);
 
             console.log('✅ Submission successful:', result);
