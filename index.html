@@ -1452,6 +1452,10 @@
                 document.getElementById('emptyState').style.display = 'block';
             }
 
+            // Reset button before closing modal
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+
             // Close modal
             document.getElementById('submitModal').style.display = 'none';
 
@@ -1460,7 +1464,7 @@
             refreshProgress();
 
         } catch (error) {
-            console.error('Submission failed:', error);
+            console.error('❌ Submission failed:', error);
 
             // Offer JSON download fallback
             if (confirm('Nie udało się wysłać do serwera. Czy chcesz pobrać dane jako JSON?')) {
