@@ -1599,7 +1599,7 @@
                             longitude: data.longitude,
                             plan_images: planImages.map(img => ({
                                 image_id: img.metadata?.graphics_id,
-                                image_path_upscaled: (img.image_path || '').replace('caves/', 'caves_upscaled/'),
+                                image_path_upscaled: (img.image_path || '').replace('caves/', 'caves_mono/'),
                                 image_path_original: img.image_path || '',
                                 description: img.description || 'plan',
                                 author: img.metadata?.author_name || ''
