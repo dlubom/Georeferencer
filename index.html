@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cave Plan Georeferencer</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.9.0/proj4.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/utif@3.1.0/UTIF.js"></script>
     <style>
         :root {
             --primary: #2563eb;
@@ -390,12 +389,6 @@
             font-size: 0.7rem;
         }
 
-        /* File input */
-        input[type="file"] {
-            font-size: 0.65rem;
-            padding: 4px;
-        }
-
         /* Help tooltip */
         .help-text {
             font-size: 0.55rem;
@@ -596,11 +589,6 @@
             <button id="loadCaveBtn" class="btn-primary" disabled>
                 <span>📂</span> Załaduj Plan z GitHub
             </button>
-            <div style="text-align: center; font-size: 0.65rem; color: var(--text-light);">— lub —</div>
-            <div class="input-group">
-                <label>Wgraj plan z dysku <span style="font-weight: normal;">(JPG, PNG, TIFF)</span></label>
-                <input type="file" id="fileInput" accept="image/*,.tif,.tiff">
-            </div>
         </div>
     </div>
 
@@ -823,9 +811,6 @@
         selectedCave: null,
         skipNorth: true,
         currentImagePath: null,
-        isFromGitHub: false,
-        localFileName: null,  // Name of locally uploaded file (without extension)
-        localFileBlob: null,  // Blob of locally uploaded file for re-download
 
         // Crowdsourcing fields
         userId: null,                    // UUID from localStorage
@@ -1293,7 +1278,6 @@
                 const imagePath = firstImage.image_path_upscaled;
 
                 state.currentImagePath = imagePath;
-                state.isFromGitHub = true;
 
                 console.log('🖼️ Auto-loading image:', GITHUB_RAW_BASE + imagePath);
                 loadImage(GITHUB_RAW_BASE + imagePath);
@@ -1551,7 +1535,6 @@
                     const imagePath = firstImage.image_path_upscaled;
 
                     state.currentImagePath = imagePath;
-                    state.isFromGitHub = true;
 
                     console.log('🖼️ Auto-loading image on restore:', GITHUB_RAW_BASE + imagePath);
                     loadImage(GITHUB_RAW_BASE + imagePath);
@@ -1664,104 +1647,9 @@
 
         // Store the image path for later use in commands
         state.currentImagePath = imagePath;
-        state.isFromGitHub = true;
 
         loadImage(GITHUB_RAW_BASE + imagePath);
     });
-
-    // Local file upload
-    document.getElementById('fileInput').addEventListener('change', (e) => {
-        const file = e.target.files[0];
-        if (!file) return;
-
-        // Store the local file info
-        state.currentImagePath = file.name;
-        state.isFromGitHub = false;
-
-        // Extract filename without extension for downloads
-        const lastDot = file.name.lastIndexOf('.');
-        state.localFileName = lastDot > 0 ? file.name.substring(0, lastDot) : file.name;
-
-        // Store blob for re-download with correct name
-        state.localFileBlob = file;
-
-        // Show loading overlay
-        document.getElementById('loadingOverlay').classList.remove('hidden');
-        document.getElementById('loadingOverlay').innerHTML = `
-            <div class="spinner"></div>
-            <div>Ładowanie planu z dysku...</div>
-            <div style="font-size: 0.8rem; opacity: 0.7; margin-top: 8px;">${file.name} (${(file.size / 1024 / 1024).toFixed(1)} MB)</div>
-        `;
-
-        // Check if file is TIFF
-        const ext = file.name.split('.').pop().toLowerCase();
-        if (ext === 'tif' || ext === 'tiff') {
-            // Use UTIF.js to decode TIFF
-            loadTiffFile(file);
-        } else {
-            // Use createObjectURL instead of base64 - more efficient for large files
-            const objectUrl = URL.createObjectURL(file);
-            loadImage(objectUrl, true);  // true = revoke URL after load
-        }
-    });
-
-    // TIFF file loading using UTIF.js
-    function loadTiffFile(file) {
-        const reader = new FileReader();
-
-        reader.onload = function(e) {
-            try {
-                const arrayBuffer = e.target.result;
-
-                // Decode TIFF
-                const ifds = UTIF.decode(arrayBuffer);
-                if (!ifds || ifds.length === 0) {
-                    throw new Error('Nie można odczytać pliku TIFF');
-                }
-
-                // Use first page
-                const page = ifds[0];
-                UTIF.decodeImage(arrayBuffer, page);
-
-                const width = page.width;
-                const height = page.height;
-                const rgba = UTIF.toRGBA8(page);
-
-                // Create canvas with decoded image data
-                const tempCanvas = document.createElement('canvas');
-                tempCanvas.width = width;
-                tempCanvas.height = height;
-                const tempCtx = tempCanvas.getContext('2d');
-                const imageData = tempCtx.createImageData(width, height);
-                imageData.data.set(new Uint8ClampedArray(rgba));
-                tempCtx.putImageData(imageData, 0, 0);
-
-                // Convert canvas to blob and then to object URL
-                tempCanvas.toBlob((blob) => {
-                    if (!blob) {
-                        document.getElementById('loadingOverlay').classList.add('hidden');
-                        alert('Błąd konwersji pliku TIFF');
-                        return;
-                    }
-
-                    const objectUrl = URL.createObjectURL(blob);
-                    loadImage(objectUrl, true);
-                }, 'image/png');
-
-            } catch (error) {
-                console.error('TIFF decode error:', error);
-                document.getElementById('loadingOverlay').classList.add('hidden');
-                alert('Błąd dekodowania TIFF: ' + error.message);
-            }
-        };
-
-        reader.onerror = function() {
-            document.getElementById('loadingOverlay').classList.add('hidden');
-            alert('Błąd odczytu pliku');
-        };
-
-        reader.readAsArrayBuffer(file);
-    }
 
     function loadImage(url, revokeAfterLoad = false) {
         document.getElementById('loadingOverlay').classList.remove('hidden');
@@ -1841,11 +1729,7 @@
                 URL.revokeObjectURL(url);
             }
             document.getElementById('loadingOverlay').classList.add('hidden');
-            if (state.isFromGitHub) {
-                alert('Nie udało się załadować obrazka. Sprawdź czy plik istnieje na GitHub.');
-            } else {
-                alert('Nie udało się załadować obrazka. Sprawdź format pliku (obsługiwane: JPG, PNG, TIFF).');
-            }
+            alert('Nie udało się załadować obrazka. Sprawdź czy plik istnieje na GitHub.');
         };
 
         state.img.src = url;
@@ -2354,11 +2238,7 @@
     document.getElementById('showGdalMonoCmd').addEventListener('click', showGdalMonoCommand);
 
     function getBaseFileName() {
-        // For local files, use the original filename
-        if (!state.isFromGitHub && state.localFileName) {
-            return state.localFileName;
-        }
-        // For GitHub files, use cave inventory number or ID
+        // Use cave inventory number or ID
         if (state.selectedCave) {
             return (state.selectedCave.inventory_number || state.selectedCave.cave_id).replace(/\//g, '_');
         }
@@ -2409,20 +2289,11 @@
             btn.innerHTML = '<span>⏳</span> Pobieranie...';
             btn.disabled = true;
 
-            let blob;
-
-            if (state.isFromGitHub) {
-                // Fetch from GitHub
-                const imageUrl = GITHUB_RAW_BASE + state.currentImagePath;
-                const response = await fetch(imageUrl);
-                if (!response.ok) throw new Error('Nie można pobrać obrazu');
-                blob = await response.blob();
-            } else if (state.localFileBlob) {
-                // Use stored local file blob
-                blob = state.localFileBlob;
-            } else {
-                throw new Error('Brak pliku do pobrania');
-            }
+            // Fetch from GitHub
+            const imageUrl = GITHUB_RAW_BASE + state.currentImagePath;
+            const response = await fetch(imageUrl);
+            if (!response.ok) throw new Error('Nie można pobrać obrazu');
+            const blob = await response.blob();
 
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
