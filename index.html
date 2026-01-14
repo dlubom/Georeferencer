@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cave Plan Georeferencer</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.9.0/proj4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/utif@3.1.0/UTIF.js"></script>
     <style>
         :root {
             --primary: #2563eb;
@@ -1658,6 +1659,61 @@
             <div>Ładowanie planu jaskini...</div>
         `;
 
+        // Check if URL is a TIFF file
+        const isTiff = url.toLowerCase().endsWith('.tif') || url.toLowerCase().endsWith('.tiff');
+
+        if (isTiff) {
+            // Fetch and decode TIFF using UTIF.js
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) throw new Error('Nie można pobrać pliku');
+                    return response.arrayBuffer();
+                })
+                .then(arrayBuffer => {
+                    const ifds = UTIF.decode(arrayBuffer);
+                    if (!ifds || ifds.length === 0) {
+                        throw new Error('Nie można odczytać pliku TIFF');
+                    }
+
+                    const page = ifds[0];
+                    UTIF.decodeImage(arrayBuffer, page);
+
+                    const width = page.width;
+                    const height = page.height;
+                    const rgba = UTIF.toRGBA8(page);
+
+                    // Create temporary canvas to convert TIFF data to image
+                    const tempCanvas = document.createElement('canvas');
+                    tempCanvas.width = width;
+                    tempCanvas.height = height;
+                    const tempCtx = tempCanvas.getContext('2d');
+                    const imageData = tempCtx.createImageData(width, height);
+                    imageData.data.set(new Uint8ClampedArray(rgba));
+                    tempCtx.putImageData(imageData, 0, 0);
+
+                    // Convert to blob and create image
+                    tempCanvas.toBlob((blob) => {
+                        if (!blob) {
+                            document.getElementById('loadingOverlay').classList.add('hidden');
+                            alert('Błąd konwersji pliku TIFF');
+                            return;
+                        }
+
+                        const objectUrl = URL.createObjectURL(blob);
+                        loadImageFromUrl(objectUrl, true);
+                    }, 'image/png');
+                })
+                .catch(error => {
+                    console.error('TIFF load error:', error);
+                    document.getElementById('loadingOverlay').classList.add('hidden');
+                    alert('Nie udało się załadować pliku TIFF: ' + error.message);
+                });
+        } else {
+            loadImageFromUrl(url, revokeAfterLoad);
+        }
+    }
+
+    function loadImageFromUrl(url, revokeAfterLoad = false) {
         state.img = new Image();
         state.img.crossOrigin = 'anonymous';
 
