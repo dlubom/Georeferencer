@@ -141,21 +141,9 @@
             gap: 8px;
         }
 
-        /* Search */
-        #searchInput {
-            padding-left: 30px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'/%3E%3C/svg%3E") no-repeat 8px center;
-            background-size: 14px;
-        }
-
-        #caveSelect {
-            max-height: 80px;
-        }
-
-        .cave-count {
+        /* Image select */
+        #imageSelect {
             font-size: 0.7rem;
-            color: var(--text-light);
-            text-align: right;
         }
 
         /* Buttons */
@@ -592,32 +580,19 @@
         </div>
     </div>
 
-    <!-- Cave Search Section -->
+    <!-- Plan Selection Section -->
     <div class="section">
         <div class="section-header" onclick="toggleSection(this)">
-            <span>📍</span> Wybór Jaskini
+            <span>🗺️</span> Wybór Planu
             <span class="toggle-icon">▼</span>
         </div>
         <div class="section-body">
             <div class="input-group">
-                <input type="text" id="searchInput" placeholder="Szukaj po nazwie lub ID...">
-            </div>
-            <div class="input-group">
-                <select id="caveSelect" size="6">
-                    <option value="">-- Wybierz jaskinię --</option>
-                </select>
-                <div class="cave-count" id="caveCount">Ładowanie...</div>
-            </div>
-            <div class="input-group">
                 <label>Plan do georeferencji</label>
                 <select id="imageSelect" disabled>
-                    <option value="">-- Najpierw wybierz jaskinię --</option>
+                    <option value="">-- Najpierw przydziel jaskinię --</option>
                 </select>
             </div>
-            <label class="checkbox-wrapper">
-                <input type="checkbox" id="useOriginal">
-                <span>Użyj oryginału (mniejszy, szybszy)</span>
-            </label>
             <button id="loadCaveBtn" class="btn-primary" disabled>
                 <span>📂</span> Załaduj Plan z GitHub
             </button>
@@ -660,10 +635,6 @@
                 <input type="checkbox" id="skipNorth" checked>
                 <span>Pomiń strzałkę północy (domyślnie 0°)</span>
             </label>
-            <div class="input-group">
-                <label>Definicja projekcji (PROJ4)</label>
-                <input type="text" id="proj4Def" value="+proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs" style="font-size: 0.6rem; font-family: monospace;">
-            </div>
         </div>
     </div>
 
@@ -787,8 +758,8 @@
     proj4.defs("EPSG:2180", DEFAULT_PROJ4_DEF);
 
     function updateProj4Definition() {
-        const def = document.getElementById('proj4Def').value.trim() || DEFAULT_PROJ4_DEF;
-        proj4.defs("EPSG:2180", def);
+        // Use default PL-1992 definition
+        proj4.defs("EPSG:2180", DEFAULT_PROJ4_DEF);
     }
 
     // ===========================================
@@ -1098,8 +1069,6 @@
             throw new Error(`No image at index ${selectedImageIdx}`);
         }
 
-        const useOriginal = document.getElementById('useOriginal').checked;
-
         console.log('📦 Building payload for cave:', state.selectedCave.cave_id);
         console.log('📦 Image:', selectedImage.description, 'at index', selectedImageIdx);
 
@@ -1117,13 +1086,13 @@
             user_id: getUserId(),
             cave_id: state.selectedCave.cave_id,
 
-            // Selected plan
+            // Selected plan - always use upscaled
             image_id: selectedImage.image_id,
             image_path_original: selectedImage.image_path_original,
             image_path_upscaled: selectedImage.image_path_upscaled,
-            image_used_path: useOriginal ? selectedImage.image_path_original : selectedImage.image_path_upscaled,
+            image_used_path: selectedImage.image_path_upscaled,
             image_selected_index: selectedImageIdx,
-            use_original: useOriginal,
+            use_original: false,
             image_description: selectedImage.description,
             image_author: selectedImage.author,
 
@@ -1296,8 +1265,7 @@
                 throw new Error('Cave not found in loaded data');
             }
 
-            // Auto-populate cave selection UI
-            document.getElementById('caveSelect').value = data.cave_id;
+            // Auto-populate coordinates
             document.getElementById('lat').value = state.selectedCave.latitude.toFixed(6);
             document.getElementById('lon').value = state.selectedCave.longitude.toFixed(6);
 
@@ -1319,11 +1287,10 @@
 
             console.log('✅ Assignment successful:', data.cave_id);
 
-            // AUTO-LOAD first image
+            // AUTO-LOAD first image - always use upscaled
             if (state.selectedCave.plan_images.length > 0) {
                 const firstImage = state.selectedCave.plan_images[0];
-                const useOriginal = document.getElementById('useOriginal').checked;
-                const imagePath = useOriginal ? firstImage.image_path_original : firstImage.image_path_upscaled;
+                const imagePath = firstImage.image_path_upscaled;
 
                 state.currentImagePath = imagePath;
                 state.isFromGitHub = true;
@@ -1438,8 +1405,7 @@
             // Reset UI
             document.getElementById('resultsPanel').classList.remove('visible');
             document.getElementById('submitToSheetsBtn').style.display = 'none';
-            document.getElementById('caveSelect').value = '';
-            document.getElementById('imageSelect').innerHTML = '<option value="">-- Najpierw wybierz jaskinię --</option>';
+            document.getElementById('imageSelect').innerHTML = '<option value="">-- Najpierw przydziel jaskinię --</option>';
             document.getElementById('imageSelect').disabled = true;
             updateAssignmentDisplay(null);
             updateInstructions();
@@ -1561,7 +1527,6 @@
 
             if (state.selectedCave) {
                 // Update UI to reflect assignment
-                document.getElementById('caveSelect').value = assignment.cave_id;
                 document.getElementById('lat').value = state.selectedCave.latitude.toFixed(6);
                 document.getElementById('lon').value = state.selectedCave.longitude.toFixed(6);
 
@@ -1580,11 +1545,10 @@
                 updateAssignmentDisplay(assignment);
                 showToast('Przywrócono poprzednie przydzielenie', 'info');
 
-                // AUTO-LOAD first image on restore
+                // AUTO-LOAD first image on restore - always use upscaled
                 if (state.selectedCave.plan_images.length > 0) {
                     const firstImage = state.selectedCave.plan_images[0];
-                    const useOriginal = document.getElementById('useOriginal').checked;
-                    const imagePath = useOriginal ? firstImage.image_path_original : firstImage.image_path_upscaled;
+                    const imagePath = firstImage.image_path_upscaled;
 
                     state.currentImagePath = imagePath;
                     state.isFromGitHub = true;
@@ -1664,9 +1628,8 @@
                 }
             }
 
-            populateCaveSelect(state.caves);
             document.getElementById('loadingOverlay').classList.add('hidden');
-            document.getElementById('caveCount').textContent = `${state.caves.length} jaskiń z Tatr`;
+            console.log(`Loaded ${state.caves.length} caves from Tatry region`);
 
         } catch (error) {
             console.error('Failed to load caves data:', error);
@@ -1681,82 +1644,8 @@
         }
     }
 
-    function populateCaveSelect(caves) {
-        const select = document.getElementById('caveSelect');
-        select.innerHTML = '<option value="">-- Wybierz jaskinię --</option>';
-
-        caves.forEach(cave => {
-            const option = document.createElement('option');
-            option.value = cave.cave_id;
-            option.textContent = `${cave.cave_id} - ${cave.name}`;
-            if (cave.inventory_number) {
-                option.textContent += ` (${cave.inventory_number})`;
-            }
-            select.appendChild(option);
-        });
-    }
-
     // ===========================================
-    // 3. SEARCH & FILTERING
-    // ===========================================
-
-    document.getElementById('searchInput').addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase().trim();
-
-        if (!query) {
-            populateCaveSelect(state.caves);
-            return;
-        }
-
-        const filtered = state.caves.filter(cave =>
-            cave.cave_id.toLowerCase().includes(query) ||
-            cave.name.toLowerCase().includes(query) ||
-            cave.inventory_number.toLowerCase().includes(query)
-        );
-
-        populateCaveSelect(filtered);
-        document.getElementById('caveCount').textContent = `${filtered.length} z ${state.caves.length} jaskiń`;
-    });
-
-    // ===========================================
-    // 4. CAVE SELECTION
-    // ===========================================
-
-    document.getElementById('caveSelect').addEventListener('change', (e) => {
-        const caveId = e.target.value;
-        if (!caveId) {
-            state.selectedCave = null;
-            document.getElementById('imageSelect').disabled = true;
-            document.getElementById('imageSelect').innerHTML = '<option value="">-- Najpierw wybierz jaskinię --</option>';
-            document.getElementById('loadCaveBtn').disabled = true;
-            return;
-        }
-
-        state.selectedCave = state.caves.find(c => c.cave_id === caveId);
-
-        if (state.selectedCave) {
-            // Populate image select
-            const imageSelect = document.getElementById('imageSelect');
-            imageSelect.innerHTML = '';
-            imageSelect.disabled = false;
-
-            state.selectedCave.plan_images.forEach((img, idx) => {
-                const option = document.createElement('option');
-                option.value = idx;
-                option.textContent = `${img.description}${img.author ? ' - ' + img.author : ''}`;
-                imageSelect.appendChild(option);
-            });
-
-            // Fill coordinates
-            document.getElementById('lat').value = state.selectedCave.latitude.toFixed(6);
-            document.getElementById('lon').value = state.selectedCave.longitude.toFixed(6);
-
-            document.getElementById('loadCaveBtn').disabled = false;
-        }
-    });
-
-    // ===========================================
-    // 5. IMAGE LOADING
+    // 3. IMAGE LOADING
     // ===========================================
 
     document.getElementById('loadCaveBtn').addEventListener('click', () => {
@@ -1770,9 +1659,8 @@
             return;
         }
 
-        // Choose upscaled or original based on checkbox
-        const useOriginal = document.getElementById('useOriginal').checked;
-        const imagePath = useOriginal ? img.image_path_original : img.image_path_upscaled;
+        // Always use upscaled version
+        const imagePath = img.image_path_upscaled;
 
         // Store the image path for later use in commands
         state.currentImagePath = imagePath;
@@ -2235,11 +2123,8 @@
     // ===========================================
 
     // Reactive recalculation on input changes
-    ['lat', 'lon', 'realScale', 'declination', 'proj4Def'].forEach(id => {
+    ['lat', 'lon', 'realScale', 'declination'].forEach(id => {
         document.getElementById(id).addEventListener('input', () => {
-            if (id === 'proj4Def') {
-                updateProj4Definition();
-            }
             if (state.transform) {
                 recalculate();
             }
@@ -2429,7 +2314,7 @@
             realScale: realScale,
             declination: declination,
             skipNorth: state.skipNorth,
-            proj4def: document.getElementById('proj4Def').value.trim(),
+            proj4def: DEFAULT_PROJ4_DEF,
 
             // Projection results
             worldX: worldX,
