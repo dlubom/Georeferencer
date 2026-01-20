@@ -620,6 +620,12 @@
                     <input type="number" id="declination" value="0" step="0.1">
                 </div>
             </div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Odległość siatki (m)</label>
+                    <input type="number" id="gridCellDistance" value="10" min="0.1" step="0.1" placeholder="np. 10">
+                </div>
+            </div>
             <label class="checkbox-wrapper">
                 <input type="checkbox" id="skipNorth" checked>
                 <span>Pomiń strzałkę północy (domyślnie 0°)</span>
@@ -685,6 +691,28 @@
             <div class="progress-step"></div>
             <div class="progress-step"></div>
             <div class="progress-step"></div>
+        </div>
+    </div>
+
+    <!-- Grid Control Panel -->
+    <div id="gridControlPanel" class="section" style="display: none;">
+        <div class="section-header">
+            <span>📐</span> Siatka Współrzędnych
+        </div>
+        <div class="section-body">
+            <div style="font-size: 0.7rem; color: var(--text-light); margin-bottom: 8px;">
+                Zaznaczone punkty: <span id="gridPointCount" style="font-weight: 600; color: var(--bg-dark);">0</span>
+            </div>
+            <button id="doneGridBtn" class="btn-success" style="width: 100%;">
+                <span>✅</span> Zakończ z siatką
+            </button>
+            <button id="noGridBtn" class="btn-outline" style="width: 100%; margin-top: 6px;">
+                <span>⊘</span> Brak siatki
+            </button>
+            <textarea id="gridNote" placeholder="Uwagi o siatce (opcjonalnie)"
+                      style="width: 100%; margin-top: 6px; padding: 6px; font-size: 0.7rem;
+                             border: 1px solid var(--border); border-radius: 4px;
+                             resize: vertical; min-height: 50px;"></textarea>
         </div>
     </div>
 
@@ -760,7 +788,7 @@
         ENABLED: true,
 
         // API
-        API_ENDPOINT: 'https://script.google.com/macros/s/AKfycbyOOLbLFWRfbzURcg5POuqpSDhIVOyP0O7rDq6i-fg5QGThsGU2AcwT6EiJeVXo3dAHfg/exec',
+        API_ENDPOINT: 'https://script.google.com/macros/s/AKfycbwg1648hx4bBBWekRAnn6nqaw17axVabtsi0wnhD71fa-THLfXoI6jkwfA65uWc9R3Cfg/exec',
         API_TIMEOUT: 30000,
         API_RETRY_ATTEMPTS: 2,
         API_RETRY_DELAY: 1000,
@@ -819,7 +847,14 @@
         calculatedMetrics: null,         // Store intermediate calculation values
         appVersion: CROWDSOURCE_CONFIG.APP_VERSION,
         isSubmitting: false,             // Prevent double-submit
-        lastProgress: null               // Cache progress data
+        lastProgress: null,              // Cache progress data
+
+        // Grid-related fields
+        isGridStep: false,               // Flag indicating we're in grid marking mode
+        gridPoints: [],                  // Array of {x, y} canvas coordinates for grid intersections
+        gridCellDistance: 0,             // Grid cell distance in meters (from input field)
+        gridNote: '',                    // Optional note/comment about grid
+        hasGrid: null                    // true = has grid, false = no grid, null = not yet determined
     };
 
     // DOM elements
@@ -1113,6 +1148,14 @@
             convergence_deg: state.calculatedMetrics.convergenceDeg,
             total_deg: state.calculatedMetrics.totalAngleClockwise,
 
+            // Grid data
+            grid_cell_distance_m: state.gridCellDistance || 0,
+            grid_points_canvas_json: JSON.stringify(state.gridPoints),
+            grid_points_orig_json: JSON.stringify(convertGridPointsToOriginal()),
+            grid_point_count: state.gridPoints.length,
+            has_grid: state.hasGrid,
+            grid_note: state.gridNote || '',
+
             // Telemetry
             ...collectClientTelemetry(),
 
@@ -1122,6 +1165,14 @@
             freeform_comment: null,
             errors_json: null
         };
+    }
+
+    function convertGridPointsToOriginal() {
+        const ds = state.displayScale || 1;
+        return state.gridPoints.map(p => ({
+            x: p.x / ds,
+            y: p.y / ds
+        }));
     }
 
     function buildSkipPayload(reason) {
@@ -1868,15 +1919,24 @@
     canvas.addEventListener('mousedown', (e) => {
         if (e.button !== 0 || e.shiftKey) return;
 
-        const maxSteps = state.skipNorth ? 3 : 5;
-        if (state.step === 0 || state.step > maxSteps) return;
-
         const rect = canvas.getBoundingClientRect();
         const scaleX = canvas.width / rect.width;
         const scaleY = canvas.height / rect.height;
 
         const x = (e.clientX - rect.left) * scaleX;
         const y = (e.clientY - rect.top) * scaleY;
+
+        // Grid mode: add to grid points
+        if (state.isGridStep) {
+            state.gridPoints.push({ x, y });
+            updateGridPointCount();
+            draw();
+            return;
+        }
+
+        // Regular control point mode
+        const maxSteps = state.skipNorth ? 3 : 5;
+        if (state.step === 0 || state.step > maxSteps) return;
 
         state.points.push({ x, y });
         nextStep();
@@ -1929,7 +1989,7 @@
             updateInstructions();
             updateProgressSteps();
         } else {
-            calculate();
+            enterGridStep();  // Enter grid marking mode instead of calculating immediately
         }
     }
 
@@ -1939,6 +1999,7 @@
             "Kliknij OTWÓR WEJŚCIOWY",
             "Kliknij POCZĄTEK SKALI",
             "Kliknij KONIEC SKALI",
+            "Zaznacz PUNKTY PRZECIĘCIA SIATKI",
             "Gotowe!"
         ] : [
             "Wybierz jaskinię aby rozpocząć",
@@ -1947,17 +2008,25 @@
             "Kliknij KONIEC SKALI",
             "Kliknij BAZĘ STRZAŁKI PÓŁNOCY",
             "Kliknij GROT STRZAŁKI PÓŁNOCY",
+            "Zaznacz PUNKTY PRZECIĘCIA SIATKI",
             "Gotowe!"
         ];
 
         const maxSteps = state.skipNorth ? 3 : 5;
         const panel = document.getElementById('instructionPanel');
 
-        document.getElementById('currentStep').textContent = Math.min(state.step, maxSteps);
-        document.getElementById('totalSteps').textContent = maxSteps;
-        document.getElementById('instructionText').textContent = instructions[state.step] || instructions[0];
+        // If in grid step, show grid instruction
+        if (state.isGridStep) {
+            document.getElementById('currentStep').textContent = maxSteps + 1;
+            document.getElementById('totalSteps').textContent = maxSteps + 1;
+            document.getElementById('instructionText').textContent = instructions[maxSteps + 1];
+        } else {
+            document.getElementById('currentStep').textContent = Math.min(state.step, maxSteps);
+            document.getElementById('totalSteps').textContent = maxSteps;
+            document.getElementById('instructionText').textContent = instructions[state.step] || instructions[0];
+        }
 
-        if (state.step > maxSteps) {
+        if (state.step > maxSteps && !state.isGridStep) {
             panel.classList.add('complete');
         } else {
             panel.classList.remove('complete');
@@ -1976,6 +2045,31 @@
             if (i === state.step) step.classList.add('current');
             container.appendChild(step);
         }
+    }
+
+    // Grid step management functions
+    function enterGridStep() {
+        state.isGridStep = true;
+        state.gridPoints = [];
+        state.hasGrid = null;
+
+        // Show grid control panel
+        document.getElementById('gridControlPanel').style.display = 'block';
+
+        // Update instructions
+        updateInstructions();
+        updateProgressSteps();
+
+        console.log('Entered grid marking mode');
+    }
+
+    function exitGridStep() {
+        state.isGridStep = false;
+        document.getElementById('gridControlPanel').style.display = 'none';
+    }
+
+    function updateGridPointCount() {
+        document.getElementById('gridPointCount').textContent = state.gridPoints.length;
     }
 
     // ===========================================
@@ -2055,6 +2149,31 @@
             ctx.strokeStyle = '#3b82f6';
             ctx.lineWidth = 3;
             ctx.stroke();
+        }
+
+        // Draw grid points (cyan color)
+        if (state.gridPoints.length > 0) {
+            state.gridPoints.forEach((p, idx) => {
+                // Circle
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, 8, 0, Math.PI * 2);
+                ctx.fillStyle = '#06b6d4'; // Cyan
+                ctx.fill();
+                ctx.strokeStyle = '#000';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+
+                // Number label inside circle
+                ctx.fillStyle = '#fff';
+                ctx.font = 'bold 10px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText(idx + 1, p.x, p.y + 4);
+
+                // "S" prefix label above
+                ctx.fillStyle = '#fff';
+                ctx.font = '10px sans-serif';
+                ctx.fillText('S' + (idx + 1), p.x, p.y - 15);
+            });
         }
     }
 
@@ -2476,6 +2595,15 @@
     });
 
     document.getElementById('undoBtn').addEventListener('click', () => {
+        // If in grid mode, remove last grid point
+        if (state.isGridStep && state.gridPoints.length > 0) {
+            state.gridPoints.pop();
+            updateGridPointCount();
+            draw();
+            return;
+        }
+
+        // Remove last control point
         if (state.points.length > 0) {
             state.points.pop();
             state.step = Math.max(1, state.step - 1);
@@ -2496,6 +2624,32 @@
         updateInstructions();
         updateProgressSteps();
         draw();
+    });
+
+    // Grid control buttons
+    document.getElementById('doneGridBtn').addEventListener('click', () => {
+        const gridDist = parseFloat(document.getElementById('gridCellDistance').value);
+
+        // Validation
+        if (state.gridPoints.length > 0 && (!gridDist || gridDist <= 0)) {
+            alert('Wprowadź odległość między liniami siatki w metrach');
+            document.getElementById('gridCellDistance').focus();
+            return;
+        }
+
+        state.hasGrid = state.gridPoints.length > 0;
+        state.gridCellDistance = gridDist;
+        state.gridNote = document.getElementById('gridNote').value;
+        exitGridStep();
+        calculate();
+    });
+
+    document.getElementById('noGridBtn').addEventListener('click', () => {
+        state.hasGrid = false;
+        state.gridPoints = [];
+        state.gridNote = document.getElementById('gridNote').value || 'Brak siatki na planie';
+        exitGridStep();
+        calculate();
     });
 
     // ===========================================

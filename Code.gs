@@ -344,6 +344,14 @@ function handleSubmit(data) {
       data.convergence_deg || 0,
       data.total_deg || 0,
 
+      // Grid data
+      data.grid_cell_distance_m || 0,
+      data.grid_points_canvas_json || '',
+      data.grid_points_orig_json || '',
+      data.grid_point_count || 0,
+      data.has_grid !== undefined ? data.has_grid : null,
+      data.grid_note || '',
+
       // Telemetry
       data.app_version || '',
       data.client_time_iso || '',
@@ -730,12 +738,15 @@ function setupSheets() {
     'A', 'D', 'B', 'E', 'C', 'F', 'worldfile_ext', 'worldfile_text', 'gdal_cmd_standard',
     // Calculated metrics
     'pixels_per_meter', 'north_deg', 'convergence_deg', 'total_deg',
+    // Grid data
+    'grid_cell_distance_m', 'grid_points_canvas_json', 'grid_points_orig_json',
+    'grid_point_count', 'has_grid', 'grid_note',
     // Telemetry
     'app_version', 'client_time_iso', 'tz', 'user_agent', 'screen_w', 'screen_h',
     // Status
     'submit_type', 'skip_reason', 'freeform_comment', 'errors_json'
   ]);
-  sheet.getRange(1, 1, 1, 48).setFontWeight('bold').setBackground('#ea4335').setFontColor('white');
+  sheet.getRange(1, 1, 1, 54).setFontWeight('bold').setBackground('#ea4335').setFontColor('white');
 
   Logger.log('✅ Sheet structure created successfully');
 }
