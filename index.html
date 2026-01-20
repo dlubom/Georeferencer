@@ -502,6 +502,7 @@
                 <span style="color: var(--text-light);">Skala:</span><span id="submitScale"></span>
                 <span style="color: var(--text-light);">Obrót:</span><span id="submitRotation"></span>
                 <span style="color: var(--text-light);">Punkty:</span><span id="submitPoints"></span>
+                <span style="color: var(--text-light);">Siatka:</span><span id="submitGrid"></span>
             </div>
         </div>
         <div class="modal-buttons">
@@ -1396,6 +1397,14 @@
                 `${state.calculatedMetrics.totalAngleClockwise.toFixed(2)}°`;
             document.getElementById('submitPoints').textContent =
                 `${state.points.length} punktów`;
+
+            // Grid information
+            if (state.hasGrid && state.gridPoints.length > 0) {
+                document.getElementById('submitGrid').textContent =
+                    `${state.gridPoints.length} punktów (${state.gridCellDistance}m)`;
+            } else {
+                document.getElementById('submitGrid').textContent = 'Brak';
+            }
 
             console.log('✅ Validation passed, showing modal');
             document.getElementById('submitModal').style.display = 'flex';
