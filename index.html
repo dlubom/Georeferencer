@@ -1443,6 +1443,7 @@
             state.transform = null;
             state.calculatedMetrics = null;
             state.selectedCave = null;
+            clearGridState();  // Clear grid state
 
             // Reset UI
             document.getElementById('resultsPanel').classList.remove('visible');
@@ -1529,6 +1530,7 @@
             state.step = 0;
             state.points = [];
             state.transform = null;
+            clearGridState();  // Clear grid state
 
             // Reset UI
             document.getElementById('skipModal').style.display = 'none';
@@ -1817,6 +1819,7 @@
             state.scaleFactor = 1;
             state.panX = 0;
             state.panY = 0;
+            clearGridState();  // Clear grid state from previous cave
 
             // Fit image to view
             fitImageToView();
@@ -2072,6 +2075,19 @@
     function exitGridStep() {
         state.isGridStep = false;
         document.getElementById('gridControlPanel').style.display = 'none';
+    }
+
+    // Clear all grid state - call when transitioning between caves
+    function clearGridState() {
+        state.isGridStep = false;
+        state.gridPoints = [];
+        state.gridCellDistance = 0;
+        state.gridNote = '';
+        state.hasGrid = null;
+        document.getElementById('gridControlPanel').style.display = 'none';
+        document.getElementById('gridNote').value = '';
+        document.getElementById('gridCellDistance').value = '10';
+        console.log('Grid state cleared');
     }
 
     function updateGridPointCount() {
@@ -2625,6 +2641,7 @@
         state.step = 1;
         state.points = [];
         state.transform = null;
+        clearGridState();  // Clear grid state
         document.getElementById('resultsPanel').classList.remove('visible');
         document.getElementById('submitToSheetsBtn').style.display = 'none';
         updateInstructions();
