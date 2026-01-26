@@ -129,17 +129,6 @@
 
         input[type="number"] { font-variant-numeric: tabular-nums; }
 
-        #realScale.highlight-required {
-            border-color: #f59e0b;
-            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.3);
-            animation: pulse-border 1.5s ease-in-out infinite;
-        }
-
-        @keyframes pulse-border {
-            0%, 100% { box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.3); }
-            50% { box-shadow: 0 0 0 5px rgba(245, 158, 11, 0.5); }
-        }
-
         .input-group {
             display: flex;
             flex-direction: column;
@@ -523,28 +512,6 @@
     </div>
 </div>
 
-<!-- Grid Question Modal -->
-<div id="gridQuestionModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 2000; align-items: center; justify-content: center;">
-    <div class="modal-content">
-        <h3>📐 Siatka współrzędnych</h3>
-        <p style="font-size: 0.9rem; color: var(--text); margin-bottom: 16px;">
-            Czy plan zawiera siatkę współrzędnych?
-        </p>
-        <div class="input-group" id="gridDistanceInputGroup" style="display: none; margin-bottom: 12px;">
-            <label>Odległość między liniami siatki (m)</label>
-            <input type="number" id="gridDialogDistance" min="0.1" step="0.1" placeholder="np. 10">
-        </div>
-        <div class="modal-buttons" style="flex-direction: column; gap: 8px;">
-            <button class="btn-success" id="gridYesBtn" style="width: 100%;">
-                <span>✅</span> Tak - zaznaczę punkty siatki
-            </button>
-            <button class="btn-outline" id="gridNoBtn" style="width: 100%;">
-                <span>⊘</span> Nie - plan nie ma siatki
-            </button>
-        </div>
-    </div>
-</div>
-
 <!-- Toast Notification -->
 <div id="toast" style="display: none; position: fixed; bottom: 20px; right: 20px; background: white; padding: 12px 16px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 3000; max-width: 300px; border-left: 4px solid var(--success);">
     <div id="toastMessage" style="font-size: 0.85rem; color: var(--bg-dark);"></div>
@@ -605,10 +572,6 @@
             <button id="skipCaveBtn" class="btn-outline btn-small" style="width: 100%; margin-top: 6px; display: none;">
                 <span>🔄</span> Pomiń tę jaskinię
             </button>
-            <hr style="margin: 8px 0; border: none; border-top: 1px dashed var(--border);">
-            <button id="manualSelectBtn" class="btn-outline btn-small" style="width: 100%;">
-                <span>🔧</span> Tryb zaawansowany
-            </button>
         </div>
     </div>
 
@@ -651,27 +614,18 @@
             <div class="input-row">
                 <div class="input-group">
                     <label>Długość skali (m)</label>
-                    <input type="number" id="realScale" min="0.1" step="0.1" placeholder="np. 50">
+                    <input type="number" id="realScale" value="50" min="0.1" step="0.1">
                 </div>
-                <div class="input-group" style="display: none;">
+                <div class="input-group">
                     <label>Odległość siatki (m)</label>
                     <input type="number" id="gridCellDistance" value="10" min="0.1" step="0.1" placeholder="np. 10">
                 </div>
-            </div>
-            <!-- Panel potwierdzenia skali (ukryty) -->
-            <div id="scaleConfirmPanel" style="display: none; margin-top: 8px; padding: 8px; background: #fef3c7; border: 2px solid #f59e0b; border-radius: 6px;">
-                <div style="font-size: 0.75rem; color: #92400e; margin-bottom: 6px; font-weight: 600;">
-                    Wprowadź i potwierdź długość skali (m):
-                </div>
-                <button id="confirmScaleBtn" class="btn-success" style="width: 100%;">
-                    <span>✓</span> Potwierdź skalę
-                </button>
             </div>
             <div class="input-group" style="display: none;">
                 <input type="number" id="declination" value="0" step="0.1">
             </div>
             <label class="checkbox-wrapper">
-                <input type="checkbox" id="skipNorth">
+                <input type="checkbox" id="skipNorth" checked>
                 <span>Pomiń strzałkę północy (domyślnie 0°)</span>
             </label>
         </div>
@@ -702,7 +656,10 @@
                     <div class="label">Całkowity obrót</div>
                 </div>
             </div>
-            <div class="btn-group" style="display: flex; gap: 6px; margin-bottom: 8px;">
+            <button id="submitToSheetsBtn" class="btn-success" style="width: 100%; display: none; margin-bottom: 8px; padding: 8px; font-size: 0.8rem;">
+                <span>📤</span> Wyślij do Google Sheets
+            </button>
+            <div class="btn-group" style="display: flex; gap: 6px;">
                 <button id="downloadImageBtn" class="btn-outline" style="flex: 1;" disabled>
                     <span>🖼️</span> Obraz
                 </button>
@@ -710,9 +667,6 @@
                     <span>⬇️</span> World File
                 </button>
             </div>
-            <button id="submitToSheetsBtn" class="btn-success" style="width: 100%; display: none; margin-bottom: 8px; padding: 8px; font-size: 0.8rem;">
-                <span>📤</span> Wyślij do Google Sheets
-            </button>
             <button id="showGdalMonoCmd" class="btn-primary">
                 <span>🔲</span> GDAL mono
             </button>
@@ -744,14 +698,14 @@
             <span>📐</span> Siatka Współrzędnych
         </div>
         <div class="section-body">
-            <div style="font-size: 0.7rem; color: var(--text-light); margin-bottom: 4px;">
-                Odległość siatki: <span id="gridDistanceDisplay" style="font-weight: 600;">-</span> m
-            </div>
             <div style="font-size: 0.7rem; color: var(--text-light); margin-bottom: 8px;">
                 Zaznaczone punkty: <span id="gridPointCount" style="font-weight: 600; color: var(--bg-dark);">0</span>
             </div>
             <button id="doneGridBtn" class="btn-success" style="width: 100%;">
-                <span>✅</span> Zakończ
+                <span>✅</span> Zakończ z siatką
+            </button>
+            <button id="noGridBtn" class="btn-outline" style="width: 100%; margin-top: 6px;">
+                <span>⊘</span> Brak siatki
             </button>
             <textarea id="gridNote" placeholder="Uwagi o siatce (opcjonalnie)"
                       style="width: 100%; margin-top: 6px; padding: 6px; font-size: 0.7rem;
@@ -882,7 +836,7 @@
         lastMouseY: 0,
         caves: [],
         selectedCave: null,
-        skipNorth: false,
+        skipNorth: true,
         currentImagePath: null,
 
         // Crowdsourcing fields
@@ -898,8 +852,7 @@
         gridPoints: [],                  // Array of {x, y} canvas coordinates for grid intersections
         gridCellDistance: 0,             // Grid cell distance in meters (from input field)
         gridNote: '',                    // Optional note/comment about grid
-        hasGrid: null,                   // true = has grid, false = no grid, null = not yet determined
-        scaleConfirmed: false            // Track if scale has been confirmed for this session
+        hasGrid: null                    // true = has grid, false = no grid, null = not yet determined
     };
 
     // DOM elements
@@ -2045,12 +1998,7 @@
             updateInstructions();
             updateProgressSteps();
         } else {
-            // Po wyklikaniu punktów - pokaż potwierdzenie skali
-            if (!state.scaleConfirmed) {
-                showScaleConfirmation();
-            } else {
-                showGridDialog();
-            }
+            enterGridStep();  // Enter grid marking mode instead of calculating immediately
         }
     }
 
@@ -2108,38 +2056,11 @@
         }
     }
 
-    // Scale confirmation functions
-    function showScaleConfirmation() {
-        const scaleInput = document.getElementById('realScale');
-        const confirmPanel = document.getElementById('scaleConfirmPanel');
-
-        scaleInput.classList.add('highlight-required');
-        scaleInput.focus();
-        scaleInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        confirmPanel.style.display = 'block';
-
-        document.getElementById('instructionText').textContent = 'Potwierdź długość skali';
-    }
-
-    function hideScaleConfirmation() {
-        document.getElementById('realScale').classList.remove('highlight-required');
-        document.getElementById('scaleConfirmPanel').style.display = 'none';
-    }
-
-    // Grid dialog function
-    function showGridDialog() {
-        document.getElementById('gridDistanceInputGroup').style.display = 'none';
-        document.getElementById('gridDialogDistance').value = '';
-        document.getElementById('gridYesBtn').innerHTML = '<span>✅</span> Tak - zaznaczę punkty siatki';
-        document.getElementById('gridQuestionModal').style.display = 'flex';
-    }
-
     // Grid step management functions
     function enterGridStep() {
         state.isGridStep = true;
         state.gridPoints = [];
-        state.hasGrid = true;  // User chose "Tak" in dialog, so hasGrid is true
-        // gridCellDistance is already set from the dialog
+        state.hasGrid = null;
 
         // Show grid control panel
         document.getElementById('gridControlPanel').style.display = 'block';
@@ -2148,7 +2069,7 @@
         updateInstructions();
         updateProgressSteps();
 
-        console.log('Entered grid marking mode with distance:', state.gridCellDistance, 'm');
+        console.log('Entered grid marking mode');
     }
 
     function exitGridStep() {
@@ -2163,16 +2084,9 @@
         state.gridCellDistance = 0;
         state.gridNote = '';
         state.hasGrid = null;
-        state.scaleConfirmed = false;
         document.getElementById('gridControlPanel').style.display = 'none';
         document.getElementById('gridNote').value = '';
         document.getElementById('gridCellDistance').value = '10';
-        // Reset grid dialog
-        document.getElementById('gridQuestionModal').style.display = 'none';
-        document.getElementById('gridDistanceInputGroup').style.display = 'none';
-        document.getElementById('gridDialogDistance').value = '';
-        document.getElementById('gridYesBtn').innerHTML = '<span>✅</span> Tak - zaznaczę punkty siatki';
-        hideScaleConfirmation();
         console.log('Grid state cleared');
     }
 
@@ -2735,63 +2649,29 @@
         draw();
     });
 
-    // Scale confirmation button
-    document.getElementById('confirmScaleBtn').addEventListener('click', () => {
-        const scaleInput = document.getElementById('realScale');
-        const scaleValue = parseFloat(scaleInput.value);
+    // Grid control buttons
+    document.getElementById('doneGridBtn').addEventListener('click', () => {
+        const gridDist = parseFloat(document.getElementById('gridCellDistance').value);
 
-        if (!scaleValue || scaleValue <= 0) {
-            alert('Wprowadź poprawną długość skali (wartość > 0)');
-            scaleInput.focus();
+        // Validation
+        if (state.gridPoints.length > 0 && (!gridDist || gridDist <= 0)) {
+            alert('Wprowadź odległość między liniami siatki w metrach');
+            document.getElementById('gridCellDistance').focus();
             return;
         }
 
-        state.scaleConfirmed = true;
-        hideScaleConfirmation();
-        showGridDialog();
-    });
-
-    // Grid control buttons
-    document.getElementById('doneGridBtn').addEventListener('click', () => {
-        // hasGrid and gridCellDistance already set from dialog
+        state.hasGrid = state.gridPoints.length > 0;
+        state.gridCellDistance = gridDist;
         state.gridNote = document.getElementById('gridNote').value;
         exitGridStep();
         calculate();
     });
 
-    // Grid dialog buttons
-    document.getElementById('gridYesBtn').addEventListener('click', () => {
-        const distanceInput = document.getElementById('gridDialogDistance');
-        const distanceGroup = document.getElementById('gridDistanceInputGroup');
-
-        // If distance input is not shown yet, show it and update button
-        if (distanceGroup.style.display === 'none') {
-            distanceGroup.style.display = 'block';
-            distanceInput.focus();
-            document.getElementById('gridYesBtn').innerHTML = '<span>✅</span> Kontynuuj';
-            return;
-        }
-
-        // Validate grid distance
-        const gridDist = parseFloat(distanceInput.value);
-        if (!gridDist || gridDist <= 0) {
-            alert('Wprowadź poprawną odległość siatki (wartość > 0)');
-            distanceInput.focus();
-            return;
-        }
-
-        // Store grid distance and proceed to grid point clicking
-        state.gridCellDistance = gridDist;
-        document.getElementById('gridDistanceDisplay').textContent = gridDist;
-        document.getElementById('gridQuestionModal').style.display = 'none';
-        enterGridStep();
-    });
-
-    document.getElementById('gridNoBtn').addEventListener('click', () => {
+    document.getElementById('noGridBtn').addEventListener('click', () => {
         state.hasGrid = false;
         state.gridPoints = [];
-        state.gridCellDistance = 0;
-        document.getElementById('gridQuestionModal').style.display = 'none';
+        state.gridNote = document.getElementById('gridNote').value || 'Brak siatki na planie';
+        exitGridStep();
         calculate();
     });
 
