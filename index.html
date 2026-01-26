@@ -614,11 +614,11 @@
             <div class="input-row">
                 <div class="input-group">
                     <label>Długość skali (m)</label>
-                    <input type="number" id="realScale" value="50" min="0.1" step="0.1">
+                    <input type="number" id="realScale" min="0.1" step="0.1" placeholder="np. 50">
                 </div>
                 <div class="input-group">
                     <label>Odległość siatki (m)</label>
-                    <input type="number" id="gridCellDistance" value="10" min="0.1" step="0.1" placeholder="np. 10">
+                    <input type="number" id="gridCellDistance" min="0.1" step="0.1" placeholder="np. 10">
                 </div>
             </div>
             <div class="input-group" style="display: none;">
@@ -2077,7 +2077,7 @@
         document.getElementById('gridControlPanel').style.display = 'none';
     }
 
-    // Clear all grid state - call when transitioning between caves
+    // Clear all grid state and scale - call when transitioning between caves
     function clearGridState() {
         state.isGridStep = false;
         state.gridPoints = [];
@@ -2086,8 +2086,9 @@
         state.hasGrid = null;
         document.getElementById('gridControlPanel').style.display = 'none';
         document.getElementById('gridNote').value = '';
-        document.getElementById('gridCellDistance').value = '10';
-        console.log('Grid state cleared');
+        document.getElementById('gridCellDistance').value = '';
+        document.getElementById('realScale').value = '';
+        console.log('Grid and scale state cleared');
     }
 
     function updateGridPointCount() {
