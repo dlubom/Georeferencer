@@ -2759,6 +2759,7 @@
         updateAssignmentDisplay(state.currentAssignment);
 
         if (cave.plan_images.length > 0) {
+            state.currentImagePath = cave.plan_images[0].image_path_upscaled;
             loadImage(GITHUB_RAW_BASE + cave.plan_images[0].image_path_upscaled);
         }
 
