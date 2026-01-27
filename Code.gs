@@ -248,45 +248,60 @@ function handleAssign(data) {
  */
 function handleSubmit(data) {
   try {
+    // Check test mode (for debugAssign)
+    const testMode = data.test_mode === true || data.test_mode === 'true';
+
     // Validate required fields
-    if (!data.assignment_id || !data.user_id || !data.cave_id) {
+    if (!data.user_id || !data.cave_id) {
       return {
         ok: false,
         error: 'missing_fields',
-        message: 'Brak wymaganych pól: assignment_id, user_id, cave_id'
+        message: 'Brak wymaganych pól: user_id, cave_id'
       };
     }
 
-    // Verify assignment exists and is not expired
-    const assignmentsSheet = getSheet(CONFIG.SHEET_NAMES.ASSIGNMENTS);
-    const assignmentRow = findAssignmentRow(data.assignment_id);
+    // Assignment validation - skip for test mode
+    let assignmentRow = null;
+    if (!testMode) {
+      if (!data.assignment_id) {
+        return {
+          ok: false,
+          error: 'missing_fields',
+          message: 'Brak wymaganego pola: assignment_id'
+        };
+      }
 
-    if (!assignmentRow) {
-      return {
-        ok: false,
-        error: 'assignment_not_found',
-        message: 'Przydzielenie nie zostało znalezione'
-      };
-    }
+      // Verify assignment exists and is not expired
+      const assignmentsSheet = getSheet(CONFIG.SHEET_NAMES.ASSIGNMENTS);
+      assignmentRow = findAssignmentRow(data.assignment_id);
 
-    const assignmentData = assignmentsSheet.getRange(assignmentRow, 1, 1, 9).getValues()[0];
-    const status = assignmentData[5];
-    const expiresAt = new Date(assignmentData[4]);
+      if (!assignmentRow) {
+        return {
+          ok: false,
+          error: 'assignment_not_found',
+          message: 'Przydzielenie nie zostało znalezione'
+        };
+      }
 
-    if (status !== 'ASSIGNED') {
-      return {
-        ok: false,
-        error: 'assignment_already_used',
-        message: 'Przydzielenie już zostało użyte'
-      };
-    }
+      const assignmentData = assignmentsSheet.getRange(assignmentRow, 1, 1, 9).getValues()[0];
+      const status = assignmentData[5];
+      const expiresAt = new Date(assignmentData[4]);
 
-    if (expiresAt < new Date()) {
-      return {
-        ok: false,
-        error: 'assignment_expired',
-        message: 'Przydzielenie wygasło'
-      };
+      if (status !== 'ASSIGNED') {
+        return {
+          ok: false,
+          error: 'assignment_already_used',
+          message: 'Przydzielenie już zostało użyte'
+        };
+      }
+
+      if (expiresAt < new Date()) {
+        return {
+          ok: false,
+          error: 'assignment_expired',
+          message: 'Przydzielenie wygasło'
+        };
+      }
     }
 
     // Generate submission ID
@@ -364,19 +379,23 @@ function handleSubmit(data) {
       data.submit_type || 'NORMAL',
       data.skip_reason || '',
       data.freeform_comment || '',
-      data.errors_json || ''
+      data.errors_json || '',
+      testMode ? 'TEST' : ''  // Mark test submissions
     ]);
 
-    // Update ASSIGNMENTS status
-    assignmentsSheet.getRange(assignmentRow, 6).setValue('SUBMITTED');
-    assignmentsSheet.getRange(assignmentRow, 8).setValue(data.image_id || '');
-    assignmentsSheet.getRange(assignmentRow, 9).setValue(data.image_used_path || '');
+    // Update ASSIGNMENTS status (skip for test mode)
+    if (!testMode && assignmentRow) {
+      const assignmentsSheet = getSheet(CONFIG.SHEET_NAMES.ASSIGNMENTS);
+      assignmentsSheet.getRange(assignmentRow, 6).setValue('SUBMITTED');
+      assignmentsSheet.getRange(assignmentRow, 8).setValue(data.image_id || '');
+      assignmentsSheet.getRange(assignmentRow, 9).setValue(data.image_used_path || '');
 
-    // Update CAVES counters
-    updateCounters(data.cave_id, {
-      n_submissions: 1,
-      n_open_assignments: -1
-    });
+      // Update CAVES counters (only for real submissions)
+      updateCounters(data.cave_id, {
+        n_submissions: 1,
+        n_open_assignments: -1
+      });
+    }
 
     return {
       ok: true,
@@ -744,9 +763,9 @@ function setupSheets() {
     // Telemetry
     'app_version', 'client_time_iso', 'tz', 'user_agent', 'screen_w', 'screen_h',
     // Status
-    'submit_type', 'skip_reason', 'freeform_comment', 'errors_json'
+    'submit_type', 'skip_reason', 'freeform_comment', 'errors_json', 'test_mode'
   ]);
-  sheet.getRange(1, 1, 1, 54).setFontWeight('bold').setBackground('#ea4335').setFontColor('white');
+  sheet.getRange(1, 1, 1, 55).setFontWeight('bold').setBackground('#ea4335').setFontColor('white');
 
   Logger.log('✅ Sheet structure created successfully');
 }
