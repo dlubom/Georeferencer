@@ -2726,6 +2726,45 @@
     // 13. INITIALIZATION
     // ===========================================
 
+    // Debug: przydziel jaskinię ręcznie
+    // Użycie w konsoli: debugAssign('T.E-01.01') lub debugAssign(5)
+    window.debugAssign = function(idOrIndex) {
+        const cave = typeof idOrIndex === 'number'
+            ? state.caves[idOrIndex]
+            : state.caves.find(c => c.cave_id === idOrIndex || c.name.includes(idOrIndex));
+
+        if (!cave) {
+            console.error('Nie znaleziono jaskini:', idOrIndex);
+            console.log('Dostępne:', state.caves.slice(0, 10).map(c => c.cave_id + ': ' + c.name));
+            return;
+        }
+
+        state.selectedCave = cave;
+        state.currentAssignment = {
+            assignment_id: 'debug-' + Date.now(),
+            cave_id: cave.cave_id,
+            n_submissions: 0,
+            expires_at: new Date(Date.now() + 24*60*60*1000).toISOString()
+        };
+
+        document.getElementById('lat').value = cave.latitude.toFixed(6);
+        document.getElementById('lon').value = cave.longitude.toFixed(6);
+        document.getElementById('imageSelect').innerHTML = cave.plan_images.map((img, i) =>
+            `<option value="${i}">${img.description}</option>`
+        ).join('');
+        document.getElementById('imageSelect').disabled = false;
+        updateAssignmentDisplay(state.currentAssignment);
+
+        if (cave.plan_images.length > 0) {
+            loadImage(GITHUB_RAW_BASE + cave.plan_images[0].image_path_upscaled);
+        }
+
+        console.log('✅ Przydzielono:', cave.name, '(' + cave.cave_id + ')');
+    };
+
+    // Debug: lista jaskiń
+    window.debugList = () => state.caves.map((c, i) => `${i}: ${c.cave_id} - ${c.name}`);
+
     // Initial setup
     restoreCollapsedState();
     updateProgressSteps();
