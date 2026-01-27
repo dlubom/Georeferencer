@@ -1161,7 +1161,10 @@
             submit_type: 'NORMAL',
             skip_reason: null,
             freeform_comment: null,
-            errors_json: null
+            errors_json: null,
+
+            // Test mode - dla debugAssign()
+            test_mode: state.currentAssignment.assignment_id.startsWith('debug-')
         };
     }
 
