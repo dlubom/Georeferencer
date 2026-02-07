@@ -572,7 +572,7 @@ function getEligibleCaves(excludeCaveIds) {
   for (let i = 1; i < data.length; i++) { // Skip header
     const cave_id = data[i][0];
     const n_submissions = data[i][5] || 0;
-    const disabled = data[i][7] || false;
+    const disabled = data[i][8] || false;
 
     // Check eligibility
     if (disabled) continue;
