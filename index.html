@@ -1639,7 +1639,8 @@
                     // Filter for plan images (may be empty array)
                     const planImages = (data.images || []).filter(img =>
                         img.metadata?.graphics_type_name === 'plan' ||
-                        img.metadata?.graphics_type_name === 'plan i przekrój'
+                        img.metadata?.graphics_type_name === 'plan i przekrój' ||
+                        img.metadata?.graphics_type_name === 'szkic'
                     );
 
                     // Check if cave is in Tatry region
