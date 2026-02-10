@@ -535,19 +535,16 @@
             <span id="progressRefreshBtn" class="toggle-icon" style="cursor: pointer;" onclick="event.stopPropagation(); refreshProgress();">🔄</span>
         </div>
         <div class="section-body">
-            <div style="background: #f1f5f9; border-radius: 4px; overflow: hidden; height: 20px; position: relative; margin-bottom: 8px;">
+            <div style="background: #f1f5f9; border-radius: 4px; overflow: hidden; height: 20px; position: relative; margin-bottom: 6px;">
                 <div id="progressBarFill" style="background: linear-gradient(90deg, var(--success) 0%, #15803d 100%); height: 100%; width: 0%; transition: width 0.3s;"></div>
                 <div id="progressBarText" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 600; color: var(--bg-dark);">Ładowanie...</div>
             </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; font-size: 0.65rem;">
-                <div style="background: #f8fafc; padding: 4px; border-radius: 3px; text-align: center;">
-                    <div style="font-weight: 600; color: var(--bg-dark);" id="statGe5">-</div>
-                    <div style="color: var(--text-light);">≥5 submisji</div>
-                </div>
-                <div style="background: #f8fafc; padding: 4px; border-radius: 3px; text-align: center;">
-                    <div style="font-weight: 600; color: var(--bg-dark);" id="statRemaining">-</div>
-                    <div style="color: var(--text-light);">Pozostało</div>
-                </div>
+            <div style="font-size: 0.6rem; color: var(--text-light); display: flex; flex-wrap: wrap; gap: 4px; justify-content: center;">
+                <span>=1: <b id="statGe1">-</b></span>
+                <span>=2: <b id="statGe2">-</b></span>
+                <span>=3: <b id="statGe3">-</b></span>
+                <span>=4: <b id="statGe4">-</b></span>
+                <span style="color: var(--success);">=5: <b id="statGe5">-</b></span>
             </div>
         </div>
     </div>
@@ -1215,13 +1212,17 @@
     function updateProgressDisplay(progressData) {
         if (!progressData) return;
 
-        const { total, ge_5, remaining_lt_5 } = progressData;
+        const { total, ge_1, ge_2, ge_3, ge_4, ge_5 } = progressData;
         const percentage = total > 0 ? Math.round((ge_5 / total) * 100) : 0;
 
         document.getElementById('progressBarFill').style.width = percentage + '%';
-        document.getElementById('progressBarText').textContent = `${percentage}% (${ge_5}/${total})`;
+        document.getElementById('progressBarText').textContent = `${percentage}% (${ge_5}/${total} gotowych)`;
+
+        document.getElementById('statGe1').textContent = ge_1 || '0';
+        document.getElementById('statGe2').textContent = ge_2 || '0';
+        document.getElementById('statGe3').textContent = ge_3 || '0';
+        document.getElementById('statGe4').textContent = ge_4 || '0';
         document.getElementById('statGe5').textContent = ge_5 || '0';
-        document.getElementById('statRemaining').textContent = remaining_lt_5 || '0';
 
         state.lastProgress = progressData;
     }
