@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.Z-21.01
+  dir_id: 004448
+  name: Staszkowa Studnia
+  n_submissions: 5
+image:
+  filename: image_4488_zoom_10.tif
+  image_id: 4488
+  width: 1862
+  height: 1732
+coordinates:
+  lat: 49.284167
+  lon: 20.045278
+entrance:
+  x: 924.96
+  y: 933.05
+scale:
+  pixels_per_meter: 237.0
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7923000000
+  total_rotation_deg: -0.7923000000
+  A: 0.0042190641
+  D: -0.0000583440
+  B: -0.0000583440
+  E: -0.0042190641
+  C: 575991.097029
+  F: 157937.128156
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 236.82
+  - 238.82
+  - 237.0
+  - 236.72
+  - 238.74
+  entrance_std_px: 1.55
+  outliers_removed: 0
+  flag: null

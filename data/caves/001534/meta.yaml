@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.60
+  dir_id: '001534'
+  name: Nyża pod Schronem w Dolinie Litworowej
+  n_submissions: 5
+image:
+  filename: image_1050_zoom_10.tif
+  image_id: 1050
+  width: 512
+  height: 520
+coordinates:
+  lat: 49.240547
+  lon: 19.910875
+entrance:
+  x: 262.21
+  y: 369.08
+scale:
+  pixels_per_meter: 76.99
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6899000000
+  total_rotation_deg: -0.6899000000
+  A: 0.0129878508
+  D: -0.0001564057
+  B: -0.0001564057
+  E: -0.0129878508
+  C: 566278.613483
+  F: 152963.825673
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 76.89
+  - 76.97
+  - 77.29
+  - 77.07
+  - 77.01
+  entrance_std_px: 0.2200000000
+  outliers_removed: 1
+  flag: null

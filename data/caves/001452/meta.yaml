@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.17
+  dir_id: '001452'
+  name: Dziura nad Zachodem
+  n_submissions: 5
+image:
+  filename: image_961_zoom_10.tif
+  image_id: 961
+  width: 1686
+  height: 2548
+coordinates:
+  lat: 49.236314
+  lon: 19.877078
+entrance:
+  x: 366.07
+  y: 2085.64
+scale:
+  pixels_per_meter: 195.84
+north:
+  angle_deg: -0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6643000000
+  total_rotation_deg: -0.6651000000
+  A: 0.0051058927
+  D: -0.0000592729
+  B: -0.0000592729
+  E: -0.0051058927
+  C: 563826.381272
+  F: 152470.161681
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 195.83
+  - 195.92
+  - 195.85
+  - 195.7
+  - 194.73
+  entrance_std_px: 1.76
+  outliers_removed: 1
+  flag: null

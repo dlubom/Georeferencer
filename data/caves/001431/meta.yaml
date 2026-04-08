@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.55
+  dir_id: '001431'
+  name: Wnęka na Grzędzie
+  n_submissions: 5
+image:
+  filename: image_925_zoom_10.tif
+  image_id: 925
+  width: 640
+  height: 586
+coordinates:
+  lat: 49.241639
+  lon: 19.856397
+entrance:
+  x: 473.87
+  y: 147.92
+scale:
+  pixels_per_meter: 76.98
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6487000000
+  total_rotation_deg: -0.6487000000
+  A: 0.0129887373
+  D: -0.0001470629
+  B: -0.0001470629
+  E: -0.0129887373
+  C: 562310.278848
+  F: 153036.028944
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.1
+  - 77.34
+  - 76.9
+  - 76.99
+  - 76.98
+  entrance_std_px: 0.4400000000
+  outliers_removed: 1
+  flag: null

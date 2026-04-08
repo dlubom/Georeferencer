@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.12
+  dir_id: 001480
+  name: Studnia w Kazalnicy
+  n_submissions: 5
+image:
+  filename: image_985_zoom_10.tif
+  image_id: 985
+  width: 5578
+  height: 4748
+coordinates:
+  lat: 49.240636
+  lon: 19.901192
+entrance:
+  x: 2251.06
+  y: 747.57
+scale:
+  pixels_per_meter: 59.08
+north:
+  angle_deg: 0.0370000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6826000000
+  total_rotation_deg: -0.6455000000
+  A: 0.0169245747
+  D: -0.0001906698
+  B: -0.0001906698
+  E: -0.0169245747
+  C: 565539.29
+  F: 152973.523304
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 59.1
+  - 59.08
+  - 59.11
+  - 58.92
+  - 59.02
+  entrance_std_px: 0.5600000000
+  outliers_removed: 0
+  flag: null

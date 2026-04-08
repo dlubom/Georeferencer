@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.15
+  dir_id: 001487
+  name: Jaskinia pod Wierchem
+  n_submissions: 5
+image:
+  filename: image_989_zoom_10.tif
+  image_id: 989
+  width: 966
+  height: 1152
+coordinates:
+  lat: 49.23945
+  lon: 19.899433
+entrance:
+  x: 394.96
+  y: 218.28
+scale:
+  pixels_per_meter: 38.52
+north:
+  angle_deg: 0.0090000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6813000000
+  total_rotation_deg: -0.6725000000
+  A: 0.0259586231
+  D: -0.0003047095
+  B: -0.0003047095
+  E: -0.0259586231
+  C: 565440.630889
+  F: 152832.899136
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 38.52
+  - 38.38
+  - 38.78
+  - 38.47
+  - 38.81
+  entrance_std_px: 0.6100000000
+  outliers_removed: 0
+  flag: null

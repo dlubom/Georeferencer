@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-06.14
+  dir_id: 001084
+  name: Schron Wschodni pod Kufą
+  n_submissions: 5
+image:
+  filename: image_561_zoom_10.tif
+  image_id: 561
+  width: 562
+  height: 592
+coordinates:
+  lat: 49.245969
+  lon: 19.839583
+entrance:
+  x: 257.1
+  y: 226.42
+scale:
+  pixels_per_meter: 77.19
+north:
+  angle_deg: 0.0160000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6360000000
+  total_rotation_deg: -0.6198000000
+  A: 0.0129547575
+  D: -0.0001401522
+  B: -0.0001401522
+  E: -0.0129547575
+  C: 561084.30003
+  F: 153504.504154
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 77.0
+  - 77.08
+  - 77.52
+  - 77.39
+  - 77.19
+  entrance_std_px: 0.2500000000
+  outliers_removed: 0
+  flag: null

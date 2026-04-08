@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-09.43
+  dir_id: 004492
+  name: Jaskinia nad Beczką
+  n_submissions: 5
+image:
+  filename: image_12230_zoom_10.tif
+  image_id: 12230
+  width: 5880
+  height: 3280
+coordinates:
+  lat: 49.233881
+  lon: 19.883731
+entrance:
+  x: 1847.67
+  y: 1702.68
+scale:
+  pixels_per_meter: 235.94
+north:
+  angle_deg: 0.0070000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6693000000
+  total_rotation_deg: -0.6621000000
+  A: 0.0042381546
+  D: -0.0000489781
+  B: -0.0000489781
+  E: -0.0042381546
+  C: 564307.695629
+  F: 152202.042602
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 235.94
+  - 235.9
+  - 237.3
+  - 237.03
+  - 235.78
+  entrance_std_px: 3.07
+  outliers_removed: 0
+  flag: null

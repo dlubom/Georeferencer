@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-09.16
+  dir_id: 000990
+  name: Schronisko Wschodnie w Kończystej
+  n_submissions: 5
+image:
+  filename: image_467_zoom_10.tif
+  image_id: 467
+  width: 746
+  height: 1224
+coordinates:
+  lat: 49.263364
+  lon: 19.880078
+entrance:
+  x: 547.25
+  y: 512.77
+scale:
+  pixels_per_meter: 77.35
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6669000000
+  total_rotation_deg: -0.6669000000
+  A: 0.0129281096
+  D: -0.0001504736
+  B: -0.0001504736
+  E: -0.0129281096
+  C: 564004.463327
+  F: 155474.934596
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 76.83
+  - 76.63
+  - 77.39
+  - 77.35
+  - 77.36
+  entrance_std_px: 1.08
+  outliers_removed: 0
+  flag: null

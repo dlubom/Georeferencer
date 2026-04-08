@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.50
+  dir_id: '001513'
+  name: Jaskinia za Ratuszem Owalna
+  n_submissions: 5
+image:
+  filename: image_1037_zoom_10.tif
+  image_id: 1037
+  width: 500
+  height: 624
+coordinates:
+  lat: 49.243233
+  lon: 19.90965
+entrance:
+  x: 128.42
+  y: 459.22
+scale:
+  pixels_per_meter: 77.01
+north:
+  angle_deg: -0.0520000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6890000000
+  total_rotation_deg: -0.7406000000
+  A: 0.0129841559
+  D: -0.0001678354
+  B: -0.0001678354
+  E: -0.0129841559
+  C: 566187.641897
+  F: 153262.409785
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 77.01
+  - 77.05
+  - 77.34
+  - 76.61
+  - 76.82
+  entrance_std_px: 0.5600000000
+  outliers_removed: 0
+  flag: null

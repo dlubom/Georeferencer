@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-09.19
+  dir_id: 001679
+  name: Jaskinia z Mostami
+  n_submissions: 5
+image:
+  filename: image_1194_zoom_10.tif
+  image_id: 1194
+  width: 3080
+  height: 3526
+coordinates:
+  lat: 49.234483
+  lon: 19.875608
+entrance:
+  x: 2229.52
+  y: 701.17
+scale:
+  pixels_per_meter: 97.9
+north:
+  angle_deg: -0.0340000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6632000000
+  total_rotation_deg: -0.6970000000
+  A: 0.0102138531
+  D: -0.0001242615
+  B: -0.0001242615
+  E: -0.0102138531
+  C: 563700.821482
+  F: 152262.202876
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 97.78
+  - 97.82
+  - 97.39
+  - 98.0
+  - 97.98
+  entrance_std_px: 1.76
+  outliers_removed: 1
+  flag: null

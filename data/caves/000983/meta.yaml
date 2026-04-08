@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-04.05
+  dir_id: 000983
+  name: Jaskinia Rybia
+  n_submissions: 5
+image:
+  filename: image_543_zoom_10.tif
+  image_id: 543
+  width: 2982
+  height: 3474
+coordinates:
+  lat: 49.246781
+  lon: 19.812817
+entrance:
+  x: 2642.24
+  y: 837.17
+scale:
+  pixels_per_meter: 59.12
+north:
+  angle_deg: 0.0270000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6157000000
+  total_rotation_deg: -0.5886000000
+  A: 0.0169143519
+  D: -0.0001737658
+  B: -0.0001737658
+  E: -0.0169143519
+  C: 559094.622767
+  F: 153585.121602
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 59.12
+  - 59.05
+  - 58.93
+  - 59.11
+  - 59.16
+  entrance_std_px: 1.2
+  outliers_removed: 1
+  flag: null

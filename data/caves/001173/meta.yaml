@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-09.02
+  dir_id: '001173'
+  name: Jaskinia przy Sikawce
+  n_submissions: 5
+image:
+  filename: image_657_zoom_10.tif
+  image_id: 657
+  width: 1114
+  height: 1244
+coordinates:
+  lat: 49.248117
+  lon: 19.881
+entrance:
+  x: 172.93
+  y: 659.82
+scale:
+  pixels_per_meter: 76.97
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6674000000
+  total_rotation_deg: -0.6674000000
+  A: 0.0129908221
+  D: -0.0001513273
+  B: -0.0001513273
+  E: -0.0129908221
+  C: 564096.115766
+  F: 153783.127875
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.0
+  - 77.01
+  - 76.87
+  - 76.83
+  - 76.97
+  entrance_std_px: 0.6900000000
+  outliers_removed: 0
+  flag: null

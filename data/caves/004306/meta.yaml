@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-05.11
+  dir_id: '004306'
+  name: Dmuchająca Szczelina
+  n_submissions: 5
+image:
+  filename: image_4323_zoom_10.tif
+  image_id: 4323
+  width: 816
+  height: 1032
+coordinates:
+  lat: 49.247528
+  lon: 19.82025
+entrance:
+  x: 395.02
+  y: 273.59
+scale:
+  pixels_per_meter: 118.03
+north:
+  angle_deg: -0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6214000000
+  total_rotation_deg: -0.6222000000
+  A: 0.0084722508
+  D: -0.0000920095
+  B: -0.0000920095
+  E: -0.0084722508
+  C: 559675.754159
+  F: 153661.713171
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 118.14
+  - 118.04
+  - 118.01
+  - 118.72
+  - 118.02
+  entrance_std_px: 0.5100000000
+  outliers_removed: 1
+  flag: null

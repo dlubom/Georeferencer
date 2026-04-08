@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.07
+  dir_id: '000760'
+  name: Smocza Jama
+  n_submissions: 5
+image:
+  filename: image_269_zoom_10.tif
+  image_id: 269
+  width: 1856
+  height: 2444
+coordinates:
+  lat: 49.237839
+  lon: 19.867733
+entrance:
+  x: 1125.31
+  y: 1445.11
+scale:
+  pixels_per_meter: 59.05
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6572000000
+  total_rotation_deg: -0.6572000000
+  A: 0.0169339147
+  D: -0.0001942586
+  B: -0.0001942586
+  E: -0.0169339147
+  C: 563127.345634
+  F: 152645.81771
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 59.05
+  - 59.0
+  - 59.04
+  - 59.23
+  - 59.06
+  entrance_std_px: 0.5300000000
+  outliers_removed: 2
+  flag: null

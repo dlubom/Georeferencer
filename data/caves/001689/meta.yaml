@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-09.30
+  dir_id: 001689
+  name: Korytarzyk w Żlebie Niedźwiedź
+  n_submissions: 5
+image:
+  filename: image_1212_zoom_10.tif
+  image_id: 1212
+  width: 1762
+  height: 2092
+coordinates:
+  lat: 49.232517
+  lon: 19.879678
+entrance:
+  x: 1407.53
+  y: 606.42
+scale:
+  pixels_per_meter: 195.72
+north:
+  angle_deg: 0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6662000000
+  total_rotation_deg: -0.6648000000
+  A: 0.0051089088
+  D: -0.0000592808
+  B: -0.0000592808
+  E: -0.0051089088
+  C: 564015.088262
+  F: 152042.89191
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 195.53
+  - 195.73
+  - 195.71
+  - 196.11
+  - 195.86
+  entrance_std_px: 2.51
+  outliers_removed: 1
+  flag: null

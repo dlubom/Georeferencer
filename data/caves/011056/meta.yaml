@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-10.08
+  dir_id: '011056'
+  name: Trzeszcząca Szczelina
+  n_submissions: 5
+image:
+  filename: image_12383_zoom_10.tif
+  image_id: 12383
+  width: 5306
+  height: 3462
+coordinates:
+  lat: 49.243333
+  lon: 19.895667
+entrance:
+  x: 1580.91
+  y: 2345.05
+scale:
+  pixels_per_meter: 237.09
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6785000000
+  total_rotation_deg: -0.6785000000
+  A: 0.0042175943
+  D: -0.0000499442
+  B: -0.0000499442
+  E: -0.0042175943
+  C: 565165.111681
+  F: 153265.365708
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 236.46
+  - 237.71
+  - 236.44
+  - 233.89
+  - 237.79
+  entrance_std_px: 3.45
+  outliers_removed: 1
+  flag: null

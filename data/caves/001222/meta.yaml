@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-12.07
+  dir_id: '001222'
+  name: Jaskinia nad Zagonem
+  n_submissions: 5
+image:
+  filename: image_708_zoom_10.tif
+  image_id: 708
+  width: 2142
+  height: 1578
+coordinates:
+  lat: 49.247394
+  lon: 19.91295
+entrance:
+  x: 1780.97
+  y: 1023.52
+scale:
+  pixels_per_meter: 38.58
+north:
+  angle_deg: 0.0060000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6916000000
+  total_rotation_deg: -0.6851000000
+  A: 0.0259182013
+  D: -0.0003099401
+  B: -0.0003099401
+  E: -0.0259182013
+  C: 566377.924136
+  F: 153748.829603
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 38.59
+  - 38.58
+  - 38.58
+  - 38.58
+  - 38.65
+  entrance_std_px: 0.4900000000
+  outliers_removed: 1
+  flag: null

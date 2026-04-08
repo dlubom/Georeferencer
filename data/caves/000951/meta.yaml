@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.A-12.01
+  dir_id: 000951
+  name: Schronisko w Małym Żlebku
+  n_submissions: 5
+image:
+  filename: image_443_zoom_10.tif
+  image_id: 443
+  width: 774
+  height: 632
+coordinates:
+  lat: 49.273786
+  lon: 19.912272
+entrance:
+  x: 301.52
+  y: 486.7
+scale:
+  pixels_per_meter: 77.13
+north:
+  angle_deg: 0.1490000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6914000000
+  total_rotation_deg: -0.5427000000
+  A: 0.0129645945
+  D: -0.0001228122
+  B: -0.0001228122
+  E: -0.0129645945
+  C: 566335.200795
+  F: 156660.572683
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.07
+  - 77.26
+  - 77.12
+  - 77.13
+  - 77.18
+  entrance_std_px: 0.3800000000
+  outliers_removed: 0
+  flag: null

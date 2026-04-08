@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.51
+  dir_id: 001593
+  name: Szczelina w Pośredniej Turni
+  n_submissions: 5
+image:
+  filename: image_1103_zoom_10.tif
+  image_id: 1103
+  width: 550
+  height: 732
+coordinates:
+  lat: 49.243747
+  lon: 19.916506
+entrance:
+  x: 418.62
+  y: 209.13
+scale:
+  pixels_per_meter: 77.03
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6942000000
+  total_rotation_deg: -0.6942000000
+  A: 0.0129811628
+  D: -0.0001572992
+  B: -0.0001572992
+  E: -0.0129811628
+  C: 566681.998503
+  F: 153322.351919
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 77.03
+  - 77.51
+  - 77.02
+  - 76.3
+  - 77.03
+  entrance_std_px: 0.4700000000
+  outliers_removed: 2
+  flag: null

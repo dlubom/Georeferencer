@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-05.08
+  dir_id: '001177'
+  name: Schronisko przy Jaskini w Dudzińcu
+  n_submissions: 5
+image:
+  filename: image_664_zoom_10.tif
+  image_id: 664
+  width: 476
+  height: 584
+coordinates:
+  lat: 49.24785
+  lon: 19.821161
+entrance:
+  x: 145.0
+  y: 232.27
+scale:
+  pixels_per_meter: 77.04
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6221000000
+  total_rotation_deg: -0.6221000000
+  A: 0.0129791783
+  D: -0.0001409210
+  B: -0.0001409210
+  E: -0.0129791783
+  C: 559743.118997
+  F: 153698.898684
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 77.46
+  - 77.02
+  - 76.01
+  - 77.11
+  - 77.04
+  entrance_std_px: 0.6100000000
+  outliers_removed: 2
+  flag: null

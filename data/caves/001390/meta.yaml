@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.12
+  dir_id: 001390
+  name: Dziura nad Mylną
+  n_submissions: 5
+image:
+  filename: image_896_zoom_10.tif
+  image_id: 896
+  width: 1500
+  height: 1050
+coordinates:
+  lat: 49.2387
+  lon: 19.861053
+entrance:
+  x: 1316.02
+  y: 780.41
+scale:
+  pixels_per_meter: 59.11
+north:
+  angle_deg: 0.0130000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6522000000
+  total_rotation_deg: -0.6392000000
+  A: 0.0169171081
+  D: -0.0001887273
+  B: -0.0001887273
+  E: -0.0169171081
+  C: 562636.808199
+  F: 152724.710246
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 59.01
+  - 59.29
+  - 59.18
+  - 59.11
+  - 59.09
+  entrance_std_px: 1.23
+  outliers_removed: 0
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-04.01
+  dir_id: '001067'
+  name: Zbójecka Dziura
+  n_submissions: 5
+image:
+  filename: image_539_zoom_10.tif
+  image_id: 539
+  width: 2026
+  height: 2962
+coordinates:
+  lat: 49.247769
+  lon: 19.811731
+entrance:
+  x: 1521.83
+  y: 1581.76
+scale:
+  pixels_per_meter: 97.6
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6149000000
+  total_rotation_deg: -0.6149000000
+  A: 0.0102448916
+  D: -0.0001099560
+  B: -0.0001099560
+  E: -0.0102448916
+  C: 559043.55888
+  F: 153695.827308
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 98.15
+  - 98.1
+  - 97.6
+  - 97.54
+  - 97.42
+  entrance_std_px: 1.15
+  outliers_removed: 0
+  flag: null

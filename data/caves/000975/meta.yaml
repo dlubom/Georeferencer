@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-09.07
+  dir_id: 000975
+  name: Koleba za Kończystą
+  n_submissions: 5
+image:
+  filename: image_458_zoom_10.tif
+  image_id: 458
+  width: 932
+  height: 840
+coordinates:
+  lat: 49.264339
+  lon: 19.877631
+entrance:
+  x: 453.07
+  y: 178.5
+scale:
+  pixels_per_meter: 77.13
+north:
+  angle_deg: 0.0020000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6650000000
+  total_rotation_deg: -0.6630000000
+  A: 0.0129637983
+  D: -0.0001500279
+  B: -0.0001500279
+  E: -0.0129637983
+  C: 563826.379009
+  F: 155576.89316
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 77.11
+  - 77.14
+  - 77.41
+  - 77.14
+  - 77.12
+  entrance_std_px: 0.5400000000
+  outliers_removed: 1
+  flag: null

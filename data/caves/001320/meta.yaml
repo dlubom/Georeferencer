@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-07.23
+  dir_id: '001320'
+  name: Tunel Wiatru
+  n_submissions: 5
+image:
+  filename: image_822_zoom_10.tif
+  image_id: 822
+  width: 1688
+  height: 2056
+coordinates:
+  lat: 49.239639
+  lon: 19.852256
+entrance:
+  x: 950.27
+  y: 1574.82
+scale:
+  pixels_per_meter: 196.57
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6455000000
+  total_rotation_deg: -0.6455000000
+  A: 0.0050869870
+  D: -0.0000573164
+  B: -0.0000573164
+  E: -0.0050869870
+  C: 562012.85287
+  F: 152816.430509
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 196.99
+  - 196.57
+  - 195.61
+  - 196.05
+  - 196.75
+  entrance_std_px: 1.49
+  outliers_removed: 0
+  flag: null

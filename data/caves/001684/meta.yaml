@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-09.22
+  dir_id: 001684
+  name: Jaskinia Gankowa
+  n_submissions: 5
+image:
+  filename: image_1207_zoom_10.tif
+  image_id: 1207
+  width: 1172
+  height: 910
+coordinates:
+  lat: 49.234306
+  lon: 19.875889
+entrance:
+  x: 1037.21
+  y: 306.75
+scale:
+  pixels_per_meter: 77.09
+north:
+  angle_deg: 0.0170000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6634000000
+  total_rotation_deg: -0.6462000000
+  A: 0.0129706785
+  D: -0.0001462847
+  B: -0.0001462847
+  E: -0.0129706785
+  C: 563730.775491
+  F: 152239.460626
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.09
+  - 77.02
+  - 76.96
+  - 77.11
+  - 77.17
+  entrance_std_px: 0.8900000000
+  outliers_removed: 0
+  flag: null

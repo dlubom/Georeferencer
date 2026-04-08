@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-12.07
+  dir_id: '001014'
+  name: Dziurawa Nisza w Jatkach
+  n_submissions: 5
+image:
+  filename: image_486_zoom_10.tif
+  image_id: 486
+  width: 652
+  height: 1162
+coordinates:
+  lat: 49.265003
+  lon: 19.921878
+entrance:
+  x: 516.95
+  y: 269.56
+scale:
+  pixels_per_meter: 38.55
+north:
+  angle_deg: -0.0060000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6985000000
+  total_rotation_deg: -0.7045000000
+  A: 0.0259404601
+  D: -0.0003189908
+  B: -0.0003189908
+  E: -0.0259404601
+  C: 567036.153368
+  F: 155693.758292
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 38.49
+  - 38.49
+  - 38.55
+  - 38.67
+  - 38.69
+  entrance_std_px: 0.7700000000
+  outliers_removed: 0
+  flag: null

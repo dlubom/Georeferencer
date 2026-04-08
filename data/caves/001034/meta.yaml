@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-24.02
+  dir_id: '001034'
+  name: Filipczańska Szczelina
+  n_submissions: 5
+image:
+  filename: image_506_zoom_10.tif
+  image_id: 506
+  width: 438
+  height: 530
+coordinates:
+  lat: 49.27325
+  lon: 20.080056
+entrance:
+  x: 189.22
+  y: 391.14
+scale:
+  pixels_per_meter: 76.97
+north:
+  angle_deg: -0.0820000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.8185000000
+  total_rotation_deg: -0.9006000000
+  A: 0.0129899956
+  D: -0.0002041956
+  B: -0.0002041956
+  E: -0.0129899956
+  C: 578538.326971
+  F: 156760.551482
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 76.79
+  - 76.61
+  - 76.97
+  - 77.04
+  - 77.34
+  entrance_std_px: 0.2800000000
+  outliers_removed: 0
+  flag: null

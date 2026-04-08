@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-07.38
+  dir_id: '001342'
+  name: Schronisko przy Jeleniej Perci
+  n_submissions: 5
+image:
+  filename: image_845_zoom_10.tif
+  image_id: 845
+  width: 734
+  height: 842
+coordinates:
+  lat: 49.241297
+  lon: 19.853658
+entrance:
+  x: 535.18
+  y: 171.99
+scale:
+  pixels_per_meter: 77.06
+north:
+  angle_deg: -0.0030000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6466000000
+  total_rotation_deg: -0.6497000000
+  A: 0.0129765947
+  D: -0.0001471531
+  B: -0.0001471531
+  E: -0.0129765947
+  C: 562110.618138
+  F: 152996.087445
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 77.06
+  - 77.34
+  - 77.06
+  - 77.04
+  - 77.1
+  entrance_std_px: 0.3100000000
+  outliers_removed: 1
+  flag: null

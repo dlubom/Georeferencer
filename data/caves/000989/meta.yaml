@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-09.15
+  dir_id: 000989
+  name: Nyża pod Progiem w Kończystej
+  n_submissions: 5
+image:
+  filename: image_466_zoom_10.tif
+  image_id: 466
+  width: 634
+  height: 700
+coordinates:
+  lat: 49.263722
+  lon: 19.880208
+entrance:
+  x: 453.49
+  y: 374.88
+scale:
+  pixels_per_meter: 38.67
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6670000000
+  total_rotation_deg: -0.6670000000
+  A: 0.0258583283
+  D: -0.0003010178
+  B: -0.0003010178
+  E: -0.0258583283
+  C: 564008.839636
+  F: 155517.94972
+quality:
+  ppm_cv: 0.0060000000
+  ppm_values:
+  - 38.69
+  - 38.22
+  - 38.74
+  - 38.24
+  - 38.67
+  entrance_std_px: 0.8400000000
+  outliers_removed: 0
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.C-05.03
+  dir_id: 001039
+  name: Schronisko w Międzyścianach III
+  n_submissions: 5
+image:
+  filename: image_511_zoom_10.tif
+  image_id: 511
+  width: 614
+  height: 566
+coordinates:
+  lat: 49.252894
+  lon: 19.820411
+entrance:
+  x: 320.7
+  y: 446.12
+scale:
+  pixels_per_meter: 77.35
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6215000000
+  total_rotation_deg: -0.6215000000
+  A: 0.0129276122
+  D: -0.0001402436
+  B: -0.0001402436
+  E: -0.0129276122
+  C: 559680.236816
+  F: 154261.648927
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 77.26
+  - 77.35
+  - 77.18
+  - 77.57
+  - 77.94
+  entrance_std_px: 1.16
+  outliers_removed: 0
+  flag: null

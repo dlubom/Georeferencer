@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-08.03
+  dir_id: '001650'
+  name: Jaskinia w Żarze
+  n_submissions: 5
+image:
+  filename: image_1174_zoom_10.tif
+  image_id: 1174
+  width: 2072
+  height: 2246
+coordinates:
+  lat: 49.234339
+  lon: 19.863736
+entrance:
+  x: 894.24
+  y: 1378.43
+scale:
+  pixels_per_meter: 195.11
+north:
+  angle_deg: 0.0050000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6542000000
+  total_rotation_deg: -0.6491000000
+  A: 0.0051249378
+  D: -0.0000580660
+  B: -0.0000580660
+  E: -0.0051249378
+  C: 562855.195607
+  F: 152235.943784
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 195.11
+  - 195.85
+  - 195.0
+  - 195.43
+  - 195.05
+  entrance_std_px: 1.73
+  outliers_removed: 0
+  flag: null

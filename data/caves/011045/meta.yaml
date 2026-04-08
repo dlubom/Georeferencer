@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.A-23.01
+  dir_id: '011045'
+  name: Okienko w Jaworzyńskim Żlebie
+  n_submissions: 5
+image:
+  filename: image_12366_zoom_10.tif
+  image_id: 12366
+  width: 2158
+  height: 2584
+coordinates:
+  lat: 49.281028
+  lon: 20.072306
+entrance:
+  x: 851.46
+  y: 526.34
+scale:
+  pixels_per_meter: 236.72
+north:
+  angle_deg: 0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.8127000000
+  total_rotation_deg: -0.8118000000
+  A: 0.0042240434
+  D: -0.0000598506
+  B: -0.0000598506
+  E: -0.0042240434
+  C: 577961.314712
+  F: 157614.086509
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 238.14
+  - 236.62
+  - 237.06
+  - 236.75
+  - 236.68
+  entrance_std_px: 3.12
+  outliers_removed: 1
+  flag: null

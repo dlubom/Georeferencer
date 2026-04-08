@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.21
+  dir_id: '001400'
+  name: Wyzior
+  n_submissions: 5
+image:
+  filename: image_928_zoom_10.tif
+  image_id: 928
+  width: 1584
+  height: 1590
+coordinates:
+  lat: 49.239272
+  lon: 19.864392
+entrance:
+  x: 520.7
+  y: 1265.81
+scale:
+  pixels_per_meter: 98.23
+north:
+  angle_deg: 0.0110000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6547000000
+  total_rotation_deg: -0.6437000000
+  A: 0.0101796559
+  D: -0.0001143624
+  B: -0.0001143624
+  E: -0.0101796559
+  C: 562896.018627
+  F: 152790.544946
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 98.23
+  - 97.72
+  - 98.18
+  - 98.72
+  - 98.3
+  entrance_std_px: 2.4
+  outliers_removed: 2
+  flag: null

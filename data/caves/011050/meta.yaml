@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.A-22.01
+  dir_id: '011050'
+  name: Koziarska Dziura
+  n_submissions: 5
+image:
+  filename: image_12355_zoom_10.tif
+  image_id: 12355
+  width: 1520
+  height: 1358
+coordinates:
+  lat: 49.283528
+  lon: 20.055194
+entrance:
+  x: 723.17
+  y: 900.5
+scale:
+  pixels_per_meter: 236.61
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7998000000
+  total_rotation_deg: -0.7998000000
+  A: 0.0042259200
+  D: -0.0000589927
+  B: -0.0000589927
+  E: -0.0042259200
+  C: 576713.845438
+  F: 157875.987741
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 237.54
+  - 237.57
+  - 236.61
+  - 235.52
+  - 236.53
+  entrance_std_px: 1.26
+  outliers_removed: 0
+  flag: null

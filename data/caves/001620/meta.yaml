@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-13.19
+  dir_id: '001620'
+  name: Szczelina w Mnichowych Turniach I
+  n_submissions: 5
+image:
+  filename: image_1142_zoom_10.tif
+  image_id: 1142
+  width: 734
+  height: 534
+coordinates:
+  lat: 49.244597
+  lon: 19.92765
+entrance:
+  x: 340.34
+  y: 390.09
+scale:
+  pixels_per_meter: 76.84
+north:
+  angle_deg: 0.0390000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7027000000
+  total_rotation_deg: -0.6636000000
+  A: 0.0130140285
+  D: -0.0001507264
+  B: -0.0001507264
+  E: -0.0130140285
+  C: 567492.727343
+  F: 153429.049236
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 76.85
+  - 76.75
+  - 76.82
+  - 76.37
+  - 76.88
+  entrance_std_px: 0.8000000000
+  outliers_removed: 1
+  flag: null

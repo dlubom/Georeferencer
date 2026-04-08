@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-10.07
+  dir_id: '001710'
+  name: Studnia Kuturniańska
+  n_submissions: 5
+image:
+  filename: image_1224_zoom_10.tif
+  image_id: 1224
+  width: 1288
+  height: 1028
+coordinates:
+  lat: 49.233167
+  lon: 19.887489
+entrance:
+  x: 189.59
+  y: 645.46
+scale:
+  pixels_per_meter: 77.12
+north:
+  angle_deg: -0.0030000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6722000000
+  total_rotation_deg: -0.6751000000
+  A: 0.0129652760
+  D: -0.0001527640
+  B: -0.0001527640
+  E: -0.0129652760
+  C: 564587.507838
+  F: 152126.985394
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 77.12
+  - 76.84
+  - 77.38
+  - 76.97
+  - 77.32
+  entrance_std_px: 0.7900000000
+  outliers_removed: 0
+  flag: null

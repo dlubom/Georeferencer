@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.C-16.02
+  dir_id: '001064'
+  name: Korytarzyk przy Kalackiej
+  n_submissions: 5
+image:
+  filename: image_536_zoom_10.tif
+  image_id: 536
+  width: 582
+  height: 448
+coordinates:
+  lat: 49.256314
+  lon: 19.966806
+entrance:
+  x: 447.2
+  y: 168.37
+scale:
+  pixels_per_meter: 77.25
+north:
+  angle_deg: -0.1300000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7325000000
+  total_rotation_deg: -0.8624000000
+  A: 0.0129430507
+  D: -0.0001948321
+  B: -0.0001948321
+  E: -0.0129430507
+  C: 570323.701021
+  F: 154764.031613
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 77.25
+  - 77.49
+  - 77.07
+  - 77.08
+  - 77.57
+  entrance_std_px: 0.7700000000
+  outliers_removed: 0
+  flag: null

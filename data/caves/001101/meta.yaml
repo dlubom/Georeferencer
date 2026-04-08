@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.12
+  dir_id: '001101'
+  name: Dziura pod Oknem
+  n_submissions: 5
+image:
+  filename: image_577_zoom_10.tif
+  image_id: 577
+  width: 902
+  height: 784
+coordinates:
+  lat: 49.248969
+  lon: 19.868494
+entrance:
+  x: 121.22
+  y: 256.83
+scale:
+  pixels_per_meter: 38.6
+north:
+  angle_deg: 0.0050000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6579000000
+  total_rotation_deg: -0.6530000000
+  A: 0.0259070500
+  D: -0.0002952555
+  B: -0.0002952555
+  E: -0.0259070500
+  C: 563184.231051
+  F: 153865.382459
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 38.6
+  - 38.5
+  - 38.57
+  - 38.6
+  - 38.61
+  entrance_std_px: 0.3500000000
+  outliers_removed: 1
+  flag: null

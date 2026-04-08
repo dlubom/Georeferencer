@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.C-15.09
+  dir_id: '001060'
+  name: Kalacka Nyża I
+  n_submissions: 5
+image:
+  filename: image_532_zoom_10.tif
+  image_id: 532
+  width: 524
+  height: 746
+coordinates:
+  lat: 49.256014
+  lon: 19.964592
+entrance:
+  x: 147.23
+  y: 199.95
+scale:
+  pixels_per_meter: 77.08
+north:
+  angle_deg: -0.0180000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7308000000
+  total_rotation_deg: -0.7488000000
+  A: 0.0129730819
+  D: -0.0001695510
+  B: -0.0001695510
+  E: -0.0129730819
+  C: 570166.952153
+  F: 154728.987084
+quality:
+  ppm_cv: 0.0050000000
+  ppm_values:
+  - 76.82
+  - 77.31
+  - 77.49
+  - 77.08
+  - 76.51
+  entrance_std_px: 0.4100000000
+  outliers_removed: 0
+  flag: null

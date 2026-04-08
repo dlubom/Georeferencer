@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.L-22.05
+  dir_id: '001734'
+  name: Cubryńska Dziura I
+  n_submissions: 5
+image:
+  filename: image_1260_zoom_10.tif
+  image_id: 1260
+  width: 970
+  height: 622
+coordinates:
+  lat: 49.191472
+  lon: 20.056075
+entrance:
+  x: 237.27
+  y: 181.04
+scale:
+  pixels_per_meter: 38.4
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7993000000
+  total_rotation_deg: -0.7993000000
+  A: 0.0260381372
+  D: -0.0003632850
+  B: -0.0003632850
+  E: -0.0260381372
+  C: 576917.629876
+  F: 147647.307911
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 38.68
+  - 38.28
+  - 38.34
+  - 38.4
+  - 38.58
+  entrance_std_px: 0.5300000000
+  outliers_removed: 0
+  flag: null

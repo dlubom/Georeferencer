@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-09.16
+  dir_id: '001675'
+  name: Schron z Watrą
+  n_submissions: 5
+image:
+  filename: image_1192_zoom_10.tif
+  image_id: 1192
+  width: 2144
+  height: 2376
+coordinates:
+  lat: 49.234917
+  lon: 19.874019
+entrance:
+  x: 1238.0
+  y: 615.98
+scale:
+  pixels_per_meter: 195.41
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6620000000
+  total_rotation_deg: -0.6620000000
+  A: 0.0051170756
+  D: -0.0000591236
+  B: -0.0000591236
+  E: -0.0051170756
+  C: 563601.010266
+  F: 152304.88442
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 195.41
+  - 195.79
+  - 195.76
+  - 195.1
+  - 195.13
+  entrance_std_px: 3.59
+  outliers_removed: 0
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.L-22.03
+  dir_id: '001732'
+  name: Jaskinia przy Studni w Mnichu
+  n_submissions: 5
+image:
+  filename: image_1258_zoom_10.tif
+  image_id: 1258
+  width: 676
+  height: 746
+coordinates:
+  lat: 49.193444
+  lon: 20.055419
+entrance:
+  x: 203.62
+  y: 143.91
+scale:
+  pixels_per_meter: 76.95
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7989000000
+  total_rotation_deg: -0.7989000000
+  A: 0.0129938881
+  D: -0.0001811839
+  B: -0.0001811839
+  E: -0.0129938881
+  C: 576870.284604
+  F: 147862.902321
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 76.92
+  - 77.07
+  - 76.95
+  - 76.8
+  - 77.23
+  entrance_std_px: 0.7700000000
+  outliers_removed: 0
+  flag: null

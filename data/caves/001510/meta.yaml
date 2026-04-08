@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.47
+  dir_id: '001510'
+  name: Jaskinia za Ratuszem Śnieżna
+  n_submissions: 5
+image:
+  filename: image_1032_zoom_10.tif
+  image_id: 1032
+  width: 918
+  height: 1464
+coordinates:
+  lat: 49.242967
+  lon: 19.909931
+entrance:
+  x: 225.06
+  y: 149.81
+scale:
+  pixels_per_meter: 77.04
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6893000000
+  total_rotation_deg: -0.6893000000
+  A: 0.0129798333
+  D: -0.0001561528
+  B: -0.0001561528
+  E: -0.0129798333
+  C: 566207.136407
+  F: 153229.089449
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 76.84
+  - 76.8
+  - 77.05
+  - 77.04
+  - 77.04
+  entrance_std_px: 0.2400000000
+  outliers_removed: 0
+  flag: null

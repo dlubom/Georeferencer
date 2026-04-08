@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-09.05
+  dir_id: '001174'
+  name: Żwirowa Dziura Wyżnia
+  n_submissions: 5
+image:
+  filename: image_658_zoom_10.tif
+  image_id: 658
+  width: 800
+  height: 1504
+coordinates:
+  lat: 49.248692
+  lon: 19.869311
+entrance:
+  x: 269.7
+  y: 616.03
+scale:
+  pixels_per_meter: 38.65
+north:
+  angle_deg: -0.0080000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6585000000
+  total_rotation_deg: -0.6665000000
+  A: 0.0258732350
+  D: -0.0003009678
+  B: -0.0003009678
+  E: -0.0258732350
+  C: 563240.297135
+  F: 153844.611347
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 38.37
+  - 38.61
+  - 38.74
+  - 38.58
+  - 38.68
+  entrance_std_px: 0.6200000000
+  outliers_removed: 1
+  flag: null

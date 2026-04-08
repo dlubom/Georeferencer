@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-11.03
+  dir_id: 001199
+  name: Szczelina w Niedźwiedziu
+  n_submissions: 5
+image:
+  filename: image_685_zoom_10.tif
+  image_id: 685
+  width: 542
+  height: 562
+coordinates:
+  lat: 49.248894
+  lon: 19.909044
+entrance:
+  x: 397.26
+  y: 405.27
+scale:
+  pixels_per_meter: 76.98
+north:
+  angle_deg: -0.0100000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6886000000
+  total_rotation_deg: -0.6984000000
+  A: 0.0129894940
+  D: -0.0001583394
+  B: -0.0001583394
+  E: -0.0129894940
+  C: 566132.480249
+  F: 153890.355588
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 76.95
+  - 77.04
+  - 76.98
+  - 76.82
+  - 77.11
+  entrance_std_px: 0.6100000000
+  outliers_removed: 0
+  flag: null

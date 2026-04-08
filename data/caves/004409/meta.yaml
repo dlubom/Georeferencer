@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.70
+  dir_id: 004409
+  name: Znana Studnia
+  n_submissions: 5
+image:
+  filename: image_12107_zoom_10.tif
+  image_id: 12107
+  width: 5910
+  height: 3640
+coordinates:
+  lat: 49.242306
+  lon: 19.9115
+entrance:
+  x: 1269.46
+  y: 1296.92
+scale:
+  pixels_per_meter: 471.02
+north:
+  angle_deg: -0.0170000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6904000000
+  total_rotation_deg: -0.7073000000
+  A: 0.0021229104
+  D: -0.0000262089
+  B: -0.0000262089
+  E: -0.0021229104
+  C: 566322.423563
+  F: 153157.811091
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 471.02
+  - 472.06
+  - 468.83
+  - 473.39
+  - 470.06
+  entrance_std_px: 2.04
+  outliers_removed: 0
+  flag: null

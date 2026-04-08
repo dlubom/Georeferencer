@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.23
+  dir_id: '001361'
+  name: Jaskinia Mała pod Zamkiem
+  n_submissions: 5
+image:
+  filename: image_864_zoom_10.tif
+  image_id: 864
+  width: 870
+  height: 928
+coordinates:
+  lat: 49.237658
+  lon: 19.864731
+entrance:
+  x: 688.27
+  y: 174.71
+scale:
+  pixels_per_meter: 77.0
+north:
+  angle_deg: -0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6550000000
+  total_rotation_deg: -0.6561000000
+  A: 0.0129856293
+  D: -0.0001487082
+  B: -0.0001487082
+  E: -0.0129856293
+  C: 562918.981996
+  F: 152600.881609
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 76.99
+  - 77.01
+  - 77.0
+  - 77.03
+  - 77.13
+  entrance_std_px: 0.5000000000
+  outliers_removed: 1
+  flag: null

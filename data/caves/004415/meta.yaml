@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-10.21
+  dir_id: '004415'
+  name: Jaskinia Zawaliskowa Tomanowa
+  n_submissions: 5
+image:
+  filename: image_4438_zoom_10.tif
+  image_id: 4438
+  width: 966
+  height: 858
+coordinates:
+  lat: 49.229331
+  lon: 19.895581
+entrance:
+  x: 161.77
+  y: 635.45
+scale:
+  pixels_per_meter: 59.2
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6782000000
+  total_rotation_deg: -0.6782000000
+  A: 0.0168892984
+  D: -0.0001999397
+  B: -0.0001999397
+  E: -0.0168892984
+  C: 565181.223736
+  F: 151709.981785
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 59.21
+  - 59.19
+  - 59.41
+  - 59.24
+  - 59.2
+  entrance_std_px: 2.53
+  outliers_removed: 1
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.35
+  dir_id: '004175'
+  name: Schron z Kijem
+  n_submissions: 5
+image:
+  filename: image_4181_zoom_10.tif
+  image_id: 4181
+  width: 1756
+  height: 2176
+coordinates:
+  lat: 49.236311
+  lon: 19.864889
+entrance:
+  x: 625.65
+  y: 1239.17
+scale:
+  pixels_per_meter: 237.36
+north:
+  angle_deg: 0.0050000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6551000000
+  total_rotation_deg: -0.6500000000
+  A: 0.0042128074
+  D: -0.0000477945
+  B: -0.0000477945
+  E: -0.0042128074
+  C: 562938.526537
+  F: 152454.193977
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 238.43
+  - 237.58
+  - 237.36
+  - 236.95
+  - 236.53
+  entrance_std_px: 0.7900000000
+  outliers_removed: 0
+  flag: null

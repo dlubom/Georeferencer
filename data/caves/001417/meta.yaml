@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.46
+  dir_id: '001417'
+  name: Szczelina pod Smoczą Jamą
+  n_submissions: 5
+image:
+  filename: image_916_zoom_10.tif
+  image_id: 916
+  width: 736
+  height: 772
+coordinates:
+  lat: 49.238147
+  lon: 19.866833
+entrance:
+  x: 259.64
+  y: 554.76
+scale:
+  pixels_per_meter: 77.23
+north:
+  angle_deg: -0.0060000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6566000000
+  total_rotation_deg: -0.6625000000
+  A: 0.0129471741
+  D: -0.0001497230
+  B: -0.0001497230
+  E: -0.0129471741
+  C: 563076.956461
+  F: 152661.827708
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 77.23
+  - 77.21
+  - 77.27
+  - 77.2
+  - 77.26
+  entrance_std_px: 0.4400000000
+  outliers_removed: 0
+  flag: null

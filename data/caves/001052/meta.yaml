@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.C-15.01
+  dir_id: '001052'
+  name: Dziura za Głazami
+  n_submissions: 5
+image:
+  filename: image_524_zoom_10.tif
+  image_id: 524
+  width: 972
+  height: 592
+coordinates:
+  lat: 49.254931
+  lon: 19.962278
+entrance:
+  x: 120.5
+  y: 301.31
+scale:
+  pixels_per_meter: 38.46
+north:
+  angle_deg: 0.0090000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7290000000
+  total_rotation_deg: -0.7197000000
+  A: 0.0259999229
+  D: -0.0003266230
+  B: -0.0003266230
+  E: -0.0259999229
+  C: 569998.996674
+  F: 154611.738021
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 38.49
+  - 38.45
+  - 38.73
+  - 38.47
+  - 38.44
+  entrance_std_px: 0.4700000000
+  outliers_removed: 1
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.04
+  dir_id: 001349
+  name: Jaskinia Mylna
+  n_submissions: 5
+image:
+  filename: image_849_zoom_10.tif
+  image_id: 849
+  width: 5692
+  height: 2692
+coordinates:
+  lat: 49.239403
+  lon: 19.861542
+entrance:
+  x: 1884.12
+  y: 2000.58
+scale:
+  pixels_per_meter: 23.62
+north:
+  angle_deg: 60.113
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6526000000
+  total_rotation_deg: 59.4609
+  A: 0.0215109054
+  D: 0.0364613550
+  B: 0.0364613550
+  E: -0.0215109054
+  C: 562580.145503
+  F: 152764.129236
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 23.58
+  - 23.65
+  - 23.64
+  - 23.44
+  - 23.6
+  entrance_std_px: 1386.36
+  outliers_removed: 1
+  flag: high_entrance_std

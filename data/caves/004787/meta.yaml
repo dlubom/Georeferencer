@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.66
+  dir_id: 004787
+  name: Jaskinia Niespodzianka
+  n_submissions: 5
+image:
+  filename: image_4923_zoom_10.tif
+  image_id: 4923
+  width: 2964
+  height: 2336
+coordinates:
+  lat: 49.240556
+  lon: 19.899444
+entrance:
+  x: 2672.68
+  y: 1930.12
+scale:
+  pixels_per_meter: 235.65
+north:
+  angle_deg: 0.0060000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6813000000
+  total_rotation_deg: -0.6754000000
+  A: 0.0042432829
+  D: -0.0000500247
+  B: -0.0000500247
+  E: -0.0042432829
+  C: 565438.911531
+  F: 152958.360731
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 237.15
+  - 237.45
+  - 235.48
+  - 235.58
+  - 235.65
+  entrance_std_px: 3.28
+  outliers_removed: 0
+  flag: null

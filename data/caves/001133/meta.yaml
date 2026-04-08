@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.44
+  dir_id: '001133'
+  name: Sowia Jama III
+  n_submissions: 5
+image:
+  filename: image_634_zoom_10.tif
+  image_id: 634
+  width: 2104
+  height: 3534
+coordinates:
+  lat: 49.247425
+  lon: 19.863889
+entrance:
+  x: 1439.51
+  y: 838.01
+scale:
+  pixels_per_meter: 194.63
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6544000000
+  total_rotation_deg: -0.6544000000
+  A: 0.0051376024
+  D: -0.0000586837
+  B: -0.0000586837
+  E: -0.0051376024
+  C: 562846.876128
+  F: 153687.653213
+quality:
+  ppm_cv: 0.0070000000
+  ppm_values:
+  - 197.37
+  - 196.87
+  - 193.77
+  - 194.63
+  - 194.62
+  entrance_std_px: 1.63
+  outliers_removed: 0
+  flag: null

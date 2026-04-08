@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-09.13
+  dir_id: 000987
+  name: Ciasna Norka
+  n_submissions: 5
+image:
+  filename: image_464_zoom_10.tif
+  image_id: 464
+  width: 552
+  height: 490
+coordinates:
+  lat: 49.263036
+  lon: 19.878917
+entrance:
+  x: 260.99
+  y: 285.15
+scale:
+  pixels_per_meter: 76.78
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6660000000
+  total_rotation_deg: -0.6660000000
+  A: 0.0130232927
+  D: -0.0001513807
+  B: -0.0001513807
+  E: -0.0130232927
+  C: 563924.086068
+  F: 155434.541642
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 76.78
+  - 76.79
+  - 77.09
+  - 76.47
+  - 76.76
+  entrance_std_px: 0.7200000000
+  outliers_removed: 2
+  flag: null

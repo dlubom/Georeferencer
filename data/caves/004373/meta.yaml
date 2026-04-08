@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.45
+  dir_id: '004373'
+  name: Lustrzany Korytarz
+  n_submissions: 5
+image:
+  filename: image_12244_zoom_10.tif
+  image_id: 12244
+  width: 3086
+  height: 3176
+coordinates:
+  lat: 49.237531
+  lon: 19.87835
+entrance:
+  x: 1651.0
+  y: 2397.75
+scale:
+  pixels_per_meter: 237.02
+north:
+  angle_deg: 0.0040000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6653000000
+  total_rotation_deg: -0.6612000000
+  A: 0.0042187407
+  D: -0.0000486895
+  B: -0.0000486895
+  E: -0.0042187407
+  C: 563912.274791
+  F: 152606.011675
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 236.51
+  - 237.04
+  - 236.9
+  - 241.08
+  - 237.02
+  entrance_std_px: 2.68
+  outliers_removed: 2
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.J-09.01
+  dir_id: '004446'
+  name: Jaskinia Maleńka w Smreczyńskim Wierchu
+  n_submissions: 5
+image:
+  filename: image_12236_zoom_10.tif
+  image_id: 12236
+  width: 5676
+  height: 2660
+coordinates:
+  lat: 49.208947
+  lon: 19.888033
+entrance:
+  x: 965.88
+  y: 777.68
+scale:
+  pixels_per_meter: 236.75
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6723000000
+  total_rotation_deg: -0.6723000000
+  A: 0.0042235751
+  D: -0.0000495631
+  B: -0.0000495631
+  E: -0.0042235751
+  C: 564657.010546
+  F: 149430.713998
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 236.75
+  - 235.57
+  - 237.15
+  - 237.03
+  - 236.41
+  entrance_std_px: 3.97
+  outliers_removed: 0
+  flag: null

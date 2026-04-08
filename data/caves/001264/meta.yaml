@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-17.14
+  dir_id: '001264'
+  name: Nyża pod Zawracikiem
+  n_submissions: 5
+image:
+  filename: image_2816_zoom_10.tif
+  image_id: 2816
+  width: 616
+  height: 906
+coordinates:
+  lat: 49.250556
+  lon: 19.984444
+entrance:
+  x: 134.54
+  y: 204.11
+scale:
+  pixels_per_meter: 77.11
+north:
+  angle_deg: -0.0080000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7458000000
+  total_rotation_deg: -0.7541000000
+  A: 0.0129675428
+  D: -0.0001706847
+  B: -0.0001706847
+  E: -0.0129675428
+  C: 571619.119478
+  F: 154141.077278
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 77.11
+  - 77.15
+  - 77.08
+  - 77.11
+  - 77.08
+  entrance_std_px: 0.5600000000
+  outliers_removed: 0
+  flag: null

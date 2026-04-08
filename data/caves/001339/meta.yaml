@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-07.35
+  dir_id: 001339
+  name: Nisza nad Jelenią Percią
+  n_submissions: 5
+image:
+  filename: image_842_zoom_10.tif
+  image_id: 842
+  width: 1514
+  height: 718
+coordinates:
+  lat: 49.242064
+  lon: 19.853917
+entrance:
+  x: 1032.39
+  y: 185.1
+scale:
+  pixels_per_meter: 77.24
+north:
+  angle_deg: 0.0030000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6468000000
+  total_rotation_deg: -0.6436000000
+  A: 0.0129464906
+  D: -0.0001454326
+  B: -0.0001454326
+  E: -0.0129464906
+  C: 562122.082599
+  F: 153081.776398
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.16
+  - 76.6
+  - 154.55
+  - 77.28
+  - 77.24
+  entrance_std_px: 1.05
+  outliers_removed: 2
+  flag: null

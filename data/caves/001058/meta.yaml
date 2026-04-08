@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.C-15.07
+  dir_id: 001058
+  name: Frapująca Nyża
+  n_submissions: 5
+image:
+  filename: image_530_zoom_10.tif
+  image_id: 530
+  width: 578
+  height: 894
+coordinates:
+  lat: 49.255069
+  lon: 19.964611
+entrance:
+  x: 456.93
+  y: 294.46
+scale:
+  pixels_per_meter: 77.18
+north:
+  angle_deg: -0.0060000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7308000000
+  total_rotation_deg: -0.7373000000
+  A: 0.0129552159
+  D: -0.0001667153
+  B: -0.0001667153
+  E: -0.0129552159
+  C: 570165.679582
+  F: 154625.254599
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 76.79
+  - 77.22
+  - 77.15
+  - 77.37
+  - 77.11
+  entrance_std_px: 0.6400000000
+  outliers_removed: 1
+  flag: null

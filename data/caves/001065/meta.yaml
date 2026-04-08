@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.C-16.03
+  dir_id: '001065'
+  name: Korytarzyk nad Kalacką
+  n_submissions: 5
+image:
+  filename: image_537_zoom_10.tif
+  image_id: 537
+  width: 558
+  height: 442
+coordinates:
+  lat: 49.256361
+  lon: 19.966567
+entrance:
+  x: 427.53
+  y: 167.39
+scale:
+  pixels_per_meter: 77.4
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7323000000
+  total_rotation_deg: -0.7323000000
+  A: 0.0129193966
+  D: -0.0001651341
+  B: -0.0001651341
+  E: -0.0129193966
+  C: 570306.508082
+  F: 154768.999554
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 77.25
+  - 77.4
+  - 77.61
+  - 76.79
+  - 77.69
+  entrance_std_px: 0.7200000000
+  outliers_removed: 0
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-07.02
+  dir_id: '001647'
+  name: Szczelina w Panienkach Smytniańskich
+  n_submissions: 5
+image:
+  filename: image_1171_zoom_10.tif
+  image_id: 1171
+  width: 538
+  height: 450
+coordinates:
+  lat: 49.233378
+  lon: 19.853019
+entrance:
+  x: 273.86
+  y: 164.57
+scale:
+  pixels_per_meter: 77.45
+north:
+  angle_deg: 0.0
+  all_skipped: true
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6461000000
+  total_rotation_deg: -0.6461000000
+  A: 0.0129110876
+  D: -0.0001455890
+  B: -0.0001455890
+  E: -0.0129110876
+  C: 562077.453433
+  F: 152115.34132
+quality:
+  ppm_cv: 0.0070000000
+  ppm_values:
+  - 77.91
+  - 76.39
+  - 77.79
+  - 76.84
+  - 77.45
+  entrance_std_px: 0.4000000000
+  outliers_removed: 0
+  flag: null

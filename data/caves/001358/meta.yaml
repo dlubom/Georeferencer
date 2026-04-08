@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.09
+  dir_id: 001358
+  name: Jaskinia Mysia
+  n_submissions: 5
+image:
+  filename: image_853_zoom_10.tif
+  image_id: 853
+  width: 2360
+  height: 4158
+coordinates:
+  lat: 49.239825
+  lon: 19.862825
+entrance:
+  x: 2116.4
+  y: 1485.09
+scale:
+  pixels_per_meter: 120.29
+north:
+  angle_deg: -0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6535000000
+  total_rotation_deg: -0.6543000000
+  A: 0.0083125887
+  D: -0.0000949289
+  B: -0.0000949289
+  E: -0.0083125887
+  C: 562768.993411
+  F: 152850.301333
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 120.08
+  - 119.92
+  - 120.33
+  - 120.29
+  - 120.66
+  entrance_std_px: 1.68
+  outliers_removed: 0
+  flag: null

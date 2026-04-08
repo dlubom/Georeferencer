@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-12.05
+  dir_id: '001213'
+  name: Jaskinia Błotna
+  n_submissions: 5
+image:
+  filename: image_706_zoom_10.tif
+  image_id: 706
+  width: 3290
+  height: 982
+coordinates:
+  lat: 49.247139
+  lon: 19.913683
+entrance:
+  x: 3091.36
+  y: 227.85
+scale:
+  pixels_per_meter: 118.3
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6921000000
+  total_rotation_deg: -0.6921000000
+  A: 0.0084521782
+  D: -0.0001021090
+  B: -0.0001021090
+  E: -0.0084521782
+  C: 566451.333857
+  F: 153696.295961
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 118.29
+  - 118.3
+  - 118.77
+  - 118.3
+  - 118.75
+  entrance_std_px: 0.5200000000
+  outliers_removed: 0
+  flag: null

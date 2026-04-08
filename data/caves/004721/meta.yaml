@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-22.01
+  dir_id: '004721'
+  name: Wyżnia Koszowa Dziura
+  n_submissions: 5
+image:
+  filename: image_4792_zoom_10.tif
+  image_id: 4792
+  width: 1470
+  height: 866
+coordinates:
+  lat: 49.248722
+  lon: 20.058694
+entrance:
+  x: 933.55
+  y: 286.86
+scale:
+  pixels_per_meter: 118.01
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.8020000000
+  total_rotation_deg: -0.8020000000
+  A: 0.0084728396
+  D: -0.0001186087
+  B: -0.0001186087
+  E: -0.0084728396
+  C: 577017.59808
+  F: 154010.100557
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 117.98
+  - 118.05
+  - 116.24
+  - 117.51
+  - 118.7
+  entrance_std_px: 1.16
+  outliers_removed: 1
+  flag: null

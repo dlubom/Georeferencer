@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-11.21
+  dir_id: '004433'
+  name: Szczelina nad Tomanową I
+  n_submissions: 5
+image:
+  filename: image_4463_zoom_10.tif
+  image_id: 4463
+  width: 1058
+  height: 1326
+coordinates:
+  lat: 49.229639
+  lon: 19.903411
+entrance:
+  x: 220.85
+  y: 409.65
+scale:
+  pixels_per_meter: 59.01
+north:
+  angle_deg: -0.0240000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6842000000
+  total_rotation_deg: -0.7081000000
+  A: 0.0169463977
+  D: -0.0002094352
+  B: -0.0002094352
+  E: -0.0169463977
+  C: 565749.653774
+  F: 151747.211157
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 58.99
+  - 58.99
+  - 59.59
+  - 59.07
+  - 59.02
+  entrance_std_px: 0.8400000000
+  outliers_removed: 1
+  flag: null

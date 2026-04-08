@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-14.01
+  dir_id: '001212'
+  name: Jaskinia Juhaska
+  n_submissions: 5
+image:
+  filename: image_694_zoom_10.tif
+  image_id: 694
+  width: 3674
+  height: 3004
+coordinates:
+  lat: 49.2548
+  lon: 19.942942
+entrance:
+  x: 551.49
+  y: 603.52
+scale:
+  pixels_per_meter: 194.9
+north:
+  angle_deg: 0.0090000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7144000000
+  total_rotation_deg: -0.7052000000
+  A: 0.0051303165
+  D: -0.0000631490
+  B: -0.0000631490
+  E: -0.0051303165
+  C: 568592.820747
+  F: 154574.717513
+quality:
+  ppm_cv: 0.3070000000
+  ppm_values:
+  - 97.87
+  - 196.41
+  - 98.02
+  - 194.9
+  - 196.87
+  entrance_std_px: 1.31
+  outliers_removed: 0
+  flag: high_ppm_cv

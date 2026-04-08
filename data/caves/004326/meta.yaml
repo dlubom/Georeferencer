@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.68
+  dir_id: '004326'
+  name: Zbójnicka Rura
+  n_submissions: 5
+image:
+  filename: image_12253_zoom_10.tif
+  image_id: 12253
+  width: 3328
+  height: 2988
+coordinates:
+  lat: 49.236519
+  lon: 19.865061
+entrance:
+  x: 600.42
+  y: 1464.99
+scale:
+  pixels_per_meter: 236.76
+north:
+  angle_deg: -0.0100000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6552000000
+  total_rotation_deg: -0.6654000000
+  A: 0.0042234155
+  D: -0.0000490488
+  B: -0.0000490488
+  E: -0.0042234155
+  C: 562950.891656
+  F: 152478.419523
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 236.84
+  - 236.46
+  - 236.76
+  - 236.08
+  - 236.86
+  entrance_std_px: 1.81
+  outliers_removed: 0
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-07.27
+  dir_id: '001325'
+  name: Wiśniakowa Jama
+  n_submissions: 5
+image:
+  filename: image_825_zoom_10.tif
+  image_id: 825
+  width: 952
+  height: 860
+coordinates:
+  lat: 49.241503
+  lon: 19.851733
+entrance:
+  x: 730.06
+  y: 267.52
+scale:
+  pixels_per_meter: 76.94
+north:
+  angle_deg: -0.0080000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6452000000
+  total_rotation_deg: -0.6535000000
+  A: 0.0129958041
+  D: -0.0001482253
+  B: -0.0001482253
+  E: -0.0129958041
+  C: 561967.758216
+  F: 153018.676327
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.04
+  - 76.8
+  - 76.99
+  - 77.51
+  - 76.89
+  entrance_std_px: 0.3800000000
+  outliers_removed: 1
+  flag: null

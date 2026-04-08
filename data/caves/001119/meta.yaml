@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.30
+  dir_id: 001119
+  name: Schron pod Kazalnicą
+  n_submissions: 5
+image:
+  filename: image_621_zoom_10.tif
+  image_id: 621
+  width: 2554
+  height: 3578
+coordinates:
+  lat: 49.246603
+  lon: 19.861778
+entrance:
+  x: 1794.53
+  y: 1997.07
+scale:
+  pixels_per_meter: 97.76
+north:
+  angle_deg: -0.0780000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6528000000
+  total_rotation_deg: -0.7308000000
+  A: 0.0102287127
+  D: -0.0001304794
+  B: -0.0001304794
+  E: -0.0102287127
+  C: 562683.579412
+  F: 153610.819893
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 97.41
+  - 98.19
+  - 97.35
+  - 195.34
+  - 98.1
+  entrance_std_px: 1.54
+  outliers_removed: 1
+  flag: null

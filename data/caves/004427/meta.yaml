@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-11.15
+  dir_id: '004427'
+  name: Niski Schron nad Tomanową
+  n_submissions: 5
+image:
+  filename: image_12240_zoom_10.tif
+  image_id: 12240
+  width: 2472
+  height: 2864
+coordinates:
+  lat: 49.229831
+  lon: 19.901031
+entrance:
+  x: 978.89
+  y: 1762.73
+scale:
+  pixels_per_meter: 237.23
+north:
+  angle_deg: -0.0070000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6824000000
+  total_rotation_deg: -0.6892000000
+  A: 0.0042149855
+  D: -0.0000507021
+  B: -0.0000507021
+  E: -0.0042149855
+  C: 565575.797515
+  F: 151766.974146
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 237.63
+  - 236.22
+  - 237.23
+  - 237.48
+  - 236.07
+  entrance_std_px: 1.97
+  outliers_removed: 0
+  flag: null

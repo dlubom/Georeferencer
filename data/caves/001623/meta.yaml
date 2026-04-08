@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-13.22
+  dir_id: '001623'
+  name: Dziura przy Lodowej Małołąckiej III
+  n_submissions: 5
+image:
+  filename: image_2956_zoom_10.tif
+  image_id: 2956
+  width: 514
+  height: 488
+coordinates:
+  lat: 49.243172
+  lon: 19.928719
+entrance:
+  x: 79.79
+  y: 184.65
+scale:
+  pixels_per_meter: 77.01
+north:
+  angle_deg: -0.1750000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7035000000
+  total_rotation_deg: -0.8782000000
+  A: 0.0129839167
+  D: -0.0001990204
+  B: -0.0001990204
+  E: -0.0129839167
+  C: 567575.824086
+  F: 153268.922532
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 76.98
+  - 76.82
+  - 77.04
+  - 77.21
+  - 76.05
+  entrance_std_px: 0.4400000000
+  outliers_removed: 1
+  flag: null

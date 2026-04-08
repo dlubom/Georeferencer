@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-04.01
+  dir_id: 001282
+  name: Dziura w Zawiesistej
+  n_submissions: 5
+image:
+  filename: image_779_zoom_10.tif
+  image_id: 779
+  width: 1842
+  height: 1242
+coordinates:
+  lat: 49.242931
+  lon: 19.806131
+entrance:
+  x: 366.77
+  y: 609.4
+scale:
+  pixels_per_meter: 196.0
+north:
+  angle_deg: -0.0070000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6106000000
+  total_rotation_deg: -0.6180000000
+  A: 0.0051016142
+  D: -0.0000550318
+  B: -0.0000550318
+  E: -0.0051016142
+  C: 558655.434873
+  F: 153140.554964
+quality:
+  ppm_cv: 0.0060000000
+  ppm_values:
+  - 196.26
+  - 193.85
+  - 196.12
+  - 196.0
+  - 193.52
+  entrance_std_px: 0.9900000000
+  outliers_removed: 0
+  flag: null

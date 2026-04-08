@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-04.04
+  dir_id: 004068
+  name: Nyża w Wielkich Koryciskach
+  n_submissions: 5
+image:
+  filename: image_4033_zoom_10.tif
+  image_id: 4033
+  width: 1032
+  height: 806
+coordinates:
+  lat: 49.268661
+  lon: 19.806442
+entrance:
+  x: 485.64
+  y: 429.48
+scale:
+  pixels_per_meter: 117.93
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6111000000
+  total_rotation_deg: -0.6111000000
+  A: 0.0084792394
+  D: -0.0000904411
+  B: -0.0000904411
+  E: -0.0084792394
+  C: 558645.32783
+  F: 156000.862002
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 117.9
+  - 117.96
+  - 117.32
+  - 117.76
+  - 118.03
+  entrance_std_px: 0.7400000000
+  outliers_removed: 1
+  flag: null

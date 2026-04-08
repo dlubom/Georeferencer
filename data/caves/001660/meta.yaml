@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-09.09
+  dir_id: '001660'
+  name: Koliby
+  n_submissions: 5
+image:
+  filename: image_1186_zoom_10.tif
+  image_id: 1186
+  width: 1570
+  height: 1580
+coordinates:
+  lat: 49.234575
+  lon: 19.876775
+entrance:
+  x: 1135.75
+  y: 914.01
+scale:
+  pixels_per_meter: 197.28
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6641000000
+  total_rotation_deg: -0.6641000000
+  A: 0.0050684880
+  D: -0.0000587466
+  B: -0.0000587466
+  E: -0.0050684880
+  C: 563802.61392
+  F: 152270.671653
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 197.24
+  - 197.96
+  - 197.33
+  - 195.6
+  - 196.79
+  entrance_std_px: 4.43
+  outliers_removed: 1
+  flag: null

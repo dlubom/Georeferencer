@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.32
+  dir_id: '001526'
+  name: Schron w Progu Mułowym
+  n_submissions: 5
+image:
+  filename: image_1021_zoom_10.tif
+  image_id: 1021
+  width: 2340
+  height: 3758
+coordinates:
+  lat: 49.2403
+  lon: 19.903808
+entrance:
+  x: 1411.34
+  y: 685.33
+scale:
+  pixels_per_meter: 196.06
+north:
+  angle_deg: -0.0130000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6846000000
+  total_rotation_deg: -0.6976000000
+  A: 0.0050999867
+  D: -0.0000621006
+  B: -0.0000621006
+  E: -0.0050999867
+  C: 565760.893477
+  F: 152928.954761
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 196.57
+  - 195.73
+  - 195.68
+  - 196.06
+  - 196.15
+  entrance_std_px: 2.24
+  outliers_removed: 0
+  flag: null

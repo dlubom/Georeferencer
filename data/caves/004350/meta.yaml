@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.26
+  dir_id: '004350'
+  name: Paszcza Rekina
+  n_submissions: 5
+image:
+  filename: image_4369_zoom_10.tif
+  image_id: 4369
+  width: 1050
+  height: 1302
+coordinates:
+  lat: 49.236075
+  lon: 19.871133
+entrance:
+  x: 202.3
+  y: 771.36
+scale:
+  pixels_per_meter: 118.15
+north:
+  angle_deg: -0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6598000000
+  total_rotation_deg: -0.6601000000
+  A: 0.0084629971
+  D: -0.0000975132
+  B: -0.0000975132
+  E: -0.0084629971
+  C: 563394.161653
+  F: 152434.477952
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 117.82
+  - 117.62
+  - 116.22
+  - 118.48
+  - 118.5
+  entrance_std_px: 0.7800000000
+  outliers_removed: 1
+  flag: null

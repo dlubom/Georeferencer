@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-13.11
+  dir_id: 001598
+  name: Jaskinia w Trawniczku
+  n_submissions: 5
+image:
+  filename: image_1134_zoom_10.tif
+  image_id: 1134
+  width: 730
+  height: 842
+coordinates:
+  lat: 49.244372
+  lon: 19.927644
+entrance:
+  x: 149.79
+  y: 624.68
+scale:
+  pixels_per_meter: 77.04
+north:
+  angle_deg: 0.0040000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7027000000
+  total_rotation_deg: -0.6982000000
+  A: 0.0129800866
+  D: -0.0001581921
+  B: -0.0001581921
+  E: -0.0129800866
+  C: 567495.122427
+  F: 153407.042796
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 77.23
+  - 77.04
+  - 77.03
+  - 77.03
+  - 77.1
+  entrance_std_px: 0.5400000000
+  outliers_removed: 1
+  flag: null

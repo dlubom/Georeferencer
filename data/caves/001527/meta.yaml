@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.33
+  dir_id: '001527'
+  name: Dziura pod Ratuszem
+  n_submissions: 5
+image:
+  filename: image_1022_zoom_10.tif
+  image_id: 1022
+  width: 494
+  height: 546
+coordinates:
+  lat: 49.242208
+  lon: 19.905894
+entrance:
+  x: 213.4
+  y: 276.09
+scale:
+  pixels_per_meter: 77.01
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6862000000
+  total_rotation_deg: -0.6862000000
+  A: 0.0129845671
+  D: -0.0001555149
+  B: -0.0001555149
+  E: -0.0129845671
+  C: 565914.572706
+  F: 153142.850589
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 76.02
+  - 77.03
+  - 77.13
+  - 76.77
+  - 76.99
+  entrance_std_px: 0.5900000000
+  outliers_removed: 1
+  flag: null

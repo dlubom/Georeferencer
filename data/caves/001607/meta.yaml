@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.59
+  dir_id: '001607'
+  name: Zawalony Schron
+  n_submissions: 5
+image:
+  filename: image_1113_zoom_10.tif
+  image_id: 1113
+  width: 504
+  height: 760
+coordinates:
+  lat: 49.245394
+  lon: 19.913233
+entrance:
+  x: 229.48
+  y: 176.98
+scale:
+  pixels_per_meter: 76.8
+north:
+  angle_deg: -0.0070000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6918000000
+  total_rotation_deg: -0.6985000000
+  A: 0.0130193405
+  D: -0.0001587300
+  B: -0.0001587300
+  E: -0.0130193405
+  C: 566444.080874
+  F: 153502.069723
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 76.8
+  - 76.58
+  - 76.9
+  - 76.87
+  - 76.66
+  entrance_std_px: 0.4000000000
+  outliers_removed: 0
+  flag: null

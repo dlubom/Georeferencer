@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.07
+  dir_id: '001423'
+  name: Arkada
+  n_submissions: 5
+image:
+  filename: image_935_zoom_10.tif
+  image_id: 935
+  width: 1966
+  height: 2218
+coordinates:
+  lat: 49.236889
+  lon: 19.873439
+entrance:
+  x: 627.64
+  y: 1632.15
+scale:
+  pixels_per_meter: 195.74
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6616000000
+  total_rotation_deg: -0.6616000000
+  A: 0.0051084728
+  D: -0.0000589868
+  B: -0.0000589868
+  E: -0.0051084728
+  C: 563559.45875
+  F: 152528.703839
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 195.69
+  - 195.15
+  - 195.76
+  - 195.74
+  - 196.16
+  entrance_std_px: 0.8500000000
+  outliers_removed: 2
+  flag: null

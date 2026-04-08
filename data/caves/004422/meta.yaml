@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-11.08
+  dir_id: '004422'
+  name: Szczelina przy Tomanowym Okapie
+  n_submissions: 5
+image:
+  filename: image_4451_zoom_10.tif
+  image_id: 4451
+  width: 656
+  height: 746
+coordinates:
+  lat: 49.230611
+  lon: 19.89815
+entrance:
+  x: 378.39
+  y: 540.41
+scale:
+  pixels_per_meter: 59.24
+north:
+  angle_deg: -0.0610000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6802000000
+  total_rotation_deg: -0.7415000000
+  A: 0.0168782606
+  D: -0.0002184399
+  B: -0.0002184399
+  E: -0.0168782606
+  C: 565362.850881
+  F: 151852.889689
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 59.08
+  - 58.82
+  - 59.25
+  - 59.24
+  - 59.38
+  entrance_std_px: 0.7600000000
+  outliers_removed: 1
+  flag: null

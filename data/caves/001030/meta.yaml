@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-12.06
+  dir_id: '001030'
+  name: Nisza w Jatkach
+  n_submissions: 5
+image:
+  filename: image_502_zoom_10.tif
+  image_id: 502
+  width: 672
+  height: 1100
+coordinates:
+  lat: 49.264831
+  lon: 19.921642
+entrance:
+  x: 465.25
+  y: 744.95
+scale:
+  pixels_per_meter: 77.04
+north:
+  angle_deg: 0.0080000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6984000000
+  total_rotation_deg: -0.6907000000
+  A: 0.0129797497
+  D: -0.0001564804
+  B: -0.0001564804
+  E: -0.0129797497
+  C: 567026.623752
+  F: 155677.018622
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 77.04
+  - 76.93
+  - 76.83
+  - 77.2
+  - 77.3
+  entrance_std_px: 0.9300000000
+  outliers_removed: 0
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.57
+  dir_id: '001433'
+  name: Schron pod Tunelem
+  n_submissions: 5
+image:
+  filename: image_937_zoom_10.tif
+  image_id: 937
+  width: 472
+  height: 534
+coordinates:
+  lat: 49.242
+  lon: 19.856322
+entrance:
+  x: 281.12
+  y: 416.74
+scale:
+  pixels_per_meter: 77.08
+north:
+  angle_deg: 0.0090000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6486000000
+  total_rotation_deg: -0.6393000000
+  A: 0.0129718942
+  D: -0.0001447472
+  B: -0.0001447472
+  E: -0.0129718942
+  C: 562306.914161
+  F: 153079.542379
+quality:
+  ppm_cv: 0.0050000000
+  ppm_values:
+  - 77.08
+  - 77.1
+  - 76.17
+  - 76.62
+  - 77.16
+  entrance_std_px: 0.6600000000
+  outliers_removed: 0
+  flag: null

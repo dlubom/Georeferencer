@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.74
+  dir_id: 004349
+  name: Nyża ze Znakami
+  n_submissions: 5
+image:
+  filename: image_4368_zoom_10.tif
+  image_id: 4368
+  width: 930
+  height: 888
+coordinates:
+  lat: 49.241472
+  lon: 19.855556
+entrance:
+  x: 684.4
+  y: 359.92
+scale:
+  pixels_per_meter: 118.25
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6481000000
+  total_rotation_deg: -0.6481000000
+  A: 0.0084561364
+  D: -0.0000956490
+  B: -0.0000956490
+  E: -0.0084561364
+  C: 562249.673656
+  F: 153017.894877
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 118.08
+  - 118.1
+  - 58.71
+  - 118.62
+  - 118.4
+  entrance_std_px: 0.7700000000
+  outliers_removed: 1
+  flag: null

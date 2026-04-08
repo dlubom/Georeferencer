@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.07
+  dir_id: '001537'
+  name: Jaskinia Małołącka
+  n_submissions: 5
+image:
+  filename: image_1051_zoom_10.tif
+  image_id: 1051
+  width: 2162
+  height: 2420
+coordinates:
+  lat: 49.238672
+  lon: 19.921764
+entrance:
+  x: 885.33
+  y: 135.62
+scale:
+  pixels_per_meter: 19.29
+north:
+  angle_deg: -0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6982000000
+  total_rotation_deg: -0.6994000000
+  A: 0.0518308671
+  D: -0.0006327422
+  B: -0.0006327422
+  E: -0.0518308671
+  C: 567031.053038
+  F: 152767.802993
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 19.29
+  - 19.28
+  - 19.29
+  - 19.32
+  - 19.35
+  entrance_std_px: 0.5300000000
+  outliers_removed: 0
+  flag: null

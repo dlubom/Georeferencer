@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.04
+  dir_id: '001536'
+  name: Dziura Małołącka Mała
+  n_submissions: 5
+image:
+  filename: image_1047_zoom_10.tif
+  image_id: 1047
+  width: 758
+  height: 774
+coordinates:
+  lat: 49.239942
+  lon: 19.922372
+entrance:
+  x: 661.1
+  y: 532.7
+scale:
+  pixels_per_meter: 76.97
+north:
+  angle_deg: -0.0080000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6987000000
+  total_rotation_deg: -0.7069000000
+  A: 0.0129915757
+  D: -0.0001603012
+  B: -0.0001603012
+  E: -0.0129915757
+  C: 567110.873692
+  F: 152908.920038
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 77.01
+  - 77.02
+  - 76.97
+  - 76.93
+  - 76.96
+  entrance_std_px: 0.4200000000
+  outliers_removed: 0
+  flag: null

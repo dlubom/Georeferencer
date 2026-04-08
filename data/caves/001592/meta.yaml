@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-13.09
+  dir_id: 001592
+  name: Bliźniacza Studnia
+  n_submissions: 5
+image:
+  filename: image_1131_zoom_10.tif
+  image_id: 1131
+  width: 760
+  height: 1574
+coordinates:
+  lat: 49.239889
+  lon: 19.925206
+entrance:
+  x: 242.55
+  y: 310.51
+scale:
+  pixels_per_meter: 76.83
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7008000000
+  total_rotation_deg: -0.7008000000
+  A: 0.0130145292
+  D: -0.0001591915
+  B: -0.0001591915
+  E: -0.0130145292
+  C: 567322.564419
+  F: 152902.601792
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 76.81
+  - 77.11
+  - 76.91
+  - 76.81
+  - 76.85
+  entrance_std_px: 0.5600000000
+  outliers_removed: 1
+  flag: null

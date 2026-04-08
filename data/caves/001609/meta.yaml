@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.61
+  dir_id: 001609
+  name: Szczelina nad Dziurą w Wantach II
+  n_submissions: 5
+image:
+  filename: image_1115_zoom_10.tif
+  image_id: 1115
+  width: 906
+  height: 596
+coordinates:
+  lat: 49.243939
+  lon: 19.917667
+entrance:
+  x: 670.32
+  y: 331.76
+scale:
+  pixels_per_meter: 77.21
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6951000000
+  total_rotation_deg: -0.6951000000
+  A: 0.0129513433
+  D: -0.0001571372
+  B: -0.0001571372
+  E: -0.0129513433
+  C: 566762.987856
+  F: 153346.335495
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 76.9
+  - 77.33
+  - 77.21
+  - 77.34
+  - 76.48
+  entrance_std_px: 0.6200000000
+  outliers_removed: 0
+  flag: null

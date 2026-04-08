@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.33
+  dir_id: 001483
+  name: Nisza nad Żółtą Dziurą
+  n_submissions: 5
+image:
+  filename: image_992_zoom_10.tif
+  image_id: 992
+  width: 1018
+  height: 1770
+coordinates:
+  lat: 49.237444
+  lon: 19.871367
+entrance:
+  x: 603.34
+  y: 1383.02
+scale:
+  pixels_per_meter: 196.21
+north:
+  angle_deg: -0.0320000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6600000000
+  total_rotation_deg: -0.6920000000
+  A: 0.0050962541
+  D: -0.0000615518
+  B: -0.0000615518
+  E: -0.0050962541
+  C: 563408.085113
+  F: 152587.354994
+quality:
+  ppm_cv: 0.0070000000
+  ppm_values:
+  - 196.33
+  - 193.15
+  - 196.46
+  - 196.21
+  - 193.6
+  entrance_std_px: 1.17
+  outliers_removed: 0
+  flag: null

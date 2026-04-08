@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-12.09
+  dir_id: '001016'
+  name: Nyża przy Jatkach
+  n_submissions: 5
+image:
+  filename: image_488_zoom_10.tif
+  image_id: 488
+  width: 598
+  height: 432
+coordinates:
+  lat: 49.265569
+  lon: 19.922964
+entrance:
+  x: 179.64
+  y: 264.78
+scale:
+  pixels_per_meter: 76.84
+north:
+  angle_deg: -0.0740000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6994000000
+  total_rotation_deg: -0.7737000000
+  A: 0.0130127730
+  D: -0.0001757261
+  B: -0.0001757261
+  E: -0.0130127730
+  C: 567125.403797
+  F: 155753.944126
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 76.85
+  - 76.83
+  - 76.92
+  - 76.79
+  - 77.16
+  entrance_std_px: 0.5600000000
+  outliers_removed: 1
+  flag: null

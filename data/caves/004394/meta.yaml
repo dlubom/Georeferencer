@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-06.17
+  dir_id: 004394
+  name: Dudowy Okap
+  n_submissions: 5
+image:
+  filename: image_4418_zoom_10.tif
+  image_id: 4418
+  width: 746
+  height: 732
+coordinates:
+  lat: 49.245861
+  lon: 19.83075
+entrance:
+  x: 298.55
+  y: 209.73
+scale:
+  pixels_per_meter: 59.39
+north:
+  angle_deg: -0.0060000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6293000000
+  total_rotation_deg: -0.6350000000
+  A: 0.0168362662
+  D: -0.0001865887
+  B: -0.0001865887
+  E: -0.0168362662
+  C: 560440.065945
+  F: 153486.022223
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 59.34
+  - 59.47
+  - 59.67
+  - 59.43
+  - 59.36
+  entrance_std_px: 0.3600000000
+  outliers_removed: 1
+  flag: null

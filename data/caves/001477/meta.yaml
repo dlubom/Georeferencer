@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.08
+  dir_id: '001477'
+  name: Jaskinia pod Dachem
+  n_submissions: 5
+image:
+  filename: image_2950_zoom_10.tif
+  image_id: 2950
+  width: 4140
+  height: 2930
+coordinates:
+  lat: 49.240678
+  lon: 19.905653
+entrance:
+  x: 369.19
+  y: 2144.06
+scale:
+  pixels_per_meter: 97.97
+north:
+  angle_deg: 0.0020000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6860000000
+  total_rotation_deg: -0.6843000000
+  A: 0.0102062617
+  D: -0.0001218941
+  B: -0.0001218941
+  E: -0.0102062617
+  C: 565898.293813
+  F: 152990.914569
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 97.94
+  - 98.0
+  - 97.95
+  - 98.0
+  - 98.17
+  entrance_std_px: 0.7900000000
+  outliers_removed: 1
+  flag: null

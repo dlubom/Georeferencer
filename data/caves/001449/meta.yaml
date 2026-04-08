@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.16
+  dir_id: 001449
+  name: Żółta Dziura
+  n_submissions: 5
+image:
+  filename: image_960_zoom_10.tif
+  image_id: 960
+  width: 1834
+  height: 3212
+coordinates:
+  lat: 49.237356
+  lon: 19.871425
+entrance:
+  x: 1298.15
+  y: 1338.06
+scale:
+  pixels_per_meter: 97.72
+north:
+  angle_deg: 0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6600000000
+  total_rotation_deg: -0.6586000000
+  A: 0.0102326148
+  D: -0.0001176349
+  B: -0.0001176349
+  E: -0.0102326148
+  C: 563402.282057
+  F: 152584.382953
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 97.72
+  - 97.81
+  - 97.64
+  - 97.76
+  - 97.48
+  entrance_std_px: 1.23
+  outliers_removed: 0
+  flag: null

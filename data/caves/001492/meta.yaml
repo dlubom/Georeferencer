@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.37
+  dir_id: 001492
+  name: Omszała Szczelina
+  n_submissions: 5
+image:
+  filename: image_1010_zoom_10.tif
+  image_id: 1010
+  width: 2098
+  height: 2346
+coordinates:
+  lat: 49.240981
+  lon: 19.899536
+entrance:
+  x: 1250.1
+  y: 673.54
+scale:
+  pixels_per_meter: 196.2
+north:
+  angle_deg: 0.0020000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6814000000
+  total_rotation_deg: -0.6795000000
+  A: 0.0050963920
+  D: -0.0000604436
+  B: -0.0000604436
+  E: -0.0050963920
+  C: 565449.958394
+  F: 153000.856939
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 195.71
+  - 194.88
+  - 196.72
+  - 196.24
+  - 196.16
+  entrance_std_px: 1.81
+  outliers_removed: 1
+  flag: null

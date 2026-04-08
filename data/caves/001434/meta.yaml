@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.58
+  dir_id: '001434'
+  name: Tunel w Żlebie z Bramką
+  n_submissions: 5
+image:
+  filename: image_938_zoom_10.tif
+  image_id: 938
+  width: 896
+  height: 760
+coordinates:
+  lat: 49.241953
+  lon: 19.856253
+entrance:
+  x: 375.35
+  y: 231.16
+scale:
+  pixels_per_meter: 76.78
+north:
+  angle_deg: 0.0270000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6486000000
+  total_rotation_deg: -0.6213000000
+  A: 0.0130238976
+  D: -0.0001412225
+  B: -0.0001412225
+  E: -0.0130238976
+  C: 562300.682894
+  F: 153071.879264
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 76.98
+  - 77.06
+  - 76.48
+  - 76.78
+  - 76.6
+  entrance_std_px: 0.4500000000
+  outliers_removed: 0
+  flag: null

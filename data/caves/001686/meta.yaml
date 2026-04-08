@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-09.24
+  dir_id: 001686
+  name: Gruzowa Dziura
+  n_submissions: 5
+image:
+  filename: image_1209_zoom_10.tif
+  image_id: 1209
+  width: 564
+  height: 456
+coordinates:
+  lat: 49.23425
+  lon: 19.876781
+entrance:
+  x: 193.87
+  y: 225.78
+scale:
+  pixels_per_meter: 77.46
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6641000000
+  total_rotation_deg: -0.6641000000
+  A: 0.0129083144
+  D: -0.0001496148
+  B: -0.0001496148
+  E: -0.0129083144
+  C: 563806.703286
+  F: 152232.802084
+quality:
+  ppm_cv: 0.0090000000
+  ppm_values:
+  - 77.46
+  - 78.0
+  - 78.17
+  - 76.61
+  - 76.61
+  entrance_std_px: 0.6000000000
+  outliers_removed: 0
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-09.10
+  dir_id: '001661'
+  name: Dziura pod Wantą
+  n_submissions: 5
+image:
+  filename: image_1187_zoom_10.tif
+  image_id: 1187
+  width: 1910
+  height: 2412
+coordinates:
+  lat: 49.234836
+  lon: 19.876975
+entrance:
+  x: 369.54
+  y: 1412.95
+scale:
+  pixels_per_meter: 195.07
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6642000000
+  total_rotation_deg: -0.6642000000
+  A: 0.0051259815
+  D: -0.0000594267
+  B: -0.0000594267
+  E: -0.0051259815
+  C: 563820.725226
+  F: 152302.411874
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 195.0
+  - 195.0
+  - 195.75
+  - 195.14
+  - 195.28
+  entrance_std_px: 1.45
+  outliers_removed: 1
+  flag: null

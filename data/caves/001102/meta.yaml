@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.13
+  dir_id: '001102'
+  name: Jaskinia Balkonowa
+  n_submissions: 5
+image:
+  filename: image_578_zoom_10.tif
+  image_id: 578
+  width: 2328
+  height: 4100
+coordinates:
+  lat: 49.249075
+  lon: 19.868958
+entrance:
+  x: 746.22
+  y: 3533.71
+scale:
+  pixels_per_meter: 196.24
+north:
+  angle_deg: 0.0030000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6583000000
+  total_rotation_deg: -0.6549000000
+  A: 0.0050954529
+  D: -0.0000582426
+  B: -0.0000582426
+  E: -0.0050954529
+  C: 563217.32166
+  F: 153888.910248
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 65.42
+  - 196.24
+  - 196.28
+  - 196.05
+  - 196.84
+  entrance_std_px: 1.89
+  outliers_removed: 2
+  flag: null

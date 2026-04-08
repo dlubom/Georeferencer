@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.A-12.02
+  dir_id: 000952
+  name: Jasiowy Schron
+  n_submissions: 5
+image:
+  filename: image_444_zoom_10.tif
+  image_id: 444
+  width: 458
+  height: 512
+coordinates:
+  lat: 49.274222
+  lon: 19.914528
+entrance:
+  x: 270.36
+  y: 263.09
+scale:
+  pixels_per_meter: 77.04
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6931000000
+  total_rotation_deg: -0.6931000000
+  A: 0.0129799905
+  D: -0.0001570175
+  B: -0.0001570175
+  E: -0.0129799905
+  C: 566499.046811
+  F: 156708.120201
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 77.04
+  - 77.03
+  - 76.78
+  - 77.52
+  - 77.2
+  entrance_std_px: 0.5000000000
+  outliers_removed: 1
+  flag: null

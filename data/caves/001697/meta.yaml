@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.G-22.01
+  dir_id: 001697
+  name: Dziura nad Nową Roztoką
+  n_submissions: 5
+image:
+  filename: image_1251_zoom_10.tif
+  image_id: 1251
+  width: 818
+  height: 964
+coordinates:
+  lat: 49.223517
+  lon: 20.060064
+entrance:
+  x: 612.95
+  y: 321.74
+scale:
+  pixels_per_meter: 77.47
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.8027000000
+  total_rotation_deg: -0.8027000000
+  A: 0.0129069676
+  D: -0.0001808460
+  B: -0.0001808460
+  E: -0.0129069676
+  C: 577156.551062
+  F: 151212.094667
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.64
+  - 77.47
+  - 77.6
+  - 77.46
+  - 77.35
+  entrance_std_px: 0.6200000000
+  outliers_removed: 0
+  flag: null

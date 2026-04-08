@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.54
+  dir_id: '001162'
+  name: Schron przy Naciekowej
+  n_submissions: 5
+image:
+  filename: image_646_zoom_10.tif
+  image_id: 646
+  width: 1530
+  height: 2324
+coordinates:
+  lat: 49.249536
+  lon: 19.868414
+entrance:
+  x: 287.71
+  y: 1783.93
+scale:
+  pixels_per_meter: 195.8
+north:
+  angle_deg: 0.0030000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6579000000
+  total_rotation_deg: -0.6548000000
+  A: 0.0051069416
+  D: -0.0000583654
+  B: -0.0000583654
+  E: -0.0051069416
+  C: 563179.386497
+  F: 153930.766686
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 196.07
+  - 195.81
+  - 195.81
+  - 195.79
+  - 195.78
+  entrance_std_px: 1.49
+  outliers_removed: 1
+  flag: null

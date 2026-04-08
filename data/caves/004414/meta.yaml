@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-09.29
+  dir_id: '004414'
+  name: Szczelina za Siedmiu Progami
+  n_submissions: 5
+image:
+  filename: image_12249_zoom_10.tif
+  image_id: 12249
+  width: 2690
+  height: 2332
+coordinates:
+  lat: 49.233719
+  lon: 19.88345
+entrance:
+  x: 612.29
+  y: 1205.6
+scale:
+  pixels_per_meter: 237.22
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6691000000
+  total_rotation_deg: -0.6691000000
+  A: 0.0042151946
+  D: -0.0000492278
+  B: -0.0000492278
+  E: -0.0042151946
+  C: 564292.68147
+  F: 152181.605205
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 237.45
+  - 236.59
+  - 236.99
+  - 234.31
+  - 237.5
+  entrance_std_px: 2.71
+  outliers_removed: 1
+  flag: null

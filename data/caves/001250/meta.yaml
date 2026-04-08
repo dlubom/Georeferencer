@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-17.05
+  dir_id: '001250'
+  name: Szczelina w Zawraciku Kasprowym I
+  n_submissions: 5
+image:
+  filename: image_736_zoom_10.tif
+  image_id: 736
+  width: 528
+  height: 510
+coordinates:
+  lat: 49.250403
+  lon: 19.982797
+entrance:
+  x: 188.98
+  y: 350.75
+scale:
+  pixels_per_meter: 76.8
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7445000000
+  total_rotation_deg: -0.7445000000
+  A: 0.0130197645
+  D: -0.0001691965
+  B: -0.0001691965
+  E: -0.0130197645
+  C: 571498.827376
+  F: 154124.444135
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 76.8
+  - 76.7
+  - 76.93
+  - 77.21
+  - 76.8
+  entrance_std_px: 0.4100000000
+  outliers_removed: 1
+  flag: null

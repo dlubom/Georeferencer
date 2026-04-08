@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-05.01
+  dir_id: 001283
+  name: Jaskinia Dwuotworowa w Iwanówce
+  n_submissions: 5
+image:
+  filename: image_780_zoom_10.tif
+  image_id: 780
+  width: 852
+  height: 786
+coordinates:
+  lat: 49.240992
+  lon: 19.825858
+entrance:
+  x: 122.33
+  y: 530.0
+scale:
+  pixels_per_meter: 76.93
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6256000000
+  total_rotation_deg: -0.6256000000
+  A: 0.0129978257
+  D: -0.0001419161
+  B: -0.0001419161
+  E: -0.0129978257
+  C: 560093.510479
+  F: 152944.327512
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 77.16
+  - 77.34
+  - 76.8
+  - 76.89
+  - 76.93
+  entrance_std_px: 0.2100000000
+  outliers_removed: 0
+  flag: null

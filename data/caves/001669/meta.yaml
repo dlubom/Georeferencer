@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-11.02
+  dir_id: 001669
+  name: Dziura w Krzesanicy I
+  n_submissions: 5
+image:
+  filename: image_1198_zoom_10.tif
+  image_id: 1198
+  width: 978
+  height: 1068
+coordinates:
+  lat: 49.231389
+  lon: 19.9075
+entrance:
+  x: 509.65
+  y: 210.55
+scale:
+  pixels_per_meter: 38.63
+north:
+  angle_deg: -0.0040000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6873000000
+  total_rotation_deg: -0.6918000000
+  A: 0.0258864941
+  D: -0.0003125621
+  B: -0.0003125621
+  E: -0.0258864941
+  C: 566035.457909
+  F: 151943.879701
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 38.59
+  - 38.38
+  - 38.63
+  - 77.24
+  - 38.7
+  entrance_std_px: 0.3700000000
+  outliers_removed: 2
+  flag: null

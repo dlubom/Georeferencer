@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.55
+  dir_id: 001599
+  name: Dziura pod Siodełkiem
+  n_submissions: 5
+image:
+  filename: image_1107_zoom_10.tif
+  image_id: 1107
+  width: 402
+  height: 506
+coordinates:
+  lat: 49.245
+  lon: 19.914722
+entrance:
+  x: 219.06
+  y: 379.06
+scale:
+  pixels_per_meter: 76.88
+north:
+  angle_deg: -0.0350000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6929000000
+  total_rotation_deg: -0.7283000000
+  A: 0.0130059952
+  D: -0.0001653246
+  B: -0.0001653246
+  E: -0.0130059952
+  C: 566553.122192
+  F: 153462.217703
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 76.74
+  - 77.02
+  - 76.01
+  - 77.14
+  - 76.7
+  entrance_std_px: 0.4300000000
+  outliers_removed: 1
+  flag: null

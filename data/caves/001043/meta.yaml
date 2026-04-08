@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.66
+  dir_id: '001043'
+  name: Schron pod Zbójnicką Turnią
+  n_submissions: 5
+image:
+  filename: image_515_zoom_10.tif
+  image_id: 515
+  width: 704
+  height: 664
+coordinates:
+  lat: 49.237869
+  lon: 19.867531
+entrance:
+  x: 172.36
+  y: 405.34
+scale:
+  pixels_per_meter: 59.31
+north:
+  angle_deg: -0.0350000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6571000000
+  total_rotation_deg: -0.6923000000
+  A: 0.0168596252
+  D: -0.0002037317
+  B: -0.0002037317
+  E: -0.0168596252
+  C: 563128.559535
+  F: 152631.162201
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 58.88
+  - 59.27
+  - 59.53
+  - 59.37
+  - 59.31
+  entrance_std_px: 0.6300000000
+  outliers_removed: 2
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.26
+  dir_id: 001090
+  name: Wielka Nyża
+  n_submissions: 5
+image:
+  filename: image_565_zoom_10.tif
+  image_id: 565
+  width: 1788
+  height: 3206
+coordinates:
+  lat: 49.246672
+  lon: 19.859689
+entrance:
+  x: 1034.26
+  y: 1246.95
+scale:
+  pixels_per_meter: 97.89
+north:
+  angle_deg: -0.0660000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6512000000
+  total_rotation_deg: -0.7172000000
+  A: 0.0102148244
+  D: -0.0001278795
+  B: -0.0001278795
+  E: -0.0102148244
+  C: 562539.191211
+  F: 153608.966398
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 97.91
+  - 97.85
+  - 97.98
+  - 97.87
+  - 97.76
+  entrance_std_px: 0.7500000000
+  outliers_removed: 1
+  flag: null

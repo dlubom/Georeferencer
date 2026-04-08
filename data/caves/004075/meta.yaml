@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-12.10
+  dir_id: '004075'
+  name: Dziura w Jatkach
+  n_submissions: 5
+image:
+  filename: image_12112_zoom_10.tif
+  image_id: 12112
+  width: 3794
+  height: 2858
+coordinates:
+  lat: 49.265833
+  lon: 19.921458
+entrance:
+  x: 832.19
+  y: 1109.26
+scale:
+  pixels_per_meter: 473.67
+north:
+  angle_deg: 0.0090000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6982000000
+  total_rotation_deg: -0.6888000000
+  A: 0.0021110162
+  D: -0.0000253798
+  B: -0.0000253798
+  E: -0.0021110162
+  C: 567016.077796
+  F: 155780.833387
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 473.91
+  - 473.79
+  - 473.67
+  - 471.65
+  - 471.9
+  entrance_std_px: 2.3
+  outliers_removed: 0
+  flag: null

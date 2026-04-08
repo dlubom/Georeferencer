@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-13.01
+  dir_id: '001200'
+  name: Kozia Grota
+  n_submissions: 5
+image:
+  filename: image_686_zoom_10.tif
+  image_id: 686
+  width: 2190
+  height: 2822
+coordinates:
+  lat: 49.252719
+  lon: 19.937489
+entrance:
+  x: 648.93
+  y: 1291.51
+scale:
+  pixels_per_meter: 196.4
+north:
+  angle_deg: -0.0240000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7102000000
+  total_rotation_deg: -0.7346000000
+  A: 0.0050911396
+  D: -0.0000652803
+  B: -0.0000652803
+  E: -0.0050911396
+  C: 568198.578832
+  F: 154342.000748
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 195.19
+  - 197.25
+  - 195.92
+  - 196.4
+  - 196.68
+  entrance_std_px: 1.48
+  outliers_removed: 0
+  flag: null

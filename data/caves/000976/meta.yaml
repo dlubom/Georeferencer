@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-09.09
+  dir_id: 000976
+  name: Nyża w Kończystej
+  n_submissions: 5
+image:
+  filename: image_459_zoom_10.tif
+  image_id: 459
+  width: 844
+  height: 1094
+coordinates:
+  lat: 49.263711
+  lon: 19.878969
+entrance:
+  x: 329.49
+  y: 341.21
+scale:
+  pixels_per_meter: 77.14
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6660000000
+  total_rotation_deg: -0.6660000000
+  A: 0.0129633177
+  D: -0.0001506940
+  B: -0.0001506940
+  E: -0.0129633177
+  C: 563926.132081
+  F: 155510.32156
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.06
+  - 77.14
+  - 77.43
+  - 77.13
+  - 77.19
+  entrance_std_px: 0.4800000000
+  outliers_removed: 1
+  flag: null

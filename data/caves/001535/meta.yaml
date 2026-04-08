@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.03
+  dir_id: '001535'
+  name: Jaskinia pod Wantą
+  n_submissions: 5
+image:
+  filename: image_1046_zoom_10.tif
+  image_id: 1046
+  width: 1854
+  height: 2858
+coordinates:
+  lat: 49.240633
+  lon: 19.911461
+entrance:
+  x: 1018.13
+  y: 395.66
+scale:
+  pixels_per_meter: 15.5
+north:
+  angle_deg: 0.0160000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6904000000
+  total_rotation_deg: -0.6743000000
+  A: 0.0645120335
+  D: -0.0007592713
+  B: -0.0007592713
+  E: -0.0645120335
+  C: 566259.106189
+  F: 152995.359985
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 15.64
+  - 15.48
+  - 15.54
+  - 15.5
+  - 15.5
+  entrance_std_px: 1.14
+  outliers_removed: 1
+  flag: null

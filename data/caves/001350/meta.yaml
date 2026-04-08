@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-07.44
+  dir_id: '001350'
+  name: Szczelina przy Bańdziochu
+  n_submissions: 5
+image:
+  filename: image_857_zoom_10.tif
+  image_id: 857
+  width: 608
+  height: 388
+coordinates:
+  lat: 49.244181
+  lon: 19.849611
+entrance:
+  x: 400.03
+  y: 230.78
+scale:
+  pixels_per_meter: 77.06
+north:
+  angle_deg: 0.0300000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6436000000
+  total_rotation_deg: -0.6136000000
+  A: 0.0129763364
+  D: -0.0001389637
+  B: -0.0001389637
+  E: -0.0129763364
+  C: 561814.296301
+  F: 153314.024016
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 77.0
+  - 76.92
+  - 77.12
+  - 76.57
+  - 77.32
+  entrance_std_px: 0.2400000000
+  outliers_removed: 1
+  flag: null

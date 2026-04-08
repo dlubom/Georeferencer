@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.C-12.01
+  dir_id: 004286
+  name: Dziura w Czarnej Turni I
+  n_submissions: 5
+image:
+  filename: image_4303_zoom_10.tif
+  image_id: 4303
+  width: 1476
+  height: 1268
+coordinates:
+  lat: 49.262111
+  lon: 19.920583
+entrance:
+  x: 389.06
+  y: 423.16
+scale:
+  pixels_per_meter: 118.24
+north:
+  angle_deg: -0.2970000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6975000000
+  total_rotation_deg: -0.9944000000
+  A: 0.0084563148
+  D: -0.0001467778
+  B: -0.0001467778
+  E: -0.0084563148
+  C: 566955.976799
+  F: 155367.686836
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 118.22
+  - 118.43
+  - 118.25
+  - 119.05
+  - 118.14
+  entrance_std_px: 1.33
+  outliers_removed: 1
+  flag: null

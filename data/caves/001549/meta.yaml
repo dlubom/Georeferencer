@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.14
+  dir_id: 001549
+  name: Dziura w Grzędzie I
+  n_submissions: 5
+image:
+  filename: image_1059_zoom_10.tif
+  image_id: 1059
+  width: 2114
+  height: 3348
+coordinates:
+  lat: 49.238931
+  lon: 19.915856
+entrance:
+  x: 350.35
+  y: 485.35
+scale:
+  pixels_per_meter: 195.69
+north:
+  angle_deg: -0.0040000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6937000000
+  total_rotation_deg: -0.6973000000
+  A: 0.0051098639
+  D: -0.0000621890
+  B: -0.0000621890
+  E: -0.0051098639
+  C: 566644.825557
+  F: 152786.27658
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 195.3
+  - 195.89
+  - 195.65
+  - 195.69
+  - 196.0
+  entrance_std_px: 0.9700000000
+  outliers_removed: 0
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-07.46
+  dir_id: '001354'
+  name: Jaskinia w Kociołku pod Bańdziochem
+  n_submissions: 5
+image:
+  filename: image_859_zoom_10.tif
+  image_id: 859
+  width: 608
+  height: 754
+coordinates:
+  lat: 49.242481
+  lon: 19.850406
+entrance:
+  x: 502.4
+  y: 369.03
+scale:
+  pixels_per_meter: 77.39
+north:
+  angle_deg: 0.0
+  all_skipped: true
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6442000000
+  total_rotation_deg: -0.6442000000
+  A: 0.0129206794
+  D: -0.0001452707
+  B: -0.0001452707
+  E: -0.0129206794
+  C: 561872.986987
+  F: 153127.535887
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 77.39
+  - 77.52
+  - 77.84
+  - 77.19
+  - 77.19
+  entrance_std_px: 0.2700000000
+  outliers_removed: 0
+  flag: null

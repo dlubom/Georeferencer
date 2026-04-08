@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.40
+  dir_id: 004368
+  name: Jaskinia nad Percią
+  n_submissions: 5
+image:
+  filename: image_12235_zoom_10.tif
+  image_id: 12235
+  width: 3068
+  height: 3896
+coordinates:
+  lat: 49.236631
+  lon: 19.874011
+entrance:
+  x: 759.36
+  y: 2825.27
+scale:
+  pixels_per_meter: 236.65
+north:
+  angle_deg: -0.0030000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6620000000
+  total_rotation_deg: -0.6646000000
+  A: 0.0042253977
+  D: -0.0000490149
+  B: -0.0000490149
+  E: -0.0042253977
+  C: 563601.455494
+  F: 152504.112199
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 236.09
+  - 237.15
+  - 236.87
+  - 236.43
+  - 234.24
+  entrance_std_px: 1.93
+  outliers_removed: 1
+  flag: null

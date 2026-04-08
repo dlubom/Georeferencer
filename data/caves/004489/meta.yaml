@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-09.40
+  dir_id: 004489
+  name: Komin w Niskiej Turni
+  n_submissions: 5
+image:
+  filename: image_12229_zoom_10.tif
+  image_id: 12229
+  width: 3226
+  height: 2692
+coordinates:
+  lat: 49.234219
+  lon: 19.88305
+entrance:
+  x: 587.94
+  y: 1558.58
+scale:
+  pixels_per_meter: 236.51
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6688000000
+  total_rotation_deg: -0.6688000000
+  A: 0.0042278312
+  D: -0.0000493534
+  B: -0.0000493534
+  E: -0.0042278312
+  C: 564263.034953
+  F: 152238.338978
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 235.86
+  - 237.79
+  - 236.92
+  - 236.51
+  - 236.05
+  entrance_std_px: 1.3
+  outliers_removed: 0
+  flag: null

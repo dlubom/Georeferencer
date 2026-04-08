@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.13
+  dir_id: 001482
+  name: Studnia za Murem
+  n_submissions: 5
+image:
+  filename: image_987_zoom_10.tif
+  image_id: 987
+  width: 1018
+  height: 1158
+coordinates:
+  lat: 49.240406
+  lon: 19.900717
+entrance:
+  x: 913.92
+  y: 404.08
+scale:
+  pixels_per_meter: 28.23
+north:
+  angle_deg: 0.0030000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6823000000
+  total_rotation_deg: -0.6789000000
+  A: 0.0354226930
+  D: -0.0004197586
+  B: -0.0004197586
+  E: -0.0354226930
+  C: 565510.782106
+  F: 152949.166369
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 28.39
+  - 28.24
+  - 28.22
+  - 28.26
+  - 28.19
+  entrance_std_px: 0.7500000000
+  outliers_removed: 1
+  flag: null

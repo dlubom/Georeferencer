@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-08.05
+  dir_id: '004413'
+  name: Schron pod Przeziorową
+  n_submissions: 5
+image:
+  filename: image_4436_zoom_10.tif
+  image_id: 4436
+  width: 1466
+  height: 1072
+coordinates:
+  lat: 49.234811
+  lon: 19.862658
+entrance:
+  x: 580.62
+  y: 477.67
+scale:
+  pixels_per_meter: 118.5
+north:
+  angle_deg: -0.0060000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6534000000
+  total_rotation_deg: -0.6594000000
+  A: 0.0084381290
+  D: -0.0000971174
+  B: -0.0000971174
+  E: -0.0084381290
+  C: 562775.79505
+  F: 152284.474805
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 118.16
+  - 118.79
+  - 118.5
+  - 118.64
+  - 117.97
+  entrance_std_px: 1.39
+  outliers_removed: 0
+  flag: null

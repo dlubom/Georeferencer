@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.36
+  dir_id: '001125'
+  name: Szczelina przy Dziurawcu
+  n_submissions: 5
+image:
+  filename: image_627_zoom_10.tif
+  image_id: 627
+  width: 1290
+  height: 1282
+coordinates:
+  lat: 49.251639
+  lon: 19.865617
+entrance:
+  x: 753.6
+  y: 894.54
+scale:
+  pixels_per_meter: 98.16
+north:
+  angle_deg: 0.0720000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6558000000
+  total_rotation_deg: -0.5839000000
+  A: 0.0101865438
+  D: -0.0001038122
+  B: -0.0001038122
+  E: -0.0101865438
+  C: 562967.001624
+  F: 154162.213697
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 98.26
+  - 97.79
+  - 98.34
+  - 98.07
+  - 98.98
+  entrance_std_px: 1.51
+  outliers_removed: 1
+  flag: null

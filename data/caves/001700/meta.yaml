@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.H-19.02
+  dir_id: '001700'
+  name: Świnicka Koleba Niżnia
+  n_submissions: 5
+image:
+  filename: image_1254_zoom_10.tif
+  image_id: 1254
+  width: 758
+  height: 918
+coordinates:
+  lat: 49.218825
+  lon: 20.015061
+entrance:
+  x: 273.61
+  y: 388.37
+scale:
+  pixels_per_meter: 77.06
+north:
+  angle_deg: -0.0020000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7686000000
+  total_rotation_deg: -0.7707000000
+  A: 0.0129763523
+  D: -0.0001745671
+  B: -0.0001745671
+  E: -0.0129763523
+  C: 573892.100671
+  F: 150646.552703
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 77.06
+  - 77.11
+  - 76.41
+  - 77.12
+  - 76.7
+  entrance_std_px: 0.4600000000
+  outliers_removed: 0
+  flag: null

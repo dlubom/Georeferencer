@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.A-06.04
+  dir_id: 011048
+  name: Schron pod Siwiańskim Oknem
+  n_submissions: 5
+image:
+  filename: image_12343_zoom_10.tif
+  image_id: 12343
+  width: 1250
+  height: 2266
+coordinates:
+  lat: 49.276639
+  lon: 19.826722
+entrance:
+  x: 672.49
+  y: 1179.33
+scale:
+  pixels_per_meter: 237.15
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6265000000
+  total_rotation_deg: -0.6265000000
+  A: 0.0042164146
+  D: -0.0000461096
+  B: -0.0000461096
+  E: -0.0042164146
+  C: 560111.800993
+  F: 156904.748158
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 237.47
+  - 237.72
+  - 237.15
+  - 237.11
+  - 236.68
+  entrance_std_px: 0.5600000000
+  outliers_removed: 0
+  flag: null

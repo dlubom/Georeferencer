@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-09.33
+  dir_id: 001692
+  name: Szczelina pod Gankową II
+  n_submissions: 5
+image:
+  filename: image_1215_zoom_10.tif
+  image_id: 1215
+  width: 1468
+  height: 1370
+coordinates:
+  lat: 49.234592
+  lon: 19.875894
+entrance:
+  x: 618.18
+  y: 575.83
+scale:
+  pixels_per_meter: 195.52
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6634000000
+  total_rotation_deg: -0.6634000000
+  A: 0.0051142850
+  D: -0.0000592178
+  B: -0.0000592178
+  E: -0.0051142850
+  C: 563741.052337
+  F: 152270.100389
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 195.61
+  - 196.25
+  - 195.69
+  - 195.43
+  - 195.2
+  entrance_std_px: 1.01
+  outliers_removed: 1
+  flag: null

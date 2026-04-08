@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-07.42
+  dir_id: '001347'
+  name: Kominek przy Bańdziochu
+  n_submissions: 5
+image:
+  filename: image_855_zoom_10.tif
+  image_id: 855
+  width: 364
+  height: 748
+coordinates:
+  lat: 49.242294
+  lon: 19.849722
+entrance:
+  x: 213.81
+  y: 164.71
+scale:
+  pixels_per_meter: 77.69
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6436000000
+  total_rotation_deg: -0.6436000000
+  A: 0.0128708960
+  D: -0.0001445942
+  B: -0.0001445942
+  E: -0.0128708960
+  C: 561827.159607
+  F: 153103.504071
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 77.61
+  - 77.69
+  - 78.01
+  - 78.21
+  - 77.34
+  entrance_std_px: 1.38
+  outliers_removed: 0
+  flag: null

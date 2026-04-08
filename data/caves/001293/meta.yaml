@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-05.06
+  dir_id: 001293
+  name: Schron z Płytą
+  n_submissions: 5
+image:
+  filename: image_786_zoom_10.tif
+  image_id: 786
+  width: 684
+  height: 556
+coordinates:
+  lat: 49.241969
+  lon: 19.821989
+entrance:
+  x: 248.8
+  y: 413.14
+scale:
+  pixels_per_meter: 77.46
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6226000000
+  total_rotation_deg: -0.6226000000
+  A: 0.0129099452
+  D: -0.0001402983
+  B: -0.0001402983
+  E: -0.0129099452
+  C: 559809.159503
+  F: 153048.301886
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 77.5
+  - 77.46
+  - 77.75
+  - 76.98
+  - 77.19
+  entrance_std_px: 0.4800000000
+  outliers_removed: 0
+  flag: null

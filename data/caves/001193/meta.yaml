@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-10.07
+  dir_id: 001193
+  name: Dziura nad Wantulami II
+  n_submissions: 5
+image:
+  filename: image_678_zoom_10.tif
+  image_id: 678
+  width: 652
+  height: 660
+coordinates:
+  lat: 49.247628
+  lon: 19.8941
+entrance:
+  x: 322.97
+  y: 247.95
+scale:
+  pixels_per_meter: 77.19
+north:
+  angle_deg: 0.0
+  all_skipped: true
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6773000000
+  total_rotation_deg: -0.6773000000
+  A: 0.0129546553
+  D: -0.0001531489
+  B: -0.0001531489
+  E: -0.0129546553
+  C: 565047.854616
+  F: 153734.632179
+quality:
+  ppm_cv: 0.0050000000
+  ppm_values:
+  - 77.22
+  - 77.31
+  - 76.81
+  - 76.23
+  - 77.19
+  entrance_std_px: 0.8100000000
+  outliers_removed: 0
+  flag: null

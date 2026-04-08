@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-12.03
+  dir_id: '001011'
+  name: Okno w Jatkach II
+  n_submissions: 5
+image:
+  filename: image_483_zoom_10.tif
+  image_id: 483
+  width: 486
+  height: 522
+coordinates:
+  lat: 49.263572
+  lon: 19.921031
+entrance:
+  x: 149.1
+  y: 362.22
+scale:
+  pixels_per_meter: 77.44
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6979000000
+  total_rotation_deg: -0.6979000000
+  A: 0.0129130885
+  D: -0.0001572938
+  B: -0.0001572938
+  E: -0.0129130885
+  C: 566987.943643
+  F: 155531.517088
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 77.29
+  - 77.44
+  - 77.5
+  - 77.56
+  - 77.16
+  entrance_std_px: 0.4300000000
+  outliers_removed: 0
+  flag: null

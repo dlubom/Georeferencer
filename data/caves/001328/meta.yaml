@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-07.29
+  dir_id: 001328
+  name: Nyża nad Prożkiem w Żlebie Na Spady
+  n_submissions: 5
+image:
+  filename: image_827_zoom_10.tif
+  image_id: 827
+  width: 520
+  height: 490
+coordinates:
+  lat: 49.241569
+  lon: 19.853928
+entrance:
+  x: 269.31
+  y: 245.93
+scale:
+  pixels_per_meter: 77.37
+north:
+  angle_deg: 0.0370000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6468000000
+  total_rotation_deg: -0.6097000000
+  A: 0.0129241930
+  D: -0.0001375330
+  B: -0.0001375330
+  E: -0.0129241930
+  C: 562133.396256
+  F: 153027.442701
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 76.68
+  - 77.37
+  - 77.37
+  - 77.52
+  - 76.8
+  entrance_std_px: 0.3700000000
+  outliers_removed: 0
+  flag: null

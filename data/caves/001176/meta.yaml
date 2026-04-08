@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-05.07
+  dir_id: '001176'
+  name: Szczelina w Dudzińcu
+  n_submissions: 5
+image:
+  filename: image_663_zoom_10.tif
+  image_id: 663
+  width: 460
+  height: 600
+coordinates:
+  lat: 49.247706
+  lon: 19.820136
+entrance:
+  x: 267.99
+  y: 433.31
+scale:
+  pixels_per_meter: 77.47
+north:
+  angle_deg: 0.1260000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6213000000
+  total_rotation_deg: -0.4955000000
+  A: 0.0129081474
+  D: -0.0001116301
+  B: -0.0001116301
+  E: -0.0129081474
+  C: 559667.156064
+  F: 153684.674125
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 77.47
+  - 77.64
+  - 77.2
+  - 77.09
+  - 77.91
+  entrance_std_px: 0.3800000000
+  outliers_removed: 0
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-16.08
+  dir_id: '001235'
+  name: Grota u podnóża Myślenickich Turni
+  n_submissions: 5
+image:
+  filename: image_719_zoom_10.tif
+  image_id: 719
+  width: 2074
+  height: 1410
+coordinates:
+  lat: 49.250719
+  lon: 19.973767
+entrance:
+  x: 345.47
+  y: 998.79
+scale:
+  pixels_per_meter: 77.17
+north:
+  angle_deg: -0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7377000000
+  total_rotation_deg: -0.7385000000
+  A: 0.0129565644
+  D: -0.0001669984
+  B: -0.0001669984
+  E: -0.0129565644
+  C: 570839.518636
+  F: 154159.464105
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.06
+  - 77.2
+  - 77.27
+  - 77.02
+  - 77.17
+  entrance_std_px: 0.5800000000
+  outliers_removed: 0
+  flag: null

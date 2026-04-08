@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-05.02
+  dir_id: 001286
+  name: Schronisko pod Dziobem I
+  n_submissions: 5
+image:
+  filename: image_784_zoom_10.tif
+  image_id: 784
+  width: 710
+  height: 742
+coordinates:
+  lat: 49.241814
+  lon: 19.824478
+entrance:
+  x: 93.11
+  y: 438.03
+scale:
+  pixels_per_meter: 76.96
+north:
+  angle_deg: -0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6245000000
+  total_rotation_deg: -0.6257000000
+  A: 0.0129928423
+  D: -0.0001418857
+  B: -0.0001418857
+  E: -0.0129928423
+  C: 559992.464795
+  F: 153033.383119
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 76.99
+  - 76.97
+  - 77.04
+  - 76.95
+  - 76.92
+  entrance_std_px: 0.3000000000
+  outliers_removed: 1
+  flag: null

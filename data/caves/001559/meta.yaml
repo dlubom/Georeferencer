@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.24
+  dir_id: 001559
+  name: Awen w Ratuszu
+  n_submissions: 5
+image:
+  filename: image_1074_zoom_10.tif
+  image_id: 1074
+  width: 638
+  height: 1218
+coordinates:
+  lat: 49.243069
+  lon: 19.917217
+entrance:
+  x: 307.15
+  y: 138.86
+scale:
+  pixels_per_meter: 38.43
+north:
+  angle_deg: -0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6948000000
+  total_rotation_deg: -0.6953000000
+  A: 0.0260179325
+  D: -0.0003157395
+  B: -0.0003157395
+  E: -0.0260179325
+  C: 566732.099651
+  F: 153248.558946
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 38.5
+  - 38.68
+  - 38.23
+  - 38.48
+  - 38.38
+  entrance_std_px: 0.3900000000
+  outliers_removed: 1
+  flag: null

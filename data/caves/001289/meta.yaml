@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-07.04
+  dir_id: 001289
+  name: Jaskinia Lejowa Wyżnia
+  n_submissions: 5
+image:
+  filename: image_771_zoom_10.tif
+  image_id: 771
+  width: 2790
+  height: 4292
+coordinates:
+  lat: 49.242553
+  lon: 19.843194
+entrance:
+  x: 582.12
+  y: 747.11
+scale:
+  pixels_per_meter: 98.02
+north:
+  angle_deg: 0.1450000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6387000000
+  total_rotation_deg: -0.4940000000
+  A: 0.0102018934
+  D: -0.0000879600
+  B: -0.0000879600
+  E: -0.0102018934
+  C: 561348.690042
+  F: 153132.494286
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 98.11
+  - 97.6
+  - 49.38
+  - 97.92
+  - 98.59
+  entrance_std_px: 2.43
+  outliers_removed: 1
+  flag: null

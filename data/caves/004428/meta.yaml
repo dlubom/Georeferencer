@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-11.16
+  dir_id: 004428
+  name: Niżni Okap nad Tomanową
+  n_submissions: 5
+image:
+  filename: image_12239_zoom_10.tif
+  image_id: 12239
+  width: 2822
+  height: 3178
+coordinates:
+  lat: 49.229831
+  lon: 19.901031
+entrance:
+  x: 2040.84
+  y: 1404.34
+scale:
+  pixels_per_meter: 236.98
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6824000000
+  total_rotation_deg: -0.6824000000
+  A: 0.0042194226
+  D: -0.0000502549
+  B: -0.0000502549
+  E: -0.0042194226
+  C: 565571.293554
+  F: 151765.522726
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 236.83
+  - 237.02
+  - 236.98
+  - 237.09
+  - 236.89
+  entrance_std_px: 1.8
+  outliers_removed: 0
+  flag: null

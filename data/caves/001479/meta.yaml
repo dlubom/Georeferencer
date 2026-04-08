@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.31
+  dir_id: 001479
+  name: Dziura nad Żlebem
+  n_submissions: 5
+image:
+  filename: image_990_zoom_10.tif
+  image_id: 990
+  width: 1600
+  height: 1792
+coordinates:
+  lat: 49.237525
+  lon: 19.873069
+entrance:
+  x: 391.59
+  y: 1337.51
+scale:
+  pixels_per_meter: 195.46
+north:
+  angle_deg: -0.0070000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6613000000
+  total_rotation_deg: -0.6687000000
+  A: 0.0051156766
+  D: -0.0000597122
+  B: -0.0000597122
+  E: -0.0051156766
+  C: 563532.903892
+  F: 152597.56542
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 194.92
+  - 195.93
+  - 195.46
+  - 195.04
+  - 196.1
+  entrance_std_px: 0.9000000000
+  outliers_removed: 0
+  flag: null

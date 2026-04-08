@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-09.02
+  dir_id: '001653'
+  name: Krakowska Piwnica
+  n_submissions: 5
+image:
+  filename: image_1178_zoom_10.tif
+  image_id: 1178
+  width: 3504
+  height: 5678
+coordinates:
+  lat: 49.233181
+  lon: 19.877725
+entrance:
+  x: 2793.59
+  y: 551.83
+scale:
+  pixels_per_meter: 271.58
+north:
+  angle_deg: 0.0180000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6648000000
+  total_rotation_deg: -0.6471000000
+  A: 0.0036818869
+  D: -0.0000415867
+  B: -0.0000415867
+  E: -0.0036818869
+  C: 563868.988206
+  F: 152114.000545
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 271.58
+  - 271.2
+  - 270.47
+  - 271.75
+  - 271.95
+  entrance_std_px: 1.12
+  outliers_removed: 0
+  flag: null

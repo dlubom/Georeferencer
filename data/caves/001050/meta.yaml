@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.C-13.04
+  dir_id: '001050'
+  name: Kominek Giewontowy
+  n_submissions: 5
+image:
+  filename: image_522_zoom_10.tif
+  image_id: 522
+  width: 3172
+  height: 2852
+coordinates:
+  lat: 49.254592
+  lon: 19.935678
+entrance:
+  x: 376.86
+  y: 1777.84
+scale:
+  pixels_per_meter: 196.42
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7089000000
+  total_rotation_deg: -0.7089000000
+  A: 0.0050907397
+  D: -0.0000629878
+  B: -0.0000629878
+  E: -0.0050907397
+  C: 568065.66871
+  F: 154550.980827
+quality:
+  ppm_cv: 0.0050000000
+  ppm_values:
+  - 196.68
+  - 196.42
+  - 194.33
+  - 195.03
+  - 196.86
+  entrance_std_px: 1.39
+  outliers_removed: 0
+  flag: null

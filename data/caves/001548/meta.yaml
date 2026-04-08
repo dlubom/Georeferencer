@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.13
+  dir_id: 001548
+  name: Dziura w Grzędzie II
+  n_submissions: 5
+image:
+  filename: image_1058_zoom_10.tif
+  image_id: 1058
+  width: 1316
+  height: 1362
+coordinates:
+  lat: 49.238975
+  lon: 19.915717
+entrance:
+  x: 528.95
+  y: 745.77
+scale:
+  pixels_per_meter: 195.77
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6936000000
+  total_rotation_deg: -0.6936000000
+  A: 0.0051077274
+  D: -0.0000618352
+  B: -0.0000618352
+  E: -0.0051077274
+  C: 566633.755958
+  F: 152792.384052
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 196.15
+  - 195.88
+  - 195.76
+  - 195.46
+  - 195.77
+  entrance_std_px: 0.5700000000
+  outliers_removed: 2
+  flag: null

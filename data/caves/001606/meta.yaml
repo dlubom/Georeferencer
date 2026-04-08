@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-13.15
+  dir_id: '001606'
+  name: Duży Schron
+  n_submissions: 5
+image:
+  filename: image_1138_zoom_10.tif
+  image_id: 1138
+  width: 528
+  height: 420
+coordinates:
+  lat: 49.244075
+  lon: 19.928364
+entrance:
+  x: 225.22
+  y: 331.05
+scale:
+  pixels_per_meter: 76.94
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7032000000
+  total_rotation_deg: -0.7032000000
+  A: 0.0129953486
+  D: -0.0001595095
+  B: -0.0001595095
+  E: -0.0129953486
+  C: 567546.886807
+  F: 153370.884497
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 76.4
+  - 77.0
+  - 76.84
+  - 77.09
+  - 76.89
+  entrance_std_px: 0.3900000000
+  outliers_removed: 1
+  flag: null

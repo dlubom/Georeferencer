@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-05.14
+  dir_id: 004392
+  name: Dmuchawa
+  n_submissions: 5
+image:
+  filename: image_12255_zoom_10.tif
+  image_id: 12255
+  width: 1828
+  height: 2174
+coordinates:
+  lat: 49.246111
+  lon: 19.821
+entrance:
+  x: 399.07
+  y: 483.11
+scale:
+  pixels_per_meter: 47.12
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6219000000
+  total_rotation_deg: -0.6219000000
+  A: 0.0212202989
+  D: -0.0002303464
+  B: -0.0002303464
+  E: -0.0212202989
+  C: 559726.995365
+  F: 153512.816361
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 47.32
+  - 47.12
+  - 47.08
+  - 47.13
+  - 47.17
+  entrance_std_px: 1.1
+  outliers_removed: 1
+  flag: null

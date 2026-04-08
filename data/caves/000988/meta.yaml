@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-09.14
+  dir_id: 000988
+  name: Jaskinia Niska
+  n_submissions: 5
+image:
+  filename: image_465_zoom_10.tif
+  image_id: 465
+  width: 938
+  height: 862
+coordinates:
+  lat: 49.264103
+  lon: 19.877725
+entrance:
+  x: 144.95
+  y: 321.11
+scale:
+  pixels_per_meter: 77.01
+north:
+  angle_deg: -0.0110000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6651000000
+  total_rotation_deg: -0.6760000000
+  A: 0.0129845017
+  D: -0.0001531930
+  B: -0.0001531930
+  E: -0.0129845017
+  C: 563837.534023
+  F: 155552.554233
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.01
+  - 77.01
+  - 77.16
+  - 77.0
+  - 77.22
+  entrance_std_px: 0.4600000000
+  outliers_removed: 0
+  flag: null

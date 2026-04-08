@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-12.16
+  dir_id: '001246'
+  name: Nyża z Kozicami
+  n_submissions: 5
+image:
+  filename: image_733_zoom_10.tif
+  image_id: 733
+  width: 738
+  height: 976
+coordinates:
+  lat: 49.248283
+  lon: 19.912833
+entrance:
+  x: 481.1
+  y: 502.85
+scale:
+  pixels_per_meter: 38.51
+north:
+  angle_deg: -0.0050000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6915000000
+  total_rotation_deg: -0.6968000000
+  A: 0.0259642763
+  D: -0.0003157672
+  B: -0.0003157672
+  E: -0.0259642763
+  C: 566401.728846
+  F: 153833.653707
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 38.53
+  - 38.51
+  - 38.36
+  - 38.42
+  - 38.55
+  entrance_std_px: 0.7300000000
+  outliers_removed: 0
+  flag: null

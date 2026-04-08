@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-12.20
+  dir_id: '001256'
+  name: Dziura nad Jaskinią Śpiących Rycerzy I
+  n_submissions: 5
+image:
+  filename: image_754_zoom_10.tif
+  image_id: 754
+  width: 836
+  height: 1170
+coordinates:
+  lat: 49.249886
+  lon: 19.923856
+entrance:
+  x: 206.51
+  y: 541.33
+scale:
+  pixels_per_meter: 77.11
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6999000000
+  total_rotation_deg: -0.6999000000
+  A: 0.0129676237
+  D: -0.0001584101
+  B: -0.0001584101
+  E: -0.0129676237
+  C: 567211.272096
+  F: 154015.385483
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.11
+  - 77.11
+  - 76.97
+  - 77.04
+  - 77.13
+  entrance_std_px: 0.4400000000
+  outliers_removed: 0
+  flag: null

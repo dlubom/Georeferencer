@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.C-05.08
+  dir_id: '004226'
+  name: Grotka przy Huciskach
+  n_submissions: 5
+image:
+  filename: image_4263_zoom_10.tif
+  image_id: 4263
+  width: 714
+  height: 520
+coordinates:
+  lat: 49.257486
+  lon: 19.814467
+entrance:
+  x: 327.15
+  y: 299.9
+scale:
+  pixels_per_meter: 117.88
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6171000000
+  total_rotation_deg: -0.6171000000
+  A: 0.0084828047
+  D: -0.0000913642
+  B: -0.0000913642
+  E: -0.0084828047
+  C: 559243.65835
+  F: 154764.069181
+quality:
+  ppm_cv: 0.0050000000
+  ppm_values:
+  - 116.65
+  - 117.37
+  - 118.26
+  - 117.88
+  - 118.25
+  entrance_std_px: 0.4800000000
+  outliers_removed: 0
+  flag: null

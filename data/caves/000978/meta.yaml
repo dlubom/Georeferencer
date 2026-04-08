@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-09.10
+  dir_id: 000978
+  name: Okap w Kończystej Turni
+  n_submissions: 5
+image:
+  filename: image_461_zoom_10.tif
+  image_id: 461
+  width: 710
+  height: 1176
+coordinates:
+  lat: 49.263622
+  lon: 19.879111
+entrance:
+  x: 174.97
+  y: 1010.51
+scale:
+  pixels_per_meter: 38.55
+north:
+  angle_deg: 0.0110000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6661000000
+  total_rotation_deg: -0.6556000000
+  A: 0.0259382959
+  D: -0.0002968167
+  B: -0.0002968167
+  E: -0.0259382959
+  C: 563936.556376
+  F: 155522.340471
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 38.67
+  - 38.55
+  - 38.37
+  - 38.37
+  - 38.58
+  entrance_std_px: 0.5000000000
+  outliers_removed: 0
+  flag: null

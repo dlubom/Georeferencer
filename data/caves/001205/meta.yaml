@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-13.05
+  dir_id: '001205'
+  name: Nyża pod Brzózką
+  n_submissions: 5
+image:
+  filename: image_690_zoom_10.tif
+  image_id: 690
+  width: 1648
+  height: 1676
+coordinates:
+  lat: 49.253047
+  lon: 19.930133
+entrance:
+  x: 353.89
+  y: 426.68
+scale:
+  pixels_per_meter: 196.96
+north:
+  angle_deg: 0.0020000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7047000000
+  total_rotation_deg: -0.7023000000
+  A: 0.0050766809
+  D: -0.0000622262
+  B: -0.0000622262
+  E: -0.0050766809
+  C: 567664.442002
+  F: 154367.415312
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 197.25
+  - 196.71
+  - 196.89
+  - 196.96
+  - 197.17
+  entrance_std_px: 0.8900000000
+  outliers_removed: 0
+  flag: null

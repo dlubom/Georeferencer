@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-12.11
+  dir_id: '001230'
+  name: Dziura nad Korytem
+  n_submissions: 5
+image:
+  filename: image_730_zoom_10.tif
+  image_id: 730
+  width: 624
+  height: 980
+coordinates:
+  lat: 49.248172
+  lon: 19.910997
+entrance:
+  x: 144.24
+  y: 223.0
+scale:
+  pixels_per_meter: 77.01
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6901000000
+  total_rotation_deg: -0.6901000000
+  A: 0.0129845724
+  D: -0.0001564051
+  B: -0.0001564051
+  E: -0.0129845724
+  C: 566278.79376
+  F: 153809.417118
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 76.99
+  - 77.01
+  - 76.73
+  - 77.27
+  - 77.3
+  entrance_std_px: 0.4900000000
+  outliers_removed: 0
+  flag: null

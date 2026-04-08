@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.72
+  dir_id: '004347'
+  name: Schron za Smoczą Jamą
+  n_submissions: 5
+image:
+  filename: image_4364_zoom_10.tif
+  image_id: 4364
+  width: 650
+  height: 708
+coordinates:
+  lat: 49.237939
+  lon: 19.867444
+entrance:
+  x: 431.87
+  y: 509.63
+scale:
+  pixels_per_meter: 59.51
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6570000000
+  total_rotation_deg: -0.6570000000
+  A: 0.0168032990
+  D: -0.0001926964
+  B: -0.0001926964
+  E: -0.0168032990
+  C: 563117.80414
+  F: 152640.646705
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 59.62
+  - 59.51
+  - 59.38
+  - 59.68
+  - 59.31
+  entrance_std_px: 0.3800000000
+  outliers_removed: 0
+  flag: null

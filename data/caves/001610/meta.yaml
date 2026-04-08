@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.62
+  dir_id: '001610'
+  name: Maćkowa Dziura
+  n_submissions: 5
+image:
+  filename: image_1116_zoom_10.tif
+  image_id: 1116
+  width: 470
+  height: 1226
+coordinates:
+  lat: 49.243822
+  lon: 19.918639
+entrance:
+  x: 183.46
+  y: 189.47
+scale:
+  pixels_per_meter: 77.55
+north:
+  angle_deg: -0.0500000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6959000000
+  total_rotation_deg: -0.7463000000
+  A: 0.0128945040
+  D: -0.0001679669
+  B: -0.0001679669
+  E: -0.0128945040
+  C: 566840.165472
+  F: 153332.263183
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 77.55
+  - 77.82
+  - 77.51
+  - 77.36
+  - 78.23
+  entrance_std_px: 0.2900000000
+  outliers_removed: 0
+  flag: null

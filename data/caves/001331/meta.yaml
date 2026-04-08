@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-06.09
+  dir_id: '001331'
+  name: Komórka nad Smytnią
+  n_submissions: 5
+image:
+  filename: image_835_zoom_10.tif
+  image_id: 835
+  width: 1262
+  height: 1026
+coordinates:
+  lat: 49.242589
+  lon: 19.838867
+entrance:
+  x: 1110.95
+  y: 514.24
+scale:
+  pixels_per_meter: 77.21
+north:
+  angle_deg: -0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6354000000
+  total_rotation_deg: -0.6369000000
+  A: 0.0129507720
+  D: -0.0001439632
+  B: -0.0001439632
+  E: -0.0129507720
+  C: 561025.356522
+  F: 153132.14075
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 77.2
+  - 77.2
+  - 77.21
+  - 77.25
+  - 77.24
+  entrance_std_px: 0.4300000000
+  outliers_removed: 0
+  flag: null

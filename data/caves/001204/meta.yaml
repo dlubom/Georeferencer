@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-13.04
+  dir_id: '001204'
+  name: Szczelina w Żlebie Kirkora
+  n_submissions: 5
+image:
+  filename: image_689_zoom_10.tif
+  image_id: 689
+  width: 632
+  height: 840
+coordinates:
+  lat: 49.253856
+  lon: 19.930217
+entrance:
+  x: 484.58
+  y: 508.16
+scale:
+  pixels_per_meter: 77.33
+north:
+  angle_deg: 0.0120000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7047000000
+  total_rotation_deg: -0.6929000000
+  A: 0.0129314151
+  D: -0.0001563826
+  B: -0.0001563826
+  E: -0.0129314151
+  C: 567665.030117
+  F: 154461.85731
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.18
+  - 78.13
+  - 77.45
+  - 77.23
+  - 77.42
+  entrance_std_px: 0.7800000000
+  outliers_removed: 1
+  flag: null

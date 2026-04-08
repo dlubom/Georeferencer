@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-05.09
+  dir_id: 001180
+  name: Jaskinia w Dudzińcu
+  n_submissions: 5
+image:
+  filename: image_665_zoom_10.tif
+  image_id: 665
+  width: 1158
+  height: 1006
+coordinates:
+  lat: 49.247758
+  lon: 19.820958
+entrance:
+  x: 205.79
+  y: 844.92
+scale:
+  pixels_per_meter: 77.14
+north:
+  angle_deg: -0.0070000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6219000000
+  total_rotation_deg: -0.6286000000
+  A: 0.0129625315
+  D: -0.0001422129
+  B: -0.0001422129
+  E: -0.0129625315
+  C: 559727.762374
+  F: 153696.460438
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 77.13
+  - 76.87
+  - 77.17
+  - 77.16
+  - 77.1
+  entrance_std_px: 0.4500000000
+  outliers_removed: 1
+  flag: null

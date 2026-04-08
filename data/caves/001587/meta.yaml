@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.47
+  dir_id: 001587
+  name: Studnia na Szlaku
+  n_submissions: 5
+image:
+  filename: image_1098_zoom_10.tif
+  image_id: 1098
+  width: 386
+  height: 1370
+coordinates:
+  lat: 49.244217
+  lon: 19.913817
+entrance:
+  x: 222.86
+  y: 238.25
+scale:
+  pixels_per_meter: 76.67
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6922000000
+  total_rotation_deg: -0.6922000000
+  A: 0.0130425338
+  D: -0.0001575803
+  B: -0.0001575803
+  E: -0.0130425338
+  C: 566488.243221
+  F: 153372.579505
+quality:
+  ppm_cv: 0.0060000000
+  ppm_values:
+  - 76.29
+  - 77.41
+  - 76.92
+  - 76.16
+  - 76.67
+  entrance_std_px: 0.4400000000
+  outliers_removed: 0
+  flag: null

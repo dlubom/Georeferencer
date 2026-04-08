@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.33
+  dir_id: '001402'
+  name: Schron przy Smoczej Jamie
+  n_submissions: 5
+image:
+  filename: image_892_zoom_10.tif
+  image_id: 892
+  width: 416
+  height: 570
+coordinates:
+  lat: 49.237997
+  lon: 19.867208
+entrance:
+  x: 155.86
+  y: 214.69
+scale:
+  pixels_per_meter: 77.76
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6568000000
+  total_rotation_deg: -0.6568000000
+  A: 0.0128585780
+  D: -0.0001474192
+  B: -0.0001474192
+  E: -0.0128585780
+  C: 563105.742491
+  F: 152641.032465
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.61
+  - 77.86
+  - 77.76
+  - 77.34
+  - 77.77
+  entrance_std_px: 0.6200000000
+  outliers_removed: 1
+  flag: null

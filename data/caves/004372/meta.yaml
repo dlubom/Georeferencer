@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.44
+  dir_id: '004372'
+  name: Upłazkowa Szczelina
+  n_submissions: 5
+image:
+  filename: image_12233_zoom_10.tif
+  image_id: 12233
+  width: 2696
+  height: 3082
+coordinates:
+  lat: 49.237619
+  lon: 19.877431
+entrance:
+  x: 1752.33
+  y: 2260.26
+scale:
+  pixels_per_meter: 237.1
+north:
+  angle_deg: 0.0120000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6646000000
+  total_rotation_deg: -0.6528000000
+  A: 0.0042173771
+  D: -0.0000480492
+  B: -0.0000480492
+  E: -0.0042173771
+  C: 563844.851551
+  F: 152614.436003
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 237.37
+  - 237.1
+  - 236.89
+  - 235.77
+  - 239.51
+  entrance_std_px: 1.16
+  outliers_removed: 2
+  flag: null

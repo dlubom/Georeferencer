@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-11.13
+  dir_id: '001676'
+  name: Szczelina w Ciemniaku
+  n_submissions: 5
+image:
+  filename: image_1202_zoom_10.tif
+  image_id: 1202
+  width: 4368
+  height: 6540
+coordinates:
+  lat: 49.231669
+  lon: 19.900992
+entrance:
+  x: 3233.11
+  y: 3685.94
+scale:
+  pixels_per_meter: 271.18
+north:
+  angle_deg: 0.0070000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6824000000
+  total_rotation_deg: -0.6757000000
+  A: 0.0036872666
+  D: -0.0000434852
+  B: -0.0000434852
+  E: -0.0036872666
+  C: 565562.801679
+  F: 151977.457419
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 271.18
+  - 272.5
+  - 271.17
+  - 270.73
+  - 271.3
+  entrance_std_px: 2.41
+  outliers_removed: 2
+  flag: null

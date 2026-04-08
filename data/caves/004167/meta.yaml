@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-12.26
+  dir_id: '004167'
+  name: Korytarz nad Zagonem
+  n_submissions: 5
+image:
+  filename: image_4165_zoom_10.tif
+  image_id: 4165
+  width: 1240
+  height: 4102
+coordinates:
+  lat: 49.247264
+  lon: 19.913022
+entrance:
+  x: 684.29
+  y: 3778.58
+scale:
+  pixels_per_meter: 236.37
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6916000000
+  total_rotation_deg: -0.6916000000
+  A: 0.0042303171
+  D: -0.0000510687
+  B: -0.0000510687
+  E: -0.0042303171
+  C: 566426.477548
+  F: 153723.385047
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 236.01
+  - 238.8
+  - 236.52
+  - 235.23
+  - 236.37
+  entrance_std_px: 1.2
+  outliers_removed: 2
+  flag: null

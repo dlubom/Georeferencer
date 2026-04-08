@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-14.04
+  dir_id: '001217'
+  name: Szczelina w Giewoncie I
+  n_submissions: 5
+image:
+  filename: image_697_zoom_10.tif
+  image_id: 697
+  width: 906
+  height: 628
+coordinates:
+  lat: 49.252156
+  lon: 19.941594
+entrance:
+  x: 279.09
+  y: 199.05
+scale:
+  pixels_per_meter: 76.8
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7133000000
+  total_rotation_deg: -0.7133000000
+  A: 0.0130195050
+  D: -0.0001621033
+  B: -0.0001621033
+  E: -0.0130195050
+  C: 568497.608507
+  F: 154279.161471
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 76.8
+  - 77.0
+  - 77.78
+  - 76.76
+  - 76.8
+  entrance_std_px: 0.4200000000
+  outliers_removed: 1
+  flag: null

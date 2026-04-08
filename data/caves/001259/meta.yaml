@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-12.22
+  dir_id: 001259
+  name: Dziura nad Jaskinią Śpiących Rycerzy III
+  n_submissions: 5
+image:
+  filename: image_756_zoom_10.tif
+  image_id: 756
+  width: 612
+  height: 474
+coordinates:
+  lat: 49.249844
+  lon: 19.924269
+entrance:
+  x: 217.99
+  y: 276.56
+scale:
+  pixels_per_meter: 77.89
+north:
+  angle_deg: 0.0170000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7002000000
+  total_rotation_deg: -0.6831000000
+  A: 0.0128369212
+  D: -0.0001530510
+  B: -0.0001530510
+  E: -0.0128369212
+  C: 567241.212147
+  F: 154007.615927
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.81
+  - 77.96
+  - 77.09
+  - 77.83
+  - 77.96
+  entrance_std_px: 0.5300000000
+  outliers_removed: 1
+  flag: null

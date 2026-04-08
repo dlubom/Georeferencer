@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.27
+  dir_id: '001364'
+  name: Jaskinia pod Niżnią Zbójnicką Turnią
+  n_submissions: 5
+image:
+  filename: image_867_zoom_10.tif
+  image_id: 867
+  width: 1962
+  height: 1824
+coordinates:
+  lat: 49.238317
+  lon: 19.864111
+entrance:
+  x: 1033.99
+  y: 312.8
+scale:
+  pixels_per_meter: 38.57
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6545000000
+  total_rotation_deg: -0.6545000000
+  A: 0.0259239636
+  D: -0.0002961493
+  B: -0.0002961493
+  E: -0.0259239636
+  C: 562855.226602
+  F: 152679.647953
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 38.99
+  - 38.63
+  - 38.39
+  - 38.51
+  - 38.68
+  entrance_std_px: 560.79
+  outliers_removed: 1
+  flag: high_entrance_std

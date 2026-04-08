@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.69
+  dir_id: 004586
+  name: Szczelina przed Sową
+  n_submissions: 5
+image:
+  filename: image_4623_zoom_10.tif
+  image_id: 4623
+  width: 858
+  height: 830
+coordinates:
+  lat: 49.248722
+  lon: 19.864472
+entrance:
+  x: 547.8
+  y: 425.78
+scale:
+  pixels_per_meter: 118.43
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6549000000
+  total_rotation_deg: -0.6549000000
+  A: 0.0084432980
+  D: -0.0000965097
+  B: -0.0000965097
+  E: -0.0084432980
+  C: 562890.407855
+  F: 153831.537796
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 118.71
+  - 118.09
+  - 118.43
+  - 118.02
+  - 118.52
+  entrance_std_px: 0.6700000000
+  outliers_removed: 0
+  flag: null

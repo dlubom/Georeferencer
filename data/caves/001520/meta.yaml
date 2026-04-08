@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.28
+  dir_id: '001520'
+  name: Schron przy Studni
+  n_submissions: 5
+image:
+  filename: image_1016_zoom_10.tif
+  image_id: 1016
+  width: 2376
+  height: 1878
+coordinates:
+  lat: 49.240636
+  lon: 19.901053
+entrance:
+  x: 1759.82
+  y: 618.96
+scale:
+  pixels_per_meter: 196.91
+north:
+  angle_deg: -0.0670000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6825000000
+  total_rotation_deg: -0.7499000000
+  A: 0.0050780305
+  D: -0.0000664677
+  B: -0.0000664677
+  E: -0.0050780305
+  C: 565558.235972
+  F: 152963.58133
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 197.05
+  - 196.3
+  - 197.28
+  - 198.22
+  - 196.77
+  entrance_std_px: 1.83
+  outliers_removed: 1
+  flag: null

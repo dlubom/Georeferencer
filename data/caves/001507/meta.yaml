@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.44
+  dir_id: '001507'
+  name: Jaskinia Lodowa w Twardych Spadach
+  n_submissions: 5
+image:
+  filename: image_1029_zoom_10.tif
+  image_id: 1029
+  width: 2996
+  height: 2478
+coordinates:
+  lat: 49.240631
+  lon: 19.900642
+entrance:
+  x: 2651.16
+  y: 406.1
+scale:
+  pixels_per_meter: 58.15
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6822000000
+  total_rotation_deg: -0.6822000000
+  A: 0.0171956629
+  D: -0.0002047518
+  B: -0.0002047518
+  E: -0.0171956629
+  C: 565491.725668
+  F: 152966.935399
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 58.15
+  - 58.15
+  - 57.85
+  - 58.22
+  - 57.68
+  entrance_std_px: 2.04
+  outliers_removed: 0
+  flag: null

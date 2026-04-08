@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.49
+  dir_id: 004390
+  name: Komin w Ździarach
+  n_submissions: 5
+image:
+  filename: image_4411_zoom_10.tif
+  image_id: 4411
+  width: 958
+  height: 1280
+coordinates:
+  lat: 49.24275
+  lon: 19.877978
+entrance:
+  x: 215.66
+  y: 663.97
+scale:
+  pixels_per_meter: 118.17
+north:
+  angle_deg: 0.0040000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6651000000
+  total_rotation_deg: -0.6607000000
+  A: 0.0084616831
+  D: -0.0000975721
+  B: -0.0000975721
+  E: -0.0084616831
+  C: 563883.559616
+  F: 153181.152504
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 118.06
+  - 118.39
+  - 119.02
+  - 118.16
+  - 118.18
+  entrance_std_px: 0.5000000000
+  outliers_removed: 1
+  flag: null

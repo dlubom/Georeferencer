@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-04.02
+  dir_id: 010865
+  name: Jaskinia Kokonowa
+  n_submissions: 5
+image:
+  filename: image_12062_zoom_10.tif
+  image_id: 12062
+  width: 5360
+  height: 4566
+coordinates:
+  lat: 49.2433
+  lon: 19.803933
+entrance:
+  x: 1254.93
+  y: 2017.49
+scale:
+  pixels_per_meter: 237.24
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6090000000
+  total_rotation_deg: -0.6090000000
+  A: 0.0042149598
+  D: -0.0000448005
+  B: -0.0000448005
+  E: -0.0042149598
+  C: 558491.703853
+  F: 153185.292244
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 237.63
+  - 237.15
+  - 237.24
+  - 233.86
+  - 238.8
+  entrance_std_px: 1.21
+  outliers_removed: 2
+  flag: null

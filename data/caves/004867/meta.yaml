@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.72
+  dir_id: 004867
+  name: Szczelina za Ratuszem
+  n_submissions: 5
+image:
+  filename: image_5087_zoom_10.tif
+  image_id: 5087
+  width: 1476
+  height: 924
+coordinates:
+  lat: 49.242933
+  lon: 19.9087
+entrance:
+  x: 682.86
+  y: 643.76
+scale:
+  pixels_per_meter: 118.01
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6883000000
+  total_rotation_deg: -0.6883000000
+  A: 0.0084731539
+  D: -0.0001017976
+  B: -0.0001017976
+  E: -0.0084731539
+  C: 566114.788081
+  F: 153227.778553
+quality:
+  ppm_cv: 0.0060000000
+  ppm_values:
+  - 118.01
+  - 119.6
+  - 117.7
+  - 117.59
+  - 118.66
+  entrance_std_px: 1.02
+  outliers_removed: 0
+  flag: null

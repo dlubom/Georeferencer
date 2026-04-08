@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-11.17
+  dir_id: 004429
+  name: Wyżni Okap nad Tomanową
+  n_submissions: 5
+image:
+  filename: image_12238_zoom_10.tif
+  image_id: 12238
+  width: 3000
+  height: 4464
+coordinates:
+  lat: 49.229831
+  lon: 19.901031
+entrance:
+  x: 1577.58
+  y: 2063.32
+scale:
+  pixels_per_meter: 236.98
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6824000000
+  total_rotation_deg: -0.6824000000
+  A: 0.0042193908
+  D: -0.0000502546
+  B: -0.0000502546
+  E: -0.0042193908
+  C: 565573.281398
+  F: 151768.279871
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 237.91
+  - 236.45
+  - 235.82
+  - 237.52
+  - 475.99
+  entrance_std_px: 4.08
+  outliers_removed: 1
+  flag: null

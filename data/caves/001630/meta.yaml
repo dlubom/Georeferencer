@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-13.28
+  dir_id: '001630'
+  name: Dziura przy Piargu
+  n_submissions: 5
+image:
+  filename: image_1149_zoom_10.tif
+  image_id: 1149
+  width: 544
+  height: 932
+coordinates:
+  lat: 49.238611
+  lon: 19.936944
+entrance:
+  x: 314.86
+  y: 169.25
+scale:
+  pixels_per_meter: 76.91
+north:
+  angle_deg: 0.0100000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7097000000
+  total_rotation_deg: -0.6993000000
+  A: 0.0130005516
+  D: -0.0001586792
+  B: -0.0001586792
+  E: -0.0130005516
+  C: 568177.507754
+  F: 152769.257048
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.06
+  - 76.89
+  - 76.84
+  - 77.37
+  - 76.93
+  entrance_std_px: 0.3700000000
+  outliers_removed: 1
+  flag: null

@@ -1,0 +1,13 @@
+dir_id,inventory_number,name,flag,ppm_cv,entrance_std_px
+000980,T.D-06.04,Schronisko Dudowe Górne,high_ppm_cv,0.128,1.84
+001094,T.D-08.07,Jaskinia Mroźna,high_entrance_std,0.002,7042.09
+001126,T.D-08.37,Dziura nad Wapiennikiem,high_ppm_cv,0.351,1.2
+001212,T.D-14.01,Jaskinia Juhaska,high_ppm_cv,0.307,1.31
+001242,T.D-12.14,Szczelina nad Wyżniem,high_entrance_std,0.006,33.47
+001349,T.E-08.04,Jaskinia Mylna,high_entrance_std,0.001,1386.36
+001364,T.E-08.27,Jaskinia pod Niżnią Zbójnicką Turnią,high_entrance_std,0.003,560.79
+001626,T.E-13.26,Jaskinia w Piekle,high_ppm_cv,0.305,0.6
+001671,T.F-11.03,Szczelina w Krzesanicy I,high_ppm_cv,0.35,79.1
+001719,T.J-24.03,Wielka Żabia Szpara,high_entrance_std,0.002,188.88
+004367,T.E-09.39,Rura przy Oknie,high_entrance_std,0.003,1025.44
+010935,T-Jaskinie Pawlikowskiego,Jaskinie Pawlikowskiego,high_entrance_std,0.0,1039.44

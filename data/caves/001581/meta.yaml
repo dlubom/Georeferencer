@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.43
+  dir_id: 001581
+  name: Jędrusiowa Dziura
+  n_submissions: 5
+image:
+  filename: image_12152_zoom_10.tif
+  image_id: 12152
+  width: 9692
+  height: 6786
+coordinates:
+  lat: 49.242047
+  lon: 19.923414
+entrance:
+  x: 4344.58
+  y: 975.11
+scale:
+  pixels_per_meter: 118.11
+north:
+  angle_deg: 0.0170000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6995000000
+  total_rotation_deg: -0.6825000000
+  A: 0.0084662746
+  D: -0.0001008490
+  B: -0.0001008490
+  E: -0.0084662746
+  C: 567155.660416
+  F: 153145.450234
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 118.11
+  - 118.08
+  - 118.12
+  - 118.27
+  - 118.1
+  entrance_std_px: 1.44
+  outliers_removed: 1
+  flag: null

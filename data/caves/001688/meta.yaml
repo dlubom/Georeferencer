@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-09.27
+  dir_id: 001688
+  name: Mokra Szczelina
+  n_submissions: 5
+image:
+  filename: image_1211_zoom_10.tif
+  image_id: 1211
+  width: 1130
+  height: 2108
+coordinates:
+  lat: 49.235386
+  lon: 19.877894
+entrance:
+  x: 490.12
+  y: 1653.32
+scale:
+  pixels_per_meter: 194.63
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6649000000
+  total_rotation_deg: -0.6649000000
+  A: 0.0051375230
+  D: -0.0000596235
+  B: -0.0000596235
+  E: -0.0051375230
+  C: 563886.286907
+  F: 152365.57012
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 70.56
+  - 194.96
+  - 196.79
+  - 194.34
+  - 194.63
+  entrance_std_px: 1.3
+  outliers_removed: 2
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-06.12
+  dir_id: 001082
+  name: Schron pod Kufą Zachodni
+  n_submissions: 5
+image:
+  filename: image_559_zoom_10.tif
+  image_id: 559
+  width: 586
+  height: 976
+coordinates:
+  lat: 49.2451
+  lon: 19.838258
+entrance:
+  x: 113.12
+  y: 189.47
+scale:
+  pixels_per_meter: 77.26
+north:
+  angle_deg: 0.0090000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6350000000
+  total_rotation_deg: -0.6261000000
+  A: 0.0129429375
+  D: -0.0001414316
+  B: -0.0001414316
+  E: -0.0129429375
+  C: 560990.826897
+  F: 153406.357554
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 77.27
+  - 77.05
+  - 77.19
+  - 77.27
+  - 77.25
+  entrance_std_px: 0.6000000000
+  outliers_removed: 1
+  flag: null

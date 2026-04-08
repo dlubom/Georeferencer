@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.31
+  dir_id: '001566'
+  name: Jaskinia pod Strzelistą
+  n_submissions: 5
+image:
+  filename: image_1081_zoom_10.tif
+  image_id: 1081
+  width: 882
+  height: 1274
+coordinates:
+  lat: 49.244936
+  lon: 19.918608
+entrance:
+  x: 188.91
+  y: 358.89
+scale:
+  pixels_per_meter: 38.54
+north:
+  angle_deg: 0.0270000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6959000000
+  total_rotation_deg: -0.6685000000
+  A: 0.0259437694
+  D: -0.0003027158
+  B: -0.0003027158
+  E: -0.0259437694
+  C: 566833.947627
+  F: 153462.933798
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 38.61
+  - 38.43
+  - 38.5
+  - 38.54
+  - 38.54
+  entrance_std_px: 0.3300000000
+  outliers_removed: 2
+  flag: null

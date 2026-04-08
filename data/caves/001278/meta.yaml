@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-18.06
+  dir_id: 001278
+  name: Dziura pod Jaskinią Magurską
+  n_submissions: 5
+image:
+  filename: image_764_zoom_10.tif
+  image_id: 764
+  width: 802
+  height: 816
+coordinates:
+  lat: 49.250475
+  lon: 19.997397
+entrance:
+  x: 568.32
+  y: 173.67
+scale:
+  pixels_per_meter: 77.04
+north:
+  angle_deg: -0.0040000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7556000000
+  total_rotation_deg: -0.7599000000
+  A: 0.0129790132
+  D: -0.0001721557
+  B: -0.0001721557
+  E: -0.0129790132
+  C: 572555.951893
+  F: 154144.105506
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 76.82
+  - 77.05
+  - 77.03
+  - 78.27
+  - 77.2
+  entrance_std_px: 0.6600000000
+  outliers_removed: 1
+  flag: null

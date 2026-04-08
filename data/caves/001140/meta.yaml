@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.50
+  dir_id: '001140'
+  name: Komora w Okręcie
+  n_submissions: 5
+image:
+  filename: image_640_zoom_10.tif
+  image_id: 640
+  width: 914
+  height: 1364
+coordinates:
+  lat: 49.251714
+  lon: 19.866853
+entrance:
+  x: 295.24
+  y: 729.08
+scale:
+  pixels_per_meter: 77.08
+north:
+  angle_deg: 0.0090000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6567000000
+  total_rotation_deg: -0.6475000000
+  A: 0.0129719705
+  D: -0.0001466039
+  B: -0.0001466039
+  E: -0.0129719705
+  C: 563060.686202
+  F: 154171.88922
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 76.89
+  - 76.71
+  - 77.25
+  - 77.08
+  - 77.14
+  entrance_std_px: 0.3800000000
+  outliers_removed: 0
+  flag: null

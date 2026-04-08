@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-07.36
+  dir_id: '001340'
+  name: Nyża nad Bramką
+  n_submissions: 5
+image:
+  filename: image_843_zoom_10.tif
+  image_id: 843
+  width: 582
+  height: 490
+coordinates:
+  lat: 49.241814
+  lon: 19.855914
+entrance:
+  x: 430.04
+  y: 177.65
+scale:
+  pixels_per_meter: 77.08
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6483000000
+  total_rotation_deg: -0.6483000000
+  A: 0.0129719900
+  D: -0.0001467909
+  B: -0.0001467909
+  E: -0.0129719900
+  C: 562275.494088
+  F: 153055.456233
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 77.09
+  - 77.08
+  - 77.56
+  - 77.08
+  - 76.57
+  entrance_std_px: 0.6800000000
+  outliers_removed: 2
+  flag: null

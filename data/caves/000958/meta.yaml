@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.A-24.03
+  dir_id: 000958
+  name: Jaskinia w Jaworzyńskim Żlebie
+  n_submissions: 5
+image:
+  filename: image_450_zoom_10.tif
+  image_id: 450
+  width: 646
+  height: 840
+coordinates:
+  lat: 49.282611
+  lon: 20.074861
+entrance:
+  x: 204.84
+  y: 141.23
+scale:
+  pixels_per_meter: 76.88
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.8147000000
+  total_rotation_deg: -0.8147000000
+  A: 0.0130064429
+  D: -0.0001849483
+  B: -0.0001849483
+  E: -0.0130064429
+  C: 578145.504857
+  F: 157792.251338
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 76.96
+  - 76.79
+  - 74.06
+  - 76.79
+  - 76.98
+  entrance_std_px: 0.6300000000
+  outliers_removed: 1
+  flag: null

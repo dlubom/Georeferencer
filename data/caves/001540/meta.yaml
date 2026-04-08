@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.09
+  dir_id: '001540'
+  name: Dolny Lej
+  n_submissions: 5
+image:
+  filename: image_1054_zoom_10.tif
+  image_id: 1054
+  width: 2448
+  height: 3582
+coordinates:
+  lat: 49.240317
+  lon: 19.923972
+entrance:
+  x: 1185.36
+  y: 2328.95
+scale:
+  pixels_per_meter: 97.85
+north:
+  angle_deg: -0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6999000000
+  total_rotation_deg: -0.7001000000
+  A: 0.0102193973
+  D: -0.0001248836
+  B: -0.0001248836
+  E: -0.0102193973
+  C: 567223.472744
+  F: 152968.938325
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 97.5
+  - 97.85
+  - 97.84
+  - 97.85
+  - 97.99
+  entrance_std_px: 1.48
+  outliers_removed: 2
+  flag: null

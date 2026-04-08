@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.23
+  dir_id: '001462'
+  name: Jaskinia Pajęcza
+  n_submissions: 5
+image:
+  filename: image_967_zoom_10.tif
+  image_id: 967
+  width: 1180
+  height: 1516
+coordinates:
+  lat: 49.235528
+  lon: 19.873003
+entrance:
+  x: 441.99
+  y: 525.12
+scale:
+  pixels_per_meter: 195.97
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6612000000
+  total_rotation_deg: -0.6612000000
+  A: 0.0051025248
+  D: -0.0000588875
+  B: -0.0000588875
+  E: -0.0051025248
+  C: 563530.361487
+  F: 152371.414025
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 195.85
+  - 194.83
+  - 196.32
+  - 195.73
+  - 196.08
+  entrance_std_px: 1.03
+  outliers_removed: 1
+  flag: null

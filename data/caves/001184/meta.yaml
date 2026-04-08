@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-09.11
+  dir_id: 001184
+  name: Dziura w Organach I
+  n_submissions: 5
+image:
+  filename: image_668_zoom_10.tif
+  image_id: 668
+  width: 2560
+  height: 2612
+coordinates:
+  lat: 49.2471
+  lon: 19.870406
+entrance:
+  x: 1279.8
+  y: 1812.39
+scale:
+  pixels_per_meter: 196.55
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6594000000
+  total_rotation_deg: -0.6594000000
+  A: 0.0050873430
+  D: -0.0000585478
+  B: -0.0000585478
+  E: -0.0050873430
+  C: 563322.387529
+  F: 153661.876304
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 195.29
+  - 195.76
+  - 197.23
+  - 196.55
+  - 197.16
+  entrance_std_px: 1.43
+  outliers_removed: 0
+  flag: null

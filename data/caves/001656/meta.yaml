@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-09.05
+  dir_id: '001656'
+  name: Dziura pod Smrekiem
+  n_submissions: 5
+image:
+  filename: image_1182_zoom_10.tif
+  image_id: 1182
+  width: 3916
+  height: 3550
+coordinates:
+  lat: 49.234092
+  lon: 19.875153
+entrance:
+  x: 3299.78
+  y: 739.03
+scale:
+  pixels_per_meter: 196.11
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6628000000
+  total_rotation_deg: -0.6628000000
+  A: 0.0050988001
+  D: -0.0000589881
+  B: -0.0000589881
+  E: -0.0050988001
+  C: 563674.114889
+  F: 152214.890181
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 196.06
+  - 196.57
+  - 195.91
+  - 196.15
+  - 196.11
+  entrance_std_px: 2.4
+  outliers_removed: 2
+  flag: null

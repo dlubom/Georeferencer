@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-17.19
+  dir_id: '001271'
+  name: Jaworzyńska Nyża pod Iglicą
+  n_submissions: 5
+image:
+  filename: image_750_zoom_10.tif
+  image_id: 750
+  width: 750
+  height: 690
+coordinates:
+  lat: 49.2506
+  lon: 19.987917
+entrance:
+  x: 127.29
+  y: 140.83
+scale:
+  pixels_per_meter: 76.89
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7484000000
+  total_rotation_deg: -0.7484000000
+  A: 0.0130040219
+  D: -0.0001698729
+  B: -0.0001698729
+  E: -0.0130040219
+  C: 571871.800137
+  F: 154148.445356
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 76.97
+  - 76.96
+  - 76.69
+  - 76.82
+  - 76.89
+  entrance_std_px: 0.3200000000
+  outliers_removed: 0
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-04.02
+  dir_id: '004066'
+  name: Wilcza Nora
+  n_submissions: 5
+image:
+  filename: image_12105_zoom_10.tif
+  image_id: 12105
+  width: 5616
+  height: 5354
+coordinates:
+  lat: 49.269944
+  lon: 19.803806
+entrance:
+  x: 4351.43
+  y: 1396.98
+scale:
+  pixels_per_meter: 473.4
+north:
+  angle_deg: -0.0020000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6091000000
+  total_rotation_deg: -0.6112000000
+  A: 0.0021122444
+  D: -0.0000225342
+  B: -0.0000225342
+  E: -0.0021122444
+  C: 558447.026854
+  F: 156140.770594
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 473.46
+  - 473.4
+  - 474.72
+  - 473.27
+  - 471.73
+  entrance_std_px: 1.64
+  outliers_removed: 2
+  flag: null

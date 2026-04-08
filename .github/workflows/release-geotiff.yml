@@ -1,0 +1,41 @@
+name: Release GeoTIFF
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install GDAL
+        run: sudo apt-get update && sudo apt-get install -y gdal-bin
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r pipeline/requirements.txt
+
+      - name: Generate all GeoTIFFs
+        run: python pipeline/02_generate_geotiff.py --all
+
+      - name: Create archive
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          find data/caves -name "image_georef.tif" | sort | \
+            tar czf "geotiff-tatry-${TAG}.tar.gz" -T -
+          echo "ARCHIVE=geotiff-tatry-${TAG}.tar.gz" >> "$GITHUB_ENV"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ env.ARCHIVE }}
+          generate_release_notes: true

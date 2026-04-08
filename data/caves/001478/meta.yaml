@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.11
+  dir_id: 001478
+  name: Jaskinia Kozia
+  n_submissions: 5
+image:
+  filename: image_983_zoom_10.tif
+  image_id: 983
+  width: 8496
+  height: 8172
+coordinates:
+  lat: 49.2377
+  lon: 19.908439
+entrance:
+  x: 1817.18
+  y: 1012.22
+scale:
+  pixels_per_meter: 23.63
+north:
+  angle_deg: 0.0080000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6881000000
+  total_rotation_deg: -0.6803000000
+  A: 0.0423118768
+  D: -0.0005024158
+  B: -0.0005024158
+  E: -0.0423118768
+  C: 566032.12258
+  F: 152684.201493
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 23.63
+  - 23.63
+  - 23.62
+  - 23.64
+  - 23.63
+  entrance_std_px: 2.97
+  outliers_removed: 1
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-08.02
+  dir_id: 001649
+  name: Szczelina w Ścianie
+  n_submissions: 5
+image:
+  filename: image_1173_zoom_10.tif
+  image_id: 1173
+  width: 1584
+  height: 1248
+coordinates:
+  lat: 49.235011
+  lon: 19.865217
+entrance:
+  x: 409.33
+  y: 804.93
+scale:
+  pixels_per_meter: 195.69
+north:
+  angle_deg: -0.0030000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6553000000
+  total_rotation_deg: -0.6582000000
+  A: 0.0051098080
+  D: -0.0000586998
+  B: -0.0000586998
+  E: -0.0051098080
+  C: 562964.580724
+  F: 152308.878758
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 195.55
+  - 195.83
+  - 196.77
+  - 196.0
+  - 195.06
+  entrance_std_px: 0.9100000000
+  outliers_removed: 1
+  flag: null

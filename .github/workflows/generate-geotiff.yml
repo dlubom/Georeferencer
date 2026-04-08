@@ -1,0 +1,56 @@
+name: Generate GeoTIFF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/caves/**/meta.yaml'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Install GDAL
+        run: sudo apt-get update && sudo apt-get install -y gdal-bin
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r pipeline/requirements.txt
+
+      - name: Find changed caves
+        id: changed
+        run: |
+          DIRS=$(git diff HEAD~1 --name-only -- 'data/caves/*/meta.yaml' \
+            | sed 's|data/caves/\([^/]*\)/meta.yaml|\1|' \
+            | sort -u \
+            | tr '\n' ' ')
+          echo "dirs=$DIRS" >> "$GITHUB_OUTPUT"
+          echo "Zmienione jaskinie: $DIRS"
+
+      - name: Generate GeoTIFF
+        if: steps.changed.outputs.dirs != ''
+        run: |
+          for dir_id in ${{ steps.changed.outputs.dirs }}; do
+            echo "Generowanie: $dir_id"
+            python pipeline/02_generate_geotiff.py --cave "$dir_id"
+          done
+
+      - name: Commit .tfw and updated meta.yaml
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/caves/*/image.tfw data/caves/*/meta.yaml
+          if git diff --staged --quiet; then
+            echo "Brak zmian do commitu"
+          else
+            git commit -m "Wygenerowano .tfw dla zmienionych jaskiń [skip ci]"
+            git push
+          fi

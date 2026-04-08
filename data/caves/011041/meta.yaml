@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.A-24.06
+  dir_id: '011041'
+  name: Łężna Dziura
+  n_submissions: 5
+image:
+  filename: image_12372_zoom_10.tif
+  image_id: 12372
+  width: 2904
+  height: 2190
+coordinates:
+  lat: 49.281972
+  lon: 20.07375
+entrance:
+  x: 1832.95
+  y: 889.56
+scale:
+  pixels_per_meter: 235.83
+north:
+  angle_deg: 0.0060000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.8138000000
+  total_rotation_deg: -0.8082000000
+  A: 0.0042399459
+  D: -0.0000598135
+  B: -0.0000598135
+  E: -0.0042399459
+  C: 578060.659204
+  F: 157722.094916
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 236.09
+  - 235.11
+  - 235.83
+  - 236.17
+  - 235.66
+  entrance_std_px: 0.9900000000
+  outliers_removed: 0
+  flag: null

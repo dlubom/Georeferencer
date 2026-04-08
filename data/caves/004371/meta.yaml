@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.43
+  dir_id: '004371'
+  name: Upłazkowa Koleba
+  n_submissions: 5
+image:
+  filename: image_12231_zoom_10.tif
+  image_id: 12231
+  width: 2696
+  height: 3082
+coordinates:
+  lat: 49.237539
+  lon: 19.877461
+entrance:
+  x: 1752.13
+  y: 2260.24
+scale:
+  pixels_per_meter: 236.78
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6646000000
+  total_rotation_deg: -0.6646000000
+  A: 0.0042229742
+  D: -0.0000489871
+  B: -0.0000489871
+  E: -0.0042229742
+  C: 563847.130992
+  F: 152605.584766
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 236.41
+  - 237.17
+  - 238.58
+  - 237.16
+  - 235.72
+  entrance_std_px: 2.02
+  outliers_removed: 1
+  flag: null

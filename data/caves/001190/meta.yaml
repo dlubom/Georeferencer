@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-10.04
+  dir_id: 001190
+  name: Jaskinia Niedźwiedzia Średnia
+  n_submissions: 5
+image:
+  filename: image_675_zoom_10.tif
+  image_id: 675
+  width: 1010
+  height: 1524
+coordinates:
+  lat: 49.246197
+  lon: 19.895094
+entrance:
+  x: 876.93
+  y: 361.13
+scale:
+  pixels_per_meter: 77.25
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6781000000
+  total_rotation_deg: -0.6781000000
+  A: 0.0129434597
+  D: -0.0001531834
+  B: -0.0001531834
+  E: -0.0129434597
+  C: 565114.907206
+  F: 153578.000903
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 77.28
+  - 77.25
+  - 77.28
+  - 77.02
+  - 76.96
+  entrance_std_px: 0.7700000000
+  outliers_removed: 0
+  flag: null

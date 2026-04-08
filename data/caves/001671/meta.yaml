@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-11.03
+  dir_id: '001671'
+  name: Szczelina w Krzesanicy I
+  n_submissions: 5
+image:
+  filename: image_2959_zoom_10.tif
+  image_id: 2959
+  width: 982
+  height: 1398
+coordinates:
+  lat: 49.231611
+  lon: 19.907089
+entrance:
+  x: 642.38
+  y: 337.34
+scale:
+  pixels_per_meter: 23.48
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6870000000
+  total_rotation_deg: -0.6870000000
+  A: 0.0425816455
+  D: -0.0005105876
+  B: -0.0005105876
+  E: -0.0425816455
+  C: 565991.19561
+  F: 151977.275644
+quality:
+  ppm_cv: 0.3500000000
+  ppm_values:
+  - 46.85
+  - 23.48
+  - 23.35
+  - 23.36
+  - 46.8
+  entrance_std_px: 79.1
+  outliers_removed: 0
+  flag: high_ppm_cv

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-07.13
+  dir_id: 001308
+  name: Jaskinia pod Kapliczką
+  n_submissions: 5
+image:
+  filename: image_812_zoom_10.tif
+  image_id: 812
+  width: 1892
+  height: 2074
+coordinates:
+  lat: 49.242603
+  lon: 19.846125
+entrance:
+  x: 1373.24
+  y: 548.3
+scale:
+  pixels_per_meter: 196.02
+north:
+  angle_deg: 0.0040000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6409000000
+  total_rotation_deg: -0.6366000000
+  A: 0.0051012829
+  D: -0.0000566843
+  B: -0.0000566843
+  E: -0.0051012829
+  C: 561560.797059
+  F: 153135.634468
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 196.23
+  - 195.56
+  - 194.77
+  - 196.29
+  - 196.02
+  entrance_std_px: 3.41
+  outliers_removed: 0
+  flag: null

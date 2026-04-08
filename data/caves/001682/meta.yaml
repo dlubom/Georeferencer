@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-09.20
+  dir_id: 001682
+  name: Jaskinia Hakowa
+  n_submissions: 5
+image:
+  filename: image_1205_zoom_10.tif
+  image_id: 1205
+  width: 2276
+  height: 1744
+coordinates:
+  lat: 49.234669
+  lon: 19.875536
+entrance:
+  x: 1634.53
+  y: 554.15
+scale:
+  pixels_per_meter: 195.14
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6631000000
+  total_rotation_deg: -0.6631000000
+  A: 0.0051242809
+  D: -0.0000593094
+  B: -0.0000593094
+  E: -0.0051242809
+  C: 563709.684267
+  F: 152278.311123
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 195.72
+  - 195.22
+  - 195.11
+  - 194.95
+  - 195.14
+  entrance_std_px: 0.5100000000
+  outliers_removed: 2
+  flag: null

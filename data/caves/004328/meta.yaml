@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.70
+  dir_id: 004328
+  name: Jaskinia w Zbójnickiej Turni
+  n_submissions: 5
+image:
+  filename: image_12251_zoom_10.tif
+  image_id: 12251
+  width: 7510
+  height: 4572
+coordinates:
+  lat: 49.236431
+  lon: 19.865281
+entrance:
+  x: 6548.58
+  y: 1261.91
+scale:
+  pixels_per_meter: 236.23
+north:
+  angle_deg: 0.0900000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6554000000
+  total_rotation_deg: -0.5649000000
+  A: 0.0042329618
+  D: -0.0000417385
+  B: -0.0000417385
+  E: -0.0042329618
+  C: 562941.810213
+  F: 152468.221027
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 236.01
+  - 236.24
+  - 236.23
+  - 236.0
+  - 236.3
+  entrance_std_px: 5.96
+  outliers_removed: 0
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-06.03
+  dir_id: '001300'
+  name: Jaskinia Troista
+  n_submissions: 5
+image:
+  filename: image_791_zoom_10.tif
+  image_id: 791
+  width: 2368
+  height: 2246
+coordinates:
+  lat: 49.24005
+  lon: 19.83405
+entrance:
+  x: 1344.8
+  y: 1782.29
+scale:
+  pixels_per_meter: 195.07
+north:
+  angle_deg: 0.0020000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6318000000
+  total_rotation_deg: -0.6301000000
+  A: 0.0051259302
+  D: -0.0000563713
+  B: -0.0000563713
+  E: -0.0051259302
+  C: 560685.486211
+  F: 152848.485024
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 195.07
+  - 195.68
+  - 194.68
+  - 194.84
+  - 195.83
+  entrance_std_px: 1.05
+  outliers_removed: 0
+  flag: null

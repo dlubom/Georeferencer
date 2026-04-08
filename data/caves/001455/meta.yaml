@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.18
+  dir_id: '001455'
+  name: Dziura nad Zachodem Wyżnia
+  n_submissions: 5
+image:
+  filename: image_962_zoom_10.tif
+  image_id: 962
+  width: 1296
+  height: 1350
+coordinates:
+  lat: 49.236211
+  lon: 19.875817
+entrance:
+  x: 495.44
+  y: 954.71
+scale:
+  pixels_per_meter: 196.0
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6634000000
+  total_rotation_deg: -0.6634000000
+  A: 0.0051017265
+  D: -0.0000590687
+  B: -0.0000590687
+  E: -0.0051017265
+  C: 563734.021647
+  F: 152451.880697
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 195.34
+  - 196.0
+  - 196.17
+  - 196.01
+  - 195.01
+  entrance_std_px: 1.2
+  outliers_removed: 0
+  flag: null

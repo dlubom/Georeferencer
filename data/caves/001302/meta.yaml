@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-07.09
+  dir_id: '001302'
+  name: Jaskinia Rura Kominiarska
+  n_submissions: 5
+image:
+  filename: image_777_zoom_10.tif
+  image_id: 777
+  width: 680
+  height: 1654
+coordinates:
+  lat: 49.242322
+  lon: 19.848142
+entrance:
+  x: 511.07
+  y: 182.75
+scale:
+  pixels_per_meter: 77.25
+north:
+  angle_deg: 0.0020000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6424000000
+  total_rotation_deg: -0.6407000000
+  A: 0.0129442090
+  D: -0.0001447534
+  B: -0.0001447534
+  E: -0.0129442090
+  C: 561708.296647
+  F: 153105.61406
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.18
+  - 77.25
+  - 77.05
+  - 77.32
+  - 77.33
+  entrance_std_px: 0.2400000000
+  outliers_removed: 0
+  flag: null

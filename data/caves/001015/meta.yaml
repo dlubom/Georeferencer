@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-12.08
+  dir_id: '001015'
+  name: Komora w Jatkach
+  n_submissions: 5
+image:
+  filename: image_487_zoom_10.tif
+  image_id: 487
+  width: 662
+  height: 930
+coordinates:
+  lat: 49.248519
+  lon: 19.922372
+entrance:
+  x: 549.72
+  y: 558.59
+scale:
+  pixels_per_meter: 77.14
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6987000000
+  total_rotation_deg: -0.6987000000
+  A: 0.0129619701
+  D: -0.0001580834
+  B: -0.0001580834
+  E: -0.0129619701
+  C: 567100.714979
+  F: 153862.421453
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 77.14
+  - 77.16
+  - 77.13
+  - 77.08
+  - 77.16
+  entrance_std_px: 0.3500000000
+  outliers_removed: 0
+  flag: null

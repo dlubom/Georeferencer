@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-17.01
+  dir_id: '001245'
+  name: Jaskinia Kasprowa Wyżnia
+  n_submissions: 5
+image:
+  filename: image_726_zoom_10.tif
+  image_id: 726
+  width: 1496
+  height: 2112
+coordinates:
+  lat: 49.252319
+  lon: 19.983417
+entrance:
+  x: 1131.07
+  y: 400.73
+scale:
+  pixels_per_meter: 38.61
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7450000000
+  total_rotation_deg: -0.7450000000
+  A: 0.0259001742
+  D: -0.0003368040
+  B: -0.0003368040
+  E: -0.0259001742
+  C: 571514.405703
+  F: 154344.125152
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 38.59
+  - 39.08
+  - 38.61
+  - 38.57
+  - 38.61
+  entrance_std_px: 0.3000000000
+  outliers_removed: 2
+  flag: null

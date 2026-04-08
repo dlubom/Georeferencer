@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.19
+  dir_id: '001554'
+  name: Dziura pod Żródłem Ratusz
+  n_submissions: 5
+image:
+  filename: image_1069_zoom_10.tif
+  image_id: 1069
+  width: 772
+  height: 904
+coordinates:
+  lat: 49.244564
+  lon: 19.917172
+entrance:
+  x: 95.82
+  y: 320.32
+scale:
+  pixels_per_meter: 77.14
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6948000000
+  total_rotation_deg: -0.6948000000
+  A: 0.0129625305
+  D: -0.0001571895
+  B: -0.0001571895
+  E: -0.0129625305
+  C: 566733.566248
+  F: 153415.122813
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.14
+  - 77.12
+  - 77.04
+  - 77.29
+  - 77.21
+  entrance_std_px: 0.3800000000
+  outliers_removed: 0
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-13.07
+  dir_id: 001586
+  name: Mała Mnichowa Studzienka
+  n_submissions: 5
+image:
+  filename: image_1130_zoom_10.tif
+  image_id: 1130
+  width: 806
+  height: 1006
+coordinates:
+  lat: 49.246317
+  lon: 19.928897
+entrance:
+  x: 448.19
+  y: 310.32
+scale:
+  pixels_per_meter: 77.02
+north:
+  angle_deg: 0.0050000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7037000000
+  total_rotation_deg: -0.6986000000
+  A: 0.0129821825
+  D: -0.0001582912
+  B: -0.0001582912
+  E: -0.0129821825
+  C: 567579.712864
+  F: 153620.28582
+quality:
+  ppm_cv: 0.0050000000
+  ppm_values:
+  - 76.84
+  - 77.02
+  - 77.36
+  - 77.66
+  - 76.63
+  entrance_std_px: 0.2400000000
+  outliers_removed: 0
+  flag: null

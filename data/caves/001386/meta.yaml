@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.02
+  dir_id: 001386
+  name: Jaskinia za Smrekiem
+  n_submissions: 5
+image:
+  filename: image_906_zoom_10.tif
+  image_id: 906
+  width: 2962
+  height: 3432
+coordinates:
+  lat: 49.235194
+  lon: 19.86395
+entrance:
+  x: 675.13
+  y: 1855.77
+scale:
+  pixels_per_meter: 97.82
+north:
+  angle_deg: -0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6544000000
+  total_rotation_deg: -0.6549000000
+  A: 0.0102217838
+  D: -0.0001168412
+  B: -0.0001168412
+  E: -0.0102217838
+  C: 562867.502988
+  F: 152343.073531
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 97.75
+  - 97.82
+  - 97.82
+  - 97.91
+  - 97.94
+  entrance_std_px: 0.9800000000
+  outliers_removed: 0
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-04.03
+  dir_id: '004067'
+  name: Skośna Szpara
+  n_submissions: 5
+image:
+  filename: image_4031_zoom_10.tif
+  image_id: 4031
+  width: 1388
+  height: 1892
+coordinates:
+  lat: 49.269181
+  lon: 19.804978
+entrance:
+  x: 491.02
+  y: 411.02
+scale:
+  pixels_per_meter: 119.3
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6100000000
+  total_rotation_deg: -0.6100000000
+  A: 0.0083820442
+  D: -0.0000892427
+  B: -0.0000892427
+  E: -0.0083820442
+  C: 558538.242395
+  F: 156057.321227
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 119.42
+  - 118.86
+  - 119.63
+  - 119.3
+  - 118.92
+  entrance_std_px: 0.5500000000
+  outliers_removed: 0
+  flag: null

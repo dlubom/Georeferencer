@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.53
+  dir_id: '001517'
+  name: Szczelina na Drodze Steckiego
+  n_submissions: 5
+image:
+  filename: image_1044_zoom_10.tif
+  image_id: 1044
+  width: 734
+  height: 1216
+coordinates:
+  lat: 49.242083
+  lon: 19.906928
+entrance:
+  x: 220.35
+  y: 424.27
+scale:
+  pixels_per_meter: 77.1
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6870000000
+  total_rotation_deg: -0.6870000000
+  A: 0.0129695879
+  D: -0.0001555125
+  B: -0.0001555125
+  E: -0.0129695879
+  C: 565989.913448
+  F: 153131.779293
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 76.88
+  - 76.9
+  - 77.1
+  - 77.23
+  - 77.21
+  entrance_std_px: 0.6400000000
+  outliers_removed: 0
+  flag: null

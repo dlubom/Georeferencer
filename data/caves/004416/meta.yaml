@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-10.22
+  dir_id: '004416'
+  name: Mała Szczelina w Tomanowym Grzbiecie
+  n_submissions: 5
+image:
+  filename: image_12243_zoom_10.tif
+  image_id: 12243
+  width: 3444
+  height: 3096
+coordinates:
+  lat: 49.22975
+  lon: 19.895219
+entrance:
+  x: 1387.56
+  y: 1916.45
+scale:
+  pixels_per_meter: 236.5
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6780000000
+  total_rotation_deg: -0.6780000000
+  A: 0.0042279787
+  D: -0.0000500319
+  B: -0.0000500319
+  E: -0.0042279787
+  C: 565151.159598
+  F: 151753.642772
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 235.44
+  - 236.5
+  - 237.03
+  - 235.46
+  - 237.19
+  entrance_std_px: 3.82
+  outliers_removed: 0
+  flag: null

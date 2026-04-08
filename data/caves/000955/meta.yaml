@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.A-18.01
+  dir_id: 000955
+  name: Jaskinia Jaszczurowska Wyżnia
+  n_submissions: 5
+image:
+  filename: image_447_zoom_10.tif
+  image_id: 447
+  width: 908
+  height: 1180
+coordinates:
+  lat: 49.281894
+  lon: 20.002617
+entrance:
+  x: 575.11
+  y: 633.38
+scale:
+  pixels_per_meter: 77.28
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7599000000
+  total_rotation_deg: -0.7599000000
+  A: 0.0129380613
+  D: -0.0001716071
+  B: -0.0001716071
+  E: -0.0129380613
+  C: 572889.424821
+  F: 157646.804876
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 77.28
+  - 76.8
+  - 77.3
+  - 77.23
+  - 77.43
+  entrance_std_px: 0.8900000000
+  outliers_removed: 2
+  flag: null

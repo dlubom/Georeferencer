@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-05.02
+  dir_id: 001097
+  name: Schronisko przy Ścianach
+  n_submissions: 5
+image:
+  filename: image_572_zoom_10.tif
+  image_id: 572
+  width: 2758
+  height: 1336
+coordinates:
+  lat: 49.249261
+  lon: 19.822928
+entrance:
+  x: 621.97
+  y: 877.0
+scale:
+  pixels_per_meter: 97.72
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6234000000
+  total_rotation_deg: -0.6234000000
+  A: 0.0102325560
+  D: -0.0001113411
+  B: -0.0001113411
+  E: -0.0102325560
+  C: 559865.555079
+  F: 153863.11572
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 97.72
+  - 97.72
+  - 97.78
+  - 97.67
+  - 97.94
+  entrance_std_px: 1.07
+  outliers_removed: 1
+  flag: null

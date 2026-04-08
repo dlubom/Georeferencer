@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.A-06.02
+  dir_id: 000950
+  name: Siwiańska Dziura
+  n_submissions: 5
+image:
+  filename: image_12338_zoom_10.tif
+  image_id: 12338
+  width: 1562
+  height: 2592
+coordinates:
+  lat: 49.276603
+  lon: 19.8267
+entrance:
+  x: 530.93
+  y: 1512.41
+scale:
+  pixels_per_meter: 235.73
+north:
+  angle_deg: 0.0070000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6265000000
+  total_rotation_deg: -0.6197000000
+  A: 0.0042418954
+  D: -0.0000458795
+  B: -0.0000458795
+  E: -0.0042418954
+  C: 560110.84339
+  F: 156902.166108
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 236.86
+  - 235.62
+  - 235.84
+  - 235.94
+  - 235.49
+  entrance_std_px: 1.86
+  outliers_removed: 1
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.48
+  dir_id: 004389
+  name: Okap w Ździarach
+  n_submissions: 5
+image:
+  filename: image_4410_zoom_10.tif
+  image_id: 4410
+  width: 802
+  height: 1298
+coordinates:
+  lat: 49.242222
+  lon: 19.8775
+entrance:
+  x: 424.54
+  y: 521.17
+scale:
+  pixels_per_meter: 58.99
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6647000000
+  total_rotation_deg: -0.6647000000
+  A: 0.0169501758
+  D: -0.0001966470
+  B: -0.0001966470
+  E: -0.0169501758
+  C: 563844.126061
+  F: 153125.347827
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 59.12
+  - 59.24
+  - 58.86
+  - 58.99
+  - 58.92
+  entrance_std_px: 1.56
+  outliers_removed: 0
+  flag: null

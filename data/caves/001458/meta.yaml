@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.20
+  dir_id: 001458
+  name: Schron pod Owczą II
+  n_submissions: 5
+image:
+  filename: image_964_zoom_10.tif
+  image_id: 964
+  width: 1506
+  height: 1804
+coordinates:
+  lat: 49.236533
+  lon: 19.870194
+entrance:
+  x: 1185.89
+  y: 440.19
+scale:
+  pixels_per_meter: 195.89
+north:
+  angle_deg: -0.0020000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6591000000
+  total_rotation_deg: -0.6616000000
+  A: 0.0051045798
+  D: -0.0000589421
+  B: -0.0000589421
+  E: -0.0051045798
+  C: 563320.851395
+  F: 152480.360209
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 195.82
+  - 196.27
+  - 195.89
+  - 195.8
+  - 196.27
+  entrance_std_px: 1.11
+  outliers_removed: 0
+  flag: null

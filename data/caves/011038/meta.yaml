@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-24.05
+  dir_id: 011038
+  name: Szczelina za Paśnikiem
+  n_submissions: 5
+image:
+  filename: image_12308_zoom_10.tif
+  image_id: 12308
+  width: 2046
+  height: 1758
+coordinates:
+  lat: 49.274028
+  lon: 20.075861
+entrance:
+  x: 289.07
+  y: 1358.18
+scale:
+  pixels_per_meter: 236.24
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.8153000000
+  total_rotation_deg: -0.8153000000
+  A: 0.0042325626
+  D: -0.0000602342
+  B: -0.0000602342
+  E: -0.0042325626
+  C: 578233.281575
+  F: 156843.31052
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 236.32
+  - 237.07
+  - 235.16
+  - 235.75
+  - 236.24
+  entrance_std_px: 0.7100000000
+  outliers_removed: 0
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.72
+  dir_id: '004766'
+  name: Meander w Małołąckim Siodle
+  n_submissions: 5
+image:
+  filename: image_12300_zoom_10.tif
+  image_id: 12300
+  width: 2962
+  height: 4052
+coordinates:
+  lat: 49.245389
+  lon: 19.912683
+entrance:
+  x: 2255.29
+  y: 2613.26
+scale:
+  pixels_per_meter: 236.21
+north:
+  angle_deg: -0.0100000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6914000000
+  total_rotation_deg: -0.7009000000
+  A: 0.0042331374
+  D: -0.0000517881
+  B: -0.0000517881
+  E: -0.0042331374
+  C: 566397.617911
+  F: 153509.869525
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 236.08
+  - 235.8
+  - 236.19
+  - 236.24
+  - 236.44
+  entrance_std_px: 0.8700000000
+  outliers_removed: 1
+  flag: null

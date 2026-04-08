@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.43
+  dir_id: '001132'
+  name: Sowia Jama II
+  n_submissions: 5
+image:
+  filename: image_633_zoom_10.tif
+  image_id: 633
+  width: 474
+  height: 434
+coordinates:
+  lat: 49.247417
+  lon: 19.863956
+entrance:
+  x: 304.82
+  y: 150.76
+scale:
+  pixels_per_meter: 38.68
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6545000000
+  total_rotation_deg: -0.6545000000
+  A: 0.0258544161
+  D: -0.0002953423
+  B: -0.0002953423
+  E: -0.0258544161
+  C: 562851.27098
+  F: 153686.417885
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 38.93
+  - 38.68
+  - 38.5
+  - 38.67
+  - 38.71
+  entrance_std_px: 0.4900000000
+  outliers_removed: 2
+  flag: null

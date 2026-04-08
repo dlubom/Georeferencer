@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-10.24
+  dir_id: 004419
+  name: Druga Krakowska Szczelina
+  n_submissions: 5
+image:
+  filename: image_12298_zoom_10.tif
+  image_id: 12298
+  width: 2874
+  height: 2608
+coordinates:
+  lat: 49.230881
+  lon: 19.8876
+entrance:
+  x: 760.15
+  y: 952.89
+scale:
+  pixels_per_meter: 237.32
+north:
+  angle_deg: -0.0030000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6722000000
+  total_rotation_deg: -0.6756000000
+  A: 0.0042134102
+  D: -0.0000496875
+  B: -0.0000496875
+  E: -0.0042134102
+  C: 564597.771115
+  F: 151868.681997
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 237.26
+  - 237.41
+  - 237.24
+  - 237.38
+  - 235.42
+  entrance_std_px: 2.39
+  outliers_removed: 1
+  flag: null

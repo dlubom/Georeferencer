@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.K-21.01
+  dir_id: '001724'
+  name: Studnia w Dziurawej Czubie
+  n_submissions: 5
+image:
+  filename: image_1255_zoom_10.tif
+  image_id: 1255
+  width: 722
+  height: 642
+coordinates:
+  lat: 49.194158
+  lon: 20.043675
+entrance:
+  x: 555.38
+  y: 251.98
+scale:
+  pixels_per_meter: 76.88
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7900000000
+  total_rotation_deg: -0.7898000000
+  A: 0.0130055025
+  D: -0.0001792762
+  B: -0.0001792762
+  E: -0.0130055025
+  C: 576009.255619
+  F: 147931.859746
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 76.33
+  - 76.88
+  - 77.05
+  - 76.66
+  - 77.29
+  entrance_std_px: 0.6500000000
+  outliers_removed: 0
+  flag: null

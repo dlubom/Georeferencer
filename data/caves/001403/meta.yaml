@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.22
+  dir_id: '001403'
+  name: Dziura w Ścianie
+  n_submissions: 5
+image:
+  filename: image_927_zoom_10.tif
+  image_id: 927
+  width: 1052
+  height: 896
+coordinates:
+  lat: 49.235253
+  lon: 19.865211
+entrance:
+  x: 129.21
+  y: 566.55
+scale:
+  pixels_per_meter: 77.06
+north:
+  angle_deg: -0.0030000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6553000000
+  total_rotation_deg: -0.6583000000
+  A: 0.0129752298
+  D: -0.0001490744
+  B: -0.0001490744
+  E: -0.0129752298
+  C: 562964.288735
+  F: 152339.001609
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.06
+  - 76.92
+  - 77.08
+  - 76.94
+  - 77.12
+  entrance_std_px: 0.5100000000
+  outliers_removed: 0
+  flag: null

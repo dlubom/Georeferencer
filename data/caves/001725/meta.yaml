@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-10.16
+  dir_id: '001725'
+  name: Szczelina w Tomanowym Grzbiecie V
+  n_submissions: 5
+image:
+  filename: image_1234_zoom_10.tif
+  image_id: 1234
+  width: 1926
+  height: 2922
+coordinates:
+  lat: 49.230533
+  lon: 19.895897
+entrance:
+  x: 569.66
+  y: 1232.42
+scale:
+  pixels_per_meter: 195.75
+north:
+  angle_deg: -0.0110000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6785000000
+  total_rotation_deg: -0.6899000000
+  A: 0.0051082357
+  D: -0.0000615095
+  B: -0.0000615095
+  E: -0.0051082357
+  C: 565202.412035
+  F: 151839.403566
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 195.78
+  - 195.84
+  - 194.65
+  - 195.55
+  - 195.71
+  entrance_std_px: 1.45
+  outliers_removed: 1
+  flag: null

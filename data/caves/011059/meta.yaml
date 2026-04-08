@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-13.32
+  dir_id: 011059
+  name: Schron pod Mnichem
+  n_submissions: 5
+image:
+  filename: image_12395_zoom_10.tif
+  image_id: 12395
+  width: 1884
+  height: 1454
+coordinates:
+  lat: 49.246308
+  lon: 19.926792
+entrance:
+  x: 457.0
+  y: 722.23
+scale:
+  pixels_per_meter: 235.9
+north:
+  angle_deg: -0.0090000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7021000000
+  total_rotation_deg: -0.7113000000
+  A: 0.0042387375
+  D: -0.0000526214
+  B: -0.0000526214
+  E: -0.0042387375
+  C: 567430.440005
+  F: 153616.392465
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 235.62
+  - 235.77
+  - 236.2
+  - 237.32
+  - 236.03
+  entrance_std_px: 1.02
+  outliers_removed: 1
+  flag: null

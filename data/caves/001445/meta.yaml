@@ -1,0 +1,44 @@
+cave:
+  inventory_number: T.E-09.12
+  dir_id: '001445'
+  name: Jaskinia Czarna
+  n_submissions: 7
+image:
+  filename: image_944_zoom_10.tif
+  image_id: 944
+  width: 10488
+  height: 5020
+coordinates:
+  lat: 49.244386
+  lon: 19.870372
+entrance:
+  x: 595.03
+  y: 4359.73
+scale:
+  pixels_per_meter: 11.8
+north:
+  angle_deg: -0.0050000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6593000000
+  total_rotation_deg: -0.6640000000
+  A: 0.0847161946
+  D: -0.0009818250
+  B: -0.0009818250
+  E: -0.0847161946
+  C: 563283.661458
+  F: 153720.857078
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 11.81
+  - 11.77
+  - 11.75
+  - 11.81
+  - 11.8
+  - 11.81
+  - 11.8
+  entrance_std_px: 1.69
+  outliers_removed: 0
+  flag: null

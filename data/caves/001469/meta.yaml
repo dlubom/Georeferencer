@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.02
+  dir_id: 001469
+  name: Studnia w Dziurawem
+  n_submissions: 5
+image:
+  filename: image_974_zoom_10.tif
+  image_id: 974
+  width: 976
+  height: 1252
+coordinates:
+  lat: 49.242625
+  lon: 19.897578
+entrance:
+  x: 483.45
+  y: 293.05
+scale:
+  pixels_per_meter: 38.61
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6799000000
+  total_rotation_deg: -0.6799000000
+  A: 0.0258952315
+  D: -0.0003072992
+  B: -0.0003072992
+  E: -0.0258952315
+  C: 565299.215949
+  F: 153186.098647
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 38.61
+  - 38.56
+  - 38.56
+  - 38.7
+  - 38.66
+  entrance_std_px: 0.7900000000
+  outliers_removed: 0
+  flag: null

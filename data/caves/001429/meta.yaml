@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.53
+  dir_id: 001429
+  name: Płaska Komórka w Żeleźniaku
+  n_submissions: 5
+image:
+  filename: image_923_zoom_10.tif
+  image_id: 923
+  width: 604
+  height: 660
+coordinates:
+  lat: 49.24115
+  lon: 19.856958
+entrance:
+  x: 318.7
+  y: 179.4
+scale:
+  pixels_per_meter: 77.36
+north:
+  angle_deg: 0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6491000000
+  total_rotation_deg: -0.6485000000
+  A: 0.0129255269
+  D: -0.0001463094
+  B: -0.0001463094
+  E: -0.0129255269
+  C: 562353.755868
+  F: 152982.520867
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 77.01
+  - 77.51
+  - 77.36
+  - 77.68
+  - 76.81
+  entrance_std_px: 0.4300000000
+  outliers_removed: 0
+  flag: null

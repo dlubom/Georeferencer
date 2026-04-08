@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-14.06
+  dir_id: 001219
+  name: Szczelina pod Głazem
+  n_submissions: 5
+image:
+  filename: image_699_zoom_10.tif
+  image_id: 699
+  width: 406
+  height: 430
+coordinates:
+  lat: 49.250947
+  lon: 19.939258
+entrance:
+  x: 203.93
+  y: 173.88
+scale:
+  pixels_per_meter: 77.34
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7116000000
+  total_rotation_deg: -0.7116000000
+  A: 0.0129288573
+  D: -0.0001605724
+  B: -0.0001605724
+  E: -0.0129288573
+  C: 568330.327637
+  F: 154142.330369
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 77.64
+  - 76.84
+  - 76.76
+  - 77.34
+  - 77.37
+  entrance_std_px: 0.3800000000
+  outliers_removed: 0
+  flag: null

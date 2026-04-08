@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-10.01
+  dir_id: 000991
+  name: Jaskinia Barłogowa
+  n_submissions: 5
+image:
+  filename: image_468_zoom_10.tif
+  image_id: 468
+  width: 996
+  height: 1118
+coordinates:
+  lat: 49.263219
+  lon: 19.883928
+entrance:
+  x: 146.05
+  y: 477.06
+scale:
+  pixels_per_meter: 77.13
+north:
+  angle_deg: -0.0030000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6698000000
+  total_rotation_deg: -0.6727000000
+  A: 0.0129638737
+  D: -0.0001522239
+  B: -0.0001522239
+  E: -0.0129638737
+  C: 564289.850783
+  F: 155461.581818
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 77.03
+  - 77.13
+  - 77.76
+  - 77.13
+  - 77.13
+  entrance_std_px: 0.4200000000
+  outliers_removed: 2
+  flag: null

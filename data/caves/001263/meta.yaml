@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-17.13
+  dir_id: '001263'
+  name: Jaskinia Partyzancka II
+  n_submissions: 5
+image:
+  filename: image_745_zoom_10.tif
+  image_id: 745
+  width: 550
+  height: 602
+coordinates:
+  lat: 49.251444
+  lon: 19.992111
+entrance:
+  x: 334.32
+  y: 268.99
+scale:
+  pixels_per_meter: 38.44
+north:
+  angle_deg: 0.0320000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7516000000
+  total_rotation_deg: -0.7196000000
+  A: 0.0260102542
+  D: -0.0003266905
+  B: -0.0003266905
+  E: -0.0260102542
+  C: 572168.712598
+  F: 154251.489845
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 38.39
+  - 38.44
+  - 38.49
+  - 38.22
+  - 38.65
+  entrance_std_px: 0.3900000000
+  outliers_removed: 2
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.16
+  dir_id: 001394
+  name: Dzwonnica
+  n_submissions: 5
+image:
+  filename: image_900_zoom_10.tif
+  image_id: 900
+  width: 2810
+  height: 1952
+coordinates:
+  lat: 49.236478
+  lon: 19.864508
+entrance:
+  x: 2309.69
+  y: 752.58
+scale:
+  pixels_per_meter: 98.07
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6548000000
+  total_rotation_deg: -0.6548000000
+  A: 0.0101959395
+  D: -0.0001165263
+  B: -0.0001165263
+  E: -0.0101959395
+  C: 562889.70277
+  F: 152475.12858
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 98.07
+  - 98.38
+  - 97.76
+  - 98.06
+  - 98.69
+  entrance_std_px: 3.08
+  outliers_removed: 0
+  flag: null

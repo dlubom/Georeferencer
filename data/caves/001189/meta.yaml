@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-10.03
+  dir_id: 001189
+  name: Jaskinia Niedźwiedzia Niżnia
+  n_submissions: 5
+image:
+  filename: image_674_zoom_10.tif
+  image_id: 674
+  width: 946
+  height: 2278
+coordinates:
+  lat: 49.247772
+  lon: 19.895058
+entrance:
+  x: 417.72
+  y: 300.81
+scale:
+  pixels_per_meter: 118.06
+north:
+  angle_deg: -89.865
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6780000000
+  total_rotation_deg: -90.5433
+  A: -0.0000803207
+  D: -0.0084697300
+  B: -0.0084697300
+  E: 0.0000803207
+  C: 565124.092895
+  F: 153751.712202
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 118.06
+  - 118.69
+  - 117.6
+  - 117.77
+  - 118.52
+  entrance_std_px: 1.01
+  outliers_removed: 0
+  flag: null

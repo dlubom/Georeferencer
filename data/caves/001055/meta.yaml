@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.C-15.04
+  dir_id: '001055'
+  name: Nyża z Mostem
+  n_submissions: 5
+image:
+  filename: image_527_zoom_10.tif
+  image_id: 527
+  width: 454
+  height: 916
+coordinates:
+  lat: 49.254528
+  lon: 19.962328
+entrance:
+  x: 147.25
+  y: 342.63
+scale:
+  pixels_per_meter: 77.32
+north:
+  angle_deg: 0.0210000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7291000000
+  total_rotation_deg: -0.7082000000
+  A: 0.0129318404
+  D: -0.0001598489
+  B: -0.0001598489
+  E: -0.0129318404
+  C: 570004.3891
+  F: 154563.578212
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 77.22
+  - 77.11
+  - 77.42
+  - 77.45
+  - 77.98
+  entrance_std_px: 0.6500000000
+  outliers_removed: 1
+  flag: null

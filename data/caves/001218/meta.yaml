@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-14.05
+  dir_id: 001218
+  name: Szczelina w Giewoncie II
+  n_submissions: 5
+image:
+  filename: image_698_zoom_10.tif
+  image_id: 698
+  width: 414
+  height: 372
+coordinates:
+  lat: 49.252156
+  lon: 19.941594
+entrance:
+  x: 231.9
+  y: 194.75
+scale:
+  pixels_per_meter: 77.11
+north:
+  angle_deg: 0.0620000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7133000000
+  total_rotation_deg: -0.6509000000
+  A: 0.0129673893
+  D: -0.0001473268
+  B: -0.0001473268
+  E: -0.0129673893
+  C: 568498.231478
+  F: 154279.084273
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 77.11
+  - 77.3
+  - 77.11
+  - 76.1
+  - 76.9
+  entrance_std_px: 0.3900000000
+  outliers_removed: 1
+  flag: null

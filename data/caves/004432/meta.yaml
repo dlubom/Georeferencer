@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-11.20
+  dir_id: '004432'
+  name: Tomanowa Szczelina II
+  n_submissions: 5
+image:
+  filename: image_4462_zoom_10.tif
+  image_id: 4462
+  width: 816
+  height: 750
+coordinates:
+  lat: 49.228717
+  lon: 19.903972
+entrance:
+  x: 478.07
+  y: 223.61
+scale:
+  pixels_per_meter: 118.63
+north:
+  angle_deg: -0.0110000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6846000000
+  total_rotation_deg: -0.6951000000
+  A: 0.0084287634
+  D: -0.0001022675
+  B: -0.0001022675
+  E: -0.0084287634
+  C: 565791.359398
+  F: 151640.178356
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 118.57
+  - 118.4
+  - 118.69
+  - 118.83
+  - 117.89
+  entrance_std_px: 0.4600000000
+  outliers_removed: 1
+  flag: null

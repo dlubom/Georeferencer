@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.11
+  dir_id: '001544'
+  name: Jaskinia pod Śnieżną Studnią
+  n_submissions: 5
+image:
+  filename: image_12002_zoom_10.tif
+  image_id: 12002
+  width: 4876
+  height: 4124
+coordinates:
+  lat: 49.241947
+  lon: 19.922242
+entrance:
+  x: 2374.76
+  y: 1095.84
+scale:
+  pixels_per_meter: 118.09
+north:
+  angle_deg: -0.0020000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6986000000
+  total_rotation_deg: -0.7005000000
+  A: 0.0084672608
+  D: -0.0001035235
+  B: -0.0001035235
+  E: -0.0084672608
+  C: 567087.206026
+  F: 153134.127187
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 118.1
+  - 118.53
+  - 118.09
+  - 118.08
+  - 118.19
+  entrance_std_px: 7.47
+  outliers_removed: 1
+  flag: null

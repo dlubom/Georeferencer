@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.46
+  dir_id: '001135'
+  name: Szczelina za Okrętem I
+  n_submissions: 5
+image:
+  filename: image_636_zoom_10.tif
+  image_id: 636
+  width: 3156
+  height: 2252
+coordinates:
+  lat: 49.251439
+  lon: 19.858794
+entrance:
+  x: 367.85
+  y: 1186.32
+scale:
+  pixels_per_meter: 196.6
+north:
+  angle_deg: -0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6506000000
+  total_rotation_deg: -0.6512000000
+  A: 0.0050860695
+  D: -0.0000578088
+  B: -0.0000578088
+  E: -0.0050860695
+  C: 562476.660179
+  F: 154131.191925
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 196.53
+  - 196.92
+  - 195.14
+  - 196.6
+  - 199.24
+  entrance_std_px: 1.36
+  outliers_removed: 2
+  flag: null

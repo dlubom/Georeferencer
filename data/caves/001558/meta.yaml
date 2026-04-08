@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.23
+  dir_id: 001558
+  name: Jaskinia Trójkątna
+  n_submissions: 5
+image:
+  filename: image_1073_zoom_10.tif
+  image_id: 1073
+  width: 676
+  height: 648
+coordinates:
+  lat: 49.243964
+  lon: 19.920278
+entrance:
+  x: 381.93
+  y: 168.58
+scale:
+  pixels_per_meter: 76.9
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6971000000
+  total_rotation_deg: -0.6971000000
+  A: 0.0130034738
+  D: -0.0001582187
+  B: -0.0001582187
+  E: -0.0130034738
+  C: 566956.623837
+  F: 153349.272765
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 76.9
+  - 77.22
+  - 77.49
+  - 76.76
+  - 76.88
+  entrance_std_px: 0.6300000000
+  outliers_removed: 0
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-09.35
+  dir_id: '004417'
+  name: Krakowski Okap
+  n_submissions: 5
+image:
+  filename: image_4441_zoom_10.tif
+  image_id: 4441
+  width: 1206
+  height: 852
+coordinates:
+  lat: 49.232306
+  lon: 19.878556
+entrance:
+  x: 599.93
+  y: 316.41
+scale:
+  pixels_per_meter: 59.0
+north:
+  angle_deg: 0.0030000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6654000000
+  total_rotation_deg: -0.6622000000
+  A: 0.0169474002
+  D: -0.0001958756
+  B: -0.0001958756
+  E: -0.0169474002
+  C: 563930.753119
+  F: 152020.791851
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 59.0
+  - 59.01
+  - 59.0
+  - 58.72
+  - 58.65
+  entrance_std_px: 0.4900000000
+  outliers_removed: 0
+  flag: null

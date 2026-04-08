@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.34
+  dir_id: 001485
+  name: Spękana Szczelina
+  n_submissions: 5
+image:
+  filename: image_993_zoom_10.tif
+  image_id: 993
+  width: 1654
+  height: 3184
+coordinates:
+  lat: 49.235936
+  lon: 19.874533
+entrance:
+  x: 749.95
+  y: 1333.44
+scale:
+  pixels_per_meter: 195.31
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6624000000
+  total_rotation_deg: -0.6624000000
+  A: 0.0051198268
+  D: -0.0000591911
+  B: -0.0000591911
+  E: -0.0051198268
+  C: 563639.645053
+  F: 152422.209023
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 195.11
+  - 195.49
+  - 195.31
+  - 195.41
+  - 194.87
+  entrance_std_px: 1.04
+  outliers_removed: 0
+  flag: null

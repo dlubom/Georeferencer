@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-07.10
+  dir_id: '001303'
+  name: Szczelina w Smytniej
+  n_submissions: 5
+image:
+  filename: image_778_zoom_10.tif
+  image_id: 778
+  width: 1886
+  height: 1818
+coordinates:
+  lat: 49.235928
+  lon: 19.845394
+entrance:
+  x: 1294.69
+  y: 581.82
+scale:
+  pixels_per_meter: 196.19
+north:
+  angle_deg: 0.0150000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6403000000
+  total_rotation_deg: -0.6250000000
+  A: 0.0050967215
+  D: -0.0000556016
+  B: -0.0000556016
+  E: -0.0050967215
+  C: 561516.305929
+  F: 152393.377689
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 196.31
+  - 196.19
+  - 196.29
+  - 196.18
+  - 196.04
+  entrance_std_px: 1.18
+  outliers_removed: 0
+  flag: null

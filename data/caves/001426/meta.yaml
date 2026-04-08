@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.08
+  dir_id: '001426'
+  name: Jaskinia Owcza
+  n_submissions: 5
+image:
+  filename: image_936_zoom_10.tif
+  image_id: 936
+  width: 3910
+  height: 2846
+coordinates:
+  lat: 49.237569
+  lon: 19.870431
+entrance:
+  x: 3425.82
+  y: 839.96
+scale:
+  pixels_per_meter: 98.15
+north:
+  angle_deg: 0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6593000000
+  total_rotation_deg: -0.6582000000
+  A: 0.0101873405
+  D: -0.0001170278
+  B: -0.0001170278
+  E: -0.0101873405
+  C: 563307.999424
+  F: 152602.33509
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 98.15
+  - 98.0
+  - 98.12
+  - 98.38
+  - 98.54
+  entrance_std_px: 1.77
+  outliers_removed: 0
+  flag: null

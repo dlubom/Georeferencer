@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.42
+  dir_id: 001579
+  name: Jaskinia przy Ryglu
+  n_submissions: 5
+image:
+  filename: image_1092_zoom_10.tif
+  image_id: 1092
+  width: 906
+  height: 1358
+coordinates:
+  lat: 49.238244
+  lon: 19.914633
+entrance:
+  x: 695.01
+  y: 150.52
+scale:
+  pixels_per_meter: 77.35
+north:
+  angle_deg: -0.0020000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6928000000
+  total_rotation_deg: -0.6946000000
+  A: 0.0129274115
+  D: -0.0001567374
+  B: -0.0001567374
+  E: -0.0129274115
+  C: 566549.551518
+  F: 152708.403176
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.03
+  - 77.54
+  - 77.35
+  - 77.35
+  - 77.25
+  entrance_std_px: 1.01
+  outliers_removed: 2
+  flag: null

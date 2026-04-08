@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.20
+  dir_id: '001555'
+  name: Szczelina nad Strzelistą
+  n_submissions: 5
+image:
+  filename: image_1070_zoom_10.tif
+  image_id: 1070
+  width: 718
+  height: 1290
+coordinates:
+  lat: 49.24435
+  lon: 19.918278
+entrance:
+  x: 252.63
+  y: 436.12
+scale:
+  pixels_per_meter: 77.09
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6956000000
+  total_rotation_deg: -0.6956000000
+  A: 0.0129717361
+  D: -0.0001574904
+  B: -0.0001574904
+  E: -0.0129717361
+  C: 566812.311607
+  F: 153393.846354
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.0
+  - 77.8
+  - 77.09
+  - 76.49
+  - 77.21
+  entrance_std_px: 0.8300000000
+  outliers_removed: 2
+  flag: null

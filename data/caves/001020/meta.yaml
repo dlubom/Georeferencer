@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-14.03
+  dir_id: '001020'
+  name: Lisia Jama
+  n_submissions: 5
+image:
+  filename: image_493_zoom_10.tif
+  image_id: 493
+  width: 2868
+  height: 4606
+coordinates:
+  lat: 49.271722
+  lon: 19.943056
+entrance:
+  x: 1244.71
+  y: 4032.6
+scale:
+  pixels_per_meter: 195.7
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7147000000
+  total_rotation_deg: -0.7147000000
+  A: 0.0051095413
+  D: -0.0000637354
+  B: -0.0000637354
+  E: -0.0051095413
+  C: 568574.345603
+  F: 156472.996487
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 195.7
+  - 196.24
+  - 195.29
+  - 195.3
+  - 196.13
+  entrance_std_px: 4.41
+  outliers_removed: 0
+  flag: null

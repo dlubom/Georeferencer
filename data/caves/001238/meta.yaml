@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-16.11
+  dir_id: 001238
+  name: Myślenicki Korytarzyk
+  n_submissions: 5
+image:
+  filename: image_722_zoom_10.tif
+  image_id: 722
+  width: 682
+  height: 506
+coordinates:
+  lat: 49.251414
+  lon: 19.973161
+entrance:
+  x: 196.94
+  y: 220.27
+scale:
+  pixels_per_meter: 76.95
+north:
+  angle_deg: -0.0490000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7372000000
+  total_rotation_deg: -0.7861000000
+  A: 0.0129934870
+  D: -0.0001782809
+  B: -0.0001782809
+  E: -0.0129934870
+  C: 570796.226993
+  F: 154226.033599
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.33
+  - 76.99
+  - 76.89
+  - 76.97
+  - 76.94
+  entrance_std_px: 0.4900000000
+  outliers_removed: 1
+  flag: null

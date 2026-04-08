@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.06
+  dir_id: '001353'
+  name: Dziura pod Smoczą Jamą
+  n_submissions: 5
+image:
+  filename: image_851_zoom_10.tif
+  image_id: 851
+  width: 1036
+  height: 1300
+coordinates:
+  lat: 49.237844
+  lon: 19.867347
+entrance:
+  x: 389.76
+  y: 762.34
+scale:
+  pixels_per_meter: 59.02
+north:
+  angle_deg: -0.0060000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6570000000
+  total_rotation_deg: -0.6625000000
+  A: 0.0169411035
+  D: -0.0001959029
+  B: -0.0001959029
+  E: -0.0169411035
+  C: 563111.571341
+  F: 152634.352526
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 58.92
+  - 59.03
+  - 59.02
+  - 59.14
+  - 58.48
+  entrance_std_px: 1.18
+  outliers_removed: 1
+  flag: null

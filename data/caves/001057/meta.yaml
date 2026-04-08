@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.C-15.06
+  dir_id: '001057'
+  name: Mokra Koleba
+  n_submissions: 5
+image:
+  filename: image_529_zoom_10.tif
+  image_id: 529
+  width: 890
+  height: 944
+coordinates:
+  lat: 49.254617
+  lon: 19.964317
+entrance:
+  x: 589.73
+  y: 588.0
+scale:
+  pixels_per_meter: 76.88
+north:
+  angle_deg: -0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7306000000
+  total_rotation_deg: -0.7315000000
+  A: 0.0130060534
+  D: -0.0001660546
+  B: -0.0001660546
+  E: -0.0130060534
+  C: 570143.231284
+  F: 154578.603581
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 76.93
+  - 77.01
+  - 77.54
+  - 76.83
+  - 76.78
+  entrance_std_px: 0.3300000000
+  outliers_removed: 1
+  flag: null

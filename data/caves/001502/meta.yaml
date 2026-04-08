@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.21
+  dir_id: '001502'
+  name: Jaskinia za Płytą
+  n_submissions: 5
+image:
+  filename: image_1007_zoom_10.tif
+  image_id: 1007
+  width: 2236
+  height: 1480
+coordinates:
+  lat: 49.243417
+  lon: 19.90985
+entrance:
+  x: 957.39
+  y: 195.5
+scale:
+  pixels_per_meter: 77.12
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6892000000
+  total_rotation_deg: -0.6892000000
+  A: 0.0129655538
+  D: -0.0001559682
+  B: -0.0001559682
+  E: -0.0129655538
+  C: 566191.156255
+  F: 153279.733561
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 77.21
+  - 77.22
+  - 76.89
+  - 77.75
+  - 77.04
+  entrance_std_px: 1.4
+  outliers_removed: 1
+  flag: null

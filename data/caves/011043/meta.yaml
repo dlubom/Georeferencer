@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.A-23.03
+  dir_id: '011043'
+  name: Zbójnicka Kapliczka
+  n_submissions: 5
+image:
+  filename: image_12368_zoom_10.tif
+  image_id: 12368
+  width: 2472
+  height: 2096
+coordinates:
+  lat: 49.281861
+  lon: 20.072444
+entrance:
+  x: 960.04
+  y: 550.28
+scale:
+  pixels_per_meter: 236.93
+north:
+  angle_deg: 0.0020000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.8128000000
+  total_rotation_deg: -0.8108000000
+  A: 0.0042202165
+  D: -0.0000597261
+  B: -0.0000597261
+  E: -0.0042202165
+  C: 577969.581122
+  F: 157706.909275
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 237.02
+  - 238.18
+  - 236.85
+  - 236.56
+  - 237.12
+  entrance_std_px: 0.6900000000
+  outliers_removed: 1
+  flag: null

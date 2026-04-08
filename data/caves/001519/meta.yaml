@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.54
+  dir_id: 001519
+  name: Szczelina w Progu Mułowym
+  n_submissions: 5
+image:
+  filename: image_1041_zoom_10.tif
+  image_id: 1041
+  width: 782
+  height: 1032
+coordinates:
+  lat: 49.238681
+  lon: 19.903433
+entrance:
+  x: 487.3
+  y: 232.16
+scale:
+  pixels_per_meter: 76.72
+north:
+  angle_deg: 0.0870000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6843000000
+  total_rotation_deg: -0.5975000000
+  A: 0.0130338186
+  D: -0.0001359218
+  B: -0.0001359218
+  E: -0.0130338186
+  C: 565736.590451
+  F: 152748.211332
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 76.71
+  - 77.32
+  - 77.22
+  - 76.72
+  - 76.7
+  entrance_std_px: 0.6800000000
+  outliers_removed: 0
+  flag: null

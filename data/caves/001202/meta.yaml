@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-13.03
+  dir_id: '001202'
+  name: Dziura w Szczerbie I
+  n_submissions: 5
+image:
+  filename: image_688_zoom_10.tif
+  image_id: 688
+  width: 868
+  height: 1248
+coordinates:
+  lat: 49.250189
+  lon: 19.937228
+entrance:
+  x: 615.3
+  y: 222.93
+scale:
+  pixels_per_meter: 77.19
+north:
+  angle_deg: 0.0420000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7100000000
+  total_rotation_deg: -0.6684000000
+  A: 0.0129535475
+  D: -0.0001511294
+  B: -0.0001511294
+  E: -0.0129535475
+  C: 568178.359024
+  F: 154056.958107
+quality:
+  ppm_cv: 0.0050000000
+  ppm_values:
+  - 76.62
+  - 77.71
+  - 77.19
+  - 77.37
+  - 76.81
+  entrance_std_px: 0.7700000000
+  outliers_removed: 0
+  flag: null

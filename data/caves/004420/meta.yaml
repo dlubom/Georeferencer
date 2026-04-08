@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-10.25
+  dir_id: '004420'
+  name: Mały Krakowski Schron
+  n_submissions: 5
+image:
+  filename: image_12299_zoom_10.tif
+  image_id: 12299
+  width: 2628
+  height: 2426
+coordinates:
+  lat: 49.230869
+  lon: 19.88765
+entrance:
+  x: 1067.74
+  y: 1123.66
+scale:
+  pixels_per_meter: 236.48
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6723000000
+  total_rotation_deg: -0.6723000000
+  A: 0.0042284041
+  D: -0.0000496147
+  B: -0.0000496147
+  E: -0.0042284041
+  C: 564600.122175
+  F: 151868.14263
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 238.64
+  - 236.57
+  - 236.38
+  - 235.96
+  - 236.97
+  entrance_std_px: 1.45
+  outliers_removed: 1
+  flag: null

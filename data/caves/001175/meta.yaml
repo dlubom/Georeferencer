@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-09.06
+  dir_id: '001175'
+  name: Żwirowa Dziura Niżnia
+  n_submissions: 5
+image:
+  filename: image_659_zoom_10.tif
+  image_id: 659
+  width: 800
+  height: 1504
+coordinates:
+  lat: 49.248647
+  lon: 19.869381
+entrance:
+  x: 269.16
+  y: 616.03
+scale:
+  pixels_per_meter: 38.6
+north:
+  angle_deg: -0.0070000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6586000000
+  total_rotation_deg: -0.6651000000
+  A: 0.0259053799
+  D: -0.0003007376
+  B: -0.0003007376
+  E: -0.0259053799
+  C: 563245.452541
+  F: 153839.688402
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 38.6
+  - 38.61
+  - 38.42
+  - 38.59
+  - 38.6
+  entrance_std_px: 0.8300000000
+  outliers_removed: 1
+  flag: null

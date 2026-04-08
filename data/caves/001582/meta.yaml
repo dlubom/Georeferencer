@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.45
+  dir_id: 001582
+  name: Jaskinia przy Jędrusiowej Dziurze
+  n_submissions: 5
+image:
+  filename: image_12149_zoom_10.tif
+  image_id: 12149
+  width: 9692
+  height: 6786
+coordinates:
+  lat: 49.241953
+  lon: 19.923969
+entrance:
+  x: 4344.17
+  y: 974.24
+scale:
+  pixels_per_meter: 118.12
+north:
+  angle_deg: -0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6999000000
+  total_rotation_deg: -0.7008000000
+  A: 0.0084653378
+  D: -0.0001035443
+  B: -0.0001035443
+  E: -0.0084653378
+  C: 567196.182237
+  F: 153135.500241
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 118.12
+  - 116.86
+  - 118.12
+  - 118.13
+  - 118.07
+  entrance_std_px: 8.71
+  outliers_removed: 1
+  flag: null

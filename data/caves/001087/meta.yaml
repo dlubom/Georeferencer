@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.01
+  dir_id: 001087
+  name: Dziurawiec
+  n_submissions: 5
+image:
+  filename: image_563_zoom_10.tif
+  image_id: 563
+  width: 1332
+  height: 3110
+coordinates:
+  lat: 49.253167
+  lon: 19.865294
+entrance:
+  x: 538.92
+  y: 2590.53
+scale:
+  pixels_per_meter: 98.13
+north:
+  angle_deg: 0.0080000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6555000000
+  total_rotation_deg: -0.6474000000
+  A: 0.0101903274
+  D: -0.0001151418
+  B: -0.0001151418
+  E: -0.0101903274
+  C: 562943.950468
+  F: 154349.028886
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 98.09
+  - 98.79
+  - 98.13
+  - 98.81
+  - 98.1
+  entrance_std_px: 0.9200000000
+  outliers_removed: 0
+  flag: null

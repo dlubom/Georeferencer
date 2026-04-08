@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-07.41
+  dir_id: '001346'
+  name: Szczelina przed Bańdziochem
+  n_submissions: 5
+image:
+  filename: image_854_zoom_10.tif
+  image_id: 854
+  width: 412
+  height: 472
+coordinates:
+  lat: 49.242519
+  lon: 19.849856
+entrance:
+  x: 229.21
+  y: 167.28
+scale:
+  pixels_per_meter: 76.73
+north:
+  angle_deg: 0.0600000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6437000000
+  total_rotation_deg: -0.5837000000
+  A: 0.0130313216
+  D: -0.0001327500
+  B: -0.0001327500
+  E: -0.0130313216
+  C: 561836.392474
+  F: 153128.678314
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 76.84
+  - 76.76
+  - 76.71
+  - 77.11
+  - 76.61
+  entrance_std_px: 0.6100000000
+  outliers_removed: 1
+  flag: null

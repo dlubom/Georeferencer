@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.42
+  dir_id: '004370'
+  name: Szczelina za Ptakową Turnią
+  n_submissions: 5
+image:
+  filename: image_12234_zoom_10.tif
+  image_id: 12234
+  width: 2316
+  height: 2490
+coordinates:
+  lat: 49.236581
+  lon: 19.876889
+entrance:
+  x: 696.47
+  y: 1273.2
+scale:
+  pixels_per_meter: 237.21
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6642000000
+  total_rotation_deg: -0.6642000000
+  A: 0.0042153147
+  D: -0.0000488656
+  B: -0.0000488656
+  E: -0.0042153147
+  C: 563811.155084
+  F: 152494.405327
+quality:
+  ppm_cv: 0.0050000000
+  ppm_values:
+  - 238.56
+  - 237.21
+  - 236.87
+  - 235.71
+  - 239.24
+  entrance_std_px: 1.69
+  outliers_removed: 0
+  flag: null

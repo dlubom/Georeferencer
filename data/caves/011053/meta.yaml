@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-15.01
+  dir_id: '011053'
+  name: Koleba nad Doliną Białego
+  n_submissions: 5
+image:
+  filename: image_12362_zoom_10.tif
+  image_id: 12362
+  width: 1892
+  height: 1584
+coordinates:
+  lat: 49.265028
+  lon: 19.957389
+entrance:
+  x: 635.91
+  y: 1030.2
+scale:
+  pixels_per_meter: 237.16
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7254000000
+  total_rotation_deg: -0.7254000000
+  A: 0.0042162022
+  D: -0.0000533861
+  B: -0.0000533861
+  E: -0.0042162022
+  C: 569629.546096
+  F: 155725.854383
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 236.53
+  - 237.16
+  - 236.73
+  - 237.37
+  - 237.2
+  entrance_std_px: 0.8800000000
+  outliers_removed: 0
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.C-16.01
+  dir_id: '001063'
+  name: Jaskinia Kalacka
+  n_submissions: 5
+image:
+  filename: image_535_zoom_10.tif
+  image_id: 535
+  width: 3538
+  height: 3268
+coordinates:
+  lat: 49.256297
+  lon: 19.966847
+entrance:
+  x: 3288.65
+  y: 1097.86
+scale:
+  pixels_per_meter: 19.29
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7325000000
+  total_rotation_deg: -0.7325000000
+  A: 0.0518297559
+  D: -0.0006626725
+  B: -0.0006626725
+  E: -0.0518297559
+  C: 570162.740579
+  F: 154818.995133
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 19.29
+  - 19.3
+  - 19.29
+  - 19.29
+  - 19.33
+  entrance_std_px: 0.5100000000
+  outliers_removed: 1
+  flag: null

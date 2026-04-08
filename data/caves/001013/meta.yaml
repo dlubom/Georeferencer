@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-12.05
+  dir_id: '001013'
+  name: Kominek w Jatkach
+  n_submissions: 5
+image:
+  filename: image_485_zoom_10.tif
+  image_id: 485
+  width: 486
+  height: 562
+coordinates:
+  lat: 49.263436
+  lon: 19.92095
+entrance:
+  x: 292.96
+  y: 222.84
+scale:
+  pixels_per_meter: 77.83
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6978000000
+  total_rotation_deg: -0.6978000000
+  A: 0.0128472656
+  D: -0.0001564780
+  B: -0.0001564780
+  E: -0.0128472656
+  C: 566980.375929
+  F: 155514.538849
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 77.83
+  - 77.57
+  - 78.14
+  - 77.67
+  - 78.1
+  entrance_std_px: 0.3100000000
+  outliers_removed: 0
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-11.14
+  dir_id: '001677'
+  name: Dziura w Ciemniaku
+  n_submissions: 5
+image:
+  filename: image_1203_zoom_10.tif
+  image_id: 1203
+  width: 1056
+  height: 1964
+coordinates:
+  lat: 49.232014
+  lon: 19.901178
+entrance:
+  x: 647.45
+  y: 704.0
+scale:
+  pixels_per_meter: 195.1
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6825000000
+  total_rotation_deg: -0.6825000000
+  A: 0.0051251055
+  D: -0.0000610539
+  B: -0.0000610539
+  E: -0.0051251055
+  C: 565584.367701
+  F: 152005.875977
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 195.99
+  - 195.34
+  - 195.28
+  - 194.93
+  - 194.93
+  entrance_std_px: 1.19
+  outliers_removed: 1
+  flag: null

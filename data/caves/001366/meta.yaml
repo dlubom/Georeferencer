@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.28
+  dir_id: '001366'
+  name: Sokole Okno
+  n_submissions: 5
+image:
+  filename: image_869_zoom_10.tif
+  image_id: 869
+  width: 2100
+  height: 1440
+coordinates:
+  lat: 49.239122
+  lon: 19.860892
+entrance:
+  x: 936.9
+  y: 904.61
+scale:
+  pixels_per_meter: 196.01
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6521000000
+  total_rotation_deg: -0.6521000000
+  A: 0.0051015531
+  D: -0.0000580625
+  B: -0.0000580625
+  E: -0.0051015531
+  C: 562641.94742
+  F: 152762.694347
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 196.56
+  - 195.68
+  - 196.01
+  - 195.26
+  - 196.21
+  entrance_std_px: 1.81
+  outliers_removed: 0
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.28
+  dir_id: '001117'
+  name: Korytarz z Różą
+  n_submissions: 5
+image:
+  filename: image_619_zoom_10.tif
+  image_id: 619
+  width: 1926
+  height: 1778
+coordinates:
+  lat: 49.248814
+  lon: 19.868967
+entrance:
+  x: 377.88
+  y: 1366.59
+scale:
+  pixels_per_meter: 195.23
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6583000000
+  total_rotation_deg: -0.6583000000
+  A: 0.0051217269
+  D: -0.0000588475
+  B: -0.0000588475
+  E: -0.0051217269
+  C: 563220.051307
+  F: 153848.883806
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 195.23
+  - 195.24
+  - 195.65
+  - 195.32
+  - 195.22
+  entrance_std_px: 0.9900000000
+  outliers_removed: 1
+  flag: null

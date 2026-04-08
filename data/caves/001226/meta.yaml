@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-16.02
+  dir_id: '001226'
+  name: Myślenicka Dziura
+  n_submissions: 5
+image:
+  filename: image_711_zoom_10.tif
+  image_id: 711
+  width: 1292
+  height: 1414
+coordinates:
+  lat: 49.251089
+  lon: 19.973072
+entrance:
+  x: 232.18
+  y: 503.86
+scale:
+  pixels_per_meter: 77.17
+north:
+  angle_deg: -0.0060000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7372000000
+  total_rotation_deg: -0.7433000000
+  A: 0.0129566164
+  D: -0.0001680884
+  B: -0.0001680884
+  E: -0.0129566164
+  C: 570789.813043
+  F: 154193.501715
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.17
+  - 77.1
+  - 77.23
+  - 77.21
+  - 77.12
+  entrance_std_px: 0.3200000000
+  outliers_removed: 0
+  flag: null

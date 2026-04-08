@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.A-24.04
+  dir_id: 011039
+  name: Schron w Żlebie za Skałką
+  n_submissions: 5
+image:
+  filename: image_12311_zoom_10.tif
+  image_id: 12311
+  width: 2742
+  height: 1818
+coordinates:
+  lat: 49.278361
+  lon: 20.078889
+entrance:
+  x: 2273.01
+  y: 955.53
+scale:
+  pixels_per_meter: 237.27
+north:
+  angle_deg: 0.0460000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.8177000000
+  total_rotation_deg: -0.7712000000
+  A: 0.0042142782
+  D: -0.0000567260
+  B: -0.0000567260
+  E: -0.0042142782
+  C: 578438.211743
+  F: 157326.383452
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 238.58
+  - 236.44
+  - 238.1
+  - 237.27
+  - 236.92
+  entrance_std_px: 0.9700000000
+  outliers_removed: 0
+  flag: null

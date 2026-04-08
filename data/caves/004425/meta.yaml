@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-11.11
+  dir_id: '004425'
+  name: Rzędowa Szczelina
+  n_submissions: 5
+image:
+  filename: image_12242_zoom_10.tif
+  image_id: 12242
+  width: 2534
+  height: 2486
+coordinates:
+  lat: 49.230189
+  lon: 19.899589
+entrance:
+  x: 744.91
+  y: 1534.85
+scale:
+  pixels_per_meter: 236.86
+north:
+  angle_deg: 0.0070000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6813000000
+  total_rotation_deg: -0.6743000000
+  A: 0.0042216803
+  D: -0.0000496850
+  B: -0.0000496850
+  E: -0.0042216803
+  C: 565471.340537
+  F: 151804.548348
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 236.77
+  - 237.01
+  - 236.86
+  - 236.66
+  - 236.88
+  entrance_std_px: 2.34
+  outliers_removed: 0
+  flag: null

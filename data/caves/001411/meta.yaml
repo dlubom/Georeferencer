@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.42
+  dir_id: '001411'
+  name: Dziura nad Głazem
+  n_submissions: 5
+image:
+  filename: image_913_zoom_10.tif
+  image_id: 913
+  width: 798
+  height: 730
+coordinates:
+  lat: 49.238317
+  lon: 19.864139
+entrance:
+  x: 300.15
+  y: 586.29
+scale:
+  pixels_per_meter: 77.19
+north:
+  angle_deg: 0.0030000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6545000000
+  total_rotation_deg: -0.6516000000
+  A: 0.0129549491
+  D: -0.0001473474
+  B: -0.0001473474
+  E: -0.0129549491
+  C: 562880.174454
+  F: 152678.895557
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.16
+  - 77.19
+  - 77.26
+  - 77.16
+  - 77.37
+  entrance_std_px: 0.3000000000
+  outliers_removed: 0
+  flag: null

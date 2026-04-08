@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.13
+  dir_id: 001391
+  name: Szczelina nad Mylną
+  n_submissions: 5
+image:
+  filename: image_897_zoom_10.tif
+  image_id: 897
+  width: 3160
+  height: 2264
+coordinates:
+  lat: 49.240053
+  lon: 19.861256
+entrance:
+  x: 649.77
+  y: 1942.06
+scale:
+  pixels_per_meter: 196.13
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6524000000
+  total_rotation_deg: -0.6524000000
+  A: 0.0050982235
+  D: -0.0000580500
+  B: -0.0000580500
+  E: -0.0050982235
+  C: 562668.784244
+  F: 152871.731713
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 196.13
+  - 195.92
+  - 196.31
+  - 193.79
+  - 197.18
+  entrance_std_px: 1.09
+  outliers_removed: 2
+  flag: null

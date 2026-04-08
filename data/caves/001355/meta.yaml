@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.08
+  dir_id: '001355'
+  name: Dziura pod Raptawicą
+  n_submissions: 5
+image:
+  filename: image_852_zoom_10.tif
+  image_id: 852
+  width: 1930
+  height: 2482
+coordinates:
+  lat: 49.239961
+  lon: 19.863056
+entrance:
+  x: 1542.73
+  y: 661.21
+scale:
+  pixels_per_meter: 97.84
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6537000000
+  total_rotation_deg: -0.6537000000
+  A: 0.0102200682
+  D: -0.0001166120
+  B: -0.0001166120
+  E: -0.0102200682
+  C: 562787.392344
+  F: 152859.999039
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 97.84
+  - 98.02
+  - 97.9
+  - 97.8
+  - 97.69
+  entrance_std_px: 0.8600000000
+  outliers_removed: 0
+  flag: null

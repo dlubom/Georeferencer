@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-07.03
+  dir_id: 001287
+  name: Jaskinia Mechata
+  n_submissions: 5
+image:
+  filename: image_770_zoom_10.tif
+  image_id: 770
+  width: 2736
+  height: 2800
+coordinates:
+  lat: 49.242703
+  lon: 19.843147
+entrance:
+  x: 2225.13
+  y: 454.88
+scale:
+  pixels_per_meter: 98.1
+north:
+  angle_deg: -0.1000000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6387000000
+  total_rotation_deg: -0.7383000000
+  A: 0.0101929043
+  D: -0.0001313531
+  B: -0.0001313531
+  E: -0.0101929043
+  C: 561328.336476
+  F: 153146.382002
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 98.1
+  - 98.07
+  - 98.1
+  - 98.49
+  - 98.52
+  entrance_std_px: 0.9500000000
+  outliers_removed: 0
+  flag: null

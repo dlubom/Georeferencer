@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.41
+  dir_id: 001578
+  name: Jaskinia w Trawie
+  n_submissions: 5
+image:
+  filename: image_1091_zoom_10.tif
+  image_id: 1091
+  width: 746
+  height: 1160
+coordinates:
+  lat: 49.240492
+  lon: 19.914583
+entrance:
+  x: 279.83
+  y: 181.11
+scale:
+  pixels_per_meter: 77.01
+north:
+  angle_deg: 0.0040000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6928000000
+  total_rotation_deg: -0.6890000000
+  A: 0.0129844245
+  D: -0.0001561474
+  B: -0.0001561474
+  E: -0.0129844245
+  C: 566548.248097
+  F: 152958.529976
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 77.32
+  - 76.82
+  - 77.01
+  - 76.98
+  - 77.58
+  entrance_std_px: 0.4800000000
+  outliers_removed: 0
+  flag: null

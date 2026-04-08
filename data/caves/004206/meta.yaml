@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-14.04
+  dir_id: '004206'
+  name: Nyża za Półką
+  n_submissions: 5
+image:
+  filename: image_4243_zoom_10.tif
+  image_id: 4243
+  width: 994
+  height: 934
+coordinates:
+  lat: 49.271425
+  lon: 19.943667
+entrance:
+  x: 391.65
+  y: 444.27
+scale:
+  pixels_per_meter: 117.76
+north:
+  angle_deg: -0.0490000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7151000000
+  total_rotation_deg: -0.7638000000
+  A: 0.0084908015
+  D: -0.0001131926
+  B: -0.0001131926
+  E: -0.0084908015
+  C: 568622.017617
+  F: 156423.676355
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 118.12
+  - 117.87
+  - 117.03
+  - 117.76
+  - 117.52
+  entrance_std_px: 0.2500000000
+  outliers_removed: 0
+  flag: null

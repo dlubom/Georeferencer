@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-18.05
+  dir_id: '001277'
+  name: Nyża pod Jaskinią Magurską III
+  n_submissions: 5
+image:
+  filename: image_763_zoom_10.tif
+  image_id: 763
+  width: 452
+  height: 470
+coordinates:
+  lat: 49.249644
+  lon: 19.996933
+entrance:
+  x: 234.79
+  y: 163.58
+scale:
+  pixels_per_meter: 76.9
+north:
+  angle_deg: 0.0090000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7552000000
+  total_rotation_deg: -0.7458000000
+  A: 0.0130021413
+  D: -0.0001692446
+  B: -0.0001692446
+  E: -0.0130021413
+  C: 572527.733891
+  F: 154051.122612
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 76.9
+  - 77.0
+  - 76.91
+  - 76.47
+  - 76.11
+  entrance_std_px: 0.5200000000
+  outliers_removed: 0
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.53
+  dir_id: 001596
+  name: Szuflada Górna
+  n_submissions: 5
+image:
+  filename: image_1105_zoom_10.tif
+  image_id: 1105
+  width: 592
+  height: 634
+coordinates:
+  lat: 49.244386
+  lon: 19.917383
+entrance:
+  x: 106.98
+  y: 258.21
+scale:
+  pixels_per_meter: 76.98
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6949000000
+  total_rotation_deg: -0.6949000000
+  A: 0.0129899064
+  D: -0.0001575573
+  B: -0.0001575573
+  E: -0.0129899064
+  C: 566749.001428
+  F: 153394.730884
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 76.98
+  - 76.97
+  - 77.04
+  - 77.0
+  - 76.95
+  entrance_std_px: 0.4400000000
+  outliers_removed: 0
+  flag: null

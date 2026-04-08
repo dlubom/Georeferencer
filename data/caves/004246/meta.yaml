@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.67
+  dir_id: '004246'
+  name: Jaskinia Zapylna
+  n_submissions: 5
+image:
+  filename: image_4286_zoom_10.tif
+  image_id: 4286
+  width: 2846
+  height: 2600
+coordinates:
+  lat: 49.240556
+  lon: 19.899444
+entrance:
+  x: 2013.32
+  y: 589.1
+scale:
+  pixels_per_meter: 237.18
+north:
+  angle_deg: 0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6813000000
+  total_rotation_deg: -0.6806000000
+  A: 0.0042159013
+  D: -0.0000500800
+  B: -0.0000500800
+  E: -0.0042159013
+  C: 565441.697444
+  F: 152952.621377
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 237.07
+  - 236.52
+  - 237.09
+  - 237.39
+  - 237.27
+  entrance_std_px: 1.78
+  outliers_removed: 1
+  flag: null

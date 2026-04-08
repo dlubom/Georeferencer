@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.56
+  dir_id: '001601'
+  name: Dziura w Czerwonym Grzbiecie
+  n_submissions: 5
+image:
+  filename: image_1108_zoom_10.tif
+  image_id: 1108
+  width: 412
+  height: 402
+coordinates:
+  lat: 49.243964
+  lon: 19.915469
+entrance:
+  x: 287.04
+  y: 211.06
+scale:
+  pixels_per_meter: 77.94
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6935000000
+  total_rotation_deg: -0.6935000000
+  A: 0.0128296404
+  D: -0.0001552877
+  B: -0.0001552877
+  E: -0.0128296404
+  C: 566608.004134
+  F: 153345.52605
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.83
+  - 77.85
+  - 78.05
+  - 77.42
+  - 78.03
+  entrance_std_px: 0.4100000000
+  outliers_removed: 1
+  flag: null

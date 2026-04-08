@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.22
+  dir_id: '001503'
+  name: Dziura w Kominie
+  n_submissions: 5
+image:
+  filename: image_1008_zoom_10.tif
+  image_id: 1008
+  width: 700
+  height: 750
+coordinates:
+  lat: 49.241947
+  lon: 19.897317
+entrance:
+  x: 233.45
+  y: 208.71
+scale:
+  pixels_per_meter: 78.34
+north:
+  angle_deg: 0.0070000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6797000000
+  total_rotation_deg: -0.6731000000
+  A: 0.0127645897
+  D: -0.0001499671
+  B: -0.0001499671
+  E: -0.0127645897
+  C: 565290.599042
+  F: 153105.485933
+quality:
+  ppm_cv: 0.0070000000
+  ppm_values:
+  - 77.37
+  - 78.59
+  - 78.73
+  - 78.34
+  - 77.43
+  entrance_std_px: 0.4800000000
+  outliers_removed: 0
+  flag: null

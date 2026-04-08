@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.16
+  dir_id: 001489
+  name: Jaskinia Lodowa Mułowa
+  n_submissions: 5
+image:
+  filename: image_997_zoom_10.tif
+  image_id: 997
+  width: 8298
+  height: 5556
+coordinates:
+  lat: 49.239117
+  lon: 19.90205
+entrance:
+  x: 3926.68
+  y: 1679.75
+scale:
+  pixels_per_meter: 73.82
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6832000000
+  total_rotation_deg: -0.6832000000
+  A: 0.0135449866
+  D: -0.0001615310
+  B: -0.0001615310
+  E: -0.0135449866
+  C: 565588.777027
+  F: 152815.759234
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 73.83
+  - 73.82
+  - 73.82
+  - 73.89
+  - 73.82
+  entrance_std_px: 0.9900000000
+  outliers_removed: 1
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-09.19
+  dir_id: '004074'
+  name: Szczelina w Czerwonym Groniku
+  n_submissions: 5
+image:
+  filename: image_13160_zoom_10.tif
+  image_id: 13160
+  width: 896
+  height: 832
+coordinates:
+  lat: 49.266642
+  lon: 19.879317
+entrance:
+  x: 346.65
+  y: 527.09
+scale:
+  pixels_per_meter: 59.35
+north:
+  angle_deg: 0.0160000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6663000000
+  total_rotation_deg: -0.6499000000
+  A: 0.0168475535
+  D: -0.0001911216
+  B: -0.0001911216
+  E: -0.0168475535
+  C: 563946.13499
+  F: 155840.826348
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 59.52
+  - 59.31
+  - 59.48
+  - 59.12
+  - 59.35
+  entrance_std_px: 0.4600000000
+  outliers_removed: 0
+  flag: null

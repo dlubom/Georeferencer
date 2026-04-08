@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-04.05
+  dir_id: 004069
+  name: Schron w Wielkich Koryciskach II
+  n_submissions: 5
+image:
+  filename: image_4034_zoom_10.tif
+  image_id: 4034
+  width: 1478
+  height: 1178
+coordinates:
+  lat: 49.268794
+  lon: 19.806208
+entrance:
+  x: 213.05
+  y: 790.12
+scale:
+  pixels_per_meter: 59.41
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6109000000
+  total_rotation_deg: -0.6109000000
+  A: 0.0168311701
+  D: -0.0001794725
+  B: -0.0001794725
+  E: -0.0168311701
+  C: 558628.787368
+  F: 156025.112748
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 59.43
+  - 58.42
+  - 59.39
+  - 59.59
+  - 59.09
+  entrance_std_px: 1.23
+  outliers_removed: 1
+  flag: null

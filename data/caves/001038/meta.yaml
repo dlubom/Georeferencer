@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.C-05.02
+  dir_id: 001038
+  name: Schronisko w Międzyścianach II
+  n_submissions: 5
+image:
+  filename: image_510_zoom_10.tif
+  image_id: 510
+  width: 2752
+  height: 1992
+coordinates:
+  lat: 49.252939
+  lon: 19.820217
+entrance:
+  x: 947.71
+  y: 1544.8
+scale:
+  pixels_per_meter: 195.82
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6214000000
+  total_rotation_deg: -0.6212000000
+  A: 0.0051064816
+  D: -0.0000553650
+  B: -0.0000553650
+  E: -0.0051064816
+  C: 559665.398699
+  F: 154268.625647
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 196.09
+  - 195.82
+  - 195.79
+  - 195.74
+  - 195.98
+  entrance_std_px: 1.46
+  outliers_removed: 0
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-13.17
+  dir_id: 001618
+  name: Szczelina Mnichowa
+  n_submissions: 5
+image:
+  filename: image_1140_zoom_10.tif
+  image_id: 1140
+  width: 602
+  height: 932
+coordinates:
+  lat: 49.245603
+  lon: 19.927311
+entrance:
+  x: 325.36
+  y: 349.42
+scale:
+  pixels_per_meter: 76.96
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7025000000
+  total_rotation_deg: -0.7025000000
+  A: 0.0129923951
+  D: -0.0001592960
+  B: -0.0001592960
+  E: -0.0129923951
+  C: 567466.889617
+  F: 153540.011768
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 77.01
+  - 76.92
+  - 77.56
+  - 77.16
+  - 76.76
+  entrance_std_px: 0.5900000000
+  outliers_removed: 1
+  flag: null

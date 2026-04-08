@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.48
+  dir_id: 001588
+  name: Szczelina w Litworowej
+  n_submissions: 5
+image:
+  filename: image_1099_zoom_10.tif
+  image_id: 1099
+  width: 556
+  height: 516
+coordinates:
+  lat: 49.239233
+  lon: 19.914544
+entrance:
+  x: 127.26
+  y: 159.64
+scale:
+  pixels_per_meter: 77.03
+north:
+  angle_deg: -0.1080000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6927000000
+  total_rotation_deg: -0.8009000000
+  A: 0.0129812925
+  D: -0.0001814735
+  B: -0.0001814735
+  E: -0.0129812925
+  C: 566549.084082
+  F: 152818.277474
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 77.24
+  - 77.03
+  - 77.08
+  - 76.7
+  - 77.0
+  entrance_std_px: 0.4300000000
+  outliers_removed: 2
+  flag: null

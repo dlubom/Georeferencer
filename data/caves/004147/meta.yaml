@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.66
+  dir_id: '004147'
+  name: Schron nad Doliną
+  n_submissions: 5
+image:
+  filename: image_4143_zoom_10.tif
+  image_id: 4143
+  width: 1478
+  height: 810
+coordinates:
+  lat: 49.249636
+  lon: 19.863878
+entrance:
+  x: 1058.92
+  y: 516.56
+scale:
+  pixels_per_meter: 59.46
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6544000000
+  total_rotation_deg: -0.6544000000
+  A: 0.0168171941
+  D: -0.0001920966
+  B: -0.0001920966
+  E: -0.0168171941
+  C: 562832.906601
+  F: 153937.863932
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 59.48
+  - 59.38
+  - 58.42
+  - 59.65
+  - 59.46
+  entrance_std_px: 1.03
+  outliers_removed: 2
+  flag: null

@@ -1,0 +1,43 @@
+cave:
+  inventory_number: T.D-08.08
+  dir_id: 001095
+  name: Jaskinia Zimna
+  n_submissions: 6
+image:
+  filename: image_570_zoom_10.tif
+  image_id: 570
+  width: 10004
+  height: 7852
+coordinates:
+  lat: 49.249631
+  lon: 19.867367
+entrance:
+  x: 419.2
+  y: 2151.32
+scale:
+  pixels_per_meter: 23.66
+north:
+  angle_deg: 0.0020000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6571000000
+  total_rotation_deg: -0.6553000000
+  A: 0.0422599830
+  D: -0.0004833190
+  B: -0.0004833190
+  E: -0.0422599830
+  C: 563087.782128
+  F: 154022.440284
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 23.16
+  - 23.62
+  - 23.66
+  - 23.56
+  - 23.76
+  - 23.74
+  entrance_std_px: 4.43
+  outliers_removed: 1
+  flag: null

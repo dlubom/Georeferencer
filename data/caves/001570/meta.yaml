@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.35
+  dir_id: '001570'
+  name: Dziura pod Świstową Studnią
+  n_submissions: 5
+image:
+  filename: image_1085_zoom_10.tif
+  image_id: 1085
+  width: 872
+  height: 1546
+coordinates:
+  lat: 49.241211
+  lon: 19.924158
+entrance:
+  x: 265.0
+  y: 144.87
+scale:
+  pixels_per_meter: 77.09
+north:
+  angle_deg: -0.0080000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7000000000
+  total_rotation_deg: -0.7077000000
+  A: 0.0129713223
+  D: -0.0001602173
+  B: -0.0001602173
+  E: -0.0129713223
+  C: 567244.202013
+  F: 153046.430996
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 76.81
+  - 76.87
+  - 77.14
+  - 77.21
+  - 77.09
+  entrance_std_px: 0.3900000000
+  outliers_removed: 0
+  flag: null

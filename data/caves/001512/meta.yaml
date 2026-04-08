@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.49
+  dir_id: '001512'
+  name: Jaskinia za Ratuszem Szeroka
+  n_submissions: 5
+image:
+  filename: image_1035_zoom_10.tif
+  image_id: 1035
+  width: 928
+  height: 914
+coordinates:
+  lat: 49.243142
+  lon: 19.909514
+entrance:
+  x: 352.84
+  y: 318.97
+scale:
+  pixels_per_meter: 77.18
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6889000000
+  total_rotation_deg: -0.6889000000
+  A: 0.0129553784
+  D: -0.0001557876
+  B: -0.0001557876
+  E: -0.0129553784
+  C: 566174.936781
+  F: 153250.380754
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.45
+  - 77.18
+  - 77.11
+  - 76.93
+  - 77.23
+  entrance_std_px: 0.2900000000
+  outliers_removed: 2
+  flag: null

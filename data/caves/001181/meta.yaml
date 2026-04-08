@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-09.08
+  dir_id: 001181
+  name: Dziura w Organach IV
+  n_submissions: 5
+image:
+  filename: image_661_zoom_10.tif
+  image_id: 661
+  width: 1478
+  height: 2966
+coordinates:
+  lat: 49.247003
+  lon: 19.869639
+entrance:
+  x: 607.78
+  y: 907.54
+scale:
+  pixels_per_meter: 195.48
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6588000000
+  total_rotation_deg: -0.6588000000
+  A: 0.0051151555
+  D: -0.0000588159
+  B: -0.0000588159
+  E: -0.0051151555
+  C: 563270.056054
+  F: 153645.837078
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 196.56
+  - 195.76
+  - 194.92
+  - 195.32
+  - 195.65
+  entrance_std_px: 1.28
+  outliers_removed: 1
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-16.14
+  dir_id: '001243'
+  name: Jaskinia Zwolińskiego
+  n_submissions: 5
+image:
+  filename: image_725_zoom_10.tif
+  image_id: 725
+  width: 1892
+  height: 1476
+coordinates:
+  lat: 49.251167
+  lon: 19.977278
+entrance:
+  x: 1182.07
+  y: 273.83
+scale:
+  pixels_per_meter: 23.6
+north:
+  angle_deg: 0.0070000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7404000000
+  total_rotation_deg: -0.7338000000
+  A: 0.0423688315
+  D: -0.0005426700
+  B: -0.0005426700
+  E: -0.0423688315
+  C: 571048.680103
+  F: 154211.792004
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 23.54
+  - 23.6
+  - 23.6
+  - 23.6
+  - 23.61
+  entrance_std_px: 0.2300000000
+  outliers_removed: 2
+  flag: null

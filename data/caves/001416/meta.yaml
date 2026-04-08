@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.03
+  dir_id: '001416'
+  name: Jaskinia Skoruszowa
+  n_submissions: 5
+image:
+  filename: image_931_zoom_10.tif
+  image_id: 931
+  width: 3318
+  height: 4878
+coordinates:
+  lat: 49.236814
+  lon: 19.874114
+entrance:
+  x: 1451.57
+  y: 2352.81
+scale:
+  pixels_per_meter: 195.94
+north:
+  angle_deg: 0.0030000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6621000000
+  total_rotation_deg: -0.6587000000
+  A: 0.0051033880
+  D: -0.0000586697
+  B: -0.0000586697
+  E: -0.0051033880
+  C: 563604.516211
+  F: 152524.653821
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 195.91
+  - 196.27
+  - 195.36
+  - 195.97
+  - 195.94
+  entrance_std_px: 1.29
+  outliers_removed: 2
+  flag: null

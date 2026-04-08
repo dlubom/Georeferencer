@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.A-12.04
+  dir_id: '011051'
+  name: Jasiowa Nyża
+  n_submissions: 5
+image:
+  filename: image_12358_zoom_10.tif
+  image_id: 12358
+  width: 1698
+  height: 1818
+coordinates:
+  lat: 49.272917
+  lon: 19.914139
+entrance:
+  x: 754.01
+  y: 1360.3
+scale:
+  pixels_per_meter: 235.4
+north:
+  angle_deg: -0.0850000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6928000000
+  total_rotation_deg: -0.7775000000
+  A: 0.0042476792
+  D: -0.0000576445
+  B: -0.0000576445
+  E: -0.0042476792
+  C: 566472.857278
+  F: 156565.110966
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 234.97
+  - 234.61
+  - 235.4
+  - 235.73
+  - 235.8
+  entrance_std_px: 1.39
+  outliers_removed: 0
+  flag: null

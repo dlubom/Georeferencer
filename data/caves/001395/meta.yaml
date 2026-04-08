@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.17
+  dir_id: 001395
+  name: Groby
+  n_submissions: 5
+image:
+  filename: image_901_zoom_10.tif
+  image_id: 901
+  width: 3718
+  height: 6308
+coordinates:
+  lat: 49.236547
+  lon: 19.865292
+entrance:
+  x: 1394.69
+  y: 565.21
+scale:
+  pixels_per_meter: 98.38
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6554000000
+  total_rotation_deg: -0.6554000000
+  A: 0.0101644360
+  D: -0.0001162718
+  B: -0.0001162718
+  E: -0.0101644360
+  C: 562956.019978
+  F: 152481.414012
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 98.46
+  - 98.44
+  - 97.92
+  - 98.38
+  - 98.14
+  entrance_std_px: 1.8
+  outliers_removed: 0
+  flag: null

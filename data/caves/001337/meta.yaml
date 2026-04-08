@@ -1,0 +1,43 @@
+cave:
+  inventory_number: T.E-07.33
+  dir_id: '001337'
+  name: Nyża przy Perci
+  n_submissions: 6
+image:
+  filename: image_840_zoom_10.tif
+  image_id: 840
+  width: 552
+  height: 492
+coordinates:
+  lat: 49.240506
+  lon: 19.855325
+entrance:
+  x: 261.12
+  y: 127.1
+scale:
+  pixels_per_meter: 76.89
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6479000000
+  total_rotation_deg: -0.6479000000
+  A: 0.0130042216
+  D: -0.0001470514
+  B: -0.0001470514
+  E: -0.0130042216
+  C: 562236.454931
+  F: 152908.930877
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 76.73
+  - 76.98
+  - 76.57
+  - 76.89
+  - 77.77
+  - 77.05
+  entrance_std_px: 0.4100000000
+  outliers_removed: 1
+  flag: null

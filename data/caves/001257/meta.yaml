@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-17.10
+  dir_id: '001257'
+  name: Szczelina nad Partyzancką
+  n_submissions: 5
+image:
+  filename: image_741_zoom_10.tif
+  image_id: 741
+  width: 646
+  height: 490
+coordinates:
+  lat: 49.250689
+  lon: 19.989839
+entrance:
+  x: 335.77
+  y: 298.62
+scale:
+  pixels_per_meter: 76.98
+north:
+  angle_deg: -0.0770000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7499000000
+  total_rotation_deg: -0.8273000000
+  A: 0.0129887894
+  D: -0.0001875600
+  B: -0.0001875600
+  E: -0.0129887894
+  C: 572008.825071
+  F: 154162.253463
+quality:
+  ppm_cv: 0.0070000000
+  ppm_values:
+  - 76.6
+  - 77.53
+  - 76.6
+  - 76.98
+  - 77.89
+  entrance_std_px: 0.4500000000
+  outliers_removed: 0
+  flag: null

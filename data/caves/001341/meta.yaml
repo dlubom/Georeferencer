@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-07.37
+  dir_id: '001341'
+  name: Schronisko nad Bramką
+  n_submissions: 5
+image:
+  filename: image_844_zoom_10.tif
+  image_id: 844
+  width: 582
+  height: 542
+coordinates:
+  lat: 49.241767
+  lon: 19.855639
+entrance:
+  x: 457.1
+  y: 130.03
+scale:
+  pixels_per_meter: 77.12
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6481000000
+  total_rotation_deg: -0.6481000000
+  A: 0.0129660272
+  D: -0.0001466762
+  B: -0.0001466762
+  E: -0.0129660272
+  C: 562255.187552
+  F: 153049.39193
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 77.12
+  - 77.1
+  - 77.25
+  - 77.16
+  - 77.11
+  entrance_std_px: 0.3800000000
+  outliers_removed: 1
+  flag: null

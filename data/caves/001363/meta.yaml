@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.25
+  dir_id: '001363'
+  name: Jaskinia Ziobrowa
+  n_submissions: 5
+image:
+  filename: image_866_zoom_10.tif
+  image_id: 866
+  width: 1962
+  height: 1824
+coordinates:
+  lat: 49.238906
+  lon: 19.863794
+entrance:
+  x: 1034.25
+  y: 312.36
+scale:
+  pixels_per_meter: 38.61
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6543000000
+  total_rotation_deg: -0.6543000000
+  A: 0.0258989454
+  D: -0.0002957576
+  B: -0.0002957576
+  E: -0.0258989454
+  C: 562831.429879
+  F: 152744.823314
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 38.69
+  - 38.59
+  - 38.71
+  - 38.57
+  - 38.61
+  entrance_std_px: 0.4800000000
+  outliers_removed: 0
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.25
+  dir_id: '001464'
+  name: Schron przy Arkadzie
+  n_submissions: 5
+image:
+  filename: image_969_zoom_10.tif
+  image_id: 969
+  width: 1608
+  height: 2126
+coordinates:
+  lat: 49.23655
+  lon: 19.87375
+entrance:
+  x: 293.66
+  y: 1476.71
+scale:
+  pixels_per_meter: 196.05
+north:
+  angle_deg: 0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6618000000
+  total_rotation_deg: -0.6605000000
+  A: 0.0051002946
+  D: -0.0000587949
+  B: -0.0000587949
+  E: -0.0051002946
+  C: 563584.225063
+  F: 152490.464678
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 196.32
+  - 195.67
+  - 196.48
+  - 195.98
+  - 196.05
+  entrance_std_px: 1.47
+  outliers_removed: 0
+  flag: null

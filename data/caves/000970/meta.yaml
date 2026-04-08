@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-09.04
+  dir_id: 000970
+  name: Dziura Stanikowa Wyżnia
+  n_submissions: 5
+image:
+  filename: image_455_zoom_10.tif
+  image_id: 455
+  width: 682
+  height: 926
+coordinates:
+  lat: 49.267219
+  lon: 19.880869
+entrance:
+  x: 220.36
+  y: 283.08
+scale:
+  pixels_per_meter: 38.47
+north:
+  angle_deg: -0.0390000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6675000000
+  total_rotation_deg: -0.7062000000
+  A: 0.0259906636
+  D: -0.0003203466
+  B: -0.0003203466
+  E: -0.0259906636
+  C: 564058.365077
+  F: 155904.746836
+quality:
+  ppm_cv: 0.0050000000
+  ppm_values:
+  - 38.23
+  - 38.16
+  - 38.47
+  - 38.61
+  - 38.54
+  entrance_std_px: 0.3300000000
+  outliers_removed: 0
+  flag: null

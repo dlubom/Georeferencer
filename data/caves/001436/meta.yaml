@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.60
+  dir_id: '001436'
+  name: Szczelina w Żlebie z Bramką I
+  n_submissions: 5
+image:
+  filename: image_940_zoom_10.tif
+  image_id: 940
+  width: 502
+  height: 440
+coordinates:
+  lat: 49.242372
+  lon: 19.857822
+entrance:
+  x: 310.96
+  y: 200.02
+scale:
+  pixels_per_meter: 76.88
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6498000000
+  total_rotation_deg: -0.6498000000
+  A: 0.0130059646
+  D: -0.0001475047
+  B: -0.0001475047
+  E: -0.0130059646
+  C: 562415.163379
+  F: 153119.322013
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 1.54
+  - 77.0
+  - 77.11
+  - 76.76
+  - 76.7
+  entrance_std_px: 0.4800000000
+  outliers_removed: 1
+  flag: null

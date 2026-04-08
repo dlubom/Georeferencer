@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.Z-18.01
+  dir_id: 001749
+  name: Jaskinia Jaszczurowska Wodna
+  n_submissions: 5
+image:
+  filename: image_1290_zoom_10.tif
+  image_id: 1290
+  width: 1132
+  height: 730
+coordinates:
+  lat: 49.282822
+  lon: 20.000961
+entrance:
+  x: 128.8
+  y: 188.85
+scale:
+  pixels_per_meter: 38.57
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7587000000
+  total_rotation_deg: -0.7587000000
+  A: 0.0259262170
+  D: -0.0003433153
+  B: -0.0003433153
+  E: -0.0259262170
+  C: 572771.716691
+  F: 157744.989121
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 38.57
+  - 38.65
+  - 38.57
+  - 38.5
+  - 38.44
+  entrance_std_px: 0.5400000000
+  outliers_removed: 0
+  flag: null

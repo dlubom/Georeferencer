@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-07.17
+  dir_id: '001312'
+  name: Szczelina przy Zawieszonej Skale I
+  n_submissions: 5
+image:
+  filename: image_816_zoom_10.tif
+  image_id: 816
+  width: 2142
+  height: 1560
+coordinates:
+  lat: 49.243075
+  lon: 19.849719
+entrance:
+  x: 919.23
+  y: 894.47
+scale:
+  pixels_per_meter: 77.23
+north:
+  angle_deg: 0.0060000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6437000000
+  total_rotation_deg: -0.6380000000
+  A: 0.0129480536
+  D: -0.0001441890
+  B: -0.0001441890
+  E: -0.0129480536
+  C: 561816.921043
+  F: 153199.861126
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 77.21
+  - 77.16
+  - 77.35
+  - 77.23
+  - 77.23
+  entrance_std_px: 0.8200000000
+  outliers_removed: 2
+  flag: null

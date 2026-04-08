@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-07.11
+  dir_id: '001306'
+  name: Schron nad Żlebem
+  n_submissions: 5
+image:
+  filename: image_810_zoom_10.tif
+  image_id: 810
+  width: 660
+  height: 638
+coordinates:
+  lat: 49.237275
+  lon: 19.845156
+entrance:
+  x: 482.96
+  y: 299.04
+scale:
+  pixels_per_meter: 76.99
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6401000000
+  total_rotation_deg: -0.6401000000
+  A: 0.0129880961
+  D: -0.0001451158
+  B: -0.0001451158
+  E: -0.0129880961
+  C: 561497.650216
+  F: 152543.799261
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 77.22
+  - 76.9
+  - 76.99
+  - 76.65
+  - 77.48
+  entrance_std_px: 0.3000000000
+  outliers_removed: 0
+  flag: null

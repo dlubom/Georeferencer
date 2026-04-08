@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.J-24.02
+  dir_id: '001717'
+  name: Jaskinia Żabia Lodowa
+  n_submissions: 5
+image:
+  filename: image_1244_zoom_10.tif
+  image_id: 1244
+  width: 784
+  height: 870
+coordinates:
+  lat: 49.211389
+  lon: 20.090278
+entrance:
+  x: 527.56
+  y: 176.27
+scale:
+  pixels_per_meter: 76.93
+north:
+  angle_deg: -0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.8255000000
+  total_rotation_deg: -0.8255000000
+  A: 0.0129978073
+  D: -0.0001872761
+  B: -0.0001872761
+  E: -0.0129978073
+  C: 579376.308337
+  F: 149893.654405
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 76.93
+  - 77.09
+  - 76.63
+  - 76.46
+  - 77.14
+  entrance_std_px: 0.7100000000
+  outliers_removed: 0
+  flag: null

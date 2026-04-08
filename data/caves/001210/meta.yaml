@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-12.03
+  dir_id: '001210'
+  name: Schron Partyzantów
+  n_submissions: 5
+image:
+  filename: image_704_zoom_10.tif
+  image_id: 704
+  width: 1264
+  height: 1146
+coordinates:
+  lat: 49.248139
+  lon: 19.914897
+entrance:
+  x: 954.9
+  y: 196.75
+scale:
+  pixels_per_meter: 77.29
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6931000000
+  total_rotation_deg: -0.6931000000
+  A: 0.0129372835
+  D: -0.0001565026
+  B: -0.0001565026
+  E: -0.0129372835
+  C: 566552.098582
+  F: 153808.951757
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 77.29
+  - 77.12
+  - 76.91
+  - 77.42
+  - 77.39
+  entrance_std_px: 0.5700000000
+  outliers_removed: 0
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.18
+  dir_id: '001553'
+  name: Nyża pod Ratuszem
+  n_submissions: 5
+image:
+  filename: image_1063_zoom_10.tif
+  image_id: 1063
+  width: 590
+  height: 652
+coordinates:
+  lat: 49.244833
+  lon: 19.917031
+entrance:
+  x: 462.07
+  y: 330.04
+scale:
+  pixels_per_meter: 77.16
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6947000000
+  total_rotation_deg: -0.6947000000
+  A: 0.0129589914
+  D: -0.0001571231
+  B: -0.0001571231
+  E: -0.0129589914
+  C: 566718.200205
+  F: 153445.075981
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 76.63
+  - 77.3
+  - 76.96
+  - 77.16
+  - 77.21
+  entrance_std_px: 0.7100000000
+  outliers_removed: 0
+  flag: null

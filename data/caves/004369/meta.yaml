@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.41
+  dir_id: 004369
+  name: Mała Gawra
+  n_submissions: 5
+image:
+  filename: image_4387_zoom_10.tif
+  image_id: 4387
+  width: 566
+  height: 580
+coordinates:
+  lat: 49.237031
+  lon: 19.8734
+entrance:
+  x: 144.86
+  y: 269.28
+scale:
+  pixels_per_meter: 59.16
+north:
+  angle_deg: -0.0050000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6615000000
+  total_rotation_deg: -0.6664000000
+  A: 0.0169032263
+  D: -0.0001966028
+  B: -0.0001966028
+  E: -0.0169032263
+  C: 563557.152717
+  F: 152540.657448
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 59.12
+  - 59.24
+  - 58.95
+  - 59.16
+  - 59.68
+  entrance_std_px: 0.3400000000
+  outliers_removed: 2
+  flag: null

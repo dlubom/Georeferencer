@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.58
+  dir_id: '001603'
+  name: Jaskinia Zośka
+  n_submissions: 5
+image:
+  filename: image_1109_zoom_10.tif
+  image_id: 1109
+  width: 6398
+  height: 4938
+coordinates:
+  lat: 49.244997
+  lon: 19.914661
+entrance:
+  x: 2896.31
+  y: 1914.42
+scale:
+  pixels_per_meter: 98.0
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6929000000
+  total_rotation_deg: -0.6929000000
+  A: 0.0102034831
+  D: -0.0001233941
+  B: -0.0001233941
+  E: -0.0102034831
+  C: 566522.158183
+  F: 153476.755517
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 97.96
+  - 98.0
+  - 98.01
+  - 97.95
+  - 98.0
+  entrance_std_px: 0.7800000000
+  outliers_removed: 0
+  flag: null

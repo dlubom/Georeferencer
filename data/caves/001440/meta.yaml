@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.09
+  dir_id: '001440'
+  name: Krakowskie Okno
+  n_submissions: 5
+image:
+  filename: image_954_zoom_10.tif
+  image_id: 954
+  width: 4352
+  height: 4386
+coordinates:
+  lat: 49.236172
+  lon: 19.870833
+entrance:
+  x: 900.26
+  y: 3049.18
+scale:
+  pixels_per_meter: 195.99
+north:
+  angle_deg: 0.0360000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6596000000
+  total_rotation_deg: -0.6237000000
+  A: 0.0051018969
+  D: -0.0000555365
+  B: -0.0000555365
+  E: -0.0051018969
+  C: 563369.418751
+  F: 152454.065528
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 195.8
+  - 196.57
+  - 196.0
+  - 195.99
+  - 39.17
+  entrance_std_px: 0.9100000000
+  outliers_removed: 2
+  flag: null

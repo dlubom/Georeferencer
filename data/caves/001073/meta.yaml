@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-04.06
+  dir_id: '001073'
+  name: Piwnica
+  n_submissions: 5
+image:
+  filename: image_544_zoom_10.tif
+  image_id: 544
+  width: 1822
+  height: 1894
+coordinates:
+  lat: 49.245511
+  lon: 19.811425
+entrance:
+  x: 1201.71
+  y: 1126.04
+scale:
+  pixels_per_meter: 196.99
+north:
+  angle_deg: 0.1340000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6147000000
+  total_rotation_deg: -0.4806000000
+  A: 0.0050762116
+  D: -0.0000425841
+  B: -0.0000425841
+  E: -0.0050762116
+  C: 559033.35267
+  F: 153434.04043
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 196.77
+  - 197.06
+  - 197.05
+  - 196.75
+  - 196.99
+  entrance_std_px: 1.57
+  outliers_removed: 0
+  flag: null

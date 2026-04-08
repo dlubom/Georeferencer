@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-12.09
+  dir_id: '001224'
+  name: Jaskinia pod Iglicą
+  n_submissions: 5
+image:
+  filename: image_709_zoom_10.tif
+  image_id: 709
+  width: 944
+  height: 1254
+coordinates:
+  lat: 49.247797
+  lon: 19.911422
+entrance:
+  x: 148.83
+  y: 207.24
+scale:
+  pixels_per_meter: 77.15
+north:
+  angle_deg: -0.0060000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6904000000
+  total_rotation_deg: -0.6968000000
+  A: 0.0129614562
+  D: -0.0001576447
+  B: -0.0001576447
+  E: -0.0129614562
+  C: 566310.158519
+  F: 153767.905687
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 77.23
+  - 76.96
+  - 76.86
+  - 77.15
+  - 77.16
+  entrance_std_px: 0.5000000000
+  outliers_removed: 0
+  flag: null

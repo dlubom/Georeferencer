@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.14
+  dir_id: 001392
+  name: Dziura nad Jaskinią Raptawicką I
+  n_submissions: 5
+image:
+  filename: image_898_zoom_10.tif
+  image_id: 898
+  width: 1536
+  height: 1178
+coordinates:
+  lat: 49.239286
+  lon: 19.862042
+entrance:
+  x: 1192.94
+  y: 723.51
+scale:
+  pixels_per_meter: 51.24
+north:
+  angle_deg: -0.0020000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6529000000
+  total_rotation_deg: -0.6551000000
+  A: 0.0195159630
+  D: -0.0002231577
+  B: -0.0002231577
+  E: -0.0195159630
+  C: 562707.030958
+  F: 152791.590333
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 51.32
+  - 51.32
+  - 51.0
+  - 51.24
+  - 51.18
+  entrance_std_px: 0.5800000000
+  outliers_removed: 0
+  flag: null

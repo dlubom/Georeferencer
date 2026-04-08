@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-10.11
+  dir_id: '001716'
+  name: Szczelina pod Lodową
+  n_submissions: 5
+image:
+  filename: image_1228_zoom_10.tif
+  image_id: 1228
+  width: 1674
+  height: 2544
+coordinates:
+  lat: 49.230917
+  lon: 19.889147
+entrance:
+  x: 370.84
+  y: 682.06
+scale:
+  pixels_per_meter: 195.3
+north:
+  angle_deg: 0.0070000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6734000000
+  total_rotation_deg: -0.6660000000
+  A: 0.0051199130
+  D: -0.0000595147
+  B: -0.0000595147
+  E: -0.0051199130
+  C: 564711.613244
+  F: 151873.466548
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 195.13
+  - 195.19
+  - 195.55
+  - 195.3
+  - 195.44
+  entrance_std_px: 1.39
+  outliers_removed: 0
+  flag: null

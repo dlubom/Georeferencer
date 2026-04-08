@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.C-05.05
+  dir_id: '001041'
+  name: Schron w Skale Kmietowicza II
+  n_submissions: 5
+image:
+  filename: image_513_zoom_10.tif
+  image_id: 513
+  width: 1700
+  height: 1474
+coordinates:
+  lat: 49.235125
+  lon: 19.820269
+entrance:
+  x: 662.55
+  y: 626.25
+scale:
+  pixels_per_meter: 117.96
+north:
+  angle_deg: -0.0140000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6213000000
+  total_rotation_deg: -0.6355000000
+  A: 0.0084771521
+  D: -0.0000940232
+  B: -0.0000940232
+  E: -0.0084771521
+  C: 559689.849066
+  F: 152286.338918
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 88.52
+  - 118.02
+  - 117.6
+  - 117.89
+  - 118.5
+  entrance_std_px: 0.9200000000
+  outliers_removed: 1
+  flag: null

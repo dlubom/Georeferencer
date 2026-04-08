@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.56
+  dir_id: '001432'
+  name: Szczelina w Żlebie z Bramką II
+  n_submissions: 5
+image:
+  filename: image_926_zoom_10.tif
+  image_id: 926
+  width: 448
+  height: 710
+coordinates:
+  lat: 49.242328
+  lon: 19.857686
+entrance:
+  x: 223.1
+  y: 266.41
+scale:
+  pixels_per_meter: 77.32
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6497000000
+  total_rotation_deg: -0.6497000000
+  A: 0.0129317076
+  D: -0.0001466392
+  B: -0.0001466392
+  E: -0.0129317076
+  C: 562406.491844
+  F: 153115.150412
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 77.1
+  - 77.25
+  - 77.4
+  - 77.44
+  - 77.88
+  entrance_std_px: 0.4300000000
+  outliers_removed: 1
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-12.08
+  dir_id: '001223'
+  name: Szczelina w Iglicy
+  n_submissions: 5
+image:
+  filename: image_2915_zoom_10.tif
+  image_id: 2915
+  width: 1158
+  height: 1594
+coordinates:
+  lat: 49.247306
+  lon: 19.912444
+entrance:
+  x: 163.83
+  y: 855.52
+scale:
+  pixels_per_meter: 77.5
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6912000000
+  total_rotation_deg: -0.6912000000
+  A: 0.0129015005
+  D: -0.0001556493
+  B: -0.0001556493
+  E: -0.0129015005
+  C: 566385.089251
+  F: 153722.588669
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 77.16
+  - 77.84
+  - 77.5
+  - 77.59
+  - 77.15
+  entrance_std_px: 0.8700000000
+  outliers_removed: 0
+  flag: null

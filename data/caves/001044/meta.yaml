@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.C-08.01
+  dir_id: '001044'
+  name: Jaskinia w Małym Krakowie
+  n_submissions: 5
+image:
+  filename: image_516_zoom_10.tif
+  image_id: 516
+  width: 2200
+  height: 3278
+coordinates:
+  lat: 49.254408
+  lon: 19.867911
+entrance:
+  x: 690.06
+  y: 1593.68
+scale:
+  pixels_per_meter: 195.91
+north:
+  angle_deg: 0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6575000000
+  total_rotation_deg: -0.6565000000
+  A: 0.0051040252
+  D: -0.0000584855
+  B: -0.0000584855
+  E: -0.0051040252
+  C: 563134.513779
+  F: 154470.84312
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 195.62
+  - 196.24
+  - 195.55
+  - 195.91
+  - 196.41
+  entrance_std_px: 1.55
+  outliers_removed: 0
+  flag: null

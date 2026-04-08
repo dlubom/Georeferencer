@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.36
+  dir_id: 001488
+  name: Schron w Upłazkowej Turni
+  n_submissions: 5
+image:
+  filename: image_995_zoom_10.tif
+  image_id: 995
+  width: 726
+  height: 840
+coordinates:
+  lat: 49.237414
+  lon: 19.879361
+entrance:
+  x: 219.71
+  y: 569.22
+scale:
+  pixels_per_meter: 77.1
+north:
+  angle_deg: -0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6660000000
+  total_rotation_deg: -0.6665000000
+  A: 0.0129687199
+  D: -0.0001508730
+  B: -0.0001508730
+  E: -0.0129687199
+  C: 563990.082298
+  F: 152591.083039
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 77.8
+  - 77.33
+  - 76.9
+  - 76.98
+  - 77.1
+  entrance_std_px: 0.3300000000
+  outliers_removed: 0
+  flag: null

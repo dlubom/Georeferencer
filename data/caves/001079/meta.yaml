@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-06.09
+  dir_id: 001079
+  name: Szczelina przy Lodowej nad Kufą
+  n_submissions: 5
+image:
+  filename: image_556_zoom_10.tif
+  image_id: 556
+  width: 472
+  height: 1168
+coordinates:
+  lat: 49.244167
+  lon: 19.839172
+entrance:
+  x: 309.51
+  y: 546.86
+scale:
+  pixels_per_meter: 76.84
+north:
+  angle_deg: -0.0030000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6357000000
+  total_rotation_deg: -0.6389000000
+  A: 0.0130138809
+  D: -0.0001451116
+  B: -0.0001451116
+  E: -0.0130138809
+  C: 561055.968603
+  F: 153308.099689
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 76.58
+  - 77.03
+  - 76.84
+  - 76.98
+  - 76.28
+  entrance_std_px: 0.3200000000
+  outliers_removed: 0
+  flag: null

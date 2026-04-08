@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-07.14
+  dir_id: 001309
+  name: Jaskinia Ślimacza
+  n_submissions: 5
+image:
+  filename: image_813_zoom_10.tif
+  image_id: 813
+  width: 482
+  height: 1336
+coordinates:
+  lat: 49.242306
+  lon: 19.849131
+entrance:
+  x: 245.65
+  y: 195.9
+scale:
+  pixels_per_meter: 77.48
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6432000000
+  total_rotation_deg: -0.6432000000
+  A: 0.0129052906
+  D: -0.0001448798
+  B: -0.0001448798
+  E: -0.0129052906
+  C: 561783.727427
+  F: 153104.767537
+quality:
+  ppm_cv: 0.0050000000
+  ppm_values:
+  - 77.25
+  - 77.92
+  - 77.1
+  - 77.48
+  - 78.23
+  entrance_std_px: 0.6600000000
+  outliers_removed: 0
+  flag: null

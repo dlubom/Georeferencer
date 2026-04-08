@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-05.13
+  dir_id: 004387
+  name: Okap nad Kościołem
+  n_submissions: 5
+image:
+  filename: image_4405_zoom_10.tif
+  image_id: 4405
+  width: 836
+  height: 612
+coordinates:
+  lat: 49.246328
+  lon: 19.828139
+entrance:
+  x: 497.7
+  y: 279.08
+scale:
+  pixels_per_meter: 59.06
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6273000000
+  total_rotation_deg: -0.6273000000
+  A: 0.0169316698
+  D: -0.0001853931
+  B: -0.0001853931
+  E: -0.0169316698
+  C: 560246.136408
+  F: 153537.069642
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 59.15
+  - 58.93
+  - 59.05
+  - 59.06
+  - 59.27
+  entrance_std_px: 0.4600000000
+  outliers_removed: 0
+  flag: null

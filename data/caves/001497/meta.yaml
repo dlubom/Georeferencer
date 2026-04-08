@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.41
+  dir_id: 001497
+  name: Jaskinia Barania
+  n_submissions: 5
+image:
+  filename: image_1027_zoom_10.tif
+  image_id: 1027
+  width: 1156
+  height: 2044
+coordinates:
+  lat: 49.241056
+  lon: 19.910506
+entrance:
+  x: 137.49
+  y: 569.91
+scale:
+  pixels_per_meter: 38.55
+north:
+  angle_deg: 0.0240000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6897000000
+  total_rotation_deg: -0.6655000000
+  A: 0.0259393668
+  D: -0.0003013155
+  B: -0.0003013155
+  E: -0.0259393668
+  C: 566251.034925
+  F: 153030.059706
+quality:
+  ppm_cv: 0.0060000000
+  ppm_values:
+  - 38.47
+  - 38.84
+  - 38.55
+  - 39.03
+  - 38.53
+  entrance_std_px: 0.6100000000
+  outliers_removed: 0
+  flag: null

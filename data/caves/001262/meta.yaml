@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-17.12
+  dir_id: '001262'
+  name: Jaskinia w Czubie Jaworzyńskiej
+  n_submissions: 5
+image:
+  filename: image_744_zoom_10.tif
+  image_id: 744
+  width: 7086
+  height: 3364
+coordinates:
+  lat: 49.251806
+  lon: 19.991639
+entrance:
+  x: 2624.64
+  y: 697.56
+scale:
+  pixels_per_meter: 48.97
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7513000000
+  total_rotation_deg: -0.7513000000
+  A: 0.0204180280
+  D: -0.0002677327
+  B: -0.0002677327
+  E: -0.0204180280
+  C: 572089.051673
+  F: 154299.10981
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 48.97
+  - 48.98
+  - 48.97
+  - 48.92
+  - 49.05
+  entrance_std_px: 0.9100000000
+  outliers_removed: 2
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-04.02
+  dir_id: 001068
+  name: Szczelina Chochołowska
+  n_submissions: 5
+image:
+  filename: image_540_zoom_10.tif
+  image_id: 540
+  width: 5538
+  height: 4412
+coordinates:
+  lat: 49.245944
+  lon: 19.811983
+entrance:
+  x: 5207.72
+  y: 403.83
+scale:
+  pixels_per_meter: 15.74
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6151000000
+  total_rotation_deg: -0.6151000000
+  A: 0.0635110784
+  D: -0.0006818422
+  B: -0.0006818422
+  E: -0.0635110784
+  C: 558749.015361
+  F: 153506.029216
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 15.75
+  - 15.74
+  - 15.75
+  - 15.74
+  - 15.74
+  entrance_std_px: 0.6400000000
+  outliers_removed: 1
+  flag: null

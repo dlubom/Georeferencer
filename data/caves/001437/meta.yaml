@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.61
+  dir_id: '001437'
+  name: Meanderek nad Mylną
+  n_submissions: 5
+image:
+  filename: image_941_zoom_10.tif
+  image_id: 941
+  width: 522
+  height: 742
+coordinates:
+  lat: 49.239269
+  lon: 19.862222
+entrance:
+  x: 303.41
+  y: 623.58
+scale:
+  pixels_per_meter: 76.71
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6531000000
+  total_rotation_deg: -0.6527000000
+  A: 0.0130355822
+  D: -0.0001485052
+  B: -0.0001485052
+  E: -0.0130355822
+  C: 562739.4081
+  F: 152783.637941
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 76.7
+  - 77.63
+  - 76.72
+  - 76.63
+  - 76.79
+  entrance_std_px: 0.5800000000
+  outliers_removed: 1
+  flag: null

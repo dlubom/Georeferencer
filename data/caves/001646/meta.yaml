@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-07.01
+  dir_id: '001646'
+  name: Kominki w Panienkach Smytniańskich
+  n_submissions: 5
+image:
+  filename: image_1170_zoom_10.tif
+  image_id: 1170
+  width: 398
+  height: 550
+coordinates:
+  lat: 49.233439
+  lon: 19.854667
+entrance:
+  x: 220.0
+  y: 150.42
+scale:
+  pixels_per_meter: 77.75
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6473000000
+  total_rotation_deg: -0.6473000000
+  A: 0.0128614837
+  D: -0.0001453100
+  B: -0.0001453100
+  E: -0.0128614837
+  C: 562198.017852
+  F: 152123.276309
+quality:
+  ppm_cv: 0.0060000000
+  ppm_values:
+  - 77.76
+  - 77.33
+  - 78.0
+  - 76.79
+  - 77.75
+  entrance_std_px: 0.4500000000
+  outliers_removed: 0
+  flag: null

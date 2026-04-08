@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.34
+  dir_id: '001404'
+  name: Korytarzyk pod Zamkiem
+  n_submissions: 5
+image:
+  filename: image_893_zoom_10.tif
+  image_id: 893
+  width: 636
+  height: 692
+coordinates:
+  lat: 49.237661
+  lon: 19.864992
+entrance:
+  x: 524.78
+  y: 190.43
+scale:
+  pixels_per_meter: 77.2
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6552000000
+  total_rotation_deg: -0.6552000000
+  A: 0.0129517031
+  D: -0.0001481066
+  B: -0.0001481066
+  E: -0.0129517031
+  C: 562940.114375
+  F: 152601.605279
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.12
+  - 77.26
+  - 76.79
+  - 77.16
+  - 77.25
+  entrance_std_px: 0.4900000000
+  outliers_removed: 1
+  flag: null

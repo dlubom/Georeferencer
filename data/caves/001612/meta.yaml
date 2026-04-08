@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.65
+  dir_id: '001612'
+  name: Nyża w Baranich Schodkach I
+  n_submissions: 5
+image:
+  filename: image_1118_zoom_10.tif
+  image_id: 1118
+  width: 702
+  height: 1042
+coordinates:
+  lat: 49.242975
+  lon: 19.920231
+entrance:
+  x: 526.22
+  y: 463.74
+scale:
+  pixels_per_meter: 77.03
+north:
+  angle_deg: 0.0540000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6971000000
+  total_rotation_deg: -0.6431000000
+  A: 0.0129805471
+  D: -0.0001457049
+  B: -0.0001457049
+  E: -0.0129805471
+  C: 566952.71801
+  F: 153243.162872
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.15
+  - 77.0
+  - 77.03
+  - 76.99
+  - 77.11
+  entrance_std_px: 0.4000000000
+  outliers_removed: 0
+  flag: null

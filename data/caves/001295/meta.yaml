@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-05.08
+  dir_id: 001295
+  name: Schron Zachodni w Iwanówce
+  n_submissions: 5
+image:
+  filename: image_788_zoom_10.tif
+  image_id: 788
+  width: 630
+  height: 686
+coordinates:
+  lat: 49.24195
+  lon: 19.820175
+entrance:
+  x: 163.83
+  y: 528.4
+scale:
+  pixels_per_meter: 77.15
+north:
+  angle_deg: 0.0020000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6213000000
+  total_rotation_deg: -0.6196000000
+  A: 0.0129606466
+  D: -0.0001401668
+  B: -0.0001401668
+  E: -0.0129606466
+  C: 559678.292134
+  F: 153046.260325
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 76.97
+  - 77.04
+  - 77.19
+  - 77.28
+  - 77.15
+  entrance_std_px: 0.5700000000
+  outliers_removed: 0
+  flag: null

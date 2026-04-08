@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.G-19.04
+  dir_id: 001696
+  name: Schron przy Źródle
+  n_submissions: 5
+image:
+  filename: image_1250_zoom_10.tif
+  image_id: 1250
+  width: 778
+  height: 1302
+coordinates:
+  lat: 49.228481
+  lon: 20.008689
+entrance:
+  x: 127.99
+  y: 379.47
+scale:
+  pixels_per_meter: 77.08
+north:
+  angle_deg: 0.0160000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7639000000
+  total_rotation_deg: -0.7482000000
+  A: 0.0129720444
+  D: -0.0001694093
+  B: -0.0001694093
+  E: -0.0129720444
+  C: 573415.810306
+  F: 151713.312792
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 77.01
+  - 38.46
+  - 76.88
+  - 77.23
+  - 77.15
+  entrance_std_px: 0.5600000000
+  outliers_removed: 1
+  flag: null

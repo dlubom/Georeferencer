@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-05.04
+  dir_id: '001142'
+  name: Szczelina w Osmętnicy
+  n_submissions: 5
+image:
+  filename: image_642_zoom_10.tif
+  image_id: 642
+  width: 768
+  height: 1262
+coordinates:
+  lat: 49.247758
+  lon: 19.820889
+entrance:
+  x: 624.42
+  y: 1135.87
+scale:
+  pixels_per_meter: 76.94
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6219000000
+  total_rotation_deg: -0.6216000000
+  A: 0.0129967220
+  D: -0.0001410136
+  B: -0.0001410136
+  E: -0.0129967220
+  C: 559717.334305
+  F: 153700.274966
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 76.92
+  - 76.94
+  - 77.19
+  - 76.9
+  - 77.25
+  entrance_std_px: 0.3800000000
+  outliers_removed: 0
+  flag: null

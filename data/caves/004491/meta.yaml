@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-09.42
+  dir_id: 004491
+  name: Grota nad Korytem
+  n_submissions: 5
+image:
+  filename: image_12247_zoom_10.tif
+  image_id: 12247
+  width: 3014
+  height: 2934
+coordinates:
+  lat: 49.233881
+  lon: 19.883431
+entrance:
+  x: 1481.14
+  y: 1585.23
+scale:
+  pixels_per_meter: 235.57
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6691000000
+  total_rotation_deg: -0.6691000000
+  A: 0.0042446619
+  D: -0.0000495710
+  B: -0.0000495710
+  E: -0.0042446619
+  C: 564287.401687
+  F: 152201.283019
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 235.51
+  - 236.86
+  - 236.79
+  - 235.57
+  - 235.57
+  entrance_std_px: 2.32
+  outliers_removed: 0
+  flag: null

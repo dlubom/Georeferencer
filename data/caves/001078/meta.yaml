@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-06.08
+  dir_id: 001078
+  name: Jaskinia Lodowa nad Kufą
+  n_submissions: 5
+image:
+  filename: image_555_zoom_10.tif
+  image_id: 555
+  width: 464
+  height: 920
+coordinates:
+  lat: 49.244389
+  lon: 19.838961
+entrance:
+  x: 199.46
+  y: 166.7
+scale:
+  pixels_per_meter: 38.4
+north:
+  angle_deg: 0.0440000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6355000000
+  total_rotation_deg: -0.5913000000
+  A: 0.0260399265
+  D: -0.0002687628
+  B: -0.0002687628
+  E: -0.0260399265
+  C: 561039.14176
+  F: 153329.834084
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 38.41
+  - 38.46
+  - 38.4
+  - 38.21
+  - 38.38
+  entrance_std_px: 0.4900000000
+  outliers_removed: 2
+  flag: null

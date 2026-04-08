@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-06.07
+  dir_id: '001077'
+  name: Szczelina Zawaliskowa nad Kufą
+  n_submissions: 5
+image:
+  filename: image_554_zoom_10.tif
+  image_id: 554
+  width: 626
+  height: 540
+coordinates:
+  lat: 49.245961
+  lon: 19.838786
+entrance:
+  x: 158.78
+  y: 181.99
+scale:
+  pixels_per_meter: 76.96
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6354000000
+  total_rotation_deg: -0.6354000000
+  A: 0.0129926352
+  D: -0.0001440911
+  B: -0.0001440911
+  E: -0.0129926352
+  C: 561027.583488
+  F: 153502.389751
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 76.97
+  - 76.62
+  - 76.95
+  - 76.9
+  - 77.05
+  entrance_std_px: 0.5300000000
+  outliers_removed: 1
+  flag: null

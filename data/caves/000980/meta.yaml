@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-06.04
+  dir_id: 000980
+  name: Schronisko Dudowe Górne
+  n_submissions: 5
+image:
+  filename: image_551_zoom_10.tif
+  image_id: 551
+  width: 1268
+  height: 1720
+coordinates:
+  lat: 49.245094
+  lon: 19.833053
+entrance:
+  x: 818.1
+  y: 586.9
+scale:
+  pixels_per_meter: 195.64
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6310000000
+  total_rotation_deg: -0.6310000000
+  A: 0.0051112388
+  D: -0.0000562965
+  B: -0.0000562965
+  E: -0.0051112388
+  C: 560609.407323
+  F: 153402.083895
+quality:
+  ppm_cv: 0.1280000000
+  ppm_values:
+  - 149.63
+  - 195.64
+  - 196.59
+  - 196.07
+  - 149.95
+  entrance_std_px: 1.84
+  outliers_removed: 0
+  flag: high_ppm_cv

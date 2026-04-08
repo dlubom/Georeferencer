@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-09.17
+  dir_id: '004072'
+  name: Schron w Małym Reglu
+  n_submissions: 5
+image:
+  filename: image_4039_zoom_10.tif
+  image_id: 4039
+  width: 978
+  height: 948
+coordinates:
+  lat: 49.269917
+  lon: 19.872361
+entrance:
+  x: 220.89
+  y: 644.25
+scale:
+  pixels_per_meter: 118.81
+north:
+  angle_deg: -0.0330000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6611000000
+  total_rotation_deg: -0.6943000000
+  A: 0.0084158724
+  D: -0.0001019817
+  B: -0.0001019817
+  E: -0.0084158724
+  C: 563439.984234
+  F: 156195.431738
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 118.64
+  - 119.1
+  - 118.48
+  - 119.62
+  - 118.81
+  entrance_std_px: 0.5800000000
+  outliers_removed: 0
+  flag: null

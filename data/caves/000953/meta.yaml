@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.A-17.01
+  dir_id: 000953
+  name: Dziura pod Nosalem
+  n_submissions: 5
+image:
+  filename: image_445_zoom_10.tif
+  image_id: 445
+  width: 672
+  height: 478
+coordinates:
+  lat: 49.277047
+  lon: 19.983942
+entrance:
+  x: 212.97
+  y: 184.76
+scale:
+  pixels_per_meter: 38.51
+north:
+  angle_deg: -0.0560000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7457000000
+  total_rotation_deg: -0.8015000000
+  A: 0.0259668089
+  D: -0.0003632898
+  B: -0.0003632898
+  E: -0.0259668089
+  C: 571540.531903
+  F: 157086.873363
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 38.51
+  - 38.35
+  - 38.61
+  - 38.53
+  - 38.49
+  entrance_std_px: 0.5500000000
+  outliers_removed: 2
+  flag: null

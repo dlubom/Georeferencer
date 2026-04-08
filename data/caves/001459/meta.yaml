@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.01
+  dir_id: 001459
+  name: Piwnica Miętusia
+  n_submissions: 5
+image:
+  filename: image_953_zoom_10.tif
+  image_id: 953
+  width: 2122
+  height: 1628
+coordinates:
+  lat: 49.244703
+  lon: 19.897161
+entrance:
+  x: 1632.52
+  y: 551.7
+scale:
+  pixels_per_meter: 38.64
+north:
+  angle_deg: 0.0040000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6796000000
+  total_rotation_deg: -0.6757000000
+  A: 0.0258807926
+  D: -0.0003052256
+  B: -0.0003052256
+  E: -0.0258807926
+  C: 565236.480541
+  F: 153423.715835
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 38.64
+  - 38.63
+  - 38.58
+  - 38.88
+  - 38.9
+  entrance_std_px: 1.07
+  outliers_removed: 0
+  flag: null

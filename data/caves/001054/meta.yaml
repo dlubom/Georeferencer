@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.C-15.03
+  dir_id: '001054'
+  name: Szczelina w Suchym Żlebie
+  n_submissions: 5
+image:
+  filename: image_526_zoom_10.tif
+  image_id: 526
+  width: 802
+  height: 590
+coordinates:
+  lat: 49.254733
+  lon: 19.962283
+entrance:
+  x: 189.04
+  y: 304.72
+scale:
+  pixels_per_meter: 76.86
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7290000000
+  total_rotation_deg: -0.7290000000
+  A: 0.0130091751
+  D: -0.0001655405
+  B: -0.0001655405
+  E: -0.0130091751
+  C: 570000.266344
+  F: 154585.860249
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 76.82
+  - 76.91
+  - 76.1
+  - 76.61
+  - 77.36
+  entrance_std_px: 0.8100000000
+  outliers_removed: 1
+  flag: null

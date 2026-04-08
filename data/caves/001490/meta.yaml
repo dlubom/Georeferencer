@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.36
+  dir_id: 001490
+  name: Korytarz nad Dziurawem
+  n_submissions: 5
+image:
+  filename: image_1009_zoom_10.tif
+  image_id: 1009
+  width: 1544
+  height: 1600
+coordinates:
+  lat: 49.241514
+  lon: 19.898836
+entrance:
+  x: 1310.19
+  y: 181.41
+scale:
+  pixels_per_meter: 117.77
+north:
+  angle_deg: -0.0130000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6808000000
+  total_rotation_deg: -0.6940000000
+  A: 0.0084901832
+  D: -0.0001028421
+  B: -0.0001028421
+  E: -0.0084901832
+  C: 565393.543604
+  F: 153057.652855
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 118.01
+  - 117.91
+  - 117.62
+  - 117.64
+  - 119.88
+  entrance_std_px: 2.18
+  outliers_removed: 1
+  flag: null

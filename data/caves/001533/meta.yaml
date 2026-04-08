@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.02
+  dir_id: '001533'
+  name: Niebieska Studnia
+  n_submissions: 5
+image:
+  filename: image_1045_zoom_10.tif
+  image_id: 1045
+  width: 1382
+  height: 2074
+coordinates:
+  lat: 49.242692
+  lon: 19.914056
+entrance:
+  x: 560.95
+  y: 426.95
+scale:
+  pixels_per_meter: 38.58
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6924000000
+  total_rotation_deg: -0.6924000000
+  A: 0.0259187238
+  D: -0.0003132255
+  B: -0.0003132255
+  E: -0.0259187238
+  C: 566496.145114
+  F: 153211.408618
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 38.55
+  - 38.58
+  - 38.62
+  - 38.59
+  - 38.54
+  entrance_std_px: 0.4700000000
+  outliers_removed: 0
+  flag: null

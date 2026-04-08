@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-09.06
+  dir_id: '001657'
+  name: Jaskinia Ciasna
+  n_submissions: 5
+image:
+  filename: image_1183_zoom_10.tif
+  image_id: 1183
+  width: 4908
+  height: 4062
+coordinates:
+  lat: 49.234608
+  lon: 19.873861
+entrance:
+  x: 4237.49
+  y: 491.14
+scale:
+  pixels_per_meter: 196.12
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6619000000
+  total_rotation_deg: -0.6619000000
+  A: 0.0050987057
+  D: -0.0000589004
+  B: -0.0000589004
+  E: -0.0050987057
+  C: 563574.630291
+  F: 152269.939548
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 196.04
+  - 197.87
+  - 196.12
+  - 196.75
+  - 196.11
+  entrance_std_px: 1.8
+  outliers_removed: 1
+  flag: null

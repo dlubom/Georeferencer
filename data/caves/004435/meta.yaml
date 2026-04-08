@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.G-11.01
+  dir_id: '004435'
+  name: Dziura w Stole
+  n_submissions: 5
+image:
+  filename: image_12237_zoom_10.tif
+  image_id: 12237
+  width: 2570
+  height: 3406
+coordinates:
+  lat: 49.223997
+  lon: 19.905089
+entrance:
+  x: 1335.93
+  y: 1146.52
+scale:
+  pixels_per_meter: 236.27
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6854000000
+  total_rotation_deg: -0.6854000000
+  A: 0.0042321237
+  D: -0.0000506288
+  B: -0.0000506288
+  E: -0.0042321237
+  C: 565877.345549
+  F: 151119.583015
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 236.35
+  - 236.27
+  - 237.32
+  - 235.61
+  - 235.25
+  entrance_std_px: 3.09
+  outliers_removed: 0
+  flag: null

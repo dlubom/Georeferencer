@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-14.02
+  dir_id: 001019
+  name: Dziura Wyżnia
+  n_submissions: 5
+image:
+  filename: image_492_zoom_10.tif
+  image_id: 492
+  width: 1130
+  height: 1814
+coordinates:
+  lat: 49.271556
+  lon: 19.943386
+entrance:
+  x: 490.03
+  y: 1588.0
+scale:
+  pixels_per_meter: 77.08
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7149000000
+  total_rotation_deg: -0.7149000000
+  A: 0.0129726108
+  D: -0.0001618741
+  B: -0.0001618741
+  E: -0.0129726108
+  C: 568598.576526
+  F: 156454.843308
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 77.08
+  - 77.28
+  - 77.08
+  - 76.81
+  - 77.51
+  entrance_std_px: 1.59
+  outliers_removed: 0
+  flag: null

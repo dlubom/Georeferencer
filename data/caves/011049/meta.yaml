@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.A-23.05
+  dir_id: 011049
+  name: Dziura za Porzeczkami
+  n_submissions: 5
+image:
+  filename: image_12370_zoom_10.tif
+  image_id: 12370
+  width: 1886
+  height: 1470
+coordinates:
+  lat: 49.28125
+  lon: 20.071861
+entrance:
+  x: 1094.92
+  y: 757.14
+scale:
+  pixels_per_meter: 236.91
+north:
+  angle_deg: -0.0020000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.8124000000
+  total_rotation_deg: -0.8144000000
+  A: 0.0042205767
+  D: -0.0000599940
+  B: -0.0000599940
+  E: -0.0042205767
+  C: 577927.599859
+  F: 157639.2865
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 237.97
+  - 236.82
+  - 236.75
+  - 236.91
+  - 237.87
+  entrance_std_px: 0.9700000000
+  outliers_removed: 0
+  flag: null

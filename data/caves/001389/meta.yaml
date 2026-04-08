@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.11
+  dir_id: 001389
+  name: Jaskinia przy Żlebie
+  n_submissions: 5
+image:
+  filename: image_895_zoom_10.tif
+  image_id: 895
+  width: 1012
+  height: 1460
+coordinates:
+  lat: 49.238544
+  lon: 19.860686
+entrance:
+  x: 177.94
+  y: 1304.8
+scale:
+  pixels_per_meter: 77.18
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6519000000
+  total_rotation_deg: -0.6519000000
+  A: 0.0129560386
+  D: -0.0001474206
+  B: -0.0001474206
+  E: -0.0129560386
+  C: 562630.302115
+  F: 152710.549909
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 76.99
+  - 77.0
+  - 77.2
+  - 77.18
+  - 77.41
+  entrance_std_px: 0.5800000000
+  outliers_removed: 0
+  flag: null

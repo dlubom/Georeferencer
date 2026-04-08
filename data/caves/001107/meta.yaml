@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.17
+  dir_id: '001107'
+  name: Jaskinia Trójotworowa
+  n_submissions: 5
+image:
+  filename: image_583_zoom_10.tif
+  image_id: 583
+  width: 1844
+  height: 3220
+coordinates:
+  lat: 49.248967
+  lon: 19.868014
+entrance:
+  x: 410.92
+  y: 663.36
+scale:
+  pixels_per_meter: 195.66
+north:
+  angle_deg: 0.0090000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6576000000
+  total_rotation_deg: -0.6482000000
+  A: 0.0051104668
+  D: -0.0000578159
+  B: -0.0000578159
+  E: -0.0051104668
+  C: 563150.314513
+  F: 153861.483488
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 195.77
+  - 195.66
+  - 195.69
+  - 195.58
+  - 195.58
+  entrance_std_px: 0.8100000000
+  outliers_removed: 0
+  flag: null

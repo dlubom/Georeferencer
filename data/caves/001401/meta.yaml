@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.32
+  dir_id: '001401'
+  name: Jaskinia pod Jaworem
+  n_submissions: 5
+image:
+  filename: image_891_zoom_10.tif
+  image_id: 891
+  width: 2808
+  height: 2276
+coordinates:
+  lat: 49.238867
+  lon: 19.861406
+entrance:
+  x: 2292.98
+  y: 1867.0
+scale:
+  pixels_per_meter: 98.22
+north:
+  angle_deg: -0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6525000000
+  total_rotation_deg: -0.6533000000
+  A: 0.0101800979
+  D: -0.0001160876
+  B: -0.0001160876
+  E: -0.0101800979
+  C: 562661.274404
+  F: 152749.383953
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 98.31
+  - 98.32
+  - 98.22
+  - 98.16
+  - 98.15
+  entrance_std_px: 2.5
+  outliers_removed: 0
+  flag: null

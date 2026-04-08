@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-12.15
+  dir_id: '001244'
+  name: Szczelina pod Zagonną Turnią
+  n_submissions: 5
+image:
+  filename: image_732_zoom_10.tif
+  image_id: 732
+  width: 634
+  height: 730
+coordinates:
+  lat: 49.247269
+  lon: 19.913269
+entrance:
+  x: 480.05
+  y: 258.9
+scale:
+  pixels_per_meter: 38.48
+north:
+  angle_deg: 0.0420000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6918000000
+  total_rotation_deg: -0.6503000000
+  A: 0.0259892109
+  D: -0.0002949795
+  B: -0.0002949795
+  E: -0.0259892109
+  C: 566434.743761
+  F: 153715.008475
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 38.42
+  - 38.78
+  - 38.48
+  - 38.38
+  - 38.72
+  entrance_std_px: 0.7900000000
+  outliers_removed: 0
+  flag: null

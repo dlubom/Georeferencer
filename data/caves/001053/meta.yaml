@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.C-15.02
+  dir_id: '001053'
+  name: Płaska Nyża
+  n_submissions: 5
+image:
+  filename: image_525_zoom_10.tif
+  image_id: 525
+  width: 586
+  height: 502
+coordinates:
+  lat: 49.255122
+  lon: 19.962383
+entrance:
+  x: 250.43
+  y: 229.68
+scale:
+  pixels_per_meter: 76.76
+north:
+  angle_deg: -0.0480000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7291000000
+  total_rotation_deg: -0.7775000000
+  A: 0.0130256213
+  D: -0.0001767712
+  B: -0.0001767712
+  E: -0.0130256213
+  C: 570006.178069
+  F: 154628.224644
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 76.89
+  - 77.03
+  - 76.76
+  - 76.37
+  - 76.37
+  entrance_std_px: 0.2400000000
+  outliers_removed: 0
+  flag: null

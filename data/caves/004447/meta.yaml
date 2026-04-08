@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.J-10.01
+  dir_id: '004447'
+  name: Jaskinia w Smreczyńskim Wierchu
+  n_submissions: 5
+image:
+  filename: image_4485_zoom_10.tif
+  image_id: 4485
+  width: 700
+  height: 688
+coordinates:
+  lat: 49.205739
+  lon: 19.885489
+entrance:
+  x: 335.28
+  y: 344.4
+scale:
+  pixels_per_meter: 59.11
+north:
+  angle_deg: -0.0300000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6704000000
+  total_rotation_deg: -0.7004000000
+  A: 0.0169161664
+  D: -0.0002068029
+  B: -0.0002068029
+  E: -0.0169161664
+  C: 564474.38657
+  F: 149074.588353
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 59.17
+  - 59.42
+  - 58.98
+  - 59.16
+  - 59.06
+  entrance_std_px: 0.7200000000
+  outliers_removed: 1
+  flag: null

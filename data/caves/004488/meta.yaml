@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-09.39
+  dir_id: 004488
+  name: Krakowski Schron
+  n_submissions: 5
+image:
+  filename: image_12246_zoom_10.tif
+  image_id: 12246
+  width: 3032
+  height: 2900
+coordinates:
+  lat: 49.234219
+  lon: 19.878011
+entrance:
+  x: 1703.51
+  y: 1889.13
+scale:
+  pixels_per_meter: 236.77
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6650000000
+  total_rotation_deg: -0.6650000000
+  A: 0.0042232514
+  D: -0.0000490186
+  B: -0.0000490186
+  E: -0.0042232514
+  C: 563891.624556
+  F: 152235.513549
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 236.61
+  - 236.56
+  - 237.41
+  - 236.93
+  - 235.08
+  entrance_std_px: 2.62
+  outliers_removed: 1
+  flag: null

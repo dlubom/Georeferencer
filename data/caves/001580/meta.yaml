@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-13.05
+  dir_id: 001580
+  name: Jaskinia Pomarańczarnia
+  n_submissions: 5
+image:
+  filename: image_1128_zoom_10.tif
+  image_id: 1128
+  width: 940
+  height: 1722
+coordinates:
+  lat: 49.246175
+  lon: 19.928822
+entrance:
+  x: 673.83
+  y: 212.89
+scale:
+  pixels_per_meter: 38.52
+north:
+  angle_deg: -0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7036000000
+  total_rotation_deg: -0.7036000000
+  A: 0.0259588291
+  D: -0.0003187998
+  B: -0.0003187998
+  E: -0.0259588291
+  C: 567562.795318
+  F: 153606.079298
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 38.52
+  - 38.61
+  - 38.51
+  - 38.51
+  - 38.6
+  entrance_std_px: 0.6700000000
+  outliers_removed: 0
+  flag: null

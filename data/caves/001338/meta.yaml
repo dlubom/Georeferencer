@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-07.34
+  dir_id: 001338
+  name: Dziurka od Klucza
+  n_submissions: 5
+image:
+  filename: image_841_zoom_10.tif
+  image_id: 841
+  width: 282
+  height: 854
+coordinates:
+  lat: 49.242744
+  lon: 19.845456
+entrance:
+  x: 200.72
+  y: 155.07
+scale:
+  pixels_per_meter: 77.1
+north:
+  angle_deg: -0.0080000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6404000000
+  total_rotation_deg: -0.6483000000
+  A: 0.0129688588
+  D: -0.0001467593
+  B: -0.0001467593
+  E: -0.0129688588
+  C: 561516.336899
+  F: 153149.925711
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 77.11
+  - 76.83
+  - 76.47
+  - 77.14
+  - 77.1
+  entrance_std_px: 0.4000000000
+  outliers_removed: 0
+  flag: null

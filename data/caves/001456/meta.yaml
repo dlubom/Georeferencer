@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-10.07
+  dir_id: '001456'
+  name: Dziura na Półce
+  n_submissions: 5
+image:
+  filename: image_952_zoom_10.tif
+  image_id: 952
+  width: 664
+  height: 878
+coordinates:
+  lat: 49.244981
+  lon: 19.894639
+entrance:
+  x: 542.72
+  y: 533.19
+scale:
+  pixels_per_meter: 77.26
+north:
+  angle_deg: -0.0080000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6777000000
+  total_rotation_deg: -0.6862000000
+  A: 0.0129420500
+  D: -0.0001549959
+  B: -0.0001549959
+  E: -0.0129420500
+  C: 565087.75479
+  F: 153444.645563
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 77.08
+  - 77.13
+  - 77.48
+  - 76.56
+  - 77.39
+  entrance_std_px: 0.8200000000
+  outliers_removed: 1
+  flag: null

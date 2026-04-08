@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-24.03
+  dir_id: '001035'
+  name: Grota Filipczańska Wyżnia
+  n_submissions: 5
+image:
+  filename: image_507_zoom_10.tif
+  image_id: 507
+  width: 680
+  height: 702
+coordinates:
+  lat: 49.273861
+  lon: 20.077583
+entrance:
+  x: 147.84
+  y: 528.57
+scale:
+  pixels_per_meter: 77.11
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.8166000000
+  total_rotation_deg: -0.8166000000
+  A: 0.0129673909
+  D: -0.0001848357
+  B: -0.0001848357
+  E: -0.0129673909
+  C: 578358.086572
+  F: 156827.650106
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.15
+  - 77.02
+  - 76.98
+  - 77.28
+  - 77.11
+  entrance_std_px: 0.5100000000
+  outliers_removed: 0
+  flag: null

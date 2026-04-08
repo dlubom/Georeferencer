@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-11.01
+  dir_id: '001666'
+  name: Studzienka w Ciemniaku
+  n_submissions: 5
+image:
+  filename: image_1195_zoom_10.tif
+  image_id: 1195
+  width: 1002
+  height: 1458
+coordinates:
+  lat: 49.231031
+  lon: 19.902983
+entrance:
+  x: 540.23
+  y: 377.91
+scale:
+  pixels_per_meter: 77.06
+north:
+  angle_deg: 0.0350000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6839000000
+  total_rotation_deg: -0.6486000000
+  A: 0.0129764071
+  D: -0.0001469061
+  B: -0.0001469061
+  E: -0.0129764071
+  C: 565713.358442
+  F: 151899.533174
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.08
+  - 77.04
+  - 77.12
+  - 76.96
+  - 77.32
+  entrance_std_px: 1.08
+  outliers_removed: 1
+  flag: null

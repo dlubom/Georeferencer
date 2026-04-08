@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.52
+  dir_id: 001594
+  name: Szuflada Dolna
+  n_submissions: 5
+image:
+  filename: image_1104_zoom_10.tif
+  image_id: 1104
+  width: 548
+  height: 704
+coordinates:
+  lat: 49.244431
+  lon: 19.917244
+entrance:
+  x: 170.55
+  y: 206.92
+scale:
+  pixels_per_meter: 76.73
+north:
+  angle_deg: 0.0060000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6948000000
+  total_rotation_deg: -0.6891000000
+  A: 0.0130313430
+  D: -0.0001567456
+  B: -0.0001567456
+  E: -0.0130313430
+  C: 566737.986049
+  F: 153398.961485
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 76.76
+  - 76.68
+  - 76.73
+  - 76.71
+  - 76.74
+  entrance_std_px: 0.5000000000
+  outliers_removed: 1
+  flag: null

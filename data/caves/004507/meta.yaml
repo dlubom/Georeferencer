@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-07.02
+  dir_id: '004507'
+  name: Dziura nad Zabijakiem II
+  n_submissions: 5
+image:
+  filename: image_4544_zoom_10.tif
+  image_id: 4544
+  width: 1064
+  height: 1380
+coordinates:
+  lat: 49.249722
+  lon: 19.851333
+entrance:
+  x: 302.09
+  y: 608.8
+scale:
+  pixels_per_meter: 119.03
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6449000000
+  total_rotation_deg: -0.6449000000
+  A: 0.0084004713
+  D: -0.0000945621
+  B: -0.0000945621
+  E: -0.0084004713
+  C: 561935.338159
+  F: 153933.323789
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 118.98
+  - 119.09
+  - 119.09
+  - 119.46
+  - 118.95
+  entrance_std_px: 0.7500000000
+  outliers_removed: 1
+  flag: null

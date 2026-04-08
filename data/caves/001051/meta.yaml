@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.C-13.05
+  dir_id: '001051'
+  name: Mała Dziura Giewontowa
+  n_submissions: 5
+image:
+  filename: image_523_zoom_10.tif
+  image_id: 523
+  width: 1432
+  height: 1218
+coordinates:
+  lat: 49.254506
+  lon: 19.932658
+entrance:
+  x: 494.83
+  y: 737.74
+scale:
+  pixels_per_meter: 196.77
+north:
+  angle_deg: -0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7066000000
+  total_rotation_deg: -0.7066000000
+  A: 0.0050816326
+  D: -0.0000626722
+  B: -0.0000626722
+  E: -0.0050816326
+  C: 567845.432686
+  F: 154533.414972
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 196.77
+  - 197.17
+  - 195.29
+  - 196.4
+  - 197.45
+  entrance_std_px: 1.39
+  outliers_removed: 0
+  flag: null

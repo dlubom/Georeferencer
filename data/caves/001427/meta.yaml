@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.51
+  dir_id: '001427'
+  name: Zasłonięta Szczelina
+  n_submissions: 5
+image:
+  filename: image_921_zoom_10.tif
+  image_id: 921
+  width: 672
+  height: 716
+coordinates:
+  lat: 49.240608
+  lon: 19.856767
+entrance:
+  x: 544.17
+  y: 193.52
+scale:
+  pixels_per_meter: 77.0
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6490000000
+  total_rotation_deg: -0.6490000000
+  A: 0.0129859314
+  D: -0.0001470924
+  B: -0.0001470924
+  E: -0.0129859314
+  C: 562337.594841
+  F: 152922.35603
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 76.98
+  - 76.99
+  - 77.02
+  - 77.16
+  - 77.01
+  entrance_std_px: 0.5900000000
+  outliers_removed: 1
+  flag: null

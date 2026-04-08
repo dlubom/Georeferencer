@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-11.12
+  dir_id: '004426'
+  name: Grota w Rzędach
+  n_submissions: 5
+image:
+  filename: image_12241_zoom_10.tif
+  image_id: 12241
+  width: 2906
+  height: 2548
+coordinates:
+  lat: 49.230239
+  lon: 19.899639
+entrance:
+  x: 1584.94
+  y: 1364.71
+scale:
+  pixels_per_meter: 236.35
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6813000000
+  total_rotation_deg: -0.6813000000
+  A: 0.0042306898
+  D: -0.0000503116
+  B: -0.0000503116
+  E: -0.0042306898
+  C: 565471.34533
+  F: 151809.485057
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 236.65
+  - 236.74
+  - 238.36
+  - 235.38
+  - 236.05
+  entrance_std_px: 2.11
+  outliers_removed: 1
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-06.11
+  dir_id: '001334'
+  name: Szczelina w Grani I
+  n_submissions: 5
+image:
+  filename: image_837_zoom_10.tif
+  image_id: 837
+  width: 636
+  height: 806
+coordinates:
+  lat: 49.24275
+  lon: 19.841403
+entrance:
+  x: 340.05
+  y: 381.97
+scale:
+  pixels_per_meter: 76.8
+north:
+  angle_deg: -0.0130000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6373000000
+  total_rotation_deg: -0.6507000000
+  A: 0.0130196942
+  D: -0.0001478702
+  B: -0.0001478702
+  E: -0.0130196942
+  C: 561219.628817
+  F: 153150.286736
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 76.72
+  - 77.58
+  - 77.01
+  - 76.88
+  - 76.63
+  entrance_std_px: 0.5300000000
+  outliers_removed: 1
+  flag: null

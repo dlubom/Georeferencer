@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.69
+  dir_id: '004327'
+  name: Serowa Dziura
+  n_submissions: 5
+image:
+  filename: image_12252_zoom_10.tif
+  image_id: 12252
+  width: 2540
+  height: 2808
+coordinates:
+  lat: 49.236419
+  lon: 19.8651
+entrance:
+  x: 1043.69
+  y: 1572.23
+scale:
+  pixels_per_meter: 236.96
+north:
+  angle_deg: 0.0380000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6552000000
+  total_rotation_deg: -0.6175000000
+  A: 0.0042198500
+  D: -0.0000454802
+  B: -0.0000454802
+  E: -0.0042198500
+  C: 562951.988122
+  F: 152467.803855
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 236.07
+  - 237.11
+  - 237.36
+  - 236.81
+  - 238.38
+  entrance_std_px: 2.12
+  outliers_removed: 1
+  flag: null

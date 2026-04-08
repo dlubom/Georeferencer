@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-22.02
+  dir_id: 004719
+  name: Jaskinia Koszowa
+  n_submissions: 5
+image:
+  filename: image_4789_zoom_10.tif
+  image_id: 4789
+  width: 1204
+  height: 1062
+coordinates:
+  lat: 49.249139
+  lon: 20.059694
+entrance:
+  x: 783.84
+  y: 418.46
+scale:
+  pixels_per_meter: 119.31
+north:
+  angle_deg: 0.0030000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.8028000000
+  total_rotation_deg: -0.8001000000
+  A: 0.0083805400
+  D: -0.0001170347
+  B: -0.0001170347
+  E: -0.0083805400
+  C: 577091.058429
+  F: 154058.519785
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 119.36
+  - 119.34
+  - 119.29
+  - 119.29
+  - 119.2
+  entrance_std_px: 0.5200000000
+  outliers_removed: 1
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.40
+  dir_id: 001129
+  name: Zimna Szczelina III
+  n_submissions: 5
+image:
+  filename: image_602_zoom_10.tif
+  image_id: 602
+  width: 1454
+  height: 1060
+coordinates:
+  lat: 49.246119
+  lon: 19.862156
+entrance:
+  x: 1080.78
+  y: 415.0
+scale:
+  pixels_per_meter: 98.64
+north:
+  angle_deg: 0.1050000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6531000000
+  total_rotation_deg: -0.5478000000
+  A: 0.0101377669
+  D: -0.0000969342
+  B: -0.0000969342
+  E: -0.0101377669
+  C: 562718.87366
+  F: 153540.994414
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 98.55
+  - 98.46
+  - 97.96
+  - 98.79
+  - 98.73
+  entrance_std_px: 1.2
+  outliers_removed: 1
+  flag: null

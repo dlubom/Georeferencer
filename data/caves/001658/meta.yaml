@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-09.07
+  dir_id: 001658
+  name: Jaskinia Dwuotworowa Krakowska
+  n_submissions: 5
+image:
+  filename: image_1184_zoom_10.tif
+  image_id: 1184
+  width: 738
+  height: 1096
+coordinates:
+  lat: 49.234653
+  lon: 19.875689
+entrance:
+  x: 512.65
+  y: 173.87
+scale:
+  pixels_per_meter: 77.11
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6632000000
+  total_rotation_deg: -0.6632000000
+  A: 0.0129677961
+  D: -0.0001501179
+  B: -0.0001501179
+  E: -0.0129677961
+  C: 563722.560538
+  F: 152276.056971
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 76.78
+  - 77.12
+  - 77.12
+  - 77.06
+  - 77.1
+  entrance_std_px: 0.2600000000
+  outliers_removed: 1
+  flag: null

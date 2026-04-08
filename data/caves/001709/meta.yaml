@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-10.06
+  dir_id: 001709
+  name: Kozi Schron
+  n_submissions: 5
+image:
+  filename: image_1223_zoom_10.tif
+  image_id: 1223
+  width: 1236
+  height: 1192
+coordinates:
+  lat: 49.230569
+  lon: 19.887589
+entrance:
+  x: 735.5
+  y: 439.0
+scale:
+  pixels_per_meter: 194.89
+north:
+  angle_deg: 0.0040000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6722000000
+  total_rotation_deg: -0.6678000000
+  A: 0.0051306957
+  D: -0.0000598024
+  B: -0.0000598024
+  E: -0.0051306957
+  C: 564596.785446
+  F: 151832.242321
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 194.89
+  - 194.83
+  - 195.42
+  - 38.87
+  - 195.0
+  entrance_std_px: 3.28
+  outliers_removed: 2
+  flag: null

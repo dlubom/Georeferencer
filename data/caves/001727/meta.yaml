@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.L-22.01
+  dir_id: '001727'
+  name: Mnichowy Komin
+  n_submissions: 5
+image:
+  filename: image_1256_zoom_10.tif
+  image_id: 1256
+  width: 896
+  height: 716
+coordinates:
+  lat: 49.193533
+  lon: 20.05535
+entrance:
+  x: 246.49
+  y: 531.34
+scale:
+  pixels_per_meter: 76.7
+north:
+  angle_deg: 0.0150000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7988000000
+  total_rotation_deg: -0.7835000000
+  A: 0.0130368004
+  D: -0.0001782899
+  B: -0.0001782899
+  E: -0.0130368004
+  C: 576864.62208
+  F: 147877.787203
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 76.45
+  - 76.14
+  - 76.7
+  - 76.94
+  - 77.09
+  entrance_std_px: 0.2200000000
+  outliers_removed: 0
+  flag: null

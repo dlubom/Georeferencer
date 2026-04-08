@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.C-05.06
+  dir_id: '001042'
+  name: Wojtkowa Szpara
+  n_submissions: 5
+image:
+  filename: image_514_zoom_10.tif
+  image_id: 514
+  width: 3396
+  height: 1768
+coordinates:
+  lat: 49.257625
+  lon: 19.815228
+entrance:
+  x: 2311.02
+  y: 1384.19
+scale:
+  pixels_per_meter: 97.55
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6177000000
+  total_rotation_deg: -0.6177000000
+  A: 0.0102502118
+  D: -0.0001105034
+  B: -0.0001105034
+  E: -0.0102502118
+  C: 559278.060562
+  F: 154791.98314
+quality:
+  ppm_cv: 0.0310000000
+  ppm_values:
+  - 103.93
+  - 103.94
+  - 97.47
+  - 97.55
+  - 97.55
+  entrance_std_px: 2.23
+  outliers_removed: 0
+  flag: null

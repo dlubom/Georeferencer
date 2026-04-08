@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.62
+  dir_id: '001541'
+  name: Szczelina za Płytą
+  n_submissions: 5
+image:
+  filename: image_1067_zoom_10.tif
+  image_id: 1067
+  width: 460
+  height: 488
+coordinates:
+  lat: 49.243419
+  lon: 19.910125
+entrance:
+  x: 275.07
+  y: 194.4
+scale:
+  pixels_per_meter: 76.81
+north:
+  angle_deg: -0.0520000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6894000000
+  total_rotation_deg: -0.7413000000
+  A: 0.0130185677
+  D: -0.0001684473
+  B: -0.0001684473
+  E: -0.0130185677
+  C: 566219.997499
+  F: 153280.089653
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 76.63
+  - 77.44
+  - 76.77
+  - 77.0
+  - 76.85
+  entrance_std_px: 0.7600000000
+  outliers_removed: 1
+  flag: null

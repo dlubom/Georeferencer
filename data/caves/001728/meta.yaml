@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-10.18
+  dir_id: 001728
+  name: Dziura nad Zawaliskiem
+  n_submissions: 5
+image:
+  filename: image_1236_zoom_10.tif
+  image_id: 1236
+  width: 392
+  height: 626
+coordinates:
+  lat: 49.231111
+  lon: 19.894722
+entrance:
+  x: 275.07
+  y: 530.2
+scale:
+  pixels_per_meter: 38.32
+north:
+  angle_deg: 0.0100000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6776000000
+  total_rotation_deg: -0.6671000000
+  A: 0.0260972108
+  D: -0.0003038806
+  B: -0.0003038806
+  E: -0.0260972108
+  C: 565111.951182
+  F: 151910.216811
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 38.34
+  - 38.57
+  - 38.29
+  - 38.34
+  - 38.28
+  entrance_std_px: 0.3400000000
+  outliers_removed: 1
+  flag: null

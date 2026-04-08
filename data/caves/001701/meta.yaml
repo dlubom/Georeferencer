@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-10.01
+  dir_id: '001701'
+  name: Jaskinia Lodowa w Ciemniaku
+  n_submissions: 5
+image:
+  filename: image_1217_zoom_10.tif
+  image_id: 1217
+  width: 5330
+  height: 5056
+coordinates:
+  lat: 49.233889
+  lon: 19.892083
+entrance:
+  x: 362.96
+  y: 3654.84
+scale:
+  pixels_per_meter: 49.04
+north:
+  angle_deg: 0.0030000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6756000000
+  total_rotation_deg: -0.6725000000
+  A: 0.0203893618
+  D: -0.0002393371
+  B: -0.0002393371
+  E: -0.0203893618
+  C: 564916.734377
+  F: 152277.366361
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 49.0
+  - 49.0
+  - 49.06
+  - 49.04
+  - 49.12
+  entrance_std_px: 1.65
+  outliers_removed: 0
+  flag: null

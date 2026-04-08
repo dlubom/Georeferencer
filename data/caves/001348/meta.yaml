@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-07.43
+  dir_id: 001348
+  name: Trzyotworowy Kominek przy Bańdziochu
+  n_submissions: 5
+image:
+  filename: image_856_zoom_10.tif
+  image_id: 856
+  width: 622
+  height: 500
+coordinates:
+  lat: 49.242339
+  lon: 19.849681
+entrance:
+  x: 177.03
+  y: 131.99
+scale:
+  pixels_per_meter: 76.71
+north:
+  angle_deg: 0.0520000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6436000000
+  total_rotation_deg: -0.5920000000
+  A: 0.0130355193
+  D: -0.0001346810
+  B: -0.0001346810
+  E: -0.0130355193
+  C: 561824.558396
+  F: 153108.065124
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 76.71
+  - 77.09
+  - 76.22
+  - 77.08
+  - 76.61
+  entrance_std_px: 0.8800000000
+  outliers_removed: 0
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.26
+  dir_id: '001561'
+  name: Studnia z Kosówką
+  n_submissions: 5
+image:
+  filename: image_1076_zoom_10.tif
+  image_id: 1076
+  width: 562
+  height: 1154
+coordinates:
+  lat: 49.239606
+  lon: 19.921833
+entrance:
+  x: 304.16
+  y: 519.16
+scale:
+  pixels_per_meter: 76.62
+north:
+  angle_deg: -0.0270000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6982000000
+  total_rotation_deg: -0.7256000000
+  A: 0.0130501358
+  D: -0.0001652698
+  B: -0.0001652698
+  E: -0.0130501358
+  C: 567076.727047
+  F: 152870.899428
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 76.77
+  - 77.08
+  - 76.54
+  - 76.59
+  - 76.66
+  entrance_std_px: 0.3000000000
+  outliers_removed: 1
+  flag: null

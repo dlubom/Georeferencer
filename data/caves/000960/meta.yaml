@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-09.01
+  dir_id: 000960
+  name: Dziura w Kończystej Turni
+  n_submissions: 5
+image:
+  filename: image_452_zoom_10.tif
+  image_id: 452
+  width: 916
+  height: 948
+coordinates:
+  lat: 49.263978
+  lon: 19.878553
+entrance:
+  x: 456.59
+  y: 734.76
+scale:
+  pixels_per_meter: 77.16
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6657000000
+  total_rotation_deg: -0.6657000000
+  A: 0.0129584815
+  D: -0.0001505671
+  B: -0.0001505671
+  E: -0.0129584815
+  C: 563893.944355
+  F: 155544.760197
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 154.23
+  - 77.1
+  - 77.35
+  - 77.23
+  - 77.06
+  entrance_std_px: 0.5000000000
+  outliers_removed: 1
+  flag: null

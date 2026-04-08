@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-11.18
+  dir_id: '004430'
+  name: Grota nad Małą Przełączką
+  n_submissions: 5
+image:
+  filename: image_4460_zoom_10.tif
+  image_id: 4460
+  width: 1478
+  height: 678
+coordinates:
+  lat: 49.228789
+  lon: 19.903919
+entrance:
+  x: 482.84
+  y: 445.46
+scale:
+  pixels_per_meter: 59.21
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6846000000
+  total_rotation_deg: -0.6846000000
+  A: 0.0168882124
+  D: -0.0002017867
+  B: -0.0002017867
+  E: -0.0168882124
+  C: 565783.348507
+  F: 151653.820747
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 59.21
+  - 59.54
+  - 59.38
+  - 59.2
+  - 59.06
+  entrance_std_px: 0.9700000000
+  outliers_removed: 0
+  flag: null

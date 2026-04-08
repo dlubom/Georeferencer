@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-09.01
+  dir_id: '001172'
+  name: Jaskinia Zakopiańska
+  n_submissions: 5
+image:
+  filename: image_656_zoom_10.tif
+  image_id: 656
+  width: 2786
+  height: 3752
+coordinates:
+  lat: 49.247411
+  lon: 19.880906
+entrance:
+  x: 944.53
+  y: 1400.03
+scale:
+  pixels_per_meter: 98.3
+north:
+  angle_deg: 0.0060000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6673000000
+  total_rotation_deg: -0.6613000000
+  A: 0.0101724853
+  D: -0.0001174074
+  B: -0.0001174074
+  E: -0.0101724853
+  C: 564082.893521
+  F: 153710.341986
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 97.94
+  - 97.86
+  - 98.38
+  - 98.3
+  - 98.31
+  entrance_std_px: 1.23
+  outliers_removed: 0
+  flag: null

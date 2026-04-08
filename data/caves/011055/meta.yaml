@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.73
+  dir_id: '011055'
+  name: Dziura nad Śnieżną Studnią
+  n_submissions: 5
+image:
+  filename: image_12381_zoom_10.tif
+  image_id: 12381
+  width: 1932
+  height: 1204
+coordinates:
+  lat: 49.241011
+  lon: 19.921983
+entrance:
+  x: 1201.61
+  y: 819.45
+scale:
+  pixels_per_meter: 236.03
+north:
+  angle_deg: -0.0090000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6984000000
+  total_rotation_deg: -0.7070000000
+  A: 0.0042363809
+  D: -0.0000522766
+  B: -0.0000522766
+  E: -0.0042363809
+  C: 567084.574701
+  F: 153023.885332
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 236.04
+  - 236.03
+  - 235.42
+  - 236.29
+  - 235.12
+  entrance_std_px: 1.18
+  outliers_removed: 0
+  flag: null

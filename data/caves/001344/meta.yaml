@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-07.40
+  dir_id: '001344'
+  name: Schronisko nad Trawersem w Żeleźniaku II
+  n_submissions: 5
+image:
+  filename: image_847_zoom_10.tif
+  image_id: 847
+  width: 618
+  height: 720
+coordinates:
+  lat: 49.243308
+  lon: 19.847844
+entrance:
+  x: 306.96
+  y: 157.43
+scale:
+  pixels_per_meter: 77.08
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6422000000
+  total_rotation_deg: -0.6422000000
+  A: 0.0129727329
+  D: -0.0001454183
+  B: -0.0001454183
+  E: -0.0129727329
+  C: 561688.014382
+  F: 153214.597204
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 77.08
+  - 76.91
+  - 77.08
+  - 77.05
+  - 77.28
+  entrance_std_px: 0.3200000000
+  outliers_removed: 2
+  flag: null

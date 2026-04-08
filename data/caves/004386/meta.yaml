@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.A-06.01
+  dir_id: 004386
+  name: Pasterski Schron
+  n_submissions: 5
+image:
+  filename: image_4403_zoom_10.tif
+  image_id: 4403
+  width: 5908
+  height: 5278
+coordinates:
+  lat: 49.277306
+  lon: 19.830028
+entrance:
+  x: 1798.59
+  y: 3408.18
+scale:
+  pixels_per_meter: 473.78
+north:
+  angle_deg: -0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6291000000
+  total_rotation_deg: -0.6299000000
+  A: 0.0021105453
+  D: -0.0000232048
+  B: -0.0000232048
+  E: -0.0021105453
+  C: 560350.442575
+  F: 156983.741068
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 473.78
+  - 467.04
+  - 473.82
+  - 472.35
+  - 477.35
+  entrance_std_px: 4.41
+  outliers_removed: 2
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-16.05
+  dir_id: '001231'
+  name: Jaskinia Dudnica
+  n_submissions: 5
+image:
+  filename: image_715_zoom_10.tif
+  image_id: 715
+  width: 2834
+  height: 1574
+coordinates:
+  lat: 49.255125
+  lon: 19.967381
+entrance:
+  x: 147.84
+  y: 1389.26
+scale:
+  pixels_per_meter: 19.29
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7329000000
+  total_rotation_deg: -0.7329000000
+  A: 0.0518456555
+  D: -0.0006632303
+  B: -0.0006632303
+  E: -0.0518456555
+  C: 570366.230683
+  F: 154702.286318
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 19.29
+  - 19.29
+  - 19.29
+  - 19.27
+  - 19.25
+  entrance_std_px: 0.4800000000
+  outliers_removed: 1
+  flag: null

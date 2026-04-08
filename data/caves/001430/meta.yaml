@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.54
+  dir_id: '001430'
+  name: Szczelina na Grzędzie
+  n_submissions: 5
+image:
+  filename: image_924_zoom_10.tif
+  image_id: 924
+  width: 514
+  height: 466
+coordinates:
+  lat: 49.241961
+  lon: 19.857008
+entrance:
+  x: 338.61
+  y: 182.19
+scale:
+  pixels_per_meter: 76.74
+north:
+  angle_deg: 0.1720000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6492000000
+  total_rotation_deg: -0.4774000000
+  A: 0.0130303746
+  D: -0.0001085652
+  B: -0.0001085652
+  E: -0.0130303746
+  C: 562356.073578
+  F: 153072.73763
+quality:
+  ppm_cv: 0.0100000000
+  ppm_values:
+  - 76.76
+  - 75.17
+  - 76.74
+  - 75.85
+  - 77.46
+  entrance_std_px: 0.2300000000
+  outliers_removed: 0
+  flag: null

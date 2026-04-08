@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-06.02
+  dir_id: 001298
+  name: Jaskinia w Kosówkach
+  n_submissions: 5
+image:
+  filename: image_790_zoom_10.tif
+  image_id: 790
+  width: 2370
+  height: 3718
+coordinates:
+  lat: 49.242292
+  lon: 19.841456
+entrance:
+  x: 1277.54
+  y: 1615.62
+scale:
+  pixels_per_meter: 196.49
+north:
+  angle_deg: -0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6374000000
+  total_rotation_deg: -0.6386000000
+  A: 0.0050890553
+  D: -0.0000567216
+  B: -0.0000567216
+  E: -0.0050890553
+  C: 561222.012581
+  F: 153102.700967
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 197.34
+  - 196.08
+  - 196.72
+  - 195.71
+  - 196.49
+  entrance_std_px: 2.44
+  outliers_removed: 0
+  flag: null

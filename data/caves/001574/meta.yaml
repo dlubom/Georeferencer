@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-13.03
+  dir_id: '001574'
+  name: Mnichowa Studnia Wyżnia
+  n_submissions: 5
+image:
+  filename: image_1125_zoom_10.tif
+  image_id: 1125
+  width: 1578
+  height: 1174
+coordinates:
+  lat: 49.243239
+  lon: 19.929636
+entrance:
+  x: 1422.22
+  y: 950.73
+scale:
+  pixels_per_meter: 77.21
+north:
+  angle_deg: 0.0060000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7042000000
+  total_rotation_deg: -0.6982000000
+  A: 0.0129499650
+  D: -0.0001578241
+  B: -0.0001578241
+  E: -0.0129499650
+  C: 567625.187386
+  F: 153287.311336
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 25.63
+  - 77.29
+  - 77.2
+  - 77.23
+  - 76.92
+  entrance_std_px: 0.4100000000
+  outliers_removed: 1
+  flag: null

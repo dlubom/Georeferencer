@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.A-24.05
+  dir_id: '011042'
+  name: Nyża nad Grotą w Jaworzyńskim Żlebie
+  n_submissions: 5
+image:
+  filename: image_12371_zoom_10.tif
+  image_id: 12371
+  width: 2350
+  height: 2292
+coordinates:
+  lat: 49.281917
+  lon: 20.074
+entrance:
+  x: 591.05
+  y: 1262.89
+scale:
+  pixels_per_meter: 236.81
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.8140000000
+  total_rotation_deg: -0.8140000000
+  A: 0.0042223726
+  D: -0.0000599923
+  B: -0.0000599923
+  E: -0.0042223726
+  C: 578084.220825
+  F: 157717.727271
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 236.0
+  - 237.09
+  - 236.81
+  - 236.96
+  - 236.2
+  entrance_std_px: 1.11
+  outliers_removed: 0
+  flag: null

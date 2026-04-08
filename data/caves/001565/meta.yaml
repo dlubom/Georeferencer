@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.30
+  dir_id: '001565'
+  name: Awen z Korkiem Śnieżnym
+  n_submissions: 5
+image:
+  filename: image_1080_zoom_10.tif
+  image_id: 1080
+  width: 662
+  height: 770
+coordinates:
+  lat: 49.245064
+  lon: 19.917642
+entrance:
+  x: 218.96
+  y: 170.95
+scale:
+  pixels_per_meter: 38.41
+north:
+  angle_deg: 0.0880000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6951000000
+  total_rotation_deg: -0.6074000000
+  A: 0.0260318197
+  D: -0.0002759966
+  B: -0.0002759966
+  E: -0.0260318197
+  C: 566762.628577
+  F: 153471.448197
+quality:
+  ppm_cv: 0.0050000000
+  ppm_values:
+  - 38.41
+  - 38.53
+  - 38.53
+  - 38.09
+  - 38.17
+  entrance_std_px: 0.3400000000
+  outliers_removed: 0
+  flag: null

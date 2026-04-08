@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.64
+  dir_id: '004126'
+  name: Dziurka w Organach
+  n_submissions: 5
+image:
+  filename: image_4103_zoom_10.tif
+  image_id: 4103
+  width: 1466
+  height: 594
+coordinates:
+  lat: 49.246797
+  lon: 19.865994
+entrance:
+  x: 554.68
+  y: 394.03
+scale:
+  pixels_per_meter: 118.98
+north:
+  angle_deg: 0.0240000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6560000000
+  total_rotation_deg: -0.6322000000
+  A: 0.0084039133
+  D: -0.0000927325
+  B: -0.0000927325
+  E: -0.0084039133
+  C: 563003.549176
+  F: 153618.585055
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 119.17
+  - 118.82
+  - 118.98
+  - 119.04
+  - 118.66
+  entrance_std_px: 0.8900000000
+  outliers_removed: 0
+  flag: null

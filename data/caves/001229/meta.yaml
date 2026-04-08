@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-12.10
+  dir_id: 001229
+  name: Jaskinia nad Korytem
+  n_submissions: 5
+image:
+  filename: image_717_zoom_10.tif
+  image_id: 717
+  width: 1532
+  height: 1146
+coordinates:
+  lat: 49.247858
+  lon: 19.910797
+entrance:
+  x: 248.71
+  y: 244.94
+scale:
+  pixels_per_meter: 38.54
+north:
+  angle_deg: -0.0080000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6900000000
+  total_rotation_deg: -0.6980000000
+  A: 0.0259430398
+  D: -0.0003160823
+  B: -0.0003160823
+  E: -0.0259430398
+  C: 566260.126016
+  F: 153777.860668
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 38.6
+  - 38.59
+  - 38.45
+  - 38.5
+  - 115.8
+  entrance_std_px: 0.8200000000
+  outliers_removed: 1
+  flag: null

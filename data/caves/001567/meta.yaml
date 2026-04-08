@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.32
+  dir_id: '001567'
+  name: Jaskinia Strzelista
+  n_submissions: 5
+image:
+  filename: image_1082_zoom_10.tif
+  image_id: 1082
+  width: 4940
+  height: 5056
+coordinates:
+  lat: 49.244756
+  lon: 19.918542
+entrance:
+  x: 592.98
+  y: 828.4
+scale:
+  pixels_per_meter: 97.93
+north:
+  angle_deg: 0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6958000000
+  total_rotation_deg: -0.6948000000
+  A: 0.0102103589
+  D: -0.0001238231
+  B: -0.0001238231
+  E: -0.0102103589
+  C: 566828.228844
+  F: 153442.034849
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 97.95
+  - 98.01
+  - 97.93
+  - 97.92
+  - 97.83
+  entrance_std_px: 1.14
+  outliers_removed: 2
+  flag: null

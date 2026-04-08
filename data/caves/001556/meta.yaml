@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.21
+  dir_id: '001556'
+  name: Dziura w Wantach
+  n_submissions: 5
+image:
+  filename: image_1071_zoom_10.tif
+  image_id: 1071
+  width: 856
+  height: 856
+coordinates:
+  lat: 49.244064
+  lon: 19.917506
+entrance:
+  x: 729.12
+  y: 491.8
+scale:
+  pixels_per_meter: 38.73
+north:
+  angle_deg: 0.0270000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6950000000
+  total_rotation_deg: -0.6675000000
+  A: 0.0258172503
+  D: -0.0003008022
+  B: -0.0003008022
+  E: -0.0258172503
+  C: 566741.058144
+  F: 153368.599275
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 38.76
+  - 38.48
+  - 38.91
+  - 38.58
+  - 38.73
+  entrance_std_px: 0.3500000000
+  outliers_removed: 0
+  flag: null

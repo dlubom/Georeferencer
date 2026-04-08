@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-12.01
+  dir_id: 001680
+  name: Litworowa Studnia
+  n_submissions: 5
+image:
+  filename: image_1204_zoom_10.tif
+  image_id: 1204
+  width: 904
+  height: 1266
+coordinates:
+  lat: 49.233944
+  lon: 19.915556
+entrance:
+  x: 598.97
+  y: 242.85
+scale:
+  pixels_per_meter: 38.5
+north:
+  angle_deg: -0.0030000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6934000000
+  total_rotation_deg: -0.6966000000
+  A: 0.0259697271
+  D: -0.0003157727
+  B: -0.0003157727
+  E: -0.0259697271
+  C: 566615.984903
+  F: 152235.779074
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 38.49
+  - 38.52
+  - 38.3
+  - 38.49
+  - 38.54
+  entrance_std_px: 0.4000000000
+  outliers_removed: 1
+  flag: null

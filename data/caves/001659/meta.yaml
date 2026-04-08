@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-09.08
+  dir_id: 001659
+  name: Trójkątny Schron
+  n_submissions: 5
+image:
+  filename: image_1185_zoom_10.tif
+  image_id: 1185
+  width: 508
+  height: 506
+coordinates:
+  lat: 49.234736
+  lon: 19.875878
+entrance:
+  x: 169.92
+  y: 321.84
+scale:
+  pixels_per_meter: 76.63
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6634000000
+  total_rotation_deg: -0.6634000000
+  A: 0.0130486387
+  D: -0.0001510865
+  B: -0.0001510865
+  E: -0.0130486387
+  C: 563740.661557
+  F: 152287.333964
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 76.89
+  - 76.66
+  - 76.3
+  - 75.95
+  - 76.63
+  entrance_std_px: 1.12
+  outliers_removed: 0
+  flag: null

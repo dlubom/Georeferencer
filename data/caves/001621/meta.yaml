@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-13.20
+  dir_id: '001621'
+  name: Dziura Mnichowa Mała
+  n_submissions: 5
+image:
+  filename: image_1143_zoom_10.tif
+  image_id: 1143
+  width: 576
+  height: 706
+coordinates:
+  lat: 49.244175
+  lon: 19.929864
+entrance:
+  x: 85.94
+  y: 519.16
+scale:
+  pixels_per_meter: 77.02
+north:
+  angle_deg: -0.0700000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7044000000
+  total_rotation_deg: -0.7743000000
+  A: 0.0129823430
+  D: -0.0001754447
+  B: -0.0001754447
+  E: -0.0129823430
+  C: 567657.741328
+  F: 153385.755771
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.01
+  - 77.03
+  - 76.97
+  - 77.08
+  - 76.82
+  entrance_std_px: 0.3700000000
+  outliers_removed: 1
+  flag: null

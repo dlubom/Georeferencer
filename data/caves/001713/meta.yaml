@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-10.10
+  dir_id: '001713'
+  name: Kamienista Szczelina
+  n_submissions: 5
+image:
+  filename: image_1227_zoom_10.tif
+  image_id: 1227
+  width: 1826
+  height: 1876
+coordinates:
+  lat: 49.234178
+  lon: 19.894386
+entrance:
+  x: 578.01
+  y: 573.74
+scale:
+  pixels_per_meter: 196.06
+north:
+  angle_deg: -0.0040000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6774000000
+  total_rotation_deg: -0.6815000000
+  A: 0.0051001550
+  D: -0.0000606660
+  B: -0.0000606660
+  E: -0.0051001550
+  C: 565087.571142
+  F: 152239.817868
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 197.55
+  - 196.05
+  - 196.08
+  - 196.06
+  - 195.99
+  entrance_std_px: 1.57
+  outliers_removed: 2
+  flag: null

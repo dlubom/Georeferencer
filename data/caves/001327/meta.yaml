@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-07.28
+  dir_id: '001327'
+  name: Schronisko nad Wiśniakową Jamą
+  n_submissions: 5
+image:
+  filename: image_826_zoom_10.tif
+  image_id: 826
+  width: 686
+  height: 700
+coordinates:
+  lat: 49.241456
+  lon: 19.851528
+entrance:
+  x: 474.7
+  y: 232.86
+scale:
+  pixels_per_meter: 77.08
+north:
+  angle_deg: -0.0120000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6450000000
+  total_rotation_deg: -0.6571000000
+  A: 0.0129719050
+  D: -0.0001487669
+  B: -0.0001487669
+  E: -0.0129719050
+  C: 561956.225065
+  F: 153012.791407
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 77.34
+  - 76.63
+  - 76.77
+  - 77.2
+  - 77.08
+  entrance_std_px: 0.5900000000
+  outliers_removed: 0
+  flag: null

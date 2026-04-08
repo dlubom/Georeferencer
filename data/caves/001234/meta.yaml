@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-16.07
+  dir_id: '001234'
+  name: Nyża pod Myślenicką Szczeliną
+  n_submissions: 5
+image:
+  filename: image_718_zoom_10.tif
+  image_id: 718
+  width: 516
+  height: 706
+coordinates:
+  lat: 49.251356
+  lon: 19.972656
+entrance:
+  x: 123.3
+  y: 297.01
+scale:
+  pixels_per_meter: 77.16
+north:
+  angle_deg: -0.0710000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7369000000
+  total_rotation_deg: -0.8081000000
+  A: 0.0129588687
+  D: -0.0001827905
+  B: -0.0001827905
+  E: -0.0129588687
+  C: 570760.547137
+  F: 154220.089416
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 76.66
+  - 76.79
+  - 77.24
+  - 77.16
+  - 77.32
+  entrance_std_px: 0.3800000000
+  outliers_removed: 0
+  flag: null

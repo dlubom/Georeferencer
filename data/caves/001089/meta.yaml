@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.03
+  dir_id: 001089
+  name: Jaskinia nad Mostkiem Wyżnia
+  n_submissions: 5
+image:
+  filename: image_574_zoom_10.tif
+  image_id: 574
+  width: 898
+  height: 1022
+coordinates:
+  lat: 49.251036
+  lon: 19.862678
+entrance:
+  x: 487.9
+  y: 479.51
+scale:
+  pixels_per_meter: 38.81
+north:
+  angle_deg: -0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6535000000
+  total_rotation_deg: -0.6540000000
+  A: 0.0257617471
+  D: -0.0002940796
+  B: -0.0002940796
+  E: -0.0257617471
+  C: 562749.108455
+  F: 154096.062093
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 38.73
+  - 38.7
+  - 38.87
+  - 38.84
+  - 38.81
+  entrance_std_px: 0.4900000000
+  outliers_removed: 0
+  flag: null

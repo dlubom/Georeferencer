@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-09.03
+  dir_id: '001654'
+  name: Jaskinia Piarżysta
+  n_submissions: 5
+image:
+  filename: image_1179_zoom_10.tif
+  image_id: 1179
+  width: 2754
+  height: 4128
+coordinates:
+  lat: 49.234469
+  lon: 19.874306
+entrance:
+  x: 1858.26
+  y: 573.19
+scale:
+  pixels_per_meter: 195.75
+north:
+  angle_deg: -0.0730000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6622000000
+  total_rotation_deg: -0.7352000000
+  A: 0.0051081569
+  D: -0.0000655477
+  B: -0.0000655477
+  E: -0.0051081569
+  C: 563619.315891
+  F: 152255.162013
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 195.75
+  - 195.5
+  - 195.98
+  - 196.04
+  - 195.46
+  entrance_std_px: 1.41
+  outliers_removed: 0
+  flag: null

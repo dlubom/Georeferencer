@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.A-24.01
+  dir_id: 000956
+  name: Nyża nad Jaworzyńskim Żlebem
+  n_submissions: 5
+image:
+  filename: image_448_zoom_10.tif
+  image_id: 448
+  width: 666
+  height: 992
+coordinates:
+  lat: 49.282528
+  lon: 20.074139
+entrance:
+  x: 304.66
+  y: 225.83
+scale:
+  pixels_per_meter: 76.87
+north:
+  angle_deg: 0.0870000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.8141000000
+  total_rotation_deg: -0.7275000000
+  A: 0.0130084020
+  D: -0.0001651700
+  B: -0.0001651700
+  E: -0.0130084020
+  C: 578091.855949
+  F: 157783.394159
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 76.84
+  - 76.87
+  - 77.24
+  - 76.73
+  - 77.23
+  entrance_std_px: 0.5300000000
+  outliers_removed: 0
+  flag: null

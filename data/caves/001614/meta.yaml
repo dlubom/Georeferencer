@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.67
+  dir_id: '001614'
+  name: Komórka przy Średnim Leju
+  n_submissions: 5
+image:
+  filename: image_1120_zoom_10.tif
+  image_id: 1120
+  width: 906
+  height: 1580
+coordinates:
+  lat: 49.239822
+  lon: 19.920728
+entrance:
+  x: 279.76
+  y: 633.05
+scale:
+  pixels_per_meter: 38.55
+north:
+  angle_deg: -0.0090000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6974000000
+  total_rotation_deg: -0.7063000000
+  A: 0.0259404533
+  D: -0.0003197816
+  B: -0.0003197816
+  E: -0.0259404533
+  C: 566992.855123
+  F: 152903.610762
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 38.47
+  - 38.68
+  - 38.54
+  - 38.61
+  - 38.55
+  entrance_std_px: 1.23
+  outliers_removed: 0
+  flag: null

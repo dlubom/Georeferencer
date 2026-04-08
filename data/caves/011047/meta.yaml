@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.A-05.01
+  dir_id: '011047'
+  name: Siwiański Schron
+  n_submissions: 5
+image:
+  filename: image_12340_zoom_10.tif
+  image_id: 12340
+  width: 2018
+  height: 2044
+coordinates:
+  lat: 49.276528
+  lon: 19.824778
+entrance:
+  x: 942.24
+  y: 1200.25
+scale:
+  pixels_per_meter: 236.67
+north:
+  angle_deg: -0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6251000000
+  total_rotation_deg: -0.6251000000
+  A: 0.0042250879
+  D: -0.0000460958
+  B: -0.0000460958
+  E: -0.0042250879
+  C: 559969.435679
+  F: 156890.979135
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 236.67
+  - 236.72
+  - 236.88
+  - 235.75
+  - 236.18
+  entrance_std_px: 0.8800000000
+  outliers_removed: 0
+  flag: null

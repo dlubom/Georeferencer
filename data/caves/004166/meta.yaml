@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-12.25
+  dir_id: '004166'
+  name: Jaskinia pod Żebrem
+  n_submissions: 5
+image:
+  filename: image_4164_zoom_10.tif
+  image_id: 4164
+  width: 1478
+  height: 756
+coordinates:
+  lat: 49.247264
+  lon: 19.913022
+entrance:
+  x: 1329.95
+  y: 256.22
+scale:
+  pixels_per_meter: 118.12
+north:
+  angle_deg: 0.0120000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6916000000
+  total_rotation_deg: -0.6798000000
+  A: 0.0084652312
+  D: -0.0001004396
+  B: -0.0001004396
+  E: -0.0084652312
+  C: 566417.946733
+  F: 153709.668072
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 118.07
+  - 118.11
+  - 118.76
+  - 118.2
+  - 118.13
+  entrance_std_px: 1.11
+  outliers_removed: 1
+  flag: null

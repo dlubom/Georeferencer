@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-16.10
+  dir_id: '001237'
+  name: Schron z Nietoperzami
+  n_submissions: 5
+image:
+  filename: image_721_zoom_10.tif
+  image_id: 721
+  width: 706
+  height: 738
+coordinates:
+  lat: 49.251681
+  lon: 19.972922
+entrance:
+  x: 228.21
+  y: 234.84
+scale:
+  pixels_per_meter: 77.07
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7371000000
+  total_rotation_deg: -0.7371000000
+  A: 0.0129746367
+  D: -0.0001669189
+  B: -0.0001669189
+  E: -0.0129746367
+  C: 570778.055829
+  F: 154255.670588
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 77.2
+  - 77.19
+  - 76.46
+  - 76.88
+  - 77.07
+  entrance_std_px: 0.9000000000
+  outliers_removed: 0
+  flag: null

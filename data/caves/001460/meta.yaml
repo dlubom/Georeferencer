@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.21
+  dir_id: '001460'
+  name: Dudzia Dziura
+  n_submissions: 5
+image:
+  filename: image_965_zoom_10.tif
+  image_id: 965
+  width: 2812
+  height: 2090
+coordinates:
+  lat: 49.235767
+  lon: 19.872492
+entrance:
+  x: 2494.96
+  y: 582.79
+scale:
+  pixels_per_meter: 195.73
+north:
+  angle_deg: -0.0040000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6608000000
+  total_rotation_deg: -0.6651000000
+  A: 0.0051086447
+  D: -0.0000593017
+  B: -0.0000593017
+  E: -0.0051086447
+  C: 563482.380672
+  F: 152397.965893
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 195.68
+  - 195.84
+  - 195.79
+  - 195.67
+  - 196.11
+  entrance_std_px: 1.03
+  outliers_removed: 1
+  flag: null

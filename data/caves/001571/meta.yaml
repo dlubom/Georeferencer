@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.36
+  dir_id: '001571'
+  name: Wilczy Schron
+  n_submissions: 5
+image:
+  filename: image_1086_zoom_10.tif
+  image_id: 1086
+  width: 2098
+  height: 2910
+coordinates:
+  lat: 49.241394
+  lon: 19.924392
+entrance:
+  x: 1490.45
+  y: 506.23
+scale:
+  pixels_per_meter: 195.6
+north:
+  angle_deg: 0.0020000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7002000000
+  total_rotation_deg: -0.6982000000
+  A: 0.0051121140
+  D: -0.0000622950
+  B: -0.0000622950
+  E: -0.0051121140
+  C: 567256.806965
+  F: 153067.73583
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 195.64
+  - 196.66
+  - 195.62
+  - 195.58
+  - 195.52
+  entrance_std_px: 1.65
+  outliers_removed: 1
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.19
+  dir_id: 001109
+  name: Szczelina nad Zimną
+  n_submissions: 5
+image:
+  filename: image_611_zoom_10.tif
+  image_id: 611
+  width: 1598
+  height: 1594
+coordinates:
+  lat: 49.248956
+  lon: 19.867944
+entrance:
+  x: 334.14
+  y: 962.92
+scale:
+  pixels_per_meter: 195.99
+north:
+  angle_deg: -0.0030000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6575000000
+  total_rotation_deg: -0.6602000000
+  A: 0.0051020090
+  D: -0.0000587887
+  B: -0.0000587887
+  E: -0.0051020090
+  C: 563145.649174
+  F: 153861.721206
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 196.04
+  - 195.99
+  - 196.53
+  - 195.53
+  - 195.98
+  entrance_std_px: 1.45
+  outliers_removed: 2
+  flag: null

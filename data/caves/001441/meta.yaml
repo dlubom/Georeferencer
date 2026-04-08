@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.10
+  dir_id: '001441'
+  name: Jaskinia pod Oknem
+  n_submissions: 5
+image:
+  filename: image_955_zoom_10.tif
+  image_id: 955
+  width: 3276
+  height: 3464
+coordinates:
+  lat: 49.236481
+  lon: 19.871086
+entrance:
+  x: 2053.42
+  y: 1814.52
+scale:
+  pixels_per_meter: 135.38
+north:
+  angle_deg: -0.0030000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6598000000
+  total_rotation_deg: -0.6624000000
+  A: 0.0073863561
+  D: -0.0000854031
+  B: -0.0000854031
+  E: -0.0073863561
+  C: 563376.846193
+  F: 152486.58955
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 135.42
+  - 135.18
+  - 135.33
+  - 135.44
+  - 135.64
+  entrance_std_px: 1.14
+  outliers_removed: 1
+  flag: null

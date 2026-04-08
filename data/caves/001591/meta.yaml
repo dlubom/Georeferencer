@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-12.50
+  dir_id: 001591
+  name: Szara Studnia
+  n_submissions: 5
+image:
+  filename: image_1101_zoom_10.tif
+  image_id: 1101
+  width: 1960
+  height: 1092
+coordinates:
+  lat: 49.244136
+  lon: 19.912372
+entrance:
+  x: 283.15
+  y: 533.23
+scale:
+  pixels_per_meter: 38.52
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6911000000
+  total_rotation_deg: -0.6911000000
+  A: 0.0259614843
+  D: -0.0003131710
+  B: -0.0003131710
+  E: -0.0259614843
+  C: 566378.89721
+  F: 153373.097848
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 38.64
+  - 38.65
+  - 38.45
+  - 38.47
+  - 38.52
+  entrance_std_px: 0.6600000000
+  outliers_removed: 0
+  flag: null

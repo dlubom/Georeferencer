@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-12.02
+  dir_id: '001207'
+  name: Siwarowa Dziura
+  n_submissions: 5
+image:
+  filename: image_703_zoom_10.tif
+  image_id: 703
+  width: 730
+  height: 1160
+coordinates:
+  lat: 49.248181
+  lon: 19.914483
+entrance:
+  x: 592.49
+  y: 237.45
+scale:
+  pixels_per_meter: 38.43
+north:
+  angle_deg: -0.0040000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6928000000
+  total_rotation_deg: -0.6969000000
+  A: 0.0260181749
+  D: -0.0003164713
+  B: -0.0003164713
+  E: -0.0260181749
+  C: 566518.903956
+  F: 153816.925759
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 38.4
+  - 38.52
+  - 38.4
+  - 38.43
+  - 38.58
+  entrance_std_px: 0.3900000000
+  outliers_removed: 0
+  flag: null

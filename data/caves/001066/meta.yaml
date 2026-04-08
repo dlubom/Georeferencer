@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.C-18.01
+  dir_id: '001066'
+  name: Nyża nad Olczyską I
+  n_submissions: 5
+image:
+  filename: image_538_zoom_10.tif
+  image_id: 538
+  width: 1490
+  height: 1558
+coordinates:
+  lat: 49.263889
+  lon: 20.004444
+entrance:
+  x: 1038.2
+  y: 1244.03
+scale:
+  pixels_per_meter: 196.67
+north:
+  angle_deg: 0.1050000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7611000000
+  total_rotation_deg: -0.6560000000
+  A: 0.0050843792
+  D: -0.0000582151
+  B: -0.0000582151
+  E: -0.0050843792
+  C: 573050.969892
+  F: 155645.68111
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 196.32
+  - 196.35
+  - 197.2
+  - 196.67
+  - 197.09
+  entrance_std_px: 7.48
+  outliers_removed: 0
+  flag: null

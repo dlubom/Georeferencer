@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.62
+  dir_id: 001438
+  name: Nyża przed Bramą
+  n_submissions: 5
+image:
+  filename: image_942_zoom_10.tif
+  image_id: 942
+  width: 452
+  height: 402
+coordinates:
+  lat: 49.2426
+  lon: 19.858092
+entrance:
+  x: 281.0
+  y: 139.01
+scale:
+  pixels_per_meter: 76.87
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6500000000
+  total_rotation_deg: -0.6500000000
+  A: 0.0130084088
+  D: -0.0001475793
+  B: -0.0001475793
+  E: -0.0130084088
+  C: 562434.902195
+  F: 153144.086086
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 76.78
+  - 77.02
+  - 76.82
+  - 77.01
+  - 76.87
+  entrance_std_px: 0.3300000000
+  outliers_removed: 0
+  flag: null

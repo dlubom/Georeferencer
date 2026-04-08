@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-10.01
+  dir_id: 001187
+  name: Jaskinia Miętusia Wyżnia
+  n_submissions: 5
+image:
+  filename: image_671_zoom_10.tif
+  image_id: 671
+  width: 4886
+  height: 2998
+coordinates:
+  lat: 49.245097
+  lon: 19.894492
+entrance:
+  x: 4638.73
+  y: 2746.32
+scale:
+  pixels_per_meter: 23.64
+north:
+  angle_deg: 0.0060000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6776000000
+  total_rotation_deg: -0.6719000000
+  A: 0.0423050530
+  D: -0.0004961345
+  B: -0.0004961345
+  E: -0.0423050530
+  C: 564888.968545
+  F: 153568.910552
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 23.64
+  - 23.64
+  - 23.63
+  - 23.66
+  - 23.64
+  entrance_std_px: 0.8300000000
+  outliers_removed: 1
+  flag: null

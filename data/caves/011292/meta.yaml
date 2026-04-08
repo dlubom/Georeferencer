@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-13.10
+  dir_id: 011292
+  name: Nyża przy Kozich Oknach
+  n_submissions: 5
+image:
+  filename: image_12920_zoom_10.tif
+  image_id: 12920
+  width: 2892
+  height: 1830
+coordinates:
+  lat: 49.249058
+  lon: 19.926067
+entrance:
+  x: 961.37
+  y: 922.04
+scale:
+  pixels_per_meter: 117.2
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7015000000
+  total_rotation_deg: -0.7015000000
+  A: 0.0085314692
+  D: -0.0001044670
+  B: -0.0001044670
+  E: -0.0085314692
+  C: 567367.741658
+  F: 153926.247695
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 118.09
+  - 117.2
+  - 117.17
+  - 117.66
+  - 116.97
+  entrance_std_px: 1.91
+  outliers_removed: 0
+  flag: null

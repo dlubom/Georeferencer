@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.33
+  dir_id: '001122'
+  name: Schron przed Sową II
+  n_submissions: 5
+image:
+  filename: image_624_zoom_10.tif
+  image_id: 624
+  width: 534
+  height: 646
+coordinates:
+  lat: 49.248989
+  lon: 19.864936
+entrance:
+  x: 299.1
+  y: 511.57
+scale:
+  pixels_per_meter: 77.02
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6552000000
+  total_rotation_deg: -0.6552000000
+  A: 0.0129836264
+  D: -0.0001484874
+  B: -0.0001484874
+  E: -0.0129836264
+  C: 562924.603347
+  F: 153864.635347
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 76.91
+  - 77.35
+  - 77.25
+  - 77.02
+  - 76.99
+  entrance_std_px: 0.3600000000
+  outliers_removed: 0
+  flag: null

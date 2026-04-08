@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-07.05
+  dir_id: 001291
+  name: Tylkowa Szczelina
+  n_submissions: 5
+image:
+  filename: image_772_zoom_10.tif
+  image_id: 772
+  width: 2040
+  height: 1298
+coordinates:
+  lat: 49.242761
+  lon: 19.842503
+entrance:
+  x: 1518.4
+  y: 761.73
+scale:
+  pixels_per_meter: 38.71
+north:
+  angle_deg: 0.0020000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6382000000
+  total_rotation_deg: -0.6362000000
+  A: 0.0258331202
+  D: -0.0002868377
+  B: -0.0002868377
+  E: -0.0258331202
+  C: 561265.01931
+  F: 153167.490246
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 38.71
+  - 38.7
+  - 38.89
+  - 38.88
+  - 38.7
+  entrance_std_px: 0.3900000000
+  outliers_removed: 0
+  flag: null

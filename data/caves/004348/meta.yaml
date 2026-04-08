@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.73
+  dir_id: 004348
+  name: Zbójnicka Piwnica
+  n_submissions: 5
+image:
+  filename: image_4365_zoom_10.tif
+  image_id: 4365
+  width: 674
+  height: 474
+coordinates:
+  lat: 49.236431
+  lon: 19.865281
+entrance:
+  x: 172.98
+  y: 283.71
+scale:
+  pixels_per_meter: 39.3
+north:
+  angle_deg: 0.0490000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6554000000
+  total_rotation_deg: -0.6063000000
+  A: 0.0254441548
+  D: -0.0002692549
+  B: -0.0002692549
+  E: -0.0254441548
+  C: 562965.152418
+  F: 152469.871517
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 39.71
+  - 39.45
+  - 39.29
+  - 39.3
+  - 38.95
+  entrance_std_px: 0.4300000000
+  outliers_removed: 2
+  flag: null

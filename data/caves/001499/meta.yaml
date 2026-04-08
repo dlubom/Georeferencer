@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.20
+  dir_id: 001499
+  name: Dziura w Progu Litworowym
+  n_submissions: 5
+image:
+  filename: image_1004_zoom_10.tif
+  image_id: 1004
+  width: 1056
+  height: 900
+coordinates:
+  lat: 49.241764
+  lon: 19.906247
+entrance:
+  x: 138.64
+  y: 332.85
+scale:
+  pixels_per_meter: 76.99
+north:
+  angle_deg: -0.0030000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6865000000
+  total_rotation_deg: -0.6891000000
+  A: 0.0129869687
+  D: -0.0001562029
+  B: -0.0001562029
+  E: -0.0129869687
+  C: 565941.829153
+  F: 153094.540899
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 76.99
+  - 77.0
+  - 76.99
+  - 76.99
+  - 77.0
+  entrance_std_px: 0.4600000000
+  outliers_removed: 0
+  flag: null

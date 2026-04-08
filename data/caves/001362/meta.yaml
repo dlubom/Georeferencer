@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.24
+  dir_id: '001362'
+  name: Szczelina pod Niżnią Zbójnicką Turnią
+  n_submissions: 5
+image:
+  filename: image_865_zoom_10.tif
+  image_id: 865
+  width: 654
+  height: 1314
+coordinates:
+  lat: 49.238317
+  lon: 19.864111
+entrance:
+  x: 499.82
+  y: 212.27
+scale:
+  pixels_per_meter: 77.4
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6545000000
+  total_rotation_deg: -0.6545000000
+  A: 0.0129184755
+  D: -0.0001475777
+  B: -0.0001475777
+  E: -0.0129184755
+  C: 562875.513441
+  F: 152674.048706
+quality:
+  ppm_cv: 0.0060000000
+  ppm_values:
+  - 78.19
+  - 78.29
+  - 77.05
+  - 77.3
+  - 77.4
+  entrance_std_px: 0.5200000000
+  outliers_removed: 0
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.65
+  dir_id: '001546'
+  name: Dziurka w Trawce
+  n_submissions: 5
+image:
+  filename: image_1064_zoom_10.tif
+  image_id: 1064
+  width: 1582
+  height: 1000
+coordinates:
+  lat: 49.2425
+  lon: 19.909628
+entrance:
+  x: 207.2
+  y: 581.15
+scale:
+  pixels_per_meter: 38.62
+north:
+  angle_deg: 0.0040000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6890000000
+  total_rotation_deg: -0.6853000000
+  A: 0.0258906141
+  D: -0.0003096939
+  B: -0.0003096939
+  E: -0.0258906141
+  C: 566183.426738
+  F: 153190.055406
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 38.62
+  - 38.46
+  - 38.62
+  - 38.63
+  - 38.62
+  entrance_std_px: 0.4600000000
+  outliers_removed: 1
+  flag: null

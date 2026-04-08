@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.53
+  dir_id: '001161'
+  name: Wąska Szczelina
+  n_submissions: 5
+image:
+  filename: image_645_zoom_10.tif
+  image_id: 645
+  width: 638
+  height: 570
+coordinates:
+  lat: 49.250169
+  lon: 19.866172
+entrance:
+  x: 156.41
+  y: 354.24
+scale:
+  pixels_per_meter: 77.1
+north:
+  angle_deg: 0.0360000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6562000000
+  total_rotation_deg: -0.6205000000
+  A: 0.0129694808
+  D: -0.0001404535
+  B: -0.0001404535
+  E: -0.0129694808
+  C: 563014.854084
+  F: 153994.733559
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.1
+  - 76.93
+  - 77.17
+  - 77.03
+  - 77.1
+  entrance_std_px: 0.4100000000
+  outliers_removed: 0
+  flag: null

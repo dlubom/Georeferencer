@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-09.06
+  dir_id: 000972
+  name: Mała Dziura w Kończystej Turni
+  n_submissions: 5
+image:
+  filename: image_457_zoom_10.tif
+  image_id: 457
+  width: 360
+  height: 628
+coordinates:
+  lat: 49.264156
+  lon: 19.878275
+entrance:
+  x: 152.25
+  y: 389.18
+scale:
+  pixels_per_meter: 76.85
+north:
+  angle_deg: -0.0500000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6655000000
+  total_rotation_deg: -0.7151000000
+  A: 0.0130119031
+  D: -0.0001623980
+  B: -0.0001623980
+  E: -0.0130119031
+  C: 563877.383278
+  F: 155559.805941
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 77.29
+  - 76.94
+  - 76.85
+  - 76.39
+  - 76.61
+  entrance_std_px: 0.6000000000
+  outliers_removed: 0
+  flag: null

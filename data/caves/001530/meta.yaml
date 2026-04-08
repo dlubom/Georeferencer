@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.57
+  dir_id: '001530'
+  name: Nisza w Kobylarzowej Turni
+  n_submissions: 5
+image:
+  filename: image_1043_zoom_10.tif
+  image_id: 1043
+  width: 878
+  height: 900
+coordinates:
+  lat: 49.243986
+  lon: 19.908464
+entrance:
+  x: 173.07
+  y: 278.92
+scale:
+  pixels_per_meter: 38.89
+north:
+  angle_deg: -0.0110000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6882000000
+  total_rotation_deg: -0.6996000000
+  A: 0.0257108770
+  D: -0.0003139702
+  B: -0.0003139702
+  E: -0.0257108770
+  C: 566097.568657
+  F: 153346.298341
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 38.75
+  - 38.89
+  - 38.9
+  - 38.92
+  - 38.56
+  entrance_std_px: 0.7600000000
+  outliers_removed: 0
+  flag: null

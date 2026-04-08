@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.11
+  dir_id: '001442'
+  name: Jaskinia z Konkrecjami Niżnia
+  n_submissions: 5
+image:
+  filename: image_956_zoom_10.tif
+  image_id: 956
+  width: 1748
+  height: 1866
+coordinates:
+  lat: 49.235761
+  lon: 19.874014
+entrance:
+  x: 426.23
+  y: 1407.64
+scale:
+  pixels_per_meter: 195.78
+north:
+  angle_deg: 0.0040000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6620000000
+  total_rotation_deg: -0.6578000000
+  A: 0.0051075050
+  D: -0.0000586376
+  B: -0.0000586376
+  E: -0.0051075050
+  C: 563603.76666
+  F: 152402.667066
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 195.18
+  - 195.93
+  - 195.12
+  - 195.78
+  - 195.84
+  entrance_std_px: 0.8400000000
+  outliers_removed: 0
+  flag: null

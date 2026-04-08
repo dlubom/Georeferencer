@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.55
+  dir_id: '001163'
+  name: Dziura w Organach VI
+  n_submissions: 5
+image:
+  filename: image_647_zoom_10.tif
+  image_id: 647
+  width: 1474
+  height: 928
+coordinates:
+  lat: 49.247047
+  lon: 19.866044
+entrance:
+  x: 456.28
+  y: 545.0
+scale:
+  pixels_per_meter: 59.55
+north:
+  angle_deg: 0.0020000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6561000000
+  total_rotation_deg: -0.6536000000
+  A: 0.0167912125
+  D: -0.0001915543
+  B: -0.0001915543
+  E: -0.0167912125
+  C: 563003.936745
+  F: 153652.28619
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 59.6
+  - 59.5
+  - 59.41
+  - 59.67
+  - 59.1
+  entrance_std_px: 0.6600000000
+  outliers_removed: 1
+  flag: null

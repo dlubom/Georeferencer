@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.C-13.02
+  dir_id: '001046'
+  name: Dziura nad Doliną Strążyską
+  n_submissions: 5
+image:
+  filename: image_518_zoom_10.tif
+  image_id: 518
+  width: 3072
+  height: 2676
+coordinates:
+  lat: 49.254681
+  lon: 19.934631
+entrance:
+  x: 705.54
+  y: 561.06
+scale:
+  pixels_per_meter: 98.22
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7081000000
+  total_rotation_deg: -0.7081000000
+  A: 0.0101801505
+  D: -0.0001258184
+  B: -0.0001258184
+  E: -0.0101801505
+  C: 567984.076314
+  F: 154556.656095
+quality:
+  ppm_cv: 0.0060000000
+  ppm_values:
+  - 98.75
+  - 98.42
+  - 97.14
+  - 87.02
+  - 98.02
+  entrance_std_px: 0.7600000000
+  outliers_removed: 1
+  flag: null

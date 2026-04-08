@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-07.21
+  dir_id: '001316'
+  name: Jaskinia Nowa nad Raptawicką Granią
+  n_submissions: 5
+image:
+  filename: image_820_zoom_10.tif
+  image_id: 820
+  width: 2662
+  height: 2376
+coordinates:
+  lat: 49.239744
+  lon: 19.852103
+entrance:
+  x: 2256.41
+  y: 636.4
+scale:
+  pixels_per_meter: 196.06
+north:
+  angle_deg: -0.0080000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6454000000
+  total_rotation_deg: -0.6538000000
+  A: 0.0051002309
+  D: -0.0000582050
+  B: -0.0000582050
+  E: -0.0051002309
+  C: 561994.860493
+  F: 152823.285759
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 196.11
+  - 196.26
+  - 196.76
+  - 196.01
+  - 195.66
+  entrance_std_px: 2.42
+  outliers_removed: 1
+  flag: null

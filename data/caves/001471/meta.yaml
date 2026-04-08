@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.04
+  dir_id: '001471'
+  name: Jaskinia w Szerokiem
+  n_submissions: 5
+image:
+  filename: image_976_zoom_10.tif
+  image_id: 976
+  width: 972
+  height: 1226
+coordinates:
+  lat: 49.238189
+  lon: 19.899186
+entrance:
+  x: 720.82
+  y: 962.66
+scale:
+  pixels_per_meter: 58.68
+north:
+  angle_deg: 0.1360000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6811000000
+  total_rotation_deg: -0.5455000000
+  A: 0.0170403902
+  D: -0.0001622306
+  B: -0.0001622306
+  E: -0.0170403902
+  C: 565422.382474
+  F: 152703.279341
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 58.31
+  - 58.75
+  - 58.49
+  - 58.68
+  - 58.88
+  entrance_std_px: 0.5400000000
+  outliers_removed: 0
+  flag: null

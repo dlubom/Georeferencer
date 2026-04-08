@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.45
+  dir_id: '001136'
+  name: Dziurawa Koleba
+  n_submissions: 5
+image:
+  filename: image_635_zoom_10.tif
+  image_id: 635
+  width: 584
+  height: 908
+coordinates:
+  lat: 49.248981
+  lon: 19.867656
+entrance:
+  x: 111.16
+  y: 238.08
+scale:
+  pixels_per_meter: 38.59
+north:
+  angle_deg: -0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6573000000
+  total_rotation_deg: -0.6579000000
+  A: 0.0259096886
+  D: -0.0002975332
+  B: -0.0002975332
+  E: -0.0259096886
+  C: 563123.503004
+  F: 153865.528306
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 38.57
+  - 38.56
+  - 38.66
+  - 38.59
+  - 38.62
+  entrance_std_px: 0.8400000000
+  outliers_removed: 0
+  flag: null

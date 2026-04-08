@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.70
+  dir_id: 004408
+  name: Jaskinia za Ratuszem Zimna
+  n_submissions: 5
+image:
+  filename: image_4424_zoom_10.tif
+  image_id: 4424
+  width: 1478
+  height: 1312
+coordinates:
+  lat: 49.242889
+  lon: 19.908778
+entrance:
+  x: 146.06
+  y: 354.79
+scale:
+  pixels_per_meter: 117.9
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6884000000
+  total_rotation_deg: -0.6884000000
+  A: 0.0084813445
+  D: -0.0001019047
+  B: -0.0001019047
+  E: -0.0084813445
+  C: 566125.040129
+  F: 153220.456602
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 117.8
+  - 117.84
+  - 117.9
+  - 117.97
+  - 117.95
+  entrance_std_px: 0.6100000000
+  outliers_removed: 0
+  flag: null

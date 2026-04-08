@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-14.02
+  dir_id: '001214'
+  name: Ruda Nyża
+  n_submissions: 5
+image:
+  filename: image_695_zoom_10.tif
+  image_id: 695
+  width: 980
+  height: 580
+coordinates:
+  lat: 49.251314
+  lon: 19.939058
+entrance:
+  x: 868.78
+  y: 388.85
+scale:
+  pixels_per_meter: 77.33
+north:
+  angle_deg: -0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7114000000
+  total_rotation_deg: -0.7114000000
+  A: 0.0129314111
+  D: -0.0001605726
+  B: -0.0001605726
+  E: -0.0129314111
+  C: 568306.707569
+  F: 154185.823138
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 77.33
+  - 77.47
+  - 77.69
+  - 77.22
+  - 77.3
+  entrance_std_px: 0.5400000000
+  outliers_removed: 0
+  flag: null

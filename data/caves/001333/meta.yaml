@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-06.10
+  dir_id: '001333'
+  name: Szczelina pod Skośną
+  n_submissions: 5
+image:
+  filename: image_836_zoom_10.tif
+  image_id: 836
+  width: 510
+  height: 532
+coordinates:
+  lat: 49.243017
+  lon: 19.841192
+entrance:
+  x: 109.74
+  y: 191.97
+scale:
+  pixels_per_meter: 76.91
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6372000000
+  total_rotation_deg: -0.6372000000
+  A: 0.0130010628
+  D: -0.0001445918
+  B: -0.0001445918
+  E: -0.0130010628
+  C: 561206.917549
+  F: 153177.277299
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 76.88
+  - 76.97
+  - 77.02
+  - 76.91
+  - 76.76
+  entrance_std_px: 0.3800000000
+  outliers_removed: 0
+  flag: null

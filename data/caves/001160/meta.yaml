@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.52
+  dir_id: '001160'
+  name: Schron ze Świeczką
+  n_submissions: 5
+image:
+  filename: image_644_zoom_10.tif
+  image_id: 644
+  width: 656
+  height: 762
+coordinates:
+  lat: 49.250086
+  lon: 19.866683
+entrance:
+  x: 176.91
+  y: 454.95
+scale:
+  pixels_per_meter: 77.24
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6566000000
+  total_rotation_deg: -0.6566000000
+  A: 0.0129465241
+  D: -0.0001483646
+  B: -0.0001483646
+  E: -0.0129465241
+  C: 563051.892305
+  F: 153987.235244
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 77.64
+  - 77.47
+  - 77.24
+  - 77.23
+  - 77.17
+  entrance_std_px: 0.6300000000
+  outliers_removed: 0
+  flag: null

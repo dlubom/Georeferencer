@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.A-04.01
+  dir_id: 004048
+  name: Szczelina w Małych Koryciskach
+  n_submissions: 5
+image:
+  filename: image_4026_zoom_10.tif
+  image_id: 4026
+  width: 822
+  height: 1354
+coordinates:
+  lat: 49.271889
+  lon: 19.811528
+entrance:
+  x: 381.16
+  y: 581.89
+scale:
+  pixels_per_meter: 117.77
+north:
+  angle_deg: 0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6150000000
+  total_rotation_deg: -0.6142000000
+  A: 0.0084904809
+  D: -0.0000910150
+  B: -0.0000910150
+  E: -0.0084904809
+  C: 559012.254241
+  F: 156364.854759
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 117.78
+  - 117.76
+  - 117.49
+  - 23.68
+  - 117.91
+  entrance_std_px: 0.7000000000
+  outliers_removed: 1
+  flag: null

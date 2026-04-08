@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.45
+  dir_id: 001508
+  name: Dziura nad Szlakiem
+  n_submissions: 5
+image:
+  filename: image_1030_zoom_10.tif
+  image_id: 1030
+  width: 740
+  height: 1066
+coordinates:
+  lat: 49.243944
+  lon: 19.908742
+entrance:
+  x: 137.53
+  y: 293.77
+scale:
+  pixels_per_meter: 76.93
+north:
+  angle_deg: -0.0080000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6884000000
+  total_rotation_deg: -0.6960000000
+  A: 0.0129985445
+  D: -0.0001579170
+  B: -0.0001579170
+  E: -0.0129985445
+  C: 566120.473276
+  F: 153338.488454
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.63
+  - 77.07
+  - 76.88
+  - 76.87
+  - 76.97
+  entrance_std_px: 0.5500000000
+  outliers_removed: 1
+  flag: null

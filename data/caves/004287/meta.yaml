@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.C-12.02
+  dir_id: 004287
+  name: Dziura w Czarnej Turni II
+  n_submissions: 5
+image:
+  filename: image_4306_zoom_10.tif
+  image_id: 4306
+  width: 896
+  height: 1338
+coordinates:
+  lat: 49.261972
+  lon: 19.920333
+entrance:
+  x: 438.54
+  y: 778.83
+scale:
+  pixels_per_meter: 118.5
+north:
+  angle_deg: 0.0430000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6973000000
+  total_rotation_deg: -0.6541000000
+  A: 0.0084383970
+  D: -0.0000963455
+  B: -0.0000963455
+  E: -0.0084383970
+  C: 566937.583511
+  F: 155354.996598
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 118.43
+  - 118.01
+  - 118.66
+  - 118.53
+  - 118.47
+  entrance_std_px: 0.6000000000
+  outliers_removed: 1
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-13.06
+  dir_id: '001206'
+  name: Nyża w Siodłowej Turni
+  n_submissions: 5
+image:
+  filename: image_691_zoom_10.tif
+  image_id: 691
+  width: 1164
+  height: 1524
+coordinates:
+  lat: 49.248678
+  lon: 19.927128
+entrance:
+  x: 1059.81
+  y: 286.12
+scale:
+  pixels_per_meter: 77.1
+north:
+  angle_deg: -0.0040000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7023000000
+  total_rotation_deg: -0.7059000000
+  A: 0.0129697329
+  D: -0.0001598090
+  B: -0.0001598090
+  E: -0.0129697329
+  C: 567439.857078
+  F: 153880.875844
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 77.1
+  - 77.17
+  - 77.1
+  - 76.67
+  - 76.56
+  entrance_std_px: 0.5100000000
+  outliers_removed: 0
+  flag: null

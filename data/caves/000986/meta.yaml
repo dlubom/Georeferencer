@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-06.03
+  dir_id: 000986
+  name: Szemrzący Schron
+  n_submissions: 5
+image:
+  filename: image_550_zoom_10.tif
+  image_id: 550
+  width: 1292
+  height: 1108
+coordinates:
+  lat: 49.244981
+  lon: 19.8398
+entrance:
+  x: 783.89
+  y: 564.38
+scale:
+  pixels_per_meter: 196.24
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6362000000
+  total_rotation_deg: -0.6362000000
+  A: 0.0050954274
+  D: -0.0000565769
+  B: -0.0000565769
+  E: -0.0050954274
+  C: 561100.644541
+  F: 153394.829032
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 196.24
+  - 196.65
+  - 197.2
+  - 196.03
+  - 196.22
+  entrance_std_px: 1.07
+  outliers_removed: 0
+  flag: null

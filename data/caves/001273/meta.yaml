@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-18.02
+  dir_id: '001273'
+  name: Schron nad Przełączką
+  n_submissions: 5
+image:
+  filename: image_758_zoom_10.tif
+  image_id: 758
+  width: 788
+  height: 1372
+coordinates:
+  lat: 49.249122
+  lon: 19.993581
+entrance:
+  x: 148.81
+  y: 125.64
+scale:
+  pixels_per_meter: 77.02
+north:
+  angle_deg: -0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7527000000
+  total_rotation_deg: -0.7532000000
+  A: 0.0129831780
+  D: -0.0001706904
+  B: -0.0001706904
+  E: -0.0129831780
+  C: 572285.74312
+  F: 153989.391007
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 76.98
+  - 77.02
+  - 77.02
+  - 77.09
+  - 76.48
+  entrance_std_px: 0.5800000000
+  outliers_removed: 2
+  flag: null

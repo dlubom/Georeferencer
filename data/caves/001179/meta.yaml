@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-09.07
+  dir_id: 001179
+  name: Schron pomiędzy Żwirowymi Dziurami
+  n_submissions: 5
+image:
+  filename: image_660_zoom_10.tif
+  image_id: 660
+  width: 800
+  height: 1504
+coordinates:
+  lat: 49.248664
+  lon: 19.869339
+entrance:
+  x: 269.65
+  y: 616.25
+scale:
+  pixels_per_meter: 38.65
+north:
+  angle_deg: 0.0150000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6586000000
+  total_rotation_deg: -0.6431000000
+  A: 0.0258698623
+  D: -0.0002903821
+  B: -0.0002903821
+  E: -0.0258698623
+  C: 563242.365594
+  F: 153841.52376
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 38.4
+  - 38.6
+  - 38.67
+  - 38.69
+  - 38.64
+  entrance_std_px: 0.5400000000
+  outliers_removed: 1
+  flag: null

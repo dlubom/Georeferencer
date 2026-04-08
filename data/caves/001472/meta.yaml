@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-11.05
+  dir_id: '001472'
+  name: Jaskinia Marmurowa
+  n_submissions: 5
+image:
+  filename: image_977_zoom_10.tif
+  image_id: 977
+  width: 5476
+  height: 7832
+coordinates:
+  lat: 49.239694
+  lon: 19.899111
+entrance:
+  x: 2304.02
+  y: 541.15
+scale:
+  pixels_per_meter: 49.05
+north:
+  angle_deg: -0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6810000000
+  total_rotation_deg: -0.6822000000
+  A: 0.0203839680
+  D: -0.0002427200
+  B: -0.0002427200
+  E: -0.0203839680
+  C: 565380.22963
+  F: 152865.541002
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 49.07
+  - 49.0
+  - 49.06
+  - 49.01
+  - 49.05
+  entrance_std_px: 0.6100000000
+  outliers_removed: 0
+  flag: null

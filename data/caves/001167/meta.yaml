@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.59
+  dir_id: '001167'
+  name: Zamczysko Wyżnie
+  n_submissions: 5
+image:
+  filename: image_651_zoom_10.tif
+  image_id: 651
+  width: 1414
+  height: 2622
+coordinates:
+  lat: 49.247094
+  lon: 19.868772
+entrance:
+  x: 629.64
+  y: 1398.39
+scale:
+  pixels_per_meter: 59.14
+north:
+  angle_deg: -0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6581000000
+  total_rotation_deg: -0.6584000000
+  A: 0.0169088447
+  D: -0.0001943118
+  B: -0.0001943118
+  E: -0.0169088447
+  C: 563199.540277
+  F: 153674.314961
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 59.0
+  - 59.23
+  - 117.9
+  - 59.11
+  - 59.16
+  entrance_std_px: 0.4600000000
+  outliers_removed: 1
+  flag: null

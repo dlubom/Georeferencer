@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-09.25
+  dir_id: '004410'
+  name: Schron nad Zakosistą
+  n_submissions: 5
+image:
+  filename: image_4429_zoom_10.tif
+  image_id: 4429
+  width: 696
+  height: 658
+coordinates:
+  lat: 49.234833
+  lon: 19.873583
+entrance:
+  x: 372.35
+  y: 231.34
+scale:
+  pixels_per_meter: 59.15
+north:
+  angle_deg: -0.0210000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6616000000
+  total_rotation_deg: -0.6827000000
+  A: 0.0169049011
+  D: -0.0002014329
+  B: -0.0002014329
+  E: -0.0169049011
+  C: 563569.43879
+  F: 152295.943134
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 59.31
+  - 59.29
+  - 59.15
+  - 59.04
+  - 59.1
+  entrance_std_px: 0.5600000000
+  outliers_removed: 0
+  flag: null

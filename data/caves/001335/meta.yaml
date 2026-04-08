@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-06.12
+  dir_id: '001335'
+  name: Szczelina ze Śniegiem
+  n_submissions: 5
+image:
+  filename: image_838_zoom_10.tif
+  image_id: 838
+  width: 904
+  height: 708
+coordinates:
+  lat: 49.243742
+  lon: 19.841722
+entrance:
+  x: 122.19
+  y: 521.94
+scale:
+  pixels_per_meter: 38.58
+north:
+  angle_deg: 0.0060000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6376000000
+  total_rotation_deg: -0.6318000000
+  A: 0.0259204849
+  D: -0.0002858383
+  B: -0.0002858383
+  E: -0.0259204849
+  C: 561242.966308
+  F: 153269.331187
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 38.4
+  - 38.56
+  - 38.59
+  - 38.51
+  - 38.68
+  entrance_std_px: 0.7700000000
+  outliers_removed: 1
+  flag: null

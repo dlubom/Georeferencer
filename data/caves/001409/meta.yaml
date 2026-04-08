@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.40
+  dir_id: 001409
+  name: Zbójnicka Szczelina
+  n_submissions: 5
+image:
+  filename: image_911_zoom_10.tif
+  image_id: 911
+  width: 664
+  height: 718
+coordinates:
+  lat: 49.237833
+  lon: 19.864189
+entrance:
+  x: 201.06
+  y: 366.11
+scale:
+  pixels_per_meter: 77.16
+north:
+  angle_deg: 0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6546000000
+  total_rotation_deg: -0.6539000000
+  A: 0.0129593070
+  D: -0.0001479047
+  B: -0.0001479047
+  E: -0.0129593070
+  C: 562885.678137
+  F: 152622.282564
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 76.94
+  - 76.99
+  - 77.2
+  - 77.16
+  - 77.31
+  entrance_std_px: 0.5500000000
+  outliers_removed: 0
+  flag: null

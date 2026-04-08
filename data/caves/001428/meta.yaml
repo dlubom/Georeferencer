@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-08.52
+  dir_id: 001428
+  name: Omszała Szczelina w Żeleźniaku
+  n_submissions: 5
+image:
+  filename: image_922_zoom_10.tif
+  image_id: 922
+  width: 540
+  height: 644
+coordinates:
+  lat: 49.2412
+  lon: 19.857439
+entrance:
+  x: 410.91
+  y: 299.99
+scale:
+  pixels_per_meter: 77.14
+north:
+  angle_deg: 0.0310000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6495000000
+  total_rotation_deg: -0.6186000000
+  A: 0.0129630302
+  D: -0.0001399718
+  B: -0.0001399718
+  E: -0.0129630302
+  C: 562387.501626
+  F: 152990.055091
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 77.12
+  - 76.98
+  - 77.91
+  - 77.15
+  - 77.39
+  entrance_std_px: 0.5800000000
+  outliers_removed: 1
+  flag: null

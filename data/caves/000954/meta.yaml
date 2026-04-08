@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.A-17.02
+  dir_id: 000954
+  name: Schron z Prowokatorem
+  n_submissions: 5
+image:
+  filename: image_446_zoom_10.tif
+  image_id: 446
+  width: 546
+  height: 550
+coordinates:
+  lat: 49.277778
+  lon: 19.984722
+entrance:
+  x: 287.33
+  y: 215.61
+scale:
+  pixels_per_meter: 77.71
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7463000000
+  total_rotation_deg: -0.7463000000
+  A: 0.0128665216
+  D: -0.0001676015
+  B: -0.0001676015
+  E: -0.0128665216
+  C: 571597.991642
+  F: 157166.798941
+quality:
+  ppm_cv: 0.0050000000
+  ppm_values:
+  - 77.25
+  - 77.71
+  - 76.93
+  - 77.88
+  - 77.77
+  entrance_std_px: 0.5600000000
+  outliers_removed: 0
+  flag: null

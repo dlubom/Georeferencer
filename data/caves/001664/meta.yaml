@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-25.02
+  dir_id: '001664'
+  name: Jaskinia Wołoszyńska Niżnia
+  n_submissions: 5
+image:
+  filename: image_1197_zoom_10.tif
+  image_id: 1197
+  width: 2376
+  height: 2602
+coordinates:
+  lat: 49.244431
+  lon: 20.089264
+entrance:
+  x: 844.98
+  y: 260.64
+scale:
+  pixels_per_meter: 118.07
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.8251000000
+  total_rotation_deg: -0.8251000000
+  A: 0.0084686781
+  D: -0.0001219663
+  B: -0.0001219663
+  E: -0.0084686781
+  C: 579249.305542
+  F: 153564.580325
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 118.14
+  - 118.14
+  - 166.23
+  - 117.84
+  - 118.0
+  entrance_std_px: 1.18
+  outliers_removed: 1
+  flag: null

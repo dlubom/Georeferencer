@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-09.12
+  dir_id: '001665'
+  name: Jaskinia Wysoka
+  n_submissions: 5
+image:
+  filename: image_2958_zoom_10.tif
+  image_id: 2958
+  width: 10778
+  height: 9418
+coordinates:
+  lat: 49.233761
+  lon: 19.885161
+entrance:
+  x: 2090.57
+  y: 1761.04
+scale:
+  pixels_per_meter: 11.81
+north:
+  angle_deg: -0.0310000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6704000000
+  total_rotation_deg: -0.7016000000
+  A: 0.0846653089
+  D: -0.0010367400
+  B: -0.0010367400
+  E: -0.0846653089
+  C: 564244.496549
+  F: 152333.882974
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 11.81
+  - 11.81
+  - 11.81
+  - 11.81
+  - 11.83
+  entrance_std_px: 0.7900000000
+  outliers_removed: 1
+  flag: null

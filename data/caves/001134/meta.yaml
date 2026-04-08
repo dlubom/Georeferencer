@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.41
+  dir_id: '001134'
+  name: Wiciowy Schron
+  n_submissions: 5
+image:
+  filename: image_632_zoom_10.tif
+  image_id: 632
+  width: 2046
+  height: 1652
+coordinates:
+  lat: 49.245906
+  lon: 19.862178
+entrance:
+  x: 1049.37
+  y: 749.02
+scale:
+  pixels_per_meter: 196.93
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6531000000
+  total_rotation_deg: -0.6531000000
+  A: 0.0050776354
+  D: -0.0000578826
+  B: -0.0000578826
+  E: -0.0050776354
+  C: 562726.375734
+  F: 153516.893002
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 196.97
+  - 196.32
+  - 196.92
+  - 196.93
+  - 198.43
+  entrance_std_px: 1.47
+  outliers_removed: 2
+  flag: null

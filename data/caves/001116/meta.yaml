@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.27
+  dir_id: '001116'
+  name: Otwarty Schron
+  n_submissions: 5
+image:
+  filename: image_618_zoom_10.tif
+  image_id: 618
+  width: 2048
+  height: 1726
+coordinates:
+  lat: 49.246436
+  lon: 19.857647
+entrance:
+  x: 620.56
+  y: 1276.96
+scale:
+  pixels_per_meter: 97.74
+north:
+  angle_deg: 0.0010000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6497000000
+  total_rotation_deg: -0.6488000000
+  A: 0.0102303225
+  D: -0.0001158423
+  B: -0.0001158423
+  E: -0.0102303225
+  C: 562395.122331
+  F: 153581.317774
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 97.74
+  - 97.62
+  - 97.69
+  - 97.99
+  - 98.09
+  entrance_std_px: 1.45
+  outliers_removed: 0
+  flag: null

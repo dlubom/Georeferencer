@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.A-23.04
+  dir_id: '011044'
+  name: Schron przy Grocie w Jaworzyńskim Żlebie
+  n_submissions: 5
+image:
+  filename: image_12369_zoom_10.tif
+  image_id: 12369
+  width: 1880
+  height: 1914
+coordinates:
+  lat: 49.282389
+  lon: 20.073944
+entrance:
+  x: 991.35
+  y: 719.94
+scale:
+  pixels_per_meter: 236.55
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.8140000000
+  total_rotation_deg: -0.8140000000
+  A: 0.0042270615
+  D: -0.0000600562
+  B: -0.0000600562
+  E: -0.0042270615
+  C: 578077.676639
+  F: 157767.859807
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 236.75
+  - 236.05
+  - 236.34
+  - 236.83
+  - 237.69
+  entrance_std_px: 0.6800000000
+  outliers_removed: 1
+  flag: null

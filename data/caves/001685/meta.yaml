@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-09.23
+  dir_id: 001685
+  name: Krasowa Nisza
+  n_submissions: 5
+image:
+  filename: image_1208_zoom_10.tif
+  image_id: 1208
+  width: 1732
+  height: 1146
+coordinates:
+  lat: 49.234744
+  lon: 19.87655
+entrance:
+  x: 659.45
+  y: 811.31
+scale:
+  pixels_per_meter: 97.98
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6639000000
+  total_rotation_deg: -0.6639000000
+  A: 0.0102051899
+  D: -0.0001182537
+  B: -0.0001182537
+  E: -0.0102051899
+  C: 563785.090774
+  F: 152292.921787
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 97.95
+  - 97.8
+  - 98.09
+  - 98.01
+  - 97.22
+  entrance_std_px: 0.5600000000
+  outliers_removed: 1
+  flag: null

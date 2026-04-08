@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.02
+  dir_id: 001088
+  name: Jaskinia nad Mostkiem Niżnia
+  n_submissions: 5
+image:
+  filename: image_564_zoom_10.tif
+  image_id: 564
+  width: 840
+  height: 1050
+coordinates:
+  lat: 49.250958
+  lon: 19.863875
+entrance:
+  x: 513.42
+  y: 801.53
+scale:
+  pixels_per_meter: 38.67
+north:
+  angle_deg: 0.0040000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6545000000
+  total_rotation_deg: -0.6505000000
+  A: 0.0258579164
+  D: -0.0002936075
+  B: -0.0002936075
+  E: -0.0258579164
+  C: 562835.678175
+  F: 154096.767948
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 38.68
+  - 38.8
+  - 38.72
+  - 38.64
+  - 38.66
+  entrance_std_px: 0.4600000000
+  outliers_removed: 1
+  flag: null

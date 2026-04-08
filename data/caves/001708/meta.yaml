@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-10.05
+  dir_id: 001708
+  name: Lustrzana Szczelina
+  n_submissions: 5
+image:
+  filename: image_1222_zoom_10.tif
+  image_id: 1222
+  width: 2374
+  height: 1550
+coordinates:
+  lat: 49.231778
+  lon: 19.884994
+entrance:
+  x: 384.72
+  y: 644.21
+scale:
+  pixels_per_meter: 195.68
+north:
+  angle_deg: 0.0120000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6703000000
+  total_rotation_deg: -0.6580000000
+  A: 0.0051100190
+  D: -0.0000586874
+  B: -0.0000586874
+  E: -0.0051100190
+  C: 564408.165634
+  F: 151965.409225
+quality:
+  ppm_cv: 0.0020000000
+  ppm_values:
+  - 195.87
+  - 195.17
+  - 196.07
+  - 195.68
+  - 195.29
+  entrance_std_px: 1.68
+  outliers_removed: 0
+  flag: null

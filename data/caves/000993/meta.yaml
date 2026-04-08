@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.B-10.03
+  dir_id: 000993
+  name: Szczelina Przysłopczańska
+  n_submissions: 5
+image:
+  filename: image_470_zoom_10.tif
+  image_id: 470
+  width: 456
+  height: 1704
+coordinates:
+  lat: 49.262983
+  lon: 19.887506
+entrance:
+  x: 337.72
+  y: 638.49
+scale:
+  pixels_per_meter: 38.39
+north:
+  angle_deg: -0.0280000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6725000000
+  total_rotation_deg: -0.7003000000
+  A: 0.0260431926
+  D: -0.0003183368
+  B: -0.0003183368
+  E: -0.0260431926
+  C: 564543.626861
+  F: 155448.931522
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 38.48
+  - 38.36
+  - 38.39
+  - 38.67
+  - 38.15
+  entrance_std_px: 0.4600000000
+  outliers_removed: 2
+  flag: null

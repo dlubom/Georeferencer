@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.F-09.21
+  dir_id: 001683
+  name: Dziura nad Trawiastym Progiem
+  n_submissions: 5
+image:
+  filename: image_1206_zoom_10.tif
+  image_id: 1206
+  width: 2078
+  height: 1302
+coordinates:
+  lat: 49.234239
+  lon: 19.876425
+entrance:
+  x: 1517.83
+  y: 505.58
+scale:
+  pixels_per_meter: 194.69
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6638000000
+  total_rotation_deg: -0.6638000000
+  A: 0.0051359135
+  D: -0.0000595040
+  B: -0.0000595040
+  E: -0.0051359135
+  C: 563775.512674
+  F: 152231.022842
+quality:
+  ppm_cv: 0.0040000000
+  ppm_values:
+  - 194.06
+  - 195.66
+  - 196.12
+  - 194.69
+  - 193.95
+  entrance_std_px: 0.8300000000
+  outliers_removed: 0
+  flag: null

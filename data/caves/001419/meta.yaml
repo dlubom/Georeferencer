@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.E-09.04
+  dir_id: 001419
+  name: Jaskinia przy Perci
+  n_submissions: 5
+image:
+  filename: image_932_zoom_10.tif
+  image_id: 932
+  width: 1978
+  height: 2362
+coordinates:
+  lat: 49.236617
+  lon: 19.874147
+entrance:
+  x: 409.3
+  y: 1961.73
+scale:
+  pixels_per_meter: 195.58
+north:
+  angle_deg: 0.0
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6621000000
+  total_rotation_deg: -0.6621000000
+  A: 0.0051127639
+  D: -0.0000590839
+  B: -0.0000590839
+  E: -0.0051127639
+  C: 563612.463865
+  F: 152500.749615
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 195.45
+  - 196.35
+  - 195.77
+  - 195.57
+  - 195.58
+  entrance_std_px: 0.8900000000
+  outliers_removed: 1
+  flag: null

@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-06.01
+  dir_id: 000985
+  name: Jaskinia pod Baranami
+  n_submissions: 5
+image:
+  filename: image_547_zoom_10.tif
+  image_id: 547
+  width: 980
+  height: 786
+coordinates:
+  lat: 49.244869
+  lon: 19.834981
+entrance:
+  x: 826.17
+  y: 210.2
+scale:
+  pixels_per_meter: 77.03
+north:
+  angle_deg: -0.0340000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6325000000
+  total_rotation_deg: -0.6663000000
+  A: 0.0129805580
+  D: -0.0001509623
+  B: -0.0001509623
+  E: -0.0129805580
+  C: 560743.42076
+  F: 153378.432934
+quality:
+  ppm_cv: 0.0010000000
+  ppm_values:
+  - 77.03
+  - 77.0
+  - 77.03
+  - 77.11
+  - 77.28
+  entrance_std_px: 0.8700000000
+  outliers_removed: 1
+  flag: null

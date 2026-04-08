@@ -1,0 +1,42 @@
+cave:
+  inventory_number: T.D-08.09
+  dir_id: 001096
+  name: Okna Zbójnickie Niżnie
+  n_submissions: 5
+image:
+  filename: image_571_zoom_10.tif
+  image_id: 571
+  width: 6222
+  height: 5032
+coordinates:
+  lat: 49.249208
+  lon: 19.868931
+entrance:
+  x: 629.76
+  y: 2280.38
+scale:
+  pixels_per_meter: 88.78
+north:
+  angle_deg: 0.0600000000
+  all_skipped: false
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6583000000
+  total_rotation_deg: -0.5985000000
+  A: 0.0112627740
+  D: -0.0001176504
+  B: -0.0001176504
+  E: -0.0112627740
+  C: 563211.959483
+  F: 153911.376741
+quality:
+  ppm_cv: 0.0030000000
+  ppm_values:
+  - 88.78
+  - 88.67
+  - 88.43
+  - 89.13
+  - 88.98
+  entrance_std_px: 1.28
+  outliers_removed: 0
+  flag: null
