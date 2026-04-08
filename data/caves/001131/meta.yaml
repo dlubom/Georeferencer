@@ -19,7 +19,7 @@ scale:
 north:
   angle_deg: 0.0040000000
   all_skipped: false
-declination_deg: 0.0
+declination_deg: 0.0  # brak korekty deklinacji
 computed:
   convergence_deg: -0.6547000000
   total_rotation_deg: -0.6507000000
