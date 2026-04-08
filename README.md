@@ -121,11 +121,47 @@ I to tyle! Twoja praca została zapisana.
 
 ## Co dalej?
 
-Wszystkie wyniki zbierają się w **arkuszu Google**. Po zebraniu wystarczającej liczby odpowiedzi:
+Etap crowdsourcingowy został zakończony: **4048 zgłoszeń** od **89 użytkowników** dla **801 jaskiń** (każda z minimum 5 niezależnymi kliknięciami).
 
-1. Dane zostaną **statystycznie przeanalizowane**
-2. Wygenerowane zostaną **geotiffy** dla każdej jaskini
-3. Będziemy mogli **podziwiać plany jaskiń** nałożone na mapy w ulubionych programach GIS!
+### Pipeline generacji GeoTIFF
+
+Zebrane dane są przetwarzane automatycznym pipeline'em:
+
+1. **Ekstrakcja** — dane ze zgłoszeń agregowane do edytowalnych plików YAML (`data/caves/{dir_id}/meta.yaml`): mediana pikseli otworu, mediana skali, mediana kąta północy
+2. **Generacja GeoTIFF** — z YAML wyliczane parametry World File (A-F) i generowany GeoTIFF w układzie EPSG:2180 (PL-1992)
+3. **Raporty QA** — automatyczne flagowanie jaskiń z wysokim rozrzutem wyników
+
+### Edycja wyników
+
+Każdy plik `meta.yaml` jest edytowalny — można ręcznie poprawić:
+- współrzędne otworu (`coordinates.lat`, `coordinates.lon`)
+- pozycję otworu w pikselach (`entrance.x`, `entrance.y`)
+- skalę (`scale.pixels_per_meter`)
+- kąt północy (`north.angle_deg`)
+- deklinację (`declination_deg`)
+
+Po edycji i pushu na `main` — CI automatycznie przelicza World File i generuje nowy GeoTIFF.
+
+### Uruchomienie lokalne
+
+```bash
+python -m venv .venv && source .venv/bin/activate
+pip install -r pipeline/requirements.txt
+brew install gdal  # macOS
+
+# Generacja GeoTIFF dla jednej jaskini
+python pipeline/02_generate_geotiff.py --cave 001131
+
+# Generacja dla wszystkich
+python pipeline/02_generate_geotiff.py --all
+
+# Raporty QA
+python pipeline/03_report.py
+```
+
+### Release
+
+Przy utworzeniu tagu `v*` (np. `v1.0`) GitHub Actions automatycznie generuje wszystkie GeoTIFF-y i publikuje je jako paczkę `.tar.gz` w GitHub Releases.
 
 ---
 
