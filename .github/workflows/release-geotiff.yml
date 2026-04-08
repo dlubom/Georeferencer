@@ -30,8 +30,18 @@ jobs:
       - name: Create archive
         run: |
           TAG="${GITHUB_REF_NAME}"
-          find data/caves -name "image_georef.tif" | sort | \
-            tar czf "geotiff-tatry-${TAG}.tar.gz" -T -
+          mkdir -p _release
+          for georef in data/caves/*/image_georef.tif; do
+            dir_id=$(basename "$(dirname "$georef")")
+            yaml="$(dirname "$georef")/meta.yaml"
+            inv=$(python3 -c "import yaml; m=yaml.safe_load(open('$yaml')); print(m['cave']['inventory_number'])")
+            name=$(python3 -c "import yaml; m=yaml.safe_load(open('$yaml')); print(m['cave']['name'])")
+            # Sanitize: spacje→_, usunięcie znaków problematycznych
+            safe_inv=$(echo "$inv" | tr ' /' '__' | tr -d "'\"")
+            safe_name=$(echo "$name" | tr ' /' '__' | tr -d "'\"")
+            cp "$georef" "_release/${dir_id}_${safe_inv}_${safe_name}.tif"
+          done
+          tar czf "geotiff-tatry-${TAG}.tar.gz" -C _release .
           echo "ARCHIVE=geotiff-tatry-${TAG}.tar.gz" >> "$GITHUB_ENV"
 
       - name: Create GitHub Release
