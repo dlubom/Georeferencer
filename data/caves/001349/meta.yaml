@@ -17,18 +17,18 @@ entrance:
 scale:
   pixels_per_meter: 23.62
 north:
-  angle_deg: 60.113
+  angle_deg: 60.0
   all_skipped: false
 declination_deg: 0.0
 computed:
   convergence_deg: -0.6526000000
-  total_rotation_deg: 59.4609
-  A: 0.0215109054
-  D: 0.0364613550
-  B: 0.0364613550
-  E: -0.0215109054
-  C: 562580.145503
-  F: 152764.129236
+  total_rotation_deg: 59.4604
+  A: 0.0215128411
+  D: 0.0364639473
+  B: 0.0364639473
+  E: -0.0215128411
+  C: 562580.136656
+  F: 152764.128125
 quality:
   ppm_cv: 0.0010000000
   ppm_values:
