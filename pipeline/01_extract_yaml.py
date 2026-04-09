@@ -41,6 +41,21 @@ def parse_args():
     return p.parse_args()
 
 
+def geometric_median(points, max_iter=100, tol=1e-7):
+    """Mediana geometryczna (Weiszfeld) — minimalizuje sumę odległości euklidesowych."""
+    pts = np.array(points, dtype=float)
+    y = np.median(pts, axis=0)  # start z component-wise median
+    for _ in range(max_iter):
+        dists = np.linalg.norm(pts - y, axis=1)
+        dists = np.where(dists == 0, 1e-10, dists)
+        weights = 1.0 / dists
+        y_new = (pts * weights[:, None]).sum(axis=0) / weights.sum()
+        if np.linalg.norm(y_new - y) < tol:
+            break
+        y = y_new
+    return y
+
+
 def remove_iqr_outliers(values):
     """Usuń outlierów metodą IQR i zwróć przefiltrowane wartości."""
     if len(values) < 4:
@@ -75,20 +90,18 @@ def aggregate_cave(cave_id, subs, caves_df):
     image_filename = extract_image_filename(first["image_used_path"])
     image_id = int(first["image_id"])
 
-    # --- Entrance (mediana x, y) ---
-    entrance_xs = []
-    entrance_ys = []
+    # --- Entrance (mediana geometryczna) ---
+    entrance_points = []
     for _, row in subs.iterrows():
         points = json.loads(row["points_orig_json"])
         if points:
-            entrance_xs.append(points[0]["x"])
-            entrance_ys.append(points[0]["y"])
+            entrance_points.append((points[0]["x"], points[0]["y"]))
 
-    entrance_x = float(np.median(entrance_xs))
-    entrance_y = float(np.median(entrance_ys))
-    entrance_std = float(np.sqrt(
-        np.std(entrance_xs) ** 2 + np.std(entrance_ys) ** 2
-    ))
+    gm = geometric_median(entrance_points)
+    entrance_x = float(gm[0])
+    entrance_y = float(gm[1])
+    xs, ys = zip(*entrance_points)
+    entrance_std = float(np.sqrt(np.std(xs) ** 2 + np.std(ys) ** 2))
 
     # --- Scale (pixels_per_meter) — mediana z IQR outlier removal ---
     ppm_values = subs["pixels_per_meter"].dropna().tolist()

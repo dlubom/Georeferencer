@@ -12,8 +12,8 @@ coordinates:
   lat: 49.251856
   lon: 19.980433
 entrance:
-  x: 187.13
-  y: 250.85
+  x: 187.11
+  y: 250.84
 scale:
   pixels_per_meter: 76.9
 north:
@@ -27,8 +27,8 @@ computed:
   D: -0.0001664005
   B: -0.0001664005
   E: -0.0130033796
-  C: 571324.75829
-  F: 154282.384357
+  C: 571324.758591
+  F: 154282.384212
 quality:
   ppm_cv: 0.0
   ppm_values:
