@@ -31,6 +31,8 @@ Skrypty Python do generacji georeferencjonowanych TIFFów z danych crowdsourcing
 - `01_extract_yaml.py` — jednorazowa ekstrakcja: parquet → edytowalne YAML-e (`data/caves/{dir_id}/meta.yaml`) + kopiowanie obrazów ze scrapera. Agregacja: mediana pikseli otworu, mediana pixels_per_meter (z IQR outlier removal), mediana kąta północy.
 - `02_generate_geotiff.py` — powtarzalny: YAML → .tfw (World File) + GeoTIFF (EPSG:2180, kompresja CCITTFAX4). Weryfikuje wymiary obrazu vs YAML. CLI: `--cave ID | --all | --changed | --force`.
 - `03_report.py` — raporty QA: summary.csv, flagged.csv, missing.csv w `data/caves/_reports/`.
+- `04_find_missing.py` — porównanie rejestru PIG (JSONL) z istniejącymi jaskiniami; lista brakujących z planami, posortowana po długości.
+- `05_add_cave.py` — ręczne dodanie brakującej jaskini: tworzy katalog, kopiuje obrazy ze scrapera, generuje meta.yaml. Dane georeferencji (otwór, skala, kąt północy) z konsoli Georeferencer UI. Instrukcja: [`pipeline/MANUAL_ADD.md`](pipeline/MANUAL_ADD.md).
 
 Matematyka World File (A-F) replikuje `index.html:2277-2370`:
 ```
@@ -76,6 +78,10 @@ python pipeline/02_generate_geotiff.py --cave 001131 # Jedna jaskinia
 python pipeline/02_generate_geotiff.py --all         # Wszystkie
 python pipeline/02_generate_geotiff.py --changed     # Tylko zmienione meta.yaml
 python pipeline/03_report.py                         # Raporty QA
+python pipeline/04_find_missing.py                   # Lista brakujących jaskiń
+python pipeline/05_add_cave.py --cave 001197 \       # Ręczne dodanie jaskini
+    --entrance-x 26131.87 --entrance-y 7996.18 \
+    --pixels-per-meter 23.6549 --north-angle 0.0
 
 # Uruchomienie notebooka analizy
 jupyter notebook analysis.ipynb
@@ -84,6 +90,8 @@ jupyter notebook analysis.ipynb
 ## Kluczowa konfiguracja
 
 - Obrazy źródłowe: `../Polish-Cave-Data-Scraper/` (`caves_mono/`, `caves_upscaled/`, `caves/`)
+- Rejestr PIG (JSONL): `../Jaskiniowy-Kataster-Tatr-Zachodnich/doc/jaskinie_polski_pig_dump.jsonl`
+- Georeferencer UI (do ręcznych kliknięć): `../Polish-Cave-Data-Scraper/index.html` — loguje dane do meta.yaml w konsoli
 - <!-- GitHub Pages wyłączony — etap crowdsourcingowy zakończony -->
 - <!-- Backend Apps Script — etap crowdsourcingowy zakończony -->
 

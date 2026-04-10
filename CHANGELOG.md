@@ -1,5 +1,23 @@
 # Changelog
 
+## v0.4 — Ręczne dodawanie brakujących jaskiń (2026-04-10)
+
+### Nowe skrypty
+- **04_find_missing.py** — porównanie rejestru PIG (JSONL) z istniejącymi jaskiniami; lista 27 brakujących z planami, posortowana po długości
+- **05_add_cave.py** — ręczne dodanie jaskini: tworzy katalog, kopiuje obrazy ze scrapera, generuje meta.yaml z flagą `quality.flag: manual`
+
+### Georeferencer UI
+- Dodano logowanie `DANE DO META.YAML` w konsoli przeglądarki (`Polish-Cave-Data-Scraper/index.html`) — gotowe wartości otworu, skali i kąta północy do wklejenia
+
+### Dodane jaskinie
+- **001197** Jaskinia Miętusia (T.D-11.01) — 10 540 m, 283 m głębokości
+
+### Dokumentacja
+- `pipeline/MANUAL_ADD.md` — instrukcja ręcznego dodawania jaskiń
+- Zaktualizowano `CLAUDE.md` o nowe skrypty i zależności zewnętrzne
+
+---
+
 ## v0.3 — Korekta jakości georeferencji (2026-04-09)
 
 ### Agregacja otworu
