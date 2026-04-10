@@ -1,0 +1,38 @@
+cave:
+  inventory_number: T.E-12.01
+  dir_id: 000491
+  name: Jaskinia Wielka Litworowa
+  n_submissions: 0
+image:
+  filename: image_81_zoom_10.tif
+  image_id: 81
+  width: 4668
+  height: 6210
+coordinates:
+  lat: 49.23808611128065
+  lon: 19.914661110772027
+entrance:
+  x: 3211.51
+  y: 1276.12
+scale:
+  pixels_per_meter: 15.7976
+north:
+  angle_deg: 0.0
+  all_skipped: true
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6928000000
+  total_rotation_deg: -0.6928000000
+  A: 0.0632961272
+  D: -0.0007653815
+  B: -0.0007653815
+  E: -0.0632961272
+  C: 566358.470987
+  F: 152772.057808
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 15.7976
+  entrance_std_px: 0.0
+  outliers_removed: 0
+  flag: manual

@@ -2,6 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Zasady commitów
+
+- **Nie dodawaj** `Co-Authored-By` ani żadnych informacji o Claude Code w commitach
+
 ## Opis projektu
 
 Georeferencjer Planów Jaskiń — platforma do georeferencji zeskanowanych planów jaskiń tatrzańskich. Etap crowdsourcingowy zakończony: 4048 zgłoszeń od 89 użytkowników, 801 jaskiń z 5+ niezależnymi kliknięciami. Obecnie projekt skupia się na pipeline generacji GeoTIFF i ręcznej korekcie wyników.

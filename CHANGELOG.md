@@ -11,6 +11,10 @@
 
 ### Dodane jaskinie
 - **001197** Jaskinia Miętusia (T.D-11.01) — 10 540 m, 283 m głębokości
+- **000490** Jaskinia Wielka Śnieżna (T-Wielka Śnieżna) — 23 723 m, 808 m głębokości
+- **001538** Jaskinia Śnieżna Studnia (T.E-12.08) — 12 700 m, 726 m głębokości
+- **001299** Jaskinia Bańdzioch Kominiarski (T.E-07.07) — 10 010 m, 546 m głębokości
+- **000491** Jaskinia Wielka Litworowa (T.E-12.01) — 7 185 m, 354 m głębokości
 
 ### Dokumentacja
 - `pipeline/MANUAL_ADD.md` — instrukcja ręcznego dodawania jaskiń

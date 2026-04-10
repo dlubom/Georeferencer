@@ -1,0 +1,38 @@
+cave:
+  inventory_number: T.E-12.08
+  dir_id: 001538
+  name: Jaskinia Śnieżna Studnia
+  n_submissions: 0
+image:
+  filename: image_1052_zoom_10.tif
+  image_id: 1052
+  width: 15986
+  height: 7718
+coordinates:
+  lat: 49.24148888905843
+  lon: 19.922708333333336
+entrance:
+  x: 6840.37
+  y: 2713.69
+scale:
+  pixels_per_meter: 15.7394
+north:
+  angle_deg: 0.0
+  all_skipped: true
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6989000000
+  total_rotation_deg: -0.6989000000
+  A: 0.0635300964
+  D: -0.0007750097
+  B: -0.0007750097
+  E: -0.0635300964
+  C: 566709.287619
+  F: 153251.806903
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 15.7394
+  entrance_std_px: 0.0
+  outliers_removed: 0
+  flag: manual

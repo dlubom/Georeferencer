@@ -1,0 +1,38 @@
+cave:
+  inventory_number: T-Wielka Śnieżna
+  dir_id: 000490
+  name: Jaskinia Wielka Śnieżna
+  n_submissions: 0
+image:
+  filename: image_166_zoom_10.tif
+  image_id: 166
+  width: 13202
+  height: 8430
+coordinates:
+  lat: 49.239941666920984
+  lon: 19.923044444190133
+entrance:
+  x: 12195.43
+  y: 2195.65
+scale:
+  pixels_per_meter: 11.8139
+north:
+  angle_deg: 0.0
+  all_skipped: true
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6992000000
+  total_rotation_deg: -0.6992000000
+  A: 0.0846397505
+  D: -0.0010328806
+  B: -0.0010328806
+  E: -0.0846397505
+  C: 566138.359107
+  F: 153100.88901
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 11.8139
+  entrance_std_px: 0.0
+  outliers_removed: 0
+  flag: manual
