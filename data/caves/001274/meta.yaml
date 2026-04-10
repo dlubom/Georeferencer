@@ -1,0 +1,38 @@
+cave:
+  inventory_number: T.D-18.01
+  dir_id: '001274'
+  name: Jaskinia Magurska
+  n_submissions: 0
+image:
+  filename: image_759_zoom_10.tif
+  image_id: 759
+  width: 4434
+  height: 1896
+coordinates:
+  lat: 49.25013888888889
+  lon: 19.99621388859219
+entrance:
+  x: 2932.43
+  y: 429.96
+scale:
+  pixels_per_meter: 11.7287
+north:
+  angle_deg: 0.0
+  all_skipped: true
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7547000000
+  total_rotation_deg: -0.7547000000
+  A: 0.0852535448
+  D: -0.0011230222
+  B: -0.0011230222
+  E: -0.0852535448
+  C: 572228.199838
+  F: 154143.214399
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 11.7287
+  entrance_std_px: 0.0
+  outliers_removed: 0
+  flag: manual

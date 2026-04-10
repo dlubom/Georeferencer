@@ -1,0 +1,38 @@
+cave:
+  inventory_number: T.E-11.18
+  dir_id: 001495
+  name: Jaskinia Mała w Mułowej
+  n_submissions: 0
+image:
+  filename: image_1000_zoom_10.tif
+  image_id: 1000
+  width: 24308
+  height: 12404
+coordinates:
+  lat: 49.2380944442749
+  lon: 19.901166666613683
+entrance:
+  x: 23165.49
+  y: 8196.18
+scale:
+  pixels_per_meter: 31.5752
+north:
+  angle_deg: 0.0
+  all_skipped: true
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6826000000
+  total_rotation_deg: -0.6826000000
+  A: 0.0316681776
+  D: -0.0003772839
+  B: -0.0003772839
+  E: -0.0316681776
+  C: 564848.251043
+  F: 152946.263316
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 31.5752
+  entrance_std_px: 0.0
+  outliers_removed: 0
+  flag: manual

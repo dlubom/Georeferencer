@@ -15,6 +15,14 @@
 - **001538** Jaskinia Śnieżna Studnia (T.E-12.08) — 12 700 m, 726 m głębokości
 - **001299** Jaskinia Bańdzioch Kominiarski (T.E-07.07) — 10 010 m, 546 m głębokości
 - **000491** Jaskinia Wielka Litworowa (T.E-12.01) — 7 185 m, 354 m głębokości
+- **001473** Ptasia Studnia (T.E-11.06) — 6 283 m, 352 m głębokości
+- **001495** Jaskinia Mała w Mułowej (T.E-11.18) — 3 863 m, 555 m głębokości
+- **001274** Jaskinia Magurska (T.D-18.01) — 1 200 m, 58 m głębokości
+- **001652** Jaskinia Psia (T.F-09.01) — 1 076 m, 57 m głębokości
+- **004866** Jaskinia Harda (T.E-11.71) — 578 m, 126 m głębokości
+- **001590** Koprowa Studnia (T.E-13.08) — 90 m, 47 m głębokości
+- **001511** Jaskinia Lejbusiowa (T.E-11.48) — 83 m
+- **001604** Zagonna Studnia (T.E-12.57) — 70 m, 52 m głębokości
 
 ### Dokumentacja
 - `pipeline/MANUAL_ADD.md` — instrukcja ręcznego dodawania jaskiń

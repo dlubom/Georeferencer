@@ -1,0 +1,38 @@
+cave:
+  inventory_number: T.E-11.06
+  dir_id: '001473'
+  name: Ptasia Studnia
+  n_submissions: 0
+image:
+  filename: image_978_zoom_10.tif
+  image_id: 978
+  width: 7888
+  height: 4620
+coordinates:
+  lat: 49.239683333502875
+  lon: 19.90505833307902
+entrance:
+  x: 4263.81
+  y: 2116.28
+scale:
+  pixels_per_meter: 15.7972
+north:
+  angle_deg: 0.0
+  all_skipped: true
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6855000000
+  total_rotation_deg: -0.6855000000
+  A: 0.0632978263
+  D: -0.0007573837
+  B: -0.0007573837
+  E: -0.0632978263
+  C: 565591.564519
+  F: 152995.112236
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 15.7972
+  entrance_std_px: 0.0
+  outliers_removed: 0
+  flag: manual

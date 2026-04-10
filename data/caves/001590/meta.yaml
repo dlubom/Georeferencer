@@ -1,0 +1,38 @@
+cave:
+  inventory_number: T.E-13.08
+  dir_id: 001590
+  name: Koprowa Studnia
+  n_submissions: 0
+image:
+  filename: image_2955_zoom_10.tif
+  image_id: 2955
+  width: 2026
+  height: 1754
+coordinates:
+  lat: 49.239377777841355
+  lon: 19.930374999576145
+entrance:
+  x: 1581.02
+  y: 257.27
+scale:
+  pixels_per_meter: 57.5371
+north:
+  angle_deg: 0.0
+  all_skipped: true
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.7047000000
+  total_rotation_deg: -0.7047000000
+  A: 0.0173787758
+  D: -0.0002137603
+  B: -0.0002137603
+  E: -0.0173787758
+  C: 567675.083763
+  F: 152851.130464
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 57.5371
+  entrance_std_px: 0.0
+  outliers_removed: 0
+  flag: manual

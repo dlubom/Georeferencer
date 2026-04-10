@@ -1,0 +1,38 @@
+cave:
+  inventory_number: T.F-09.01
+  dir_id: '001652'
+  name: Jaskinia Psia
+  n_submissions: 0
+image:
+  filename: image_12927_zoom_10.tif
+  image_id: 12927
+  width: 7960
+  height: 6600
+coordinates:
+  lat: 49.23289999961853
+  lon: 19.87263888888889
+entrance:
+  x: 3406.76
+  y: 2430.82
+scale:
+  pixels_per_meter: 59.3952
+north:
+  angle_deg: 0.0
+  all_skipped: true
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6609000000
+  total_rotation_deg: -0.6609000000
+  A: 0.0168352573
+  D: -0.0001942044
+  B: -0.0001942044
+  E: -0.0168352573
+  C: 563452.575727
+  F: 152117.926284
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 59.3952
+  entrance_std_px: 0.0
+  outliers_removed: 0
+  flag: manual

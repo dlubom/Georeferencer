@@ -1,0 +1,38 @@
+cave:
+  inventory_number: T.E-11.71
+  dir_id: 004866
+  name: Jaskinia Harda
+  n_submissions: 0
+image:
+  filename: image_12106_zoom_10.tif
+  image_id: 12106
+  width: 2968
+  height: 2960
+coordinates:
+  lat: 49.242750000423854
+  lon: 19.907972222434147
+entrance:
+  x: 764.42
+  y: 929.76
+scale:
+  pixels_per_meter: 47.3198
+north:
+  angle_deg: 0.0
+  all_skipped: true
+declination_deg: 0.0
+computed:
+  convergence_deg: -0.6878000000
+  total_rotation_deg: -0.6878000000
+  A: 0.0211312802
+  D: -0.0002536700
+  B: -0.0002536700
+  E: -0.0211312802
+  C: 566051.880069
+  F: 153221.121731
+quality:
+  ppm_cv: 0.0
+  ppm_values:
+  - 47.3198
+  entrance_std_px: 0.0
+  outliers_removed: 0
+  flag: manual
