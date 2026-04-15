@@ -1,15 +1,19 @@
 # Changelog
 
+## v0.5.1 — Korekta współrzędnych: Miętusia, Miętusia Wyżnia (2026-04-15)
+
+### Korekta współrzędnych + wysokość (źródło: [RadostW/jaskinie](https://github.com/RadostW/jaskinie))
+- **001197** Jaskinia Miętusia: 49.246611, 19.898750, 1270.0 m n.p.m.
+- **001187** Jaskinia Miętusia Wyżnia: 49.245399, 19.894900, 1377.0 m n.p.m.
+
+---
+
 ## v0.5 — Korekta współrzędnych WGS84 (2026-04-15)
 
 ### Korekta współrzędnych otworu
 Poprawiono współrzędne WGS84 dla 2 jaskiń:
 - **001665** Jaskinia Wysoka: 49.23364130, 19.88454604
 - **001299** Jaskinia Bańdzioch Kominiarski: 49.24258746, 19.84957850
-
-### Korekta współrzędnych + wysokość (źródło: [RadostW/jaskinie](https://github.com/RadostW/jaskinie))
-- **001197** Jaskinia Miętusia: 49.246611, 19.898750, 1270.0 m n.p.m.
-- **001187** Jaskinia Miętusia Wyżnia: 49.245399, 19.894900, 1377.0 m n.p.m.
 
 ---
 
