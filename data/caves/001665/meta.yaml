@@ -9,8 +9,8 @@ image:
   width: 10778
   height: 9418
 coordinates:
-  lat: 49.233761
-  lon: 19.885161
+  lat: 49.2336413
+  lon: 19.88454604
 entrance:
   x: 2090.49
   y: 1761.16
@@ -21,14 +21,14 @@ north:
   all_skipped: false
 declination_deg: 0.0
 computed:
-  convergence_deg: -0.6704000000
-  total_rotation_deg: -0.7014000000
-  A: 0.0846676605
-  D: -0.0010365359
-  B: -0.0010365359
-  E: -0.0846676605
-  C: 564244.497748
-  F: 152333.896708
+  convergence_deg: -0.6699000000
+  total_rotation_deg: -0.7009000000
+  A: 0.0846676689
+  D: -0.0010358459
+  B: -0.0010358459
+  E: -0.0846676689
+  C: 564199.897434
+  F: 152320.068961
 quality:
   ppm_cv: 0.0
   ppm_values:

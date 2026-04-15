@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.5 — Korekta współrzędnych WGS84 (2026-04-15)
+
+### Korekta współrzędnych otworu
+Poprawiono współrzędne WGS84 dla 2 jaskiń:
+- **001665** Jaskinia Wysoka: 49.23364130, 19.88454604
+- **001299** Jaskinia Bańdzioch Kominiarski: 49.24258746, 19.84957850
+
+---
+
 ## v0.4 — Ręczne dodawanie brakujących jaskiń (2026-04-10)
 
 ### Nowe skrypty
