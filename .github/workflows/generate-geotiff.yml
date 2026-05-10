@@ -8,6 +8,7 @@ on:
 
 jobs:
   generate:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -53,6 +54,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "Brak zmian do commitu"
           else
-            git commit -m "Wygenerowano .tfw dla zmienionych jaskiń [skip ci]"
+            git commit -m "Wygenerowano .tfw dla zmienionych jaskiń"
             git push
           fi
