@@ -21,14 +21,14 @@ north:
   all_skipped: false
 declination_deg: 0.0
 computed:
-  convergence_deg: -0.6593000000
-  total_rotation_deg: -0.6643000000
-  A: 0.0847400666
-  D: -0.0009825505
-  B: -0.0009825505
-  E: -0.0847400666
-  C: 563283.67315
-  F: 153720.956026
+  convergence_deg: -0.6594000000
+  total_rotation_deg: -0.6644000000
+  A: 0.0847400649
+  D: -0.0009827003
+  B: -0.0009827003
+  E: -0.0847400649
+  C: 563293.344249
+  F: 153723.973194
 quality:
   ppm_cv: 0.0020000000
   ppm_values:
