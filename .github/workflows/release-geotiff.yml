@@ -4,6 +4,12 @@ on:
   push:
     tags:
       - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag do wygenerowania release (np. v0.5.2)'
+        required: true
+        type: string
 
 jobs:
   release:
@@ -13,6 +19,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag || github.ref }}
 
       - name: Install GDAL
         run: sudo apt-get update && sudo apt-get install -y gdal-bin
@@ -29,7 +37,7 @@ jobs:
 
       - name: Create archive
         run: |
-          TAG="${GITHUB_REF_NAME}"
+          TAG="${{ inputs.tag || github.ref_name }}"
           mkdir -p _release
           for georef in data/caves/*/image_georef.tif; do
             dir_id=$(basename "$(dirname "$georef")")
@@ -47,5 +55,6 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ inputs.tag || github.ref_name }}
           files: ${{ env.ARCHIVE }}
           generate_release_notes: true
