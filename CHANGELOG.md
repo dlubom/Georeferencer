@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.5.2 — Korekta współrzędnych: Czarna (2026-05-10)
+
+### Korekta współrzędnych otworu (źródło: kombinacja GNSS + LIDAR)
+- **001445** Jaskinia Czarna: 49.2444121431, 19.8705053667
+
+---
+
 ## v0.5.1 — Korekta współrzędnych: Miętusia, Miętusia Wyżnia (2026-04-15)
 
 ### Korekta współrzędnych + wysokość (źródło: [RadostW/jaskinie](https://github.com/RadostW/jaskinie))
