@@ -5,7 +5,8 @@ Instrukcja dodawania jaskiń, które zostały pominięte w crowdsourcingu (za ma
 ## Wymagania
 
 - Projekt `Polish-Cave-Data-Scraper` w `../Polish-Cave-Data-Scraper/` (obrazy caves_mono/, caves_upscaled/, caves/)
-- JSONL z rejestrem PIG: `../Jaskiniowy-Kataster-Tatr-Zachodnich/doc/jaskinie_polski_pig_dump.jsonl`
+- JSONL z rejestrem PIG: `../Jaskiniowy-Kataster-Tatr-Zachodnich/doc/jaskinie_polski_pig_dump.jsonl` (źródło opisów i obrazów)
+- `best-measurements.csv` z release `dlubom/gps-kataster-obiektow-tatr` (źródło aktualnych współrzędnych otworów)
 - Aktywne venv: `source .venv/bin/activate`
 
 ## 1. Lista brakujących jaskiń
@@ -63,7 +64,8 @@ declination_deg: 0
 python pipeline/05_add_cave.py --cave 001197 \
     --entrance-x 26131.87 --entrance-y 7996.18 \
     --pixels-per-meter 23.6549 \
-    --north-angle 0.0
+    --north-angle 0.0 \
+    --gps-kataster-object-id MLZ-0000
 ```
 
 Skrypt:
@@ -76,10 +78,21 @@ Opcjonalne parametry: `--declination <deg>`, `--image-id <id>` (gdy wiele planó
 ## 5. Generacja GeoTIFF
 
 ```bash
-python pipeline/02_generate_geotiff.py --cave 001197
+python pipeline/02_generate_geotiff.py --cave 001197 \
+    --gps-kataster-best-measurements ../gps-kataster-obiektow-tatr/build/exports/best-measurements.csv \
+    --gps-kataster-strict
 ```
 
-Generuje `image.tfw` (World File) i `image_georef.tif` (GeoTIFF EPSG:2180).
+Generator renderuje Jinja placeholdery `coordinates.lat/lon` z obiektu `jaskinia_otwor` w gps-kataster, a potem generuje `image.tfw` (World File) i `image_georef.tif` (GeoTIFF EPSG:2180). Zastąp `MLZ-0000` właściwym ID otworu z `best-measurements.csv`.
+
+Jeśli dodajesz lub korygujesz jaskinię, ustaw w `meta.yaml` właściwy identyfikator otworu:
+
+```yaml
+coordinates:
+  gps_kataster_object_id: KSZ-0033
+  lat: "{{ gps_kataster.objects[gps_kataster_object_id].lat }}"
+  lon: "{{ gps_kataster.objects[gps_kataster_object_id].lon }}"
+```
 
 ## 6. Weryfikacja
 
@@ -90,6 +103,6 @@ Generuje `image.tfw` (World File) i `image_georef.tif` (GeoTIFF EPSG:2180).
 ## Uwagi
 
 - **Kliki zawsze na obrazie mono** (image.tif, 2x upscaled) — wymiary w meta.yaml muszą odpowiadać temu obrazowi
-- **Współrzędne otworu** — pobierane automatycznie z JSONL (rejestr PIG), nie trzeba ich podawać ręcznie
+- **Współrzędne otworu** — JSONL PIG daje wartość startową, ale docelowy release powinien brać `lat/lon` z `gps-kataster-obiektow-tatr`
 - **Deklinacja** — dla większości planów tatrzańskich = 0 (plany w północy magnetycznej, deklinacja bliska 0°)
 - Ręcznie dodane jaskinie mają `quality.flag: manual` i `n_submissions: 0`

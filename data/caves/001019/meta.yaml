@@ -9,8 +9,9 @@ image:
   width: 1130
   height: 1814
 coordinates:
-  lat: 49.271556
-  lon: 19.943386
+  gps_kataster_object_id: DZI-0005
+  lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
+  lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:
   x: 490.35
   y: 1588.1
@@ -21,14 +22,14 @@ north:
   all_skipped: false
 declination_deg: 0.0
 computed:
-  convergence_deg: -0.7149000000
-  total_rotation_deg: -0.7149000000
-  A: 0.0129725241
-  D: -0.0001618730
-  B: -0.0001618730
-  E: -0.0129725241
-  C: 568598.572456
-  F: 156454.84449
+  convergence_deg: -0.7148000000
+  total_rotation_deg: -0.7148000000
+  A: 0.0129725243
+  D: -0.0001618550
+  B: -0.0001618550
+  E: -0.0129725243
+  C: 568590.925964
+  F: 156454.831033
 quality:
   ppm_cv: 0.0030000000
   ppm_values:

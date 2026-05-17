@@ -9,8 +9,9 @@ image:
   width: 904
   height: 1266
 coordinates:
-  lat: 49.233944
-  lon: 19.915556
+  gps_kataster_object_id: MTW-0058
+  lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
+  lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:
   x: 599.15
   y: 242.81
@@ -24,11 +25,11 @@ computed:
   convergence_deg: -0.6934000000
   total_rotation_deg: -0.6964000000
   A: 0.0259721073
-  D: -0.0003157045
-  B: -0.0003157045
+  D: -0.0003157043
+  B: -0.0003157043
   E: -0.0259721073
-  C: 566615.978857
-  F: 152235.778643
+  C: 566615.945471
+  F: 152235.825445
 quality:
   ppm_cv: 0.0010000000
   ppm_values:

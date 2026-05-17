@@ -9,8 +9,9 @@ image:
   width: 2660
   height: 2182
 coordinates:
-  lat: 49.243081
-  lon: 19.841367
+  gps_kataster_object_id: LEJ-0010
+  lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
+  lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:
   x: 484.61
   y: 471.38
@@ -24,11 +25,11 @@ computed:
   convergence_deg: -0.6373000000
   total_rotation_deg: -0.6383000000
   A: 0.0050897788
-  D: -0.0000567068
-  B: -0.0000567068
+  D: -0.0000567069
+  B: -0.0000567069
   E: -0.0050897788
-  C: 561218.531152
-  F: 153184.446568
+  C: 561218.60017
+  F: 153184.536699
 quality:
   ppm_cv: 0.0080000000
   ppm_values:

@@ -9,8 +9,9 @@ image:
   width: 574
   height: 422
 coordinates:
-  lat: 49.251683
-  lon: 19.973131
+  gps_kataster_object_id: BYZ-0001
+  lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
+  lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:
   x: 94.23
   y: 172.34
@@ -21,14 +22,14 @@ north:
   all_skipped: false
 declination_deg: 0.0
 computed:
-  convergence_deg: -0.7372000000
-  total_rotation_deg: -0.7372000000
-  A: 0.0129674131
-  D: -0.0001668618
-  B: -0.0001668618
-  E: -0.0129674131
-  C: 570794.986329
-  F: 154255.254012
+  convergence_deg: -0.7369000000
+  total_rotation_deg: -0.7369000000
+  A: 0.0129674140
+  D: -0.0001667898
+  B: -0.0001667898
+  E: -0.0129674140
+  C: 570761.176823
+  F: 154400.460521
 quality:
   ppm_cv: 0.0010000000
   ppm_values:

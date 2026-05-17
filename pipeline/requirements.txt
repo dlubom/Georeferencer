@@ -4,3 +4,4 @@ pyproj>=3.6
 pyyaml>=6.0
 pyarrow>=14.0
 Pillow>=10.0
+Jinja2>=3.1

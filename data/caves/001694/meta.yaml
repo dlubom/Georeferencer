@@ -9,8 +9,9 @@ image:
   width: 460
   height: 746
 coordinates:
-  lat: 49.222861
-  lon: 20.014019
+  gps_kataster_object_id: SUW-0007
+  lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
+  lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:
   x: 106.88
   y: 627.1
@@ -24,11 +25,11 @@ computed:
   convergence_deg: -0.7679000000
   total_rotation_deg: -0.7689000000
   A: 0.0130094973
-  D: -0.0001745894
-  B: -0.0001745894
+  D: -0.0001745893
+  B: -0.0001745893
   E: -0.0130094973
-  C: 573812.435082
-  F: 151097.160392
+  C: 573812.399033
+  F: 151097.226912
 quality:
   ppm_cv: 0.0010000000
   ppm_values:

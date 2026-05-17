@@ -9,8 +9,9 @@ image:
   width: 452
   height: 470
 coordinates:
-  lat: 49.249644
-  lon: 19.996933
+  gps_kataster_object_id: BYW-0001
+  lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
+  lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:
   x: 234.76
   y: 163.58
@@ -21,14 +22,14 @@ north:
   all_skipped: false
 declination_deg: 0.0
 computed:
-  convergence_deg: -0.7552000000
-  total_rotation_deg: -0.7462000000
-  A: 0.0130027982
-  D: -0.0001693619
-  B: -0.0001693619
-  E: -0.0130027982
-  C: 572527.734102
-  F: 154051.122683
+  convergence_deg: -0.7549000000
+  total_rotation_deg: -0.7459000000
+  A: 0.0130027991
+  D: -0.0001692946
+  B: -0.0001692946
+  E: -0.0130027991
+  C: 572495.505158
+  F: 154213.786746
 quality:
   ppm_cv: 0.0040000000
   ppm_values:

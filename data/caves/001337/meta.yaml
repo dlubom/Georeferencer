@@ -9,8 +9,9 @@ image:
   width: 552
   height: 492
 coordinates:
-  lat: 49.240506
-  lon: 19.855325
+  gps_kataster_object_id: KSZ-0099
+  lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
+  lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:
   x: 261.13
   y: 127.07
@@ -24,11 +25,11 @@ computed:
   convergence_deg: -0.6479000000
   total_rotation_deg: -0.6479000000
   A: 0.0130047610
-  D: -0.0001470575
-  B: -0.0001470575
+  D: -0.0001470577
+  B: -0.0001470577
   E: -0.0130047610
-  C: 562236.45461
-  F: 152908.930526
+  C: 562236.532754
+  F: 152908.870911
 quality:
   ppm_cv: 0.0020000000
   ppm_values:

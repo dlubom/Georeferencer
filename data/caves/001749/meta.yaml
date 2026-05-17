@@ -9,8 +9,9 @@ image:
   width: 1132
   height: 730
 coordinates:
-  lat: 49.282822
-  lon: 20.000961
+  gps_kataster_object_id: OLC-0002
+  lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
+  lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:
   x: 128.73
   y: 188.63
@@ -24,11 +25,11 @@ computed:
   convergence_deg: -0.7587000000
   total_rotation_deg: -0.7587000000
   A: 0.0259246133
-  D: -0.0003432941
-  B: -0.0003432941
+  D: -0.0003432976
+  B: -0.0003432976
   E: -0.0259246133
-  C: 572771.718534
-  F: 157744.983208
+  C: 572770.377479
+  F: 157835.044349
 quality:
   ppm_cv: 0.0020000000
   ppm_values:

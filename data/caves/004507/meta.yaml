@@ -9,8 +9,9 @@ image:
   width: 1064
   height: 1380
 coordinates:
-  lat: 49.249722
-  lon: 19.851333
+  gps_kataster_object_id: LEJ-0013
+  lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
+  lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:
   x: 302.11
   y: 608.65
@@ -27,8 +28,8 @@ computed:
   D: -0.0000945648
   B: -0.0000945648
   E: -0.0084007112
-  C: 561935.337945
-  F: 153933.322699
+  C: 561935.359615
+  F: 153933.351664
 quality:
   ppm_cv: 0.0010000000
   ppm_values:

@@ -9,8 +9,9 @@ image:
   width: 682
   height: 926
 coordinates:
-  lat: 49.267219
-  lon: 19.880869
+  gps_kataster_object_id: STN-0002
+  lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
+  lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:
   x: 220.31
   y: 283.11
@@ -21,14 +22,14 @@ north:
   all_skipped: false
 declination_deg: 0.0
 computed:
-  convergence_deg: -0.6675000000
-  total_rotation_deg: -0.7065000000
-  A: 0.0259923052
-  D: -0.0003205156
-  B: -0.0003205156
-  E: -0.0259923052
-  C: 564058.365946
-  F: 155904.748133
+  convergence_deg: -0.6674000000
+  total_rotation_deg: -0.7064000000
+  A: 0.0259923054
+  D: -0.0003204941
+  B: -0.0003204941
+  E: -0.0259923054
+  C: 564052.584368
+  F: 155965.919294
 quality:
   ppm_cv: 0.0050000000
   ppm_values:

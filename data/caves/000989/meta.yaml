@@ -9,8 +9,9 @@ image:
   width: 634
   height: 700
 coordinates:
-  lat: 49.263722
-  lon: 19.880208
+  gps_kataster_object_id: MTW-0039
+  lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
+  lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:
   x: 453.34
   y: 374.84
@@ -24,11 +25,11 @@ computed:
   convergence_deg: -0.6670000000
   total_rotation_deg: -0.6670000000
   A: 0.0258580877
-  D: -0.0003010150
-  B: -0.0003010150
+  D: -0.0003010147
+  B: -0.0003010147
   E: -0.0258580877
-  C: 564008.843564
-  F: 155517.948635
+  C: 564008.770328
+  F: 155518.109105
 quality:
   ppm_cv: 0.0060000000
   ppm_values:

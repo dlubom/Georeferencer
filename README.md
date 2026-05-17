@@ -15,19 +15,29 @@ Wyniki dostępne jako GeoTIFF-y w [GitHub Releases](../../releases).
 Zebrane dane crowdsourcingowe przetwarzane są automatycznym pipeline'em:
 
 1. **Ekstrakcja** (`01_extract_yaml.py`) — dane ze zgłoszeń agregowane do edytowalnych plików YAML (`data/caves/{dir_id}/meta.yaml`): mediana pikseli otworu, mediana skali (z usuwaniem outlierów IQR), mediana kąta północy
-2. **Generacja GeoTIFF** (`02_generate_geotiff.py`) — z YAML wyliczane parametry World File (A-F) i generowany GeoTIFF w układzie EPSG:2180 (PL-1992)
-3. **Raporty QA** (`03_report.py`) — automatyczne flagowanie jaskiń z wysokim rozrzutem wyników
+2. **Renderowanie współrzędnych** — `meta.yaml` trzyma Jinja placeholdery `coordinates.lat/lon` oraz jawny `coordinates.gps_kataster_object_id` wskazujący ID otworu (`object_id`) z release [`dlubom/gps-kataster-obiektow-tatr`](https://github.com/dlubom/gps-kataster-obiektow-tatr).
+3. **Generacja GeoTIFF** (`02_generate_geotiff.py`) — z YAML wyliczane parametry World File (A-F) i generowany GeoTIFF w układzie EPSG:2180 (PL-1992)
+4. **Raporty QA** (`03_report.py`) — automatyczne flagowanie jaskiń z wysokim rozrzutem wyników
 
 ### Edycja wyników
 
 Każdy plik `meta.yaml` jest edytowalny — można ręcznie poprawić:
-- współrzędne otworu (`coordinates.lat`, `coordinates.lon`)
+- identyfikator właściwego otworu w gps-kataster (`coordinates.gps_kataster_object_id`) — potrzebny, gdy jedna jaskinia ma kilka otworów i automatyczne dopasowanie nie jest jednoznaczne
 - pozycję otworu w pikselach (`entrance.x`, `entrance.y`)
 - skalę (`scale.pixels_per_meter`)
 - kąt północy (`north.angle_deg`)
 - deklinację (`declination_deg`)
 
 Po edycji i pushu na `main` — CI automatycznie przelicza World File i generuje nowy GeoTIFF.
+
+Współrzędne WGS84 nie są już traktowane jako lokalna prawda projektu. Każdy YAML wskazuje konkretny otwór w `gps-kataster-obiektow-tatr`, a release renderuje `lat/lon` z `best-measurements.csv`. Jeśli automatyczne jednorazowe przypisanie otworu było błędne, popraw tylko `gps_kataster_object_id`. Przypadki z wieloma kandydatami są zebrane w `data/caves/_reports/gps_kataster_manual_review.csv`.
+
+```yaml
+coordinates:
+  gps_kataster_object_id: KSZ-0033
+  lat: "{{ gps_kataster.objects[gps_kataster_object_id].lat }}"
+  lon: "{{ gps_kataster.objects[gps_kataster_object_id].lon }}"
+```
 
 ### Uruchomienie lokalne
 
@@ -37,10 +47,14 @@ pip install -r pipeline/requirements.txt
 brew install gdal  # macOS
 
 # Generacja GeoTIFF dla jednej jaskini
-python pipeline/02_generate_geotiff.py --cave 001131
+python pipeline/02_generate_geotiff.py --cave 001131 \
+  --gps-kataster-best-measurements ../gps-kataster-obiektow-tatr/build/exports/best-measurements.csv \
+  --gps-kataster-strict
 
 # Generacja dla wszystkich
-python pipeline/02_generate_geotiff.py --all
+python pipeline/02_generate_geotiff.py --all \
+  --gps-kataster-best-measurements ../gps-kataster-obiektow-tatr/build/exports/best-measurements.csv \
+  --gps-kataster-strict
 
 # Raporty QA
 python pipeline/03_report.py
@@ -48,7 +62,7 @@ python pipeline/03_report.py
 
 ### Release
 
-Przy utworzeniu tagu `v*` (np. `v1.0`) GitHub Actions automatycznie generuje wszystkie GeoTIFF-y i publikuje je jako paczkę `.tar.gz` w GitHub Releases. Pliki nazywane są wg schematu: `{dir_id}_{numer_inwentarzowy}_{nazwa}.tif`.
+Przy utworzeniu tagu `v*` (np. `v1.0`) GitHub Actions pobiera `best-measurements.csv` z najnowszego release `dlubom/gps-kataster-obiektow-tatr`, renderuje Jinja placeholdery `lat/lon`, generuje wszystkie GeoTIFF-y i publikuje je jako paczkę `.tar.gz` w GitHub Releases. Przy ręcznym uruchomieniu workflow można przypiąć konkretny tag release gps-kataster. Pliki nazywane są wg schematu: `{dir_id}_{numer_inwentarzowy}_{nazwa}.tif`.
 
 ---
 

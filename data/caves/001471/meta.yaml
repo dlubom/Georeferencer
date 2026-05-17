@@ -9,8 +9,9 @@ image:
   width: 972
   height: 1226
 coordinates:
-  lat: 49.238189
-  lon: 19.899186
+  gps_kataster_object_id: MTZ-0055
+  lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
+  lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:
   x: 720.9
   y: 962.72
@@ -27,8 +28,8 @@ computed:
   D: -0.0001621189
   B: -0.0001621189
   E: -0.0170408103
-  C: 565422.380752
-  F: 152703.280743
+  C: 565422.371358
+  F: 152703.312398
 quality:
   ppm_cv: 0.0030000000
   ppm_values:

@@ -9,8 +9,9 @@ image:
   width: 922
   height: 784
 coordinates:
-  lat: 49.193489
-  lon: 20.055419
+  gps_kataster_object_id: PL-0041
+  lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
+  lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:
   x: 163.1
   y: 230.88
@@ -24,11 +25,11 @@ computed:
   convergence_deg: -0.7989000000
   total_rotation_deg: -0.7869000000
   A: 0.0129706278
-  D: -0.0001781426
-  B: -0.0001781426
+  D: -0.0001781427
+  B: -0.0001781427
   E: -0.0129706278
-  C: 576870.760261
-  F: 147869.020165
+  C: 576870.775618
+  F: 147869.103711
 quality:
   ppm_cv: 0.0010000000
   ppm_values:

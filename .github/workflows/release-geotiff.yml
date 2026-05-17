@@ -10,6 +10,10 @@ on:
         description: 'Tag do wygenerowania release (np. v0.5.2)'
         required: true
         type: string
+      gps_kataster_tag:
+        description: 'Tag release gps-kataster-obiektow-tatr z best-measurements.csv (puste = najnowszy)'
+        required: false
+        type: string
 
 jobs:
   release:
@@ -32,8 +36,25 @@ jobs:
       - name: Install dependencies
         run: pip install -r pipeline/requirements.txt
 
+      - name: Download gps-kataster coordinates
+        run: |
+          mkdir -p _gps-kataster
+          GPS_TAG="${{ inputs.gps_kataster_tag }}"
+          if [ -n "$GPS_TAG" ]; then
+            GPS_URL="https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/download/${GPS_TAG}/best-measurements.csv"
+          else
+            GPS_URL="https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/latest/download/best-measurements.csv"
+          fi
+          curl -L --fail --retry 3 \
+            -o _gps-kataster/best-measurements.csv \
+            "$GPS_URL"
+          test -s _gps-kataster/best-measurements.csv
+
       - name: Generate all GeoTIFFs
-        run: python pipeline/02_generate_geotiff.py --all
+        run: >
+          python pipeline/02_generate_geotiff.py --all
+          --gps-kataster-best-measurements _gps-kataster/best-measurements.csv
+          --gps-kataster-strict
 
       - name: Create archive
         run: |

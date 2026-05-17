@@ -9,8 +9,9 @@ image:
   width: 1892
   height: 1584
 coordinates:
-  lat: 49.265028
-  lon: 19.957389
+  gps_kataster_object_id: BIA-0001
+  lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
+  lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:
   x: 635.55
   y: 1030.18
@@ -21,14 +22,14 @@ north:
   all_skipped: false
 declination_deg: 0.0
 computed:
-  convergence_deg: -0.7254000000
-  total_rotation_deg: -0.7254000000
-  A: 0.0042162247
-  D: -0.0000533864
-  B: -0.0000533864
-  E: -0.0042162247
-  C: 569629.547615
-  F: 155725.854316
+  convergence_deg: -0.7253000000
+  total_rotation_deg: -0.7253000000
+  A: 0.0042162248
+  D: -0.0000533748
+  B: -0.0000533748
+  E: -0.0042162248
+  C: 569614.475364
+  F: 155719.077397
 quality:
   ppm_cv: 0.0010000000
   ppm_values:

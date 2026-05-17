@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.6.0 — Integracja współrzędnych z gps-kataster (2026-05-17)
+
+### Integracja współrzędnych z gps-kataster
+- Masowo zastąpiono lokalne `coordinates.lat/lon` w `data/caves/*/meta.yaml` Jinja placeholderami, które wskazują jawny `coordinates.gps_kataster_object_id` otworu.
+- Przeliczono sekcje `computed` i pliki `image.tfw` dla pełnego zestawu 814 jaskiń na podstawie lokalnego `best-measurements.csv`.
+- Workflow release i automatycznej generacji pobierają `best-measurements.csv` z GitHub Releases gps-kataster, renderują Jinja i uruchamiają generator w trybie `--gps-kataster-strict`.
+- Dodano raport `data/caves/_reports/gps_kataster_manual_review.csv` z 6 przypadkami, w których automatyczne przypisanie dotyczyło wielu otworów lub wymaga ręcznego potwierdzenia.
+
+### Narzędzia i dokumentacja
+- Dodano moduł `pipeline/gps_kataster_coordinates.py`, obsługę CSV/GeoJSON `best-measurements` oraz testy dla rozwiązywania ID otworów.
+- `05_add_cave.py` potrafi zapisać `coordinates.gps_kataster_object_id` i podpowiada generację w trybie strict.
+- Dodano `AGENTS.md` jako repo-instrukcję dla Codex i usunięto przestarzały `CLAUDE.md`.
+
+---
+
 ## v0.5.2 — Korekta współrzędnych: Czarna (2026-05-10)
 
 ### Korekta współrzędnych otworu (źródło: kombinacja GNSS + LIDAR)

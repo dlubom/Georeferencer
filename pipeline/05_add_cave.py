@@ -29,6 +29,7 @@ import yaml
 from PIL import Image
 
 Image.MAX_IMAGE_PIXELS = None
+from gps_kataster_coordinates import LAT_TEMPLATE, LON_TEMPLATE
 
 SCRAPER_DIR = Path.home() / "projects" / "Polish-Cave-Data-Scraper"
 JSONL_PATH = Path.home() / "projects" / "Jaskiniowy-Kataster-Tatr-Zachodnich" / "doc" / "jaskinie_polski_pig_dump.jsonl"
@@ -105,9 +106,20 @@ def build_meta_yaml(cave_data: dict, image_meta: dict, filename: str,
                     width: int, height: int,
                     entrance_x: float, entrance_y: float,
                     pixels_per_meter: float, north_angle: float,
-                    declination: float) -> dict:
+                    declination: float,
+                    gps_kataster_object_id: str | None = None) -> dict:
     """Zbuduj strukturę meta.yaml."""
     graphics_id = image_meta["graphics_id"]
+    coordinates = {
+        "lat": float(cave_data.get("latitude", 0)),
+        "lon": float(cave_data.get("longitude", 0)),
+    }
+    if gps_kataster_object_id:
+        coordinates = {
+            "gps_kataster_object_id": gps_kataster_object_id,
+            "lat": LAT_TEMPLATE,
+            "lon": LON_TEMPLATE,
+        }
 
     return {
         "cave": {
@@ -122,10 +134,7 @@ def build_meta_yaml(cave_data: dict, image_meta: dict, filename: str,
             "width": width,
             "height": height,
         },
-        "coordinates": {
-            "lat": float(cave_data.get("latitude", 0)),
-            "lon": float(cave_data.get("longitude", 0)),
-        },
+        "coordinates": coordinates,
         "entrance": {
             "x": entrance_x,
             "y": entrance_y,
@@ -167,6 +176,7 @@ def parse_args():
     p.add_argument("--declination", type=float, default=0.0, help="Deklinacja [°]")
     p.add_argument("--dry-run", action="store_true", help="Tylko podgląd, bez zapisu")
     p.add_argument("--image-id", type=int, help="Graphics ID (jeśli wiele planów)")
+    p.add_argument("--gps-kataster-object-id", help="ID otworu z gps-kataster, np. KSZ-0033")
     return p.parse_args()
 
 
@@ -212,12 +222,15 @@ def main():
         args.entrance_x, args.entrance_y,
         args.pixels_per_meter, args.north_angle,
         args.declination,
+        args.gps_kataster_object_id,
     )
 
     print(f"\n  entrance: ({args.entrance_x}, {args.entrance_y})")
     print(f"  pixels_per_meter: {args.pixels_per_meter}")
     print(f"  north_angle: {args.north_angle}°")
     print(f"  declination: {args.declination}°")
+    if args.gps_kataster_object_id:
+        print(f"  gps_kataster_object_id: {args.gps_kataster_object_id}")
 
     if args.dry_run:
         print("\n--- meta.yaml (dry-run) ---")
@@ -241,7 +254,9 @@ def main():
 
     # 7. Wygeneruj .tfw i GeoTIFF
     print(f"\n  Teraz uruchom:")
-    print(f"    python pipeline/02_generate_geotiff.py --cave {cave_id}")
+    print(f"    python pipeline/02_generate_geotiff.py --cave {cave_id} \\")
+    print("      --gps-kataster-best-measurements ../gps-kataster-obiektow-tatr/build/exports/best-measurements.csv \\")
+    print("      --gps-kataster-strict")
 
 
 if __name__ == "__main__":

@@ -9,8 +9,9 @@ image:
   width: 820
   height: 514
 coordinates:
-  lat: 49.244928
-  lon: 19.917647
+  gps_kataster_object_id: MLZ-0064
+  lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
+  lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:
   x: 695.09
   y: 200.73
@@ -21,14 +22,14 @@ north:
   all_skipped: false
 declination_deg: 0.0
 computed:
-  convergence_deg: -0.6951000000
-  total_rotation_deg: -0.7343000000
-  A: 0.0260539806
-  D: -0.0003339458
-  B: -0.0003339458
-  E: -0.0260539806
-  C: 566750.785654
-  F: 153457.289686
+  convergence_deg: -0.6944000000
+  total_rotation_deg: -0.7334000000
+  A: 0.0260531026
+  D: -0.0003335041
+  B: -0.0003335041
+  E: -0.0260531026
+  C: 566680.14769
+  F: 153505.011451
 quality:
   ppm_cv: 0.0050000000
   ppm_values:

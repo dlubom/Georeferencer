@@ -9,8 +9,9 @@ image:
   width: 638
   height: 792
 coordinates:
-  lat: 49.241647
-  lon: 19.824769
+  gps_kataster_object_id: CHW-0027
+  lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
+  lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:
   x: 115.43
   y: 408.93
@@ -24,11 +25,11 @@ computed:
   convergence_deg: -0.6247000000
   total_rotation_deg: -0.6217000000
   A: 0.0129241453
-  D: -0.0001402502
-  B: -0.0001402502
+  D: -0.0001402504
+  B: -0.0001402504
   E: -0.0129241453
-  C: 560013.554878
-  F: 153014.651308
+  C: 560013.655517
+  F: 153014.571256
 quality:
   ppm_cv: 0.0020000000
   ppm_values:

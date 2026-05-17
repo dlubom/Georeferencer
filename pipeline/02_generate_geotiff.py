@@ -5,10 +5,18 @@ Powtarzalny skrypt: czyta meta.yaml, przelicza parametry A-F,
 generuje World File (.tfw) i GeoTIFF przez gdal_translate.
 
 Użycie:
-    python pipeline/02_generate_geotiff.py --cave 001131
-    python pipeline/02_generate_geotiff.py --all
-    python pipeline/02_generate_geotiff.py --changed
-    python pipeline/02_generate_geotiff.py --all --force
+    python pipeline/02_generate_geotiff.py --cave 001131 \
+        --gps-kataster-best-measurements ../gps-kataster-obiektow-tatr/build/exports/best-measurements.csv \
+        --gps-kataster-strict
+    python pipeline/02_generate_geotiff.py --all \
+        --gps-kataster-best-measurements ../gps-kataster-obiektow-tatr/build/exports/best-measurements.csv \
+        --gps-kataster-strict
+    python pipeline/02_generate_geotiff.py --changed \
+        --gps-kataster-best-measurements ../gps-kataster-obiektow-tatr/build/exports/best-measurements.csv \
+        --gps-kataster-strict
+    python pipeline/02_generate_geotiff.py --all --force \
+        --gps-kataster-best-measurements ../gps-kataster-obiektow-tatr/build/exports/best-measurements.csv \
+        --gps-kataster-strict
 """
 import argparse
 import math
@@ -21,6 +29,12 @@ from PIL import Image
 
 Image.MAX_IMAGE_PIXELS = None
 from pyproj import Transformer
+
+from gps_kataster_coordinates import (
+    GpsKatasterCoordinateError,
+    load_best_measurements,
+    render_meta_template,
+)
 
 DATA_DIR = Path("data/caves")
 TRANSFORMER = Transformer.from_crs("EPSG:4326", "EPSG:2180", always_xy=True)
@@ -35,13 +49,25 @@ def parse_args():
                        help="Przetwórz tylko zmienione (meta.yaml nowszy niż .tfw)")
     p.add_argument("--force", action="store_true", help="Wymuszaj regenerację")
     p.add_argument("--data-dir", default="data/caves", help="Katalog danych")
+    p.add_argument(
+        "--gps-kataster-best-measurements",
+        help=(
+            "CSV/GeoJSON best-measurements z release dlubom/gps-kataster-obiektow-tatr; "
+            "Jinja placeholdery lat/lon zostaną wyrenderowane przed obliczeniem World File"
+        ),
+    )
+    p.add_argument(
+        "--gps-kataster-strict",
+        action="store_true",
+        help="Przerwij przy brakującym lub nieznanym ID otworu gps-kataster",
+    )
     return p.parse_args()
 
 
 def compute_world_file(meta):
     """Oblicz parametry World File z danych YAML (replikacja index.html:2277-2370)."""
-    lat = meta["coordinates"]["lat"]
-    lon = meta["coordinates"]["lon"]
+    lat = float(meta["coordinates"]["lat"])
+    lon = float(meta["coordinates"]["lon"])
     ppm = meta["scale"]["pixels_per_meter"]
     north_angle = meta["north"]["angle_deg"]
     declination = meta.get("declination_deg", 0.0)
@@ -161,14 +187,51 @@ def represent_float(dumper, value):
     return dumper.represent_scalar("tag:yaml.org,2002:float", text)
 
 
-def process_cave(cave_dir):
+def validate_gps_kataster_object_id(meta, gps_kataster_index):
+    """Sprawdź jawne powiązanie YAML z obiektem gps-kataster."""
+    if gps_kataster_index is None:
+        raise GpsKatasterCoordinateError(
+            "tryb --gps-kataster-strict wymaga --gps-kataster-best-measurements."
+        )
+
+    coordinates = meta.get("coordinates") or {}
+    nested = coordinates.get("gps_kataster") if isinstance(coordinates, dict) else {}
+    if not isinstance(nested, dict):
+        nested = {}
+
+    object_id = str(
+        coordinates.get("gps_kataster_object_id")
+        or nested.get("object_id")
+        or ""
+    ).strip()
+    if not object_id:
+        raise GpsKatasterCoordinateError(
+            "brak coordinates.gps_kataster_object_id w meta.yaml."
+        )
+    if object_id not in gps_kataster_index.by_object_id:
+        raise GpsKatasterCoordinateError(
+            f"brak object_id={object_id} w gps-kataster."
+        )
+
+
+def process_cave(cave_dir, gps_kataster_index=None, gps_kataster_strict=False):
     """Przetwórz jedną jaskinię. Zwraca (success, message)."""
     yaml_path = cave_dir / "meta.yaml"
     if not yaml_path.exists():
         return False, "Brak meta.yaml"
 
-    with open(yaml_path, encoding="utf-8") as f:
-        meta = yaml.safe_load(f)
+    raw_meta_text = yaml_path.read_text(encoding="utf-8")
+    source_meta = yaml.safe_load(raw_meta_text)
+
+    try:
+        if gps_kataster_strict:
+            validate_gps_kataster_object_id(source_meta, gps_kataster_index)
+        rendered_meta_text = render_meta_template(raw_meta_text, gps_kataster_index)
+    except GpsKatasterCoordinateError as exc:
+        msg = f"gps-kataster: {exc}"
+        return False, msg
+
+    meta = yaml.safe_load(rendered_meta_text)
 
     # Weryfikacja wymiarów
     ok, msg = verify_image_dimensions(meta, cave_dir)
@@ -182,10 +245,10 @@ def process_cave(cave_dir):
     write_tfw(cave_dir, params)
 
     # Zaktualizuj computed w YAML
-    update_computed_section(meta, params)
+    update_computed_section(source_meta, params)
     yaml.add_representer(float, represent_float)
     with open(yaml_path, "w", encoding="utf-8") as f:
-        yaml.dump(meta, f, default_flow_style=False, allow_unicode=True,
+        yaml.dump(source_meta, f, default_flow_style=False, allow_unicode=True,
                   sort_keys=False, width=120)
 
     # Generuj GeoTIFF
@@ -213,6 +276,13 @@ def find_caves(data_dir, changed_only=False):
 def main():
     args = parse_args()
     data_dir = Path(args.data_dir)
+    gps_kataster_index = None
+
+    if args.gps_kataster_best_measurements:
+        gps_kataster_source_path = Path(args.gps_kataster_best_measurements)
+        print(f"Wczytywanie współrzędnych gps-kataster: {gps_kataster_source_path}")
+        gps_kataster_index = load_best_measurements(gps_kataster_source_path)
+        print(f"  Obiekty jaskinia_otwor: {len(gps_kataster_index.rows)}")
 
     if args.cave:
         caves = [data_dir / args.cave]
@@ -231,7 +301,11 @@ def main():
     errors = 0
     for cave_dir in caves:
         dir_id = cave_dir.name
-        ok, msg = process_cave(cave_dir)
+        ok, msg = process_cave(
+            cave_dir,
+            gps_kataster_index=gps_kataster_index,
+            gps_kataster_strict=args.gps_kataster_strict,
+        )
         if ok:
             success += 1
         else:

@@ -9,8 +9,9 @@ image:
   width: 2892
   height: 1830
 coordinates:
-  lat: 49.249058
-  lon: 19.926067
+  gps_kataster_object_id: MLW-0002
+  lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
+  lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:
   x: 961.43
   y: 921.72
@@ -27,8 +28,8 @@ computed:
   D: -0.0001044708
   B: -0.0001044708
   E: -0.0085317836
-  C: 567367.74083
-  F: 153926.245278
+  C: 567367.713582
+  F: 153926.284358
 quality:
   ppm_cv: 0.0030000000
   ppm_values:

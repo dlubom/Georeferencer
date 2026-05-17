@@ -9,8 +9,9 @@ image:
   width: 3794
   height: 2858
 coordinates:
-  lat: 49.265833
-  lon: 19.921458
+  gps_kataster_object_id: BRA-0002
+  lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
+  lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:
   x: 832.19
   y: 1109.26
@@ -22,13 +23,13 @@ north:
 declination_deg: 0.0
 computed:
   convergence_deg: -0.6982000000
-  total_rotation_deg: -0.6888000000
-  A: 0.0021110162
-  D: -0.0000253798
-  B: -0.0000253798
-  E: -0.0021110162
-  C: 567016.077796
-  F: 155780.833387
+  total_rotation_deg: -0.6892000000
+  A: 0.0021110217
+  D: -0.0000253954
+  B: -0.0000253954
+  E: -0.0021110217
+  C: 567016.101398
+  F: 155780.872807
 quality:
   ppm_cv: 0.0020000000
   ppm_values:

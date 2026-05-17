@@ -9,8 +9,9 @@ image:
   width: 5616
   height: 5354
 coordinates:
-  lat: 49.269944
-  lon: 19.803806
+  gps_kataster_object_id: CHZ-0013
+  lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
+  lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:
   x: 4351.4
   y: 1396.98
@@ -21,14 +22,14 @@ north:
   all_skipped: false
 declination_deg: 0.0
 computed:
-  convergence_deg: -0.6091000000
-  total_rotation_deg: -0.6111000000
+  convergence_deg: -0.6090000000
+  total_rotation_deg: -0.6110000000
   A: 0.0021122584
-  D: -0.0000225302
-  B: -0.0000225302
+  D: -0.0000225274
+  B: -0.0000225274
   E: -0.0021122584
-  C: 558447.026841
-  F: 156140.770592
+  C: 558439.760187
+  F: 156134.068813
 quality:
   ppm_cv: 0.0
   ppm_values:

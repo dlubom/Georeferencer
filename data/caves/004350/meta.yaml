@@ -9,8 +9,9 @@ image:
   width: 1050
   height: 1302
 coordinates:
-  lat: 49.236075
-  lon: 19.871133
+  gps_kataster_object_id: KSW-0104
+  lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
+  lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:
   x: 202.05
   y: 771.56
@@ -21,14 +22,14 @@ north:
   all_skipped: false
 declination_deg: 0.0
 computed:
-  convergence_deg: -0.6598000000
-  total_rotation_deg: -0.6598000000
-  A: 0.0084632560
-  D: -0.0000974647
-  B: -0.0000974647
-  E: -0.0084632560
-  C: 563394.163683
-  F: 152434.479846
+  convergence_deg: -0.6601000000
+  total_rotation_deg: -0.6601000000
+  A: 0.0084632556
+  D: -0.0000975024
+  B: -0.0000975024
+  E: -0.0084632556
+  C: 563418.395228
+  F: 152449.089611
 quality:
   ppm_cv: 0.0030000000
   ppm_values:
