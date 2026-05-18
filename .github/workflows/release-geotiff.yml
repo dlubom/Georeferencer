@@ -27,7 +27,7 @@ jobs:
           ref: ${{ inputs.tag || github.ref }}
 
       - name: Install GDAL
-        run: sudo apt-get update && sudo apt-get install -y gdal-bin
+        run: sudo apt-get update && sudo apt-get install -y gdal-bin zip
 
       - uses: actions/setup-python@v5
         with:
@@ -70,8 +70,11 @@ jobs:
             safe_name=$(echo "$name" | tr ' /' '__' | tr -d "'\"")
             cp "$georef" "_release/${dir_id}_${safe_inv}_${safe_name}.tif"
           done
-          tar czf "geotiff-tatry-${TAG}.tar.gz" -C _release .
-          echo "ARCHIVE=geotiff-tatry-${TAG}.tar.gz" >> "$GITHUB_ENV"
+          (
+            cd _release
+            zip -q -r "../geotiff-tatry-${TAG}.zip" .
+          )
+          echo "ARCHIVE=geotiff-tatry-${TAG}.zip" >> "$GITHUB_ENV"
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2

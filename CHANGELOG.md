@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.6.1 — Paczka GeoTIFF w formacie ZIP (2026-05-18)
+
+### Release
+- Workflow release publikuje GeoTIFF-y jako `geotiff-tatry-v*.zip` zamiast `geotiff-tatry-v*.tar.gz`, żeby paczka była łatwiejsza do otwarcia dla użytkowników Windows i mniej technicznych odbiorców.
+- Zaktualizowano README i dodano test chroniący format archiwum release.
+- Domyka issue #4.
+
+---
+
 ## v0.6.0 — Integracja współrzędnych z gps-kataster (2026-05-17)
 
 ### Integracja współrzędnych z gps-kataster

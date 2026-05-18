@@ -62,7 +62,7 @@ python pipeline/03_report.py
 
 ### Release
 
-Przy utworzeniu tagu `v*` (np. `v1.0`) GitHub Actions pobiera `best-measurements.csv` z najnowszego release `dlubom/gps-kataster-obiektow-tatr`, renderuje Jinja placeholdery `lat/lon`, generuje wszystkie GeoTIFF-y i publikuje je jako paczkę `.tar.gz` w GitHub Releases. Przy ręcznym uruchomieniu workflow można przypiąć konkretny tag release gps-kataster. Pliki nazywane są wg schematu: `{dir_id}_{numer_inwentarzowy}_{nazwa}.tif`.
+Przy utworzeniu tagu `v*` (np. `v1.0`) GitHub Actions pobiera `best-measurements.csv` z najnowszego release `dlubom/gps-kataster-obiektow-tatr`, renderuje Jinja placeholdery `lat/lon`, generuje wszystkie GeoTIFF-y i publikuje je jako paczkę `.zip` w GitHub Releases. Przy ręcznym uruchomieniu workflow można przypiąć konkretny tag release gps-kataster. Pliki nazywane są wg schematu: `{dir_id}_{numer_inwentarzowy}_{nazwa}.tif`.
 
 ---
 
