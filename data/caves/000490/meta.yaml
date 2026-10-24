@@ -9,7 +9,9 @@ image:
   width: 13202
   height: 8430
 coordinates:
-  gps_kataster_object_id: MLZ-0029
+  gps_kataster_object_id: MLZ-0068
+  notes: Punkt entrance na planie systemu wskazuje podpisany otwór Jaskini Śnieżnej (T.E-13.1; 0,0). Dawne powiązanie MLZ-0029
+    odnosiło się do geometrycznego środka systemu z rekordu PIG 490, a nie do tego otworu.
   lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
   lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:
@@ -22,14 +24,14 @@ north:
   all_skipped: true
 declination_deg: 0.0
 computed:
-  convergence_deg: -0.6992000000
-  total_rotation_deg: -0.6992000000
-  A: 0.0846397505
-  D: -0.0010328792
-  B: -0.0010328792
-  E: -0.0846397505
-  C: 566138.269914
-  F: 153101.016071
+  convergence_deg: -0.7017000000
+  total_rotation_deg: -0.7017000000
+  A: 0.0846397042
+  D: -0.0010366711
+  B: -0.0010366711
+  E: -0.0846397042
+  C: 566384.298577
+  F: 153131.021822
 quality:
   ppm_cv: 0.0
   ppm_values:
