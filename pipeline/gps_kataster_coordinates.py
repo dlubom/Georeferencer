@@ -1,7 +1,7 @@
-"""Resolve cave entrance coordinates from gps-kataster release exports.
+"""Resolve cave and adit entrance coordinates from gps-kataster release exports.
 
 The Georeferencer data is keyed by the old PIG/CBDG cave id (`dir_id`), while
-gps-kataster exports one point per physical cave opening (`object_id`).  Most
+gps-kataster exports one point per physical cave or adit entrance (`object_id`). Most
 caves have one opening, but a few have more than one, so ambiguous matches must
 not silently pick the wrong point.
 """
@@ -77,7 +77,7 @@ class GpsKatasterIndex:
         max_ambiguous_distance_m: float = MAX_AMBIGUOUS_DISTANCE_M,
         min_ambiguous_distance_gap_m: float = MIN_AMBIGUOUS_DISTANCE_GAP_M,
     ) -> None:
-        self.rows = [row for row in rows if row.category == "jaskinia_otwor"]
+        self.rows = [row for row in rows if row.category in {"jaskinia_otwor", "sztolnia"}]
         self.max_ambiguous_distance_m = max_ambiguous_distance_m
         self.min_ambiguous_distance_gap_m = min_ambiguous_distance_gap_m
         self.by_object_id = {row.object_id: row for row in self.rows}
@@ -85,7 +85,7 @@ class GpsKatasterIndex:
         self.by_nr_inwent = _group_by(self.rows, "nr_inwent")
 
     def resolve_meta(self, meta: dict[str, Any]) -> CoordinateResolution:
-        """Resolve a gps-kataster opening for one Georeferencer `meta.yaml`."""
+        """Resolve a cave or adit entrance for one Georeferencer `meta.yaml`."""
 
         cave = _dict(meta.get("cave"))
         coordinates = _dict(meta.get("coordinates"))

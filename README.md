@@ -30,7 +30,7 @@ Każdy plik `meta.yaml` jest edytowalny — można ręcznie poprawić:
 
 Po edycji i pushu na `main` — CI automatycznie przelicza World File i generuje nowy GeoTIFF.
 
-Współrzędne WGS84 nie są już traktowane jako lokalna prawda projektu. Każdy YAML wskazuje konkretny otwór w `gps-kataster-obiektow-tatr`, a release renderuje `lat/lon` z `best-measurements.csv`. Jeśli automatyczne jednorazowe przypisanie otworu było błędne, popraw tylko `gps_kataster_object_id`. Przypadki z wieloma kandydatami są zebrane w `data/caves/_reports/gps_kataster_manual_review.csv`.
+Współrzędne WGS84 nie są już traktowane jako lokalna prawda projektu. Każdy YAML wskazuje konkretny otwór w `gps-kataster-obiektow-tatr`, a release renderuje `lat/lon` z `best-measurements.csv`. Obsługiwane kategorie obiektów to `jaskinia_otwor` i `sztolnia`; inne kategorie są odrzucane. Jeśli automatyczne jednorazowe przypisanie otworu było błędne, popraw tylko `gps_kataster_object_id`. Przypadki z wieloma kandydatami są zebrane w `data/caves/_reports/gps_kataster_manual_review.csv`.
 
 ```yaml
 coordinates:

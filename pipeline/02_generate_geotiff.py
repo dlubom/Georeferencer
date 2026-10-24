@@ -59,7 +59,7 @@ def parse_args():
     p.add_argument(
         "--gps-kataster-strict",
         action="store_true",
-        help="Przerwij przy brakującym lub nieznanym ID otworu gps-kataster",
+        help="Przerwij przy brakującym lub nieznanym ID otworu jaskini lub sztolni w gps-kataster",
     )
     return p.parse_args()
 
@@ -282,7 +282,7 @@ def main():
         gps_kataster_source_path = Path(args.gps_kataster_best_measurements)
         print(f"Wczytywanie współrzędnych gps-kataster: {gps_kataster_source_path}")
         gps_kataster_index = load_best_measurements(gps_kataster_source_path)
-        print(f"  Obiekty jaskinia_otwor: {len(gps_kataster_index.rows)}")
+        print(f"  Obiekty jaskinia_otwor/sztolnia: {len(gps_kataster_index.rows)}")
 
     if args.cave:
         caves = [data_dir / args.cave]

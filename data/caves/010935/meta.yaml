@@ -9,7 +9,9 @@ image:
   width: 7566
   height: 9718
 coordinates:
-  gps_kataster_object_id: KSZ-0009
+  gps_kataster_object_id: KSZ-0064
+  notes: Punkt entrance na planie systemu wskazuje podpisany otwór południowy Jaskini Mylnej (0,00; 1098 m n.p.m.). Dawne
+    powiązanie KSZ-0009 odnosiło się do zbiorczego rekordu PIG 10935, którego współrzędne również opisują główny otwór Mylnej.
   lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
   lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:
@@ -22,14 +24,14 @@ north:
   all_skipped: false
 declination_deg: 0.0
 computed:
-  convergence_deg: -0.6526000000
-  total_rotation_deg: -0.6526000000
-  A: 0.0211671283
-  D: -0.0002410932
-  B: -0.0002410932
-  E: -0.0211671283
-  C: 562601.897795
-  F: 152950.951088
+  convergence_deg: -0.6531000000
+  total_rotation_deg: -0.6531000000
+  A: 0.0211671262
+  D: -0.0002412787
+  B: -0.0002412787
+  E: -0.0211671262
+  C: 562650.163855
+  F: 152950.268955
 quality:
   ppm_cv: 0.0
   ppm_values:
