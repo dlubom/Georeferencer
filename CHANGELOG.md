@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.6.2 — Korekta dowiązania planów i obsługa sztolni (2026-10-24)
+
+### Poprawki georeferencji
+- **010935 — Jaskinie Pawlikowskiego:** dowiązano plan systemu do południowego otworu Jaskini Mylnej (`KSZ-0064`), oznaczonego na planie jako punkt 0,00.
+- **000490 — Jaskinia Wielka Śnieżna:** dowiązano plan systemu do otworu Jaskini Śnieżnej (`MLZ-0068`, T.E-13.1), oznaczonego na planie jako punkt 0,0.
+- Przeliczono parametry georeferencji obu planów i dodano uzasadnienia wyboru otworów. Usunięto zależność tych planów od zbiorczych rekordów systemów `KSZ-0009` i `MLZ-0029`.
+
+### Generator
+- Naprawiono generowanie GeoTIFF-ów dla obiektów kategorii `sztolnia`, w tym **001042 — Wojtkowa Szpara** (`CHZ-0011`).
+- Rozszerzono testy obsługi kategorii obiektów i zaktualizowano dokumentację generatora.
+
+---
+
 ## v0.6.1 — Paczka GeoTIFF w formacie ZIP (2026-05-18)
 
 ### Release
