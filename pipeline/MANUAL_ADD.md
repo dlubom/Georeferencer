@@ -83,7 +83,7 @@ python pipeline/02_generate_geotiff.py --cave 001197 \
     --gps-kataster-strict
 ```
 
-Generator renderuje Jinja placeholdery `coordinates.lat/lon` z obiektu `jaskinia_otwor` w gps-kataster, a potem generuje `image.tfw` (World File) i `image_georef.tif` (GeoTIFF EPSG:2180). Zastąp `MLZ-0000` właściwym ID otworu z `best-measurements.csv`.
+Generator renderuje Jinja placeholdery `coordinates.lat/lon` z obiektu kategorii `jaskinia_otwor` lub `sztolnia` w gps-kataster, a potem generuje `image.tfw` (World File) i `image_georef.tif` (GeoTIFF EPSG:2180). Zastąp `MLZ-0000` właściwym ID otworu z `best-measurements.csv`.
 
 Jeśli dodajesz lub korygujesz jaskinię, ustaw w `meta.yaml` właściwy identyfikator otworu:
 

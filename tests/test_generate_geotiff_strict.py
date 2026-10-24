@@ -23,10 +23,10 @@ from gps_kataster_coordinates import (  # noqa: E402
 )
 
 
-def row(object_id="OBJ-1"):
+def row(object_id="OBJ-1", *, category="jaskinia_otwor"):
     return BestMeasurementRow(
         object_id=object_id,
-        category="jaskinia_otwor",
+        category=category,
         name_local="Jaskinia Testowa",
         cave_id="C-0001",
         measurement_id="m-001",
@@ -45,10 +45,28 @@ def row(object_id="OBJ-1"):
 
 class GenerateGeotiffStrictTest(unittest.TestCase):
     def test_accepts_known_object_id(self):
-        index = GpsKatasterIndex([row("OBJ-1")])
-        meta = {"coordinates": {"gps_kataster_object_id": "OBJ-1"}}
+        for category in ("jaskinia_otwor", "sztolnia"):
+            with self.subTest(category=category):
+                index = GpsKatasterIndex([row("OBJ-1", category=category)])
+                meta = {"coordinates": {"gps_kataster_object_id": "OBJ-1"}}
 
-        generate_geotiff.validate_gps_kataster_object_id(meta, index)
+                generate_geotiff.validate_gps_kataster_object_id(meta, index)
+
+    def test_rejects_other_categories(self):
+        for category in ("ponor", "wywierzysko", "unknown"):
+            with self.subTest(category=category):
+                index = GpsKatasterIndex([row("OBJ-1", category=category)])
+                meta = {"coordinates": {"gps_kataster_object_id": "OBJ-1"}}
+
+                with self.assertRaises(GpsKatasterCoordinateError):
+                    generate_geotiff.validate_gps_kataster_object_id(meta, index)
+
+    def test_rejects_unknown_object_id(self):
+        index = GpsKatasterIndex([row("OBJ-1")])
+        meta = {"coordinates": {"gps_kataster_object_id": "UNKNOWN"}}
+
+        with self.assertRaises(GpsKatasterCoordinateError):
+            generate_geotiff.validate_gps_kataster_object_id(meta, index)
 
     def test_rejects_missing_object_id(self):
         index = GpsKatasterIndex([row("OBJ-1")])
