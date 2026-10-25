@@ -381,20 +381,21 @@ class OutputTest(unittest.TestCase):
         self.assertEqual(manifest['orientation_sources']['history.zip'], hashlib.sha256(original).hexdigest())
         self.assertEqual(manifest['plans'][0]['orientation']['status'], 'unverified')
 
-    def test_established_reference_aborts_preflight_and_keeps_current(self):
+    def test_incomplete_reference_aborts_preflight_and_keeps_current(self):
         from orientation import record_decision
         first = self.run_ok()
         before = hashes(first)
         meta = yaml.safe_load(self.meta_path.read_text())
         meta['north'].update(reference='geographic', evidence='Jawne źródło z legendy planu')
-        meta = record_decision(meta, 'Ustalono rodzaj; oczekiwanie na model T06.', '2026-10-25')
+        meta = record_decision(meta, 'Ustalono rodzaj w próbie preflight.', '2026-10-25')
+        del meta['north']['evidence']
         self.meta_path.write_text(yaml.safe_dump(meta))
         sources = hashes(self.data_dir)
         for output in (True, False):
             with self.subTest(output=output):
                 result = self.cli('--all', output=output)
                 self.assertNotEqual(result.returncode, 0)
-                self.assertIn('brak modelu', result.stderr)
+                self.assertIn('north.evidence', result.stderr)
                 self.assertEqual((self.output / 'current').resolve(), first)
                 self.assertEqual(before, hashes(first))
                 self.assertEqual(sources, hashes(self.data_dir))

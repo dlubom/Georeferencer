@@ -75,7 +75,10 @@ odbioru T02.** Odbiór T02 używa odczytu i raportów opisanych niżej.
    i YAML-ach. Osobno pokazuje przesunięcie w otworze, obrót i skalę TFW.
    Parametry wejściowe skali i północy pozostają identyczne. Od T05 nieustalona
    północ zachowuje kąt historycznego TFW niezależnie od zmiany pozycji;
-   nie jest przeliczana ukryta zbieżność. Ustalony rodzaj bez modelu T06 jest błędem.
+   nie jest przeliczana ukryta zbieżność. Ustalony rodzaj korzysta z modelu T06; geographic/magnetic uwzględnia
+   zbieżność dla bieżącej pozycji. Położenie w raporcie bieżącego modelu
+   używa narożnikowej konwencji kliknięć T06; audyt historii zachowuje własną
+   dawną interpretację.
    Brak obiektu w nowym CSV jest jawnym błędem
    per-plan w raporcie geometrii, wymagającym rozstrzygnięcia przed zmianą pinu.
 5. Po review podmień `source.json`, uruchom `./scripts/check` i opisz listę planów,

@@ -1,7 +1,7 @@
-# Północ, deklinacja i zachowanie orientacji (T05)
+# Północ, deklinacja i geometria (T05/T06)
 
 T05 jawnie reprezentuje niewiedzę. **Żaden z 814 planów nie otrzymał
-ustalonego rodzaju północy.** Obecna generacja używa wyłącznie kąta
+ustalonego rodzaju północy.** Dla `unknown` generacja używa wyłącznie kąta
 `atan2(D, A)` z `plans[].historical_tfw.parameters` historycznego
 [katalogu T02](../data/baseline/2026-10-24/catalogue.json). Hash katalogu
 jest przypięty w `orientation.py`, a hash TFW i ID planu zapisane w YAML-u.
@@ -17,13 +17,13 @@ poprawności geodezyjnej planu.
 | `north.angle_deg` | Zachowana dotychczasowa wartość kąta strzałki; samo 0° niczego nie rozstrzyga |
 | `north.angle_origin` | `measured` — pomiar, także 0°; `assumed` — przyjęcie, także 0°; `unknown` — brak dowodu pochodzenia |
 | `north.evidence` | Wymagane źródło/uzasadnienie ustalonego rodzaju: np. konkretny plan, legenda, strona, opis autora |
-| `declination_deg` | Zachowana liczba historyczna; aktywna deklinacja w przyszłym modelu wymaga udokumentowanej podstawy |
+| `declination_deg` | Zachowana liczba historyczna; aktywna deklinacja modelu magnetic wymaga udokumentowanej podstawy |
 | `declination.status` | `unknown` albo `documented` |
 | `declination.basis` | Źródło wartości lub opis brakującej podstawy |
 | `declination.sign_convention` | Dla `documented`: `east_positive` — wschodnia dodatnia, zachodnia ujemna |
 | `declination.epoch` | Dla północy magnetycznej wymagana data lub epoka źródłowej deklinacji; przy modelu podać także model i jego podstawę w `basis` |
 | `orientation.mode` | `historical_tfw` przy nieustalonej północy; `reference` przy ustalonej |
-| `orientation.status` | W T05 zawsze `unverified`; samo ustalenie rodzaju nie weryfikuje geometrii |
+| `orientation.status` | Nadal `unverified`; modele T06 nie potwierdzają źródłowych metadanych |
 | `orientation.uncertainty_reason` | Jawny powód niepewności, dostępny w QA, computed i manifeście |
 | `orientation.image_sha256` | SHA-256 treści TIFF-a objętego decyzją; musi odpowiadać obrazowi i rejestrowi T03 |
 | `orientation.historical` | Niezmienny hash katalogu T02, ID planu i hash historycznego TFW |
@@ -67,9 +67,9 @@ zmiany są błędami. Nie jest to potwierdzenie prawdziwości dostarczonego źr�
 
 Przejście np. na `geographic` wymaga `north.evidence` i opisania pochodzenia
 kąta, następnie decyzji. `magnetic` wymaga dodatkowo udokumentowanej wartości,
-konwencji i epoki deklinacji. **W T05 każda generacja `geographic`, `magnetic`
-lub `grid` kończy się błędem „brak modelu … wymagany T06”.** Nie stosuje
-zastępczo wzoru historycznego, także w przejściowym CLI bez `--output-dir`.
+konwencji i epoki deklinacji. T06 dostarcza modele `geographic`, `magnetic` i `grid`, w obu trybach CLI.
+Brak źródła, wymaganej deklinacji albo decyzji nadal blokuje preflight.
+Nie stosuje się zastępczo wzoru historycznego.
 Brak metadanych T05 również jest błędem. Dodanie planu bez odniesienia T02
 wymaga rozstrzygnięcia w T08; ten etap nie zgaduje jego orientacji.
 
@@ -109,4 +109,82 @@ Nowy tryb T04 snapshotuje także katalog T02 i archiwum YAML-i; hashe oraz
 status/powód trafiają do manifestu. Kontrola ścieżek, GeoTIFF i atomowa
 publikacja pozostają obowiązkowe. QA dodaje cztery kolumny do `summary.csv`;
 wersjonowane stare CSV nie są nadpisane. Przebudowa QA i wyjątków to T09,
-przełączenie workflow to T10/T11; modele, znak zbieżności i półpiksel to T06.
+przełączenie workflow to T10/T11. Modele i półpiksel T06 opisano poniżej.
+
+
+## Modele T06 i znaki
+
+`north.angle_deg = α` to kąt strzałki zgodnie z ruchem wskazówek zegara od
+pionu w górę obrazu (`atan2(dx, -dy)` w UI). Obraz ma x w prawo, y w dół.
+Macierz TFW to `[[A,B],[D,E]] = mpp * [[cos r,sin r],[sin r,-cos r]]`.
+Strzałka `(sin α,-cos α)` po transformacji ma azymut siatkowy `α-r`.
+
+`γ` to zbieżność zwracana przez `Proj('EPSG:2180').get_factors(lon,lat)`
+w stopniach. Na wschód od 19° jest dodatnia: północ geograficzna biegnie
+ku zachodowi od pionu siatki (azymut `-γ`). `δ` jest deklinacją
+`east_positive`: północ magnetyczna ma azymut geograficzny `δ`, a siatkowy
+`δ-γ`. Z tych kierunków wynikają modele:
+
+| Rodzaj | Obrót r | Używane poprawki |
+| --- | --- | --- |
+| geographic | `α + γ` | PROJ zamiast dawnego przybliżenia o błędnym znaku |
+| magnetic | `α + γ - δ` | deklinacja z podstawą, konwencją i epoką; brak automatycznego modelu pola |
+| grid | `α` | siatka **EPSG:2180**, bez ponownej zbieżności ani deklinacji |
+| unknown | `atan2(D,A)` zapisanego TFW T02 | żadnej poprawki z bieżących współrzędnych |
+
+Skala jest lokalną skalą podobieństwa `mpp=1/pixels_per_meter` w metrach
+EPSG:2180. T06 nie zmienia ppm, nie modeluje deformacji planu, wysokości,
+redukcji terenowych ani dokładności źródłowego pomiaru. Model jest lokalny
+w punkcie otworu; nie jest nieliniowym przekształceniem całego planu.
+Podstawa: [API pyproj get_factors](https://pyproj4.github.io/pyproj/stable/api/proj.html#pyproj.Proj.get_factors).
+
+## Kliknięcie, narożnik i środek piksela
+
+UI rysuje obraz przez `drawImage(...,0,0,width,height)` i dzieli współrzędne
+kliknięć przez skalę wyświetlania (`index.html`, `toOrig`). Początek `(0,0)`
+jest narożnikiem obrazu, a środek pierwszego piksela ma `(.5,.5)`. To układ
+[GDAL](https://gdal.org/en/stable/tutorials/geotransforms_tut.html).
+TFW opisuje środek pierwszego piksela jako `(C,F)` z indeksami `(0,0)`.
+Dla kliknięcia UI `(x,y)` i jego współrzędnych `(X,Y)`:
+
+```
+C = X - A*(x-.5) - B*(y-.5)
+F = Y - D*(x-.5) - E*(y-.5)
+GT = [C-.5*A-.5*B, A, B, F-.5*D-.5*E, D, E]
+```
+
+Generator najpierw zaokrągla TFW (A,D,B,E: 10 miejsc, C,F: 6 miejsc),
+a GDAL dostaje geotransformację tego zapisu. W przejściowym CLI GDAL
+odczytuje ten sam sidecar. Nie dodajemy kolejnego półpiksela do kliknięcia.
+Testy odczytują rzeczywisty GeoTIFF i sprawdzają otwór, drugi punkt oraz
+relację `GDAL(.5,.5) = TFW(0,0)`, również przy obrocie.
+
+T05 utożsamiał kliknięcie z indeksem środka piksela. T06 przesuwa C,F o
+`(.5*(A+B), .5*(D+E))`, także dla `unknown`, zachowując jego **kąt**,
+bieżący otwór, kliknięcie i skalę. Nie migruje YAML-i ani źródłowych TFW.
+[Raport 814 planów](reports/t06-geometry-impact.json) porównuje wyniki
+obu generatorów na identycznych bieżących wejściach. Zgodność historycznego
+kąta jest odrębna od testu poprawnej geometrii modelu ustalonej północy.
+
+## Tolerancje i dowody T06
+
+Dla punktu UI `(x,y)` błąd każdej współrzędnej z zaokrągleń TFW nie przekracza
+`0.5e-6 + (abs(x-.5)+abs(y-.5))*0.5e-10` metra. Test dodaje `2e-9 m` na
+odczyt GDAL i działania double na współrzędnych PL-1992. To kontrola błędu
+numerycznego, nie deklaracja terenowej dokładności planu.
+
+Niezależny wzorzec kierunku to znormalizowana różnica projekcji dwóch
+punktów `(lon,lat±0.0001°)` na tym samym południku; test nie wywołuje
+`get_factors`. Symetryczna sieczna ma błąd drugiego rzędu kroku; dopuszczamy
+`2e-8` w komponencie wektora jednostkowego (2 µm na 100 m), uwzględniając
+odejmowanie współrzędnych rzędu 500 km i numeryczne pochodne PROJ. Sprawdzamy
+17°, 19° i 21°, także z niezerową strzałką. Dla magnetycznej wzorzec południka
+obracamy o jawną dodatnią lub ujemną deklinację. Test halfpixel nie używa
+produkcyjnej funkcji konwersji TFW jako wzorca.
+
+Manifest i computed zawierają addytywną sekcję `geometry` z wersją modelu,
+konwencją piksela i jednostką skali. `orientation` zachowuje również pełne
+`north`, `declination` i `declination_deg`, w tym źródło, podstawę, konwencję
+i epokę. Status pozostaje `unverified`; udany test modelu nie weryfikuje
+opisanej w legendzie strzałki rzeczywistego planu. Odbiór i odtworzenie raportu:
+[2026-10-25-t06-odbior.md](plans/2026-10-25-t06-odbior.md).

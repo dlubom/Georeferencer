@@ -58,8 +58,8 @@ class OrientationTest(unittest.TestCase):
         self.assertAlmostEqual(angle(old), angle(new), places=12)
         self.assertAlmostEqual(math.hypot(new['A'], new['D']), math.hypot(old['A'], old['D']) / 2)
         expected = generator.TRANSFORMER.transform(22.0, 50.0)
-        self.assertAlmostEqual(new['A'] * 300 + new['B'] * 400 + new['C'], expected[0])
-        self.assertAlmostEqual(new['D'] * 300 + new['E'] * 400 + new['F'], expected[1])
+        self.assertAlmostEqual(new['A'] * 299.5 + new['B'] * 399.5 + new['C'], expected[0])
+        self.assertAlmostEqual(new['D'] * 299.5 + new['E'] * 399.5 + new['F'], expected[1])
 
     def test_orientation_changes_need_explicit_reasoned_decision(self):
         for section, field, value in [('north', 'angle_deg', 15.0),
@@ -112,7 +112,7 @@ class OrientationTest(unittest.TestCase):
             self.assertEqual(meta['north']['angle_origin'], origin)
         self.assertAlmostEqual(angle(results[0]), angle(results[1]))
 
-    def test_explicit_reference_transition_validates_metadata_but_blocks_generation(self):
+    def test_explicit_reference_transition_keeps_sources_and_unverified_status_with_model(self):
         from orientation import record_decision, validate_orientation
         for reference in ('geographic', 'magnetic', 'grid'):
             with self.subTest(reference=reference):
@@ -121,13 +121,15 @@ class OrientationTest(unittest.TestCase):
                 meta['north'].update(reference=reference, angle_origin='measured', evidence='Legenda planu, strona 1: rodzaj północy')
                 meta['declination'] = {'status': 'documented', 'sign_convention': 'east_positive',
                                        'basis': 'Odczyt wartości z legendy planu', 'epoch': '1980.0'}
-                meta = record_decision(meta, 'Jawne ustalenie rodzaju północy na podstawie legendy; geometria oczekuje T06.', '2026-10-25')
+                meta = record_decision(meta, 'Jawne ustalenie rodzaju północy na podstawie syntetycznej legendy.', '2026-10-25')
                 validate_meta(meta, '001131')
                 validate_orientation(meta)
                 self.assertEqual(meta['orientation']['historical'], historical)
                 self.assertEqual(meta['orientation']['status'], 'unverified')
-                with self.assertRaisesRegex(ValueError, 'brak modelu.*T06'):
-                    generator.compute_world_file(meta)
+                self.assertTrue(all(math.isfinite(v) for v in generator.compute_world_file(meta).values()))
+                summary = generator.orientation.summary(meta)
+                self.assertEqual(summary['north']['evidence'], meta['north']['evidence'])
+                self.assertEqual(summary['declination'], meta['declination'])
 
     def test_decision_cannot_refresh_reference_or_self_verify(self):
         from orientation import record_decision

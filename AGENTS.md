@@ -41,15 +41,18 @@ Skrypty Python do generacji georeferencjonowanych TIFFów z danych crowdsourcing
 - `04_find_missing.py` — porównanie rejestru PIG (JSONL) z istniejącymi jaskiniami; lista brakujących z planami, posortowana po długości.
 - `05_add_cave.py` — ręczne dodanie brakującej jaskini: tworzy katalog, kopiuje obrazy ze scrapera, generuje meta.yaml. Dane georeferencji (otwór, skala, kąt północy) z konsoli Georeferencer UI. Instrukcja: [`pipeline/MANUAL_ADD.md`](pipeline/MANUAL_ADD.md).
 
-### Orientacja T05
+### Orientacja T05 i geometria T06
 
 Przeczytaj [`docs/ORIENTATION.md`](docs/ORIENTATION.md). `pipeline/orientation.py`
 odróżnia rodzaj północy i pochodzenie kąta (także mierzone/przyjęte 0°).
 Nieustalona północ zachowuje kąt `atan2(D, A)` wyłącznie z
 `plans[].historical_tfw` przypiętego T02. Bieżące współrzędne, skala i otwór
 pozostają aktywne. Zmiana wejść orientacji wymaga jawnej decyzji z powodem.
-Brak modelu ustalonej północy kończy generację błędem; modele, znak zbieżności
-oraz półpiksel należą do T06. Nie uruchamiaj zastępczo dawnego wzoru.
+T06 używa modeli geographic/magnetic/grid; znaki zbieżności i deklinacji
+oraz narożnikowy układ kliknięć/półpiksel opisuje `docs/ORIENTATION.md`.
+Dodanie modelu zachowuje status unverified i wymogi źródeł/decyzji T05.
+Raport wpływu T06 jest w `docs/reports/t06-geometry-impact.json`;
+odtworzenie opisuje `docs/plans/2026-10-25-t06-odbior.md`.
 
 Migrację bieżących YAML-i opisuje `data/migrations/t05-north.json`.
 Oryginalne YAML-e i kod QA są w `data/history/t02-inputs.zip`; kontrola historii
