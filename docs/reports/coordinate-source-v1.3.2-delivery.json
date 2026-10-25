@@ -1,0 +1,145 @@
+{
+  "archive": {
+    "bytes": 21377604,
+    "files": 2443,
+    "independent_actual_geotiff_acceptance": true,
+    "independent_zipinfo_crc_hashes": true,
+    "mode": "manual",
+    "name": "geotiff-tatry-v0.7.0-candidate-e9522d33ce40.zip",
+    "passed_shared_release_gate": true,
+    "plans": 814,
+    "sha256": "8ef37abc35149b235bb0f01075c2ec5f1e1d861c148ae663edfa3af1deccd9e4"
+  },
+  "base_commit": "addd87607b6356a8ade8fe3e0799d3472ff1af77",
+  "catalogue_comparison": {
+    "automatic_relinks": [],
+    "changed_tfw": 4,
+    "existing_objects_changed": [
+      "KSZ-0047",
+      "KSZ-0064",
+      "KSZ-0090",
+      "KSZ-0113"
+    ],
+    "missing_explicit_objects": [],
+    "new_objects_without_plan_links": [
+      "KSZ-0114",
+      "KSZ-0115",
+      "KSZ-0116",
+      "KSZ-0117"
+    ],
+    "pending_manual_links": [
+      {
+        "link_status": "explicit_valid_pending_review",
+        "object_id": "KSW-0081",
+        "plan_id": "001094"
+      },
+      {
+        "link_status": "explicit_valid_pending_review",
+        "object_id": "KSW-0090",
+        "plan_id": "001095"
+      },
+      {
+        "link_status": "explicit_valid_pending_review",
+        "object_id": "MLZ-0072",
+        "plan_id": "001229"
+      },
+      {
+        "link_status": "explicit_valid_pending_review",
+        "object_id": "KSZ-0112",
+        "plan_id": "001299"
+      },
+      {
+        "link_status": "explicit_valid_pending_review",
+        "object_id": "KSZ-0064",
+        "plan_id": "001349"
+      },
+      {
+        "link_status": "explicit_valid_pending_review",
+        "object_id": "KSW-0201",
+        "plan_id": "001445"
+      }
+    ],
+    "plans": 814,
+    "source_objects_added": [
+      "KSZ-0114",
+      "KSZ-0115",
+      "KSZ-0116",
+      "KSZ-0117"
+    ],
+    "source_objects_after": 1028,
+    "source_objects_before": 1024,
+    "source_objects_removed": [],
+    "unchanged_tfw": 810
+  },
+  "generation": {
+    "code": {
+      "commit": "e9522d33ce40134d6589e3231f4443716e06f4f2",
+      "dirty": "false"
+    },
+    "container_run": "/build/geotiff/runs/e77c72e32ca04867a68bb804c1ecd539",
+    "generated": 814,
+    "host_run": "/Users/dariuszlubomski/proj/Georeferencer/build/geotiff/runs/e77c72e32ca04867a68bb804c1ecd539",
+    "reused": 0,
+    "run_id": "e77c72e32ca04867a68bb804c1ecd539",
+    "run_manifest_sha256": "f3bcf274e895d3013bf3b098d437cb4c1680bff15c9f2b1bf3beedc1b5114052"
+  },
+  "independent_review": {
+    "open_findings": 0,
+    "report": "coordinate-source-v1.3.2-independent-review.json",
+    "result": "PASS"
+  },
+  "last_published_version": "v0.6.2",
+  "main_protection_modified": false,
+  "merged": false,
+  "pr": "https://github.com/dlubom/Georeferencer/pull/28",
+  "preserved": "Raw parquet, images, plan YAML/TFW, T02/history, historical CSV, T05–T11 reports and frozen code are byte-identical to base. No extraction or migration writes.",
+  "production_publication": false,
+  "proposed_version": "v0.7.0",
+  "qa": {
+    "accepted": 1405,
+    "blocking": 0,
+    "origins": {
+      "crowdsourcing": 801,
+      "manual_historical": 13
+    },
+    "plans": 814,
+    "problems": 1405
+  },
+  "release_created": false,
+  "reports": {
+    "coordinate-source-v1.3.2-catalogue.json": "0b1eefc249a8e60a6d9801434a8ed9155112c188222cfa0987a7e78b96f9e597",
+    "coordinate-source-v1.3.2-impact.json": "fde9b439a7dd0d2317409df378c3c90e86874654aaf6acdce431c81c61c77237",
+    "coordinate-source-v1.3.2-independent-review.json": "606a394a0dbf117ada19b908fc796fd6106292c0a7f6b6c576850f64f51766cb",
+    "coordinate-source-v1.3.2-qa-review.json": "0ab3bf8cf88bcc7ee5a07b1cbf154f6e2f346dacbd2783a45be84ffe5d9766b3"
+  },
+  "result": "PASS",
+  "revalidation_scope": {
+    "additional_cold_pair": false,
+    "evidence_only_revision": "Documentation and reports only; content fingerprints remain unchanged. Final manifest must record its own clean SHA. Warm full-catalogue validation and separate ZIP acceptance are recorded in PR/local final delivery.",
+    "generated": 814,
+    "new_coordinate_pin_requires_full_generation": true,
+    "pipeline_schema_geometry_environment_changed": false,
+    "reused": 0,
+    "t11_pair_reused_as_prior_evidence": true
+  },
+  "schema_version": 1,
+  "source_commit": "e9522d33ce40134d6589e3231f4443716e06f4f2",
+  "source_csv_sha256": "6ef2607dacc02933240e820c42a0bab544790a38b5594a730fc4130b105c9ec0",
+  "source_release": "v1.3.2",
+  "tag_created": false,
+  "verification": {
+    "check": {
+      "container": 191,
+      "container_seconds": 303.514,
+      "host": 7,
+      "passed": true,
+      "total": 198
+    },
+    "final_revision_ci_and_candidate": "See PR #28 for the final evidence-only revision, terminal CI, clean provenance and final candidate archive hash.",
+    "source_revision_ci": {
+      "check": "https://github.com/dlubom/Georeferencer/actions/runs/40224668335",
+      "conclusion": "success",
+      "generation": "https://github.com/dlubom/Georeferencer/actions/runs/40224668378"
+    }
+  }
+}
