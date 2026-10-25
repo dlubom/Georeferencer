@@ -72,7 +72,7 @@ class GeometryImpactTest(unittest.TestCase):
                 self.assertLessEqual(abs(after['C']-before['C']-.5*(after['A']+after['B'])), 1.002e-6)
                 self.assertLessEqual(abs(after['F']-before['F']-.5*(after['D']+after['E'])), 1.002e-6)
         for field, path in [('coordinate_source_sha256', 'data/coordinate-source/best-measurements-v1.3.1.csv'),
-                            ('pin_sha256', 'data/coordinate-source/source.json'),
+                            ('pin_sha256', 'data/coordinate-source/source-v1.3.1.json'),
                             ('image_registry_sha256', 'data/validation/images-v1.json'),
                             ('history_sha256', 'data/baseline/2026-10-24/catalogue.json')]:
             self.assertEqual(report[field], hashlib.sha256((ROOT / path).read_bytes()).hexdigest())

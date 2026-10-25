@@ -1,0 +1,91 @@
+{
+  "passed": true,
+  "source_objects_before": 1024,
+  "source_objects_after": 1028,
+  "existing_objects_changed": [
+    "KSZ-0047",
+    "KSZ-0064",
+    "KSZ-0090",
+    "KSZ-0113"
+  ],
+  "objects_added": [
+    "KSZ-0114",
+    "KSZ-0115",
+    "KSZ-0116",
+    "KSZ-0117"
+  ],
+  "objects_removed": [],
+  "full_field_report_matches_csv": true,
+  "explicit_plan_links_valid_and_unchanged": 814,
+  "independent_tfw_matches_t11": 814,
+  "independent_tfw_changed": [
+    "001349",
+    "001351",
+    "001387",
+    "010935"
+  ],
+  "geometry": [
+    {
+      "plan_id": "001349",
+      "delta_e_m": -12.879152999958023,
+      "delta_n_m": -3.5011539999977686,
+      "distance_m": 13.34655990613417,
+      "rotation_scale_unchanged": true
+    },
+    {
+      "plan_id": "001351",
+      "delta_e_m": -12.947519000037573,
+      "delta_n_m": -3.562963000003947,
+      "distance_m": 13.42881058008233,
+      "rotation_scale_unchanged": true
+    },
+    {
+      "plan_id": "001387",
+      "delta_e_m": -12.849701999919489,
+      "delta_n_m": -3.480370999983279,
+      "distance_m": 13.312694084378997,
+      "rotation_scale_unchanged": true
+    },
+    {
+      "plan_id": "010935",
+      "delta_e_m": -12.879153999965638,
+      "delta_n_m": -3.5011540000268724,
+      "distance_m": 13.346560871128377,
+      "rotation_scale_unchanged": true
+    }
+  ],
+  "qa_before": {
+    "plans": 814,
+    "origins": {
+      "crowdsourcing": 801,
+      "manual_historical": 13
+    },
+    "problems": 1405,
+    "accepted": 1405,
+    "blocking": 0
+  },
+  "qa_stale": {
+    "plans": 814,
+    "origins": {
+      "crowdsourcing": 801,
+      "manual_historical": 13
+    },
+    "problems": 1414,
+    "accepted": 1396,
+    "blocking": 18
+  },
+  "qa_after": {
+    "plans": 814,
+    "origins": {
+      "crowdsourcing": 801,
+      "manual_historical": 13
+    },
+    "problems": 1405,
+    "accepted": 1405,
+    "blocking": 0
+  },
+  "qa_entries_reviewed": 9,
+  "qa_entries_identical": 1396,
+  "qa_evidence_and_close_conditions_unchanged": true,
+  "inputs_orientation_aggregate_unchanged": true
+}

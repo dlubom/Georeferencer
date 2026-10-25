@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "base_commit": "addd87607b6356a8ade8fe3e0799d3472ff1af77",
+  "check": {
+    "command": "./scripts/check",
+    "passed": true,
+    "host_tests": 7,
+    "container_tests": 191,
+    "total": 198,
+    "runs": [
+      [
+        "7",
+        "2.106"
+      ],
+      [
+        "191",
+        "303.514"
+      ]
+    ],
+    "environment": {
+      "system": "Linux",
+      "architecture": "x86_64",
+      "Python": "3.12.3",
+      "GDAL": "3.12.4",
+      "PROJ (GDAL)": "9.8.1",
+      "PROJ (pyproj)": "9.8.1",
+      "packages": {
+        "Jinja2": "3.1.6",
+        "MarkupSafe": "3.0.4",
+        "PyYAML": "6.0.3",
+        "certifi": "2026.10.23",
+        "numpy": "2.5.4",
+        "pandas": "3.1.0",
+        "pillow": "13.0.0",
+        "pip": "25.3",
+        "pyarrow": "26.0.0",
+        "pyproj": "3.8.0",
+        "python-dateutil": "3.0.0",
+        "six": "1.17.0",
+        "tzdata": "2026.5"
+      }
+    },
+    "log_sha256": "78f37f3d54822bc65abe68e88fe42e35b72c583c25dee668f9d40904a03c2a14"
+  },
+  "negative_checks": {
+    "outdated_runtime_and_historical_fixtures": {
+      "tests": 4,
+      "failures": 4,
+      "log_sha256": "873f62683ee4b868dc8cdf2f63e7f6f53ab4a24802ba6793081e07957e0f3caa"
+    },
+    "previous_full_check": {
+      "tests": 191,
+      "failures": 1,
+      "errors": 1,
+      "resolution": "Required read_manifest path; historical T07 source pin reconstruction. No production code or historical report changed."
+    },
+    "old_t11_run": {
+      "manifest_sha256": "a6d12a3b199478885a2509c83261f63a05c24c9825ce4838db9ccdb61e780ece",
+      "implementation_environment_identical_to_versioned_t11": true,
+      "counts": {
+        "accepted": 1405,
+        "blocking": 814,
+        "origins": {
+          "crowdsourcing": 801,
+          "manual_historical": 13
+        },
+        "plans": 814,
+        "problems": 2219
+      },
+      "stale_plans": 814,
+      "only_coordinate_source_stale": 810,
+      "coordinate_source_and_measurement_calculation_stale": 4
+    },
+    "stale_qa_entries": 9,
+    "stale_qa_blocking": 18
+  },
+  "production_code_changed": false,
+  "historical_hashes_changed": false
+}

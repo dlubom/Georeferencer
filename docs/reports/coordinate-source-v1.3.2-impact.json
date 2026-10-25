@@ -1,0 +1,1239 @@
+{
+  "affected_plans": [
+    "001349",
+    "001351",
+    "001387",
+    "010935"
+  ],
+  "changes": [
+    {
+      "object_id": "KSZ-0047",
+      "plans": [
+        "001387"
+      ],
+      "fields": {
+        "best_reason": {
+          "before": "Ręcznie zachowana pozycja stacji Raptawicka:1.0 z sieci pomiarowej JKTZ; automatyczny TPN nie zastępuje tego wskazania.",
+          "after": "Estymata brzegu głównej studni ze zdjęcia; wysokość progu z ALS 2012. Znak stacji i dokładność niepotwierdzone."
+        },
+        "elevation_m": {
+          "before": "1141.31",
+          "after": "1140.8"
+        },
+        "lat": {
+          "before": "49.2398675351",
+          "after": "49.2398375402"
+        },
+        "lon": {
+          "before": "19.8622197642",
+          "after": "19.8620426566"
+        },
+        "measurement_id": {
+          "before": "m-003",
+          "after": "m-004"
+        },
+        "measurement_notes": {
+          "before": "Pozycja z sieci pomiarowej jaskini: stacja Pawlikowskiego:Raptawicka:1.0, wynik sieci systemu Pawlikowskiego obejmującej pomiary jaskiń i ciąg powierzchniowy Obłazkowa–Raptawicka. Kotwica sieci: Pawlikowskiego:Mylna:0, pierwotna metoda wyznaczenia kotwicy niepotwierdzona. Historyczny wynik UTM 34N: E 417181.04, N 5454744.17, H 1141.31 m. Źródło pozycji: historyczna sieć JKTZ, rewizja 773c8e2e6aa910c8ba78192ae6741d107c6598e2 sprzed wydzielenia wspólnego pliku otworów w 6561bab3bdcd37f607820a4a1f0373147b63572e. Odtworzenie kompilacji Survex 1.4.24 tej rewizji oraz przeliczenie EPSG:32634 do WGS84 potwierdziło zgodność pozycji i wysokości z obecnymi wartościami, do zapisanej precyzji. Korekta pochodzenia 2026-10-23 usuwa błędną klasyfikację bezpośredniego GNSS z importu GPS b83dede4bf36ccbf87e9e3dbf97e5c6493c2de14. observed_date 2026-05-16 zachowano jako dotychczasową datę zapisu punktu w GPS; nie potwierdza daty pomiarów terenowych. Datum wysokości i dokładności pozostają nieznane; status weryfikacji bez zmian. Źródła: https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/blob/773c8e2e6aa910c8ba78192ae6741d107c6598e2/Poligony/D_Koscieliska/Kom_Wierch/Rapt_Turnia/Syst_Pawlikowskiego/Powierzchnia/POW_ORM.SRV, https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/blob/773c8e2e6aa910c8ba78192ae6741d107c6598e2/Poligony/D_Koscieliska/Kom_Wierch/Rapt_Turnia/Syst_Pawlikowskiego/Raptawicka/RAPTAW_S.SRV.",
+          "after": "Wschodni brzeg studni, estymata stacji 1.0 ze zdjęcia. H progu 1140,8 m z lokalnej powierzchni ALS 2012, PL-KRON86-NH; nie ze starej kotwicy GPS. Znaku nie rozpoznano, dokładność nieustalona."
+        },
+        "method": {
+          "before": "siec_pomiarowa",
+          "after": "ustalenie"
+        },
+        "object_notes": {
+          "before": "Imported from PIG source record after operator review.",
+          "after": "Historyczny punkt TPN opisano jako górny, lecz jego przypisania do stacji 5.1 nie potwierdzono. Pozostaje przy tym obiekcie; otwór górny to KSZ-0114."
+        },
+        "observed_date": {
+          "before": "2026-05-16",
+          "after": "2026-10-25"
+        },
+        "source": {
+          "before": "inne",
+          "after": "wlasne"
+        },
+        "source_ref": {
+          "before": "JKTZ:773c8e2e6aa910c8ba78192ae6741d107c6598e2:Pawlikowskiego:Raptawicka:1.0",
+          "after": "Raptawicka:1.0:ortofoto-ALS:2026-10-24:height-ALS2012:2026-10-25"
+        },
+        "x_1992": {
+          "before": "152841.98",
+          "after": "152838.5"
+        },
+        "y_1992": {
+          "before": "562742.35",
+          "after": "562729.5"
+        }
+      },
+      "before": {
+        "object_id": "KSZ-0047",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Raptawicka",
+        "cave_id": "C-0403",
+        "measurement_id": "m-003",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "Ręcznie zachowana pozycja stacji Raptawicka:1.0 z sieci pomiarowej JKTZ; automatyczny TPN nie zastępuje tego wskazania.",
+        "lat": "49.2398675351",
+        "lon": "19.8622197642",
+        "x_1992": "152841.98",
+        "y_1992": "562742.35",
+        "elevation_m": "1141.31",
+        "source": "inne",
+        "source_ref": "JKTZ:773c8e2e6aa910c8ba78192ae6741d107c6598e2:Pawlikowskiego:Raptawicka:1.0",
+        "nr_inwent": "T.E-08.03",
+        "pig_id": "1387",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1387",
+        "tpn_globalid": "{F4DE5D37-5D76-4315-8BCC-4C57A5B68F1C}",
+        "observed_at": "",
+        "observed_date": "2026-05-16",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG aliases: Raptawicka Jama, Jaskinie Pawlikowskiego\nPIG sector: D. Kościeliska - Zach.\nPIG morphometry: length_m=560, depth_m=22,4, denivelation_m=27,2\nPIG source state year: 2015\nMulti-opening review 2026-05-16: marked as part of system Jaskinie Pawlikowskiego and added supplied Pawlikowskiego:Raptawicka unknown-GNSS measurement to KSZ-0047.",
+        "measurement_notes": "Pozycja z sieci pomiarowej jaskini: stacja Pawlikowskiego:Raptawicka:1.0, wynik sieci systemu Pawlikowskiego obejmującej pomiary jaskiń i ciąg powierzchniowy Obłazkowa–Raptawicka. Kotwica sieci: Pawlikowskiego:Mylna:0, pierwotna metoda wyznaczenia kotwicy niepotwierdzona. Historyczny wynik UTM 34N: E 417181.04, N 5454744.17, H 1141.31 m. Źródło pozycji: historyczna sieć JKTZ, rewizja 773c8e2e6aa910c8ba78192ae6741d107c6598e2 sprzed wydzielenia wspólnego pliku otworów w 6561bab3bdcd37f607820a4a1f0373147b63572e. Odtworzenie kompilacji Survex 1.4.24 tej rewizji oraz przeliczenie EPSG:32634 do WGS84 potwierdziło zgodność pozycji i wysokości z obecnymi wartościami, do zapisanej precyzji. Korekta pochodzenia 2026-10-23 usuwa błędną klasyfikację bezpośredniego GNSS z importu GPS b83dede4bf36ccbf87e9e3dbf97e5c6493c2de14. observed_date 2026-05-16 zachowano jako dotychczasową datę zapisu punktu w GPS; nie potwierdza daty pomiarów terenowych. Datum wysokości i dokładności pozostają nieznane; status weryfikacji bez zmian. Źródła: https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/blob/773c8e2e6aa910c8ba78192ae6741d107c6598e2/Poligony/D_Koscieliska/Kom_Wierch/Rapt_Turnia/Syst_Pawlikowskiego/Powierzchnia/POW_ORM.SRV, https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/blob/773c8e2e6aa910c8ba78192ae6741d107c6598e2/Poligony/D_Koscieliska/Kom_Wierch/Rapt_Turnia/Syst_Pawlikowskiego/Raptawicka/RAPTAW_S.SRV."
+      },
+      "after": {
+        "object_id": "KSZ-0047",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Raptawicka",
+        "cave_id": "C-0403",
+        "measurement_id": "m-004",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "Estymata brzegu głównej studni ze zdjęcia; wysokość progu z ALS 2012. Znak stacji i dokładność niepotwierdzone.",
+        "lat": "49.2398375402",
+        "lon": "19.8620426566",
+        "x_1992": "152838.5",
+        "y_1992": "562729.5",
+        "elevation_m": "1140.8",
+        "source": "wlasne",
+        "source_ref": "Raptawicka:1.0:ortofoto-ALS:2026-10-24:height-ALS2012:2026-10-25",
+        "nr_inwent": "T.E-08.03",
+        "pig_id": "1387",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1387",
+        "tpn_globalid": "{F4DE5D37-5D76-4315-8BCC-4C57A5B68F1C}",
+        "observed_at": "",
+        "observed_date": "2026-10-25",
+        "method": "ustalenie",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Historyczny punkt TPN opisano jako górny, lecz jego przypisania do stacji 5.1 nie potwierdzono. Pozostaje przy tym obiekcie; otwór górny to KSZ-0114.",
+        "cave_notes": "PIG aliases: Raptawicka Jama, Jaskinie Pawlikowskiego\nPIG sector: D. Kościeliska - Zach.\nPIG morphometry: length_m=560, depth_m=22,4, denivelation_m=27,2\nPIG source state year: 2015\nMulti-opening review 2026-05-16: marked as part of system Jaskinie Pawlikowskiego and added supplied Pawlikowskiego:Raptawicka unknown-GNSS measurement to KSZ-0047.",
+        "measurement_notes": "Wschodni brzeg studni, estymata stacji 1.0 ze zdjęcia. H progu 1140,8 m z lokalnej powierzchni ALS 2012, PL-KRON86-NH; nie ze starej kotwicy GPS. Znaku nie rozpoznano, dokładność nieustalona."
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "KSZ-0064",
+      "plans": [
+        "001349",
+        "010935"
+      ],
+      "fields": {
+        "best_reason": {
+          "before": "Ręcznie zachowany punkt dowiązania sieci Mylna:0 zapisany w JKTZ; pierwotna metoda wyznaczenia nieznana, automatyczny TPN nie zastępuje tego wskazania.",
+          "after": "Wynik sieci JKTZ z jedną kotwicą Raptawickiej KSZ-0047/m-004; przyjęty mimo nieznanej dokładności kotwicy i sieci."
+        },
+        "elevation_m": {
+          "before": "1098",
+          "after": "1097.49"
+        },
+        "lat": {
+          "before": "49.2393861277",
+          "after": "49.2393559488"
+        },
+        "lon": {
+          "before": "19.8622047217",
+          "after": "19.8620272079"
+        },
+        "measurement_id": {
+          "before": "m-003",
+          "after": "m-004"
+        },
+        "measurement_notes": {
+          "before": "Punkt dowiązania sieci pomiarowej: stała stacja Pawlikowskiego:Mylna:0 z MYLNA_M.SRV, historyczny fix UTM 34N E 417179.14, N 5454690.67, H 1098 m. Punkt zapisano już w JKTZ 54fb7d768a98e3e65ddbb050a49a2f80bcb0a509; metadane wskazują PIG i F. Filara, ale nie potwierdzają pierwotnej metody wyznaczenia kotwicy. Nie klasyfikujemy go jako bezpośredni GNSS ani punkt obliczony z tej sieci. Źródło pozycji: historyczna sieć JKTZ, rewizja 773c8e2e6aa910c8ba78192ae6741d107c6598e2 sprzed wydzielenia wspólnego pliku otworów w 6561bab3bdcd37f607820a4a1f0373147b63572e. Odtworzenie kompilacji Survex 1.4.24 tej rewizji oraz przeliczenie EPSG:32634 do WGS84 potwierdziło zgodność pozycji i wysokości z obecnymi wartościami, do zapisanej precyzji. Korekta pochodzenia 2026-10-23 usuwa błędną klasyfikację bezpośredniego GNSS z importu GPS b83dede4bf36ccbf87e9e3dbf97e5c6493c2de14. observed_date 2026-05-16 zachowano jako dotychczasową datę zapisu punktu w GPS; nie potwierdza daty pomiarów terenowych. Datum wysokości i dokładności pozostają nieznane; status weryfikacji bez zmian. Źródła: https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/blob/773c8e2e6aa910c8ba78192ae6741d107c6598e2/Poligony/D_Koscieliska/Kom_Wierch/Rapt_Turnia/Syst_Pawlikowskiego/Mylna/MYLNA_M.SRV.",
+          "after": "Stacja Mylna:0; wyrównanie Survex 1.4.24 z jednym fixem Raptawickiej i ciągiem powierzchniowym Obłazkowa–Raptawicka (66 odczytów, deklinacja 4,83° przyjęta, data nieznana). H=1140,8 m ALS + różnica Z z sieci, PL-KRON86-NH. To wysokość stacji, nie potwierdzonego progu; dokładność i położenie znaku nieustalone."
+        },
+        "method": {
+          "before": "source_record",
+          "after": "siec_pomiarowa"
+        },
+        "observed_date": {
+          "before": "2026-05-16",
+          "after": "2026-10-25"
+        },
+        "source": {
+          "before": "inne",
+          "after": "wlasne"
+        },
+        "source_ref": {
+          "before": "JKTZ:773c8e2e6aa910c8ba78192ae6741d107c6598e2:Pawlikowskiego:Mylna:0",
+          "after": "JKTZ:88f3dda221205c80ae659f0797ff5a7da2c296d8:Mylna:0:KSZ-0047/m-004"
+        },
+        "x_1992": {
+          "before": "152788.47",
+          "after": "152784.97"
+        },
+        "y_1992": {
+          "before": "562741.86",
+          "after": "562728.99"
+        }
+      },
+      "before": {
+        "object_id": "KSZ-0064",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Mylna",
+        "cave_id": "C-0573",
+        "measurement_id": "m-003",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "Ręcznie zachowany punkt dowiązania sieci Mylna:0 zapisany w JKTZ; pierwotna metoda wyznaczenia nieznana, automatyczny TPN nie zastępuje tego wskazania.",
+        "lat": "49.2393861277",
+        "lon": "19.8622047217",
+        "x_1992": "152788.47",
+        "y_1992": "562741.86",
+        "elevation_m": "1098",
+        "source": "inne",
+        "source_ref": "JKTZ:773c8e2e6aa910c8ba78192ae6741d107c6598e2:Pawlikowskiego:Mylna:0",
+        "nr_inwent": "T.E-08.04",
+        "pig_id": "1349",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1349",
+        "tpn_globalid": "{CECF8620-A1C8-4941-A5B1-6C2226DC1F88}",
+        "observed_at": "",
+        "observed_date": "2026-05-16",
+        "method": "source_record",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review. Multi-opening review 2026-05-16 links TPN row 225 to the main/southern Mylna opening and KSZ-0113 to the northern opening.",
+        "cave_notes": "PIG aliases: Jaskinie Pawlikowskiego\nPIG sector: D. Kościeliska - Zach.\nPIG morphometry: length_m=1630, depth_m=22,3, denivelation_m=46\nPIG source state year: 2015\nMulti-opening review 2026-05-16: full PIG dump places Jaskinia Mylna in system Jaskinie Pawlikowskiego and lists additional openings, including 3 (północny) - ku NE, 1084 m n.p.m.; KSZ-0113 was created from TPN row 759.",
+        "measurement_notes": "Punkt dowiązania sieci pomiarowej: stała stacja Pawlikowskiego:Mylna:0 z MYLNA_M.SRV, historyczny fix UTM 34N E 417179.14, N 5454690.67, H 1098 m. Punkt zapisano już w JKTZ 54fb7d768a98e3e65ddbb050a49a2f80bcb0a509; metadane wskazują PIG i F. Filara, ale nie potwierdzają pierwotnej metody wyznaczenia kotwicy. Nie klasyfikujemy go jako bezpośredni GNSS ani punkt obliczony z tej sieci. Źródło pozycji: historyczna sieć JKTZ, rewizja 773c8e2e6aa910c8ba78192ae6741d107c6598e2 sprzed wydzielenia wspólnego pliku otworów w 6561bab3bdcd37f607820a4a1f0373147b63572e. Odtworzenie kompilacji Survex 1.4.24 tej rewizji oraz przeliczenie EPSG:32634 do WGS84 potwierdziło zgodność pozycji i wysokości z obecnymi wartościami, do zapisanej precyzji. Korekta pochodzenia 2026-10-23 usuwa błędną klasyfikację bezpośredniego GNSS z importu GPS b83dede4bf36ccbf87e9e3dbf97e5c6493c2de14. observed_date 2026-05-16 zachowano jako dotychczasową datę zapisu punktu w GPS; nie potwierdza daty pomiarów terenowych. Datum wysokości i dokładności pozostają nieznane; status weryfikacji bez zmian. Źródła: https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/blob/773c8e2e6aa910c8ba78192ae6741d107c6598e2/Poligony/D_Koscieliska/Kom_Wierch/Rapt_Turnia/Syst_Pawlikowskiego/Mylna/MYLNA_M.SRV."
+      },
+      "after": {
+        "object_id": "KSZ-0064",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Mylna",
+        "cave_id": "C-0573",
+        "measurement_id": "m-004",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "Wynik sieci JKTZ z jedną kotwicą Raptawickiej KSZ-0047/m-004; przyjęty mimo nieznanej dokładności kotwicy i sieci.",
+        "lat": "49.2393559488",
+        "lon": "19.8620272079",
+        "x_1992": "152784.97",
+        "y_1992": "562728.99",
+        "elevation_m": "1097.49",
+        "source": "wlasne",
+        "source_ref": "JKTZ:88f3dda221205c80ae659f0797ff5a7da2c296d8:Mylna:0:KSZ-0047/m-004",
+        "nr_inwent": "T.E-08.04",
+        "pig_id": "1349",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1349",
+        "tpn_globalid": "{CECF8620-A1C8-4941-A5B1-6C2226DC1F88}",
+        "observed_at": "",
+        "observed_date": "2026-10-25",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review. Multi-opening review 2026-05-16 links TPN row 225 to the main/southern Mylna opening and KSZ-0113 to the northern opening.",
+        "cave_notes": "PIG aliases: Jaskinie Pawlikowskiego\nPIG sector: D. Kościeliska - Zach.\nPIG morphometry: length_m=1630, depth_m=22,3, denivelation_m=46\nPIG source state year: 2015\nMulti-opening review 2026-05-16: full PIG dump places Jaskinia Mylna in system Jaskinie Pawlikowskiego and lists additional openings, including 3 (północny) - ku NE, 1084 m n.p.m.; KSZ-0113 was created from TPN row 759.",
+        "measurement_notes": "Stacja Mylna:0; wyrównanie Survex 1.4.24 z jednym fixem Raptawickiej i ciągiem powierzchniowym Obłazkowa–Raptawicka (66 odczytów, deklinacja 4,83° przyjęta, data nieznana). H=1140,8 m ALS + różnica Z z sieci, PL-KRON86-NH. To wysokość stacji, nie potwierdzonego progu; dokładność i położenie znaku nieustalone."
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "KSZ-0090",
+      "plans": [
+        "001351"
+      ],
+      "fields": {
+        "best_reason": {
+          "before": "Ręcznie zachowana pozycja stacji Oblazkowa:0.0 z sieci pomiarowej JKTZ; automatyczny TPN nie zastępuje tego wskazania.",
+          "after": "Wynik sieci JKTZ z jedną kotwicą Raptawickiej KSZ-0047/m-004; przyjęty mimo nieznanej dokładności kotwicy i sieci."
+        },
+        "elevation_m": {
+          "before": "1096.62",
+          "after": "1096.11"
+        },
+        "lat": {
+          "before": "49.239561635",
+          "after": "49.2395309076"
+        },
+        "lon": {
+          "before": "19.8625797302",
+          "after": "19.8624012665"
+        },
+        "measurement_id": {
+          "before": "m-003",
+          "after": "m-004"
+        },
+        "measurement_notes": {
+          "before": "Pozycja z sieci pomiarowej jaskini: stacja Pawlikowskiego:Oblazkowa:0.0, wynik sieci systemu Pawlikowskiego obejmującej pomiary jaskiń i powierzchni. Kotwica sieci: Pawlikowskiego:Mylna:0, pierwotna metoda wyznaczenia kotwicy niepotwierdzona. Historyczny wynik UTM 34N: E 417206.73, N 5454709.77, H 1096.62 m. Źródło pozycji: historyczna sieć JKTZ, rewizja 773c8e2e6aa910c8ba78192ae6741d107c6598e2 sprzed wydzielenia wspólnego pliku otworów w 6561bab3bdcd37f607820a4a1f0373147b63572e. Odtworzenie kompilacji Survex 1.4.24 tej rewizji oraz przeliczenie EPSG:32634 do WGS84 potwierdziło zgodność pozycji i wysokości z obecnymi wartościami, do zapisanej precyzji. Korekta pochodzenia 2026-10-23 usuwa błędną klasyfikację bezpośredniego GNSS z importu GPS b83dede4bf36ccbf87e9e3dbf97e5c6493c2de14. observed_date 2026-05-16 zachowano jako dotychczasową datę zapisu punktu w GPS; nie potwierdza daty pomiarów terenowych. Datum wysokości i dokładności pozostają nieznane; status weryfikacji bez zmian. Źródła: https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/blob/773c8e2e6aa910c8ba78192ae6741d107c6598e2/Poligony/D_Koscieliska/Kom_Wierch/Rapt_Turnia/Syst_Pawlikowskiego/Oblazkowa/OBLAZK_S.SRV, https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/blob/773c8e2e6aa910c8ba78192ae6741d107c6598e2/Poligony/D_Koscieliska/Kom_Wierch/Rapt_Turnia/Syst_Pawlikowskiego/Powierzchnia/POW_ORM.SRV.",
+          "after": "Stacja Oblazkowa:0.0; wyrównanie Survex 1.4.24 z jednym fixem Raptawickiej i ciągiem powierzchniowym Obłazkowa–Raptawicka (66 odczytów, deklinacja 4,83° przyjęta, data nieznana). H=1140,8 m ALS + różnica Z z sieci, PL-KRON86-NH. To wysokość stacji, nie potwierdzonego progu; dokładność i położenie znaku nieustalone."
+        },
+        "observed_date": {
+          "before": "2026-05-16",
+          "after": "2026-10-25"
+        },
+        "source": {
+          "before": "inne",
+          "after": "wlasne"
+        },
+        "source_ref": {
+          "before": "JKTZ:773c8e2e6aa910c8ba78192ae6741d107c6598e2:Pawlikowskiego:Oblazkowa:0.0",
+          "after": "JKTZ:88f3dda221205c80ae659f0797ff5a7da2c296d8:Oblazkowa:0.0:KSZ-0047/m-004"
+        },
+        "x_1992": {
+          "before": "152808.28",
+          "after": "152804.72"
+        },
+        "y_1992": {
+          "before": "562768.93",
+          "after": "562755.98"
+        }
+      },
+      "before": {
+        "object_id": "KSZ-0090",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Obłazkowa",
+        "cave_id": "C-0759",
+        "measurement_id": "m-003",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "Ręcznie zachowana pozycja stacji Oblazkowa:0.0 z sieci pomiarowej JKTZ; automatyczny TPN nie zastępuje tego wskazania.",
+        "lat": "49.239561635",
+        "lon": "19.8625797302",
+        "x_1992": "152808.28",
+        "y_1992": "562768.93",
+        "elevation_m": "1096.62",
+        "source": "inne",
+        "source_ref": "JKTZ:773c8e2e6aa910c8ba78192ae6741d107c6598e2:Pawlikowskiego:Oblazkowa:0.0",
+        "nr_inwent": "T.E-08.05",
+        "pig_id": "1351",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1351",
+        "tpn_globalid": "{3D465399-A847-4F89-932C-4EB8A276D32E}",
+        "observed_at": "",
+        "observed_date": "2026-05-16",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG aliases: SYSTEM Jaskinia Mylna, Obłazkowa Jama, Jaskinie Pawlikowskiego\nPIG sector: D. Kościeliska - Zach.\nPIG morphometry: length_m=214, depth_m=0, denivelation_m=8,1\nPIG source state year: 2015\nMulti-opening review 2026-05-16: marked as part of system Jaskinie Pawlikowskiego and added supplied Pawlikowskiego:Oblazkowa unknown-GNSS measurement to KSZ-0090.",
+        "measurement_notes": "Pozycja z sieci pomiarowej jaskini: stacja Pawlikowskiego:Oblazkowa:0.0, wynik sieci systemu Pawlikowskiego obejmującej pomiary jaskiń i powierzchni. Kotwica sieci: Pawlikowskiego:Mylna:0, pierwotna metoda wyznaczenia kotwicy niepotwierdzona. Historyczny wynik UTM 34N: E 417206.73, N 5454709.77, H 1096.62 m. Źródło pozycji: historyczna sieć JKTZ, rewizja 773c8e2e6aa910c8ba78192ae6741d107c6598e2 sprzed wydzielenia wspólnego pliku otworów w 6561bab3bdcd37f607820a4a1f0373147b63572e. Odtworzenie kompilacji Survex 1.4.24 tej rewizji oraz przeliczenie EPSG:32634 do WGS84 potwierdziło zgodność pozycji i wysokości z obecnymi wartościami, do zapisanej precyzji. Korekta pochodzenia 2026-10-23 usuwa błędną klasyfikację bezpośredniego GNSS z importu GPS b83dede4bf36ccbf87e9e3dbf97e5c6493c2de14. observed_date 2026-05-16 zachowano jako dotychczasową datę zapisu punktu w GPS; nie potwierdza daty pomiarów terenowych. Datum wysokości i dokładności pozostają nieznane; status weryfikacji bez zmian. Źródła: https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/blob/773c8e2e6aa910c8ba78192ae6741d107c6598e2/Poligony/D_Koscieliska/Kom_Wierch/Rapt_Turnia/Syst_Pawlikowskiego/Oblazkowa/OBLAZK_S.SRV, https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/blob/773c8e2e6aa910c8ba78192ae6741d107c6598e2/Poligony/D_Koscieliska/Kom_Wierch/Rapt_Turnia/Syst_Pawlikowskiego/Powierzchnia/POW_ORM.SRV."
+      },
+      "after": {
+        "object_id": "KSZ-0090",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Obłazkowa",
+        "cave_id": "C-0759",
+        "measurement_id": "m-004",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "Wynik sieci JKTZ z jedną kotwicą Raptawickiej KSZ-0047/m-004; przyjęty mimo nieznanej dokładności kotwicy i sieci.",
+        "lat": "49.2395309076",
+        "lon": "19.8624012665",
+        "x_1992": "152804.72",
+        "y_1992": "562755.98",
+        "elevation_m": "1096.11",
+        "source": "wlasne",
+        "source_ref": "JKTZ:88f3dda221205c80ae659f0797ff5a7da2c296d8:Oblazkowa:0.0:KSZ-0047/m-004",
+        "nr_inwent": "T.E-08.05",
+        "pig_id": "1351",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1351",
+        "tpn_globalid": "{3D465399-A847-4F89-932C-4EB8A276D32E}",
+        "observed_at": "",
+        "observed_date": "2026-10-25",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG aliases: SYSTEM Jaskinia Mylna, Obłazkowa Jama, Jaskinie Pawlikowskiego\nPIG sector: D. Kościeliska - Zach.\nPIG morphometry: length_m=214, depth_m=0, denivelation_m=8,1\nPIG source state year: 2015\nMulti-opening review 2026-05-16: marked as part of system Jaskinie Pawlikowskiego and added supplied Pawlikowskiego:Oblazkowa unknown-GNSS measurement to KSZ-0090.",
+        "measurement_notes": "Stacja Oblazkowa:0.0; wyrównanie Survex 1.4.24 z jednym fixem Raptawickiej i ciągiem powierzchniowym Obłazkowa–Raptawicka (66 odczytów, deklinacja 4,83° przyjęta, data nieznana). H=1140,8 m ALS + różnica Z z sieci, PL-KRON86-NH. To wysokość stacji, nie potwierdzonego progu; dokładność i położenie znaku nieustalone."
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "KSZ-0113",
+      "plans": [],
+      "fields": {
+        "best_mode": {
+          "before": "auto",
+          "after": "manual"
+        },
+        "best_reason": {
+          "before": "",
+          "after": "Wynik sieci JKTZ z jedną kotwicą Raptawickiej KSZ-0047/m-004; przyjęty mimo nieznanej dokładności kotwicy i sieci."
+        },
+        "elevation_m": {
+          "before": "1095.805132",
+          "after": "1093.17"
+        },
+        "lat": {
+          "before": "49.2405652358",
+          "after": "49.2405312001"
+        },
+        "lon": {
+          "before": "19.8629920172",
+          "after": "19.8629669873"
+        },
+        "measurement_id": {
+          "before": "m-001",
+          "after": "m-002"
+        },
+        "measurement_notes": {
+          "before": "TPN source-record measurement imported after multi-opening review; not field-verified. TPN row 759 has OTWÓR=N, matching the northern opening described in the PIG dump.\nTPN WER_LOK: 2023-08-23 MB NMT",
+          "after": "Stacja Mylna:39; wyrównanie Survex 1.4.24 z jednym fixem Raptawickiej i ciągiem powierzchniowym Obłazkowa–Raptawicka (66 odczytów, deklinacja 4,83° przyjęta, data nieznana). H=1140,8 m ALS + różnica Z z sieci, PL-KRON86-NH. To wysokość stacji, nie potwierdzonego progu; dokładność i położenie znaku nieustalone."
+        },
+        "method": {
+          "before": "source_record",
+          "after": "siec_pomiarowa"
+        },
+        "observed_date": {
+          "before": "2023-08-28",
+          "after": "2026-10-25"
+        },
+        "source": {
+          "before": "TPN",
+          "after": "wlasne"
+        },
+        "source_ref": {
+          "before": "TPN:{01A58CFE-5670-42A3-ADE1-715CF1F1E7A4}",
+          "after": "JKTZ:88f3dda221205c80ae659f0797ff5a7da2c296d8:Mylna:39:KSZ-0047/m-004"
+        },
+        "x_1992": {
+          "before": "152920.16",
+          "after": "152916.36"
+        },
+        "y_1992": {
+          "before": "562797.66",
+          "after": "562795.88"
+        }
+      },
+      "before": {
+        "object_id": "KSZ-0113",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Mylna - otwór północny",
+        "cave_id": "C-0573",
+        "measurement_id": "m-001",
+        "best_mode": "auto",
+        "computed_best_measurement_id": "m-001",
+        "best_reason": "",
+        "lat": "49.2405652358",
+        "lon": "19.8629920172",
+        "x_1992": "152920.16",
+        "y_1992": "562797.66",
+        "elevation_m": "1095.805132",
+        "source": "TPN",
+        "source_ref": "TPN:{01A58CFE-5670-42A3-ADE1-715CF1F1E7A4}",
+        "nr_inwent": "T.E-08.04",
+        "pig_id": "1349",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1349",
+        "tpn_globalid": "{01A58CFE-5670-42A3-ADE1-715CF1F1E7A4}",
+        "observed_at": "",
+        "observed_date": "2023-08-28",
+        "method": "source_record",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Created during multi-opening review. PIG dump for Jaskinia Mylna states other_entrances include 3 (północny) - ku NE, 1084 m n.p.m.; TPN row 759 provides this object-level point.",
+        "cave_notes": "PIG aliases: Jaskinie Pawlikowskiego\nPIG sector: D. Kościeliska - Zach.\nPIG morphometry: length_m=1630, depth_m=22,3, denivelation_m=46\nPIG source state year: 2015\nMulti-opening review 2026-05-16: full PIG dump places Jaskinia Mylna in system Jaskinie Pawlikowskiego and lists additional openings, including 3 (północny) - ku NE, 1084 m n.p.m.; KSZ-0113 was created from TPN row 759.",
+        "measurement_notes": "TPN source-record measurement imported after multi-opening review; not field-verified. TPN row 759 has OTWÓR=N, matching the northern opening described in the PIG dump.\nTPN WER_LOK: 2023-08-23 MB NMT"
+      },
+      "after": {
+        "object_id": "KSZ-0113",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Mylna - otwór północny",
+        "cave_id": "C-0573",
+        "measurement_id": "m-002",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-001",
+        "best_reason": "Wynik sieci JKTZ z jedną kotwicą Raptawickiej KSZ-0047/m-004; przyjęty mimo nieznanej dokładności kotwicy i sieci.",
+        "lat": "49.2405312001",
+        "lon": "19.8629669873",
+        "x_1992": "152916.36",
+        "y_1992": "562795.88",
+        "elevation_m": "1093.17",
+        "source": "wlasne",
+        "source_ref": "JKTZ:88f3dda221205c80ae659f0797ff5a7da2c296d8:Mylna:39:KSZ-0047/m-004",
+        "nr_inwent": "T.E-08.04",
+        "pig_id": "1349",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1349",
+        "tpn_globalid": "{01A58CFE-5670-42A3-ADE1-715CF1F1E7A4}",
+        "observed_at": "",
+        "observed_date": "2026-10-25",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Created during multi-opening review. PIG dump for Jaskinia Mylna states other_entrances include 3 (północny) - ku NE, 1084 m n.p.m.; TPN row 759 provides this object-level point.",
+        "cave_notes": "PIG aliases: Jaskinie Pawlikowskiego\nPIG sector: D. Kościeliska - Zach.\nPIG morphometry: length_m=1630, depth_m=22,3, denivelation_m=46\nPIG source state year: 2015\nMulti-opening review 2026-05-16: full PIG dump places Jaskinia Mylna in system Jaskinie Pawlikowskiego and lists additional openings, including 3 (północny) - ku NE, 1084 m n.p.m.; KSZ-0113 was created from TPN row 759.",
+        "measurement_notes": "Stacja Mylna:39; wyrównanie Survex 1.4.24 z jednym fixem Raptawickiej i ciągiem powierzchniowym Obłazkowa–Raptawicka (66 odczytów, deklinacja 4,83° przyjęta, data nieznana). H=1140,8 m ALS + różnica Z z sieci, PL-KRON86-NH. To wysokość stacji, nie potwierdzonego progu; dokładność i położenie znaku nieustalone."
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "KSZ-0114",
+      "plans": [],
+      "fields": {
+        "best_mode": {
+          "before": null,
+          "after": "manual"
+        },
+        "best_reason": {
+          "before": null,
+          "after": "Wynik sieci JKTZ z jedną kotwicą Raptawickiej KSZ-0047/m-004; przyjęty mimo nieznanej dokładności kotwicy i sieci."
+        },
+        "category": {
+          "before": null,
+          "after": "jaskinia_otwor"
+        },
+        "cave_id": {
+          "before": null,
+          "after": "C-0403"
+        },
+        "cave_notes": {
+          "before": null,
+          "after": "PIG aliases: Raptawicka Jama, Jaskinie Pawlikowskiego\nPIG sector: D. Kościeliska - Zach.\nPIG morphometry: length_m=560, depth_m=22,4, denivelation_m=27,2\nPIG source state year: 2015\nMulti-opening review 2026-05-16: marked as part of system Jaskinie Pawlikowskiego and added supplied Pawlikowskiego:Raptawicka unknown-GNSS measurement to KSZ-0047."
+        },
+        "computed_best_measurement_id": {
+          "before": null,
+          "after": "m-001"
+        },
+        "elevation_m": {
+          "before": null,
+          "after": "1146.79"
+        },
+        "horizontal_accuracy_m": {
+          "before": null,
+          "after": ""
+        },
+        "lat": {
+          "before": null,
+          "after": "49.2398745994"
+        },
+        "lon": {
+          "before": null,
+          "after": "19.8620515593"
+        },
+        "measurement_id": {
+          "before": null,
+          "after": "m-001"
+        },
+        "measurement_notes": {
+          "before": null,
+          "after": "Stacja Raptawicka:5.1; wyrównanie Survex 1.4.24 z jednym fixem Raptawickiej i ciągiem powierzchniowym Obłazkowa–Raptawicka (66 odczytów, deklinacja 4,83° przyjęta, data nieznana). H=1140,8 m ALS + różnica Z z sieci, PL-KRON86-NH. To wysokość stacji, nie potwierdzonego progu; dokładność i położenie znaku nieustalone."
+        },
+        "method": {
+          "before": null,
+          "after": "siec_pomiarowa"
+        },
+        "name_local": {
+          "before": null,
+          "after": "Jaskinia Raptawicka - otwór górny"
+        },
+        "nr_inwent": {
+          "before": null,
+          "after": "T.E-08.03"
+        },
+        "object_id": {
+          "before": null,
+          "after": "KSZ-0114"
+        },
+        "object_notes": {
+          "before": null,
+          "after": "Otwór oznaczony flagą w autorskim CG.SRV. Stacja 5.1 w RAPTAW.SRV; odrębny otwór górny, bez przypisania niejednoznacznego punktu TPN."
+        },
+        "observed_at": {
+          "before": null,
+          "after": ""
+        },
+        "observed_date": {
+          "before": null,
+          "after": "2026-10-25"
+        },
+        "pig_id": {
+          "before": null,
+          "after": "1387"
+        },
+        "pig_url": {
+          "before": null,
+          "after": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1387"
+        },
+        "source": {
+          "before": null,
+          "after": "wlasne"
+        },
+        "source_ref": {
+          "before": null,
+          "after": "JKTZ:88f3dda221205c80ae659f0797ff5a7da2c296d8:Raptawicka:5.1:KSZ-0047/m-004"
+        },
+        "tpn_globalid": {
+          "before": null,
+          "after": ""
+        },
+        "verification_status": {
+          "before": null,
+          "after": "nieweryfikowany"
+        },
+        "vertical_accuracy_m": {
+          "before": null,
+          "after": ""
+        },
+        "x_1992": {
+          "before": null,
+          "after": "152842.63"
+        },
+        "y_1992": {
+          "before": null,
+          "after": "562730.1"
+        }
+      },
+      "before": null,
+      "after": {
+        "object_id": "KSZ-0114",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Raptawicka - otwór górny",
+        "cave_id": "C-0403",
+        "measurement_id": "m-001",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-001",
+        "best_reason": "Wynik sieci JKTZ z jedną kotwicą Raptawickiej KSZ-0047/m-004; przyjęty mimo nieznanej dokładności kotwicy i sieci.",
+        "lat": "49.2398745994",
+        "lon": "19.8620515593",
+        "x_1992": "152842.63",
+        "y_1992": "562730.1",
+        "elevation_m": "1146.79",
+        "source": "wlasne",
+        "source_ref": "JKTZ:88f3dda221205c80ae659f0797ff5a7da2c296d8:Raptawicka:5.1:KSZ-0047/m-004",
+        "nr_inwent": "T.E-08.03",
+        "pig_id": "1387",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1387",
+        "tpn_globalid": "",
+        "observed_at": "",
+        "observed_date": "2026-10-25",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Otwór oznaczony flagą w autorskim CG.SRV. Stacja 5.1 w RAPTAW.SRV; odrębny otwór górny, bez przypisania niejednoznacznego punktu TPN.",
+        "cave_notes": "PIG aliases: Raptawicka Jama, Jaskinie Pawlikowskiego\nPIG sector: D. Kościeliska - Zach.\nPIG morphometry: length_m=560, depth_m=22,4, denivelation_m=27,2\nPIG source state year: 2015\nMulti-opening review 2026-05-16: marked as part of system Jaskinie Pawlikowskiego and added supplied Pawlikowskiego:Raptawicka unknown-GNSS measurement to KSZ-0047.",
+        "measurement_notes": "Stacja Raptawicka:5.1; wyrównanie Survex 1.4.24 z jednym fixem Raptawickiej i ciągiem powierzchniowym Obłazkowa–Raptawicka (66 odczytów, deklinacja 4,83° przyjęta, data nieznana). H=1140,8 m ALS + różnica Z z sieci, PL-KRON86-NH. To wysokość stacji, nie potwierdzonego progu; dokładność i położenie znaku nieustalone."
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "KSZ-0115",
+      "plans": [],
+      "fields": {
+        "best_mode": {
+          "before": null,
+          "after": "manual"
+        },
+        "best_reason": {
+          "before": null,
+          "after": "Wynik sieci JKTZ z jedną kotwicą Raptawickiej KSZ-0047/m-004; przyjęty mimo nieznanej dokładności kotwicy i sieci."
+        },
+        "category": {
+          "before": null,
+          "after": "jaskinia_otwor"
+        },
+        "cave_id": {
+          "before": null,
+          "after": "C-0573"
+        },
+        "cave_notes": {
+          "before": null,
+          "after": "PIG aliases: Jaskinie Pawlikowskiego\nPIG sector: D. Kościeliska - Zach.\nPIG morphometry: length_m=1630, depth_m=22,3, denivelation_m=46\nPIG source state year: 2015\nMulti-opening review 2026-05-16: full PIG dump places Jaskinia Mylna in system Jaskinie Pawlikowskiego and lists additional openings, including 3 (północny) - ku NE, 1084 m n.p.m.; KSZ-0113 was created from TPN row 759."
+        },
+        "computed_best_measurement_id": {
+          "before": null,
+          "after": "m-001"
+        },
+        "elevation_m": {
+          "before": null,
+          "after": "1097.11"
+        },
+        "horizontal_accuracy_m": {
+          "before": null,
+          "after": ""
+        },
+        "lat": {
+          "before": null,
+          "after": "49.239233914"
+        },
+        "lon": {
+          "before": null,
+          "after": "19.8619941553"
+        },
+        "measurement_id": {
+          "before": null,
+          "after": "m-001"
+        },
+        "measurement_notes": {
+          "before": null,
+          "after": "Stacja Mylna:52; wyrównanie Survex 1.4.24 z jednym fixem Raptawickiej i ciągiem powierzchniowym Obłazkowa–Raptawicka (66 odczytów, deklinacja 4,83° przyjęta, data nieznana). H=1140,8 m ALS + różnica Z z sieci, PL-KRON86-NH. To wysokość stacji, nie potwierdzonego progu; dokładność i położenie znaku nieustalone."
+        },
+        "method": {
+          "before": null,
+          "after": "siec_pomiarowa"
+        },
+        "name_local": {
+          "before": null,
+          "after": "Jaskinia Mylna - I Okno Pawlikowskiego"
+        },
+        "nr_inwent": {
+          "before": null,
+          "after": "T.E-08.04"
+        },
+        "object_id": {
+          "before": null,
+          "after": "KSZ-0115"
+        },
+        "object_notes": {
+          "before": null,
+          "after": "Otwór oznaczony flagą w autorskim CG.SRV. Numeracja okien w BOKI_CG.SRV: I=52, II=53."
+        },
+        "observed_at": {
+          "before": null,
+          "after": ""
+        },
+        "observed_date": {
+          "before": null,
+          "after": "2026-10-25"
+        },
+        "pig_id": {
+          "before": null,
+          "after": "1349"
+        },
+        "pig_url": {
+          "before": null,
+          "after": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1349"
+        },
+        "source": {
+          "before": null,
+          "after": "wlasne"
+        },
+        "source_ref": {
+          "before": null,
+          "after": "JKTZ:88f3dda221205c80ae659f0797ff5a7da2c296d8:Mylna:52:KSZ-0047/m-004"
+        },
+        "tpn_globalid": {
+          "before": null,
+          "after": ""
+        },
+        "verification_status": {
+          "before": null,
+          "after": "nieweryfikowany"
+        },
+        "vertical_accuracy_m": {
+          "before": null,
+          "after": ""
+        },
+        "x_1992": {
+          "before": null,
+          "after": "152771.38"
+        },
+        "y_1992": {
+          "before": null,
+          "after": "562726.74"
+        }
+      },
+      "before": null,
+      "after": {
+        "object_id": "KSZ-0115",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Mylna - I Okno Pawlikowskiego",
+        "cave_id": "C-0573",
+        "measurement_id": "m-001",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-001",
+        "best_reason": "Wynik sieci JKTZ z jedną kotwicą Raptawickiej KSZ-0047/m-004; przyjęty mimo nieznanej dokładności kotwicy i sieci.",
+        "lat": "49.239233914",
+        "lon": "19.8619941553",
+        "x_1992": "152771.38",
+        "y_1992": "562726.74",
+        "elevation_m": "1097.11",
+        "source": "wlasne",
+        "source_ref": "JKTZ:88f3dda221205c80ae659f0797ff5a7da2c296d8:Mylna:52:KSZ-0047/m-004",
+        "nr_inwent": "T.E-08.04",
+        "pig_id": "1349",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1349",
+        "tpn_globalid": "",
+        "observed_at": "",
+        "observed_date": "2026-10-25",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Otwór oznaczony flagą w autorskim CG.SRV. Numeracja okien w BOKI_CG.SRV: I=52, II=53.",
+        "cave_notes": "PIG aliases: Jaskinie Pawlikowskiego\nPIG sector: D. Kościeliska - Zach.\nPIG morphometry: length_m=1630, depth_m=22,3, denivelation_m=46\nPIG source state year: 2015\nMulti-opening review 2026-05-16: full PIG dump places Jaskinia Mylna in system Jaskinie Pawlikowskiego and lists additional openings, including 3 (północny) - ku NE, 1084 m n.p.m.; KSZ-0113 was created from TPN row 759.",
+        "measurement_notes": "Stacja Mylna:52; wyrównanie Survex 1.4.24 z jednym fixem Raptawickiej i ciągiem powierzchniowym Obłazkowa–Raptawicka (66 odczytów, deklinacja 4,83° przyjęta, data nieznana). H=1140,8 m ALS + różnica Z z sieci, PL-KRON86-NH. To wysokość stacji, nie potwierdzonego progu; dokładność i położenie znaku nieustalone."
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "KSZ-0116",
+      "plans": [],
+      "fields": {
+        "best_mode": {
+          "before": null,
+          "after": "manual"
+        },
+        "best_reason": {
+          "before": null,
+          "after": "Wynik sieci JKTZ z jedną kotwicą Raptawickiej KSZ-0047/m-004; przyjęty mimo nieznanej dokładności kotwicy i sieci."
+        },
+        "category": {
+          "before": null,
+          "after": "jaskinia_otwor"
+        },
+        "cave_id": {
+          "before": null,
+          "after": "C-0573"
+        },
+        "cave_notes": {
+          "before": null,
+          "after": "PIG aliases: Jaskinie Pawlikowskiego\nPIG sector: D. Kościeliska - Zach.\nPIG morphometry: length_m=1630, depth_m=22,3, denivelation_m=46\nPIG source state year: 2015\nMulti-opening review 2026-05-16: full PIG dump places Jaskinia Mylna in system Jaskinie Pawlikowskiego and lists additional openings, including 3 (północny) - ku NE, 1084 m n.p.m.; KSZ-0113 was created from TPN row 759."
+        },
+        "computed_best_measurement_id": {
+          "before": null,
+          "after": "m-001"
+        },
+        "elevation_m": {
+          "before": null,
+          "after": "1098.22"
+        },
+        "horizontal_accuracy_m": {
+          "before": null,
+          "after": ""
+        },
+        "lat": {
+          "before": null,
+          "after": "49.239185688"
+        },
+        "lon": {
+          "before": null,
+          "after": "19.8618835716"
+        },
+        "measurement_id": {
+          "before": null,
+          "after": "m-001"
+        },
+        "measurement_notes": {
+          "before": null,
+          "after": "Stacja Mylna:53; wyrównanie Survex 1.4.24 z jednym fixem Raptawickiej i ciągiem powierzchniowym Obłazkowa–Raptawicka (66 odczytów, deklinacja 4,83° przyjęta, data nieznana). H=1140,8 m ALS + różnica Z z sieci, PL-KRON86-NH. To wysokość stacji, nie potwierdzonego progu; dokładność i położenie znaku nieustalone."
+        },
+        "method": {
+          "before": null,
+          "after": "siec_pomiarowa"
+        },
+        "name_local": {
+          "before": null,
+          "after": "Jaskinia Mylna - II Okno Pawlikowskiego"
+        },
+        "nr_inwent": {
+          "before": null,
+          "after": "T.E-08.04"
+        },
+        "object_id": {
+          "before": null,
+          "after": "KSZ-0116"
+        },
+        "object_notes": {
+          "before": null,
+          "after": "Otwór oznaczony flagą w autorskim CG.SRV. Numeracja okien w BOKI_CG.SRV: I=52, II=53."
+        },
+        "observed_at": {
+          "before": null,
+          "after": ""
+        },
+        "observed_date": {
+          "before": null,
+          "after": "2026-10-25"
+        },
+        "pig_id": {
+          "before": null,
+          "after": "1349"
+        },
+        "pig_url": {
+          "before": null,
+          "after": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1349"
+        },
+        "source": {
+          "before": null,
+          "after": "wlasne"
+        },
+        "source_ref": {
+          "before": null,
+          "after": "JKTZ:88f3dda221205c80ae659f0797ff5a7da2c296d8:Mylna:53:KSZ-0047/m-004"
+        },
+        "tpn_globalid": {
+          "before": null,
+          "after": ""
+        },
+        "verification_status": {
+          "before": null,
+          "after": "nieweryfikowany"
+        },
+        "vertical_accuracy_m": {
+          "before": null,
+          "after": ""
+        },
+        "x_1992": {
+          "before": null,
+          "after": "152765.92"
+        },
+        "y_1992": {
+          "before": null,
+          "after": "562718.75"
+        }
+      },
+      "before": null,
+      "after": {
+        "object_id": "KSZ-0116",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Mylna - II Okno Pawlikowskiego",
+        "cave_id": "C-0573",
+        "measurement_id": "m-001",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-001",
+        "best_reason": "Wynik sieci JKTZ z jedną kotwicą Raptawickiej KSZ-0047/m-004; przyjęty mimo nieznanej dokładności kotwicy i sieci.",
+        "lat": "49.239185688",
+        "lon": "19.8618835716",
+        "x_1992": "152765.92",
+        "y_1992": "562718.75",
+        "elevation_m": "1098.22",
+        "source": "wlasne",
+        "source_ref": "JKTZ:88f3dda221205c80ae659f0797ff5a7da2c296d8:Mylna:53:KSZ-0047/m-004",
+        "nr_inwent": "T.E-08.04",
+        "pig_id": "1349",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1349",
+        "tpn_globalid": "",
+        "observed_at": "",
+        "observed_date": "2026-10-25",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Otwór oznaczony flagą w autorskim CG.SRV. Numeracja okien w BOKI_CG.SRV: I=52, II=53.",
+        "cave_notes": "PIG aliases: Jaskinie Pawlikowskiego\nPIG sector: D. Kościeliska - Zach.\nPIG morphometry: length_m=1630, depth_m=22,3, denivelation_m=46\nPIG source state year: 2015\nMulti-opening review 2026-05-16: full PIG dump places Jaskinia Mylna in system Jaskinie Pawlikowskiego and lists additional openings, including 3 (północny) - ku NE, 1084 m n.p.m.; KSZ-0113 was created from TPN row 759.",
+        "measurement_notes": "Stacja Mylna:53; wyrównanie Survex 1.4.24 z jednym fixem Raptawickiej i ciągiem powierzchniowym Obłazkowa–Raptawicka (66 odczytów, deklinacja 4,83° przyjęta, data nieznana). H=1140,8 m ALS + różnica Z z sieci, PL-KRON86-NH. To wysokość stacji, nie potwierdzonego progu; dokładność i położenie znaku nieustalone."
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "KSZ-0117",
+      "plans": [],
+      "fields": {
+        "best_mode": {
+          "before": null,
+          "after": "manual"
+        },
+        "best_reason": {
+          "before": null,
+          "after": "Wynik sieci JKTZ z jedną kotwicą Raptawickiej KSZ-0047/m-004; przyjęty mimo nieznanej dokładności kotwicy i sieci."
+        },
+        "category": {
+          "before": null,
+          "after": "jaskinia_otwor"
+        },
+        "cave_id": {
+          "before": null,
+          "after": "C-0573"
+        },
+        "cave_notes": {
+          "before": null,
+          "after": "PIG aliases: Jaskinie Pawlikowskiego\nPIG sector: D. Kościeliska - Zach.\nPIG morphometry: length_m=1630, depth_m=22,3, denivelation_m=46\nPIG source state year: 2015\nMulti-opening review 2026-05-16: full PIG dump places Jaskinia Mylna in system Jaskinie Pawlikowskiego and lists additional openings, including 3 (północny) - ku NE, 1084 m n.p.m.; KSZ-0113 was created from TPN row 759."
+        },
+        "computed_best_measurement_id": {
+          "before": null,
+          "after": "m-001"
+        },
+        "elevation_m": {
+          "before": null,
+          "after": "1096.24"
+        },
+        "horizontal_accuracy_m": {
+          "before": null,
+          "after": ""
+        },
+        "lat": {
+          "before": null,
+          "after": "49.2391500264"
+        },
+        "lon": {
+          "before": null,
+          "after": "19.8617608845"
+        },
+        "measurement_id": {
+          "before": null,
+          "after": "m-001"
+        },
+        "measurement_notes": {
+          "before": null,
+          "after": "Stacja Mylna:333; wyrównanie Survex 1.4.24 z jednym fixem Raptawickiej i ciągiem powierzchniowym Obłazkowa–Raptawicka (66 odczytów, deklinacja 4,83° przyjęta, data nieznana). H=1140,8 m ALS + różnica Z z sieci, PL-KRON86-NH. To wysokość stacji, nie potwierdzonego progu; dokładność i położenie znaku nieustalone."
+        },
+        "method": {
+          "before": null,
+          "after": "siec_pomiarowa"
+        },
+        "name_local": {
+          "before": null,
+          "after": "Jaskinia Mylna - III Okno Pawlikowskiego"
+        },
+        "nr_inwent": {
+          "before": null,
+          "after": "T.E-08.04"
+        },
+        "object_id": {
+          "before": null,
+          "after": "KSZ-0117"
+        },
+        "object_notes": {
+          "before": null,
+          "after": "Otwór oznaczony flagą w autorskim CG.SRV. III Okno: stacja 333 według BCDCHCG.SRV."
+        },
+        "observed_at": {
+          "before": null,
+          "after": ""
+        },
+        "observed_date": {
+          "before": null,
+          "after": "2026-10-25"
+        },
+        "pig_id": {
+          "before": null,
+          "after": "1349"
+        },
+        "pig_url": {
+          "before": null,
+          "after": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1349"
+        },
+        "source": {
+          "before": null,
+          "after": "wlasne"
+        },
+        "source_ref": {
+          "before": null,
+          "after": "JKTZ:88f3dda221205c80ae659f0797ff5a7da2c296d8:Mylna:333:KSZ-0047/m-004"
+        },
+        "tpn_globalid": {
+          "before": null,
+          "after": ""
+        },
+        "verification_status": {
+          "before": null,
+          "after": "nieweryfikowany"
+        },
+        "vertical_accuracy_m": {
+          "before": null,
+          "after": ""
+        },
+        "x_1992": {
+          "before": null,
+          "after": "152761.86"
+        },
+        "y_1992": {
+          "before": null,
+          "after": "562709.87"
+        }
+      },
+      "before": null,
+      "after": {
+        "object_id": "KSZ-0117",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Mylna - III Okno Pawlikowskiego",
+        "cave_id": "C-0573",
+        "measurement_id": "m-001",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-001",
+        "best_reason": "Wynik sieci JKTZ z jedną kotwicą Raptawickiej KSZ-0047/m-004; przyjęty mimo nieznanej dokładności kotwicy i sieci.",
+        "lat": "49.2391500264",
+        "lon": "19.8617608845",
+        "x_1992": "152761.86",
+        "y_1992": "562709.87",
+        "elevation_m": "1096.24",
+        "source": "wlasne",
+        "source_ref": "JKTZ:88f3dda221205c80ae659f0797ff5a7da2c296d8:Mylna:333:KSZ-0047/m-004",
+        "nr_inwent": "T.E-08.04",
+        "pig_id": "1349",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1349",
+        "tpn_globalid": "",
+        "observed_at": "",
+        "observed_date": "2026-10-25",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Otwór oznaczony flagą w autorskim CG.SRV. III Okno: stacja 333 według BCDCHCG.SRV.",
+        "cave_notes": "PIG aliases: Jaskinie Pawlikowskiego\nPIG sector: D. Kościeliska - Zach.\nPIG morphometry: length_m=1630, depth_m=22,3, denivelation_m=46\nPIG source state year: 2015\nMulti-opening review 2026-05-16: full PIG dump places Jaskinia Mylna in system Jaskinie Pawlikowskiego and lists additional openings, including 3 (północny) - ku NE, 1084 m n.p.m.; KSZ-0113 was created from TPN row 759.",
+        "measurement_notes": "Stacja Mylna:333; wyrównanie Survex 1.4.24 z jednym fixem Raptawickiej i ciągiem powierzchniowym Obłazkowa–Raptawicka (66 odczytów, deklinacja 4,83° przyjęta, data nieznana). H=1140,8 m ALS + różnica Z z sieci, PL-KRON86-NH. To wysokość stacji, nie potwierdzonego progu; dokładność i położenie znaku nieustalone."
+      },
+      "position_changed": true
+    }
+  ],
+  "before_source": {
+    "schema_version": 1,
+    "repository": "dlubom/gps-kataster-obiektow-tatr",
+    "release": "v1.3.1",
+    "asset": "best-measurements.csv",
+    "sha256": "a783a4d124b43b9c9b864d79ca6a5c0183561f8972c755d58de2cfc1ea9b4d6f",
+    "snapshot": "best-measurements-v1.3.1.csv"
+  },
+  "after_source": {
+    "schema_version": 1,
+    "repository": "dlubom/gps-kataster-obiektow-tatr",
+    "release": "v1.3.2",
+    "asset": "best-measurements.csv",
+    "sha256": "6ef2607dacc02933240e820c42a0bab544790a38b5594a730fc4130b105c9ec0",
+    "snapshot": "best-measurements-v1.3.2.csv"
+  },
+  "geometry": {
+    "interpretation": "Przeliczenie tym samym generatorem; zmiana współrzędnych, bez naprawy rotacji.",
+    "generator_sha256": "7394901a10fdca0235219891b02e5bdb58d796b33b6d17fc32700979868c82d2",
+    "plans": [
+      {
+        "dir_id": "001349",
+        "before": {
+          "tfw_text": "0.0215850332\n0.0364212593\n0.0364212593\n-0.0215850332\n562628.358658\n152763.042422\n",
+          "parameters": {
+            "A": 0.0215850332,
+            "D": 0.0364212593,
+            "B": 0.0364212593,
+            "E": -0.0215850332,
+            "C": 562628.358658,
+            "F": 152763.042422
+          }
+        },
+        "after": {
+          "tfw_text": "0.0215850332\n0.0364212593\n0.0364212593\n-0.0215850332\n562615.479505\n152759.541268\n",
+          "parameters": {
+            "A": 0.0215850332,
+            "D": 0.0364212593,
+            "B": 0.0364212593,
+            "E": -0.0215850332,
+            "C": 562615.479505,
+            "F": 152759.541268
+          }
+        },
+        "delta": {
+          "entrance_dx_m": -12.879152999958023,
+          "entrance_dy_m": -3.5011539999977686,
+          "entrance_distance_m": 13.34655990613417,
+          "rotation_deg": 0.0,
+          "scale_m_per_pixel": 0.0
+        },
+        "scale_input_changed": false,
+        "north_input_changed": false
+      },
+      {
+        "dir_id": "001351",
+        "before": {
+          "tfw_text": "0.0215852148\n0.0364211516\n0.0364211516\n-0.0215852148\n562655.381068\n152782.894848\n",
+          "parameters": {
+            "A": 0.0215852148,
+            "D": 0.0364211516,
+            "B": 0.0364211516,
+            "E": -0.0215852148,
+            "C": 562655.381068,
+            "F": 152782.894848
+          }
+        },
+        "after": {
+          "tfw_text": "0.0215852148\n0.0364211516\n0.0364211516\n-0.0215852148\n562642.433549\n152779.331885\n",
+          "parameters": {
+            "A": 0.0215852148,
+            "D": 0.0364211516,
+            "B": 0.0364211516,
+            "E": -0.0215852148,
+            "C": 562642.433549,
+            "F": 152779.331885
+          }
+        },
+        "delta": {
+          "entrance_dx_m": -12.947519000037573,
+          "entrance_dy_m": -3.562963000003947,
+          "entrance_distance_m": 13.42881058008233,
+          "rotation_deg": 0.0,
+          "scale_m_per_pixel": 0.0
+        },
+        "scale_input_changed": false,
+        "north_input_changed": false
+      },
+      {
+        "dir_id": "001387",
+        "before": {
+          "tfw_text": "0.0169365691\n-0.0001930604\n-0.0001930604\n-0.0169365691\n562683.486875\n152877.085837\n",
+          "parameters": {
+            "A": 0.0169365691,
+            "D": -0.0001930604,
+            "B": -0.0001930604,
+            "E": -0.0169365691,
+            "C": 562683.486875,
+            "F": 152877.085837
+          }
+        },
+        "after": {
+          "tfw_text": "0.0169365691\n-0.0001930604\n-0.0001930604\n-0.0169365691\n562670.637173\n152873.605466\n",
+          "parameters": {
+            "A": 0.0169365691,
+            "D": -0.0001930604,
+            "B": -0.0001930604,
+            "E": -0.0169365691,
+            "C": 562670.637173,
+            "F": 152873.605466
+          }
+        },
+        "delta": {
+          "entrance_dx_m": -12.849701999919489,
+          "entrance_dy_m": -3.480370999983279,
+          "entrance_distance_m": 13.312694084378997,
+          "rotation_deg": 0.0,
+          "scale_m_per_pixel": 0.0
+        },
+        "scale_input_changed": false,
+        "north_input_changed": false
+      },
+      {
+        "dir_id": "010935",
+        "before": {
+          "tfw_text": "0.0211671262\n-0.0002412787\n-0.0002412787\n-0.0211671262\n562650.174318\n152950.258250\n",
+          "parameters": {
+            "A": 0.0211671262,
+            "D": -0.0002412787,
+            "B": -0.0002412787,
+            "E": -0.0211671262,
+            "C": 562650.174318,
+            "F": 152950.25825
+          }
+        },
+        "after": {
+          "tfw_text": "0.0211671262\n-0.0002412787\n-0.0002412787\n-0.0211671262\n562637.295164\n152946.757096\n",
+          "parameters": {
+            "A": 0.0211671262,
+            "D": -0.0002412787,
+            "B": -0.0002412787,
+            "E": -0.0211671262,
+            "C": 562637.295164,
+            "F": 152946.757096
+          }
+        },
+        "delta": {
+          "entrance_dx_m": -12.879153999965638,
+          "entrance_dy_m": -3.5011540000268724,
+          "entrance_distance_m": 13.346560871128377,
+          "rotation_deg": 0.0,
+          "scale_m_per_pixel": 0.0
+        },
+        "scale_input_changed": false,
+        "north_input_changed": false
+      }
+    ]
+  }
+}

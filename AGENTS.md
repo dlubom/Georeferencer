@@ -121,7 +121,7 @@ jupyter notebook analysis.ipynb
 ## Kluczowa konfiguracja
 
 - Obrazy źródłowe: `../Polish-Cave-Data-Scraper/` (`caves_mono/`, `caves_upscaled/`, `caves/`)
-- Współrzędne buildu: przypięty release [`dlubom/gps-kataster-obiektow-tatr v1.3.1`](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v1.3.1), artefakt `best-measurements.csv`; opis i surowy snapshot w `data/coordinate-source/`. Aktualizacja wymaga PR z raportem planów/pomiarów i wpływu zgodnie z `docs/COORDINATE_SOURCE.md`.
+- Współrzędne buildu: przypięty release [`dlubom/gps-kataster-obiektow-tatr v1.3.2`](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v1.3.2), artefakt `best-measurements.csv`; opis i surowy snapshot w `data/coordinate-source/`. Aktualizacja wymaga PR z raportem planów/pomiarów i wpływu zgodnie z `docs/COORDINATE_SOURCE.md`.
 - Rejestr PIG (JSONL, źródło historyczne/manualne): `../Jaskiniowy-Kataster-Tatr-Zachodnich/doc/jaskinie_polski_pig_dump.jsonl`
 - Georeferencer UI (do ręcznych kliknięć): `../Polish-Cave-Data-Scraper/index.html` — loguje dane do meta.yaml w konsoli
 - <!-- GitHub Pages wyłączony — etap crowdsourcingowy zakończony -->

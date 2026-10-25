@@ -74,7 +74,9 @@ class CatalogueBaselineTest(unittest.TestCase):
     def test_saved_recalculation_is_reproducible_and_cannot_replace_history(self):
         document = json.loads(baseline.BASELINE.read_text())
         saved = json.loads((baseline.BASELINE.parent / "recalculated-v1.3.1.json").read_text())
-        recalculated = baseline.recalculation(ROOT, document, baseline.DEFAULT_MANIFEST)
+        # Odtworzenie T02 ma własny pin; aktualizacja runtime nie przepisuje historii.
+        manifest = ROOT / "data/coordinate-source/source-v1.3.1.json"
+        recalculated = baseline.recalculation(ROOT, document, manifest)
         self.assertEqual(recalculated, saved)
         self.assertTrue(saved["different_from_historical"])
         self.assertFalse(any("error" in p for p in saved["plans"].values()))
