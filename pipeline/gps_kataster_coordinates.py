@@ -77,6 +77,24 @@ class GpsKatasterIndex:
         max_ambiguous_distance_m: float = MAX_AMBIGUOUS_DISTANCE_M,
         min_ambiguous_distance_gap_m: float = MIN_AMBIGUOUS_DISTANCE_GAP_M,
     ) -> None:
+        # Waliduj cały eksport przed filtrowaniem kategorii i budowaniem mapy.
+        for row in rows:
+            for key in ("object_id", "category"):
+                value = getattr(row, key)
+                if not isinstance(value, str) or not value.strip():
+                    raise GpsKatasterCoordinateError(
+                        f"katalog {row.object_id}: {key}: wymagany niepusty tekst")
+        seen = set()
+        for row in sorted(rows, key=lambda r: r.object_id):
+            if not row.object_id or row.object_id in seen:
+                raise GpsKatasterCoordinateError(
+                    f"katalog {row.object_id}: object_id: wymagany unikalny identyfikator")
+            seen.add(row.object_id)
+            for key in ("lat", "lon", "x_1992", "y_1992"):
+                value = getattr(row, key)
+                if key in {"x_1992", "y_1992"} and value == "":
+                    continue
+                _validate_number(row.object_id, key, value)
         self.rows = [row for row in rows if row.category in {"jaskinia_otwor", "sztolnia"}]
         self.max_ambiguous_distance_m = max_ambiguous_distance_m
         self.min_ambiguous_distance_gap_m = min_ambiguous_distance_gap_m
@@ -291,6 +309,13 @@ def _load_geojson(path: Path) -> list[BestMeasurementRow]:
 
 
 def _row_from_mapping(data: dict[str, Any]) -> BestMeasurementRow:
+    object_id = _required_text(data, "object_id")
+    for key in ("lat", "lon", "x_1992", "y_1992", "elevation_m",
+                "horizontal_accuracy_m", "vertical_accuracy_m"):
+        value = data.get(key)
+        if key not in {"lat", "lon"} and value in (None, ""):
+            continue
+        _validate_number(object_id, key, value)
     return BestMeasurementRow(
         object_id=_required_text(data, "object_id"),
         category=_required_text(data, "category"),
@@ -338,10 +363,11 @@ def _text(value: Any) -> str:
 
 
 def _required_text(data: dict[str, Any], key: str) -> str:
-    value = _text(data.get(key))
-    if not value:
-        raise ValueError(f"Brak pola {key} w gps-kataster best-measurements.")
-    return value
+    value = data.get(key)
+    if not isinstance(value, str) or not value.strip():
+        raise GpsKatasterCoordinateError(
+            f"katalog {data.get('object_id', '?')}: {key}: wymagany niepusty tekst")
+    return value.strip()
 
 
 def _float_or_none(value: Any) -> float | None:
@@ -351,6 +377,20 @@ def _float_or_none(value: Any) -> float | None:
         return float(value)
     except (TypeError, ValueError):
         return None
+
+
+def _validate_number(object_id, key, value):
+    try:
+        number = float(value)
+    except (TypeError, ValueError, OverflowError):
+        number = math.nan
+    if isinstance(value, bool) or not math.isfinite(number):
+        raise GpsKatasterCoordinateError(f"katalog {object_id}: {key}: wymagana skończona liczba")
+    limit = {"lat": 90, "lon": 180}.get(key)
+    if limit is not None and not -limit <= number <= limit:
+        raise GpsKatasterCoordinateError(f"katalog {object_id}: {key}: zakres [-{limit}, {limit}]")
+    if key.endswith("accuracy_m") and number < 0:
+        raise GpsKatasterCoordinateError(f"katalog {object_id}: {key}: wymagana wartość >= 0")
 
 
 def _required_float(data: dict[str, Any], key: str) -> float:

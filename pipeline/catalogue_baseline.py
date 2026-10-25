@@ -7,6 +7,7 @@ import json
 import math
 import platform
 import subprocess
+import sys
 from pathlib import Path
 
 import yaml
@@ -14,6 +15,17 @@ import yaml
 from coordinate_source import DEFAULT_MANIFEST, ROOT, read_manifest, read_rows, sha256, verify
 
 BASELINE = ROOT / "data/baseline/2026-10-24/catalogue.json"
+FROZEN_REFERENCE = "fad70f09992671a0da5a364dfea4a2c538f80e3d"
+FROZEN_MODULES = {"pipeline/02_generate_geotiff.py", "pipeline/gps_kataster_coordinates.py"}
+
+
+def historical_path(root, path):
+    """Oryginalne nazwy/hash w manifeście zostają; T03 przechowuje wierne kopie kodu."""
+    if path in FROZEN_MODULES:
+        return root / "data/baseline/2026-10-24/legacy" / Path(path).name
+    return root / path
+
+
 TFW_ORDER = ("A", "D", "B", "E", "C", "F")
 
 
@@ -49,29 +61,54 @@ def verify_inputs(root, document):
     for plan in document["plans"]:
         hashes.update(plan["sha256"])
     for path, expected_hash in hashes.items():
-        full_path = root / path
+        full_path = (historical_path(root, path)
+                     if document.get("reference_commit") == FROZEN_REFERENCE else root / path)
         if not full_path.is_file() or sha256(full_path) != expected_hash:
             mismatches.append(path)
     return mismatches
 
 
-def generator(root):
-    spec = importlib.util.spec_from_file_location("baseline_generator", root / "pipeline/02_generate_geotiff.py")
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
+def generator(root, historical=False):
+    path = historical_path(root, "pipeline/02_generate_geotiff.py") if historical else root / "pipeline/02_generate_geotiff.py"
+    # Import starego generatora wiążemy ze starym loaderem/renderem, nawet gdy
+    # bieżący moduł jest już w cache interpretera. Kopie są sprawdzane hashami T02.
+    previous = sys.modules.get("gps_kataster_coordinates")
+    try:
+        if historical:
+            old_path = historical_path(root, "pipeline/gps_kataster_coordinates.py")
+            gps_spec = importlib.util.spec_from_file_location("gps_kataster_coordinates", old_path)
+            gps = importlib.util.module_from_spec(gps_spec)
+            sys.modules[gps_spec.name] = gps
+            gps_spec.loader.exec_module(gps)
+        spec = importlib.util.spec_from_file_location("baseline_generator", path)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+    finally:
+        if historical:
+            if previous is None:
+                sys.modules.pop("gps_kataster_coordinates", None)
+            else:
+                sys.modules["gps_kataster_coordinates"] = previous
     return module
 
 
-def calculate(root, plans, manifest):
+def calculate(root, plans, manifest, historical=False):
     from gps_kataster_coordinates import load_best_measurements, render_meta_template
+    module = generator(root, historical=historical)
+    if historical:
+        load_best_measurements = module.load_best_measurements
+        render_meta_template = module.render_meta_template
     index = load_best_measurements(verify(manifest))
-    module = generator(root)
     results = {}
     for plan in plans:
         raw = (root / "data/caves" / plan["dir_id"] / "meta.yaml").read_text(encoding="utf-8")
         try:
-            meta = yaml.safe_load(render_meta_template(raw, index))
-            module.validate_gps_kataster_object_id(meta, index)
+            if historical:
+                meta = yaml.safe_load(render_meta_template(raw, index))
+                module.validate_gps_kataster_object_id(meta, index)
+            else:
+                from validation import validate_plan
+                _, meta = validate_plan(root / "data/caves" / plan["dir_id"], index)
             parameters = module.compute_world_file(meta)
             # Ten sam format liczbowy co write_tfw, bez uruchamiania mutującego process_cave.
             text = "\n".join(f"{parameters[k]:.{10 if k in 'ADBE' else 6}f}" for k in TFW_ORDER) + "\n"
@@ -110,7 +147,8 @@ def recalculation(root, document, manifest):
     mismatches = verify_inputs(root, document)
     if mismatches:
         raise ValueError(f"Przeliczenie wymaga niezmienionych wejść i generatora bazowego: {mismatches}")
-    calculated = calculate(root, document["plans"], manifest)
+    calculated = calculate(root, document["plans"], manifest,
+                           historical=document.get("reference_commit") == FROZEN_REFERENCE)
     differences = []
     for plan in document["plans"]:
         result = calculated[plan["dir_id"]]

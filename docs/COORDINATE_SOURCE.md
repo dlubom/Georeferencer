@@ -34,9 +34,11 @@ opisu/helpera, zamiast pobraniem zmiennego źródła. Odtwarzanie dawnego wydani
 wymaga jego własnego kodu i ustalenia ówczesnych źródeł.
 Przełączenie środowiska wydania, zapisu wyników i QA pozostaje zakresem T10/T11.
 
-Generator nadal ma niskopoziomowy argument `--gps-kataster-best-measurements`
-(także do syntetycznych testów). Sam argument nie potwierdza przypięcia.
-Odtwarzalny build lokalny musi najpierw wykonać helper i przekazać jego wynik:
+Od T03 produkcyjny generator sam sprawdza pin T02. Jawny argument
+`--gps-kataster-best-measurements` musi odpowiadać hashowi z `source.json`;
+bez argumentu używa zapisanego snapshotu. Dowolne katalogi syntetyczne są
+obsługiwane wyłącznie przez niskopoziomowe API testów, nie przez produkcyjne CLI.
+Helper nadal pozwala jawnie odtworzyć i zweryfikować bajty:
 
 ```sh
 python pipeline/coordinate_source.py copy --output /tmp/georeferencer-best-measurements.csv
@@ -127,12 +129,17 @@ cmp "$audit_dir/recalculated.json" data/baseline/2026-10-24/recalculated-v1.3.1.
 ```
 
 Testy odczytują rzeczywisty punkt odniesienia, sprawdzają komplet i hashe oraz
-odtwarzają raport. Rozbieżność wejść lub kodu blokuje audyt starego generatora.
-Po przyszłych zmianach odtwarzaj ten audyt z checkoutu commitu T02 i jego
-przypiętego środowiska, zamiast podstawiać nowy generator. `capture` służy do
+odtwarzają raport. Rozbieżność historycznych wejść lub zamrożonego kodu blokuje audyt starego
+generatora. Od T03 dwie zmienione implementacje są zachowane bajtowo w
+`data/baseline/2026-10-24/legacy/` i kontrolowane oryginalnymi hashami T02;
+`recalculate` używa tych kopii, a raport wpływu aktualizacji — bieżącego kodu.
+Nie podstawiaj nowego generatora pod historyczne przeliczenie. Pełną dawną
+sesję można też odtworzyć z checkoutu T02 i jego środowiska. `capture` służy do
 tworzenia **nowego**, osobno nazwanego punktu odniesienia; wymaga Git na hoście,
 pełnego `--reference-commit`, `--output` i niezmienionych śledzonych wejść.
 Kontener kontroli nie potrzebuje Git, bo korzysta z zapisanego manifestu.
 
 Ustalenia i cztery przenośne reprodukcje review opisano w
 [review/README.md](../data/baseline/2026-10-24/review/README.md).
+
+Bieżący kontrakt danych i obrazu: [VALIDATION.md](VALIDATION.md).

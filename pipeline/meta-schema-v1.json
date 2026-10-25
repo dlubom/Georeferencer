@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "description": "Kontrakt meta.yaml; reguły pól interpretuje validation.py. Pozostałe metadane są zachowane, wszystkie liczby muszą być skończone.",
+  "fields": {
+    "cave": {
+      "type": "object"
+    },
+    "cave.dir_id": {
+      "type": "string"
+    },
+    "cave.name": {
+      "type": "string"
+    },
+    "cave.inventory_number": {
+      "type": "string",
+      "optional": true
+    },
+    "cave.n_submissions": {
+      "type": "integer",
+      "min": 0,
+      "optional": true
+    },
+    "image": {
+      "type": "object"
+    },
+    "image.filename": {
+      "type": "string"
+    },
+    "image.image_id": {
+      "type": "integer",
+      "min": 1
+    },
+    "image.width": {
+      "type": "integer",
+      "min": 1
+    },
+    "image.height": {
+      "type": "integer",
+      "min": 1
+    },
+    "coordinates": {
+      "type": "object"
+    },
+    "coordinates.gps_kataster_object_id": {
+      "type": "string"
+    },
+    "coordinates.lat": {
+      "type": "coordinate",
+      "min": -90,
+      "max": 90
+    },
+    "coordinates.lon": {
+      "type": "coordinate",
+      "min": -180,
+      "max": 180
+    },
+    "coordinates.elevation_m": {
+      "type": "number",
+      "optional": true
+    },
+    "entrance": {
+      "type": "object"
+    },
+    "entrance.x": {
+      "type": "number",
+      "min": 0
+    },
+    "entrance.y": {
+      "type": "number",
+      "min": 0
+    },
+    "scale": {
+      "type": "object"
+    },
+    "scale.pixels_per_meter": {
+      "type": "number",
+      "exclusive_min": 0
+    },
+    "north": {
+      "type": "object"
+    },
+    "north.angle_deg": {
+      "type": "number"
+    },
+    "north.all_skipped": {
+      "type": "boolean",
+      "optional": true
+    },
+    "declination_deg": {
+      "type": "number",
+      "optional": true
+    },
+    "computed": {
+      "type": "object",
+      "optional": true
+    },
+    "quality": {
+      "type": "object",
+      "optional": true
+    },
+    "computed.A": {
+      "type": "number",
+      "optional": true
+    },
+    "computed.D": {
+      "type": "number",
+      "optional": true
+    },
+    "computed.B": {
+      "type": "number",
+      "optional": true
+    },
+    "computed.E": {
+      "type": "number",
+      "optional": true
+    },
+    "computed.C": {
+      "type": "number",
+      "optional": true
+    },
+    "computed.F": {
+      "type": "number",
+      "optional": true
+    },
+    "computed.convergence_deg": {
+      "type": "number",
+      "optional": true
+    },
+    "computed.total_rotation_deg": {
+      "type": "number",
+      "optional": true
+    },
+    "quality.ppm_cv": {
+      "type": "number",
+      "optional": true
+    },
+    "quality.entrance_std_px": {
+      "type": "number",
+      "optional": true
+    },
+    "quality.outliers_removed": {
+      "type": "number",
+      "optional": true
+    }
+  }
+}

@@ -60,3 +60,30 @@ class CatalogueBaselineTest(unittest.TestCase):
         self.assertTrue(saved["different_from_historical"])
         self.assertFalse(any("error" in p for p in saved["plans"].values()))
         self.assertEqual(baseline.verify_inputs(ROOT, document), [])
+
+    def test_new_baseline_checks_its_own_code_instead_of_t02_archive(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            path = root / 'pipeline/02_generate_geotiff.py'
+            path.parent.mkdir()
+            path.write_text('new generation code')
+            (root / 'data/caves').mkdir(parents=True)
+            document = {'reference_commit': 'future-reference', 'plans': [],
+                        'other_inputs_sha256': {'pipeline/02_generate_geotiff.py': baseline.sha256(path)}}
+            self.assertEqual(baseline.verify_inputs(root, document), [])
+            path.write_text('changed since new baseline')
+            self.assertEqual(baseline.verify_inputs(root, document), ['pipeline/02_generate_geotiff.py'])
+
+    def test_frozen_code_corruption_is_not_hidden_by_current_code(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            current = root / 'pipeline/02_generate_geotiff.py'
+            frozen = root / 'data/baseline/2026-10-24/legacy/02_generate_geotiff.py'
+            current.parent.mkdir()
+            frozen.parent.mkdir(parents=True)
+            (root / 'data/caves').mkdir(parents=True)
+            current.write_text('historical bytes')
+            frozen.write_text('corrupted archive')
+            document = {'reference_commit': 'fad70f09992671a0da5a364dfea4a2c538f80e3d', 'plans': [],
+                        'other_inputs_sha256': {'pipeline/02_generate_geotiff.py': baseline.sha256(current)}}
+            self.assertEqual(baseline.verify_inputs(root, document), ['pipeline/02_generate_geotiff.py'])

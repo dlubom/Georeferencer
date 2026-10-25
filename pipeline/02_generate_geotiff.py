@@ -6,16 +6,16 @@ generuje World File (.tfw) i GeoTIFF przez gdal_translate.
 
 Użycie:
     python pipeline/02_generate_geotiff.py --cave 001131 \
-        --gps-kataster-best-measurements ../gps-kataster-obiektow-tatr/build/exports/best-measurements.csv \
+        --gps-kataster-best-measurements data/coordinate-source/best-measurements-v1.3.1.csv \
         --gps-kataster-strict
     python pipeline/02_generate_geotiff.py --all \
-        --gps-kataster-best-measurements ../gps-kataster-obiektow-tatr/build/exports/best-measurements.csv \
+        --gps-kataster-best-measurements data/coordinate-source/best-measurements-v1.3.1.csv \
         --gps-kataster-strict
     python pipeline/02_generate_geotiff.py --changed \
-        --gps-kataster-best-measurements ../gps-kataster-obiektow-tatr/build/exports/best-measurements.csv \
+        --gps-kataster-best-measurements data/coordinate-source/best-measurements-v1.3.1.csv \
         --gps-kataster-strict
     python pipeline/02_generate_geotiff.py --all --force \
-        --gps-kataster-best-measurements ../gps-kataster-obiektow-tatr/build/exports/best-measurements.csv \
+        --gps-kataster-best-measurements data/coordinate-source/best-measurements-v1.3.1.csv \
         --gps-kataster-strict
 """
 import argparse
@@ -25,16 +25,15 @@ import sys
 from pathlib import Path
 
 import yaml
-from PIL import Image
-
-Image.MAX_IMAGE_PIXELS = None
 from pyproj import Transformer
 
 from gps_kataster_coordinates import (
     GpsKatasterCoordinateError,
     load_best_measurements,
-    render_meta_template,
 )
+
+from coordinate_source import verify
+from validation import ValidationError, fail, read_registry, validate_plan
 
 DATA_DIR = Path("data/caves")
 TRANSFORMER = Transformer.from_crs("EPSG:4326", "EPSG:2180", always_xy=True)
@@ -52,15 +51,17 @@ def parse_args():
     p.add_argument(
         "--gps-kataster-best-measurements",
         help=(
-            "CSV/GeoJSON best-measurements z release dlubom/gps-kataster-obiektow-tatr; "
-            "Jinja placeholdery lat/lon zostaną wyrenderowane przed obliczeniem World File"
+            "CSV best-measurements zgodny z przypiętym source.json; "
+            "współrzędne zawsze z jawnego object_id"
         ),
     )
     p.add_argument(
         "--gps-kataster-strict",
         action="store_true",
-        help="Przerwij przy brakującym lub nieznanym ID otworu jaskini lub sztolni w gps-kataster",
+        help="Zachowany dla zgodności; pełna walidacja obowiązuje zawsze",
     )
+    p.add_argument("--image-registry", type=Path,
+                   help="Wersjonowany rejestr tożsamości obrazów (domyślnie data/validation/images-v1.json)")
     return p.parse_args()
 
 
@@ -103,29 +104,6 @@ def compute_world_file(meta):
         "convergence_deg": convergence_deg,
         "total_rotation_deg": total_deg,
     }
-
-
-def verify_image_dimensions(meta, cave_dir):
-    """Sprawdź czy wymiary obrazu zgadzają się z YAML. Zwraca (ok, message)."""
-    tif_path = cave_dir / "image.tif"
-    if not tif_path.exists():
-        return False, f"Brak pliku {tif_path}"
-
-    yaml_w = meta["image"].get("width")
-    yaml_h = meta["image"].get("height")
-    if not yaml_w or not yaml_h:
-        return True, "Brak wymiarów w YAML — pomijam weryfikację"
-
-    with Image.open(tif_path) as img:
-        actual_w, actual_h = img.width, img.height
-
-    if actual_w != yaml_w or actual_h != yaml_h:
-        return False, (
-            f"Obraz ma inną rozdzielczość ({actual_w}×{actual_h}) niż ta, "
-            f"na której wykonano kliki ({yaml_w}×{yaml_h}). "
-            f"Wymień obraz na oryginalny lub wykonaj nowe kliknięcia."
-        )
-    return True, "OK"
 
 
 def write_tfw(cave_dir, params):
@@ -188,72 +166,48 @@ def represent_float(dumper, value):
 
 
 def validate_gps_kataster_object_id(meta, gps_kataster_index):
-    """Sprawdź jawne powiązanie YAML z obiektem gps-kataster."""
-    if gps_kataster_index is None:
-        raise GpsKatasterCoordinateError(
-            "tryb --gps-kataster-strict wymaga --gps-kataster-best-measurements."
-        )
-
+    """Niskopoziomowa kontrola jawnego ID; bez resolvera migracyjnego."""
     coordinates = meta.get("coordinates") or {}
-    nested = coordinates.get("gps_kataster") if isinstance(coordinates, dict) else {}
-    if not isinstance(nested, dict):
-        nested = {}
-
-    object_id = str(
-        coordinates.get("gps_kataster_object_id")
-        or nested.get("object_id")
-        or ""
-    ).strip()
-    if not object_id:
+    object_id = coordinates.get("gps_kataster_object_id")
+    if (not isinstance(object_id, str) or not object_id
+            or gps_kataster_index is None
+            or object_id not in gps_kataster_index.by_object_id):
         raise GpsKatasterCoordinateError(
-            "brak coordinates.gps_kataster_object_id w meta.yaml."
-        )
-    if object_id not in gps_kataster_index.by_object_id:
-        raise GpsKatasterCoordinateError(
-            f"brak object_id={object_id} w gps-kataster."
-        )
+            f"coordinates.gps_kataster_object_id: brak lub niedozwolony obiekt {object_id}")
 
 
-def process_cave(cave_dir, gps_kataster_index=None, gps_kataster_strict=False):
-    """Przetwórz jedną jaskinię. Zwraca (success, message)."""
-    yaml_path = cave_dir / "meta.yaml"
-    if not yaml_path.exists():
-        return False, "Brak meta.yaml"
-
-    raw_meta_text = yaml_path.read_text(encoding="utf-8")
-    source_meta = yaml.safe_load(raw_meta_text)
-
+def prepare_cave(cave_dir, gps_kataster_index, image_registry=None):
+    source_meta, resolved_meta = validate_plan(cave_dir, gps_kataster_index, image_registry)
     try:
-        if gps_kataster_strict:
-            validate_gps_kataster_object_id(source_meta, gps_kataster_index)
-        rendered_meta_text = render_meta_template(raw_meta_text, gps_kataster_index)
-    except GpsKatasterCoordinateError as exc:
-        msg = f"gps-kataster: {exc}"
-        return False, msg
+        params = compute_world_file(resolved_meta)
+        if not all(math.isfinite(value) for value in params.values()):
+            fail(cave_dir.name, "coordinates/scale", "parametry transformacji muszą być skończone")
+    except (ArithmeticError, ValueError) as exc:
+        if isinstance(exc, ValidationError):
+            raise
+        fail(cave_dir.name, "coordinates/scale", f"niepoprawna transformacja: {exc}")
+    return source_meta, params
 
-    meta = yaml.safe_load(rendered_meta_text)
 
-    # Weryfikacja wymiarów
-    ok, msg = verify_image_dimensions(meta, cave_dir)
-    if not ok:
-        return False, msg
-
-    # Oblicz World File
-    params = compute_world_file(meta)
-
-    # Zapisz .tfw
+def process_prepared(cave_dir, source_meta, params):
+    """Dotychczasowy zapis; organizacja i kontrola wyników są zakresem T04."""
     write_tfw(cave_dir, params)
-
-    # Zaktualizuj computed w YAML
     update_computed_section(source_meta, params)
     yaml.add_representer(float, represent_float)
-    with open(yaml_path, "w", encoding="utf-8") as f:
+    with open(cave_dir / "meta.yaml", "w", encoding="utf-8") as f:
         yaml.dump(source_meta, f, default_flow_style=False, allow_unicode=True,
                   sort_keys=False, width=120)
+    return generate_geotiff(cave_dir)
 
-    # Generuj GeoTIFF
-    ok, msg = generate_geotiff(cave_dir)
-    return ok, msg
+
+def process_cave(cave_dir, gps_kataster_index=None, gps_kataster_strict=False,
+                 image_registry=None):
+    """API niskopoziomowe także dla syntetycznych danych; CLI dodatkowo weryfikuje pin."""
+    try:
+        source_meta, params = prepare_cave(cave_dir, gps_kataster_index, image_registry)
+    except (ValueError, OSError) as exc:
+        return False, str(exc)
+    return process_prepared(cave_dir, source_meta, params)
 
 
 def find_caves(data_dir, changed_only=False):
@@ -276,13 +230,14 @@ def find_caves(data_dir, changed_only=False):
 def main():
     args = parse_args()
     data_dir = Path(args.data_dir)
-    gps_kataster_index = None
-
-    if args.gps_kataster_best_measurements:
-        gps_kataster_source_path = Path(args.gps_kataster_best_measurements)
-        print(f"Wczytywanie współrzędnych gps-kataster: {gps_kataster_source_path}")
-        gps_kataster_index = load_best_measurements(gps_kataster_source_path)
-        print(f"  Obiekty jaskinia_otwor/sztolnia: {len(gps_kataster_index.rows)}")
+    try:
+        # Także jawny argument musi odpowiadać przypiętym bajtom. Brak argumentu
+        # oznacza wersjonowany snapshot, nigdy liczby z YAML ani latest.
+        path = verify(csv_path=args.gps_kataster_best_measurements)
+        gps_kataster_index = load_best_measurements(path)
+        registry = read_registry(args.image_registry) if args.image_registry else read_registry()
+    except (ValueError, OSError, KeyError) as exc:
+        sys.exit(f"BŁĄD katalogu/obrazu: {exc}")
 
     if args.cave:
         caves = [data_dir / args.cave]
@@ -295,25 +250,28 @@ def main():
         print("Brak jaskiń do przetworzenia.")
         return
 
-    print(f"Przetwarzanie {len(caves)} jaskiń...")
-
-    success = 0
-    errors = 0
+    # Preflight całego wybranego zestawu przed pierwszym zapisem artefaktu.
+    prepared = []
+    errors = []
     for cave_dir in caves:
-        dir_id = cave_dir.name
-        ok, msg = process_cave(
-            cave_dir,
-            gps_kataster_index=gps_kataster_index,
-            gps_kataster_strict=args.gps_kataster_strict,
-        )
-        if ok:
-            success += 1
-        else:
-            print(f"  BŁĄD {dir_id}: {msg}")
-            errors += 1
+        try:
+            prepared.append((cave_dir, *prepare_cave(cave_dir, gps_kataster_index, registry)))
+        except (ValueError, OSError) as exc:
+            errors.append(str(exc))
+    if errors:
+        for message in errors:
+            print(f"BŁĄD {message}", file=sys.stderr)
+        sys.exit(1)
 
-    print(f"\nGotowe: {success} OK, {errors} błędów")
-    if errors > 0:
+    print(f"Przetwarzanie {len(prepared)} jaskiń...")
+    failures = 0
+    for cave_dir, meta, params in prepared:
+        ok, message = process_prepared(cave_dir, meta, params)
+        if not ok:
+            print(f"BŁĄD {cave_dir.name}: {message}", file=sys.stderr)
+            failures += 1
+    print(f"Gotowe: {len(prepared) - failures} OK, {failures} błędów")
+    if failures:
         sys.exit(1)
 
 

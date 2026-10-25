@@ -79,7 +79,7 @@ Opcjonalne parametry: `--declination <deg>`, `--image-id <id>` (gdy wiele planó
 
 ```bash
 python pipeline/02_generate_geotiff.py --cave 001197 \
-    --gps-kataster-best-measurements ../gps-kataster-obiektow-tatr/build/exports/best-measurements.csv \
+    --gps-kataster-best-measurements data/coordinate-source/best-measurements-v1.3.1.csv \
     --gps-kataster-strict
 ```
 
@@ -106,3 +106,8 @@ coordinates:
 - **Współrzędne otworu** — JSONL PIG daje wartość startową, ale docelowy release powinien brać `lat/lon` z `gps-kataster-obiektow-tatr`
 - **Deklinacja** — dla większości planów tatrzańskich = 0 (plany w północy magnetycznej, deklinacja bliska 0°)
 - Ręcznie dodane jaskinie mają `quality.flag: manual` i `n_submissions: 0`
+
+Od T03 przed generacją nowego planu trzeba jawnie dodać jego tożsamość i SHA-256
+obrazu do wersjonowanego rejestru zgodnie z [VALIDATION.md](../docs/VALIDATION.md).
+Generator wymaga współrzędnych z przypiętego CSV i zgodności kliknięć z obrazem.
+Automatyzacja bezpiecznego dodawania pozostaje zakresem T08.
