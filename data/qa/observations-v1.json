@@ -1,0 +1,1012 @@
+{
+  "schema_version": 1,
+  "observations": [
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia Psia",
+      "note": "Jaskinia Psia - pominięta (wejście w innym miejscu niż 0,0)",
+      "plan_ids": [
+        "001652"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia Kondracka",
+      "note": "Jaskinia Kondracka - pominięta (brak planu)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Schron Partyzantów",
+      "note": "Schron Partyzantów - pominięta (kilka planów na jednym)",
+      "plan_ids": [
+        "001210"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Dziura pod Zawaliskiem",
+      "note": "Dziura pod Zawaliskiem - pominięta (brak oznaczenia wejścia)",
+      "plan_ids": [
+        "001730"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia w Kociołku pod Bańdziochem",
+      "note": "Jaskinia w Kociołku pod Bańdziochem - pominięta (brak planu)",
+      "plan_ids": [
+        "001354"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Schron nad Lejową",
+      "note": "Schron nad Lejową - pominięta (kilka planów na jednym)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia w Cycku",
+      "note": "Jaskinia w Cycku - zrobiona (skala na podziałce inna niż na siatce)",
+      "plan_ids": [
+        "001031"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia pod Płytą",
+      "note": "Jaskinia pod Płytą - pominięta (brak planu)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Schronisko nad Bramą",
+      "note": "Schronisko nad Bramą - zrobiona (trójkąt krzywo umieszczony)",
+      "plan_ids": [
+        "001359"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Nyża nad Olczyską I",
+      "note": "Nyża nad Olczyską I - zrobiona (trójkąt krzywo umieszczony)",
+      "plan_ids": [
+        "001066"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Nyża nad Olczyską II",
+      "note": "Nyża nad Olczyską II - pominięta (brak oznaczenia wejścia)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia Wilcza",
+      "note": "Jaskinia Wilcza - pominięta (brak planu)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Bardzo Niska Nyża",
+      "note": "Bardzo Niska Nyża - pominięta (brak oznaczenia wejścia)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Szczelina w Krzesanicy I",
+      "note": "Szczelina w Krzesanicy I - pominięta (niezgodne oznaczenia długości)",
+      "plan_ids": [
+        "001671"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia Lejbusiowa",
+      "note": "Jaskinia Lejbusiowa - pominięta (brak oznaczenia wejścia)",
+      "plan_ids": [
+        "001511"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Schron z Watrą",
+      "note": "Schron z Watrą - pominięta (brak oznaczenia wejścia)",
+      "plan_ids": [
+        "001675"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Szczelina przy Nyży z Kozicami",
+      "note": "Szczelina przy Nyży z Kozicami - pominięta (kilka planów na jednym)",
+      "plan_ids": [
+        "001260"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia Wodna przy Pisanej",
+      "note": "Jaskinia Wodna przy Pisanej - pominięta (brak planu)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia Zawaliskowa Tomanowa",
+      "note": "Jaskinia Zawaliskowa Tomanowa - pominięta (trójkąt wejścia ewidentnie przesunięty względem siatki 0,0)",
+      "plan_ids": [
+        "004415"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia nad Kotlinami",
+      "note": "Jaskinia nad Kotlinami - pominięta (brak planu)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia Świstacza",
+      "note": "Jaskinia Świstacza - pominięta (niewyraźne oznaczenie wejścia)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Dziura nad Wantulami II",
+      "note": "Dziura nad Wantulami II - pominięta (brak planu)",
+      "plan_ids": [
+        "001193"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Szpara w Zagonnej Turni",
+      "note": "Szpara w Zagonnej Turni - pominięta (brak planu)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Ptasia Studnia",
+      "note": "Ptasia Studnia - pominięta (wiele planów na jednym)",
+      "plan_ids": [
+        "001473"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Schron w Piecu",
+      "note": "Schron w Piecu - pominięta (niewyraźne oznaczenie wejścia)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Zaspałkowa Szpara",
+      "note": "Zaspałkowa Szpara - pominięta (brak planu)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Łamana Dziura",
+      "note": "Łamana Dziura - pominięta (brak planu)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia Lodowa Litworowa",
+      "note": "Jaskinia Lodowa Litworowa - pominięta (brak planu)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia Mała w Mułowej",
+      "note": "Jaskinia Mała w Mułowej - pominięta (błąd konwersji pliku tiff)",
+      "plan_ids": [
+        "001495"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Komin w Kazalnicy Miętusiej",
+      "note": "Komin w Kazalnicy Miętusiej - pominięta (brak planu)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Szczelina w Iglicy",
+      "note": "Szczelina w Iglicy - pominięta (wiele planów na jednym (dwa tego samego, nie wiem który brać do klikania))",
+      "plan_ids": [
+        "001223"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia Pośrednia",
+      "note": "Jaskinia Pośrednia - pominięta (brak planu)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Szczelina nad Ponorem",
+      "note": "Szczelina nad Ponorem - pominięta (brak planu)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Dziurka od Klucza",
+      "note": "Dziurka od Klucza - pominięta (brak planu)",
+      "plan_ids": [
+        "001338"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia Harda",
+      "note": "Jaskinia Harda - pominięta (niewyraźne oznaczenie wejścia)",
+      "plan_ids": [
+        "004866"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Schron z Kołem",
+      "note": "Schron z Kołem - pominięta (brak wyraźnej podziałki)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Nisza nad Żółtą Dziurą",
+      "note": "Nisza nad Żółtą Dziurą - pominięta (brak planu)",
+      "plan_ids": [
+        "001483"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia Bańdzioch Kominiarski",
+      "note": "Jaskinia Bańdzioch Kominiarski - pominięta (błąd konwersji pliku tiff)",
+      "plan_ids": [
+        "001299"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia nad Dachem",
+      "note": "Jaskinia nad Dachem - pominięta (brak planu)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Czerwona Studzienka",
+      "note": "Czerwona Studzienka - pominięta (brak planu)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Lustrzana Szczelina",
+      "note": "Lustrzana Szczelina - pominięta (brak planu)",
+      "plan_ids": [
+        "001708"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Szczelina przed Kufą",
+      "note": "Szczelina przed Kufą - pominięta (brak planu)",
+      "plan_ids": [
+        "001083"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia Zimna",
+      "note": "Jaskinia Zimna - pominięta (bo zrobiona ręcznie już)",
+      "plan_ids": [
+        "001095"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Komin w Ratuszu",
+      "note": "Komin w Ratuszu - pominięta (brak planu)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Schrony nad Okapami",
+      "note": "Schrony nad Okapami - pominięta (brak planu)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Nyża przy Kozich Oknach",
+      "note": "Nyża przy Kozich Oknach - pominięta (wiele planów na jednym)",
+      "plan_ids": [
+        "011292"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Dziura w Czarnej Turni IV",
+      "note": "Dziura w Czarnej Turni IV - pominięta (brak podziałki)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia w Kobylarzowym Żlebie",
+      "note": "Jaskinia w Kobylarzowym Żlebie - pominięta (brak planu)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jasny Awen",
+      "note": "Jasny Awen - pominięta (brak planu)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia Wielka Litworowa",
+      "note": "Jaskinia Wielka Litworowa - pominięta (niewyraźne oznaczenie wejścia, brak punktu 0,0)",
+      "plan_ids": [
+        "000491"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia Śnieżna",
+      "note": "Jaskinia Śnieżna - pominięta (brak planu)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jasiowa Dziura",
+      "note": "Jasiowa Dziura - pominięta (brak planu)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Szczelina nad Wielką Litworową",
+      "note": "Szczelina nad Wielką Litworową - pominięta (brak planu)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia za Siedmiu Progami",
+      "note": "Jaskinia za Siedmiu Progami - pominięta (brak planu)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Szczelina Miętusia",
+      "note": "Szczelina Miętusia - pominięta (brak planu)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Mała Żabia Szpara",
+      "note": "Mała Żabia Szpara - pominięta (wiele planów na jednym)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Dziura z Konkrecjami Wyżnia",
+      "note": "Dziura z Konkrecjami Wyżnia - pominięta (brak planu)",
+      "plan_ids": [
+        "001443"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Szczelina nad Wyżniem",
+      "note": "Szczelina nad Wyżniem - pominięta (brak planu)",
+      "plan_ids": [
+        "001242"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Dziura w Organach III",
+      "note": "Dziura w Organach III - pominięta (niewyraźne oznaczenie wejścia, punkt 9,9???)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Szczelina w Mnichowych Turniach I",
+      "note": "Szczelina w Mnichowych Turniach I - zrobiona (siatka krzywa zupełnie na X=0)",
+      "plan_ids": [
+        "001620"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Kozi Schron",
+      "note": "Kozi Schron - pominięta (brak oznaczenia wejścia)",
+      "plan_ids": [
+        "001709"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Schron przy Suchym Biwaku",
+      "note": "Schron przy Suchym Biwaku - pominięta (wiele planów na jednym)",
+      "plan_ids": [
+        "001301"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia Śnieżna Studnia",
+      "note": "Jaskinia Śnieżna Studnia - pominięta (niska jakość obrazu)",
+      "plan_ids": [
+        "001538"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Tunel pod Siwarową Dziurą",
+      "note": "Tunel pod Siwarową Dziurą - pominięta (wiele planów na jednym)",
+      "plan_ids": [
+        "001211"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Zagonna Studnia",
+      "note": "Zagonna Studnia - pominięta (wiele planów na jednym)",
+      "plan_ids": [
+        "001604"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Upłazkowa Szczelina (Koleba)",
+      "note": "Upłazkowa Szczelina (Koleba) - pominięta (wg PIGu Szczelina i Koleba to dwie różne jaskinie)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Żwirowa Dziura Niżnia",
+      "note": "Żwirowa Dziura Niżnia - pominięta (wiele planów na jednym) - (przy którejś z tych chyba kiedyś już popełniłem błąd i przeklikałem mniejszą, choć plan zaczyna się dla większej)",
+      "plan_ids": [
+        "001175"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia Obłazkowa",
+      "note": "Jaskinia Obłazkowa - pominięta (wiele planów na jednym)",
+      "plan_ids": [
+        "001351"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Komórka przy Średnim Leju",
+      "note": "Komórka przy Średnim Leju - pominięta (wiele planów na jednym)",
+      "plan_ids": [
+        "001614"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia Wielka Śnieżna",
+      "note": "Jaskinia Wielka Śnieżna - pominięta (do obróbki ręcznej)",
+      "plan_ids": [
+        "000490"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia przy Jędrusiowej Dziurze",
+      "note": "Jaskinia przy Jędrusiowej Dziurze - pominięta (wiele planów na jednym)",
+      "plan_ids": [
+        "001582"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia Miętusia",
+      "note": "Jaskinia Miętusia - pominięta (błąd konwersji pliku TIFF)",
+      "plan_ids": [
+        "001197"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Szczelina nad Jaskinią Magurską",
+      "note": "Szczelina nad Jaskinią Magurską - pominięta (podziałka zasłonięta napisem)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia pod Wantą",
+      "note": "Jaskinia pod Wantą - zrobiona (ta może być jedną z mniej dokładnych, bo duża siatka, ale możliwość kliknięcia tylko w krótką podziałkę)",
+      "plan_ids": [
+        "001535"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Ptasi Schron",
+      "note": "Ptasi Schron - pominięta (brak oznaczenia wejścia)",
+      "plan_ids": [
+        "001687"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Zimna Szczelina II",
+      "note": "Zimna Szczelina II - pominięta (podziałka ma inną skalę niż siatka)",
+      "plan_ids": [
+        "001128"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Zielone Kominy",
+      "note": "Zielone Kominy - pominięta (niewyraźne oznaczenie wejścia)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Schron przy Studni Kuturniańskiej",
+      "note": "Schron przy Studni Kuturniańskiej - pominięta (wiele planów na jednym)",
+      "plan_ids": [
+        "001711"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia Kokonowa",
+      "note": "Jaskinia Kokonowa - zrobiona (siatka jest ewidentnie przesunięta)",
+      "plan_ids": [
+        "010865"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinie Pawlikowskiego",
+      "note": "Jaskinie Pawlikowskiego - pominięta (wiele planów na jednym)",
+      "plan_ids": [
+        "010935"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Wielka Szczelina",
+      "note": "Wielka Szczelina - zrobiona (siatka krzywa)",
+      "plan_ids": [
+        "001114"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Piwnica",
+      "note": "Piwnica - zrobiona (siatka krzywa)",
+      "plan_ids": [
+        "001073"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Schron w Małym Żlebku",
+      "note": "Schron w Małym Żlebku - zrobiona (siatka krzywa)",
+      "plan_ids": [
+        "000804"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia pod Wiśniakową Jamą",
+      "note": "Jaskinia pod Wiśniakową Jamą - pominięta (wejście w innym punkcie niż 0;0)",
+      "plan_ids": [],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Krakowska Piwnica",
+      "note": "Krakowska Piwnica - pominięta (wejście w innym punkcie niż 0;0)",
+      "plan_ids": [
+        "001653"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia Bystrej",
+      "note": "Jaskinia Bystrej - zrobiona (krzywa siatka)",
+      "plan_ids": [
+        "001228"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Dziura za Modrzewiami",
+      "note": "Dziura za Modrzewiami - pominięta (niewyraźne oznaczenie wejścia)",
+      "plan_ids": [
+        "001651"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Wyzior",
+      "note": "Wyzior - zrobiona (trójkąt wyraźnie przesunięty względem siatki)",
+      "plan_ids": [
+        "001400"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia pod Niżnią Zbójnicką Turnią",
+      "note": "Jaskinia pod Niżnią Zbójnicką Turnią - pominięta (wiele planów na jednym)",
+      "plan_ids": [
+        "001364"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Lisia Jama",
+      "note": "Lisia Jama - pominięta (wiele planów na jednym)",
+      "plan_ids": [
+        "001020"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/1",
+      "source_updated_at": "2026-04-09T09:28:37Z",
+      "name": "Jaskinia Wysoka",
+      "note": "Jaskinia Wysoka - pominięta (do ręcznego wykonania)",
+      "plan_ids": [
+        "001665"
+      ],
+      "rule": "source.review",
+      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/3",
+      "source_updated_at": "2026-05-17T17:58:34Z",
+      "name": "Jaskinia Mroźna",
+      "note": "- [ ] `001094` / `T.D-08.07` / Jaskinia Mroźna: wybrano `KSW-0081` — Jaskinia Mroźna - wyjście z trasy turystycznej; alternatywa `KSW-0256` — wejście na trasę turystyczną.",
+      "plan_ids": [
+        "001094"
+      ],
+      "rule": "entrance.review",
+      "historical_selected_object_id": "KSW-0081",
+      "alternative_object_id": "KSW-0256",
+      "basis": "Poprawność techniczna jawnego ID nie potwierdza wyboru symbolu otworu na planie; sprawa pozostaje do ręcznego potwierdzenia."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/3",
+      "source_updated_at": "2026-05-17T17:58:34Z",
+      "name": "Jaskinia Zimna",
+      "note": "- [ ] `001095` / `T.D-08.08` / Jaskinia Zimna: wybrano `KSW-0090` — otwór dolny; alternatywa `KSW-0257` — Jaskinia Biała / górny otwór Jaskini Zimnej.",
+      "plan_ids": [
+        "001095"
+      ],
+      "rule": "entrance.review",
+      "historical_selected_object_id": "KSW-0090",
+      "alternative_object_id": "KSW-0257",
+      "basis": "Poprawność techniczna jawnego ID nie potwierdza wyboru symbolu otworu na planie; sprawa pozostaje do ręcznego potwierdzenia."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/3",
+      "source_updated_at": "2026-05-17T17:58:34Z",
+      "name": "Jaskinia nad Korytem",
+      "note": "- [ ] `001229` / `T.D-12.10` / Jaskinia nad Korytem: wybrano `MLZ-0072` — otwór północno-zachodni; alternatywa `MLZ-0108` — otwór wschodni.",
+      "plan_ids": [
+        "001229"
+      ],
+      "rule": "entrance.review",
+      "historical_selected_object_id": "MLZ-0072",
+      "alternative_object_id": "MLZ-0108",
+      "basis": "Poprawność techniczna jawnego ID nie potwierdza wyboru symbolu otworu na planie; sprawa pozostaje do ręcznego potwierdzenia."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/3",
+      "source_updated_at": "2026-05-17T17:58:34Z",
+      "name": "Jaskinia Bańdzioch Kominiarski",
+      "note": "- [ ] `001299` / `T.E-07.07` / Jaskinia Bańdzioch Kominiarski: wybrano `KSZ-0112` — otwór dolny; alternatywa `LEJ-0002` — otwór górny.",
+      "plan_ids": [
+        "001299"
+      ],
+      "rule": "entrance.review",
+      "historical_selected_object_id": "KSZ-0112",
+      "alternative_object_id": "LEJ-0002",
+      "basis": "Poprawność techniczna jawnego ID nie potwierdza wyboru symbolu otworu na planie; sprawa pozostaje do ręcznego potwierdzenia."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/3",
+      "source_updated_at": "2026-05-17T17:58:34Z",
+      "name": "Jaskinia Mylna",
+      "note": "- [ ] `001349` / `T.E-08.04` / Jaskinia Mylna: wybrano `KSZ-0064` — Jaskinia Mylna; alternatywa `KSZ-0113` — otwór północny.",
+      "plan_ids": [
+        "001349"
+      ],
+      "rule": "entrance.review",
+      "historical_selected_object_id": "KSZ-0064",
+      "alternative_object_id": "KSZ-0113",
+      "basis": "Poprawność techniczna jawnego ID nie potwierdza wyboru symbolu otworu na planie; sprawa pozostaje do ręcznego potwierdzenia."
+    },
+    {
+      "source": "https://github.com/dlubom/Georeferencer/issues/3",
+      "source_updated_at": "2026-05-17T17:58:34Z",
+      "name": "Jaskinia Czarna",
+      "note": "- [ ] `001445` / `T.E-09.12` / Jaskinia Czarna: wybrano `KSW-0201` — Jaskinia Czarna; alternatywa `KSW-0240` — Jaskinia Czarna III.",
+      "plan_ids": [
+        "001445"
+      ],
+      "rule": "entrance.review",
+      "historical_selected_object_id": "KSW-0201",
+      "alternative_object_id": "KSW-0240",
+      "basis": "Poprawność techniczna jawnego ID nie potwierdza wyboru symbolu otworu na planie; sprawa pozostaje do ręcznego potwierdzenia."
+    }
+  ]
+}

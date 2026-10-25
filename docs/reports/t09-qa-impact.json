@@ -1,0 +1,113 @@
+{
+  "base_commit": "abb65bafdef1359d5f6fc03f2cc715b509a263d9",
+  "current_reports": {
+    "flagged.csv": "c19b02347729c5c83f28a3f606dbefaf3d9d4c4b3ad017c27240dcc33de5f756",
+    "missing.csv": "a5c914183374d2d8cd9b9f4f108c49f439761558548db4cbbc7964ab66560ad7",
+    "qa.json": "82592d4eda5d4f2547be2552482923306d5f58154dce769fb23994710f518ddd",
+    "summary.csv": "c19b02347729c5c83f28a3f606dbefaf3d9d4c4b3ad017c27240dcc33de5f756"
+  },
+  "historical_hashes_updated": false,
+  "issue_reconciliation": {
+    "issue_1": {
+      "matched": 55,
+      "observations": 91,
+      "unmatched_name_or_id": 36
+    },
+    "issue_3": {
+      "observations": 6,
+      "pending_manual_entrance_review": 6
+    },
+    "issue_states_changed": false,
+    "new_duplicate_issues_created": false,
+    "states": {
+      "unmatched_name_or_id": 36,
+      "unresolved_interpretation": 61
+    },
+    "total": 97
+  },
+  "legacy_reports": {
+    "flagged.csv": {
+      "frozen_path": "data/history/t02-reports/flagged.csv",
+      "original_path": "data/caves/_reports/flagged.csv",
+      "rows": 12,
+      "sha256": "bb24449d30db4ec946187fa2efcb501c0812f25af17ba0c32960bb9ab3558ff2"
+    },
+    "missing.csv": {
+      "frozen_path": "data/history/t02-reports/missing.csv",
+      "original_path": "data/caves/_reports/missing.csv",
+      "rows": 800,
+      "sha256": "a4be72eefe1ec649203a8eb49ee58a3bd0ed96601994905d283a18647eea8b87"
+    },
+    "summary.csv": {
+      "frozen_path": "data/history/t02-reports/summary.csv",
+      "original_path": "data/caves/_reports/summary.csv",
+      "rows": 801,
+      "sha256": "7bc60739542f4aeeac9cddc354e089e7cbfcdc6da159e402b6ebd09754dc839d"
+    }
+  },
+  "production": {
+    "added_plans": [],
+    "all_production_geotiffs_regenerated": false,
+    "changed_georeferencing_fields": [],
+    "changed_plans": [],
+    "geometry_and_input_records_sha256": "7300024cfd415d2428bb8c2405863d2403ead42e2e7342d429df41ee92874e4c",
+    "identical_to_t08": true,
+    "orientation_changed": [],
+    "origins": {
+      "crowdsourcing": 801,
+      "manual_historical": 13
+    },
+    "plans": 814,
+    "position_changed": [],
+    "scale_changed": []
+  },
+  "protected_paths_unchanged": [
+    "data/caves/*/meta.yaml",
+    "source images",
+    "source image.tfw",
+    "parquet",
+    "data/baseline",
+    "data/coordinate-source",
+    "data/validation",
+    "data/classification",
+    "data/migrations",
+    "data/history/t02-inputs.zip",
+    "data/history/t06-code",
+    ".github/workflows",
+    "ci",
+    "scripts/check",
+    "docs/reports/t06-geometry-impact.json",
+    "docs/reports/t07-aggregation-impact.json",
+    "docs/reports/t08-manual-add-impact.json"
+  ],
+  "qa": {
+    "accepted": 1405,
+    "blocking": 0,
+    "determinism": "Dwa niezależne create_report i zapis w różnych katalogach porównane przez test bajt po bajcie.",
+    "input_states": {
+      "valid": 814
+    },
+    "north_valid_observations": 1717,
+    "origins": {
+      "crowdsourcing": 801,
+      "manual_historical": 13
+    },
+    "output_states": {
+      "not_requested": 814
+    },
+    "plans": 814,
+    "problems": 1405,
+    "rules": {
+      "entrance.disagreement": 7,
+      "entrance.review": 6,
+      "north.disagreement": 3,
+      "north.low_support": 508,
+      "north.missing": 7,
+      "orientation.unknown": 814,
+      "scale.disagreement": 5,
+      "source.review": 55
+    },
+    "thresholds_use_unrounded_t07_metrics": true
+  },
+  "task": "T09 / #14"
+}

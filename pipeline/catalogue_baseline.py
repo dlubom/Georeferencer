@@ -23,6 +23,10 @@ FROZEN_MODULES = {"pipeline/02_generate_geotiff.py", "pipeline/gps_kataster_coor
 
 def historical_path(root, path):
     """Oryginalne nazwy/hash w manifeście zostają; T03 przechowuje wierne kopie kodu."""
+    if path in {'data/caves/_reports/summary.csv', 'data/caves/_reports/flagged.csv', 'data/caves/_reports/missing.csv'}:
+        frozen = root / 'data/history/t02-reports' / Path(path).name
+        if frozen.is_file():
+            return frozen
     if path == 'pipeline/05_add_cave.py' and (root / 'data/history/05_add_cave-t02.py').is_file():
         return root / 'data/history/05_add_cave-t02.py'
     if path in FROZEN_MODULES:

@@ -122,3 +122,13 @@ Brak tego wejścia jest także snapshotowany, bez późniejszego ukrytego odczyt
 Nowy unknown bez T02 używa wyłącznie jawnie przyjętego obrotu `assumed_grid`,
 z EPSG:2180, konwencją i powodem zachowanymi w orientation manifestu/computed.
 Nie otrzymuje statusu grid ani verified. [Kontrakt T08](ORIENTATION.md).
+
+## Odbiór istniejącego przebiegu T09
+
+`python pipeline/03_report.py --run-dir /tmp/georeferencer-results/current
+--require-results --reports-dir /tmp/georeferencer-qa` sprawdza dokładny
+komplet bieżącego katalogu, manifest, hashe i zgodność istotnych wejść oraz
+ponownie odczytuje rzeczywisty GeoTIFF. Brak wyników bez wskazania przebiegu
+nie oznacza błędu źródeł. Stary TFW w danych nie jest dowodem aktualności.
+[Reguły, stany i wyjątki](QA.md). Workflow nadal korzystają z przejściowego
+kontraktu; ich przełączenie pozostaje zadaniem T10.

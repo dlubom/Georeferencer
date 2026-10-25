@@ -115,3 +115,10 @@ plik kontrolą ścieżek/dowiązań oraz zmian podczas generowania. API testowe
 przyjmuje `identity_text`; `False` oznacza jawny snapshot braku tego pliku,
 `None` pozwala na zwykły odczyt z katalogu. Nie jest to przełącznik pomijający
 kontrolę obrazu. [Instrukcja dodawania](../pipeline/MANUAL_ADD.md).
+
+## Bieżąca ocena jakości T09
+
+[QA i wyjątki](QA.md) używa tego samego walidatora przed oceną niepewności.
+Błąd techniczny nie może zostać dopuszczony wyjątkiem. Raport opisuje dokładny
+bieżący zbiór planów, rozdziela ważne komponenty T07 i plany ręczne T08 oraz
+status wejścia od statusu wybranego przebiegu wyników T04.
