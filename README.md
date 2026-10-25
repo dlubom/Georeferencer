@@ -12,6 +12,11 @@ Wyniki dostępne jako GeoTIFF-y w [GitHub Releases](../../releases).
 
 ## Pipeline generacji GeoTIFF
 
+T04 dodaje jawny tryb `--output-dir /tmp/georeferencer-results`, który zapisuje
+sprawdzony komplet TFW, GeoTIFF, wartości wyliczonych i manifestu bez zmian
+w źródłach. [Instrukcja wyników i odbioru](docs/GENERATION_OUTPUT.md) opisuje
+`current`, zachowanie przy błędzie i przejściową obsługę starego trybu do T10.
+
 Zebrane dane crowdsourcingowe przetwarzane są automatycznym pipeline'em:
 
 1. **Ekstrakcja** (`01_extract_yaml.py`) — dane ze zgłoszeń agregowane do edytowalnych plików YAML (`data/caves/{dir_id}/meta.yaml`): mediana pikseli otworu, mediana skali (z usuwaniem outlierów IQR), mediana kąta północy

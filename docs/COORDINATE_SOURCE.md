@@ -47,7 +47,9 @@ python pipeline/02_generate_geotiff.py --cave 001131 \
   --gps-kataster-strict
 ```
 
-Ostatnie polecenie jest dotychczasowym, mutującym generatorem. Uruchamiaj je
+Dodanie `--output-dir /tmp/georeferencer-results` włącza nowy
+[niemutujący tryb T04](GENERATION_OUTPUT.md), z manifestem i kontrolą wyniku.
+Bez tej opcji ostatnie polecenie jest dotychczasowym, mutującym generatorem. Uruchamiaj je
 w roboczej kopii danych, gdy zamierzasz wygenerować wynik. **Nie jest poleceniem
 odbioru T02.** Odbiór T02 używa odczytu i raportów opisanych niżej.
 
