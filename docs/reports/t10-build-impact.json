@@ -1,4 +1,15 @@
 {
+  "accepted_ci_build": {
+    "all_downloaded_hashes": "PASS",
+    "code_revision": "78c7281d4d5d9712cbec79a4bdf5c90fbace5472",
+    "files": 2443,
+    "generated": 814,
+    "plans": 814,
+    "reused": 0,
+    "run_id": "30292acc840b4428a75b7478a79d0a30",
+    "selection_full": true,
+    "selection_uncertain": false
+  },
   "base_commit": "16f5cb2f3ea101b2552f9536673146c4ed8a6b74",
   "catalogue_inputs_and_parameters_sha256": "d6232cb49ce84b5cab36c0420697464e6f6f68be4e0b9827333367196975832a",
   "contract_changes": [
@@ -40,9 +51,10 @@
   "publication_dry_runs": {
     "manual": {
       "CRC": "PASS",
-      "archive_sha256": "1075343ab229b2dcf844d1ba1a10e8b5b84a9671ce86a3b4b74735f7b992bae3",
+      "archive_sha256": "98b80c735887d7528c121e9eb8e65fb3ed53155afdd6670e5fbb2f92396509ce",
+      "code_revision": "78c7281d4d5d9712cbec79a4bdf5c90fbace5472",
       "files": 2443,
-      "manifest_sha256": "53b7b759b1002b70d31af04f26f00f015874611ac42b71e9405fc15908b55b62",
+      "manifest_sha256": "b3972e32a8a66d933bb9dda101f9a3184239e9786507a75932e9ff26c4d25b02",
       "plans": 814,
       "publication": false,
       "qa": {
@@ -58,9 +70,10 @@
     },
     "tag": {
       "CRC": "PASS",
-      "archive_sha256": "1075343ab229b2dcf844d1ba1a10e8b5b84a9671ce86a3b4b74735f7b992bae3",
+      "archive_sha256": "1a045ef54be24ea70e1688c18642b7c938437ffd9c21d6d95eebf99f8520304e",
+      "code_revision": "78c7281d4d5d9712cbec79a4bdf5c90fbace5472",
       "files": 2443,
-      "manifest_sha256": "53b7b759b1002b70d31af04f26f00f015874611ac42b71e9405fc15908b55b62",
+      "manifest_sha256": "b3972e32a8a66d933bb9dda101f9a3184239e9786507a75932e9ff26c4d25b02",
       "plans": 814,
       "publication": false,
       "qa": {
@@ -80,12 +93,12 @@
   "task": "T10 / #15",
   "verification": {
     "code_ci": {
-      "check": "https://github.com/dlubom/Georeferencer/actions/runs/40212665797",
-      "container_seconds": 175.954,
-      "container_tests": 182,
-      "generation": "https://github.com/dlubom/Georeferencer/actions/runs/40212665872",
+      "check": "https://github.com/dlubom/Georeferencer/actions/runs/40214065975",
+      "container_seconds": 237.539,
+      "container_tests": 183,
+      "generation": "https://github.com/dlubom/Georeferencer/actions/runs/40214065972",
       "host_tests": 7,
-      "revision": "9bdbb7eaa4bd24f2110f97892b906b14630cb8ef",
+      "revision": "78c7281d4d5d9712cbec79a4bdf5c90fbace5472",
       "status": "PASS"
     },
     "container_seconds": 246.903,
