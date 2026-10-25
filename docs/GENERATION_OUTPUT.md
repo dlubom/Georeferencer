@@ -134,6 +134,12 @@ jednobitowego TIFF-a. Obrazy źródłowe nadal podlegają rejestrowi SHA-256 T03
 
 ## Manifest v1
 
+T11 dodaje `code.commit/dirty` jako proweniencję hostowego Git (poza
+fingerprintem). Manifest ZIP ma dodatkową sekcję `release` z konkretnymi,
+ponownie egzekwowanymi wyjątkami QA i powiązaniem z manifestem przebiegu.
+Gotowy ZIP podlega rzeczywistemu odbiorowi przed atomową podmianą.
+[Pełne komendy odtworzenia i kontrakt T11](RELEASE_ACCEPTANCE.md).
+
 T10 rozszerza v1 o `content_version: t10-content-v1`, `environment`,
 `plans[].fingerprint` oraz `build.generated/reused/selection`. Stary przebieg
 bez tych dowodów jest nieaktualny i wymaga regeneracji; historia pozostaje

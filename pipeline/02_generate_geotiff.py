@@ -231,6 +231,7 @@ def process_output(caves, output_dir, data_dir, coordinates_path=None, registry_
                       'orientation': orientation.summary(meta),
                       'measurement': rows[meta['coordinates']['gps_kataster_object_id']]})
     provenance = {
+        'code': build_identity.code_version(),
         'content_version': build_identity.CONTENT_VERSION,
         'environment': build_identity.environment(),
         'geometry': copy.deepcopy(GEOMETRY),

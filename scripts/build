@@ -18,12 +18,20 @@ case "$operation" in
         ;;
     report) module=pipeline/03_report.py; set -- --reports-dir /build/qa "$@" ;;
     package) module=pipeline/package_release.py ;;
-    *) echo 'Użycie: ./scripts/build generate|report|package [argumenty pipeline]' >&2; exit 2 ;;
+    accept) module=pipeline/release_acceptance.py ;;
+    *) echo 'Użycie: ./scripts/build generate|report|package|accept [argumenty pipeline]' >&2; exit 2 ;;
 esac
+revision=$(git -C "$root" rev-parse HEAD 2>/dev/null || true)
+dirty=unknown
+if [ -n "$revision" ]; then
+    dirty=false
+    if [ -n "$(git -C "$root" status --porcelain)" ]; then dirty=true; fi
+fi
 image_id=$(mktemp)
 trap 'rm -f "$image_id"' EXIT
 docker build --platform linux/amd64 --iidfile "$image_id" "$root/ci"
 docker run --rm --platform linux/amd64 --network none --read-only \
+    --env "GEOREFERENCER_COMMIT=$revision" --env "GEOREFERENCER_DIRTY=$dirty" \
     --tmpfs /tmp:rw,nosuid,size=512m \
     --mount "type=bind,source=$root,target=/workspace,readonly" \
     --mount "type=bind,source=$root/build,target=/build" \

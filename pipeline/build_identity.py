@@ -2,6 +2,7 @@
 import hashlib
 import importlib.metadata
 import json
+import os
 import platform
 import subprocess
 
@@ -9,6 +10,12 @@ import pyproj
 from coordinate_source import ROOT, sha256
 
 CONTENT_VERSION = 't10-content-v1'
+
+
+def code_version():
+    # Git działa na hoście wrappera; SHA jest proweniencją, nie kluczem cache.
+    return {'commit': os.environ.get('GEOREFERENCER_COMMIT'),
+            'dirty': os.environ.get('GEOREFERENCER_DIRTY', 'unknown')}
 
 
 def implementation():

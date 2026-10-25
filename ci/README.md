@@ -77,4 +77,8 @@ w kontenerze; żaden dotychczasowy test nie jest pomijany.
 
 ## Dowody w PR
 
+Pełny odbiór wydania, dwa czyste zimne buildy i instrukcja niezależnego
+reviewera: [RELEASE_ACCEPTANCE.md](../docs/RELEASE_ACCEPTANCE.md).
+`scripts/reproduce` wykonuje wyłącznie lokalne próby, bez publikacji.
+
 Podaj wynik `./scripts/check`, liczbę testów, wersje środowiska z logu, link do CI na aktualnej rewizji oraz wynik próby z celowo wprowadzoną regresją. Dane próbne trzymaj w katalogach tymczasowych. Gdy zmiana dotyczy danych, dołącz listę planów i pól oraz uzasadnienie zgodnie z [planem prac](../docs/plans/2026-10-24-jakosc-danych-i-ci.md). Zielony smoke test nie zastępuje kryteriów konkretnego zadania.
