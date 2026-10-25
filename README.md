@@ -22,7 +22,7 @@ Zebrane dane crowdsourcingowe przetwarzane są automatycznym pipeline'em:
 ### Edycja wyników
 
 Każdy plik `meta.yaml` jest edytowalny — można ręcznie poprawić:
-- identyfikator właściwego otworu w gps-kataster (`coordinates.gps_kataster_object_id`) — potrzebny, gdy jedna jaskinia ma kilka otworów i automatyczne dopasowanie nie jest jednoznaczne
+- identyfikator właściwego otworu w gps-kataster (`coordinates.gps_kataster_object_id`) — wymagany dla każdego planu
 - pozycję otworu w pikselach (`entrance.x`, `entrance.y`)
 - skalę (`scale.pixels_per_meter`)
 - kąt północy (`north.angle_deg`)
@@ -30,7 +30,7 @@ Każdy plik `meta.yaml` jest edytowalny — można ręcznie poprawić:
 
 Zmiany przekazuj przez PR z wymaganą kontrolą `Kontrola projektu`. Dotychczasowy automat po pushu na `main` przelicza World File i GeoTIFF, ale ochrona gałęzi blokuje jego bezpośredni zapis commitu. Do przełączenia generacji w T10 zmienione TFW/metadane wymagają sprawdzonego PR — [opis okresu przejściowego](ci/README.md).
 
-Współrzędne WGS84 nie są już traktowane jako lokalna prawda projektu. Każdy YAML wskazuje konkretny otwór w `gps-kataster-obiektow-tatr`, a release renderuje `lat/lon` z `best-measurements.csv`. Obsługiwane kategorie obiektów to `jaskinia_otwor` i `sztolnia`; inne kategorie są odrzucane. Jeśli automatyczne jednorazowe przypisanie otworu było błędne, popraw tylko `gps_kataster_object_id`. Przypadki z wieloma kandydatami są zebrane w `data/caves/_reports/gps_kataster_manual_review.csv`.
+Współrzędne WGS84 nie są już traktowane jako lokalna prawda projektu. Każdy YAML wskazuje konkretny otwór w `gps-kataster-obiektow-tatr`, a release renderuje `lat/lon` z `best-measurements.csv`. Plan może wskazać kategorię `jaskinia_otwor` albo `sztolnia`; pozostałe kategorie mogą być obecne w katalogu. Jeśli automatyczne jednorazowe przypisanie otworu było błędne, popraw tylko `gps_kataster_object_id`. Przypadki z wieloma kandydatami są zebrane w `data/caves/_reports/gps_kataster_manual_review.csv`.
 
 ```yaml
 coordinates:
@@ -136,3 +136,8 @@ Sprawdź wszystkie zaznaczone punkty i kliknij **"Wyślij do Google Sheets"**.
 Jeśli masz wątpliwości lub napotkasz problem - skontaktuj się z koordynatorem projektu.
 
 **Dziękujemy za pomoc w georeferencji polskich jaskiń!**
+
+Walidacja T03 jest obowiązkowa przed generowaniem całej wybranej partii: typy,
+liczby, obraz i jego SHA-256 oraz zgodność współrzędnych z jawnym ID.
+Błąd wejścia pozostawia wcześniejsze artefakty bez zmian. Kontrakt i sposób
+aktualizacji rejestru obrazów opisano w [docs/VALIDATION.md](docs/VALIDATION.md).

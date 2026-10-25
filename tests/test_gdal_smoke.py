@@ -1,6 +1,7 @@
 """Mała próba pełnego CLI z rzeczywistym GDAL i danymi syntetycznymi."""
 
 import csv
+import hashlib
 import json
 import math
 import shutil
@@ -43,10 +44,12 @@ class GdalSmokeTest(unittest.TestCase):
   dir_id: synthetic
   name: Plan syntetyczny
 image:
+  filename: image_1_zoom_10.tif
+  image_id: 1
   width: 8
   height: 6
 coordinates:
-  gps_kataster_object_id: TEST-ENTRANCE
+  gps_kataster_object_id: KSZ-0033
   lat: "{{ gps_kataster.objects[gps_kataster_object_id].lat }}"
   lon: "{{ gps_kataster.objects[gps_kataster_object_id].lon }}"
 entrance:
@@ -60,18 +63,12 @@ declination_deg: 0.0
 """,
             encoding="utf-8",
         )
-        self.coordinates_path = self.data_dir / "best-measurements.csv"
-        with self.coordinates_path.open("w", encoding="utf-8", newline="") as stream:
-            writer = csv.DictWriter(
-                stream, fieldnames=("object_id", "category", "lat", "lon")
-            )
-            writer.writeheader()
-            writer.writerow({
-                "object_id": "TEST-ENTRANCE",
-                "category": "jaskinia_otwor",
-                "lat": 49.0,
-                "lon": 19.0,
-            })
+        self.coordinates_path = ROOT / "data/coordinate-source/best-measurements-v1.3.1.csv"
+        self.registry_path = self.data_dir / "images.json"
+        self.registry_path.write_text(json.dumps({"schema_version": 1, "plans": {
+            "synthetic": {"filename": "image_1_zoom_10.tif", "image_id": 1,
+                          "width": 8, "height": 6,
+                          "sha256": hashlib.sha256(self.image_path.read_bytes()).hexdigest()}}}))
 
     def run_generator(self):
         return subprocess.run(
@@ -81,6 +78,7 @@ declination_deg: 0.0
                 "--cave", self.cave_dir.name,
                 "--gps-kataster-best-measurements", str(self.coordinates_path),
                 "--gps-kataster-strict",
+                "--image-registry", str(self.registry_path),
             ],
             cwd=self.data_dir,
             capture_output=True,
@@ -131,7 +129,7 @@ declination_deg: 0.0
         result = self.run_generator()
 
         self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
-        self.assertIn("inną rozdzielczość", result.stdout)
+        self.assertIn("image.width", result.stdout + result.stderr)
         self.assertFalse((self.cave_dir / "image_georef.tif").exists())
 
 
