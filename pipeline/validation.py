@@ -82,6 +82,8 @@ def validate_meta(meta, plan):
             valid = {'object': isinstance(value, dict), 'string': isinstance(value, str) and bool(value.strip()),
                      'integer': type(value) is int, 'number': number,
                      'boolean': type(value) is bool,
+                     'north_angle': number or (value is None and meta.get('north', {}).get('reference') == 'unknown'
+                                               and meta.get('orientation', {}).get('mode') == 'assumed_grid'),
                      'coordinate': number or isinstance(value, str)}[kind]
             if not valid:
                 fail(plan, field, f'wymagany typ {kind}')
@@ -104,6 +106,29 @@ def validate_meta(meta, plan):
             fail(plan, 'entrance.' + axis, f'kliknięcie musi być w obrazie: 0 <= {axis} < {dimension}')
 
     validate_metadata(meta, plan)
+    if 'origin' in meta.get('orientation', {}):
+        validate_manual_provenance(meta, plan)
+
+
+def validate_manual_provenance(meta, plan):
+    """Pochodzenie ręcznych parametrów nie może zniknąć po pierwszym dodaniu."""
+    provenance = meta.get('provenance')
+    if not isinstance(provenance, dict) or provenance.get('method') != 'manual_t08':
+        fail(plan, 'provenance', 'wymagane pochodzenie ręcznego dodania T08')
+    for section, fields in {'entrance': ('source', 'method'), 'scale': ('source', 'method'),
+                            'image': ('source_cave_id', 'path', 'sha256'),
+                            'registry': ('path', 'sha256'),
+                            'coordinates': ('repository', 'release', 'asset', 'sha256', 'object_id')}.items():
+        source = provenance.get(section)
+        if not isinstance(source, dict):
+            fail(plan, 'provenance.' + section, 'wymagana mapa źródła')
+        for field in fields:
+            if not isinstance(source.get(field), str) or not source[field].strip():
+                fail(plan, f'provenance.{section}.{field}', 'wymagane niepuste źródło')
+    if (provenance['image']['source_cave_id'] != meta['cave'].get('source_cave_id')
+            or provenance['image'].get('graphics_id') != meta['image']['image_id']
+            or provenance['image']['sha256'] != meta['orientation']['image_sha256']):
+        fail(plan, 'provenance.image', 'niespójne źródłowe ID jaskini/grafiki lub hash obrazu')
 
 
 def resolve_coordinates(meta, index, plan):
@@ -132,7 +157,7 @@ def read_registry(path=IMAGE_REGISTRY):
     return json.loads(Path(path).read_text(encoding='utf-8'))
 
 
-def validate_image(meta, cave_dir, registry):
+def validate_image(meta, cave_dir, registry, identity_text=None, image_path=None):
     plan = cave_dir.name
     if (not isinstance(registry, dict)
             or type(registry.get('schema_version')) is not int
@@ -142,12 +167,24 @@ def validate_image(meta, cave_dir, registry):
     if not isinstance(plans, dict):
         fail(plan, 'image.plans', 'rejestr musi zawierać mapę planów')
     identity = plans.get(plan)
+    local_path = cave_dir / 'image-identity.json'
+    if identity_text is not False and (identity_text is not None or local_path.exists()):
+        local = json.loads(local_path.read_text(encoding='utf-8') if identity_text is None else identity_text)
+        if type(local.get('schema_version')) is not int or local['schema_version'] != 1 or set(local.get('plans', {})) != {plan}:
+            fail(plan, 'image-identity.json', 'wymagany rejestr v1 dokładnie tego planu')
+        if identity is not None:
+            fail(plan, 'image-identity.json', 'konflikt lokalnego i wspólnego rejestru obrazów')
+        identity = local['plans'][plan]
+        if local.get('orientation_origin') != meta.get('orientation', {}).get('origin'):
+            fail(plan, 'orientation.origin', 'niezgodność początkowej decyzji z lokalnym rejestrem')
+        if meta.get('orientation', {}).get('origin', {}).get('kind') != 'manual_t08':
+            fail(plan, 'image-identity.json', 'lokalny rejestr wymaga pochodzenia manual_t08')
     if not isinstance(identity, dict):
         fail(plan, 'image', 'brak zadeklarowanej tożsamości w rejestrze obrazów')
     for field in ('filename', 'image_id', 'width', 'height'):
         if identity.get(field) != meta['image'][field]:
             fail(plan, 'image.' + field, 'niezgodność z zadeklarowanym wejściem w rejestrze obrazów')
-    path = cave_dir / 'image.tif'
+    path = cave_dir / 'image.tif' if image_path is None else Path(image_path)
     try:
         with Image.open(path) as image:
             if image.format != 'TIFF':
@@ -167,7 +204,7 @@ def validate_image(meta, cave_dir, registry):
         fail(plan, 'image', f'wymagany dostępny i czytelny TIFF: {exc}')
 
 
-def validate_plan(cave_dir, index, image_registry=None, meta_text=None, orientation_context=None):
+def validate_plan(cave_dir, index, image_registry=None, meta_text=None, orientation_context=None, identity_text=None):
     """Zwróć (oryginalne metadane, kopia z liczbami z katalogu), niczego nie zapisuj."""
     cave_dir = Path(cave_dir)
     try:
@@ -175,7 +212,7 @@ def validate_plan(cave_dir, index, image_registry=None, meta_text=None, orientat
         meta = yaml.load(text, Loader=UniqueLoader)
         validate_meta(meta, cave_dir.name)
         resolved = resolve_coordinates(meta, index, cave_dir.name)
-        validate_image(meta, cave_dir, read_registry() if image_registry is None else image_registry)
+        validate_image(meta, cave_dir, read_registry() if image_registry is None else image_registry, identity_text)
         validate_orientation(resolved, orientation_context)
         return meta, resolved
     except ValidationError:

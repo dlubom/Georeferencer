@@ -27,7 +27,7 @@ def write_json(path, value):
 def input_files(cave_dir):
     """Źródłowy YAML i obrazy; stary TFW/GeoTIFF nie są wejściem obliczeń."""
     return [p for p in sorted(cave_dir.iterdir()) if p.is_file() and
-            (p.name == 'meta.yaml' or (p.suffix.lower() in {'.tif', '.tiff', '.jpg', '.jpeg', '.png'}
+            (p.name in {'meta.yaml', 'image-identity.json'} or (p.suffix.lower() in {'.tif', '.tiff', '.jpg', '.jpeg', '.png'}
                                       and p.name != 'image_georef.tif'))]
 
 

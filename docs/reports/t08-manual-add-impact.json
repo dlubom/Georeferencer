@@ -1,0 +1,95 @@
+{
+  "task": "T08 / #13",
+  "base_commit": "a26a3a2a1dcd4a46137ee0dbf8989c322f1bf81d",
+  "production": {
+    "added_plans": [],
+    "changed_plans": [],
+    "changed_fields": [],
+    "position_changed": [],
+    "orientation_changed": [],
+    "scale_changed": [],
+    "plans_validated_before_and_after": 814,
+    "all_parameters_identical": true,
+    "geometry_and_input_records_sha256": "7300024cfd415d2428bb8c2405863d2403ead42e2e7342d429df41ee92874e4c"
+  },
+  "protected_paths_unchanged": [
+    "data/caves",
+    "parquet",
+    "data/baseline",
+    "data/coordinate-source",
+    "data/validation",
+    "data/classification",
+    "data/migrations",
+    ".github/workflows",
+    "ci",
+    "scripts/check",
+    "data/history/t02-inputs.zip",
+    "docs/reports/t06-geometry-impact.json",
+    "docs/reports/t07-aggregation-impact.json"
+  ],
+  "additional_historical_code": {
+    "path": "data/history/05_add_cave-t02.py",
+    "original_path": "pipeline/05_add_cave.py",
+    "sha256": "f025ff0aec298c78b0a68ac16db7b06ec2010133bd8cf807f11f4def0f5b077d",
+    "reason": "Oryginalny kod dodawania jest nadal kontrolowany hashem T02, osobno od bieżącej implementacji T08."
+  },
+  "synthetic_acceptance": {
+    "source_cave_id": "test-cave",
+    "plan_ids": [
+      "test-plan-1",
+      "test-plan-2"
+    ],
+    "graphics_ids": [
+      101,
+      102
+    ],
+    "dimensions": [
+      8,
+      6
+    ],
+    "same_dimensions_different_sha256": true,
+    "object_id": "KSZ-0033",
+    "orientations": [
+      "unknown",
+      "geographic",
+      "magnetic",
+      "grid"
+    ],
+    "status": "unverified",
+    "unknown_mode": "assumed_grid",
+    "unknown_rotation_deg": 17.25,
+    "convention": "image_x_ccw_from_grid_east",
+    "real_geotiff_readback": true,
+    "both_generator_modes": true
+  },
+  "historical_hashes_updated": false,
+  "full_extraction_or_migration": false,
+  "dependencies_or_workflows_changed": false,
+  "additional_t06_implementation_snapshots": {
+    "data/history/t06-code/02_generate_geotiff.py": "03576c6495f385d2632db2666b0de4774ea52977b7f03df88a7eb64e1dcfc15c",
+    "data/history/t06-code/geometry_impact.py": "210b0a1d5f50dfb94fd14549b997e22b113d1db6f21137d26e2c2d336bbd75ad",
+    "data/history/t06-code/geotiff_output.py": "a5222c9cecb7585d5cf8ccd85593b22066783022fac360d583103ceeef6b650a",
+    "data/history/t06-code/orientation.py": "ee5b0afe4761824f7b94f02a79ab68aa89e649c5aee4d51cbc1f33baea47799f"
+  },
+  "verification": {
+    "command": "./scripts/check",
+    "tests": 142,
+    "status": "PASS",
+    "seconds": 173.721,
+    "synthetic_t08_tests": 19,
+    "regression": {
+      "mutation": "selected = plans[0] -> selected = images[0]",
+      "tests": 141,
+      "failures": 12,
+      "errors": 4,
+      "exit_status": 1,
+      "seconds": 184.085
+    },
+    "independent_review": {
+      "tests_passed": 17,
+      "finding": "P3: race replacing concurrent empty target",
+      "resolution": "atomic rename without replacement; regression RED -> GREEN"
+    },
+    "absent_identity_snapshot_regression": "RED: appeared local identity was accepted; GREEN: publication rejected, no current"
+  }
+}

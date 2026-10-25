@@ -80,7 +80,7 @@
       "type": "object"
     },
     "north.angle_deg": {
-      "type": "number"
+      "type": "north_angle"
     },
     "north.all_skipped": {
       "type": "boolean",

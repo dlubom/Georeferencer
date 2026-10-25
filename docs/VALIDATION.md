@@ -43,8 +43,7 @@ Nowy lub celowo zmieniony obraz wymaga osobnego wpisu/aktualizacji rejestru
 w PR, z listą planów, identyfikacją źródła, hashem, wymiarami i uzasadnieniem
 zgodności kliknięć. Nie wolno automatycznie odświeżać hashy po błędzie kontroli.
 Opcja `--image-registry` pozwala wskazać jawny rejestr w roboczej kopii albo
-teście. Bez niej stosowany jest rejestr wersjonowany. Usprawnienie ręcznego
-dodawania planów pozostaje T08.
+teście. Bez niej stosowany jest rejestr wersjonowany. Bezpieczne dodawanie nowych planów T08 opisano poniżej.
 
 ## Jedno źródło współrzędnych
 
@@ -92,3 +91,27 @@ sprawdzanym oryginalnymi hashami T02; audyt nie używa bieżących YAML-i. Zamro
 moduły są opisane w [legacy/README.md](../data/baseline/2026-10-24/legacy/README.md).
 Ani historyczne hashe, ani zapisane TFW nie zostały przepisane. Odbiór T03
 nie nadaje historii statusu poprawności geodezyjnej.
+
+## Lokalny wpis tożsamości T08
+
+Nowy plan dodany przez `05_add_cave.py` ma `image-identity.json` w swoim
+katalogu. Ma ten sam format v1 i dokładnie jeden wpis `plans[plan_id]`,
+a także `orientation_origin` zgodny z początkową decyzją YAML-a. Wpis jest
+wersjonowany wraz z obrazem i nie uzupełnia automatycznie wspólnego rejestru.
+Konflikt obu rejestrów jest błędem. Pozostałe reguły T03 — wymiary, tryb,
+SHA-256 treści i orientacji — obowiązują bez zmian. Rejestru T02/T03 nie
+odświeżamy. Nowy plan nie może przejąć historycznej orientacji innego ID.
+
+Schemat dopuszcza null dla `north.angle_deg` wyłącznie dla nowego unknown
+w trybie assumed_grid, przy jawnym braku pomiaru. Dodatkowa walidacja T08
+wymaga wtedy all_skipped=true, angle_origin=unknown oraz pełnej decyzji
+przyjęcia obrotu. Pozostałe kąty wymagają skończonej liczby; zmierzony 0°
+pozostaje pomiarem. Nowe plany mają obowiązkowe źródłowe ID jaskini,
+pochodzenie obrazu, kliknięcia i skali oraz pin współrzędnych w `provenance`.
+
+Oba tryby generatora automatycznie odczytują lokalny rejestr. T04 używa
+snapshotu jego surowych bajtów i zapisuje hash w `plans[].inputs`, obejmuje
+plik kontrolą ścieżek/dowiązań oraz zmian podczas generowania. API testowe
+przyjmuje `identity_text`; `False` oznacza jawny snapshot braku tego pliku,
+`None` pozwala na zwykły odczyt z katalogu. Nie jest to przełącznik pomijający
+kontrolę obrazu. [Instrukcja dodawania](../pipeline/MANUAL_ADD.md).

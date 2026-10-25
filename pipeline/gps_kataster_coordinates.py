@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import csv
 import json
+import io
 import math
 from dataclasses import dataclass
 import re
@@ -226,6 +227,12 @@ def load_best_measurements(path: str | Path) -> GpsKatasterIndex:
         rows = _load_geojson(path)
     else:
         raise ValueError(f"Nieobsługiwany format gps-kataster: {path}")
+    return GpsKatasterIndex(rows)
+
+
+def load_best_measurements_csv_bytes(raw: bytes) -> GpsKatasterIndex:
+    """Indeks z jednego snapshotu tych samych bajtów co weryfikacja SHA-256."""
+    rows = [_row_from_mapping(row) for row in csv.DictReader(io.StringIO(raw.decode('utf-8-sig')))]
     return GpsKatasterIndex(rows)
 
 

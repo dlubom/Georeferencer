@@ -1,7 +1,7 @@
 # Północ, deklinacja i geometria (T05/T06)
 
 T05 jawnie reprezentuje niewiedzę. **Żaden z 814 planów nie otrzymał
-ustalonego rodzaju północy.** Dla `unknown` generacja używa wyłącznie kąta
+ustalonego rodzaju północy.** Dla historycznych `unknown` generacja używa wyłącznie kąta
 `atan2(D, A)` z `plans[].historical_tfw.parameters` historycznego
 [katalogu T02](../data/baseline/2026-10-24/catalogue.json). Hash katalogu
 jest przypięty w `orientation.py`, a hash TFW i ID planu zapisane w YAML-u.
@@ -14,7 +14,7 @@ poprawności geodezyjnej planu.
 | Pole | Znaczenie |
 | --- | --- |
 | `north.reference` | `unknown`, `geographic`, `magnetic`, `grid` |
-| `north.angle_deg` | Zachowana dotychczasowa wartość kąta strzałki; samo 0° niczego nie rozstrzyga |
+| `north.angle_deg` | Kąt strzałki; samo 0° niczego nie rozstrzyga. T08: null przy jawnym braku pomiaru nowego unknown |
 | `north.angle_origin` | `measured` — pomiar, także 0°; `assumed` — przyjęcie, także 0°; `unknown` — brak dowodu pochodzenia |
 | `north.evidence` | Wymagane źródło/uzasadnienie ustalonego rodzaju: np. konkretny plan, legenda, strona, opis autora |
 | `declination_deg` | Zachowana liczba historyczna; aktywna deklinacja modelu magnetic wymaga udokumentowanej podstawy |
@@ -22,7 +22,7 @@ poprawności geodezyjnej planu.
 | `declination.basis` | Źródło wartości lub opis brakującej podstawy |
 | `declination.sign_convention` | Dla `documented`: `east_positive` — wschodnia dodatnia, zachodnia ujemna |
 | `declination.epoch` | Dla północy magnetycznej wymagana data lub epoka źródłowej deklinacji; przy modelu podać także model i jego podstawę w `basis` |
-| `orientation.mode` | `historical_tfw` przy nieustalonej północy; `reference` przy ustalonej |
+| `orientation.mode` | `historical_tfw` przy historycznej nieustalonej północy; `reference` przy ustalonej; `assumed_grid` dla nowego unknown T08 |
 | `orientation.status` | Nadal `unverified`; modele T06 nie potwierdzają źródłowych metadanych |
 | `orientation.uncertainty_reason` | Jawny powód niepewności, dostępny w QA, computed i manifeście |
 | `orientation.image_sha256` | SHA-256 treści TIFF-a objętego decyzją; musi odpowiadać obrazowi i rejestrowi T03 |
@@ -71,7 +71,7 @@ konwencji i epoki deklinacji. T06 dostarcza modele `geographic`, `magnetic` i `g
 Brak źródła, wymaganej deklinacji albo decyzji nadal blokuje preflight.
 Nie stosuje się zastępczo wzoru historycznego.
 Brak metadanych T05 również jest błędem. Dodanie planu bez odniesienia T02
-wymaga rozstrzygnięcia w T08; ten etap nie zgaduje jego orientacji.
+używa osobnego kontraktu T08 opisanego niżej; nie zgaduje jego orientacji.
 
 ## Migracja i niezależna historia
 
@@ -219,3 +219,48 @@ konwencją piksela i jednostką skali. `orientation` zachowuje również pełne
 i epokę. Status pozostaje `unverified`; udany test modelu nie weryfikuje
 opisanej w legendzie strzałki rzeczywistego planu. Odbiór i odtworzenie raportu:
 [2026-10-25-t06-odbior.md](plans/2026-10-25-t06-odbior.md).
+
+## Nowy plan T08 bez odniesienia historycznego
+
+Nowy plan ma odrębne `cave.dir_id` (katalog), `cave.source_cave_id` (jaskinia
+PIG), `image.image_id` (graphics_id) i object_id otworu. Nie jest wpisem T02.
+`orientation.historical` jest niedozwolone, również skopiowane z innego planu.
+Istniejący plan T02 nie może zastąpić swojej podstawy przez `origin` T08.
+
+Początkowe `orientation.origin` zawiera `kind: manual_t08`, plan_id, datę,
+powód i hash początkowych wejść orientacji. Ten sam korzeń jest utrwalony
+w `image-identity.json`, publikowanym razem z obrazem i YAML-em; różnica
+korzeni lub konflikt z rejestrem wspólnym blokuje T03. To wersjonowany dowód
+decyzji operatora podlegający review, nie podpis ani automatyczna weryfikacja
+źródłowej północy. Nie jest automatycznie odświeżany przy edycji.
+
+Nowy `unknown` ma `orientation.mode: assumed_grid` i osobną mapę
+`orientation.grid_assumption`: skończony `rotation_deg`, `crs: EPSG:2180`,
+`convention: image_x_ccw_from_grid_east` i niepusty `reason`.
+W tej konwencji r to kąt osi x obrazu przeciwnie do zegara od wschodu siatki:
+A=mpp*cos(r), D=mpp*sin(r). Nie jest to kąt strzałki północy.
+**Przyjęcie obrotu względem siatki nie dowodzi rodzaju źródłowej północy.**
+`north.reference` pozostaje unknown, status pozostaje unverified. Nie dodaje
+się zbieżności ani deklinacji; współrzędne, ppm i kliknięcie pozostają aktywne.
+
+`--north-skipped` zapisuje `angle_deg: null`, `angle_origin: unknown`,
+`all_skipped: true`. Zmierzona pionowa strzałka to jawne `angle_deg: 0.0`,
+`angle_origin: measured`, `all_skipped: false` ze źródłem, także przy
+nieustalonym rodzaju. Osobne przyjęcie r może mieć wartość 0° lub dowolny
+skończony kąt; żadne z tych zer nie jest domyślnym pomiarem.
+
+Nowe geographic/grid/magnetic używają modeli T06, ze źródłem rodzaju oraz
+pomiaru. Magnetic dodatkowo wymaga dokumentowanej deklinacji, konwencji
+i epoki. Wszystkie pozostają unverified. Nie mają historycznego TFW.
+
+Późniejsze zmiany wejść wymagają `orientation.py decide` tak samo jak w T05.
+`grid_assumption` uczestniczy w hashu, a działaniem dla nowego unknown jest
+`accept_grid_assumption`. Przejście na ustalony rodzaj wymaga usunięcia
+przyjęcia, podania dowodów i decyzji `establish_reference`; korzeń początkowy
+pozostaje. Nie wolno zmieniać korzenia zamiast dopisać decyzji.
+Pełne wywołania i zapis: [MANUAL_ADD.md](../pipeline/MANUAL_ADD.md).
+
+Kod opisany oryginalnymi hashami raportu T06 jest zachowany osobno
+w `data/history/t06-code/`; test sprawdza te bajty hashami raportu oraz
+niezależnie porównuje bieżącą geometrię wszystkich 814 historycznych wejść.
+Aktualizacja kodu T08 nie przepisuje raportu ani hashy T06.

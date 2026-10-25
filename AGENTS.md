@@ -40,18 +40,20 @@ Skrypty Python do generacji georeferencjonowanych TIFFów z danych crowdsourcing
 - `catalogue_baseline.py` — odczyt historycznego punktu odniesienia 814 planów i osobne przeliczenie audytowe bez mutowania katalogu. Przy odtwarzaniu buildu, aktualizacji CSV lub użyciu historii w T05 przeczytaj [`docs/COORDINATE_SOURCE.md`](docs/COORDINATE_SOURCE.md). T05 bierze orientację z zapisanych historycznych TFW.
 - `03_report.py` — raporty QA: summary.csv, flagged.csv, missing.csv w `data/caves/_reports/`.
 - `04_find_missing.py` — porównanie rejestru PIG (JSONL) z istniejącymi jaskiniami; lista brakujących z planami, posortowana po długości.
-- `05_add_cave.py` — ręczne dodanie brakującej jaskini: tworzy katalog, kopiuje obrazy ze scrapera, generuje meta.yaml. Dane georeferencji (otwór, skala, kąt północy) z konsoli Georeferencer UI. Instrukcja: [`pipeline/MANUAL_ADD.md`](pipeline/MANUAL_ADD.md).
+- `05_add_cave.py` — bezpieczne dodanie jednego planu T08. Przed dodaniem lub zmianą tego narzędzia przeczytaj [`pipeline/MANUAL_ADD.md`](pipeline/MANUAL_ADD.md): rozdziela ID jaskini, grafiki, katalogu i otworu; wymaga hasha obrazu, pochodzenia parametrów i jawnej decyzji orientacji. Lokalny `image-identity.json` jest publikowany razem z planem po T03/T04. Podgląd niczego nie zapisuje; ponowienie nie nadpisuje.
 
 ### Orientacja T05 i geometria T06
 
 Przeczytaj [`docs/ORIENTATION.md`](docs/ORIENTATION.md). `pipeline/orientation.py`
 odróżnia rodzaj północy i pochodzenie kąta (także mierzone/przyjęte 0°).
-Nieustalona północ zachowuje kąt `atan2(D, A)` wyłącznie z
+Historyczna nieustalona północ zachowuje kąt `atan2(D, A)` wyłącznie z
 `plans[].historical_tfw` przypiętego T02. Bieżące współrzędne, skala i otwór
 pozostają aktywne. Zmiana wejść orientacji wymaga jawnej decyzji z powodem.
 T06 używa modeli geographic/magnetic/grid; znaki zbieżności i deklinacji
 oraz narożnikowy układ kliknięć/półpiksel opisuje `docs/ORIENTATION.md`.
 Dodanie modelu zachowuje status unverified i wymogi źródeł/decyzji T05.
+Nowy unknown T08 nie ma TFW T02: wymaga osobnego przyjętego obrotu
+`assumed_grid` z EPSG:2180, konwencją i powodem; pozostaje unknown/unverified.
 Raport wpływu T06 jest w `docs/reports/t06-geometry-impact.json`;
 odtworzenie opisuje `docs/plans/2026-10-25-t06-odbior.md`.
 
@@ -106,9 +108,8 @@ python pipeline/02_generate_geotiff.py --changed \
     --gps-kataster-strict                         # Tylko zmienione meta.yaml
 python pipeline/03_report.py                         # Raporty QA
 python pipeline/04_find_missing.py                   # Lista brakujących jaskiń
-python pipeline/05_add_cave.py --cave 001197 \       # Ręczne dodanie jaskini
-    --entrance-x 26131.87 --entrance-y 7996.18 \
-    --pixels-per-meter 23.6549 --north-angle 0.0
+# Pełne dodanie: pipeline/MANUAL_ADD.md; poniżej wyłącznie inspekcja
+python pipeline/05_add_cave.py --cave 001197 --image-id 12400 --dry-run
 
 # Uruchomienie notebooka analizy
 jupyter notebook analysis.ipynb
