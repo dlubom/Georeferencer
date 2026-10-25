@@ -373,6 +373,26 @@ class ManualAddTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'ścieżce wejścia'):
             generator.process_output([plan], out, self.data)
 
+    def test_t04_snapshot_of_absent_local_identity_rejects_appearance_during_hashing(self):
+        plan = self.add()
+        path = plan / 'image-identity.json'
+        raw = path.read_bytes()
+        local = json.loads(raw)
+        registry = read_registry()
+        registry['plans'][plan.name] = local['plans'][plan.name]
+        registry_path = self.root / 'global-registry.json'
+        registry_path.write_text(json.dumps(registry))
+        path.unlink()
+        real_hashes = generator.input_hashes
+        def appears(directory):
+            path.write_bytes(raw)
+            return real_hashes(directory)
+        output = self.root / 'absent-snapshot-output'
+        with patch.object(generator, 'input_hashes', side_effect=appears):
+            with self.assertRaisesRegex(ValueError, 'zmieni'):
+                generator.process_output([plan], output, self.data, registry_path=registry_path)
+        self.assertFalse((output / 'current').exists())
+
     def test_jsonl_provenance_hash_describes_the_bytes_actually_selected(self):
         original = self.jsonl.read_bytes()
         load = adder.load_cave_from_jsonl

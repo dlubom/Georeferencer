@@ -73,10 +73,10 @@
   },
   "verification": {
     "command": "./scripts/check",
-    "tests": 141,
+    "tests": 142,
     "status": "PASS",
-    "seconds": 202.728,
-    "synthetic_t08_tests": 18,
+    "seconds": 173.721,
+    "synthetic_t08_tests": 19,
     "regression": {
       "mutation": "selected = plans[0] -> selected = images[0]",
       "tests": 141,
@@ -89,6 +89,7 @@
       "tests_passed": 17,
       "finding": "P3: race replacing concurrent empty target",
       "resolution": "atomic rename without replacement; regression RED -> GREEN"
-    }
+    },
+    "absent_identity_snapshot_regression": "RED: appeared local identity was accepted; GREEN: publication rejected, no current"
   }
 }
