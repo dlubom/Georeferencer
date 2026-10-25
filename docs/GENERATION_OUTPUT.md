@@ -70,11 +70,11 @@ do pliku zewnętrznego: publikacja mogłaby wtedy zmienić wejście.
 
 Generator zapisuje świeżo obliczony TFW z precyzją T03 i przekazuje GDAL
 jawną geotransformację odpowiadającą odczytowi **tego** TFW. Stary TFW
-obok źródłowego TIFF-a nie wybiera transformacji. Zachowana jest istniejąca
-konwersja środka piksela TFW do narożnika GDAL; T04 jej nie zmienia ani nie
-rozstrzyga jej poprawności kartograficznej. Od T05 kąt pochodzi wyłącznie z historycznego TFW T02, zgodnie z
-[modelem orientacji](ORIENTATION.md). Współrzędne i skala pozostają bieżące;
-rodzaje północy oczekujące na model T06 kończą generację błędem.
+obok źródłowego TIFF-a nie wybiera transformacji. T06 jawnie mapuje kliknięcia UI w układzie narożnika GDAL i C,F w układzie
+środków TFW, z poprawką półpiksela. Modele północy, konwencje i tolerancje
+opisuje [ORIENTATION.md](ORIENTATION.md). `unknown` zachowuje wyłącznie
+historyczny kąt T02; współrzędne i skala pozostają bieżące. Ustalony rodzaj
+używa modelu T06 i nadal ma status `unverified`.
 
 Sukces procesu `gdal_translate` nie wystarcza. `gdalinfo` i Pillow niezależnie
 odczytują rzeczywisty wynik: GTiff, EPSG:2180, jeden kanał 1-bit, CCITTFAX4,
@@ -94,7 +94,9 @@ Bieżący TFW obok obrazu i poprzedni GeoTIFF nie są wejściami obliczenia.
 T05 dodaje snapshoty katalogu historycznego T02 i archiwum oryginalnych YAML-i
 (`orientation_sources`), hash modułu `orientation.py` oraz sekcję `orientation`
 każdego planu i `computed.json`: rodzaj północy, pochodzenie kąta, status,
-powód niepewności, historyczne odniesienie i decyzje. To addytywne rozszerzenie manifestu v1.
+powód niepewności, historyczne odniesienie i decyzje. T06 dodaje sekcję `geometry` w manifeście/computed i pełne źródłowe sekcje
+`north`/`declination` oraz `declination_deg` w `orientation`. Są to addytywne
+rozszerzenia manifestu v1.
 
 Przy tych samych wejściach i środowisku oczekujemy identycznego TFW oraz
 zgodnej geometrii i zdekodowanych pikseli. Identyfikatory przebiegu, ścieżki,

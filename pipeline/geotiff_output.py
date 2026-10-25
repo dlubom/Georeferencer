@@ -81,9 +81,10 @@ def validate_output_dir(output_dir, data_dir, caves, protected_files=()):
 
 
 def tfw_geotransform(tfw_path):
-    """Odtwórz odczyt TFW przez GDAL w T03, łącznie z jego precyzją zapisu.
+    """TFW: środek pierwszego piksela → GDAL: narożnik, z precyzją zapisu TFW.
 
-    To zachowanie zgodności, nie nowa decyzja dotycząca półpiksela.
+    Kliknięcia UI mają układ narożnikowy GDAL. C,F generatora T06 już
+    uwzględniają przesunięcie do środka; tutaj zachowujemy konwersję GDAL.
     """
     a, d, b, e, c, f = map(float, tfw_path.read_text().splitlines())
     return [c - a * 0.5 - b * 0.5, a, b, f - d * 0.5 - e * 0.5, d, e]

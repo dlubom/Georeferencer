@@ -156,6 +156,11 @@ def geometry_delta(root, plan, before, after, historical=False):
     path = f"data/caves/{plan['dir_id']}/meta.yaml"
     meta = yaml.safe_load(historical_bytes(root, path) if historical else (root / path).read_bytes())
     x, y = meta["entrance"]["x"], meta["entrance"]["y"]
+    if not historical:
+        # Bieżący model T06: kliknięcia UI/GDAL mają początek w narożniku,
+        # a parametry TFW w środku. Audyt zamrożonej historii zachowuje
+        # oryginalną interpretację, niezależnie od bieżącej geometrii.
+        x, y = x - 0.5, y - 0.5
     dx = (b["A"] - a["A"]) * x + (b["B"] - a["B"]) * y + b["C"] - a["C"]
     dy = (b["D"] - a["D"]) * x + (b["E"] - a["E"]) * y + b["F"] - a["F"]
     angle = math.degrees(math.atan2(b["D"], b["A"]) - math.atan2(a["D"], a["A"]))

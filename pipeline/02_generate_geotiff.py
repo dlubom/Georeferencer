@@ -43,6 +43,11 @@ import orientation
 
 DATA_DIR = Path("data/caves")
 TRANSFORMER = Transformer.from_crs("EPSG:4326", "EPSG:2180", always_xy=True)
+GEOMETRY = {
+    'model': 't06-local-similarity-v1',
+    'pixel': 'UI/GDAL: corner (0,0); first centre (0.5,0.5); TFW: first centre (0,0)',
+    'scale': '1/pixels_per_meter in EPSG:2180 metres',
+}
 
 
 def parse_args():
@@ -74,7 +79,7 @@ def parse_args():
 
 
 def compute_world_file(meta, orientation_context=None):
-    """Bieżąca skala/otwór i jawna orientacja; modele ustalonych północy dostarczy T06."""
+    """Bieżąca skala/otwór, modele T06 lub wyłącznie historyczny kąt T05."""
     lat = float(meta["coordinates"]["lat"])
     lon = float(meta["coordinates"]["lon"])
     ppm = meta["scale"]["pixels_per_meter"]
@@ -87,8 +92,7 @@ def compute_world_file(meta, orientation_context=None):
     # Skala
     mpp = 1.0 / ppm
 
-    # Brak modelu nigdy nie uruchamia starej sumy kąta/deklinacji/zbieżności.
-    total_deg = orientation.historical_rotation(meta, orientation_context)
+    total_deg = orientation.rotation(meta, orientation_context)
     rot = math.radians(total_deg)
 
     # Parametry World File
@@ -98,8 +102,10 @@ def compute_world_file(meta, orientation_context=None):
     D = mpp * sin_r
     B = mpp * sin_r
     E = -mpp * cos_r
-    C = world_x - (A * entrance_x + B * entrance_y)
-    F = world_y - (D * entrance_x + E * entrance_y)
+    # UI/GDAL: (0,0) jest narożnikiem. C,F TFW opisują środek (.5,.5).
+    # Dlatego kliknięcie ma indeksy (x-.5,y-.5) w układzie środków TFW.
+    C = world_x - (A * (entrance_x - 0.5) + B * (entrance_y - 0.5))
+    F = world_y - (D * (entrance_x - 0.5) + E * (entrance_y - 0.5))
 
     return {
         "A": A, "D": D, "B": B, "E": E, "C": C, "F": F,
@@ -133,6 +139,7 @@ def update_computed_section(meta, params):
         "C": round(params["C"], 6),
         "F": round(params["F"], 6),
         "orientation": orientation.summary(meta),
+        "geometry": copy.deepcopy(GEOMETRY),
     }
 
 
@@ -255,6 +262,7 @@ def process_output(caves, output_dir, data_dir, coordinates_path=None, registry_
                       'orientation': orientation.summary(meta),
                       'measurement': rows[meta['coordinates']['gps_kataster_object_id']]})
     provenance = {
+        'geometry': copy.deepcopy(GEOMETRY),
         'coordinate_source': {**pin,
                               'manifest_sha256': guarded[str(DEFAULT_MANIFEST.resolve())]},
         'orientation_sources': {p.name: guarded[str(p.resolve())] for p in orientation_paths},

@@ -24,11 +24,12 @@ wymiary, nazwa/ID obrazu, jawne object_id oraz lat/lon.
 wartości, podstawy, konwencji znaku oraz epoki dla północy magnetycznej.
 Nie ma domyślnego modelu orientacji ani zastępczego wzoru.
 
-Kliknięcie spełnia `0 <= x < width` i `0 <= y < height`. Kontrola wyklucza
-kliknięcia poza obrazem; nie rozstrzyga konwencji georeferencji środka piksela,
-orientacji ani półpiksela (T06). T05 zachowuje kąt zapisany w historycznym
-TFW T02; modele ustalonej północy
-pozostają w T06. Zmiany orientacji wymagają jawnej decyzji.
+Kliknięcie UI w układzie narożnika obrazu spełnia `0 <= x < width` i `0 <= y < height`. Kontrola wyklucza
+kliknięcia poza obrazem. T06 rozstrzyga [konwencję półpiksela i modele
+północy](ORIENTATION.md): układ UI/GDAL ma początek w narożniku, a TFW
+w środku pierwszego piksela. T05 zachowuje historyczny kąt dla `unknown`;
+ustalone rodzaje korzystają z modeli T06, bez automatycznej weryfikacji
+źródłowych metadanych. Zmiany wejść orientacji wymagają jawnej decyzji.
 
 Obraz `image.tif` musi być dostępnym, czytelnym, jednostronicowym TIFF-em
 w trybie Pillow `1`, zgodnym z CCITTFAX4. Wymiary muszą odpowiadać YAML-owi.

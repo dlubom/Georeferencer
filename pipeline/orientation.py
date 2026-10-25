@@ -1,7 +1,4 @@
-"""T05: jawne pochodzenie kierunku i niezmienny kąt zapisanych TFW T02.
-
-Ten moduł nie implementuje modeli geograficznych/magnetycznych/siatkowych T06.
-"""
+"""Jawne źródła T05, modele północy T06 i niezmienny kąt zapisanych TFW T02."""
 from __future__ import annotations
 
 import argparse
@@ -16,6 +13,7 @@ from pathlib import Path
 import zipfile
 
 import yaml
+from pyproj import Proj
 
 from coordinate_source import ROOT
 
@@ -24,6 +22,7 @@ ARCHIVE = ROOT / 'data/history/t02-inputs.zip'
 BASELINE_SHA256 = 'b9031ff93f9ca9a1930f3574cd2eddddfd8690235be4bee2610b993858df3541'
 REASON = 'Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano orientację historycznego TFW T02.'
 REFERENCES = ('unknown', 'geographic', 'magnetic', 'grid')
+PROJECTION = Proj('EPSG:2180')
 
 
 def digest(raw):
@@ -189,9 +188,35 @@ def historical_rotation(meta, context=None):
     return math.degrees(math.atan2(params['D'], params['A']))
 
 
+def rotation(meta, context=None):
+    """Obrót osi x obrazu ku północy siatki (CCW), w stopniach.
+
+    Strzałka w obrazie: (sin α, -cos α). Po transformacji ma azymut
+    siatkowy α-r. Północ geograficzna ma azymut -γ, magnetyczna δ-γ.
+    Stąd r=α+γ (geographic), r=α+γ-δ (magnetic), r=α (grid).
+    γ to zbieżność PROJ, δ to udokumentowana deklinacja east_positive.
+    """
+    if meta.get('north', {}).get('reference') == 'unknown':
+        return historical_rotation(meta, context)
+    validate_orientation(meta, context)
+    reference = meta['north']['reference']
+    angle = meta['north']['angle_deg']
+    if reference == 'grid':
+        return angle  # EPSG:2180: żadnej ponownej poprawki zbieżności/deklinacji.
+    coordinates = meta['coordinates']
+    convergence = PROJECTION.get_factors(
+        float(coordinates['lon']), float(coordinates['lat']), errcheck=True).meridian_convergence
+    if not math.isfinite(convergence):
+        error(meta['cave']['dir_id'], 'north', 'nieskończona zbieżność EPSG:2180')
+    declination = meta['declination_deg'] if reference == 'magnetic' else 0.0
+    return angle + convergence - declination
+
+
 def summary(meta):
     """Ten sam status i powód dla QA, computed i manifestu."""
     return {'north_reference': meta['north']['reference'], 'angle_origin': meta['north']['angle_origin'],
+            'north': copy.deepcopy(meta['north']), 'declination': copy.deepcopy(meta['declination']),
+            'declination_deg': meta['declination_deg'],
             **copy.deepcopy(meta['orientation'])}
 
 
