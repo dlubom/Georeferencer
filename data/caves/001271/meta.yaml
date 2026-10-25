@@ -19,8 +19,8 @@ scale:
   pixels_per_meter: 76.89
 north:
   reference: unknown
-  angle_origin: unknown
-  angle_deg: 0.0
+  angle_origin: measured
+  angle_deg: 0.008
   all_skipped: false
 declination_deg: 0.0
 computed:
@@ -50,11 +50,16 @@ declination:
 orientation:
   mode: historical_tfw
   status: unverified
-  uncertainty_reason: Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano
-    orientację historycznego TFW T02.
+  uncertainty_reason: Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano orientację historycznego TFW T02.
   image_sha256: eeb4aeff1d186ba9ccd9694831df8cf8547f5c3855cb3f79700f70e10a0b093e
   historical:
     catalogue_sha256: b9031ff93f9ca9a1930f3574cd2eddddfd8690235be4bee2610b993858df3541
     plan_id: '001271'
     tfw_sha256: 03563d41cd63a5e020cb3c42be46fdbb92238492bbc40c21d61ca9bbb3ea7bef
-  decisions: []
+  decisions:
+  - before_sha256: 3a30d29601d9b0847b743e77999beb60d2f2bb6174f77656257fdf4003e5cd94
+    after_sha256: ea59453ce60b920fe8d1e8253ef23681e6934e860e4d8d0f82ebed37bdf4c554
+    action: preserve_historical
+    reason: 'T07: wyłączenie jawnych rekordów TEST lub niekompletnych strzałek; korekta agregatu nie ustala rodzaju północy.
+      Zachowujemy kąt historycznego TFW T02. Raport: docs/reports/t07-aggregation-impact.json; SHA-256 obrazu: eeb4aeff1d186ba9ccd9694831df8cf8547f5c3855cb3f79700f70e10a0b093e'
+    date: '2026-10-25'

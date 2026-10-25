@@ -89,10 +89,36 @@ parquety i obrazy pozostają identyczne. Audyt i przeliczenie historii czytają
 archiwum i zamrożony generator; nie zależą od bieżących YAML-i ani modelu T05.
 Dla czystego checkoutu T02 bez archiwum nadal odczytywane są oryginalne ścieżki.
 
-W przypiętym środowisku można ponowić odbiór bez zapisu YAML-i:
+Raporty T05 i T06 opisują historyczne wejścia swoich etapów. Po późniejszych
+edycjach katalogu, w tym agregacji T07, ich odtworzenie nie czyta bieżących
+`meta.yaml`. Funkcja `migrate_north.migrated_bytes(original, plan)` odtwarza
+dokładne bajty T05 ze zweryfikowanego oryginału T02 i wpisu jego katalogu;
+nie odczytuje plików ani nie zapisuje danych. Test migracji odtwarza 814
+oryginałów w katalogu tymczasowym, porównuje cały raport i pierwotne hashe
+przed/po, a także sprawdza odmowę nadpisania późniejszej edycji. Test T06
+używa tych samych odtworzonych bajtów T05 i sprawdza `meta_sha256` zapisany
+w historycznym raporcie oraz wyniki geometrii. Osobno nadal badane są
+bieżące YAML-e: ich walidacja, decyzje i 814 kątów względem TFW T02.
+
+W przypiętym środowisku można ponowić odbiór bez zapisu bieżących YAML-i:
 
 ```sh
-python pipeline/migrate_north.py --report /tmp/t05-north.json
+PYTHONPATH=pipeline python - <<'PY'
+import json
+import tempfile
+from pathlib import Path
+from migrate_north import migration
+from orientation import load_context
+
+with tempfile.TemporaryDirectory() as temporary:
+    for plan_id, raw in load_context()['originals'].items():
+        path = Path(temporary) / 'data/caves' / plan_id / 'meta.yaml'
+        path.parent.mkdir(parents=True)
+        path.write_bytes(raw)
+    report, _ = migration(temporary)
+Path('/tmp/t05-north.json').write_text(
+    json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+PY
 cmp /tmp/t05-north.json data/migrations/t05-north.json
 python pipeline/catalogue_baseline.py verify
 python pipeline/catalogue_baseline.py recalculate --output /tmp/recalculated.json
@@ -163,7 +189,12 @@ T05 utożsamiał kliknięcie z indeksem środka piksela. T06 przesuwa C,F o
 `(.5*(A+B), .5*(D+E))`, także dla `unknown`, zachowując jego **kąt**,
 bieżący otwór, kliknięcie i skalę. Nie migruje YAML-i ani źródłowych TFW.
 [Raport 814 planów](reports/t06-geometry-impact.json) porównuje wyniki
-obu generatorów na identycznych bieżących wejściach. Zgodność historycznego
+obu generatorów na identycznych wejściach zapisanych po migracji T05.
+Po T07 zachowuje pierwotne hashe i wyniki; test odtwarza jego wejścia z T02,
+nie zastępuje ich aktualnymi YAML-ami. Polecenie `geometry_impact.py`
+z [odbioru T06](plans/2026-10-25-t06-odbior.md) czyta katalog danego checkoutu;
+po zmianach T07 opisuje nowe wejścia i nie służy do nadpisania raportu T06.
+Zgodność historycznego
 kąta jest odrębna od testu poprawnej geometrii modelu ustalonej północy.
 
 ## Tolerancje i dowody T06

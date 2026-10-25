@@ -33,6 +33,7 @@ Notebook Python/Jupyter do analizy statystycznej zgłoszeń. Używa pandas, nump
 Skrypty Python do generacji georeferencjonowanych TIFFów z danych crowdsourcingowych.
 
 - `01_extract_yaml.py` — jednorazowa ekstrakcja: parquet → edytowalne YAML-e (`data/caves/{dir_id}/meta.yaml`) + kopiowanie obrazów ze scrapera. Agregacja: mediana pikseli otworu, mediana pixels_per_meter (z IQR outlier removal), mediana kąta północy.
+- `crowdsourcing.py` / `migrate_crowdsourcing.py` — bieżąca warstwa agregacji T07: jawny rejestr TEST, liczniki komponentów/użytkowników i selektywna migracja z ochroną ręcznych korekt. Czytaj [`docs/AGGREGATION.md`](docs/AGGREGATION.md); nie uruchamiaj pełnej ekstrakcji do aktualizacji istniejącego katalogu. Historyczne raporty T05/T06 odtwarzaj na ich wejściach, wpływ T07 jest osobnym raportem.
 - `02_generate_geotiff.py` — powtarzalny: YAML → render Jinja `coordinates.lat/lon` z `best-measurements.csv` → .tfw (World File) + GeoTIFF (EPSG:2180, kompresja CCITTFAX4). Weryfikuje wymiary obrazu vs YAML. CLI: `--cave ID | --all | --changed | --force`.
 - `gps_kataster_coordinates.py` — obsługa `best-measurements.csv` / GeoJSON. Runtime release używa tylko jawnego `coordinates.gps_kataster_object_id`; resolver po `pig_id`/`nr_inwent` jest przeznaczony do jednorazowej migracji i raportu mapowania.
 - `coordinate_source.py` — weryfikacja przypiętego release i SHA-256, odzyskanie snapshotu oraz raport wpływu aktualizacji. Build używa `data/coordinate-source/source.json`, bez automatycznego `latest`.

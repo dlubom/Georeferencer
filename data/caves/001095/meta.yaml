@@ -2,7 +2,7 @@ cave:
   inventory_number: T.D-08.08
   dir_id: 001095
   name: Jaskinia Zimna
-  n_submissions: 6
+  n_submissions: 5
 image:
   filename: image_570_zoom_10.tif
   image_id: 570
@@ -14,13 +14,13 @@ coordinates:
   lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:
   x: 418.64
-  y: 2151.99
+  y: 2152.03
 scale:
   pixels_per_meter: 23.66
 north:
   reference: unknown
-  angle_origin: unknown
-  angle_deg: 0.0020000000
+  angle_origin: measured
+  angle_deg: -0.033
   all_skipped: false
 declination_deg: 0.0
 computed:
@@ -33,16 +33,15 @@ computed:
   C: 563085.817017
   F: 154011.66112
 quality:
-  ppm_cv: 0.0030000000
+  ppm_cv: 0.003
   ppm_values:
-  - 23.16
   - 23.62
   - 23.66
   - 23.56
   - 23.76
   - 23.74
-  entrance_std_px: 4.43
-  outliers_removed: 1
+  entrance_std_px: 4.59
+  outliers_removed: 0
   flag: null
 declination:
   status: unknown
@@ -51,11 +50,16 @@ declination:
 orientation:
   mode: historical_tfw
   status: unverified
-  uncertainty_reason: Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano
-    orientację historycznego TFW T02.
+  uncertainty_reason: Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano orientację historycznego TFW T02.
   image_sha256: 1a37a08d5a55e5823f0953cfb896501bf9d807977c56c9c39fcff2b4b5f54a14
   historical:
     catalogue_sha256: b9031ff93f9ca9a1930f3574cd2eddddfd8690235be4bee2610b993858df3541
     plan_id: 001095
     tfw_sha256: 843585838721fb86870509db0683beb1c1567e3eff8d27a46e598f92e072fd3c
-  decisions: []
+  decisions:
+  - before_sha256: 6c3df0d778bc2688c191b73c8e9e197173fd658d16eb893fee1f62d6903cd83b
+    after_sha256: 6a166ae44ccdcdbc42297d2a863a2cdb8e249b7ae4292d564de95e4bf0d384a1
+    action: preserve_historical
+    reason: 'T07: wyłączenie jawnych rekordów TEST lub niekompletnych strzałek; korekta agregatu nie ustala rodzaju północy.
+      Zachowujemy kąt historycznego TFW T02. Raport: docs/reports/t07-aggregation-impact.json; SHA-256 obrazu: 1a37a08d5a55e5823f0953cfb896501bf9d807977c56c9c39fcff2b4b5f54a14'
+    date: '2026-10-25'
