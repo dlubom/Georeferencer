@@ -39,11 +39,16 @@ def write_json(path, value):
                                     sort_keys=True, allow_nan=False) + '\n', encoding='utf-8')
 
 
-def input_files(cave_dir):
-    """Źródłowy YAML i obrazy; stary TFW/GeoTIFF nie są wejściem obliczeń."""
-    return [p for p in sorted(cave_dir.iterdir()) if p.is_file() and
+def input_paths(cave_dir):
+    """Potencjalne wejścia, także dangling symlinki do przyszłego current."""
+    return [p for p in sorted(cave_dir.iterdir()) if
             (p.name in {'meta.yaml', 'image-identity.json'} or (p.suffix.lower() in {'.tif', '.tiff', '.jpg', '.jpeg', '.png'}
                                       and p.name != 'image_georef.tif'))]
+
+
+def input_files(cave_dir):
+    """Źródłowy YAML i obrazy; stary TFW/GeoTIFF nie są wejściem obliczeń."""
+    return [p for p in input_paths(cave_dir) if p.is_file()]
 
 
 def input_hashes(cave_dir):
@@ -84,7 +89,11 @@ def validate_output_dir(output_dir, data_dir, caves, protected_files=()):
     for source in [Path(data_dir).resolve(), *(Path(c).resolve() for c in caves)]:
         if output == source or source in output.parents or output in source.parents:
             raise ValueError('Katalog wyników nie może nakładać się na źródłowy katalog danych')
-    for path in [*protected_files, *(p for cave in caves for p in input_files(cave))]:
+    # Dowiązanie może stać się wejściem dopiero po podmianie current.
+    # Sprawdzamy ścieżkę bez polegania na is_file()/is_dir()/exists().
+    potential_plans = [p for p in Path(data_dir).iterdir()
+                       if p.is_symlink() and not p.name.startswith(('_', '.'))]
+    for path in [*protected_files, *potential_plans, *(p for cave in caves for p in input_paths(cave))]:
         guard_input_path(path, output)
     # Nie przejmujemy istniejącego katalogu/pliku o nazwie current.
     current = output / 'current'

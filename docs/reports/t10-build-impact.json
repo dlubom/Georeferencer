@@ -80,16 +80,16 @@
   "task": "T10 / #15",
   "verification": {
     "code_ci": {
-      "check": "https://github.com/dlubom/Georeferencer/actions/runs/40211181145",
-      "container_seconds": 241.307,
+      "check": "https://github.com/dlubom/Georeferencer/actions/runs/40212665797",
+      "container_seconds": 175.954,
       "container_tests": 182,
-      "generation": "https://github.com/dlubom/Georeferencer/actions/runs/40211181148",
-      "host_tests": 6,
-      "revision": "1665939b0f91226a80c2ad7b1b7436b9cea8386c",
+      "generation": "https://github.com/dlubom/Georeferencer/actions/runs/40212665872",
+      "host_tests": 7,
+      "revision": "9bdbb7eaa4bd24f2110f97892b906b14630cb8ef",
       "status": "PASS"
     },
-    "container_seconds": 249.829,
-    "container_tests": 182,
+    "container_seconds": 246.903,
+    "container_tests": 183,
     "controlled_regression": {
       "failures": 1,
       "mutation": "Pominięcie if not report[passed] w tymczasowej kopii package_release.py",
@@ -97,6 +97,15 @@
       "seconds": 1.266,
       "test": "PackageTest.test_qa_new_problem_stale_exception_and_technical_exception_block",
       "tests": 1
+    },
+    "dangling_source_guard": {
+      "after": "PASS, 0.052 s",
+      "before": "3 FAIL",
+      "independent_seconds": 0.07,
+      "independent_tests": 2,
+      "open_findings": 0,
+      "regression_subcases": 3,
+      "source_hashes_unchanged": true
     },
     "environment": {
       "GDAL": "3.12.4",
@@ -156,6 +165,6 @@
       "tests_imported_by_production": false,
       "uncertain": false
     },
-    "total_tests": 189
+    "total_tests": 190
   }
 }

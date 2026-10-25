@@ -110,6 +110,12 @@ Każdy krok łańcucha dowiązań plików wejściowych, CSV, pinu i rejestru ró
 musi leżeć poza katalogiem wyników. Dotyczy to także przejścia przez `current`
 do pliku zewnętrznego: publikacja mogłaby wtedy zmienić wejście.
 
+Kontrola ścieżek obejmuje także nieistniejące cele dowiązań rozpoznawanych
+wejść oraz dowiązania potencjalnych katalogów planów. Nie polega na `exists`,
+`is_file` ani `is_dir`: lokalny rejestr, JPEG lub katalog planu nie może
+pojawić się w źródłach dopiero w wyniku podmiany `current`. Hashe nadal
+opisują wyłącznie rzeczywiście odczytane pliki i jawny brak lokalnego rejestru.
+
 ## Co sprawdza odbiór
 
 Generator zapisuje świeżo obliczony TFW z precyzją T03 i przekazuje GDAL

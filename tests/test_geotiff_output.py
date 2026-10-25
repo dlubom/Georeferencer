@@ -214,6 +214,23 @@ class OutputTest(unittest.TestCase):
         self.assertTrue(self.meta_path.is_file())
         self.assertEqual(hashes(self.data_dir), before)
 
+    def test_absent_optional_input_symlink_through_future_current_never_publishes(self):
+        for name in ('image-identity.json', 'image_future.jpg', 'future-plan'):
+            with self.subTest(name=name):
+                self.output = self.root / ('results-' + name)
+                link = (self.data_dir if name == 'future-plan' else self.cave_dir) / name
+                target = self.output / 'current/001131'
+                link.symlink_to(target if name == 'future-plan' else target / 'computed.json')
+                self.assertFalse(link.exists())
+                try:
+                    with self.assertRaisesRegex(ValueError, 'ścieżce wejścia'):
+                        self.api()
+                    self.assertFalse((self.output / 'current').exists())
+                    self.assertFalse(link.exists())
+                    self.assertTrue(link.is_symlink())
+                finally:
+                    link.unlink()
+
     def test_gdal_failure_and_false_success_never_publish_or_replace_complete_run(self):
         first = self.run_ok()
         complete = hashes(first)
