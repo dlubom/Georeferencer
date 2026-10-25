@@ -74,13 +74,20 @@ class PackageTest(qa_fixture._QaFixture):
                     (self.run / 'extra.tif').unlink(missing_ok=True)
 
     def test_qa_new_problem_stale_exception_and_technical_exception_block(self):
-        self.options['exceptions']['exceptions'][0]['basis_sha256'] = 'old basis'
-        with self.assertRaises(ValueError):
-            self.pack()
-        self.options['exceptions']['exceptions'] = []
-        with self.assertRaises(ValueError):
-            self.pack()
-        self.assertFalse(self.archive.exists())
+        original = copy.deepcopy(self.options['exceptions'])
+        for mode in ('tag', 'manual'):
+            for fault in ('stale', 'new', 'technical'):
+                with self.subTest(mode=mode, fault=fault):
+                    self.options['exceptions'] = copy.deepcopy(original)
+                    if fault == 'stale':
+                        self.options['exceptions']['exceptions'][0]['basis_sha256'] = 'old basis'
+                    elif fault == 'new':
+                        self.options['exceptions']['exceptions'] = []
+                    else:
+                        self.options['exceptions']['exceptions'][0]['rule'] = 'result.corrupt'
+                    with self.assertRaises(ValueError):
+                        self.pack(mode=mode)
+                    self.assertFalse(self.archive.exists())
 
     def test_current_is_resolved_once_and_reports_must_stay_outside_run(self):
         import package_release

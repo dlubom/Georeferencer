@@ -1,0 +1,132 @@
+{
+  "revision": "c9072ad096a99abe7fee1228973faaf395c247a0",
+  "checkout": "/tmp/t11-independent-review-20261025",
+  "git_status_porcelain": "",
+  "run": "/tmp/t11-independent-review-20261025/build/geotiff/runs/386d70a611744103be6162eea34980b5",
+  "run_manifest_sha256": "cd3907f24c6f70ea3b341e0cf108dee9a2112c59647fa440850b114f07c721b9",
+  "run_id": "386d70a611744103be6162eea34980b5",
+  "code": {
+    "commit": "c9072ad096a99abe7fee1228973faaf395c247a0",
+    "dirty": "false"
+  },
+  "environment": {
+    "GDAL": "GDAL 3.12.4 \"Chicoutimi\", released 2026/04/22",
+    "GDAL build": "OGR_ENABLED=YES\nCURL_ENABLED=YES\nCURL_VERSION=8.5.0\nGEOS_ENABLED=YES\nGEOS_VERSION=3.12.1-CAPI-1.18.1\nPROJ_BUILD_VERSION=9.8.1\nPROJ_RUNTIME_VERSION=9.8.1\nCOMPILER=GCC 13.3.0",
+    "PROJ (pyproj)": "9.8.1",
+    "Python": "3.12.3",
+    "architecture": "x86_64",
+    "packages": {
+      "Jinja2": "3.1.6",
+      "MarkupSafe": "3.0.4",
+      "PyYAML": "6.0.3",
+      "certifi": "2026.10.23",
+      "numpy": "2.5.4",
+      "pandas": "3.1.0",
+      "pillow": "13.0.0",
+      "pip": "25.3",
+      "pyarrow": "26.0.0",
+      "pyproj": "3.8.0",
+      "python-dateutil": "3.0.0",
+      "six": "1.17.0",
+      "tzdata": "2026.5"
+    },
+    "system": "Linux"
+  },
+  "coordinate_source": {
+    "asset": "best-measurements.csv",
+    "manifest_sha256": "1432dc7bac98b88ddf21316e8b0ea303b8846dd5b783000c593eab45e6e88272",
+    "release": "v1.3.1",
+    "repository": "dlubom/gps-kataster-obiektow-tatr",
+    "schema_version": 1,
+    "sha256": "a783a4d124b43b9c9b864d79ca6a5c0183561f8972c755d58de2cfc1ea9b4d6f",
+    "snapshot": "best-measurements-v1.3.1.csv"
+  },
+  "plans": 814,
+  "generated": 814,
+  "reused": 0,
+  "qa_passed": true,
+  "qa_counts": {
+    "accepted": 1405,
+    "blocking": 0,
+    "origins": {
+      "crowdsourcing": 801,
+      "manual_historical": 13
+    },
+    "plans": 814,
+    "problems": 1405
+  },
+  "semantic_results_sha256": "51423bd2ed851e73ed2eb83a5ef4fc5b734bbd4b1cf3dba6ff9e20cbeca0d2e6",
+  "test_counts": [
+    7,
+    191
+  ],
+  "focused_test_counts": [
+    15
+  ],
+  "archives": {
+    "tag": {
+      "archive_sha256": "b01ff5c44887531cb0b8cbc214097128a897e573afbc5d823b29bb19ab7cf70c",
+      "bytes": 21378163,
+      "entries": 2443,
+      "zip_crc_independent_readback": true,
+      "release_mode": "tag",
+      "release_code": {
+        "commit": "c9072ad096a99abe7fee1228973faaf395c247a0",
+        "dirty": "false"
+      },
+      "accepted_exceptions": 1405,
+      "run_manifest_sha256": "cd3907f24c6f70ea3b341e0cf108dee9a2112c59647fa440850b114f07c721b9",
+      "acceptance": {
+        "archive_sha256": "b01ff5c44887531cb0b8cbc214097128a897e573afbc5d823b29bb19ab7cf70c",
+        "files": 2443,
+        "passed": true,
+        "plans": 814,
+        "qa": {
+          "accepted": 1405,
+          "blocking": 0,
+          "origins": {
+            "crowdsourcing": 801,
+            "manual_historical": 13
+          },
+          "plans": 814,
+          "problems": 1405
+        },
+        "run_id": "386d70a611744103be6162eea34980b5",
+        "run_manifest_sha256": "cd3907f24c6f70ea3b341e0cf108dee9a2112c59647fa440850b114f07c721b9"
+      }
+    },
+    "manual": {
+      "archive_sha256": "c5340e51c5efdf423fda9eb0235fb4d6463fe5ad4e12e5b6c17ebc9c4c351f4c",
+      "bytes": 21378164,
+      "entries": 2443,
+      "zip_crc_independent_readback": true,
+      "release_mode": "manual",
+      "release_code": {
+        "commit": "c9072ad096a99abe7fee1228973faaf395c247a0",
+        "dirty": "false"
+      },
+      "accepted_exceptions": 1405,
+      "run_manifest_sha256": "cd3907f24c6f70ea3b341e0cf108dee9a2112c59647fa440850b114f07c721b9",
+      "acceptance": {
+        "archive_sha256": "c5340e51c5efdf423fda9eb0235fb4d6463fe5ad4e12e5b6c17ebc9c4c351f4c",
+        "files": 2443,
+        "passed": true,
+        "plans": 814,
+        "qa": {
+          "accepted": 1405,
+          "blocking": 0,
+          "origins": {
+            "crowdsourcing": 801,
+            "manual_historical": 13
+          },
+          "plans": 814,
+          "problems": 1405
+        },
+        "run_id": "386d70a611744103be6162eea34980b5",
+        "run_manifest_sha256": "cd3907f24c6f70ea3b341e0cf108dee9a2112c59647fa440850b114f07c721b9"
+      }
+    }
+  },
+  "git_common_dir": "/private/tmp/t11-independent-review-20261025/.git",
+  "git_alternates_present": false
+}

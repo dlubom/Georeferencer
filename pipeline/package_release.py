@@ -5,7 +5,9 @@ przebiegu; workflow publikuje wyłącznie udany wynik tego polecenia.
 """
 import argparse
 import hashlib
+import json
 import os
+import re
 import tempfile
 import zipfile
 from pathlib import Path
@@ -16,9 +18,10 @@ from qa import create_report, write_reports
 from validation import IMAGE_REGISTRY
 import build_identity
 import orientation
+import release_acceptance
 
 
-def package_run(data_dir, run_dir, archive, reports_dir, *, mode='tag', qa_kwargs=None):
+def package_run(data_dir, run_dir, archive, reports_dir, *, mode='tag', qa_kwargs=None, require_clean_code=False):
     if mode not in ('tag', 'manual'):
         raise ValueError('Wymagana ścieżka tag albo manual')
     # Jedyny odczyt wskazania current. QA i pakowanie otrzymują ten sam katalog.
@@ -43,12 +46,22 @@ def package_run(data_dir, run_dir, archive, reports_dir, *, mode='tag', qa_kwarg
         guard_input_path(path, reports)
     guarded = {p: sha256(p) for p in common_paths}
     manifest_bytes = (run / 'manifest.json').read_bytes()
+    packaging_code = build_identity.code_version()
+    if require_clean_code:
+        for code in (read_json(run / 'manifest.json').get('code', {}), packaging_code):
+            if not re.fullmatch('[0-9a-f]{40}', code.get('commit') or '') or code.get('dirty') != 'false':
+                raise ValueError('Build i pakowanie wymagają czystego checkoutu i SHA kodu z scripts/build')
     report = create_report(data, run_dir=run, require_results=True, **options)
     report['run'] = {'path': str(run), 'manifest_sha256': hashlib.sha256(manifest_bytes).hexdigest(), 'mode': mode}
     write_reports(report, reports)
     if not report['passed']:
         raise ValueError(f"Pełne QA wydania blokuje pakowanie: {report['counts']['blocking']} problemów")
     manifest = read_json(run / 'manifest.json')
+    manifest['release'] = {'version': release_acceptance.RELEASE_VERSION, 'mode': mode,
+        'code': packaging_code,
+        'run_id': manifest['run_id'], 'run_manifest_sha256': hashlib.sha256(manifest_bytes).hexdigest(),
+        'qa': release_acceptance.qa_evidence(report)}
+    release_bytes = (json.dumps(manifest, ensure_ascii=False, indent=2, sort_keys=True, allow_nan=False) + '\n').encode()
     expected = {'manifest.json': hashlib.sha256(manifest_bytes).hexdigest()}
     for plan in manifest['plans']:
         for name, digest in plan['outputs'].items():
@@ -63,7 +76,8 @@ def package_run(data_dir, run_dir, archive, reports_dir, *, mode='tag', qa_kwarg
                 raw = (run / name).read_bytes()
                 if hashlib.sha256(raw).hexdigest() != digest:
                     raise ValueError(f'Wynik zmienił się po QA: {name}')
-                package.writestr(name, raw)
+                package.writestr(name, release_bytes if name == 'manifest.json' else raw)
+        release_acceptance.verify_archive(temporary, data, qa_kwargs=options)
         actual = {str(p.relative_to(run)) for p in run.rglob('*') if not p.is_dir()}
         if actual != set(expected) or any(p.is_symlink() for p in run.rglob('*')):
             raise ValueError('Komplet wyników zmienił się po QA')
@@ -88,7 +102,8 @@ def main():
     parser.add_argument('--mode', choices=('tag', 'manual'), required=True)
     args = parser.parse_args()
     try:
-        result = package_run(args.data_dir, args.run_dir, args.archive, args.reports_dir, mode=args.mode)
+        result = package_run(args.data_dir, args.run_dir, args.archive, args.reports_dir, mode=args.mode,
+                             require_clean_code=True)
         print(f'QA i pakowanie OK: {result}')
         return 0
     except (OSError, ValueError, KeyError, TypeError) as exc:

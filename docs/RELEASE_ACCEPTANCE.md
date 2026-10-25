@@ -1,0 +1,181 @@
+# Odtworzenie i odbiór wydania T11
+
+Źródła prawdy: [AGENTS.md](../AGENTS.md), [kontrakt wyników](GENERATION_OUTPUT.md),
+[walidacja](VALIDATION.md), [orientacja](ORIENTATION.md), [agregacja](AGGREGATION.md),
+[QA](QA.md), [pin współrzędnych](COORDINATE_SOURCE.md),
+[środowisko i wspólna kontrola](../ci/README.md).
+Stan zadania i zależności: [issue #16](https://github.com/dlubom/Georeferencer/issues/16).
+Wymagany jest Git, Python 3 hosta i działający Docker Linux/amd64.
+Nie są potrzebne sąsiednie repozytoria, poprzednie build/ ani pliki ze starej sesji.
+
+## Dwa zimne buildy jednego commitu
+
+Z **czystego checkoutu** wybranej rewizji:
+
+```sh
+git status --porcelain
+git rev-parse HEAD
+./scripts/check
+# Ścieżka nie może istnieć. Nie używaj starego katalogu ani current.
+./scripts/reproduce --revision "$(git rev-parse HEAD)" \
+  --work-dir /tmp/georeferencer-t11-odbior
+```
+
+Skrypt robi dwa niezależne `git clone --no-local --no-checkout`, checkout
+tego samego pełnego SHA i dwa `generate --all`, każdy bez katalogu build/.
+Nie pożycza obiektów Git i nie kopiuje wyników. Cache warstw Dockera może być
+wspólny; cache **wyników planów** jest zimny. Oba buildy mają te same
+wersjonowane wejścia i digest/lock środowiska. Obliczenia i kontrole działają
+bez sieci, ze źródłami readonly. Początkowe pobranie obrazu wymaga sieci.
+Przy ograniczonej przestrzeni dodaj `--conserve-disk`: po pełnym odbiorze
+checkoutu a skrypt przenosi jego wyniki do `a-results/` i usuwa wyłącznie
+utworzony przez siebie checkout a przed klonowaniem b. Zimne cache i
+niezależność checkoutów pozostają; porównanie nadal czyta oba zestawy wyników.
+
+Każdy current jest rozwiązywany raz; ta sama konkretna ścieżka trafia do QA
+i pakowania obu trybów. Skrypt wykonuje lokalne próby tag/manual dla obu
+checkoutów. Nie wywołuje GitHub Release ani workflow_dispatch.
+
+Dowody w nowym katalogu odbioru:
+
+- `a-generate.log`, `b-generate.log`: pełne generacje, 0 reused;
+- `checkouts.json`: wspólna rewizja, osobne checkouty, czystość przed/po;
+- `comparison.json`: dokładny katalog i każdy plan — SHA-256 bajtów TFW,
+  rzeczywista geotransformacja/CRS/wymiary i SHA-256 zdekodowanych pikseli;
+- `a/build/{tag,manual}.zip`, `b/build/{tag,manual}.zip`, logi pakowania
+  oraz zewnętrzne `{tag,manual}-qa/qa.json` każdego checkoutu;
+- `runtime.log`, `runtime-image`: identyfikacja użytego obrazu;
+  pełne wersje narzędzi i hash źródła współrzędnych w comparison/manifest.
+
+Liczba planów i niepewności wynika z katalogu/QA, nie ze stałego limitu.
+Snapshot wejściowy T11: 814 planów, 1405 zaakceptowanych niepewności, 0 blokad.
+Porównanie nie zastępuje odbioru semantycznego hashem ZIP ani binarnego TIFF.
+Daty ZIP i run_id mogą się różnić. TFW muszą być identyczne bajtowo, geometria
+i zdekodowane piksele identyczne po rzeczywistym odczycie wszystkich TIFF-ów.
+
+## Porównanie buildów dwóch operatorów
+
+Build autora i build niezależnego reviewera mogą stanowić parę odbioru,
+jeśli oba są pełne, zimne, z czystych niezależnych checkoutów tego samego SHA.
+Każdy operator wykonuje poniższy samodzielny odbiór jednego checkoutu.
+Nie trzeba wtedy generować trzeciej kopii. Dowód musi wskazywać oba commity,
+czystość, 0 reused, run_id oraz hashe manifestów i paczek.
+
+Z czystego checkoutu tej wersji kodu, po wskazaniu katalogów obu przebiegów:
+
+```sh
+T11_LEFT=$(cd /tmp/t11-left/build/geotiff/current && pwd -P)
+T11_RIGHT=$(cd /tmp/t11-right/build/geotiff/current && pwd -P)
+mkdir -p build
+docker build --platform linux/amd64 --iidfile build/t11-compare-image ci
+docker run --rm --platform linux/amd64 --network none --read-only \
+  --tmpfs /tmp:rw,nosuid,size=512m \
+  --mount "type=bind,source=$PWD,target=/workspace,readonly" \
+  --mount "type=bind,source=$T11_LEFT,target=/left,readonly" \
+  --mount "type=bind,source=$T11_RIGHT,target=/right,readonly" \
+  --mount "type=bind,source=$PWD/build,target=/build" \
+  "$(cat build/t11-compare-image)" python pipeline/release_acceptance.py \
+  --report /build/comparison.json compare --left /left --right /right
+```
+
+Podmień tylko hostowe ścieżki `/tmp/t11-left` i `/tmp/t11-right` na nowe
+checkouty uczestników odbioru. Current rozwiązuje się tu raz na operatora.
+Raport powstaje poza oboma przebiegami. Brak miejsca lub przerwany checkout
+nie jest dowodem buildu: musi zostać pominięty w parze, a poprawnie odebrane
+wcześniejsze wyniki i paczki pozostają zachowane.
+
+## Oddzielna kontrola paczki
+
+Z czystego checkoutu tej samej wersji kodu/wejść (ZIP umieść w jego build/):
+
+```sh
+./scripts/build accept --report /build/archive-acceptance.json \
+  verify --archive /build/tag.zip
+```
+
+Odbiorca czyta wszystkie ZipInfo, odrzuca duplikaty **przed** mapowaniem nazw,
+braki i dodatkowe pliki, katalogi oraz dowiązania. Sprawdza strumienie/CRC,
+hashe i komplet deklarowanych artefaktów. Następnie T09 sprawdza źródła,
+aktualność i rzeczywisty GeoTIFF: CRS, transformację, wymiary, jeden kanał
+1-bit, CCITTFAX4, zdekodowane piksele względem źródła.
+
+Manifest ZIP ma sekcję `release.version=t11-v1`, tryb, pochodzenie kodu
+pakowania `release.code`, run_id i SHA-256
+oryginalnego manifestu przebiegu. `release.qa` zapisuje politykę, liczniki,
+pełne zaakceptowane wyjątki (plan/reguła/evidence/basis/reason/sources/close_when)
+oraz hashe źródeł QA. Odbiorca odtwarza manifest przebiegu serializerem T04
+i weryfikuje jego hash. To addytywny kontrakt wydania; trzy pliki planu
+oraz manifest przebiegu v1 nie zmieniają układu.
+
+Manifest nie jest źródłem zgody na wyjątki. Odbiór zawsze ponownie egzekwuje
+**wersjonowany** `data/qa/exceptions-v1.json` i porównuje aktualne dowody.
+Nowa reguła lub stara podstawa blokują kontrolę. Błędy techniczne/wyników
+nie podlegają wyjątkom. Hashe wejść, wybrane pełne rekordy object_id i
+measurement_id, pin CSV, kod/schemat, środowisko i fingerprinty pozostają
+obowiązkowe. `code.commit/dirty` podaje wrapper na podstawie Git hosta;
+produkcyjny CLI package wymaga pełnego SHA i czystego checkoutu zarówno
+buildu, jak i bieżącego pakowania. SHA służy
+proweniencji, nie kluczowi cache. Niskopoziomowe API służy też próbom
+syntetycznym i nie poświadcza samo pochodzenia z Git.
+
+Pakowanie odczytuje gotowy tymczasowy ZIP przez niezależny odbiornik przed
+atomowym zastąpieniem paczki. Błąd zachowuje poprzednią paczkę i current.
+Raporty są poza przebiegiem. Odbiór nie naprawia archiwum ani źródeł.
+
+## Kontrolowane próby i niezależny reviewer
+
+`./scripts/check` uruchamia również `tests/test_release_acceptance.py` oraz
+`test_package_release.py`: oba tryby odrzucają braki, nadmiar, duplikaty,
+stare/uszkodzone wyniki, nowe QA/stare wyjątki. Próby CRS, przesunięcia,
+kompresji i pikseli aktualizują hash mutowanego pliku, aby odbiór musiał
+wykryć faktyczny błąd GeoTIFF. Test błędu odbioru ZIP sprawdza zachowanie
+poprzedniej paczki i current. Syntetyczne wyjątki są wyłącznie danymi testów.
+
+Odtwarzalna próba regresji odbioru ZIP (oczekiwane: dokładnie 1 FAIL testu,
+potem `Kontrolowana regresja wykryta: True`, kod skryptu 0):
+
+```sh
+docker build --platform linux/amd64 --iidfile /tmp/t11-regression-image ci
+docker run --rm --platform linux/amd64 --network none --read-only \
+  --tmpfs /tmp:rw,nosuid,size=512m \
+  --mount "type=bind,source=$PWD,target=/workspace,readonly" \
+  "$(cat /tmp/t11-regression-image)" python docs/reports/t11-controlled-regression.py
+```
+
+Skrypt mutuje tylko prywatną kopię `package_release.py` w katalogu
+tymczasowym; źródła i rejestry pozostają readonly. Poprawny kod musi osobno
+przechodzić `./scripts/check`; oczekiwany FAIL mutanta nie jest wynikiem
+kontroli całego projektu.
+
+Reviewer otrzymuje wyłącznie ścieżkę repozytorium, rewizję, bazę i ten
+dokument. Tworzy własny świeży checkout, czyta instrukcje wersjonowane,
+uruchamia kontrolę i odtwarza build/paczkę; nie używa istniejącego build/
+ani wcześniejszego /tmp. Raport review zapisuje dokładne komendy, rewizję,
+liczby, hashe manifestu/paczki, wyniki odbioru oraz otwarte findings.
+
+Samodzielny odbiór jednego nowego checkoutu (bez uruchamiania dodatkowej
+pary z `scripts/reproduce`) używa tych samych narzędzi:
+
+```sh
+git clone --no-local /sciezka/do/Georeferencer /tmp/t11-reviewer-checkout
+cd /tmp/t11-reviewer-checkout
+git checkout --detach PELNE_SHA_PR
+./scripts/check
+./scripts/build generate --all
+T11_RUN="/build/geotiff/$(readlink build/geotiff/current)"
+./scripts/build report --run-dir "$T11_RUN" --require-results
+./scripts/build package --mode tag --run-dir "$T11_RUN" \
+  --reports-dir /build/tag-qa --archive /build/tag.zip
+./scripts/build package --mode manual --run-dir "$T11_RUN" \
+  --reports-dir /build/manual-qa --archive /build/manual.zip
+./scripts/build accept --report /build/archive-acceptance.json \
+  verify --archive /build/tag.zip
+git status --porcelain
+```
+
+Nie wolno automatycznie poprawiać YAML/obrazów, ekstrakcji, migracji,
+rejestrów, podstaw wyjątków ani historii T02/T05–T10 po niepowodzeniu.
+Nie wolno zmieniać unknown na grid, statusu na verified ani utożsamiać
+pomiaru 0°, przyjętego obrotu 0° i null. Naprawa potwierdzonej usterki kodu
+wymaga regresji; decyzja o danych wymaga osobnego uzasadnienia i PR.
+Merge, tag, wydanie i produkcyjna publikacja wymagają osobnego polecenia.
