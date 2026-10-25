@@ -276,15 +276,18 @@ def main():
                 selection = json.loads(args.selection_file.read_text())
                 if (not isinstance(selection, dict) or selection.get('schema_version') != 1
                         or type(selection.get('full')) is not bool
+                        or type(selection.get('uncertain')) is not bool
                         or not isinstance(selection.get('plans'), list)
                         or any(not isinstance(p, str) for p in selection['plans'])):
                     raise ValueError('Niepoprawny zakres')
             except (OSError, ValueError):
-                selection = {'full': True, 'plans': [], 'reason': 'niepoprawny zakres'}
+                selection = {'full': True, 'uncertain': True, 'plans': [], 'reason': 'niepoprawny zakres'}
         destination = process_output(caves, args.output_dir, data_dir,
             args.gps_kataster_best_measurements, args.image_registry,
-            force=args.force or bool(selection and selection['full']),
-            changed_plans=selection['plans'] if selection else (), selection=selection,
+            # Znany zakres wyznacza kandydatów, lecz aktualność rozstrzyga treść.
+            # Ponowienie tego samego eventu może mieć już kompletny aktualny cache.
+            force=args.force or bool(selection and selection['uncertain']),
+            selection=selection,
             full_catalogue=not args.cave)
     except (ValueError, OSError) as exc:
         sys.exit(f'BŁĄD generacji wyników: {exc}')

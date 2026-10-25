@@ -50,6 +50,7 @@ class ChangesTest(unittest.TestCase):
         head = self.commit()
         result = self.select(self.repo, self.base, head, 'push')
         self.assertFalse(result['full'])
+        self.assertFalse(result['uncertain'])
         self.assertEqual(result['plans'], ['a', 'b', 'new'])
         self.assertIn('data/caves/b/meta.yaml', result['paths'])
 
@@ -69,7 +70,9 @@ class ChangesTest(unittest.TestCase):
                                   ('missing', 'HEAD', 'push'), (self.base, 'HEAD', 'unknown'),
                                   (123, 'HEAD', 'push'), (self.base, [], 'push')):
             with self.subTest(base=base, event=event):
-                self.assertTrue(self.select(self.repo, base, head, event)['full'])
+                selection = self.select(self.repo, base, head, event)
+                self.assertTrue(selection['full'])
+                self.assertTrue(selection['uncertain'])
         gitdir = self.repo / '.git'
         (gitdir / 'shallow').write_text(self.base + '\n')
         self.assertTrue(self.select(self.repo, self.base, 'HEAD', 'push')['full'])
@@ -92,6 +95,17 @@ class ChangesTest(unittest.TestCase):
         (self.repo / 'data/caves/a/image-identity.json').unlink()
         removed = self.commit()
         self.assertEqual(self.select(self.repo, head, removed, 'push')['plans'], ['a'])
+
+    def test_unknown_input_is_uncertain_but_gitignore_is_only_metadata(self):
+        self.put('.gitignore')
+        head = self.commit()
+        self.assertFalse(self.select(self.repo, self.base, head, 'push')['uncertain'])
+        self.base = head
+        self.put('new-runtime-config.json')
+        head = self.commit()
+        result = self.select(self.repo, self.base, head, 'push')
+        self.assertTrue(result['full'])
+        self.assertTrue(result['uncertain'])
 
 
 if __name__ == '__main__':

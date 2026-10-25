@@ -55,11 +55,14 @@ nie poświadcza całego katalogu w bramce QA. `--force` pomija cache.
 W CI `build_changes.py` działa na hoście z Git. Push używa `before..after`,
 a PR `merge-base(base,head)..head`, z obu końców rename (delete + add).
 Uwzględnia wszystkie commity, także dokumentację w ostatnim commicie,
-obrazy, nowe/usunięte plany i lokalne rejestry. Kod, środowisko, pin, wspólny
-rejestr i nieznane wejście wymuszają cały katalog. Brak/niepoprawny ref,
+obrazy, nowe/usunięte plany i lokalne rejestry. Kod, środowisko, pin i wspólny rejestr obejmują cały katalog kandydatów.
+Przy znanym zakresie zgodny fingerprint nadal pozwala użyć cache, także przy
+ponowieniu tego samego eventu; sama obecność pliku w diffie nie unieważnia
+aktualnego wyniku. Nieznane wejście oznacza niepewność i pełne przeliczenie. Brak/niepoprawny ref,
 zerowa baza, płytka historia, nieprzodkowy push lub nieznany rodzaj zdarzenia
 wymusza pełne przeliczenie. Zakres jest zapisywany w `build/selection.json`
-i `manifest.build.selection`; bezpośredni CLI przyjmuje `--selection-file`.
+i `manifest.build.selection`; pole `uncertain` odróżnia brak pewnej bazy
+od znanego szerokiego zakresu. Bezpośredni CLI przyjmuje `--selection-file`.
 Lokalne wywołanie bez zakresu korzysta z pełnego skanu treści.
 
 Zakres Git nigdy nie dowodzi aktualności. Fingerprint każdego planu obejmuje

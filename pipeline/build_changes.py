@@ -13,7 +13,7 @@ def select_changes(repo, base, head, event):
     def git(*args):
         return subprocess.check_output(['git', '-C', str(repo), *args], stderr=subprocess.PIPE)
 
-    fallback = {'schema_version': 1, 'full': True, 'plans': [], 'paths': [],
+    fallback = {'schema_version': 1, 'full': True, 'uncertain': True, 'plans': [], 'paths': [],
                 'base': base, 'head': head, 'event': event, 'reason': 'niepewny zakres historii'}
     try:
         if (event not in ('push', 'pull_request') or not isinstance(base, str)
@@ -30,17 +30,18 @@ def select_changes(repo, base, head, event):
         # Bez detekcji rename otrzymujemy jawne usunięcie + dodanie obu ścieżek.
         paths = sorted(p.decode('utf-8') for p in git('diff', '--name-only', '-z', '--no-renames',
                                                      base_sha, head_sha, '--').split(b'\0') if p)
-        plans, full = set(), False
+        plans, full, uncertain = set(), False, False
         for name in paths:
             parts = Path(name).parts
             if len(parts) >= 4 and parts[:2] == ('data', 'caves') and not parts[2].startswith(('_', '.')):
                 plans.add(parts[2])
             elif name.startswith(('pipeline/', 'ci/', 'scripts/', '.github/', 'data/', 'parquet/')):
                 full = True
-            elif not (name.startswith('docs/') or name.lower().endswith('.md')):
-                full = True  # nowe/nieznane wejście wymaga konserwatywnego przeliczenia
-        return {**fallback, 'full': full, 'plans': sorted(plans), 'paths': paths,
-                'base': base_sha, 'head': head_sha, 'reason': 'wejścia wspólne' if full else 'pełny zakres Git'}
+            elif not (name.startswith('docs/') or name.lower().endswith('.md') or name == '.gitignore'):
+                full, uncertain = True, True  # nieznanej zależności nie poświadcza fingerprint
+        return {**fallback, 'full': full, 'uncertain': uncertain, 'plans': sorted(plans), 'paths': paths,
+                'base': base_sha, 'head': head_sha,
+                'reason': 'nieznane wejście' if uncertain else ('wejścia wspólne' if full else 'pełny zakres Git')}
     except (OSError, subprocess.CalledProcessError, UnicodeError):
         return fallback
 

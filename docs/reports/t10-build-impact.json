@@ -34,8 +34,8 @@
   "source_files_changed": [],
   "task": "T10 / #15",
   "verification": {
-    "container_seconds": 283.565,
-    "container_tests": 180,
+    "container_seconds": 287.635,
+    "container_tests": 182,
     "controlled_regression": {
       "failures": 1,
       "mutation": "Pominięcie if not report[passed] w tymczasowej kopii package_release.py",
@@ -58,13 +58,31 @@
       "pyarrow": "26.0.0",
       "pyproj": "3.8.0"
     },
-    "host_tests": 5,
+    "host_tests": 6,
     "independent_review": {
+      "additional_range_cache_seconds": 8.171,
+      "additional_range_cache_tests": 4,
       "cache_package_tests": 15,
       "host_tests": 5,
       "late_mutation_tests": 6,
       "open_findings": 0,
       "qa_tests": 20
+    },
+    "initial_ci": {
+      "check": "https://github.com/dlubom/Georeferencer/actions/runs/40210019064",
+      "generation": "https://github.com/dlubom/Georeferencer/actions/runs/40210019101",
+      "qa": {
+        "accepted": 1405,
+        "blocking": 0,
+        "plans": 814
+      },
+      "revision": "a67797f3dcda54c00292912d0e5eab8d5a5048f3"
+    },
+    "known_range_retry_regression": {
+      "after": "PASS: zgodny cache przy znanym zakresie, pełne przeliczenie przy uncertain",
+      "after_seconds": 4.891,
+      "before": "FAIL: oba warianty znanego zakresu wymuszały generację",
+      "tests": 2
     },
     "main_ruleset": {
       "bypass_actors": [],
@@ -74,6 +92,6 @@
       "strict": true
     },
     "result": "PASS",
-    "total_tests": 185
+    "total_tests": 188
   }
 }

@@ -160,6 +160,25 @@ class IncrementalTest(unittest.TestCase):
         repaired = self.api()
         self.assertEqual(self.manifest(repaired)['build']['generated'], ['001131'])
 
+    def test_known_git_range_does_not_override_content_cache_on_retry(self):
+        for full, plans in ((True, []), (False, ['001131'])):
+            with self.subTest(full=full):
+                selection = self.root / 'selection.json'
+                selection.write_text(json.dumps({'schema_version': 1, 'full': full,
+                    'uncertain': False, 'plans': plans, 'reason': 'pełny znany zakres'}))
+                self.run_ok('--changed', '--selection-file', str(selection))
+                run = self.run_ok('--changed', '--selection-file', str(selection))
+                self.assertEqual(self.manifest(run)['build']['generated'], [])
+                self.assertEqual(self.manifest(run)['build']['reused'], ['001131'])
+
+    def test_uncertain_git_range_still_forces_full_recalculation(self):
+        self.api()
+        selection = self.root / 'selection.json'
+        selection.write_text(json.dumps({'schema_version': 1, 'full': True,
+            'uncertain': True, 'plans': [], 'reason': 'brak bazy'}))
+        run = self.run_ok('--changed', '--selection-file', str(selection))
+        self.assertEqual(self.manifest(run)['build']['generated'], ['001131'])
+
 
 if __name__ == '__main__':
     unittest.main()
