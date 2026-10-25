@@ -88,7 +88,7 @@
       "revision": "1665939b0f91226a80c2ad7b1b7436b9cea8386c",
       "status": "PASS"
     },
-    "container_seconds": 287.635,
+    "container_seconds": 249.829,
     "container_tests": 182,
     "controlled_regression": {
       "failures": 1,
@@ -112,7 +112,7 @@
       "pyarrow": "26.0.0",
       "pyproj": "3.8.0"
     },
-    "host_tests": 6,
+    "host_tests": 7,
     "independent_review": {
       "additional_range_cache_seconds": 8.171,
       "additional_range_cache_tests": 4,
@@ -146,6 +146,16 @@
       "strict": true
     },
     "result": "PASS",
-    "total_tests": 188
+    "runtime_scope_classification": {
+      "full": true,
+      "host_tests_after": 7,
+      "independent_findings": 0,
+      "independent_host_seconds": 1.802,
+      "real_pr_paths": 35,
+      "regression_before": "FAIL",
+      "tests_imported_by_production": false,
+      "uncertain": false
+    },
+    "total_tests": 189
   }
 }

@@ -37,7 +37,7 @@ def select_changes(repo, base, head, event):
                 plans.add(parts[2])
             elif name.startswith(('pipeline/', 'ci/', 'scripts/', '.github/', 'data/', 'parquet/')):
                 full = True
-            elif not (name.startswith('docs/') or name.lower().endswith('.md') or name == '.gitignore'):
+            elif not (name.startswith(('docs/', 'tests/')) or name.lower().endswith('.md') or name == '.gitignore'):
                 full, uncertain = True, True  # nieznanej zależności nie poświadcza fingerprint
         return {**fallback, 'full': full, 'uncertain': uncertain, 'plans': sorted(plans), 'paths': paths,
                 'base': base_sha, 'head': head_sha,

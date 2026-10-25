@@ -107,6 +107,19 @@ class ChangesTest(unittest.TestCase):
         self.assertTrue(result['full'])
         self.assertTrue(result['uncertain'])
 
+    def test_code_with_test_and_documentation_tail_has_known_full_scope(self):
+        self.put('pipeline/02_generate_geotiff.py')
+        self.commit()
+        self.put('tests/test_build.py')
+        self.put('tests/host/test_changes.py')
+        self.put('docs/reports/impact.json')
+        self.put('README.md')
+        head = self.commit()
+        result = self.select(self.repo, self.base, head, 'pull_request')
+        self.assertTrue(result['full'])
+        self.assertFalse(result['uncertain'])
+        self.assertIn('pipeline/02_generate_geotiff.py', result['paths'])
+
 
 if __name__ == '__main__':
     unittest.main()
