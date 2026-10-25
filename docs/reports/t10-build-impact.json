@@ -8,6 +8,13 @@
     "Testy zakresu Git/wrappera na hoście, GDAL/historia/QA w przypiętym kontenerze"
   ],
   "exceptions_updated": false,
+  "full_catalogue_build": {
+    "code_revision": "1665939b0f91226a80c2ad7b1b7436b9cea8386c",
+    "generated": 814,
+    "plans": 814,
+    "reused": 0,
+    "run_id": "cefa42b92ac5441f956d865c3a282df6"
+  },
   "geometry_functions_ast_identical": true,
   "georeferencing_changed_plans": [],
   "history_hashes_updated": false,
@@ -30,10 +37,57 @@
     "docs/reports/t08*",
     "docs/reports/t09*"
   ],
+  "publication_dry_runs": {
+    "manual": {
+      "CRC": "PASS",
+      "archive_sha256": "1075343ab229b2dcf844d1ba1a10e8b5b84a9671ce86a3b4b74735f7b992bae3",
+      "files": 2443,
+      "manifest_sha256": "53b7b759b1002b70d31af04f26f00f015874611ac42b71e9405fc15908b55b62",
+      "plans": 814,
+      "publication": false,
+      "qa": {
+        "accepted": 1405,
+        "blocking": 0,
+        "origins": {
+          "crowdsourcing": 801,
+          "manual_historical": 13
+        },
+        "plans": 814,
+        "problems": 1405
+      }
+    },
+    "tag": {
+      "CRC": "PASS",
+      "archive_sha256": "1075343ab229b2dcf844d1ba1a10e8b5b84a9671ce86a3b4b74735f7b992bae3",
+      "files": 2443,
+      "manifest_sha256": "53b7b759b1002b70d31af04f26f00f015874611ac42b71e9405fc15908b55b62",
+      "plans": 814,
+      "publication": false,
+      "qa": {
+        "accepted": 1405,
+        "blocking": 0,
+        "origins": {
+          "crowdsourcing": 801,
+          "manual_historical": 13
+        },
+        "plans": 814,
+        "problems": 1405
+      }
+    }
+  },
   "removed_plans": [],
   "source_files_changed": [],
   "task": "T10 / #15",
   "verification": {
+    "code_ci": {
+      "check": "https://github.com/dlubom/Georeferencer/actions/runs/40211181145",
+      "container_seconds": 241.307,
+      "container_tests": 182,
+      "generation": "https://github.com/dlubom/Georeferencer/actions/runs/40211181148",
+      "host_tests": 6,
+      "revision": "1665939b0f91226a80c2ad7b1b7436b9cea8386c",
+      "status": "PASS"
+    },
     "container_seconds": 287.635,
     "container_tests": 182,
     "controlled_regression": {
