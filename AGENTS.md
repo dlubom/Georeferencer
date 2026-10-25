@@ -41,18 +41,20 @@ Skrypty Python do generacji georeferencjonowanych TIFFów z danych crowdsourcing
 - `04_find_missing.py` — porównanie rejestru PIG (JSONL) z istniejącymi jaskiniami; lista brakujących z planami, posortowana po długości.
 - `05_add_cave.py` — ręczne dodanie brakującej jaskini: tworzy katalog, kopiuje obrazy ze scrapera, generuje meta.yaml. Dane georeferencji (otwór, skala, kąt północy) z konsoli Georeferencer UI. Instrukcja: [`pipeline/MANUAL_ADD.md`](pipeline/MANUAL_ADD.md).
 
-Matematyka World File (A-F) replikuje `index.html:2277-2370`:
-```
-world_x, world_y = transform(lon, lat)  # WGS84 → EPSG:2180
-mpp = 1 / pixels_per_meter
-convergence = (19.0 - lon) * sin(radians(lat))
-total_deg = north_angle + declination + convergence
-rot = radians(total_deg)
-A = mpp * cos(rot),  D = mpp * sin(rot)
-B = mpp * sin(rot),  E = -mpp * cos(rot)
-C = world_x - (A * entrance_x + B * entrance_y)
-F = world_y - (D * entrance_x + E * entrance_y)
-```
+### Orientacja T05
+
+Przeczytaj [`docs/ORIENTATION.md`](docs/ORIENTATION.md). `pipeline/orientation.py`
+odróżnia rodzaj północy i pochodzenie kąta (także mierzone/przyjęte 0°).
+Nieustalona północ zachowuje kąt `atan2(D, A)` wyłącznie z
+`plans[].historical_tfw` przypiętego T02. Bieżące współrzędne, skala i otwór
+pozostają aktywne. Zmiana wejść orientacji wymaga jawnej decyzji z powodem.
+Brak modelu ustalonej północy kończy generację błędem; modele, znak zbieżności
+oraz półpiksel należą do T06. Nie uruchamiaj zastępczo dawnego wzoru.
+
+Migrację bieżących YAML-i opisuje `data/migrations/t05-north.json`.
+Oryginalne YAML-e i kod QA są w `data/history/t02-inputs.zip`; kontrola historii
+sprawdza oryginalne hashe T02 i zamrożony kod oddzielnie od testów bieżących.
+Nigdy nie odświeżaj odniesienia ani jego hashy w odpowiedzi na błąd kontroli.
 
 ### Dane (`data/caves/`)
 801 jaskiń z 5+ niezależnymi zgłoszeniami. Struktura per jaskinia:

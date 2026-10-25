@@ -33,7 +33,7 @@ class OutputTest(unittest.TestCase):
         self.root = self.data_dir
         self.data_dir = self.root / 'sources'
         self.data_dir.mkdir()
-        self.cave_dir = self.cave_dir.rename(self.data_dir / 'synthetic')
+        self.cave_dir = self.cave_dir.rename(self.data_dir / '001131')
         self.image_path = self.cave_dir / 'image.tif'
         self.meta_path = self.cave_dir / 'meta.yaml'
         self.output = self.root / 'results'
@@ -59,26 +59,31 @@ class OutputTest(unittest.TestCase):
 
     def test_separate_output_preserves_sources_and_binds_manifest(self):
         before = hashes(self.data_dir)
-        run = self.run_ok('--cave', 'synthetic')
+        run = self.run_ok('--cave', '001131')
         self.assertEqual(before, hashes(self.data_dir))
-        self.assertEqual(sorted(p.name for p in (run / 'synthetic').iterdir()),
+        self.assertEqual(sorted(p.name for p in (run / '001131').iterdir()),
                          ['computed.json', 'image.tfw', 'image_georef.tif'])
         manifest = json.loads((run / 'manifest.json').read_text())
         self.assertEqual(manifest['status'], 'complete')
         plan = manifest['plans'][0]
-        self.assertEqual(plan['dir_id'], 'synthetic')
-        self.assertEqual(plan['inputs']['meta.yaml'], before['synthetic/meta.yaml'])
-        self.assertEqual(plan['inputs']['image.tif'], before['synthetic/image.tif'])
+        self.assertEqual(plan['dir_id'], '001131')
+        self.assertEqual(plan['inputs']['meta.yaml'], before['001131/meta.yaml'])
+        self.assertEqual(plan['inputs']['image.tif'], before['001131/image.tif'])
         self.assertEqual(plan['measurement']['object_id'], 'KSZ-0033')
         self.assertTrue(plan['measurement']['measurement_id'])
         self.assertEqual(manifest['coordinate_source']['release'], 'v1.3.1')
         self.assertEqual(manifest['coordinate_source']['sha256'],
                          hashlib.sha256(self.coordinates_path.read_bytes()).hexdigest())
         self.assertTrue(manifest['implementation'])
+        self.assertEqual(plan['orientation']['status'], 'unverified')
+        self.assertTrue(plan['orientation']['uncertainty_reason'])
+        self.assertEqual(plan['orientation']['north_reference'], 'unknown')
+        self.assertEqual(manifest['orientation_sources']['catalogue.json'],
+                         hashlib.sha256((ROOT / 'data/baseline/2026-10-24/catalogue.json').read_bytes()).hexdigest())
         self.assertEqual(manifest['image_registry']['sha256'],
                          hashlib.sha256(self.registry_path.read_bytes()).hexdigest())
         for name, digest in plan['outputs'].items():
-            self.assertEqual(digest, hashlib.sha256((run / 'synthetic' / name).read_bytes()).hexdigest())
+            self.assertEqual(digest, hashlib.sha256((run / '001131' / name).read_bytes()).hexdigest())
 
     def test_matches_current_t03_on_same_inputs_despite_conflicting_sidecar(self):
         self.assert_matches_t03()
@@ -91,12 +96,14 @@ class OutputTest(unittest.TestCase):
                 meta['north']['angle_deg'] = angle
                 meta['scale']['pixels_per_meter'] = ppm
                 meta['declination_deg'] = declination
+                from orientation import record_decision
+                meta = record_decision(meta, 'Jawna zmiana danych orientacji próby T04.', '2026-10-25')
                 self.meta_path.write_text(yaml.safe_dump(meta))
                 self.assert_matches_t03('legacy-' + str(number))
 
     def assert_matches_t03(self, legacy_name='legacy'):
         run = self.run_ok()
-        new = run / 'synthetic'
+        new = run / '001131'
         # Oddzielna kopia do przejściowego trybu T03, nigdy historia T02.
         legacy = self.root / legacy_name
         shutil.copytree(self.data_dir, legacy)
@@ -107,7 +114,7 @@ class OutputTest(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stderr)
         finally:
             self.data_dir = old_data
-        old = legacy / 'synthetic'
+        old = legacy / '001131'
         self.assertEqual((new / 'image.tfw').read_bytes(), (old / 'image.tfw').read_bytes())
         self.assertNotEqual((new / 'image.tfw').read_bytes(), (self.cave_dir / 'image.tfw').read_bytes())
         self.assertEqual(json.loads((new / 'computed.json').read_text()),
@@ -127,11 +134,11 @@ class OutputTest(unittest.TestCase):
         second = self.run_ok()
         self.assertNotEqual(first, second)
         self.assertEqual(before, hashes(first))
-        self.assertEqual((first / 'synthetic/image.tfw').read_bytes(),
-                         (second / 'synthetic/image.tfw').read_bytes())
-        self.assertEqual(self.info(first / 'synthetic/image_georef.tif')['geoTransform'],
-                         self.info(second / 'synthetic/image_georef.tif')['geoTransform'])
-        with Image.open(first / 'synthetic/image_georef.tif') as a, Image.open(second / 'synthetic/image_georef.tif') as b:
+        self.assertEqual((first / '001131/image.tfw').read_bytes(),
+                         (second / '001131/image.tfw').read_bytes())
+        self.assertEqual(self.info(first / '001131/image_georef.tif')['geoTransform'],
+                         self.info(second / '001131/image_georef.tif')['geoTransform'])
+        with Image.open(first / '001131/image_georef.tif') as a, Image.open(second / '001131/image_georef.tif') as b:
             self.assertEqual(a.tobytes(), b.tobytes())
 
     def test_t03_validation_and_pin_fail_before_output_writes(self):
@@ -170,17 +177,17 @@ class OutputTest(unittest.TestCase):
         for external_current in (True, False):
             with self.subTest(external_current=external_current):
                 self.output = self.root / ('results-' + str(external_current))
-                archive = self.root / ('archive-' + str(external_current)) / 'synthetic'
+                archive = self.root / ('archive-' + str(external_current)) / '001131'
                 archive.mkdir(parents=True)
                 shutil.copy2(self.meta_path, archive / 'meta.yaml')
-                old = self.output / 'runs/old/synthetic'
+                old = self.output / 'runs/old/001131'
                 old.mkdir(parents=True)
                 (old / 'meta.yaml').symlink_to(archive / 'meta.yaml')
                 previous = archive.parent if external_current else old.parent
                 (self.output / 'current').symlink_to(previous, target_is_directory=True)
                 original = self.meta_path.read_bytes()
                 self.meta_path.unlink()
-                self.meta_path.symlink_to(self.output / 'current/synthetic/meta.yaml')
+                self.meta_path.symlink_to(self.output / 'current/001131/meta.yaml')
                 try:
                     result = self.cli('--all')
                     self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
@@ -191,12 +198,12 @@ class OutputTest(unittest.TestCase):
                     self.meta_path.write_bytes(original)
 
     def test_rejects_input_file_symlink_into_output_before_pointer_changes(self):
-        old = self.output / 'runs/old/synthetic'
+        old = self.output / 'runs/old/001131'
         old.mkdir(parents=True)
         shutil.copy2(self.meta_path, old / 'meta.yaml')
         (self.output / 'current').symlink_to('runs/old', target_is_directory=True)
         self.meta_path.unlink()
-        self.meta_path.symlink_to(self.output / 'current/synthetic/meta.yaml')
+        self.meta_path.symlink_to(self.output / 'current/001131/meta.yaml')
         before = hashes(self.data_dir)
         result = self.cli('--all')
         self.assertNotEqual(result.returncode, 0)
@@ -236,7 +243,7 @@ class OutputTest(unittest.TestCase):
     def test_readback_rejects_wrong_crs_transform_dimensions_and_pixels(self):
         first = self.run_ok()
         import geotiff_output
-        original = first / 'synthetic/image_georef.tif'
+        original = first / '001131/image_georef.tif'
         expected = self.info(original)['geoTransform']
         for options, diagnostic in [(['-a_srs', 'EPSG:4326'], 'CRS'),
                                     (['-a_gt', '0', '1', '0', '0', '0', '-1'], 'transform'),
@@ -268,18 +275,19 @@ class OutputTest(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'odczyt'):
                 self.api()
         self.assertEqual(hashes(self.data_dir), sources)
-        second = self.data_dir / 'z-plan'
+        second = self.data_dir / '001132'
         shutil.copytree(self.cave_dir, second)
-        meta = (second / 'meta.yaml').read_text().replace('dir_id: synthetic', 'dir_id: z-plan')
-        (second / 'meta.yaml').write_text(meta)
+        meta = (second / 'meta.yaml').read_text().replace("dir_id: '001131'", "dir_id: '001132'")
+        from orientation_fixture import attach_orientation
+        (second / 'meta.yaml').write_text(yaml.safe_dump(attach_orientation(yaml.safe_load(meta))))
         registry = json.loads(self.registry_path.read_text())
-        registry['plans']['z-plan'] = registry['plans']['synthetic']
+        registry['plans']['001132'] = registry['plans']['001131']
         self.registry_path.write_text(json.dumps(registry))
         sources = hashes(self.data_dir)
 
         def fail_late(source, output, expected):
             result = real_check(source, output, expected)
-            if source.parent.name == 'z-plan':
+            if source.parent.name == '001132':
                 raise ValueError('późniejszy plan')
             return result
 
@@ -344,7 +352,7 @@ class OutputTest(unittest.TestCase):
     def test_readback_rejects_nonfinite_transform_and_malformed_metadata(self):
         first = self.run_ok()
         import geotiff_output
-        original = first / 'synthetic/image_georef.tif'
+        original = first / '001131/image_georef.tif'
         info = self.info(original)
         expected = info['geoTransform'][:]
         for payload in ('{bad json', '{}', json.dumps({**info, 'geoTransform': [float('nan')] * 6})):
@@ -353,6 +361,61 @@ class OutputTest(unittest.TestCase):
                 with patch.object(geotiff_output.subprocess, 'run', return_value=response):
                     with self.assertRaises(ValueError):
                         geotiff_output.check_geotiff(self.image_path, original, expected)
+
+    def test_orientation_archive_uses_hashed_snapshot_during_aba_edit(self):
+        archive = self.root / 'history.zip'
+        original = generator.orientation.ARCHIVE.read_bytes()
+        archive.write_bytes(original)
+        real_load = generator.orientation.load_context
+
+        def aba(*args, **kwargs):
+            archive.write_bytes(b'changed archive during load')
+            try:
+                return real_load(*args, **kwargs)
+            finally:
+                archive.write_bytes(original)
+
+        with patch.object(generator.orientation, 'ARCHIVE', archive), patch.object(generator.orientation, 'load_context', side_effect=aba):
+            run = self.api()
+        manifest = json.loads((run / 'manifest.json').read_text())
+        self.assertEqual(manifest['orientation_sources']['history.zip'], hashlib.sha256(original).hexdigest())
+        self.assertEqual(manifest['plans'][0]['orientation']['status'], 'unverified')
+
+    def test_established_reference_aborts_preflight_and_keeps_current(self):
+        from orientation import record_decision
+        first = self.run_ok()
+        before = hashes(first)
+        meta = yaml.safe_load(self.meta_path.read_text())
+        meta['north'].update(reference='geographic', evidence='Jawne źródło z legendy planu')
+        meta = record_decision(meta, 'Ustalono rodzaj; oczekiwanie na model T06.', '2026-10-25')
+        self.meta_path.write_text(yaml.safe_dump(meta))
+        sources = hashes(self.data_dir)
+        for output in (True, False):
+            with self.subTest(output=output):
+                result = self.cli('--all', output=output)
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn('brak modelu', result.stderr)
+                self.assertEqual((self.output / 'current').resolve(), first)
+                self.assertEqual(before, hashes(first))
+                self.assertEqual(sources, hashes(self.data_dir))
+        self.assertFalse(list(self.output.glob('.staging-*')))
+
+    def test_legacy_serialization_preserves_accepted_orientation_numbers(self):
+        from orientation import inputs_hash, record_decision
+        meta = yaml.safe_load(self.meta_path.read_text())
+        meta['north']['angle_deg'] = 0.123456789012345
+        meta['declination_deg'] = -0.123456789012345
+        meta = record_decision(meta, 'Precyzyjna jawna korekta opisu; zachowujemy TFW.', '2026-10-25')
+        self.meta_path.write_text(yaml.safe_dump(meta))
+        accepted = inputs_hash(meta)
+        first = self.cli('--all', output=False)
+        self.assertEqual(first.returncode, 0, first.stderr)
+        saved = yaml.safe_load(self.meta_path.read_text())
+        self.assertEqual(saved['north']['angle_deg'], 0.123456789012345)
+        self.assertEqual(saved['declination_deg'], -0.123456789012345)
+        self.assertEqual(inputs_hash(saved), accepted)
+        second = self.cli('--all', output=False)
+        self.assertEqual(second.returncode, 0, second.stderr)
 
     def test_publication_failure_preserves_previous_pointer(self):
         first = self.run_ok()

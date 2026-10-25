@@ -18,6 +18,8 @@ entrance:
 scale:
   pixels_per_meter: 77.03
 north:
+  reference: unknown
+  angle_origin: unknown
   angle_deg: -0.0330000000
   all_skipped: false
 declination_deg: 0.0
@@ -41,3 +43,18 @@ quality:
   entrance_std_px: 0.6700000000
   outliers_removed: 0
   flag: null
+declination:
+  status: unknown
+  basis: Historyczna wartość declination_deg; brak udokumentowanej podstawy i konwencji
+    znaku.
+orientation:
+  mode: historical_tfw
+  status: unverified
+  uncertainty_reason: Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano
+    orientację historycznego TFW T02.
+  image_sha256: 729a1de575809582bf3091ba6578eee8c0fa70cbedc4026aa9b8002870678415
+  historical:
+    catalogue_sha256: b9031ff93f9ca9a1930f3574cd2eddddfd8690235be4bee2610b993858df3541
+    plan_id: 001192
+    tfw_sha256: 88b65e61bccfb3f642390f0925ad826916699a4d00167d815968a5b35df0b49d
+  decisions: []

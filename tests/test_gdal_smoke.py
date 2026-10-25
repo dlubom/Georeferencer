@@ -14,6 +14,8 @@ from pathlib import Path
 from PIL import Image
 from pyproj import CRS
 
+import yaml
+
 
 ROOT = Path(__file__).resolve().parents[1]
 GENERATOR = ROOT / "pipeline" / "02_generate_geotiff.py"
@@ -29,7 +31,7 @@ class GdalSmokeTest(unittest.TestCase):
         temporary_directory = tempfile.TemporaryDirectory()
         self.addCleanup(temporary_directory.cleanup)
         self.data_dir = Path(temporary_directory.name)
-        self.cave_dir = self.data_dir / "synthetic"
+        self.cave_dir = self.data_dir / "001131"
         self.cave_dir.mkdir()
         self.image_path = self.cave_dir / "image.tif"
         # Niesymetryczny wzór ujawnia odwrócenie, obrót albo utratę pikseli.
@@ -41,7 +43,7 @@ class GdalSmokeTest(unittest.TestCase):
         self.meta_path = self.cave_dir / "meta.yaml"
         self.meta_path.write_text(
             """cave:
-  dir_id: synthetic
+  dir_id: '001131'
   name: Plan syntetyczny
 image:
   filename: image_1_zoom_10.tif
@@ -63,10 +65,15 @@ declination_deg: 0.0
 """,
             encoding="utf-8",
         )
+        sys.path.insert(0, str(ROOT / 'pipeline'))
+        from orientation_fixture import attach_orientation
+        self.meta_path.write_text(yaml.safe_dump(attach_orientation(yaml.safe_load(self.meta_path.read_text()),
+            hashlib.sha256(self.image_path.read_bytes()).hexdigest()),
+                                                  allow_unicode=True, sort_keys=False))
         self.coordinates_path = ROOT / "data/coordinate-source/best-measurements-v1.3.1.csv"
         self.registry_path = self.data_dir / "images.json"
         self.registry_path.write_text(json.dumps({"schema_version": 1, "plans": {
-            "synthetic": {"filename": "image_1_zoom_10.tif", "image_id": 1,
+            "001131": {"filename": "image_1_zoom_10.tif", "image_id": 1,
                           "width": 8, "height": 6,
                           "sha256": hashlib.sha256(self.image_path.read_bytes()).hexdigest()}}}))
 

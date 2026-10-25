@@ -188,7 +188,7 @@ def publish_run(output_dir, plans, provenance, write_tfw):
             records.append({
                 'dir_id': cave_dir.name, 'source_directory': str(cave_dir.resolve()),
                 'inputs': plan['inputs'], 'measurement': plan['measurement'],
-                'parameters': plan['params'], 'acceptance': acceptance,
+                'parameters': plan['params'], 'orientation': plan['orientation'], 'acceptance': acceptance,
                 'outputs': {p.name: sha256(p) for p in sorted(target.iterdir())},
             })
         # Weryfikacja także wcześniejszych planów i wspólnych źródeł po całej partii.

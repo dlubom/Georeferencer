@@ -4,6 +4,8 @@ from __future__ import annotations
 import argparse
 import importlib.util
 import json
+import hashlib
+import zipfile
 import math
 import platform
 import subprocess
@@ -24,6 +26,16 @@ def historical_path(root, path):
     if path in FROZEN_MODULES:
         return root / "data/baseline/2026-10-24/legacy" / Path(path).name
     return root / path
+
+
+def historical_bytes(root, path):
+    """T05 oddziela oryginalne YAML-e/kod QA od bieżących źródeł."""
+    archive_path = root / 'data/history/t02-inputs.zip'
+    migrated = path == 'pipeline/03_report.py' or (path.startswith('data/caves/') and path.endswith('/meta.yaml'))
+    if migrated and archive_path.is_file():
+        with zipfile.ZipFile(archive_path) as archive:
+            return archive.read(path)
+    return historical_path(root, path).read_bytes()
 
 
 TFW_ORDER = ("A", "D", "B", "E", "C", "F")
@@ -54,16 +66,23 @@ def capture_plans(root, rows):
 def verify_inputs(root, document):
     mismatches = []
     expected = {p["dir_id"] for p in document["plans"]}
-    actual = {p.parent.name for p in (root / "data/caves").glob("*/meta.yaml")}
+    if document.get('reference_commit') == FROZEN_REFERENCE and (root / 'data/history/t02-inputs.zip').is_file():
+        with zipfile.ZipFile(root / 'data/history/t02-inputs.zip') as archive:
+            actual = {Path(name).parent.name for name in archive.namelist() if name.endswith('/meta.yaml')}
+    else:
+        actual = {p.parent.name for p in (root / 'data/caves').glob('*/meta.yaml')}
     if actual != expected:
         mismatches.append("Zmieniony zestaw planów")
     hashes = dict(document.get("other_inputs_sha256", {}))
     for plan in document["plans"]:
         hashes.update(plan["sha256"])
     for path, expected_hash in hashes.items():
-        full_path = (historical_path(root, path)
-                     if document.get("reference_commit") == FROZEN_REFERENCE else root / path)
-        if not full_path.is_file() or sha256(full_path) != expected_hash:
+        try:
+            raw = (historical_bytes(root, path) if document.get('reference_commit') == FROZEN_REFERENCE
+                   else (root / path).read_bytes())
+            if hashlib.sha256(raw).hexdigest() != expected_hash:
+                mismatches.append(path)
+        except (OSError, KeyError, zipfile.BadZipFile):
             mismatches.append(path)
     return mismatches
 
@@ -101,7 +120,8 @@ def calculate(root, plans, manifest, historical=False):
     index = load_best_measurements(verify(manifest))
     results = {}
     for plan in plans:
-        raw = (root / "data/caves" / plan["dir_id"] / "meta.yaml").read_text(encoding="utf-8")
+        path = f"data/caves/{plan['dir_id']}/meta.yaml"
+        raw = (historical_bytes(root, path).decode("utf-8") if historical else (root / path).read_text(encoding="utf-8"))
         try:
             if historical:
                 meta = yaml.safe_load(render_meta_template(raw, index))
@@ -129,11 +149,12 @@ def coordinate_impact(root, plans, before_manifest, after_manifest):
                       for p in plans if before[p["dir_id"]] != after[p["dir_id"]]]}
 
 
-def geometry_delta(root, plan, before, after):
+def geometry_delta(root, plan, before, after, historical=False):
     if "error" in before or "error" in after:
         return None
     a, b = before["parameters"], after["parameters"]
-    meta = yaml.safe_load((root / "data/caves" / plan["dir_id"] / "meta.yaml").read_text())
+    path = f"data/caves/{plan['dir_id']}/meta.yaml"
+    meta = yaml.safe_load(historical_bytes(root, path) if historical else (root / path).read_bytes())
     x, y = meta["entrance"]["x"], meta["entrance"]["y"]
     dx = (b["A"] - a["A"]) * x + (b["B"] - a["B"]) * y + b["C"] - a["C"]
     dy = (b["D"] - a["D"]) * x + (b["E"] - a["E"]) * y + b["F"] - a["F"]
@@ -154,7 +175,8 @@ def recalculation(root, document, manifest):
         result = calculated[plan["dir_id"]]
         historical = plan["historical_tfw"]
         result["equals_historical_bytes"] = result.get("tfw_text") == historical["text"]
-        result["delta_from_historical"] = geometry_delta(root, plan, historical, result)
+        result["delta_from_historical"] = geometry_delta(root, plan, historical, result,
+                                                                 historical=document.get("reference_commit") == FROZEN_REFERENCE)
         if not result["equals_historical_bytes"]:
             differences.append(plan["dir_id"])
     import pyproj

@@ -73,9 +73,10 @@ odbioru T02.** Odbiór T02 używa odczytu i raportów opisanych niżej.
    powiązanego planu. Powtórzone `object_id` blokuje raport, zamiast gubić rekord.
 4. `geometry` porównuje obie wersje CSV przy tym samym bieżącym generatorze
    i YAML-ach. Osobno pokazuje przesunięcie w otworze, obrót i skalę TFW.
-   Parametry wejściowe skali i północy pozostają identyczne; obrót może się zmienić
-   przez obliczaną z długości geograficznej zbieżność. To wpływ współrzędnych,
-   nie wynik naprawy matematyki. Brak obiektu w nowym CSV jest jawnym błędem
+   Parametry wejściowe skali i północy pozostają identyczne. Od T05 nieustalona
+   północ zachowuje kąt historycznego TFW niezależnie od zmiany pozycji;
+   nie jest przeliczana ukryta zbieżność. Ustalony rodzaj bez modelu T06 jest błędem.
+   Brak obiektu w nowym CSV jest jawnym błędem
    per-plan w raporcie geometrii, wymagającym rozstrzygnięcia przed zmianą pinu.
 5. Po review podmień `source.json`, uruchom `./scripts/check` i opisz listę planów,
    pomiarów oraz wpływ. Historyczny katalog bazowy pozostaje bez zmian. Jeżeli
@@ -145,3 +146,6 @@ Ustalenia i cztery przenośne reprodukcje review opisano w
 [review/README.md](../data/baseline/2026-10-24/review/README.md).
 
 Bieżący kontrakt danych i obrazu: [VALIDATION.md](VALIDATION.md).
+
+Migracja T05 i niezależny od bieżących YAML-i odczyt archiwum historii:
+[ORIENTATION.md](ORIENTATION.md). Oryginalne hashe T02 pozostają bez zmian.

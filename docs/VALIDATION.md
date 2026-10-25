@@ -1,4 +1,4 @@
-# Walidacja wejść T03
+# Walidacja wejść T03 i metadane orientacji T05
 
 Produkcja uruchamiana przez `pipeline/02_generate_geotiff.py` sprawdza przed
 pierwszym zapisem cały wybrany zestaw planów. Błąd zwraca status 1 oraz plan,
@@ -12,17 +12,23 @@ Dotychczasowy zapis bez `--output-dir` pozostaje przejściowo obsługiwany do T1
 
 [pipeline/meta-schema-v1.json](../pipeline/meta-schema-v1.json) jest wersjonowanym
 schematem interpretowanym przez `validation.py`, bez dodatkowej biblioteki.
-Istniejące YAML-e korzystają z v1 bez dopisywania pól. Schemat definiuje typy,
+T05 rozszerza wymagane pola v1 o jawny model [orientacji](ORIENTATION.md).
+Migracja 814 YAML-i jest udokumentowana osobnym raportem; brak tych pól jest błędem.
+Schemat definiuje typy,
 wymagalność i zakresy; wszystkie liczby, także w dodatkowych metadanych,
 muszą być skończone. Bool ani tekst liczbowy nie zastępują liczby. Powtórzone
 klucze YAML są błędem. Metadane dopuszczają mapy o tekstowych kluczach, listy
 i zwykłe skalary; zbiory, daty z tagów YAML i aliasy cykliczne są odrzucane. Wymagane są m.in. dodatnia skala, dodatnie całkowite
-wymiary, nazwa/ID obrazu, jawne object_id oraz lat/lon. `declination_deg`
-pozostaje opcjonalne z dotychczasowym domyślnym zerem.
+wymiary, nazwa/ID obrazu, jawne object_id oraz lat/lon.
+`declination_deg` jest historyczną liczbą; udokumentowana deklinacja wymaga
+wartości, podstawy, konwencji znaku oraz epoki dla północy magnetycznej.
+Nie ma domyślnego modelu orientacji ani zastępczego wzoru.
 
 Kliknięcie spełnia `0 <= x < width` i `0 <= y < height`. Kontrola wyklucza
 kliknięcia poza obrazem; nie rozstrzyga konwencji georeferencji środka piksela,
-orientacji ani półpiksela (T05/T06). Wzór World File pozostał bez zmian.
+orientacji ani półpiksela (T06). T05 zachowuje kąt zapisany w historycznym
+TFW T02; modele ustalonej północy
+pozostają w T06. Zmiany orientacji wymagają jawnej decyzji.
 
 Obraz `image.tif` musi być dostępnym, czytelnym, jednostronicowym TIFF-em
 w trybie Pillow `1`, zgodnym z CCITTFAX4. Wymiary muszą odpowiadać YAML-owi.
@@ -67,8 +73,9 @@ lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 Dozwolona jest też skończona liczba zgodna dokładnie z rekordem katalogu.
 Zawsze używana jest liczba z rekordu object_id. Sprzeczne liczby, stare
 zagnieżdżone powiązania, szablon innego obiektu i inne wyrażenia Jinja są
-odrzucane. YAML nie jest wykonywany jako dowolny szablon. Wszystkie 814
-bieżących planów już spełnia kontrakt; nie wykonano migracji danych.
+odrzucane. YAML nie jest wykonywany jako dowolny szablon.
+Wszystkie 814 planów spełniało kontrakt współrzędnych już w T03.
+Migracja T05 dodaje tylko metadane północy/deklinacji/orientacji.
 
 Funkcje niskopoziomowe `GpsKatasterIndex`, `validate_plan`, `process_cave`
 przyjmują jawny indeks do testów syntetycznych i analiz kandydatów. Same nie
@@ -78,7 +85,9 @@ weryfikuje oba manifesty zgodnie z [COORDINATE_SOURCE.md](COORDINATE_SOURCE.md).
 ## Historia i kontrola bieżącego kodu
 
 `./scripts/check` oddzielnie sprawdza integralność historycznych danych T02
-oraz obecny walidator na 814 planach i przypadkach syntetycznych. Zamrożone
+oraz obecny walidator na 814 planach i przypadkach syntetycznych.
+Oryginalne YAML-e i kod QA T05 zachowuje w `data/history/t02-inputs.zip`,
+sprawdzanym oryginalnymi hashami T02; audyt nie używa bieżących YAML-i. Zamrożone
 moduły są opisane w [legacy/README.md](../data/baseline/2026-10-24/legacy/README.md).
 Ani historyczne hashe, ani zapisane TFW nie zostały przepisane. Odbiór T03
 nie nadaje historii statusu poprawności geodezyjnej.
