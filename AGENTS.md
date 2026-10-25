@@ -86,15 +86,17 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r pipeline/requirements.txt
 brew install gdal                                    # macOS
 
+python pipeline/coordinate_source.py copy \
+    --output /tmp/georeferencer-best-measurements.csv # Zweryfikowany pin buildu
 python pipeline/01_extract_yaml.py                   # Jednorazowo: parquet → YAML + obrazy
 python pipeline/02_generate_geotiff.py --cave 001131 \
-    --gps-kataster-best-measurements ../gps-kataster-obiektow-tatr/build/exports/best-measurements.csv \
+    --gps-kataster-best-measurements /tmp/georeferencer-best-measurements.csv \
     --gps-kataster-strict                         # Jedna jaskinia z lat/lon z gps-kataster
 python pipeline/02_generate_geotiff.py --all \
-    --gps-kataster-best-measurements ../gps-kataster-obiektow-tatr/build/exports/best-measurements.csv \
+    --gps-kataster-best-measurements /tmp/georeferencer-best-measurements.csv \
     --gps-kataster-strict                         # Wszystkie
 python pipeline/02_generate_geotiff.py --changed \
-    --gps-kataster-best-measurements ../gps-kataster-obiektow-tatr/build/exports/best-measurements.csv \
+    --gps-kataster-best-measurements /tmp/georeferencer-best-measurements.csv \
     --gps-kataster-strict                         # Tylko zmienione meta.yaml
 python pipeline/03_report.py                         # Raporty QA
 python pipeline/04_find_missing.py                   # Lista brakujących jaskiń

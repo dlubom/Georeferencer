@@ -48,14 +48,17 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r pipeline/requirements.txt
 brew install gdal  # macOS
 
+# Zweryfikowane wejście zgodne z buildem (bez sieci)
+python pipeline/coordinate_source.py copy --output /tmp/georeferencer-best-measurements.csv
+
 # Generacja GeoTIFF dla jednej jaskini
 python pipeline/02_generate_geotiff.py --cave 001131 \
-  --gps-kataster-best-measurements ../gps-kataster-obiektow-tatr/build/exports/best-measurements.csv \
+  --gps-kataster-best-measurements /tmp/georeferencer-best-measurements.csv \
   --gps-kataster-strict
 
 # Generacja dla wszystkich
 python pipeline/02_generate_geotiff.py --all \
-  --gps-kataster-best-measurements ../gps-kataster-obiektow-tatr/build/exports/best-measurements.csv \
+  --gps-kataster-best-measurements /tmp/georeferencer-best-measurements.csv \
   --gps-kataster-strict
 
 # Raporty QA

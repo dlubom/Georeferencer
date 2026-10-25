@@ -29,6 +29,9 @@ Oba workflow generacji wykonują `copy` przed generatorem i korzystają z jego
 zweryfikowanego wyniku. Ręczne wydanie używa opisu źródła z wybranego checkoutu
 tagu; usunięto parametr pozwalający zastąpić ten opis dowolnym tagiem. Stare tagi
 sprzed T02 nadal zawierają stary workflow — T02 nie przepisuje ich historii.
+Wybranie takiego tagu w bieżącym ręcznym workflow zakończy się błędem braku
+opisu/helpera, zamiast pobraniem zmiennego źródła. Odtwarzanie dawnego wydania
+wymaga jego własnego kodu i ustalenia ówczesnych źródeł.
 Przełączenie środowiska wydania, zapisu wyników i QA pozostaje zakresem T10/T11.
 
 Generator nadal ma niskopoziomowy argument `--gps-kataster-best-measurements`
