@@ -27,6 +27,10 @@ Nie pożycza obiektów Git i nie kopiuje wyników. Cache warstw Dockera może by
 wspólny; cache **wyników planów** jest zimny. Oba buildy mają te same
 wersjonowane wejścia i digest/lock środowiska. Obliczenia i kontrole działają
 bez sieci, ze źródłami readonly. Początkowe pobranie obrazu wymaga sieci.
+Przy ograniczonej przestrzeni dodaj `--conserve-disk`: po pełnym odbiorze
+checkoutu a skrypt przenosi jego wyniki do `a-results/` i usuwa wyłącznie
+utworzony przez siebie checkout a przed klonowaniem b. Zimne cache i
+niezależność checkoutów pozostają; porównanie nadal czyta oba zestawy wyników.
 
 Każdy current jest rozwiązywany raz; ta sama konkretna ścieżka trafia do QA
 i pakowania obu trybów. Skrypt wykonuje lokalne próby tag/manual dla obu
@@ -64,7 +68,8 @@ hashe i komplet deklarowanych artefaktów. Następnie T09 sprawdza źródła,
 aktualność i rzeczywisty GeoTIFF: CRS, transformację, wymiary, jeden kanał
 1-bit, CCITTFAX4, zdekodowane piksele względem źródła.
 
-Manifest ZIP ma sekcję `release.version=t11-v1`, tryb, run_id i SHA-256
+Manifest ZIP ma sekcję `release.version=t11-v1`, tryb, pochodzenie kodu
+pakowania `release.code`, run_id i SHA-256
 oryginalnego manifestu przebiegu. `release.qa` zapisuje politykę, liczniki,
 pełne zaakceptowane wyjątki (plan/reguła/evidence/basis/reason/sources/close_when)
 oraz hashe źródeł QA. Odbiorca odtwarza manifest przebiegu serializerem T04
@@ -77,7 +82,8 @@ Nowa reguła lub stara podstawa blokują kontrolę. Błędy techniczne/wyników
 nie podlegają wyjątkom. Hashe wejść, wybrane pełne rekordy object_id i
 measurement_id, pin CSV, kod/schemat, środowisko i fingerprinty pozostają
 obowiązkowe. `code.commit/dirty` podaje wrapper na podstawie Git hosta;
-produkcyjny CLI package wymaga pełnego SHA i czystego checkoutu. SHA służy
+produkcyjny CLI package wymaga pełnego SHA i czystego checkoutu zarówno
+buildu, jak i bieżącego pakowania. SHA służy
 proweniencji, nie kluczowi cache. Niskopoziomowe API służy też próbom
 syntetycznym i nie poświadcza samo pochodzenia z Git.
 

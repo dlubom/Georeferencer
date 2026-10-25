@@ -51,7 +51,7 @@ def verify_archive(archive, data_dir=ROOT / 'data/caves', *, qa_kwargs=None):
             ids = []
             for plan in manifest['plans']:
                 plan_id = plan['dir_id']
-                if not isinstance(plan_id, str) or Path(plan_id).name != plan_id or plan_id in ('.', '..'):
+                if not isinstance(plan_id, str) or not plan_id or Path(plan_id).name != plan_id or plan_id in ('.', '..'):
                     raise ValueError('ZIP: niepoprawna ścieżka planu')
                 ids.append(plan_id)
                 if set(plan['outputs']) != {'image.tfw', 'image_georef.tif', 'computed.json'}:
@@ -65,6 +65,8 @@ def verify_archive(archive, data_dir=ROOT / 'data/caves', *, qa_kwargs=None):
                 if entry.filename == 'manifest.json':
                     continue
                 target = run / entry.filename
+                if run not in target.resolve().parents:
+                    raise ValueError('ZIP: ścieżka poza katalogiem prywatnym')
                 target.parent.mkdir(exist_ok=True)
                 target.write_bytes(package.read(entry))  # odczyt strumienia i CRC każdego ZipInfo
             # T09 ponownie sprawdza cały katalog, hashe, rzeczywisty GDAL/Pillow
@@ -132,6 +134,8 @@ def main():
         result = (verify_archive(args.archive, args.data_dir) if args.operation == 'verify' else
                   compare_runs(args.left, args.right, args.data_dir))
         # Odbiorca wskazuje raport poza niezmiennymi przebiegami.
+        if any((p / 'manifest.json').is_file() for p in args.report.resolve().parents):
+            raise ValueError('Raport musi leżeć poza przebiegiem')
         for run in [getattr(args, 'left', None), getattr(args, 'right', None), args.data_dir]:
             if run is not None and (args.report.resolve() == Path(run).resolve() or Path(run).resolve() in args.report.resolve().parents):
                 raise ValueError('Raport musi leżeć poza źródłami i przebiegami')

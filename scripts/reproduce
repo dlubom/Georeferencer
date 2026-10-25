@@ -4,6 +4,7 @@ import argparse
 import json
 import os
 import re
+import shutil
 import subprocess
 from pathlib import Path
 
@@ -13,6 +14,8 @@ def main():
     parser.add_argument('--repo', type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument('--revision', required=True)
     parser.add_argument('--work-dir', type=Path, required=True, help='Nowy, nieistniejący katalog')
+    parser.add_argument('--conserve-disk', action='store_true',
+                        help='Po odbiorze a zachowaj jego wyniki i usuń checkout przed klonowaniem b')
     args = parser.parse_args()
     repo, work = args.repo.resolve(), args.work_dir.resolve()
     revision = subprocess.check_output(['git', '-C', str(repo), 'rev-parse', '--verify', args.revision + '^{commit}'], text=True).strip()
@@ -50,15 +53,22 @@ def main():
         status = subprocess.check_output(['git', 'status', '--porcelain'], cwd=checkout, env=env, text=True)
         if status:
             raise ValueError('Build zmienił checkout: ' + status)
-        evidence['checkouts'].append({'name': name, 'clean_before': True, 'clean_after': True,
+        item = {'name': name, 'clean_before': True, 'clean_after': True,
             'cold_result_cache': True, 'run': str(current.relative_to(work)),
-            'git_common_dir': subprocess.check_output(['git', 'rev-parse', '--git-common-dir'], cwd=checkout, text=True).strip()})
+            'git_common_dir': subprocess.check_output(['git', 'rev-parse', '--git-common-dir'], cwd=checkout, text=True).strip()}
+        if args.conserve_disk and name == 'a':
+            retained = work / 'a-results'
+            shutil.move(str(checkout / 'build'), retained)
+            item['run'] = str(Path('a-results') / relative)
+            item['checkout_removed_after_acceptance'] = True
+            shutil.rmtree(checkout)
+        evidence['checkouts'].append(item)
         checkouts.append(checkout)
     image_file = work / 'runtime-image'
-    run(['docker', 'build', '--platform', 'linux/amd64', '--iidfile', str(image_file), str(checkouts[0] / 'ci')], repo, 'runtime.log')
+    run(['docker', 'build', '--platform', 'linux/amd64', '--iidfile', str(image_file), str(checkouts[1] / 'ci')], repo, 'runtime.log')
     run(['docker', 'run', '--rm', '--platform', 'linux/amd64', '--network', 'none', '--read-only',
          '--tmpfs', '/tmp:rw,nosuid,size=512m',
-         '--mount', f'type=bind,source={checkouts[0]},target=/workspace,readonly',
+         '--mount', f'type=bind,source={checkouts[1]},target=/workspace,readonly',
          '--mount', f'type=bind,source={work},target=/audit', image_file.read_text().strip(),
          'python', 'pipeline/release_acceptance.py', '--report', '/audit/comparison.json', 'compare',
          '--left', '/audit/' + evidence['checkouts'][0]['run'],

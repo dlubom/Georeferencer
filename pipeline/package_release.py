@@ -46,10 +46,11 @@ def package_run(data_dir, run_dir, archive, reports_dir, *, mode='tag', qa_kwarg
         guard_input_path(path, reports)
     guarded = {p: sha256(p) for p in common_paths}
     manifest_bytes = (run / 'manifest.json').read_bytes()
+    packaging_code = build_identity.code_version()
     if require_clean_code:
-        code = read_json(run / 'manifest.json').get('code', {})
-        if not re.fullmatch('[0-9a-f]{40}', code.get('commit') or '') or code.get('dirty') != 'false':
-            raise ValueError('Wydanie wymaga czystego checkoutu i SHA kodu z scripts/build')
+        for code in (read_json(run / 'manifest.json').get('code', {}), packaging_code):
+            if not re.fullmatch('[0-9a-f]{40}', code.get('commit') or '') or code.get('dirty') != 'false':
+                raise ValueError('Build i pakowanie wymagają czystego checkoutu i SHA kodu z scripts/build')
     report = create_report(data, run_dir=run, require_results=True, **options)
     report['run'] = {'path': str(run), 'manifest_sha256': hashlib.sha256(manifest_bytes).hexdigest(), 'mode': mode}
     write_reports(report, reports)
@@ -57,6 +58,7 @@ def package_run(data_dir, run_dir, archive, reports_dir, *, mode='tag', qa_kwarg
         raise ValueError(f"Pełne QA wydania blokuje pakowanie: {report['counts']['blocking']} problemów")
     manifest = read_json(run / 'manifest.json')
     manifest['release'] = {'version': release_acceptance.RELEASE_VERSION, 'mode': mode,
+        'code': packaging_code,
         'run_id': manifest['run_id'], 'run_manifest_sha256': hashlib.sha256(manifest_bytes).hexdigest(),
         'qa': release_acceptance.qa_evidence(report)}
     release_bytes = (json.dumps(manifest, ensure_ascii=False, indent=2, sort_keys=True, allow_nan=False) + '\n').encode()

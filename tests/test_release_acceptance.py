@@ -11,6 +11,7 @@ from test_qa import _QaFixture
 import test_qa as qa_fixture
 import shutil
 import subprocess
+import os
 from pathlib import Path
 
 
@@ -145,6 +146,41 @@ class AcceptanceTest(_QaFixture):
         (other / '001131/image.tfw').write_text('0\n' * 6)
         with self.assertRaises(ValueError):
             release_acceptance.compare_runs(self.run, other, self.data, qa_kwargs=self.options)
+
+    def test_production_package_requires_current_checkout_clean_as_well_as_build(self):
+        with patch.dict(os.environ, {'GEOREFERENCER_COMMIT': 'a' * 40, 'GEOREFERENCER_DIRTY': 'false'}):
+            self.run = qa_fixture.generator.process_output([self.cave_dir], self.output, self.data,
+                                                          self.coordinates_path, self.registry_path)
+        for mode in ('tag', 'manual'):
+            with self.subTest(mode=mode), patch.dict(os.environ,
+                    {'GEOREFERENCER_COMMIT': 'b' * 40, 'GEOREFERENCER_DIRTY': 'true'}):
+                with self.assertRaises(ValueError):
+                    self.pack(mode=mode, require_clean_code=True)
+        with patch.dict(os.environ, {'GEOREFERENCER_COMMIT': 'b' * 40, 'GEOREFERENCER_DIRTY': 'false'}):
+            # Nowy commit dokumentacji nie zmienia aktualności treści wyników.
+            self.pack(require_clean_code=True)
+            with zipfile.ZipFile(self.archive) as archive:
+                self.assertEqual(json.loads(archive.read('manifest.json'))['release']['code'],
+                                 {'commit': 'b' * 40, 'dirty': 'false'})
+
+    def test_empty_zip_plan_id_cannot_write_outside_private_directory(self):
+        self.pack()
+        def mutate(entries):
+            manifest = json.loads(dict(entries)['manifest.json'])
+            release = manifest.pop('release')
+            manifest['plans'][0]['dir_id'] = ''
+            canonical = (json.dumps(manifest, ensure_ascii=False, indent=2, sort_keys=True) + '\n').encode()
+            release['run_manifest_sha256'] = hashlib.sha256(canonical).hexdigest()
+            manifest['release'] = release
+            return [(n.replace('001131/', '/'), r) if n != 'manifest.json' else
+                    (n, json.dumps(manifest).encode()) for n, r in entries]
+        self.rewrite(mutate)
+        original_write = Path.write_bytes
+        def guarded_write(path, raw):
+            self.assertNotEqual(path.parent, Path('/'), 'ZIP próbuje zapisu poza katalogiem prywatnym')
+            return original_write(path, raw)
+        with patch.object(Path, 'write_bytes', guarded_write), self.assertRaises(ValueError):
+            self.verify()
 
 
 if __name__ == '__main__':
