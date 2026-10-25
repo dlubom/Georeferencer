@@ -19,18 +19,19 @@ mieszałoby historię z kontraktem nowych wejść. Osobny rejestr zachowuje gran
 
 ## Kroki
 
-- [ ] Testy negatywne loadera katalogu, schematu, obrazu i produkcyjnego CLI;
+- [x] Testy negatywne loadera katalogu, schematu, obrazu i produkcyjnego CLI;
   sprawdzenie błędu przed poprawką wspólnym `./scripts/check`.
-- [ ] Walidacja katalogu przed filtrowaniem kategorii, niezależność kolejności.
-- [ ] `pipeline/validation.py` + `pipeline/meta-schema-v1.json`: typy, wymagane
+- [x] Walidacja katalogu przed filtrowaniem kategorii, niezależność kolejności.
+- [x] `pipeline/validation.py` + `pipeline/meta-schema-v1.json`: typy, wymagane
   pola, liczby, granice obrazu, tożsamość i hash, jawne współrzędne.
-- [ ] Generator: preflight całego wybranego zestawu przed zapisem; obowiązkowy
+- [x] Generator: preflight całego wybranego zestawu przed zapisem; obowiązkowy
   pin w CLI, diagnostyka plan/pole/reguła. Bez zmian wzoru i organizacji wyników.
-- [ ] Zamrożone źródła dwóch zmienianych modułów z bazy T02 i weryfikacja ich
+- [x] Zamrożone źródła dwóch zmienianych modułów z bazy T02 i weryfikacja ich
   oryginalnymi hashami; historyczne przeliczenie używa tych kopii. Bieżąca
   implementacja ma osobne testy. Manifesty i wyniki T02 pozostają bez zmian.
-- [ ] Pełna kontrola, próba celowej regresji, instrukcja i zapis odbioru,
-  niezależne review, osobny PR i CI końcowej rewizji.
+- [x] Pełna kontrola, próba celowej regresji, instrukcja i zapis odbioru.
+- [x] Niezależne review: 58 testów, OK, brak dalszych blokad.
+  Dowody publikacji osobnego PR i CI końcowej rewizji są prowadzone w opisie PR.
 
 ## Szczególne ryzyka i testy
 

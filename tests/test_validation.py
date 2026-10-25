@@ -299,3 +299,18 @@ class PlanValidationTest(unittest.TestCase):
             self.meta.setdefault(section, {})[field] = value
             self.reject(section + '.' + field)
             self.meta = copy.deepcopy(self._valid)
+
+    def test_cyclic_yaml_and_nonstandard_collections_are_rejected_with_diagnostics(self):
+        for extra in ({float('inf')}, {float('nan'): None}):
+            self.meta['extra'] = extra
+            self.reject('extra')
+        self.meta['extra'] = []
+        self.meta['extra'].append(self.meta['extra'])
+        self.reject('extra')
+
+    def test_malformed_registry_is_reported_as_an_image_error(self):
+        original = copy.deepcopy(self.registry)
+        for registry in ([], {'schema_version': 1, 'plans': []},
+                         {**original, 'schema_version': True}):
+            self.registry = registry
+            self.reject('image')

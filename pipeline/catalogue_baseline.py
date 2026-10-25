@@ -15,6 +15,7 @@ import yaml
 from coordinate_source import DEFAULT_MANIFEST, ROOT, read_manifest, read_rows, sha256, verify
 
 BASELINE = ROOT / "data/baseline/2026-10-24/catalogue.json"
+FROZEN_REFERENCE = "fad70f09992671a0da5a364dfea4a2c538f80e3d"
 FROZEN_MODULES = {"pipeline/02_generate_geotiff.py", "pipeline/gps_kataster_coordinates.py"}
 
 
@@ -60,7 +61,8 @@ def verify_inputs(root, document):
     for plan in document["plans"]:
         hashes.update(plan["sha256"])
     for path, expected_hash in hashes.items():
-        full_path = historical_path(root, path)
+        full_path = (historical_path(root, path)
+                     if document.get("reference_commit") == FROZEN_REFERENCE else root / path)
         if not full_path.is_file() or sha256(full_path) != expected_hash:
             mismatches.append(path)
     return mismatches
@@ -145,7 +147,8 @@ def recalculation(root, document, manifest):
     mismatches = verify_inputs(root, document)
     if mismatches:
         raise ValueError(f"Przeliczenie wymaga niezmienionych wejść i generatora bazowego: {mismatches}")
-    calculated = calculate(root, document["plans"], manifest, historical=True)
+    calculated = calculate(root, document["plans"], manifest,
+                           historical=document.get("reference_commit") == FROZEN_REFERENCE)
     differences = []
     for plan in document["plans"]:
         result = calculated[plan["dir_id"]]

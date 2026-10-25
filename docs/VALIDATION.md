@@ -14,7 +14,8 @@ schematem interpretowanym przez `validation.py`, bez dodatkowej biblioteki.
 Istniejące YAML-e korzystają z v1 bez dopisywania pól. Schemat definiuje typy,
 wymagalność i zakresy; wszystkie liczby, także w dodatkowych metadanych,
 muszą być skończone. Bool ani tekst liczbowy nie zastępują liczby. Powtórzone
-klucze YAML są błędem. Wymagane są m.in. dodatnia skala, dodatnie całkowite
+klucze YAML są błędem. Metadane dopuszczają mapy o tekstowych kluczach, listy
+i zwykłe skalary; zbiory, daty z tagów YAML i aliasy cykliczne są odrzucane. Wymagane są m.in. dodatnia skala, dodatnie całkowite
 wymiary, nazwa/ID obrazu, jawne object_id oraz lat/lon. `declination_deg`
 pozostaje opcjonalne z dotychczasowym domyślnym zerem.
 

@@ -38,15 +38,29 @@ class UniqueLoader(yaml.SafeLoader):
         return result
 
 
-def finite_numbers(value, plan, field='meta'):
+def finite_numbers(value, plan, field='meta', ancestors=None):
     if isinstance(value, float) and not math.isfinite(value):
         fail(plan, field, 'wymagana skończona liczba')
-    if isinstance(value, dict):
-        for key, item in value.items():
-            finite_numbers(item, plan, str(key) if field == 'meta' else f'{field}.{key}')
-    elif isinstance(value, list):
-        for i, item in enumerate(value):
-            finite_numbers(item, plan, f'{field}[{i}]')
+    if not isinstance(value, (dict, list)):
+        if value is not None and type(value) not in (str, bool, int, float):
+            fail(plan, field, 'dozwolone mapy, listy i wartości skalarne; bez zbiorów i tagów specjalnych')
+        return
+    ancestors = set() if ancestors is None else ancestors
+    identity = id(value)
+    if identity in ancestors:
+        fail(plan, field, 'cykliczne aliasy YAML są niedozwolone')
+    ancestors.add(identity)
+    try:
+        if isinstance(value, dict):
+            for key, item in value.items():
+                if not isinstance(key, str):
+                    fail(plan, field, 'klucze metadanych muszą być tekstowe')
+                finite_numbers(item, plan, str(key) if field == 'meta' else f'{field}.{key}', ancestors)
+        else:
+            for i, item in enumerate(value):
+                finite_numbers(item, plan, f'{field}[{i}]', ancestors)
+    finally:
+        ancestors.remove(identity)
 
 
 def validate_meta(meta, plan):
@@ -117,9 +131,14 @@ def read_registry(path=IMAGE_REGISTRY):
 
 def validate_image(meta, cave_dir, registry):
     plan = cave_dir.name
-    if registry.get('schema_version') != SCHEMA['schema_version']:
+    if (not isinstance(registry, dict)
+            or type(registry.get('schema_version')) is not int
+            or registry.get('schema_version') != SCHEMA['schema_version']):
         fail(plan, 'image.schema_version', 'nieobsługiwana wersja rejestru obrazów')
-    identity = registry.get('plans', {}).get(plan)
+    plans = registry.get('plans')
+    if not isinstance(plans, dict):
+        fail(plan, 'image.plans', 'rejestr musi zawierać mapę planów')
+    identity = plans.get(plan)
     if not isinstance(identity, dict):
         fail(plan, 'image', 'brak zadeklarowanej tożsamości w rejestrze obrazów')
     for field in ('filename', 'image_id', 'width', 'height'):
@@ -154,5 +173,5 @@ def validate_plan(cave_dir, index, image_registry=None):
         return meta, resolved
     except ValidationError:
         raise
-    except (OSError, ValueError, TypeError, yaml.YAMLError) as exc:
+    except (OSError, ValueError, TypeError, RecursionError, yaml.YAMLError) as exc:
         fail(cave_dir.name, 'meta/image', f'niepoprawne wejście: {exc}')
