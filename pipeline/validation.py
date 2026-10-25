@@ -11,6 +11,7 @@ from PIL import Image
 
 from coordinate_source import ROOT, sha256
 from gps_kataster_coordinates import LAT_TEMPLATE, LON_TEMPLATE
+from orientation import validate_metadata, validate_orientation
 
 SCHEMA = json.loads(Path(__file__).with_name('meta-schema-v1.json').read_text())
 IMAGE_REGISTRY = ROOT / 'data/validation/images-v1.json'
@@ -102,6 +103,8 @@ def validate_meta(meta, plan):
         if meta['entrance'][axis] >= meta['image'][dimension]:
             fail(plan, 'entrance.' + axis, f'kliknięcie musi być w obrazie: 0 <= {axis} < {dimension}')
 
+    validate_metadata(meta, plan)
+
 
 def resolve_coordinates(meta, index, plan):
     coordinates = meta['coordinates']
@@ -156,13 +159,15 @@ def validate_image(meta, cave_dir, registry):
             image.load()
         if sha256(path) != identity.get('sha256'):
             fail(plan, 'image.sha256', 'podmieniony obraz; hash inny niż zadeklarowane wejście')
+        if meta['orientation']['image_sha256'] != identity.get('sha256'):
+            fail(plan, 'orientation.image_sha256', 'zmiana treści obrazu wymaga jawnego hasha i decyzji orientacji')
     except (OSError, ValueError) as exc:
         if isinstance(exc, ValidationError):
             raise
         fail(plan, 'image', f'wymagany dostępny i czytelny TIFF: {exc}')
 
 
-def validate_plan(cave_dir, index, image_registry=None, meta_text=None):
+def validate_plan(cave_dir, index, image_registry=None, meta_text=None, orientation_context=None):
     """Zwróć (oryginalne metadane, kopia z liczbami z katalogu), niczego nie zapisuj."""
     cave_dir = Path(cave_dir)
     try:
@@ -171,6 +176,7 @@ def validate_plan(cave_dir, index, image_registry=None, meta_text=None):
         validate_meta(meta, cave_dir.name)
         resolved = resolve_coordinates(meta, index, cave_dir.name)
         validate_image(meta, cave_dir, read_registry() if image_registry is None else image_registry)
+        validate_orientation(resolved, orientation_context)
         return meta, resolved
     except ValidationError:
         raise

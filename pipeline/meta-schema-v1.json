@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "description": "Kontrakt meta.yaml; reguły pól interpretuje validation.py. Pozostałe metadane są zachowane, wszystkie liczby muszą być skończone.",
+  "description": "Kontrakt meta.yaml; reguły pól interpretuje validation.py. Pozostałe metadane są zachowane, wszystkie liczby muszą być skończone. T05: semantykę i pochodzenie orientacji sprawdza dodatkowo orientation.py; bez domyślnego modelu północy.",
   "fields": {
     "cave": {
       "type": "object"
@@ -141,6 +141,36 @@
     "quality.outliers_removed": {
       "type": "number",
       "optional": true
+    },
+    "north.reference": {
+      "type": "string"
+    },
+    "north.angle_origin": {
+      "type": "string"
+    },
+    "declination": {
+      "type": "object"
+    },
+    "orientation": {
+      "type": "object"
+    },
+    "orientation.mode": {
+      "type": "string"
+    },
+    "orientation.status": {
+      "type": "string"
+    },
+    "orientation.uncertainty_reason": {
+      "type": "string"
+    },
+    "declination.status": {
+      "type": "string"
+    },
+    "declination.basis": {
+      "type": "string"
+    },
+    "orientation.image_sha256": {
+      "type": "string"
     }
   }
 }

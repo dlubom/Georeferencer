@@ -80,19 +80,21 @@ class PlanValidationTest(unittest.TestCase):
         tmp = tempfile.TemporaryDirectory()
         self.addCleanup(tmp.cleanup)
         self.root = Path(tmp.name)
-        self.cave = self.root / 'plan'
+        self.cave = self.root / '001131'
         self.cave.mkdir()
         Image.new('1', (8, 6)).save(self.cave / 'image.tif')
         self.meta = {
-            'cave': {'dir_id': 'plan', 'name': 'Plan'},
+            'cave': {'dir_id': '001131', 'name': 'Plan'},
             'image': {'filename': 'image_1_zoom_10.tif', 'image_id': 1, 'width': 8, 'height': 6},
             'coordinates': {'gps_kataster_object_id': 'O1',
                             'lat': '{{ gps_kataster.objects[gps_kataster_object_id].lat }}',
                             'lon': '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'},
             'entrance': {'x': 2.0, 'y': 3.0}, 'scale': {'pixels_per_meter': 2.0},
             'north': {'angle_deg': 0.0}, 'declination_deg': 0.0}
+        from orientation_fixture import attach_orientation
+        self.meta = attach_orientation(self.meta, hashlib.sha256((self.cave / 'image.tif').read_bytes()).hexdigest())
         self._valid = copy.deepcopy(self.meta)
-        self.registry = {'schema_version': 1, 'plans': {'plan': {
+        self.registry = {'schema_version': 1, 'plans': {'001131': {
             **self.meta['image'], 'sha256': hashlib.sha256((self.cave / 'image.tif').read_bytes()).hexdigest()}}}
         self.index = GpsKatasterIndex([row('O1'), row('O2', lat=50)])
         self.save()
@@ -110,7 +112,7 @@ class PlanValidationTest(unittest.TestCase):
         before = self.snapshot()
         ok, message = generator.process_cave(self.cave, self.index, image_registry=self.registry)
         self.assertFalse(ok, message)
-        self.assertIn('plan', message)
+        self.assertIn('001131', message)
         self.assertIn(field, message)
         self.assertEqual(self.snapshot(), before)
 
@@ -209,7 +211,7 @@ class PlanValidationTest(unittest.TestCase):
     def test_rejects_wrong_plan_id_and_schema_version(self):
         self.meta['cave']['dir_id'] = 'another-plan'
         self.reject('cave.dir_id')
-        self.meta['cave']['dir_id'] = 'plan'
+        self.meta['cave']['dir_id'] = '001131'
         self.registry['schema_version'] = 99
         self.reject('schema_version')
 
@@ -219,7 +221,7 @@ class PlanValidationTest(unittest.TestCase):
             before = self.snapshot()
             ok, message = generator.process_cave(self.cave, self.index, image_registry=self.registry)
             self.assertFalse(ok)
-            self.assertIn('plan', message)
+            self.assertIn('001131', message)
             self.assertEqual(self.snapshot(), before)
 
     def test_current_catalogue_validates_without_touching_historical_artifacts(self):
@@ -255,7 +257,7 @@ class PlanValidationTest(unittest.TestCase):
         other_meta['cave']['dir_id'] = 'zzz'
         other_meta['scale']['pixels_per_meter'] = 0
         (second / 'meta.yaml').write_text(yaml.safe_dump(other_meta))
-        self.registry['plans']['zzz'] = self.registry['plans']['plan']
+        self.registry['plans']['zzz'] = self.registry['plans']['001131']
         registry = self.root / 'registry.json'
         registry.write_text(json.dumps(self.registry))
         before = {str(p.relative_to(self.root)): p.read_bytes() for p in self.root.rglob('*') if p.is_file()}
@@ -307,6 +309,22 @@ class PlanValidationTest(unittest.TestCase):
         self.meta['extra'] = []
         self.meta['extra'].append(self.meta['extra'])
         self.reject('extra')
+
+    def test_replaced_image_requires_orientation_decision_even_with_new_registry(self):
+        from orientation import record_decision
+        from validation import validate_plan
+        Image.new('1', (8, 6), 1).save(self.cave / 'image.tif')
+        digest = hashlib.sha256((self.cave / 'image.tif').read_bytes()).hexdigest()
+        self.registry['plans']['001131']['sha256'] = digest
+        with self.assertRaisesRegex(ValueError, 'orientation'):
+            validate_plan(self.cave, self.index, self.registry)
+        self.meta['orientation']['image_sha256'] = digest
+        self.save()
+        with self.assertRaisesRegex(ValueError, 'decyzj'):
+            validate_plan(self.cave, self.index, self.registry)
+        self.meta = record_decision(self.meta, 'Nowy obraz z nowymi kliknięciami; świadomie zachowano orientację T02.', '2026-10-25')
+        self.save()
+        validate_plan(self.cave, self.index, self.registry)
 
     def test_malformed_registry_is_reported_as_an_image_error(self):
         original = copy.deepcopy(self.registry)

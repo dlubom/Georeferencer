@@ -14,6 +14,8 @@ from pathlib import Path
 
 import yaml
 
+from orientation import summary as orientation_summary
+
 DATA_DIR = Path("data/caves")
 REPORTS_DIR = DATA_DIR / "_reports"
 
@@ -42,6 +44,7 @@ def write_summary(metas):
         "lat", "lon", "pixels_per_meter", "north_angle_deg",
         "ppm_cv", "entrance_std_px", "flag",
         "has_tif", "has_tfw", "has_georef",
+        "north_reference", "angle_origin", "orientation_status", "orientation_uncertainty_reason",
     ]
     with open(path, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=fields)
@@ -60,6 +63,10 @@ def write_summary(metas):
                 "ppm_cv": quality.get("ppm_cv", ""),
                 "entrance_std_px": quality.get("entrance_std_px", ""),
                 "flag": quality.get("flag", ""),
+                "north_reference": orientation_summary(m)["north_reference"],
+                "angle_origin": orientation_summary(m)["angle_origin"],
+                "orientation_status": orientation_summary(m)["status"],
+                "orientation_uncertainty_reason": orientation_summary(m)["uncertainty_reason"],
                 "has_tif": m["_has_tif"],
                 "has_tfw": m["_has_tfw"],
                 "has_georef": m["_has_georef"],

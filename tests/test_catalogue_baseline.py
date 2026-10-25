@@ -87,3 +87,26 @@ class CatalogueBaselineTest(unittest.TestCase):
             document = {'reference_commit': 'fad70f09992671a0da5a364dfea4a2c538f80e3d', 'plans': [],
                         'other_inputs_sha256': {'pipeline/02_generate_geotiff.py': baseline.sha256(current)}}
             self.assertEqual(baseline.verify_inputs(root, document), ['pipeline/02_generate_geotiff.py'])
+
+    def test_original_metadata_audit_is_independent_of_current_yaml(self):
+        import hashlib
+        import zipfile
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            name = 'data/caves/001/meta.yaml'
+            current = root / name
+            current.parent.mkdir(parents=True)
+            current.write_bytes(b'new migrated metadata')
+            archive = root / 'data/history/t02-inputs.zip'
+            archive.parent.mkdir(parents=True)
+            original = b'original metadata bytes\n'
+            document = {'reference_commit': baseline.FROZEN_REFERENCE,
+                        'plans': [{'dir_id': '001', 'sha256': {name: hashlib.sha256(original).hexdigest()}}]}
+            with zipfile.ZipFile(archive, 'w') as target:
+                target.writestr(name, original)
+            self.assertEqual(baseline.verify_inputs(root, document), [])
+            current.unlink()
+            self.assertEqual(baseline.verify_inputs(root, document), [])
+            with zipfile.ZipFile(archive, 'w') as target:
+                target.writestr(name, b'changed archive')
+            self.assertEqual(baseline.verify_inputs(root, document), [name])

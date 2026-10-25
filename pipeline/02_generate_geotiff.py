@@ -39,6 +39,7 @@ from gps_kataster_coordinates import (
 from coordinate_source import DEFAULT_MANIFEST, read_manifest, read_rows, sha256, verify
 from geotiff_output import input_hashes, publish_run, validate_output_dir
 from validation import ValidationError, fail, read_registry, validate_plan
+import orientation
 
 DATA_DIR = Path("data/caves")
 TRANSFORMER = Transformer.from_crs("EPSG:4326", "EPSG:2180", always_xy=True)
@@ -72,13 +73,11 @@ def parse_args():
     return p.parse_args()
 
 
-def compute_world_file(meta):
-    """Oblicz parametry World File z danych YAML (replikacja index.html:2277-2370)."""
+def compute_world_file(meta, orientation_context=None):
+    """Bieżąca skala/otwór i jawna orientacja; modele ustalonych północy dostarczy T06."""
     lat = float(meta["coordinates"]["lat"])
     lon = float(meta["coordinates"]["lon"])
     ppm = meta["scale"]["pixels_per_meter"]
-    north_angle = meta["north"]["angle_deg"]
-    declination = meta.get("declination_deg", 0.0)
     entrance_x = meta["entrance"]["x"]
     entrance_y = meta["entrance"]["y"]
 
@@ -88,12 +87,8 @@ def compute_world_file(meta):
     # Skala
     mpp = 1.0 / ppm
 
-    # Zbieżność południków
-    lambda0 = 19.0
-    convergence_deg = (lambda0 - lon) * math.sin(math.radians(lat))
-
-    # Całkowita rotacja
-    total_deg = north_angle + declination + convergence_deg
+    # Brak modelu nigdy nie uruchamia starej sumy kąta/deklinacji/zbieżności.
+    total_deg = orientation.historical_rotation(meta, orientation_context)
     rot = math.radians(total_deg)
 
     # Parametry World File
@@ -108,7 +103,6 @@ def compute_world_file(meta):
 
     return {
         "A": A, "D": D, "B": B, "E": E, "C": C, "F": F,
-        "convergence_deg": convergence_deg,
         "total_rotation_deg": total_deg,
     }
 
@@ -131,7 +125,6 @@ def write_tfw(cave_dir, params):
 def update_computed_section(meta, params):
     """Zaktualizuj sekcję computed w meta dict."""
     meta["computed"] = {
-        "convergence_deg": round(params["convergence_deg"], 4),
         "total_rotation_deg": round(params["total_rotation_deg"], 4),
         "A": round(params["A"], 10),
         "D": round(params["D"], 10),
@@ -139,6 +132,7 @@ def update_computed_section(meta, params):
         "E": round(params["E"], 10),
         "C": round(params["C"], 6),
         "F": round(params["F"], 6),
+        "orientation": orientation.summary(meta),
     }
 
 
@@ -165,10 +159,10 @@ def generate_geotiff(cave_dir):
 
 
 def represent_float(dumper, value):
-    """YAML float — unikaj notacji naukowej."""
+    """Zachowaj wartość float: zapis nie może unieważnić hasha decyzji T05."""
     if value != value:
         return dumper.represent_scalar("tag:yaml.org,2002:null", "null")
-    text = f"{value:.10f}" if abs(value) < 1 and value != 0 else str(value)
+    text = str(value)
     return dumper.represent_scalar("tag:yaml.org,2002:float", text)
 
 
@@ -183,10 +177,10 @@ def validate_gps_kataster_object_id(meta, gps_kataster_index):
             f"coordinates.gps_kataster_object_id: brak lub niedozwolony obiekt {object_id}")
 
 
-def prepare_cave(cave_dir, gps_kataster_index, image_registry=None, meta_text=None):
-    source_meta, resolved_meta = validate_plan(cave_dir, gps_kataster_index, image_registry, meta_text)
+def prepare_cave(cave_dir, gps_kataster_index, image_registry=None, meta_text=None, orientation_context=None):
+    source_meta, resolved_meta = validate_plan(cave_dir, gps_kataster_index, image_registry, meta_text, orientation_context)
     try:
-        params = compute_world_file(resolved_meta)
+        params = compute_world_file(resolved_meta, orientation_context)
         if not all(math.isfinite(value) for value in params.values()):
             fail(cave_dir.name, "coordinates/scale", "parametry transformacji muszą być skończone")
     except (ArithmeticError, ValueError) as exc:
@@ -214,6 +208,10 @@ def process_output(caves, output_dir, data_dir, coordinates_path=None, registry_
     registry_path = Path(registry_path) if registry_path else pipeline_dir.parent / 'data/validation/images-v1.json'
     # Hash, walidacja, indeks i rekord manifestu używają tych samych bajtów.
     # Osobne odczyty oryginału mogłyby przy edycji A→B→A związać hash A z obliczeniem B.
+    orientation_paths = [orientation.BASELINE, orientation.ARCHIVE]
+    validate_output_dir(output_dir, data_dir, caves, orientation_paths)
+    orientation_bytes = [p.read_bytes() for p in orientation_paths]
+    orientation_context = orientation.load_context(*orientation_bytes)
     pin_bytes = DEFAULT_MANIFEST.read_bytes()
     with tempfile.TemporaryDirectory(prefix='georeferencer-inputs-') as temporary:
         snapshot_dir = Path(temporary)
@@ -234,10 +232,13 @@ def process_output(caves, output_dir, data_dir, coordinates_path=None, registry_
     guarded_paths = [DEFAULT_MANIFEST, coordinates_path, registry_path,
                      *(pipeline_dir / name for name in (
                          '02_generate_geotiff.py', 'geotiff_output.py', 'validation.py',
-                         'coordinate_source.py', 'gps_kataster_coordinates.py', 'meta-schema-v1.json'))]
+                         'coordinate_source.py', 'gps_kataster_coordinates.py', 'meta-schema-v1.json',
+                         'orientation.py')), *orientation_paths]
     guarded = {str(p.resolve()): sha256(p) for p in guarded_paths}
     for p, raw in ((DEFAULT_MANIFEST, pin_bytes), (coordinates_path, csv_bytes),
                    (registry_path, registry_bytes)):
+        guarded[str(p.resolve())] = hashlib.sha256(raw).hexdigest()
+    for p, raw in zip(orientation_paths, orientation_bytes):
         guarded[str(p.resolve())] = hashlib.sha256(raw).hexdigest()
     output_dir = validate_output_dir(output_dir, data_dir, caves, guarded_paths)
     plans = []
@@ -245,15 +246,18 @@ def process_output(caves, output_dir, data_dir, coordinates_path=None, registry_
         raw_meta = (cave_dir / 'meta.yaml').read_bytes()
         before = input_hashes(cave_dir)
         before['meta.yaml'] = hashlib.sha256(raw_meta).hexdigest()
-        meta, params = prepare_cave(cave_dir, index, registry, meta_text=raw_meta.decode('utf-8'))
+        meta, params = prepare_cave(cave_dir, index, registry, meta_text=raw_meta.decode('utf-8'),
+                                    orientation_context=orientation_context)
         computed_meta = copy.deepcopy(meta)
         update_computed_section(computed_meta, params)
         plans.append({'source_directory': cave_dir, 'inputs': before, 'params': params,
                       'computed': computed_meta['computed'],
+                      'orientation': orientation.summary(meta),
                       'measurement': rows[meta['coordinates']['gps_kataster_object_id']]})
     provenance = {
         'coordinate_source': {**pin,
                               'manifest_sha256': guarded[str(DEFAULT_MANIFEST.resolve())]},
+        'orientation_sources': {p.name: guarded[str(p.resolve())] for p in orientation_paths},
         'image_registry': {'path': str(registry_path.resolve()),
                            'sha256': guarded[str(registry_path.resolve())]},
         'implementation': {p.name: guarded[str(p.resolve())] for p in guarded_paths[3:]},
