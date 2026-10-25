@@ -1,0 +1,3 @@
+{'coordinate': (49.2, 19.9), 'true_north_bearing_in_2180': -0.6813197258698919, 'generated_north_arrow_bearing': 0.6812955500865798, 'error_deg': 1.3626152759564718, 'error_1km_m': 23.781562552537427, 'proj_convergence': 0.6813196817119428}
+{'coordinate': (49.2, 19.0), 'true_north_bearing_in_2180': 0.0, 'generated_north_arrow_bearing': -0.0, 'error_deg': -0.0, 'error_1km_m': 0.0, 'proj_convergence': -0.0}
+{'coordinate': (49.2, 18.1), 'true_north_bearing_in_2180': 0.6813197318709149, 'generated_north_arrow_bearing': -0.6812955500865798, 'error_deg': -1.3626152819574946, 'error_1km_m': 23.78156265726763, 'proj_convergence': -0.6813196817119428}

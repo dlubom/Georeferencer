@@ -1,0 +1,6 @@
+{"strict_numeric_coords_success": true, "retained_coords": {"gps_kataster_object_id": "OBJ-1", "lat": 49.0, "lon": 19.0}, "distance_from_source_m": 62467.80622817393}
+{"duplicate_rows_accepted": 2, "chosen_lat": 49.8}
+{"duplicate_rows_accepted": 2, "chosen_lat": 49.2}
+{"input_lat": "nan", "accepted_lat": "nan"}
+{"input_lat": "inf", "accepted_lat": "inf"}
+{"input_lat": "91", "accepted_lat": "91.0"}

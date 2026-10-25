@@ -48,14 +48,17 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r pipeline/requirements.txt
 brew install gdal  # macOS
 
+# Zweryfikowane wejście zgodne z buildem (bez sieci)
+python pipeline/coordinate_source.py copy --output /tmp/georeferencer-best-measurements.csv
+
 # Generacja GeoTIFF dla jednej jaskini
 python pipeline/02_generate_geotiff.py --cave 001131 \
-  --gps-kataster-best-measurements ../gps-kataster-obiektow-tatr/build/exports/best-measurements.csv \
+  --gps-kataster-best-measurements /tmp/georeferencer-best-measurements.csv \
   --gps-kataster-strict
 
 # Generacja dla wszystkich
 python pipeline/02_generate_geotiff.py --all \
-  --gps-kataster-best-measurements ../gps-kataster-obiektow-tatr/build/exports/best-measurements.csv \
+  --gps-kataster-best-measurements /tmp/georeferencer-best-measurements.csv \
   --gps-kataster-strict
 
 # Raporty QA
@@ -64,7 +67,7 @@ python pipeline/03_report.py
 
 ### Release
 
-Przy utworzeniu tagu `v*` (np. `v1.0`) GitHub Actions pobiera `best-measurements.csv` z najnowszego release `dlubom/gps-kataster-obiektow-tatr`, renderuje Jinja placeholdery `lat/lon`, generuje wszystkie GeoTIFF-y i publikuje je jako paczkę `.zip` w GitHub Releases. Przy ręcznym uruchomieniu workflow można przypiąć konkretny tag release gps-kataster. Pliki nazywane są wg schematu: `{dir_id}_{numer_inwentarzowy}_{nazwa}.tif`.
+Przy utworzeniu tagu `v*` (np. `v1.0`) GitHub Actions weryfikuje SHA-256 wersjonowanego snapshotu `best-measurements.csv` przypiętego do release gps-kataster **v1.3.1**, renderuje Jinja placeholdery `lat/lon`, generuje wszystkie GeoTIFF-y i publikuje je jako paczkę `.zip` w GitHub Releases. Ręczne uruchomienie używa tego samego opisu źródła z checkoutu wybranego tagu. Pliki nazywane są wg schematu: `{dir_id}_{numer_inwentarzowy}_{nazwa}.tif`. [Instrukcja źródła, aktualizacji i historycznego punktu odniesienia 814 planów](docs/COORDINATE_SOURCE.md) opisuje weryfikację, odtwarzanie i raport wpływu; T02 nie zmienia danych ani istniejących TFW.
 
 ---
 
