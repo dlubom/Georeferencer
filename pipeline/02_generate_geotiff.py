@@ -184,8 +184,8 @@ def validate_gps_kataster_object_id(meta, gps_kataster_index):
             f"coordinates.gps_kataster_object_id: brak lub niedozwolony obiekt {object_id}")
 
 
-def prepare_cave(cave_dir, gps_kataster_index, image_registry=None, meta_text=None, orientation_context=None):
-    source_meta, resolved_meta = validate_plan(cave_dir, gps_kataster_index, image_registry, meta_text, orientation_context)
+def prepare_cave(cave_dir, gps_kataster_index, image_registry=None, meta_text=None, orientation_context=None, identity_text=None):
+    source_meta, resolved_meta = validate_plan(cave_dir, gps_kataster_index, image_registry, meta_text, orientation_context, identity_text)
     try:
         params = compute_world_file(resolved_meta, orientation_context)
         if not all(math.isfinite(value) for value in params.values()):
@@ -251,10 +251,15 @@ def process_output(caves, output_dir, data_dir, coordinates_path=None, registry_
     plans = []
     for cave_dir in caves:
         raw_meta = (cave_dir / 'meta.yaml').read_bytes()
+        identity_path = cave_dir / 'image-identity.json'
+        raw_identity = identity_path.read_bytes() if identity_path.exists() else None
         before = input_hashes(cave_dir)
+        if raw_identity is not None:
+            before['image-identity.json'] = hashlib.sha256(raw_identity).hexdigest()
         before['meta.yaml'] = hashlib.sha256(raw_meta).hexdigest()
         meta, params = prepare_cave(cave_dir, index, registry, meta_text=raw_meta.decode('utf-8'),
-                                    orientation_context=orientation_context)
+                                    orientation_context=orientation_context,
+                                    identity_text=raw_identity.decode('utf-8') if raw_identity is not None else False)
         computed_meta = copy.deepcopy(meta)
         update_computed_section(computed_meta, params)
         plans.append({'source_directory': cave_dir, 'inputs': before, 'params': params,

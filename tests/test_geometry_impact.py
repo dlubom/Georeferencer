@@ -38,7 +38,7 @@ class GeometryImpactTest(unittest.TestCase):
         self.assertEqual(report['before_commit'], BEFORE_COMMIT)
         self.assertEqual(report['before_generator_sha256'], BEFORE_SHA256)
         for name, digest in report['after_implementation_sha256'].items():
-            self.assertEqual(digest, hashlib.sha256((ROOT / 'pipeline' / name).read_bytes()).hexdigest())
+            self.assertEqual(digest, hashlib.sha256((ROOT / 'data/history/t06-code' / name).read_bytes()).hexdigest())
         for item in report['plans']:
             with self.subTest(plan=item['dir_id']):
                 raw = inputs[item['dir_id']]

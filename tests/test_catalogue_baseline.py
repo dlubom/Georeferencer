@@ -39,6 +39,25 @@ class CatalogueBaselineTest(unittest.TestCase):
                 self.assertTrue(plan["measurement"]["measurement_id"])
         self.assertEqual(baseline.verify_inputs(ROOT, document), [])
 
+    def test_t08_frozen_adder_is_checked_with_original_hash_and_never_current_code(self):
+        import hashlib
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            path = 'pipeline/05_add_cave.py'
+            current = root / path
+            frozen = root / 'data/history/05_add_cave-t02.py'
+            current.parent.mkdir(parents=True)
+            frozen.parent.mkdir(parents=True)
+            (root / 'data/caves').mkdir(parents=True)
+            current.write_bytes(b'current implementation')
+            frozen.write_bytes(b'historical implementation')
+            document = {'reference_commit': baseline.FROZEN_REFERENCE, 'plans': [],
+                        'other_inputs_sha256': {path: hashlib.sha256(frozen.read_bytes()).hexdigest()}}
+            self.assertEqual(baseline.verify_inputs(root, document), [])
+            current.write_bytes(b'historical implementation')
+            frozen.write_bytes(b'corruption')
+            self.assertEqual(baseline.verify_inputs(root, document), [path])
+
     def test_geometry_delta_measures_translation_at_the_entrance(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

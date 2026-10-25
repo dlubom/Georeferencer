@@ -1,113 +1,205 @@
-# Ręczne dodawanie brakujących jaskiń
+# Ręczne dodawanie planów (T08)
 
-Instrukcja dodawania jaskiń, które zostały pominięte w crowdsourcingu (za mało zgłoszeń, disabled, problem z obrazem).
+Dodawanie działa na jednym wskazanym obrazie mono i wymaga jawnego otworu
+z [przypiętego katalogu](../docs/COORDINATE_SOURCE.md). Potrzebne są zależności
+Pythona i GDAL z [referencyjnego środowiska](../ci/README.md).
+`--scraper-dir` i `--jsonl` domyślnie wskazują sąsiednie repozytoria w `../`.
+`--data-dir` domyślnie wskazuje `data/caves` tego repozytorium.
 
-## Wymagania
+## Tożsamość i wybór
 
-- Projekt `Polish-Cave-Data-Scraper` w `../Polish-Cave-Data-Scraper/` (obrazy caves_mono/, caves_upscaled/, caves/)
-- JSONL z rejestrem PIG: `../Jaskiniowy-Kataster-Tatr-Zachodnich/doc/jaskinie_polski_pig_dump.jsonl` (źródło opisów i obrazów)
-- `best-measurements.csv` z release `dlubom/gps-kataster-obiektow-tatr` (źródło aktualnych współrzędnych otworów)
-- Aktywne venv: `source .venv/bin/activate`
+| Argument / pole | Co identyfikuje |
+| --- | --- |
+| `--cave` → `cave.source_cave_id` | jaskinię w źródłowym JSONL PIG |
+| `--image-id` → `image.image_id` | konkretny `graphics_id` planu |
+| `--plan-id` → `cave.dir_id` | nowy katalog planu, osobny dla każdego obrazu |
+| `--gps-kataster-object-id` | otwór/obiekt `jaskinia_otwor` albo `sztolnia` w pinie |
 
-## 1. Lista brakujących jaskiń
+Dwa plany jednej jaskini mają to samo source_cave_id, lecz odrębne plan_id
+oraz graphics_id. Nie dobieraj otworu według nazwy jaskini ani kolejności CSV.
+`--cave` generatora `02_` nadal oznacza **ID katalogu planu**.
 
-```bash
-python pipeline/04_find_missing.py
+Wybierany jest dokładnie `caves_mono/<cave>/image_<graphics_id>_zoom_10.tif`.
+Przy jednym planie można pominąć `--image-id`; przy wielu jest obowiązkowy.
+Nie ma zastępstwa pierwszym planem, przekrojem ani dowolnym TIFF-em. Powtórzone
+rekordy jaskini/graphics_id, sprzeczna ścieżka lub numer inwentarzowy i wymiary
+2x niezgodne z obecnymi maxWidth/maxHeight JSONL są błędami.
+
+Podgląd istniejącego źródła, bez zapisu jakichkolwiek plików:
+
+```sh
+python pipeline/05_add_cave.py --cave 001197 --image-id 12400 --dry-run
 ```
 
-Wypisze brakujące jaskinie tatrzańskie z planami, posortowane po długości. Raport CSV: `data/caves/_reports/missing_tatry.csv`.
+Zapisz wypisany SHA-256. Otwórz **ten sam obraz mono** w sąsiednim
+`Polish-Cave-Data-Scraper/index.html`, zaznacz otwór i podziałkę, a następnie
+strzałkę, jeśli ją mierzysz. Współrzędne kliknięć są w układzie narożnika
+obrazu: x w prawo, y w dół. Początek to (0,0), środek pierwszego piksela
+(.5,.5). Kąt strzałki rośnie zgodnie z zegarem od pionu w górę obrazu.
+Zapisz konkretne źródła parametrów: symbol otworu, długość i odcinek skali,
+legendę/podstawę rodzaju północy. Sam komunikat UI z wartością 0 nie
+rozstrzyga, czy północ została zmierzona czy pominięta.
 
-## 2. Podgląd jaskini
+`--image-sha256` jest obowiązkowym potwierdzeniem obrazu pomiarów.
+Podmiana TIFF-a o tych samych wymiarach też jest błędem. Zmiana obrazu wymaga
+nowych kliknięć i osobnego przeglądu. Nie odświeżaj hasha po błędzie.
 
-```bash
-python pipeline/05_add_cave.py --cave <CAVE_ID> --dry-run
+## Orientacja
+
+- `geographic` i `grid` wymagają zmierzonego kąta oraz `--north-source`,
+  czyli konkretnej podstawy rodzaju północy i pomiaru. `grid` oznacza
+  udokumentowaną północ **EPSG:2180**. Modele i znaki pochodzą z T06.
+- `magnetic` wymaga także jawnej deklinacji (w tym jawnego 0), podstawy,
+  epoki i konwencji `east_positive`. Nie istnieje domyślna deklinacja.
+- `unknown` wymaga `--north-skipped` albo rzeczywistego `--north-angle`
+  z jego źródłem; pominięcie obu jest błędem. Oddzielnie wymaga decyzji
+  dopuszczającej, `--assumed-grid-angle` i `--grid-angle-convention`.
+  Nie zamienia się przez to w grid.
+
+`image_x_ccw_from_grid_east` opisuje obrót **r** osi x obrazu przeciwnie do
+zegara od wschodniej osi siatki EPSG:2180: A=mpp·cos(r), D=mpp·sin(r).
+To przyjęta orientacja wyniku, nie dowód północy źródłowego planu. Nie jest
+kątem strzałki. Dla unknown nie stosuje się zbieżności ani deklinacji.
+Kąt strzałki i przyjęty obrót mogą się różnić.
+
+Każdy nowy plan ma status `unverified`, początkową decyzję z datą i powodem,
+hash wejść orientacji oraz hash obrazu. Nowy unknown używa `assumed_grid`.
+Nie ma historycznego TFW T02 ani prawa do kąta/wyjątku innego planu.
+[ORIENTATION.md](../docs/ORIENTATION.md) opisuje dalsze decyzje po edycji.
+
+## Pełne wywołania na danych syntetycznych
+
+Poniższe przykłady są wykonywalnym ćwiczeniem w `/tmp`, nie dodają rzeczywistych
+planów. Syntetyczny symbol otworu celowo wiążemy z KSZ-0033 z przypiętego CSV.
+Przy prawdziwym dodawaniu zastąp wszystkie ID, hash, kliki i źródła danymi
+wybranego planu. Powód decyzji ma uzasadniać dopuszczenie konkretnej orientacji.
+Nie kopiuj źródeł syntetycznych do danych produkcyjnych.
+
+Jednorazowo przygotuj wejścia (Python z Pillow):
+
+```sh
+export T08_DEMO=$(mktemp -d /tmp/georeferencer-t08-XXXXXX)
+python - <<'PY'
+import json, os
+from pathlib import Path
+from PIL import Image
+root = Path(os.environ['T08_DEMO'])
+images = []
+for graphics_id in (101, 102):
+    stem = f'image_{graphics_id}_zoom_10'
+    path = root / 'scraper/caves_mono/t08-demo' / (stem + '.tif')
+    path.parent.mkdir(parents=True, exist_ok=True)
+    image = Image.new('1', (8, 6))
+    image.putpixel((graphics_id-101, 1), 255)
+    image.save(path)
+    images.append({'metadata': {'graphics_id': graphics_id,
+        'graphics_type_name': 'plan', 'inventory_number': 'T.TEST',
+        'maxWidth': 4, 'maxHeight': 3},
+        'image_path': f'caves/t08-demo/{stem}.jpg'})
+(root / 'pig.jsonl').write_text(json.dumps({'cave_id': 't08-demo',
+    'name': 'Plan syntetyczny T08', 'inventory_number': 'T.TEST',
+    'images': images}) + '\n')
+PY
+T08_IMAGE_SHA=$(python -c 'import hashlib,os; from pathlib import Path; print(hashlib.sha256((Path(os.environ["T08_DEMO"])/"scraper/caves_mono/t08-demo/image_102_zoom_10.tif").read_bytes()).hexdigest())')
 ```
 
-Pokaże dane jaskini z JSONL, ścieżkę do obrazu mono i wymiary. Przykład:
+Północ geograficzna, rzeczywisty pomiar 0° w syntetycznym planie:
 
-```
-Jaskinia: Jaskinia Miętusia (T.D-11.01)
-  Współrzędne: 49.246333, 19.898992
-  Plan: image_12400_zoom_10 (graphics_id: 12400)
-  Wymiary mono: 28660×16266 px
-  Obraz mono: .../caves_mono/001197/image_12400_zoom_10.tif
-```
-
-## 3. Georeferencja w przeglądarce
-
-1. Otwórz `../Polish-Cave-Data-Scraper/index.html` w przeglądarce
-2. Załaduj obraz mono (.tif) z podanej ścieżki (local upload)
-3. Zaznacz kolejno:
-   - **Otwór wejściowy** — kliknij na symbol otworu na planie
-   - **Początek skali** — kliknij początek podziałki
-   - **Koniec skali** — kliknij koniec podziałki (wpisz długość w metrach)
-   - **Północ (opcjonalnie)** — kliknij podstawę i grot strzałki N
-4. Oblicz — w konsoli przeglądarki (F12) pojawi się zielony blok:
-
-```
-=== DANE DO META.YAML ===
-cave_id: 001197
-inventory_number: T.D-11.01
-name: Jaskinia Miętusia
-lat: 49.246333
-lon: 19.898992
-entrance_x: 26131.87
-entrance_y: 7996.18
-pixels_per_meter: 23.6549
-north_angle_deg: 0.00
-declination_deg: 0
+```sh
+python pipeline/05_add_cave.py --cave t08-demo --image-id 102 --plan-id demo-geographic \
+  --scraper-dir "$T08_DEMO/scraper" --jsonl "$T08_DEMO/pig.jsonl" --data-dir "$T08_DEMO/plans" \
+  --image-sha256 "$T08_IMAGE_SHA" --gps-kataster-object-id KSZ-0033 \
+  --entrance-x 2.25 --entrance-y 3.5 --entrance-source 'Syntetyczny symbol otworu mono' \
+  --pixels-per-meter 2 --scale-source 'Syntetyczna podziałka: 2 px na 1 m' \
+  --north-reference geographic --north-angle 0 --north-source 'Syntetyczna legenda: geograficzna; pomiar pionowej strzałki' \
+  --decision-date 2026-10-25 --decision-reason 'Odbiór modelu geographic na planie syntetycznym'
 ```
 
-## 4. Dodanie jaskini
+Północ magnetyczna, udokumentowana deklinacja ujemna:
 
-```bash
-python pipeline/05_add_cave.py --cave 001197 \
-    --entrance-x 26131.87 --entrance-y 7996.18 \
-    --pixels-per-meter 23.6549 \
-    --north-angle 0.0 \
-    --gps-kataster-object-id MLZ-0000
+```sh
+python pipeline/05_add_cave.py --cave t08-demo --image-id 102 --plan-id demo-magnetic \
+  --scraper-dir "$T08_DEMO/scraper" --jsonl "$T08_DEMO/pig.jsonl" --data-dir "$T08_DEMO/plans" \
+  --image-sha256 "$T08_IMAGE_SHA" --gps-kataster-object-id KSZ-0033 \
+  --entrance-x 2.25 --entrance-y 3.5 --entrance-source 'Syntetyczny symbol otworu mono' \
+  --pixels-per-meter 2 --scale-source 'Syntetyczna podziałka: 2 px na 1 m' \
+  --north-reference magnetic --north-angle 12 --north-source 'Syntetyczna legenda: magnetyczna; pomiar strzałki' \
+  --declination -4.5 --declination-basis 'Syntetyczna wartość dla epoki planu' \
+  --declination-epoch 2001 --declination-sign-convention east_positive \
+  --decision-date 2026-10-25 --decision-reason 'Odbiór modelu magnetic na planie syntetycznym'
 ```
 
-Skrypt:
-- Tworzy katalog `data/caves/001197/`
-- Kopiuje obrazy ze scrapera (image.tif, image_upscaled.jpg, image_original.jpg)
-- Generuje `meta.yaml` z flagą `quality.flag: manual`
+Udokumentowana północ siatki EPSG:2180:
 
-Opcjonalne parametry: `--declination <deg>`, `--image-id <id>` (gdy wiele planów).
-
-## 5. Generacja GeoTIFF
-
-```bash
-python pipeline/02_generate_geotiff.py --cave 001197 \
-    --gps-kataster-best-measurements data/coordinate-source/best-measurements-v1.3.1.csv \
-    --gps-kataster-strict
+```sh
+python pipeline/05_add_cave.py --cave t08-demo --image-id 102 --plan-id demo-grid \
+  --scraper-dir "$T08_DEMO/scraper" --jsonl "$T08_DEMO/pig.jsonl" --data-dir "$T08_DEMO/plans" \
+  --image-sha256 "$T08_IMAGE_SHA" --gps-kataster-object-id KSZ-0033 \
+  --entrance-x 2.25 --entrance-y 3.5 --entrance-source 'Syntetyczny symbol otworu mono' \
+  --pixels-per-meter 2 --scale-source 'Syntetyczna podziałka: 2 px na 1 m' \
+  --north-reference grid --north-angle 17.25 --north-source 'Syntetyczna legenda: siatka EPSG:2180; pomiar strzałki' \
+  --decision-date 2026-10-25 --decision-reason 'Odbiór modelu grid na planie syntetycznym'
 ```
 
-Generator renderuje Jinja placeholdery `coordinates.lat/lon` z obiektu kategorii `jaskinia_otwor` lub `sztolnia` w gps-kataster, a potem generuje `image.tfw` (World File) i `image_georef.tif` (GeoTIFF EPSG:2180). Zastąp `MLZ-0000` właściwym ID otworu z `best-measurements.csv`.
+Nieustalona północ i brak pomiaru strzałki, jawnie przyjęty obrót 17.25°:
 
-Jeśli dodajesz lub korygujesz jaskinię, ustaw w `meta.yaml` właściwy identyfikator otworu:
-
-```yaml
-coordinates:
-  gps_kataster_object_id: KSZ-0033
-  lat: "{{ gps_kataster.objects[gps_kataster_object_id].lat }}"
-  lon: "{{ gps_kataster.objects[gps_kataster_object_id].lon }}"
+```sh
+python pipeline/05_add_cave.py --cave t08-demo --image-id 102 --plan-id demo-unknown \
+  --scraper-dir "$T08_DEMO/scraper" --jsonl "$T08_DEMO/pig.jsonl" --data-dir "$T08_DEMO/plans" \
+  --image-sha256 "$T08_IMAGE_SHA" --gps-kataster-object-id KSZ-0033 \
+  --entrance-x 2.25 --entrance-y 3.5 --entrance-source 'Syntetyczny symbol otworu mono' \
+  --pixels-per-meter 2 --scale-source 'Syntetyczna podziałka: 2 px na 1 m' \
+  --north-reference unknown --north-skipped --assumed-grid-angle 17.25 \
+  --grid-angle-convention image_x_ccw_from_grid_east \
+  --decision-date 2026-10-25 --decision-reason 'Dopuszczono niezweryfikowany obrót syntetyczny 17.25°; brak podstawy rodzaju północy'
 ```
 
-## 6. Weryfikacja
+Nieustalony rodzaj przy zmierzonej pionowej strzałce 0° i osobnym przyjęciu
+obrotu wyniku 17.25°:
 
-- Sprawdź wymiary: `meta.yaml` width/height muszą odpowiadać `image.tif`
-- Porównaj z istniejącymi submissionami (jeśli są) w `parquet/SUBMISSIONS.parquet`
-- Otwórz GeoTIFF w QGIS — otwór powinien trafić w lokalizację jaskini
+```sh
+python pipeline/05_add_cave.py --cave t08-demo --image-id 102 --plan-id demo-unknown-zero \
+  --scraper-dir "$T08_DEMO/scraper" --jsonl "$T08_DEMO/pig.jsonl" --data-dir "$T08_DEMO/plans" \
+  --image-sha256 "$T08_IMAGE_SHA" --gps-kataster-object-id KSZ-0033 \
+  --entrance-x 2.25 --entrance-y 3.5 --entrance-source 'Syntetyczny symbol otworu mono' \
+  --pixels-per-meter 2 --scale-source 'Syntetyczna podziałka: 2 px na 1 m' \
+  --north-reference unknown --north-angle 0 --north-source 'Syntetyczna pionowa strzałka; nieznany rodzaj' \
+  --assumed-grid-angle 17.25 --grid-angle-convention image_x_ccw_from_grid_east \
+  --decision-date 2026-10-25 --decision-reason 'Pomiar strzałki nie ustala rodzaju; dopuszczono niezweryfikowany obrót 17.25°'
+```
 
-## Uwagi
+Do pełnego wywołania dodaj `--dry-run`, aby przeprowadzić T03 i wypisać YAML
+bez zapisu. Inspekcja i pełny podgląd nie uruchamiają GDAL. Niepełne dane
+w normalnym wywołaniu zwracają błąd, nie tworzą planu produkcyjnego.
 
-- **Kliki zawsze na obrazie mono** (image.tif, 2x upscaled) — wymiary w meta.yaml muszą odpowiadać temu obrazowi
-- **Współrzędne otworu** — JSONL PIG daje wartość startową, ale docelowy release powinien brać `lat/lon` z `gps-kataster-obiektow-tatr`
-- **Deklinacja** — dla większości planów tatrzańskich = 0 (plany w północy magnetycznej, deklinacja bliska 0°)
-- Ręcznie dodane jaskinie mają `quality.flag: manual` i `n_submissions: 0`
+## Zapis i kontrola
 
-Od T03 przed generacją nowego planu trzeba jawnie dodać jego tożsamość i SHA-256
-obrazu do wersjonowanego rejestru zgodnie z [VALIDATION.md](../docs/VALIDATION.md).
-Generator wymaga współrzędnych z przypiętego CSV i zgodności kliknięć z obrazem.
-Automatyzacja bezpiecznego dodawania pozostaje zakresem T08.
+Skrypt sprawdza pin, obraz i metadane; buduje prywatny staging w katalogu
+danych. Zawiera on `image.tif`, `meta.yaml`, `image-identity.json` oraz
+opcjonalne JPG dokładnie tej grafiki. Następnie przeprowadza rzeczywisty T04
+ze snapshotami, kontrolą pikseli/CRS/transformacji i wynikami poza źródłami.
+Dopiero sukces publikuje cały katalog atomowym rename bez zastępowania celu
+(Linux renameat2 / macOS renamex_np). Brak wsparcia filesystemu jest błędem;
+nie uruchamia zwykłego rename jako zastępstwa. Kontrolne GeoTIFF-y są usuwane razem
+z prywatnym katalogiem wyników. Zapisane źródła są gotowe do powtarzalnej generacji:
+
+```sh
+python pipeline/02_generate_geotiff.py --data-dir "$T08_DEMO/plans" \
+  --cave demo-unknown --output-dir "$T08_DEMO/results"
+./scripts/check
+```
+
+Brak obrazu, hash, błędne wejście, awaria GDAL lub publikacji oznaczają błąd
+i sprzątnięcie stagingu. Istniejący katalog, plik lub dowiązanie docelowe
+zawsze blokują dodawanie. Ponowienie nie aktualizuje planu ani ręcznych korekt;
+nie ma `--force`. Istniejące plany edytuj osobno w PR z raportem wpływu.
+Blokada `.manual-add.lock` serializuje dodawanie. Po przerwaniu procesu może
+pozostać blokada/staging; po upewnieniu się, że poprzedni proces zakończył się,
+usuń wyłącznie jego nieopublikowane ślady. Nie przejmuj aktywnej blokady.
+
+Nowy wpis rejestru jest wersjonowany **wraz z planem**. Nie dopisuj tego samego
+planu do wspólnego `images-v1.json`: konflikt jest błędem. Do PR dołącz cały
+nowy katalog źródeł, pochodzenie parametrów, decyzję, wynik T04 i raport wpływu.
+[Walidacja](../docs/VALIDATION.md) i [generacja](../docs/GENERATION_OUTPUT.md)
+obejmują oba rodzaje rejestru. Stary CLI bez `--output-dir` pozostaje mutujący
+do T10. Samo wdrożenie T08 nie dodaje rzeczywistych planów ani nie migruje katalogu.

@@ -72,8 +72,8 @@ Generator zapisuje świeżo obliczony TFW z precyzją T03 i przekazuje GDAL
 jawną geotransformację odpowiadającą odczytowi **tego** TFW. Stary TFW
 obok źródłowego TIFF-a nie wybiera transformacji. T06 jawnie mapuje kliknięcia UI w układzie narożnika GDAL i C,F w układzie
 środków TFW, z poprawką półpiksela. Modele północy, konwencje i tolerancje
-opisuje [ORIENTATION.md](ORIENTATION.md). `unknown` zachowuje wyłącznie
-historyczny kąt T02; współrzędne i skala pozostają bieżące. Ustalony rodzaj
+opisuje [ORIENTATION.md](ORIENTATION.md). Historyczny `unknown` zachowuje wyłącznie
+kąt T02; współrzędne i skala pozostają bieżące. Ustalony rodzaj
 używa modelu T06 i nadal ma status `unverified`.
 
 Sukces procesu `gdal_translate` nie wystarcza. `gdalinfo` i Pillow niezależnie
@@ -113,3 +113,12 @@ przy dotychczasowym kontrakcie; ich przełączenie/wycofanie należy do T10/T11.
 
 Testy regresji znajdują się w `tests/test_geotiff_output.py` i uruchamiają
 się przez wspólne `./scripts/check` bez nowych zależności.
+
+
+T08 dodaje wejście `image-identity.json` dla nowych ręcznych planów. Hash,
+parsowanie i początkowa decyzja korzystają z tego samego snapshotu; plik
+uczestniczy w `plans[].inputs`, kontroli dowiązań i zmian przed publikacją.
+Brak tego wejścia jest także snapshotowany, bez późniejszego ukrytego odczytu.
+Nowy unknown bez T02 używa wyłącznie jawnie przyjętego obrotu `assumed_grid`,
+z EPSG:2180, konwencją i powodem zachowanymi w orientation manifestu/computed.
+Nie otrzymuje statusu grid ani verified. [Kontrakt T08](ORIENTATION.md).

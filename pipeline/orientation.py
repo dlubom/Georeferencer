@@ -23,6 +23,7 @@ BASELINE_SHA256 = 'b9031ff93f9ca9a1930f3574cd2eddddfd8690235be4bee2610b993858df3
 REASON = 'Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano orientację historycznego TFW T02.'
 REFERENCES = ('unknown', 'geographic', 'magnetic', 'grid')
 PROJECTION = Proj('EPSG:2180')
+GRID_CONVENTION = 'image_x_ccw_from_grid_east'
 
 
 def digest(raw):
@@ -40,9 +41,12 @@ def text(value, plan, field):
 
 def orientation_inputs(meta):
     """Współrzędne, skala i kliknięcie otworu nie określają zachowanego kąta."""
-    return {**{key: copy.deepcopy(meta.get(key)) for key in
-               ('north', 'declination_deg', 'declination', 'image')},
-            'image_sha256': meta.get('orientation', {}).get('image_sha256')}
+    result = {**{key: copy.deepcopy(meta.get(key)) for key in
+                  ('north', 'declination_deg', 'declination', 'image')},
+              'image_sha256': meta.get('orientation', {}).get('image_sha256')}
+    if 'grid_assumption' in meta.get('orientation', {}):
+        result['grid_assumption'] = copy.deepcopy(meta['orientation']['grid_assumption'])
+    return result
 
 
 def inputs_hash(meta):
@@ -130,9 +134,60 @@ def validate_metadata(meta, plan):
     if orientation.get('status') != 'unverified':
         error(plan, 'orientation.status', 'T05 wymaga unverified; zmiana metadanych nie weryfikuje geometrii')
     text(orientation.get('uncertainty_reason'), plan, 'orientation.uncertainty_reason')
-    mode = 'historical_tfw' if north['reference'] == 'unknown' else 'reference'
+    mode = orientation_mode(meta)
     if orientation.get('mode') != mode:
         error(plan, 'orientation.mode', f'wymagany tryb {mode}')
+
+
+def orientation_mode(meta):
+    if meta['north']['reference'] != 'unknown':
+        return 'reference'
+    return 'assumed_grid' if 'origin' in meta.get('orientation', {}) else 'historical_tfw'
+
+
+def decision_action(meta):
+    return {'historical_tfw': 'preserve_historical', 'reference': 'establish_reference',
+            'assumed_grid': 'accept_grid_assumption'}[orientation_mode(meta)]
+
+
+def validate_origin(meta, plan):
+    """Nowy plan: jawna decyzja początkowa, nigdy pożyczony wyjątek T02."""
+    orientation = meta['orientation']
+    if 'historical' in orientation:
+        error(plan, 'orientation.historical', 'nowy plan nie ma odniesienia T02')
+    origin = orientation.get('origin')
+    if not isinstance(origin, dict) or origin.get('kind') != 'manual_t08' or origin.get('plan_id') != plan:
+        error(plan, 'orientation.origin', 'wymagana decyzja początkowa manual_t08 dla tego planu')
+    for field in ('reason', 'date', 'inputs_sha256'):
+        text(origin.get(field), plan, 'orientation.origin.' + field)
+    try:
+        date.fromisoformat(origin['date'])
+    except ValueError:
+        error(plan, 'orientation.origin.date', 'wymagana data YYYY-MM-DD')
+    if len(origin['inputs_sha256']) != 64 or any(c not in '0123456789abcdef' for c in origin['inputs_sha256']):
+        error(plan, 'orientation.origin.inputs_sha256', 'wymagany SHA-256 wejść początkowej decyzji')
+    north = meta['north']
+    if north['angle_origin'] not in ('measured', 'unknown'):
+        error(plan, 'north.angle_origin', 'nowy plan: measured albo jawny brak pomiaru unknown')
+    if north['angle_origin'] == 'measured':
+        text(north.get('evidence'), plan, 'north.evidence')
+        if type(north.get('angle_deg')) not in (float, int) or not math.isfinite(north['angle_deg']) or north.get('all_skipped') is not False:
+            error(plan, 'north.angle_deg', 'pomiar wymaga skończonego kąta i all_skipped=false')
+    elif north['reference'] != 'unknown' or north.get('angle_deg') is not None or north.get('all_skipped') is not True:
+        error(plan, 'north.angle_deg', 'brak pomiaru wymaga unknown, null i all_skipped=true')
+    if north['reference'] == 'unknown':
+        assumption = orientation.get('grid_assumption')
+        if not isinstance(assumption, dict):
+            error(plan, 'orientation.grid_assumption', 'wymagana jawnie przyjęta orientacja nowego unknown')
+        value = assumption.get('rotation_deg')
+        if type(value) not in (float, int) or not math.isfinite(value):
+            error(plan, 'orientation.grid_assumption.rotation_deg', 'wymagany skończony kąt obrotu')
+        if assumption.get('crs') != 'EPSG:2180' or assumption.get('convention') != GRID_CONVENTION:
+            error(plan, 'orientation.grid_assumption', 'wymagane EPSG:2180 i image_x_ccw_from_grid_east')
+        text(assumption.get('reason'), plan, 'orientation.grid_assumption.reason')
+    elif 'grid_assumption' in orientation:
+        error(plan, 'orientation.grid_assumption', 'ustalony rodzaj nie używa przyjęcia siatki')
+    return origin['inputs_sha256']
 
 
 def initial_metadata(meta, context):
@@ -146,11 +201,16 @@ def validate_orientation(meta, context=None):
     plan = meta['cave']['dir_id']
     validate_metadata(meta, plan)
     context = default_context() if context is None else context
-    initial = initial_metadata(meta, context)
     orientation = meta['orientation']
-    if orientation.get('historical') != initial['orientation']['historical']:
-        error(plan, 'orientation.historical', 'nie wolno odświeżać odniesienia T02')
-    accepted = inputs_hash(initial)
+    if plan in context['plans']:
+        if 'origin' in orientation or 'grid_assumption' in orientation:
+            error(plan, 'orientation.historical', 'plan T02 nie może zastąpić historycznej podstawy przyjęciem T08')
+        initial = initial_metadata(meta, context)
+        if orientation.get('historical') != initial['orientation']['historical']:
+            error(plan, 'orientation.historical', 'nie wolno odświeżać odniesienia T02')
+        accepted = inputs_hash(initial)
+    else:
+        accepted = validate_origin(meta, plan)
     decisions = orientation.get('decisions')
     if not isinstance(decisions, list):
         error(plan, 'orientation.decisions', 'wymagana lista jawnych decyzji')
@@ -167,13 +227,13 @@ def validate_orientation(meta, context=None):
                 or len(decision['after_sha256']) != 64
                 or any(c not in '0123456789abcdef' for c in decision['after_sha256'])):
             error(plan, 'orientation.decisions', 'niespójny łańcuch decyzji przed/po')
-        if decision.get('action') not in ('preserve_historical', 'establish_reference'):
+        if decision.get('action') not in ('preserve_historical', 'establish_reference', 'accept_grid_assumption'):
             error(plan, 'orientation.decisions.action', 'wymagana jawna decyzja o orientacji')
         accepted = decision['after_sha256']
     if accepted != inputs_hash(meta):
         error(plan, 'orientation.decisions', 'zmiana wejść orientacji wymaga jawnej decyzji z uzasadnieniem')
     if decisions:
-        action = 'preserve_historical' if meta['north']['reference'] == 'unknown' else 'establish_reference'
+        action = decision_action(meta)
         if decisions[-1]['action'] != action:
             error(plan, 'orientation.decisions.action', 'decyzja nie odpowiada rodzajowi północy')
     return context
@@ -197,6 +257,9 @@ def rotation(meta, context=None):
     γ to zbieżność PROJ, δ to udokumentowana deklinacja east_positive.
     """
     if meta.get('north', {}).get('reference') == 'unknown':
+        validate_orientation(meta, context)
+        if meta['orientation']['mode'] == 'assumed_grid':
+            return meta['orientation']['grid_assumption']['rotation_deg']
         return historical_rotation(meta, context)
     validate_orientation(meta, context)
     reference = meta['north']['reference']
@@ -226,11 +289,12 @@ def record_decision(meta, reason, decision_date, context=None):
     text(reason, meta['cave']['dir_id'], 'orientation.decisions.reason')
     result = copy.deepcopy(meta)
     orientation = result['orientation']
-    orientation['mode'] = 'historical_tfw' if result['north']['reference'] == 'unknown' else 'reference'
-    initial = initial_metadata(result, context)
-    before = (orientation['decisions'][-1]['after_sha256'] if orientation['decisions'] else inputs_hash(initial))
+    orientation['mode'] = orientation_mode(result)
+    initial_hash = (inputs_hash(initial_metadata(result, context))
+                    if result['cave']['dir_id'] in context['plans'] else validate_origin(result, result['cave']['dir_id']))
+    before = (orientation['decisions'][-1]['after_sha256'] if orientation['decisions'] else initial_hash)
     orientation['decisions'].append({'before_sha256': before, 'after_sha256': inputs_hash(result),
-                                     'action': 'preserve_historical' if orientation['mode'] == 'historical_tfw' else 'establish_reference',
+                                     'action': decision_action(result),
                                      'reason': reason, 'date': decision_date})
     validate_orientation(result, context)
     return result
