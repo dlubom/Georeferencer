@@ -28,7 +28,7 @@ Każdy plik `meta.yaml` jest edytowalny — można ręcznie poprawić:
 - kąt północy (`north.angle_deg`)
 - deklinację (`declination_deg`)
 
-Po edycji i pushu na `main` — CI automatycznie przelicza World File i generuje nowy GeoTIFF.
+Zmiany przekazuj przez PR z wymaganą kontrolą `Kontrola projektu`. Dotychczasowy automat po pushu na `main` przelicza World File i GeoTIFF, ale ochrona gałęzi blokuje jego bezpośredni zapis commitu. Do przełączenia generacji w T10 zmienione TFW/metadane wymagają sprawdzonego PR — [opis okresu przejściowego](ci/README.md).
 
 Współrzędne WGS84 nie są już traktowane jako lokalna prawda projektu. Każdy YAML wskazuje konkretny otwór w `gps-kataster-obiektow-tatr`, a release renderuje `lat/lon` z `best-measurements.csv`. Obsługiwane kategorie obiektów to `jaskinia_otwor` i `sztolnia`; inne kategorie są odrzucane. Jeśli automatyczne jednorazowe przypisanie otworu było błędne, popraw tylko `gps_kataster_object_id`. Przypadki z wieloma kandydatami są zebrane w `data/caves/_reports/gps_kataster_manual_review.csv`.
 
@@ -40,6 +40,8 @@ coordinates:
 ```
 
 ### Uruchomienie lokalne
+
+Kontrola przed PR: `./scripts/check` (wymaga działającego Dockera). Uruchamia cały zestaw testów, w tym mały GeoTIFF przez rzeczywisty GDAL, w tym samym przypiętym środowisku co CI. [Instrukcja kontroli, wersje i aktualizacja zależności](ci/README.md).
 
 ```bash
 python -m venv .venv && source .venv/bin/activate

@@ -67,12 +67,18 @@ data/caves/{dir_id}/
 **Ważne:** Kliki zostały wykonane na obrazach mono (rozdzielczość 2x upscaled). Wymiary w YAML muszą odpowiadać image.tif. Zmiana obrazu wymaga nowych kliknięć.
 
 ### CI/CD (`.github/workflows/`)
-- `generate-geotiff.yml` — na push do main gdy zmieni się `meta.yaml` → regeneruje .tfw + GeoTIFF → commit `[skip ci]`
-- `release-geotiff.yml` — na tag `v*` → generuje wszystkie GeoTIFF-y → tar.gz jako Release asset
+- `check.yml` — każdy PR i push do `main` → `./scripts/check`; wymagana kontrola `Kontrola projektu`.
+- `generate-geotiff.yml` — na push do main gdy zmieni się `meta.yaml` → regeneruje .tfw + GeoTIFF. Obowiązkowa kontrola blokuje bezpośredni push commitu bota; okres przejściowy do T10 opisuje [ci/README.md](ci/README.md).
+- `release-geotiff.yml` — na tag `v*` → generuje wszystkie GeoTIFF-y → ZIP jako Release asset
 
 ## Komendy deweloperskie
 
+Przed przygotowaniem lub aktualizacją PR uruchom `./scripts/check` — tę samą kontrolę co CI, w przypiętym kontenerze Linux/Python 3.12/GDAL. Dodawaj nowe testy do `tests/`, aby były automatycznie odkrywane przez tę komendę. Do PR dołącz wynik i liczbę testów, wersje środowiska, link do CI bieżącej rewizji oraz dowód wykrycia regresji. Przy zmianie zależności, konfiguracji CI lub wymaganych checków przeczytaj [ci/README.md](ci/README.md): opisuje odtwarzanie środowiska, aktualizację locka i ochronę `main`. Próba GDAL nie potwierdza poprawności geometrii całego katalogu.
+
 ```bash
+# Obowiązkowa kontrola lokalna i CI (wymaga działającego Dockera)
+./scripts/check
+
 # Pipeline GeoTIFF
 python -m venv .venv && source .venv/bin/activate
 pip install -r pipeline/requirements.txt
