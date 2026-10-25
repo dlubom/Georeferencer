@@ -1,9 +1,11 @@
 """T05: oraklem zgodności są zapisane TFW T02, nigdy computed/stary wzór."""
 import copy
+import hashlib
 import importlib.util
 import json
 import math
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -21,6 +23,15 @@ spec.loader.exec_module(generator)
 
 def catalogue():
     return json.loads((ROOT / 'data/baseline/2026-10-24/catalogue.json').read_text())
+
+
+def historical_t05_inputs():
+    """Wejścia historycznego T06: dokładna migracja zweryfikowanych YAML-i T02."""
+    from migrate_north import migrated_bytes
+    from orientation import load_context
+    context = load_context()
+    return {plan_id: migrated_bytes(context['originals'][plan_id], plan)
+            for plan_id, plan in context['plans'].items()}
 
 
 def resolved(plan='001131'):
@@ -182,17 +193,43 @@ class OrientationTest(unittest.TestCase):
     def test_migration_report_is_reproducible_and_preserves_all_previous_fields(self):
         from migrate_north import migration
         from orientation import load_context
-        report, writes = migration()
-        self.assertEqual(report, json.loads((ROOT / 'data/migrations/t05-north.json').read_text()))
-        self.assertEqual(len(writes), 814)
         originals = load_context()['originals']
-        for path, raw in writes:
-            with self.subTest(plan=path.parent.name):
-                self.assertEqual(path.read_bytes(), raw)
-                after = yaml.safe_load(raw)
-                del after['north']['reference'], after['north']['angle_origin']
-                del after['declination'], after['orientation']
-                self.assertEqual(after, yaml.safe_load(originals[path.parent.name]))
+        expected = json.loads((ROOT / 'data/migrations/t05-north.json').read_text())
+        expected_plans = {plan['dir_id']: plan for plan in expected['plans']}
+        historical = historical_t05_inputs()
+        # Odbiór migracji odtwarza archiwum, nie wymaga cofania bieżących edycji.
+        with tempfile.TemporaryDirectory() as tmp:
+            for plan_id, raw in originals.items():
+                path = Path(tmp) / 'data/caves' / plan_id / 'meta.yaml'
+                path.parent.mkdir(parents=True)
+                path.write_bytes(raw)
+            report, writes = migration(tmp)
+            self.assertEqual(report, expected)
+            self.assertEqual(len(writes), 814)
+            for path, raw in writes:
+                plan_id = path.parent.name
+                with self.subTest(plan=plan_id):
+                    self.assertEqual(path.read_bytes(), originals[plan_id])
+                    self.assertEqual(hashlib.sha256(originals[plan_id]).hexdigest(),
+                                     expected_plans[plan_id]['before_sha256'])
+                    self.assertEqual(hashlib.sha256(raw).hexdigest(), expected_plans[plan_id]['after_sha256'])
+                    self.assertEqual(raw, historical[plan_id])
+                    after = yaml.safe_load(raw)
+                    del after['north']['reference'], after['north']['angle_origin']
+                    del after['declination'], after['orientation']
+                    self.assertEqual(after, yaml.safe_load(originals[plan_id]))
+                    path.write_bytes(raw)
+            self.assertEqual(migration(tmp), (report, writes))
+
+            # Późniejsza poprawna edycja YAML-a nie zmienia historii; migrator
+            # nadal odmawia jej nadpisania, także gdy zmienia się tylko komentarz.
+            path, raw = writes[0]
+            edited = raw + b'\n# Later catalogue edit.\n'
+            path.write_bytes(edited)
+            self.assertEqual(historical_t05_inputs()[path.parent.name], raw)
+            with self.assertRaisesRegex(ValueError, 'zmienione wejście'):
+                migration(tmp)
+            self.assertEqual(path.read_bytes(), edited)
 
     def test_qa_exposes_status_and_uncertainty_reason(self):
         import csv

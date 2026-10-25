@@ -2,7 +2,7 @@ cave:
   inventory_number: T.D-08.14
   dir_id: '001103'
   name: Jaskinia Naciekowa
-  n_submissions: 7
+  n_submissions: 5
 image:
   filename: image_579_zoom_10.tif
   image_id: 579
@@ -13,13 +13,13 @@ coordinates:
   lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
   lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:
-  x: 516.37
-  y: 1880.43
+  x: 516.17
+  y: 1880.24
 scale:
-  pixels_per_meter: 29.61
+  pixels_per_meter: 29.67
 north:
   reference: unknown
-  angle_origin: unknown
+  angle_origin: measured
   angle_deg: 0.0
   all_skipped: false
 declination_deg: 0.0
@@ -33,16 +33,14 @@ computed:
   C: 563129.250879
   F: 153986.452528
 quality:
-  ppm_cv: 0.0110000000
+  ppm_cv: 0.011
   ppm_values:
-  - 29.49
-  - 29.37
   - 29.67
   - 30.27
   - 29.56
   - 30.27
   - 29.61
-  entrance_std_px: 0.5400000000
+  entrance_std_px: 0.62
   outliers_removed: 0
   flag: null
 declination:
@@ -52,11 +50,16 @@ declination:
 orientation:
   mode: historical_tfw
   status: unverified
-  uncertainty_reason: Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano
-    orientację historycznego TFW T02.
+  uncertainty_reason: Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano orientację historycznego TFW T02.
   image_sha256: 7ae2a56d4b1a6ef83b366825c1fd452effa268ba8fbb77d601ca8ce73aa3c169
   historical:
     catalogue_sha256: b9031ff93f9ca9a1930f3574cd2eddddfd8690235be4bee2610b993858df3541
     plan_id: '001103'
     tfw_sha256: 5c2ea7a87aa72776c06d036a9f7d9e6a47dfdc97ef43265f9a900c8b166b99bb
-  decisions: []
+  decisions:
+  - before_sha256: 1da73534b8e116e77a2015a59829b0abc837b40f3247b4d07640c3542fcc0540
+    after_sha256: 411c91c938c0ed64293ce694fde1e57f408f7ec405aba2bd8e06acc7e77590df
+    action: preserve_historical
+    reason: 'T07: wyłączenie jawnych rekordów TEST lub niekompletnych strzałek; korekta agregatu nie ustala rodzaju północy.
+      Zachowujemy kąt historycznego TFW T02. Raport: docs/reports/t07-aggregation-impact.json; SHA-256 obrazu: 7ae2a56d4b1a6ef83b366825c1fd452effa268ba8fbb77d601ca8ce73aa3c169'
+    date: '2026-10-25'

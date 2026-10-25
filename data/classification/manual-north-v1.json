@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "scope": "Pochodzenie historycznych korekt, nie potwierdzenie rodzaju północy ani poprawności geodezyjnej",
+  "corrections": [
+    {
+      "dir_id": "000978",
+      "aggregate_angle_deg": 0.011,
+      "manual_angle_deg": 90.0,
+      "reason": "N w prawo",
+      "source_commit": "320b14089357d544ba2a1bb35679aea6b12bdb10",
+      "reapplied_commit": "2d2ec311134e2d47ee580ead8143d76d460aaf99"
+    },
+    {
+      "dir_id": "001094",
+      "aggregate_angle_deg": 49.99,
+      "manual_angle_deg": 50.0,
+      "reason": "N obrócone około 50°",
+      "source_commit": "320b14089357d544ba2a1bb35679aea6b12bdb10",
+      "reapplied_commit": "2d2ec311134e2d47ee580ead8143d76d460aaf99"
+    },
+    {
+      "dir_id": "001179",
+      "aggregate_angle_deg": 0.015,
+      "manual_angle_deg": 0.0,
+      "reason": "N do góry; outlier usunięty",
+      "source_commit": "320b14089357d544ba2a1bb35679aea6b12bdb10",
+      "reapplied_commit": "2d2ec311134e2d47ee580ead8143d76d460aaf99"
+    },
+    {
+      "dir_id": "001189",
+      "aggregate_angle_deg": -89.865,
+      "manual_angle_deg": -90.0,
+      "reason": "N w lewo",
+      "source_commit": "320b14089357d544ba2a1bb35679aea6b12bdb10",
+      "reapplied_commit": "2d2ec311134e2d47ee580ead8143d76d460aaf99"
+    },
+    {
+      "dir_id": "001349",
+      "aggregate_angle_deg": 60.113,
+      "manual_angle_deg": 60.0,
+      "reason": "N obrócone około 60°",
+      "source_commit": "320b14089357d544ba2a1bb35679aea6b12bdb10",
+      "reapplied_commit": "2d2ec311134e2d47ee580ead8143d76d460aaf99"
+    },
+    {
+      "dir_id": "001351",
+      "aggregate_angle_deg": 59.994,
+      "manual_angle_deg": 60.0,
+      "reason": "N obrócone około 60°",
+      "source_commit": "320b14089357d544ba2a1bb35679aea6b12bdb10",
+      "reapplied_commit": "2d2ec311134e2d47ee580ead8143d76d460aaf99"
+    }
+  ]
+}

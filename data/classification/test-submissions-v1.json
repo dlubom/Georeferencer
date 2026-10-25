@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "classification_version": "test-submissions-v1",
+  "source": {
+    "path": "parquet/SUBMISSIONS.parquet",
+    "sha256": "5943b638fd036783e866ca5ca9c8bfcada97a277670f50598faefd3dae804451",
+    "review": "data/baseline/2026-10-24/review/data_review.reproduced.json"
+  },
+  "policy": "Wykluczane są wyłącznie wymienione submission_id. Marker TEST jest dowodem klasyfikacji tych rekordów w przypiętym snapshotcie, nie ogólną regułą filtrowania. Brak assignment_id lub przydziału nie wyklucza obserwacji.",
+  "exclusions": [
+    {
+      "submission_id": "SUB_1769499157082_5367",
+      "cave_id": "T.E-09.12",
+      "classification": "TEST",
+      "reason": "Zgłoszenie testowe rozpoznane w audycie T02; jawny marker TEST w przypiętym snapshotcie, potwierdzony przez review/data_review.reproduced.json.",
+      "evidence": {"column": "Unnamed: 52", "value": "TEST"}
+    },
+    {
+      "submission_id": "SUB_1769506125763_8121",
+      "cave_id": "T.D-08.14",
+      "classification": "TEST",
+      "reason": "Zgłoszenie testowe rozpoznane w audycie T02; jawny marker TEST w przypiętym snapshotcie, potwierdzony przez review/data_review.reproduced.json.",
+      "evidence": {"column": "Unnamed: 52", "value": "TEST"}
+    },
+    {
+      "submission_id": "SUB_1769506147971_9732",
+      "cave_id": "T.D-08.07",
+      "classification": "TEST",
+      "reason": "Zgłoszenie testowe rozpoznane w audycie T02; jawny marker TEST w przypiętym snapshotcie, potwierdzony przez review/data_review.reproduced.json.",
+      "evidence": {"column": "Unnamed: 52", "value": "TEST"}
+    },
+    {
+      "submission_id": "SUB_1769506750992_7643",
+      "cave_id": "T.D-08.08",
+      "classification": "TEST",
+      "reason": "Zgłoszenie testowe rozpoznane w audycie T02; jawny marker TEST w przypiętym snapshotcie, potwierdzony przez review/data_review.reproduced.json.",
+      "evidence": {"column": "Unnamed: 52", "value": "TEST"}
+    },
+    {
+      "submission_id": "SUB_1769508449403_9571",
+      "cave_id": "T.D-08.14",
+      "classification": "TEST",
+      "reason": "Zgłoszenie testowe rozpoznane w audycie T02; jawny marker TEST w przypiętym snapshotcie, potwierdzony przez review/data_review.reproduced.json.",
+      "evidence": {"column": "Unnamed: 52", "value": "TEST"}
+    },
+    {
+      "submission_id": "SUB_1769509389437_7729",
+      "cave_id": "T.D-08.07",
+      "classification": "TEST",
+      "reason": "Zgłoszenie testowe rozpoznane w audycie T02; jawny marker TEST w przypiętym snapshotcie, potwierdzony przez review/data_review.reproduced.json.",
+      "evidence": {"column": "Unnamed: 52", "value": "TEST"}
+    },
+    {
+      "submission_id": "SUB_1769513153380_2310",
+      "cave_id": "T.E-09.12",
+      "classification": "TEST",
+      "reason": "Zgłoszenie testowe rozpoznane w audycie T02; jawny marker TEST w przypiętym snapshotcie, potwierdzony przez review/data_review.reproduced.json.",
+      "evidence": {"column": "Unnamed: 52", "value": "TEST"}
+    }
+  ]
+}

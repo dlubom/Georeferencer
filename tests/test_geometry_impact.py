@@ -1,4 +1,4 @@
-"""Odbiór kompletności, aktualności i numeryki raportu 814 planów T06."""
+"""Odbiór historycznych wejść i numeryki raportu 814 planów T06."""
 import hashlib
 import json
 import math
@@ -8,7 +8,7 @@ from pathlib import Path
 
 import yaml
 
-from test_orientation import ROOT, generator
+from test_orientation import ROOT, generator, historical_t05_inputs
 from test_geometry import PROJECT, tfw_tolerance
 from gps_kataster_coordinates import load_best_measurements
 from geometry_impact import BEFORE_COMMIT, BEFORE_SHA256, compare_plan, load_generator
@@ -28,20 +28,20 @@ class GeometryImpactTest(unittest.TestCase):
                 self.assertLessEqual(abs(comparison['delta_deg']), 1e-11)
                 self.assertFalse(comparison['source_metadata_verified'])
 
-    def test_report_covers_all_inputs_and_separates_position_orientation_scale(self):
+    def test_report_covers_all_historical_inputs_and_separates_position_orientation_scale(self):
         report = json.loads((ROOT / 'docs/reports/t06-geometry-impact.json').read_text())
         index = load_best_measurements(ROOT / 'data/coordinate-source/best-measurements-v1.3.1.csv')
-        paths = sorted((ROOT / 'data/caves').glob('*/meta.yaml'))
-        self.assertEqual([p['dir_id'] for p in report['plans']], [p.parent.name for p in paths])
+        inputs = historical_t05_inputs()
+        self.assertEqual([p['dir_id'] for p in report['plans']], sorted(inputs))
         self.assertEqual(report['plan_count'], 814)
         self.assertEqual(report['changed_tfw_count'], 814)
         self.assertEqual(report['before_commit'], BEFORE_COMMIT)
         self.assertEqual(report['before_generator_sha256'], BEFORE_SHA256)
         for name, digest in report['after_implementation_sha256'].items():
             self.assertEqual(digest, hashlib.sha256((ROOT / 'pipeline' / name).read_bytes()).hexdigest())
-        for path, item in zip(paths, report['plans']):
-            with self.subTest(plan=path.parent.name):
-                raw = path.read_bytes()
+        for item in report['plans']:
+            with self.subTest(plan=item['dir_id']):
+                raw = inputs[item['dir_id']]
                 meta = yaml.safe_load(raw)
                 row = index.by_object_id[meta['coordinates']['gps_kataster_object_id']]
                 meta['coordinates'].update(lat=row.lat, lon=row.lon)
