@@ -162,11 +162,12 @@ def validate_image(meta, cave_dir, registry):
         fail(plan, 'image', f'wymagany dostępny i czytelny TIFF: {exc}')
 
 
-def validate_plan(cave_dir, index, image_registry=None):
+def validate_plan(cave_dir, index, image_registry=None, meta_text=None):
     """Zwróć (oryginalne metadane, kopia z liczbami z katalogu), niczego nie zapisuj."""
     cave_dir = Path(cave_dir)
     try:
-        meta = yaml.load((cave_dir / 'meta.yaml').read_text(encoding='utf-8'), Loader=UniqueLoader)
+        text = (cave_dir / 'meta.yaml').read_text(encoding='utf-8') if meta_text is None else meta_text
+        meta = yaml.load(text, Loader=UniqueLoader)
         validate_meta(meta, cave_dir.name)
         resolved = resolve_coordinates(meta, index, cave_dir.name)
         validate_image(meta, cave_dir, read_registry() if image_registry is None else image_registry)

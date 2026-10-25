@@ -4,8 +4,9 @@ Produkcja uruchamiana przez `pipeline/02_generate_geotiff.py` sprawdza przed
 pierwszym zapisem cały wybrany zestaw planów. Błąd zwraca status 1 oraz plan,
 pole i regułę, np. `plan 001131: scale.pixels_per_meter: wymagana skala > 0`.
 Błąd wejścia nie zmienia YAML, TFW ani poprzedniego GeoTIFF-u żadnego wybranego
-planu. Walidacja nie tworzy plików. Błędy samego GDAL i organizacja wyników
-pozostają zakresem T04; ten PR nie obiecuje transakcyjnego zapisu wyników.
+planu. Walidacja nie tworzy plików. T04 dodaje opcjonalny
+[osobny katalog wyników z kontrolą GeoTIFF i atomową publikacją](GENERATION_OUTPUT.md).
+Dotychczasowy zapis bez `--output-dir` pozostaje przejściowo obsługiwany do T10.
 
 ## Kontrakt v1
 

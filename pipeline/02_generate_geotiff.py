@@ -5,6 +5,7 @@ Powtarzalny skrypt: czyta meta.yaml, przelicza parametry A-F,
 generuje World File (.tfw) i GeoTIFF przez gdal_translate.
 
 Użycie:
+    python pipeline/02_generate_geotiff.py --cave 001131 --output-dir /tmp/georeferencer-results
     python pipeline/02_generate_geotiff.py --cave 001131 \
         --gps-kataster-best-measurements data/coordinate-source/best-measurements-v1.3.1.csv \
         --gps-kataster-strict
@@ -19,9 +20,12 @@ Użycie:
         --gps-kataster-strict
 """
 import argparse
+import copy
+import hashlib
 import math
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 import yaml
@@ -32,7 +36,8 @@ from gps_kataster_coordinates import (
     load_best_measurements,
 )
 
-from coordinate_source import verify
+from coordinate_source import DEFAULT_MANIFEST, read_manifest, read_rows, sha256, verify
+from geotiff_output import input_hashes, publish_run, validate_output_dir
 from validation import ValidationError, fail, read_registry, validate_plan
 
 DATA_DIR = Path("data/caves")
@@ -48,6 +53,8 @@ def parse_args():
                        help="Przetwórz tylko zmienione (meta.yaml nowszy niż .tfw)")
     p.add_argument("--force", action="store_true", help="Wymuszaj regenerację")
     p.add_argument("--data-dir", default="data/caves", help="Katalog danych")
+    p.add_argument("--output-dir", type=Path,
+                   help="Jawny katalog wyników bez zmiany źródeł (--cave lub --all)")
     p.add_argument(
         "--gps-kataster-best-measurements",
         help=(
@@ -176,8 +183,8 @@ def validate_gps_kataster_object_id(meta, gps_kataster_index):
             f"coordinates.gps_kataster_object_id: brak lub niedozwolony obiekt {object_id}")
 
 
-def prepare_cave(cave_dir, gps_kataster_index, image_registry=None):
-    source_meta, resolved_meta = validate_plan(cave_dir, gps_kataster_index, image_registry)
+def prepare_cave(cave_dir, gps_kataster_index, image_registry=None, meta_text=None):
+    source_meta, resolved_meta = validate_plan(cave_dir, gps_kataster_index, image_registry, meta_text)
     try:
         params = compute_world_file(resolved_meta)
         if not all(math.isfinite(value) for value in params.values()):
@@ -190,7 +197,7 @@ def prepare_cave(cave_dir, gps_kataster_index, image_registry=None):
 
 
 def process_prepared(cave_dir, source_meta, params):
-    """Dotychczasowy zapis; organizacja i kontrola wyników są zakresem T04."""
+    """Przejściowy zapis w miejscu, zachowany dla dotychczasowych odbiorców do T10."""
     write_tfw(cave_dir, params)
     update_computed_section(source_meta, params)
     yaml.add_representer(float, represent_float)
@@ -198,6 +205,61 @@ def process_prepared(cave_dir, source_meta, params):
         yaml.dump(source_meta, f, default_flow_style=False, allow_unicode=True,
                   sort_keys=False, width=120)
     return generate_geotiff(cave_dir)
+
+
+def process_output(caves, output_dir, data_dir, coordinates_path=None, registry_path=None):
+    """Nowy tryb: pin + preflight całej partii + sprawdzona publikacja poza źródłami."""
+    output_dir = validate_output_dir(output_dir, data_dir, caves)
+    pipeline_dir = Path(__file__).resolve().parent
+    registry_path = Path(registry_path) if registry_path else pipeline_dir.parent / 'data/validation/images-v1.json'
+    # Hash, walidacja, indeks i rekord manifestu używają tych samych bajtów.
+    # Osobne odczyty oryginału mogłyby przy edycji A→B→A związać hash A z obliczeniem B.
+    pin_bytes = DEFAULT_MANIFEST.read_bytes()
+    with tempfile.TemporaryDirectory(prefix='georeferencer-inputs-') as temporary:
+        snapshot_dir = Path(temporary)
+        pin_snapshot = snapshot_dir / 'source.json'
+        pin_snapshot.write_bytes(pin_bytes)
+        pin = read_manifest(pin_snapshot)
+        coordinates_path = Path(coordinates_path) if coordinates_path else DEFAULT_MANIFEST.parent / pin['snapshot']
+        csv_bytes = coordinates_path.read_bytes()
+        registry_bytes = registry_path.read_bytes()
+        csv_snapshot = snapshot_dir / 'best-measurements.csv'
+        csv_snapshot.write_bytes(csv_bytes)
+        registry_snapshot = snapshot_dir / 'images.json'
+        registry_snapshot.write_bytes(registry_bytes)
+        verify(manifest=pin_snapshot, csv_path=csv_snapshot)
+        index = load_best_measurements(csv_snapshot)
+        rows = read_rows(csv_snapshot)
+        registry = read_registry(registry_snapshot)
+    guarded_paths = [DEFAULT_MANIFEST, coordinates_path, registry_path,
+                     *(pipeline_dir / name for name in (
+                         '02_generate_geotiff.py', 'geotiff_output.py', 'validation.py',
+                         'coordinate_source.py', 'gps_kataster_coordinates.py', 'meta-schema-v1.json'))]
+    guarded = {str(p.resolve()): sha256(p) for p in guarded_paths}
+    for p, raw in ((DEFAULT_MANIFEST, pin_bytes), (coordinates_path, csv_bytes),
+                   (registry_path, registry_bytes)):
+        guarded[str(p.resolve())] = hashlib.sha256(raw).hexdigest()
+    output_dir = validate_output_dir(output_dir, data_dir, caves, guarded_paths)
+    plans = []
+    for cave_dir in caves:
+        raw_meta = (cave_dir / 'meta.yaml').read_bytes()
+        before = input_hashes(cave_dir)
+        before['meta.yaml'] = hashlib.sha256(raw_meta).hexdigest()
+        meta, params = prepare_cave(cave_dir, index, registry, meta_text=raw_meta.decode('utf-8'))
+        computed_meta = copy.deepcopy(meta)
+        update_computed_section(computed_meta, params)
+        plans.append({'source_directory': cave_dir, 'inputs': before, 'params': params,
+                      'computed': computed_meta['computed'],
+                      'measurement': rows[meta['coordinates']['gps_kataster_object_id']]})
+    provenance = {
+        'coordinate_source': {**pin,
+                              'manifest_sha256': guarded[str(DEFAULT_MANIFEST.resolve())]},
+        'image_registry': {'path': str(registry_path.resolve()),
+                           'sha256': guarded[str(registry_path.resolve())]},
+        'implementation': {p.name: guarded[str(p.resolve())] for p in guarded_paths[3:]},
+        'guarded_files': guarded,
+    }
+    return publish_run(output_dir, plans, provenance, write_tfw)
 
 
 def process_cave(cave_dir, gps_kataster_index=None, gps_kataster_strict=False,
@@ -230,6 +292,8 @@ def find_caves(data_dir, changed_only=False):
 def main():
     args = parse_args()
     data_dir = Path(args.data_dir)
+    if args.output_dir and args.changed:
+        sys.exit('BŁĄD: --output-dir obsługuje --cave lub --all; tryb --changed należy do T10')
     try:
         # Także jawny argument musi odpowiadać przypiętym bajtom. Brak argumentu
         # oznacza wersjonowany snapshot, nigdy liczby z YAML ani latest.
@@ -248,6 +312,14 @@ def main():
 
     if not caves:
         print("Brak jaskiń do przetworzenia.")
+        return
+
+    if args.output_dir:
+        try:
+            destination = process_output(caves, args.output_dir, data_dir, path, args.image_registry)
+        except (ValueError, OSError) as exc:
+            sys.exit(f'BŁĄD generacji wyników: {exc}')
+        print(f'Gotowe: {len(caves)} OK; kompletny przebieg: {destination}')
         return
 
     # Preflight całego wybranego zestawu przed pierwszym zapisem artefaktu.
