@@ -1,0 +1,802 @@
+dir_id,inventory_number,name,n_submissions,lat,lon,pixels_per_meter,north_angle_deg,ppm_cv,entrance_std_px,flag,has_tif,has_tfw,has_georef
+000760,T.E-08.07,Smocza Jama,5,49.237839,19.867733,59.05,0.0,0.0,0.53,,True,False,False
+000804,T.A-12.03,Schron w Małym Żlebku,5,49.276247,19.914122,118.59,0.0,0.002,1.09,,True,False,False
+000950,T.A-06.02,Siwiańska Dziura,5,49.276603,19.8267,235.73,0.007,0.001,1.86,,True,False,False
+000951,T.A-12.01,Schronisko w Małym Żlebku,5,49.273786,19.912272,77.13,0.149,0.001,0.38,,True,False,False
+000952,T.A-12.02,Jasiowy Schron,5,49.274222,19.914528,77.04,0.0,0.002,0.5,,True,False,False
+000953,T.A-17.01,Dziura pod Nosalem,5,49.277047,19.983942,38.51,-0.056,0.0,0.55,,True,False,False
+000954,T.A-17.02,Schron z Prowokatorem,5,49.277778,19.984722,77.71,0.0,0.005,0.56,,True,False,False
+000955,T.A-18.01,Jaskinia Jaszczurowska Wyżnia,5,49.281894,20.002617,77.28,0.0,0.0,0.89,,True,False,False
+000956,T.A-24.01,Nyża nad Jaworzyńskim Żlebem,5,49.282528,20.074139,76.87,0.087,0.003,0.53,,True,False,False
+000957,T.A-24.02,Grota w Jaworzyńskim Żlebie,5,49.282083,20.074139,76.85,-0.004,0.001,0.53,,True,False,False
+000958,T.A-24.03,Jaskinia w Jaworzyńskim Żlebie,5,49.282611,20.074861,76.88,0.0,0.001,0.63,,True,False,False
+000959,T.B-04.01,Schron w Wielkich Koryciskach,5,49.269028,19.799675,77.76,0.192,0.004,2.29,,True,False,False
+000960,T.B-09.01,Dziura w Kończystej Turni,5,49.263978,19.878553,77.16,0.0,0.001,0.5,,True,False,False
+000962,T.B-09.02,Dziura w Kończystej Niżnia,5,49.264111,19.878481,77.03,0.009,0.0,0.85,,True,False,False
+000969,T.B-09.03,Dziura Stanikowa Niżnia,5,49.267375,19.881086,38.38,0.109,0.008,0.64,,True,False,False
+000970,T.B-09.04,Dziura Stanikowa Wyżnia,5,49.267219,19.880869,38.47,-0.039,0.005,0.33,,True,False,False
+000971,T.B-09.05,Dziura Niżnia w Kończystej Turni,5,49.263614,19.878217,77.13,-0.004,0.002,0.95,,True,False,False
+000972,T.B-09.06,Mała Dziura w Kończystej Turni,5,49.264156,19.878275,76.85,-0.05,0.004,0.6,,True,False,False
+000975,T.B-09.07,Koleba za Kończystą,5,49.264339,19.877631,77.13,0.002,0.0,0.54,,True,False,False
+000976,T.B-09.09,Nyża w Kończystej,5,49.263711,19.878969,77.14,0.0,0.001,0.48,,True,False,False
+000977,T.B-09.08,Schron pod Kończystą,5,49.263347,19.878497,76.81,-0.113,0.001,0.37,,True,False,False
+000978,T.B-09.10,Okap w Kończystej Turni,5,49.263622,19.879111,38.55,0.011,0.003,0.5,,True,False,False
+000979,T.B-09.11,Dziura w Żlebku,5,49.262856,19.881461,77.37,0.0,0.005,0.77,,True,False,False
+000980,T.D-06.04,Schronisko Dudowe Górne,5,49.245094,19.833053,195.64,0.0,0.128,1.84,high_ppm_cv,True,False,False
+000981,T.D-05.01,Dziura nad Potokiem,5,49.250192,19.815269,98.03,0.0,0.001,1.32,,True,False,False
+000982,T.B-09.12,Schronik w Kończystej Turni,5,49.263608,19.877736,76.68,0.0,0.005,0.47,,True,False,False
+000983,T.D-04.05,Jaskinia Rybia,5,49.246781,19.812817,59.12,0.027,0.001,1.2,,True,False,False
+000984,T.D-06.02,Dudowa Studnia,5,49.245125,19.832625,76.93,0.0,0.001,0.67,,True,False,False
+000985,T.D-06.01,Jaskinia pod Baranami,5,49.244869,19.834981,77.03,-0.034,0.001,0.87,,True,False,False
+000986,T.D-06.03,Szemrzący Schron,5,49.244981,19.8398,196.24,0.0,0.002,1.07,,True,False,False
+000987,T.B-09.13,Ciasna Norka,5,49.263036,19.878917,76.78,0.0,0.0,0.72,,True,False,False
+000988,T.B-09.14,Jaskinia Niska,5,49.264103,19.877725,77.01,-0.011,0.001,0.46,,True,False,False
+000989,T.B-09.15,Nyża pod Progiem w Kończystej,5,49.263722,19.880208,38.67,0.0,0.006,0.84,,True,False,False
+000990,T.B-09.16,Schronisko Wschodnie w Kończystej,5,49.263364,19.880078,77.35,0.0,0.004,1.08,,True,False,False
+000991,T.B-10.01,Jaskinia Barłogowa,5,49.263219,19.883928,77.13,-0.003,0.0,0.42,,True,False,False
+000992,T.B-10.02,Dziura za Smrekiem w Zawiesistej,5,49.263058,19.885925,76.93,-0.006,0.004,0.5,,True,False,False
+000993,T.B-10.03,Szczelina Przysłopczańska,5,49.262983,19.887506,38.39,-0.028,0.001,0.46,,True,False,False
+000994,T.B-12.01,Tunel w Jatkach,5,49.263706,19.920875,77.19,0.001,0.001,0.27,,True,False,False
+001010,T.B-12.02,Okno w Jatkach I,5,49.263581,19.921017,76.96,0.0,0.0,0.46,,True,False,False
+001011,T.B-12.03,Okno w Jatkach II,5,49.263572,19.921031,77.44,0.0,0.002,0.43,,True,False,False
+001012,T.B-12.04,Jaskinia w Jatkach,5,49.263572,19.921031,77.75,-0.091,0.0,0.29,,True,False,False
+001013,T.B-12.05,Kominek w Jatkach,5,49.263436,19.92095,77.83,0.0,0.003,0.31,,True,False,False
+001014,T.B-12.07,Dziurawa Nisza w Jatkach,5,49.265003,19.921878,38.55,-0.006,0.002,0.77,,True,False,False
+001015,T.B-12.08,Komora w Jatkach,5,49.248519,19.922372,77.14,0.0,0.0,0.35,,True,False,False
+001016,T.B-12.09,Nyża przy Jatkach,5,49.265569,19.922964,76.84,-0.074,0.001,0.56,,True,False,False
+001017,T.B-13.01,Schron za Irgą,5,49.268611,19.929722,197.25,0.0,0.0,3.58,,True,False,False
+001018,T.B-14.01,Dziura,5,49.271906,19.942667,59.06,-0.004,0.0,1.89,,True,False,False
+001019,T.B-14.02,Dziura Wyżnia,5,49.271556,19.943386,77.08,0.0,0.003,1.59,,True,False,False
+001020,T.B-14.03,Lisia Jama,5,49.271722,19.943056,195.7,0.0,0.002,4.41,,True,False,False
+001030,T.B-12.06,Nisza w Jatkach,5,49.264831,19.921642,77.04,0.008,0.002,0.93,,True,False,False
+001031,T.B-17.01,Jaskinia w Cycku,5,49.266111,19.977778,77.16,0.0,0.001,0.6,,True,False,False
+001033,T.B-24.01,Grota Filipczańska nad Mostkiem,5,49.27325,20.080056,77.22,0.001,0.001,0.74,,True,False,False
+001034,T.B-24.02,Filipczańska Szczelina,5,49.27325,20.080056,76.97,-0.082,0.003,0.28,,True,False,False
+001035,T.B-24.03,Grota Filipczańska Wyżnia,5,49.273861,20.077583,77.11,0.0,0.001,0.51,,True,False,False
+001036,T.B-24.04,Jaskinia Filipczańska Niżnia,5,49.273917,20.077139,38.53,0.0,0.004,0.48,,True,False,False
+001037,T.C-05.01,Schronisko w Międzyścianach I,5,49.253106,19.819842,195.94,-0.002,0.005,1.46,,True,False,False
+001038,T.C-05.02,Schronisko w Międzyścianach II,5,49.252939,19.820217,195.82,0.0,0.001,1.46,,True,False,False
+001039,T.C-05.03,Schronisko w Międzyścianach III,5,49.252894,19.820411,77.35,0.0,0.004,1.16,,True,False,False
+001040,T.C-05.04,Schron w Skale Kmietowicza I,5,49.257206,19.815403,118.19,0.022,0.002,0.55,,True,False,False
+001041,T.C-05.05,Schron w Skale Kmietowicza II,5,49.235125,19.820269,117.96,-0.014,0.003,0.92,,True,False,False
+001042,T.C-05.06,Wojtkowa Szpara,5,49.257625,19.815228,97.55,0.0,0.031,2.23,,True,False,False
+001043,T.E-08.66,Schron pod Zbójnicką Turnią,5,49.237869,19.867531,59.31,-0.035,0.001,0.63,,True,False,False
+001044,T.C-08.01,Jaskinia w Małym Krakowie,5,49.254408,19.867911,195.91,0.001,0.002,1.55,,True,False,False
+001045,T.C-09.01,Tatowa Szczelina,5,49.254847,19.871014,76.9,0.007,0.009,0.51,,True,False,False
+001046,T.C-13.02,Dziura nad Doliną Strążyską,5,49.254681,19.934631,98.22,0.0,0.006,0.76,,True,False,False
+001047,T.C-13.03,Nyża Giewontowa,5,49.254589,19.9355,195.9,0.0,0.001,0.5,,True,False,False
+001050,T.C-13.04,Kominek Giewontowy,5,49.254592,19.935678,196.42,0.0,0.005,1.39,,True,False,False
+001051,T.C-13.05,Mała Dziura Giewontowa,5,49.254506,19.932658,196.77,-0.0,0.004,1.39,,True,False,False
+001052,T.C-15.01,Dziura za Głazami,5,49.254931,19.962278,38.46,0.009,0.001,0.47,,True,False,False
+001053,T.C-15.02,Płaska Nyża,5,49.255122,19.962383,76.76,-0.048,0.004,0.24,,True,False,False
+001054,T.C-15.03,Szczelina w Suchym Żlebie,5,49.254733,19.962283,76.86,0.0,0.004,0.81,,True,False,False
+001055,T.C-15.04,Nyża z Mostem,5,49.254528,19.962328,77.32,0.021,0.002,0.65,,True,False,False
+001056,T.C-15.05,Kalacki Tunelik,5,49.254722,19.964136,76.41,-0.074,0.005,0.47,,True,False,False
+001057,T.C-15.06,Mokra Koleba,5,49.254617,19.964317,76.88,-0.001,0.001,0.33,,True,False,False
+001058,T.C-15.07,Frapująca Nyża,5,49.255069,19.964611,77.18,-0.006,0.001,0.64,,True,False,False
+001059,T.C-15.08,Szczelina pod Frapującą Nyżą,5,49.255069,19.964611,77.69,0.0,0.004,0.54,,True,False,False
+001060,T.C-15.09,Kalacka Nyża I,5,49.256014,19.964592,77.08,-0.018,0.005,0.41,,True,False,False
+001061,T.C-15.10,Kalacka Szczelina,5,49.254522,19.963797,77.0,0.0,0.001,0.74,,True,False,False
+001062,T.C-15.11,Kalacka Nyża II,5,49.255608,19.964531,38.49,0.056,0.001,0.51,,True,False,False
+001063,T.C-16.01,Jaskinia Kalacka,5,49.256297,19.966847,19.29,0.0,0.0,0.51,,True,False,False
+001064,T.C-16.02,Korytarzyk przy Kalackiej,5,49.256314,19.966806,77.25,-0.13,0.003,0.77,,True,False,False
+001065,T.C-16.03,Korytarzyk nad Kalacką,5,49.256361,19.966567,77.4,0.0,0.004,0.72,,True,False,False
+001066,T.C-18.01,Nyża nad Olczyską I,5,49.263889,20.004444,196.67,0.105,0.002,7.48,,True,False,False
+001067,T.D-04.01,Zbójecka Dziura,5,49.247769,19.811731,97.6,0.0,0.003,1.15,,True,False,False
+001068,T.D-04.02,Szczelina Chochołowska,5,49.245944,19.811983,15.74,0.0,0.0,0.64,,True,False,False
+001069,T.D-04.03,Kamienne Mleko,5,49.2453,19.81105,59.07,-0.001,0.001,0.69,,True,False,False
+001070,T.D-04.04,Jaskinia Mała,5,49.245619,19.811586,196.13,0.007,0.001,1.3,,True,False,False
+001071,T.D-17.04,Jaskinia pod Szczytem,5,49.251642,19.983514,38.48,-0.001,0.002,0.41,,True,False,False
+001072,T.D-17.03,Jaskinia Korytarzowa,5,49.252417,19.982861,77.03,0.001,0.0,0.3,,True,False,False
+001073,T.D-04.06,Piwnica,5,49.245511,19.811425,196.99,0.134,0.001,1.57,,True,False,False
+001074,T.D-04.07,Schron przy Szczelinie,5,49.244822,19.810864,196.39,0.004,0.001,1.43,,True,False,False
+001075,T.D-06.05,Schronisko Dudowe,5,49.244878,19.833044,195.54,-0.002,0.004,0.65,,True,False,False
+001076,T.D-06.06,Dudowy Schron,5,49.244936,19.8327,196.97,0.0,0.003,1.55,,True,False,False
+001077,T.D-06.07,Szczelina Zawaliskowa nad Kufą,5,49.245961,19.838786,76.96,0.0,0.001,0.53,,True,False,False
+001078,T.D-06.08,Jaskinia Lodowa nad Kufą,5,49.244389,19.838961,38.4,0.044,0.0,0.49,,True,False,False
+001079,T.D-06.09,Szczelina przy Lodowej nad Kufą,5,49.244167,19.839172,76.84,-0.003,0.004,0.32,,True,False,False
+001080,T.D-06.10,Schron w Opalonem I,5,49.249153,19.833589,76.76,0.004,0.006,0.52,,True,False,False
+001081,T.D-06.11,Schron w Opalonem II,5,49.248989,19.836917,77.11,0.0,0.005,0.61,,True,False,False
+001082,T.D-06.12,Schron pod Kufą Zachodni,5,49.2451,19.838258,77.26,0.009,0.0,0.6,,True,False,False
+001083,T.D-06.13,Szczelina przed Kufą,5,49.246092,19.838508,76.96,-0.132,0.004,0.48,,True,False,False
+001084,T.D-06.14,Schron Wschodni pod Kufą,5,49.245969,19.839583,77.19,0.016,0.002,0.25,,True,False,False
+001085,T.D-06.15,Nisza przy Szemrzącym Schronie I,5,49.245036,19.840731,38.59,-0.029,0.0,0.45,,True,False,False
+001086,T.D-06.16,Nisza przy Szemrzącym Schronie II,5,49.245039,19.840939,77.14,0.004,0.007,0.52,,True,False,False
+001087,T.D-08.01,Dziurawiec,5,49.253167,19.865294,98.13,0.008,0.003,0.92,,True,False,False
+001088,T.D-08.02,Jaskinia nad Mostkiem Niżnia,5,49.250958,19.863875,38.67,0.004,0.001,0.46,,True,False,False
+001089,T.D-08.03,Jaskinia nad Mostkiem Wyżnia,5,49.251036,19.862678,38.81,-0.0,0.002,0.49,,True,False,False
+001090,T.D-08.26,Wielka Nyża,5,49.246672,19.859689,97.89,-0.066,0.001,0.75,,True,False,False
+001091,T.D-08.04,Korytarz do Naciekowej,5,49.249706,19.867461,130.09,-0.007,0.004,1.51,,True,False,False
+001092,T.D-08.05,Jaskinia Goryckiego,5,49.249992,19.866219,77.03,0.0,0.001,0.31,,True,False,False
+001093,T.D-08.06,Jaskinia między Żleby,5,49.249906,19.866703,195.79,0.013,0.001,1.63,,True,False,False
+001094,T.D-08.07,Jaskinia Mroźna,7,49.249694,19.867194,59.09,49.99,0.002,7042.09,high_entrance_std,True,False,False
+001095,T.D-08.08,Jaskinia Zimna,6,49.249631,19.867367,23.66,0.002,0.003,4.43,,True,False,False
+001096,T.D-08.09,Okna Zbójnickie Niżnie,5,49.249208,19.868931,88.78,0.06,0.003,1.28,,True,False,False
+001097,T.D-05.02,Schronisko przy Ścianach,5,49.249261,19.822928,97.72,0.0,0.0,1.07,,True,False,False
+001098,T.D-08.10,Okno Zbójnickie Wyżnie,5,49.248733,19.864408,97.71,0.006,0.0,0.6,,True,False,False
+001099,T.D-05.03,Schron w Wyżniej Bramie Chochołowskiej,5,49.2457,19.814867,196.1,0.073,0.005,1.77,,True,False,False
+001100,T.D-08.11,Przelot,5,49.249344,19.868981,77.17,0.007,0.0,0.42,,True,False,False
+001101,T.D-08.12,Dziura pod Oknem,5,49.248969,19.868494,38.6,0.005,0.0,0.35,,True,False,False
+001102,T.D-08.13,Jaskinia Balkonowa,5,49.249075,19.868958,196.24,0.003,0.001,1.89,,True,False,False
+001103,T.D-08.14,Jaskinia Naciekowa,7,49.249553,19.868247,29.61,0.0,0.011,0.54,,True,False,False
+001104,T.D-08.15,Jaskinia pod Ostrewką,5,49.249067,19.868328,194.61,0.001,0.007,1.04,,True,False,False
+001105,T.D-05.05,Nyża w Wąwozie Między Ściany,5,49.252464,19.819542,76.84,0.0,0.005,0.41,,True,False,False
+001106,T.D-08.16,Zbójnicka Nyża,5,49.249183,19.868092,196.09,0.023,0.002,1.2,,True,False,False
+001107,T.D-08.17,Jaskinia Trójotworowa,5,49.248967,19.868014,195.66,0.009,0.0,0.81,,True,False,False
+001108,T.D-08.18,Jaskinia Krwawego Nosa,5,49.248719,19.868597,195.64,0.0,0.0,1.5,,True,False,False
+001109,T.D-08.19,Szczelina nad Zimną,5,49.248956,19.867944,195.99,-0.003,0.0,1.45,,True,False,False
+001110,T.D-08.20,Schron pod Jaskinią Goryckiego,5,49.249864,19.865961,197.22,0.008,0.004,1.07,,True,False,False
+001111,T.D-08.21,Lejek,5,49.248994,19.868042,76.99,0.0,0.0,1.41,,True,False,False
+001112,T.D-08.22,Szczelina nad Mostkiem,5,49.250603,19.862483,117.91,0.0,0.0,1.7,,True,False,False
+001113,T.D-08.23,Dziura w Stołach,5,49.246881,19.856278,196.5,0.0,0.005,1.15,,True,False,False
+001114,T.D-08.24,Wielka Szczelina,5,49.247142,19.86075,98.28,-0.049,0.001,1.24,,True,False,False
+001115,T.D-08.25,Jaskinia Zawaliskowa w Stołach,5,49.247103,19.860475,196.09,0.003,0.001,0.97,,True,False,False
+001116,T.D-08.27,Otwarty Schron,5,49.246436,19.857647,97.74,0.001,0.002,1.45,,True,False,False
+001117,T.D-08.28,Korytarz z Różą,5,49.248814,19.868967,195.23,0.0,0.0,0.99,,True,False,False
+001118,T.D-08.29,Dziura pod Kazalnicą,5,49.246419,19.861467,196.52,-0.113,0.002,0.56,,True,False,False
+001119,T.D-08.30,Schron pod Kazalnicą,5,49.246603,19.861778,97.76,-0.078,0.004,1.54,,True,False,False
+001120,T.D-08.31,Dziura w Organach VII,5,49.245983,19.866447,196.48,0.0,0.001,1.52,,True,False,False
+001121,T.D-08.32,Schron przed Sową I,5,49.247764,19.864731,99.2,0.0,0.001,1.39,,True,False,False
+001122,T.D-08.33,Schron przed Sową II,5,49.248989,19.864936,77.02,0.0,0.002,0.36,,True,False,False
+001123,T.D-08.34,Schron przed Sową III,5,49.249542,19.864511,196.04,0.018,0.001,2.46,,True,False,False
+001124,T.D-08.35,Kopalnia Maturka,5,49.246367,19.859656,98.02,0.0,0.001,5.24,,True,False,False
+001125,T.D-08.36,Szczelina przy Dziurawcu,5,49.251639,19.865617,98.16,0.072,0.002,1.51,,True,False,False
+001126,T.D-08.37,Dziura nad Wapiennikiem,5,49.251631,19.864617,97.39,0.0,0.351,1.2,high_ppm_cv,True,False,False
+001127,T.D-08.38,Zimna Szczelina I,5,49.247317,19.863161,97.84,-0.1,0.0,1.86,,True,False,False
+001128,T.D-08.39,Zimna Szczelina II,5,49.246694,19.862583,196.22,0.094,0.0,2.15,,True,False,False
+001129,T.D-08.40,Zimna Szczelina III,5,49.246119,19.862156,98.64,0.105,0.001,1.2,,True,False,False
+001131,T.D-08.42,Sowia Jama I,5,49.247444,19.864231,77.11,0.004,0.001,0.54,,True,True,True
+001132,T.D-08.43,Sowia Jama II,5,49.247417,19.863956,38.68,0.0,0.0,0.49,,True,False,False
+001133,T.D-08.44,Sowia Jama III,5,49.247425,19.863889,194.63,0.0,0.007,1.63,,True,False,False
+001134,T.D-08.41,Wiciowy Schron,5,49.245906,19.862178,196.93,0.0,0.0,1.47,,True,False,False
+001135,T.D-08.46,Szczelina za Okrętem I,5,49.251439,19.858794,196.6,-0.001,0.001,1.36,,True,False,False
+001136,T.D-08.45,Dziurawa Koleba,5,49.248981,19.867656,38.59,-0.001,0.001,0.84,,True,False,False
+001137,T.D-08.47,Szczelina za Okrętem II,5,49.250781,19.8669,195.61,-0.002,0.002,1.91,,True,False,False
+001138,T.D-08.48,Szczelina za Okrętem III,5,49.250781,19.866889,76.86,-0.026,0.001,0.61,,True,False,False
+001139,T.D-08.49,Nisza z Jaworem,5,49.251489,19.866597,77.13,0.0,0.0,0.41,,True,False,False
+001140,T.D-08.50,Komora w Okręcie,5,49.251714,19.866853,77.08,0.009,0.002,0.38,,True,False,False
+001141,T.D-08.51,Szczelina pod Tunelem Pawlikowskiego,5,49.249697,19.866556,77.12,0.001,0.003,0.17,,True,False,False
+001142,T.D-05.04,Szczelina w Osmętnicy,5,49.247758,19.820889,76.94,0.0,0.002,0.38,,True,False,False
+001160,T.D-08.52,Schron ze Świeczką,5,49.250086,19.866683,77.24,0.0,0.002,0.63,,True,False,False
+001161,T.D-08.53,Wąska Szczelina,5,49.250169,19.866172,77.1,0.036,0.001,0.41,,True,False,False
+001162,T.D-08.54,Schron przy Naciekowej,5,49.249536,19.868414,195.8,0.003,0.0,1.49,,True,False,False
+001163,T.D-08.55,Dziura w Organach VI,5,49.247047,19.866044,59.55,0.002,0.002,0.66,,True,False,False
+001164,T.D-08.56,Jaskinia pod Murem,5,49.246906,19.8596,196.29,-0.002,0.0,1.22,,True,False,False
+001166,T.D-08.58,Zamczysko Niżnie,5,49.247156,19.868494,38.67,0.0,0.002,0.47,,True,False,False
+001167,T.D-08.59,Zamczysko Wyżnie,5,49.247094,19.868772,59.14,-0.0,0.001,0.46,,True,False,False
+001168,T.D-08.60,Okno w Zamczysku,5,49.247292,19.868631,38.61,0.0,0.0,0.59,,True,False,False
+001169,T.D-08.61,Nyża z Dzięglem,5,49.246814,19.868681,76.6,0.0,0.006,0.44,,True,False,False
+001170,T.D-05.06,Schronisko w Kalwarii,5,49.250928,19.818822,77.03,0.011,0.0,0.55,,True,False,False
+001171,T.D-08.62,Szczelina z Mostkiem,5,49.246817,19.868942,77.03,-0.023,0.0,0.52,,True,False,False
+001172,T.D-09.01,Jaskinia Zakopiańska,5,49.247411,19.880906,98.3,0.006,0.002,1.23,,True,False,False
+001173,T.D-09.02,Jaskinia przy Sikawce,5,49.248117,19.881,76.97,0.0,0.001,0.69,,True,False,False
+001174,T.D-09.05,Żwirowa Dziura Wyżnia,5,49.248692,19.869311,38.65,-0.008,0.002,0.62,,True,False,False
+001175,T.D-09.06,Żwirowa Dziura Niżnia,5,49.248647,19.869381,38.6,-0.007,0.0,0.83,,True,False,False
+001176,T.D-05.07,Szczelina w Dudzińcu,5,49.247706,19.820136,77.47,0.126,0.004,0.38,,True,False,False
+001177,T.D-05.08,Schronisko przy Jaskini w Dudzińcu,5,49.24785,19.821161,77.04,0.0,0.0,0.61,,True,False,False
+001178,T.D-09.10,Dziura w Organach II,5,49.246858,19.870286,196.0,-0.001,0.002,1.59,,True,False,False
+001179,T.D-09.07,Schron pomiędzy Żwirowymi Dziurami,5,49.248664,19.869339,38.65,0.015,0.001,0.54,,True,False,False
+001180,T.D-05.09,Jaskinia w Dudzińcu,5,49.247758,19.820958,77.14,-0.007,0.0,0.45,,True,False,False
+001181,T.D-09.08,Dziura w Organach IV,5,49.247003,19.869639,195.48,0.0,0.002,1.28,,True,False,False
+001182,T.D-05.10,Szczelina nad Jaskinią w Dudzińcu,5,49.247758,19.820958,77.21,-0.0,0.001,0.61,,True,False,False
+001184,T.D-09.11,Dziura w Organach I,5,49.2471,19.870406,196.55,0.0,0.004,1.43,,True,False,False
+001185,T.D-09.12,Dziura w Organach V,5,49.247431,19.869272,77.14,0.004,0.004,0.39,,True,False,False
+001187,T.D-10.01,Jaskinia Miętusia Wyżnia,5,49.245097,19.894492,23.64,0.006,0.0,0.83,,True,False,False
+001189,T.D-10.03,Jaskinia Niedźwiedzia Niżnia,5,49.247772,19.895058,118.06,-89.865,0.004,1.01,,True,False,False
+001190,T.D-10.04,Jaskinia Niedźwiedzia Średnia,5,49.246197,19.895094,77.25,0.0,0.002,0.77,,True,False,False
+001191,T.D-10.05,Jaskinia w Małej Świstówce,5,49.245436,19.895317,38.55,0.009,0.003,0.65,,True,False,False
+001192,T.D-10.06,Dziura nad Wantulami I,5,49.247581,19.894033,77.03,-0.033,0.003,0.67,,True,False,False
+001193,T.D-10.07,Dziura nad Wantulami II,5,49.247628,19.8941,77.19,0.0,0.005,0.81,,True,False,False
+001194,T.D-10.08,Dziura nad Wantulami III,5,49.247631,19.894375,77.02,0.0,0.002,0.58,,True,False,False
+001195,T.D-10.09,Podwójna Szczelina,5,49.247408,19.894861,77.14,-0.006,0.001,0.5,,True,False,False
+001196,T.D-10.10,Szczelina w Wołowym Żlebie,5,49.247367,19.895206,38.58,-0.005,0.005,0.36,,True,False,False
+001198,T.D-11.02,Nyża przy Schodkach,5,49.246392,19.910883,77.19,0.0,0.002,0.37,,True,False,False
+001199,T.D-11.03,Szczelina w Niedźwiedziu,5,49.248894,19.909044,76.98,-0.01,0.001,0.61,,True,False,False
+001200,T.D-13.01,Kozia Grota,5,49.252719,19.937489,196.4,-0.024,0.004,1.48,,True,False,False
+001201,T.D-13.02,Dziura w Szczerbie II,5,49.250236,19.937489,77.17,0.007,0.001,0.58,,True,False,False
+001202,T.D-13.03,Dziura w Szczerbie I,5,49.250189,19.937228,77.19,0.042,0.005,0.77,,True,False,False
+001203,T.D-12.01,Jaskinia Śpiących Rycerzy,5,49.249906,19.923417,19.44,-0.012,0.001,0.62,,True,False,False
+001204,T.D-13.04,Szczelina w Żlebie Kirkora,5,49.253856,19.930217,77.33,0.012,0.001,0.78,,True,False,False
+001205,T.D-13.05,Nyża pod Brzózką,5,49.253047,19.930133,196.96,0.002,0.001,0.89,,True,False,False
+001206,T.D-13.06,Nyża w Siodłowej Turni,5,49.248678,19.927128,77.1,-0.004,0.003,0.51,,True,False,False
+001207,T.D-12.02,Siwarowa Dziura,5,49.248181,19.914483,38.43,-0.004,0.002,0.39,,True,False,False
+001208,T.D-13.07,Nyża przy Starym Szlaku,5,49.249733,19.926881,76.89,0.026,0.001,0.27,,True,False,False
+001209,T.D-13.08,Nyża nad Siodłem,5,49.24925,19.927853,77.73,-0.014,0.002,0.73,,True,False,False
+001210,T.D-12.03,Schron Partyzantów,5,49.248139,19.914897,77.29,0.0,0.002,0.57,,True,False,False
+001211,T.D-12.04,Tunel pod Siwarową Dziurą,5,49.24805,19.915106,77.22,0.0,0.002,0.77,,True,False,False
+001212,T.D-14.01,Jaskinia Juhaska,5,49.2548,19.942942,194.9,0.009,0.307,1.31,high_ppm_cv,True,False,False
+001213,T.D-12.05,Jaskinia Błotna,5,49.247139,19.913683,118.3,0.0,0.002,0.52,,True,False,False
+001214,T.D-14.02,Ruda Nyża,5,49.251314,19.939058,77.33,-0.0,0.002,0.54,,True,False,False
+001215,T.D-14.03,Jaskinia Zawaliskowa w Długim Giewoncie,5,49.252144,19.941486,38.57,0.0,0.0,0.36,,True,False,False
+001216,T.D-12.06,Nisza przy Zagonie,5,49.246494,19.911981,77.21,-0.017,0.002,0.6,,True,False,False
+001217,T.D-14.04,Szczelina w Giewoncie I,5,49.252156,19.941594,76.8,0.0,0.001,0.42,,True,False,False
+001218,T.D-14.05,Szczelina w Giewoncie II,5,49.252156,19.941594,77.11,0.062,0.002,0.39,,True,False,False
+001219,T.D-14.06,Szczelina pod Głazem,5,49.250947,19.939258,77.34,0.0,0.004,0.38,,True,False,False
+001220,T.D-14.07,Studnia w Giewoncie,5,49.251483,19.939069,76.98,-0.002,0.0,0.43,,True,False,False
+001221,T.D-15.01,Kozi Korytarz,5,49.254244,19.962733,77.18,0.0,0.001,1.34,,True,False,False
+001222,T.D-12.07,Jaskinia nad Zagonem,5,49.247394,19.91295,38.58,0.006,0.0,0.49,,True,False,False
+001223,T.D-12.08,Szczelina w Iglicy,5,49.247306,19.912444,77.5,0.0,0.003,0.87,,True,False,False
+001224,T.D-12.09,Jaskinia pod Iglicą,5,49.247797,19.911422,77.15,-0.006,0.002,0.5,,True,False,False
+001225,T.D-16.01,Jaskinia Goryczkowa,5,49.25225,19.972556,118.07,0.007,0.0,0.98,,True,False,False
+001226,T.D-16.02,Myślenicka Dziura,5,49.251089,19.973072,77.17,-0.006,0.001,0.32,,True,False,False
+001227,T.D-16.03,Jaskinia Kasprowa Niżnia,5,49.253975,19.978567,11.81,0.012,0.001,0.75,,True,False,False
+001228,T.D-16.04,Jaskinia Bystrej,5,49.255008,19.967094,11.82,0.021,0.001,0.86,,True,False,False
+001229,T.D-12.10,Jaskinia nad Korytem,5,49.247858,19.910797,38.54,-0.008,0.002,0.82,,True,False,False
+001230,T.D-12.11,Dziura nad Korytem,5,49.248172,19.910997,77.01,0.0,0.003,0.49,,True,False,False
+001231,T.D-16.05,Jaskinia Dudnica,5,49.255125,19.967381,19.29,0.0,0.0,0.48,,True,False,False
+001232,T.D-12.12,Tunel Małołącki,5,49.246953,19.917808,38.59,0.0,0.001,0.34,,True,False,False
+001233,T.D-16.06,Myślenicka Szczelina,5,49.251275,19.972808,76.96,0.003,0.002,0.3,,True,False,False
+001234,T.D-16.07,Nyża pod Myślenicką Szczeliną,5,49.251356,19.972656,77.16,-0.071,0.003,0.38,,True,False,False
+001235,T.D-16.08,Grota u podnóża Myślenickich Turni,5,49.250719,19.973767,77.17,-0.001,0.001,0.58,,True,False,False
+001236,T.D-16.09,Myślenicka Nyża,5,49.250931,19.973419,76.96,0.0,0.0,0.32,,True,False,False
+001237,T.D-16.10,Schron z Nietoperzami,5,49.251681,19.972922,77.07,0.0,0.004,0.9,,True,False,False
+001238,T.D-16.11,Myślenicki Korytarzyk,5,49.251414,19.973161,76.95,-0.049,0.001,0.49,,True,False,False
+001239,T.D-12.13,Jaskinia nad Wyżniem,5,49.246639,19.917883,38.53,0.0,0.0,0.58,,True,False,False
+001240,T.D-16.12,Szczelina w Myślenickich Turniach Dolna,5,49.251683,19.973131,77.11,0.0,0.001,0.52,,True,False,False
+001241,T.D-16.13,Szczelina w Myślenickich Turniach Górna,5,49.251683,19.973131,76.96,0.0,0.004,0.3,,True,False,False
+001242,T.D-12.14,Szczelina nad Wyżniem,5,49.246458,19.917886,38.39,-0.001,0.006,33.47,high_entrance_std,True,False,False
+001243,T.D-16.14,Jaskinia Zwolińskiego,5,49.251167,19.977278,23.6,0.007,0.0,0.23,,True,False,False
+001244,T.D-12.15,Szczelina pod Zagonną Turnią,5,49.247269,19.913269,38.48,0.042,0.004,0.79,,True,False,False
+001245,T.D-17.01,Jaskinia Kasprowa Wyżnia,5,49.252319,19.983417,38.61,0.0,0.0,0.3,,True,False,False
+001246,T.D-12.16,Nyża z Kozicami,5,49.248283,19.912833,38.51,-0.005,0.002,0.73,,True,False,False
+001247,T.D-17.02,Jaskinia Kasprowa Średnia,5,49.250803,19.982419,97.98,0.003,0.0,0.39,,True,False,False
+001248,T.D-12.17,Schron Partyzantów II,5,49.248186,19.915172,77.22,0.0,0.002,0.67,,True,False,False
+001249,T.D-12.18,Szczelina nad Zagonem,5,49.246819,19.913142,38.5,0.0,0.001,0.45,,True,False,False
+001250,T.D-17.05,Szczelina w Zawraciku Kasprowym I,5,49.250403,19.982797,76.8,0.0,0.001,0.41,,True,False,False
+001251,T.D-17.06,Kasprowe Schronisko,5,49.250467,19.982933,76.82,0.0,0.001,0.95,,True,False,False
+001252,T.D-17.07,Szczelina w Zawraciku Kasprowym II,5,49.250333,19.983197,117.93,0.032,0.004,0.53,,True,False,False
+001253,T.D-17.08,Jaskinia pod Limbą,5,49.250953,19.987086,76.97,-0.001,0.001,0.56,,True,False,False
+001254,T.D-12.19,Jaskinia Śpiących Rycerzy Wyżnia,5,49.250197,19.923356,19.27,-0.005,0.0,0.32,,True,False,False
+001255,T.D-17.09,Jaskinia Partyzancka I,5,49.252083,19.990989,76.91,-0.009,0.001,0.57,,True,False,False
+001256,T.D-12.20,Dziura nad Jaskinią Śpiących Rycerzy I,5,49.249886,19.923856,77.11,0.0,0.001,0.44,,True,False,False
+001257,T.D-17.10,Szczelina nad Partyzancką,5,49.250689,19.989839,76.98,-0.077,0.007,0.45,,True,False,False
+001258,T.D-12.21,Dziura nad Jaskinią Śpiących Rycerzy II,5,49.249978,19.924128,77.14,0.0,0.005,0.79,,True,False,False
+001259,T.D-12.22,Dziura nad Jaskinią Śpiących Rycerzy III,5,49.249844,19.924269,77.89,0.017,0.001,0.53,,True,False,False
+001260,T.D-12.23,Szczelina przy Nyży z Kozicami,5,49.248256,19.91285,38.5,0.0,0.001,0.78,,True,False,False
+001261,T.D-17.11,Schronisko Jasne w Czubie Jaworzyńskiej,5,49.250547,19.989939,76.93,0.0,0.003,0.56,,True,False,False
+001262,T.D-17.12,Jaskinia w Czubie Jaworzyńskiej,5,49.251806,19.991639,48.97,0.0,0.0,0.91,,True,False,False
+001263,T.D-17.13,Jaskinia Partyzancka II,5,49.251444,19.992111,38.44,0.032,0.001,0.39,,True,False,False
+001264,T.D-17.14,Nyża pod Zawracikiem,5,49.250556,19.984444,77.11,-0.008,0.0,0.56,,True,False,False
+001267,T.D-17.15,Dziura pod Kamieniem,5,49.251856,19.980433,76.9,0.01,0.0,0.33,,True,False,False
+001268,T.D-17.16,Nisza w Zawraciku Kasprowym,5,49.251931,19.980611,77.35,-0.036,0.003,0.92,,True,False,False
+001269,T.D-17.17,Szczelina w Zawraciku Kasprowym III,5,49.251906,19.980886,76.71,-0.062,0.001,0.57,,True,False,False
+001270,T.D-17.18,Szczelina w Zawraciku Kasprowym IV,5,49.252067,19.980992,77.01,0.0,0.003,1.1,,True,False,False
+001271,T.D-17.19,Jaworzyńska Nyża pod Iglicą,5,49.2506,19.987917,76.89,0.0,0.001,0.32,,True,False,False
+001273,T.D-18.02,Schron nad Przełączką,5,49.249122,19.993581,77.02,-0.001,0.0,0.58,,True,False,False
+001275,T.D-18.03,Nyża pod Jaskinią Magurską I,5,49.250881,19.996119,76.95,0.133,0.002,0.69,,True,False,False
+001276,T.D-18.04,Nyża pod Jaskinią Magurską II,5,49.251058,19.996278,77.65,0.059,0.003,0.51,,True,False,False
+001277,T.D-18.05,Nyża pod Jaskinią Magurską III,5,49.249644,19.996933,76.9,0.009,0.004,0.52,,True,False,False
+001278,T.D-18.06,Dziura pod Jaskinią Magurską,5,49.250475,19.997397,77.04,-0.004,0.002,0.66,,True,False,False
+001279,T.D-18.07,Nyża pod Jaskinią Magurską IV,5,49.250008,19.995372,77.05,0.0,0.003,0.57,,True,False,False
+001282,T.E-04.01,Dziura w Zawiesistej,5,49.242931,19.806131,196.0,-0.007,0.006,0.99,,True,False,False
+001283,T.E-05.01,Jaskinia Dwuotworowa w Iwanówce,5,49.240992,19.825858,76.93,0.0,0.003,0.21,,True,False,False
+001284,T.E-07.01,Awen Odpękniętych Nacieków,5,49.2428,19.843708,284.56,0.014,0.003,2.42,,True,False,False
+001285,T.E-07.02,Suchy Biwak,5,49.242858,19.843242,97.88,0.004,0.001,0.86,,True,False,False
+001286,T.E-05.02,Schronisko pod Dziobem I,5,49.241814,19.824478,76.96,-0.001,0.0,0.3,,True,False,False
+001287,T.E-07.03,Jaskinia Mechata,5,49.242703,19.843147,98.1,-0.1,0.002,0.95,,True,False,False
+001288,T.E-05.03,Schronisko pod Dziobem II,5,49.241647,19.824769,77.37,0.003,0.002,0.44,,True,False,False
+001289,T.E-07.04,Jaskinia Lejowa Wyżnia,5,49.242553,19.843194,98.02,0.145,0.004,2.43,,True,False,False
+001290,T.E-05.04,Schronisko pod Dziobem III,5,49.241928,19.8242,77.06,0.012,0.001,0.39,,True,False,False
+001291,T.E-07.05,Tylkowa Szczelina,5,49.242761,19.842503,38.71,0.002,0.002,0.39,,True,False,False
+001292,T.E-05.05,Schron za Smrekiem,5,49.241947,19.822497,77.16,0.017,0.002,0.61,,True,False,False
+001293,T.E-05.06,Schron z Płytą,5,49.241969,19.821989,77.46,0.0,0.003,0.48,,True,False,False
+001294,T.E-05.07,Szczelina w Iwanówce,5,49.241933,19.821153,76.98,0.003,0.001,0.61,,True,False,False
+001295,T.E-05.08,Schron Zachodni w Iwanówce,5,49.24195,19.820175,77.15,0.002,0.001,0.57,,True,False,False
+001296,T.E-07.06,Jaskinia pod Głazem,5,49.242253,19.842156,77.35,0.0,0.003,0.54,,True,False,False
+001297,T.E-06.01,Jaskinia Skośna,5,49.242378,19.841206,195.8,0.0,0.0,2.89,,True,False,False
+001298,T.E-06.02,Jaskinia w Kosówkach,5,49.242292,19.841456,196.49,-0.001,0.003,2.44,,True,False,False
+001300,T.E-06.03,Jaskinia Troista,5,49.24005,19.83405,195.07,0.002,0.002,1.05,,True,False,False
+001301,T.E-07.08,Schron przy Suchym Biwaku,5,49.243036,19.843003,97.88,0.0,0.001,2.11,,True,False,False
+001302,T.E-07.09,Jaskinia Rura Kominiarska,5,49.242322,19.848142,77.25,0.002,0.001,0.24,,True,False,False
+001303,T.E-07.10,Szczelina w Smytniej,5,49.235928,19.845394,196.19,0.015,0.0,1.18,,True,False,False
+001306,T.E-07.11,Schron nad Żlebem,5,49.237275,19.845156,76.99,0.0,0.004,0.3,,True,False,False
+001308,T.E-07.13,Jaskinia pod Kapliczką,5,49.242603,19.846125,196.02,0.004,0.003,3.41,,True,False,False
+001309,T.E-07.14,Jaskinia Ślimacza,5,49.242306,19.849131,77.48,0.0,0.005,0.66,,True,False,False
+001310,T.E-07.15,Jaskinia Smytnia,5,49.242378,19.84225,196.31,0.001,0.001,0.74,,True,False,False
+001311,T.E-07.16,Jaskinia nad Smytnią,5,49.240572,19.847469,196.67,0.29,0.001,1.17,,True,False,False
+001312,T.E-07.17,Szczelina przy Zawieszonej Skale I,5,49.243075,19.849719,77.23,0.006,0.0,0.82,,True,False,False
+001313,T.E-07.18,Szczelina przy Zawieszonej Skale II,5,49.242889,19.849861,76.9,-0.026,0.001,0.51,,True,False,False
+001314,T.E-07.19,Nisza Zachodnia,5,49.242742,19.850414,197.36,-0.002,0.001,1.43,,True,False,False
+001315,T.E-07.20,Nisza Wschodnia,5,49.242506,19.851256,77.04,0.0,0.003,0.48,,True,False,False
+001316,T.E-07.21,Jaskinia Nowa nad Raptawicką Granią,5,49.239744,19.852103,196.06,-0.008,0.001,2.42,,True,False,False
+001317,T.E-07.22,Dziura pod Nową,5,49.239783,19.852389,196.63,0.124,0.002,1.67,,True,False,False
+001318,T.E-07.24,Koliba w Smytniej,5,49.240522,19.84795,76.89,0.0,0.002,0.54,,True,False,False
+001319,T.E-06.04,Schron przy Troistej I,5,49.240089,19.834461,196.1,0.0,0.003,1.85,,True,False,False
+001320,T.E-07.23,Tunel Wiatru,5,49.239639,19.852256,196.57,0.0,0.003,1.49,,True,False,False
+001321,T.E-06.05,Schron przy Troistej II,5,49.240183,19.834925,195.77,-0.002,0.003,1.09,,True,False,False
+001322,T.E-07.25,Jaskinia nad Prożkiem w Żlebie Na Spady,5,49.241569,19.853928,76.98,-0.013,0.0,0.29,,True,False,False
+001323,T.E-06.06,Sarni Schron,5,49.238261,19.840464,77.08,-0.032,0.001,0.86,,True,False,False
+001325,T.E-07.27,Wiśniakowa Jama,5,49.241503,19.851733,76.94,-0.008,0.001,0.38,,True,False,False
+001326,T.E-06.07,Lejowa Szczelina,5,49.243081,19.841367,196.46,-0.001,0.008,2.05,,True,False,False
+001327,T.E-07.28,Schronisko nad Wiśniakową Jamą,5,49.241456,19.851528,77.08,-0.012,0.003,0.59,,True,False,False
+001328,T.E-07.29,Nyża nad Prożkiem w Żlebie Na Spady,5,49.241569,19.853928,77.37,0.037,0.004,0.37,,True,False,False
+001329,T.E-06.08,Schron w Ścianie pod Szczytem,5,49.240692,19.835203,77.22,0.061,0.001,0.62,,True,False,False
+001331,T.E-06.09,Komórka nad Smytnią,5,49.242589,19.838867,77.21,-0.001,0.0,0.43,,True,False,False
+001332,T.E-07.31,Jaskinia z Mułem,5,49.241481,19.853861,77.3,0.005,0.002,0.6,,True,False,False
+001333,T.E-06.10,Szczelina pod Skośną,5,49.243017,19.841192,76.91,0.0,0.001,0.38,,True,False,False
+001334,T.E-06.11,Szczelina w Grani I,5,49.24275,19.841403,76.8,-0.013,0.002,0.53,,True,False,False
+001335,T.E-06.12,Szczelina ze Śniegiem,5,49.243742,19.841722,38.58,0.006,0.002,0.77,,True,False,False
+001336,T.E-07.32,Korytarzyk w Czarnych Turniach,5,49.236164,19.852886,76.9,0.002,0.0,0.68,,True,False,False
+001337,T.E-07.33,Nyża przy Perci,6,49.240506,19.855325,76.89,0.0,0.002,0.41,,True,False,False
+001338,T.E-07.34,Dziurka od Klucza,5,49.242744,19.845456,77.1,-0.008,0.003,0.4,,True,False,False
+001339,T.E-07.35,Nisza nad Jelenią Percią,5,49.242064,19.853917,77.24,0.003,0.001,1.05,,True,False,False
+001340,T.E-07.36,Nyża nad Bramką,5,49.241814,19.855914,77.08,0.0,0.0,0.68,,True,False,False
+001341,T.E-07.37,Schronisko nad Bramką,5,49.241767,19.855639,77.12,0.0,0.0,0.38,,True,False,False
+001342,T.E-07.38,Schronisko przy Jeleniej Perci,5,49.241297,19.853658,77.06,-0.003,0.0,0.31,,True,False,False
+001343,T.E-07.39,Schronisko nad Trawersem w Żeleźniaku I,5,49.243314,19.848325,76.9,0.083,0.001,0.63,,True,False,False
+001344,T.E-07.40,Schronisko nad Trawersem w Żeleźniaku II,5,49.243308,19.847844,77.08,0.0,0.0,0.32,,True,False,False
+001345,T.E-06.13,Szczelina w Grani II,5,49.242522,19.841133,76.86,0.0,0.001,0.43,,True,False,False
+001346,T.E-07.41,Szczelina przed Bańdziochem,5,49.242519,19.849856,76.73,0.06,0.001,0.61,,True,False,False
+001347,T.E-07.42,Kominek przy Bańdziochu,5,49.242294,19.849722,77.69,0.0,0.004,1.38,,True,False,False
+001348,T.E-07.43,Trzyotworowy Kominek przy Bańdziochu,5,49.242339,19.849681,76.71,0.052,0.004,0.88,,True,False,False
+001349,T.E-08.04,Jaskinia Mylna,5,49.239403,19.861542,23.62,60.113,0.001,1386.36,high_entrance_std,True,False,False
+001350,T.E-07.44,Szczelina przy Bańdziochu,5,49.244181,19.849611,77.06,0.03,0.002,0.24,,True,False,False
+001351,T.E-08.05,Jaskinia Obłazkowa,5,49.239633,19.861883,23.62,59.994,0.001,2.62,,True,False,False
+001352,T.E-07.45,Nyża pod Bańdziochem,5,49.242342,19.850203,76.89,-0.009,0.0,0.32,,True,False,False
+001353,T.E-08.06,Dziura pod Smoczą Jamą,5,49.237844,19.867347,59.02,-0.006,0.001,1.18,,True,False,False
+001354,T.E-07.46,Jaskinia w Kociołku pod Bańdziochem,5,49.242481,19.850406,77.39,0.0,0.003,0.27,,True,False,False
+001355,T.E-08.08,Dziura pod Raptawicą,5,49.239961,19.863056,97.84,0.0,0.001,0.86,,True,False,False
+001356,T.E-07.47,Szczelina przy Gładkim Żlebie,5,49.236353,19.853636,77.1,-0.005,0.001,0.38,,True,False,False
+001357,T.E-07.48,Szczelina w Uwozisku,5,49.235875,19.855433,77.08,0.02,0.0,0.4,,True,False,False
+001358,T.E-08.09,Jaskinia Mysia,5,49.239825,19.862825,120.29,-0.001,0.002,1.68,,True,False,False
+001359,T.E-07.49,Schronisko nad Bramą,5,49.241767,19.855639,196.11,0.016,0.002,1.89,,True,False,False
+001360,T.E-08.01,Jaskinia pod Zamkiem,5,49.237658,19.864731,38.57,0.01,0.001,0.97,,True,False,False
+001361,T.E-08.23,Jaskinia Mała pod Zamkiem,5,49.237658,19.864731,77.0,-0.001,0.0,0.5,,True,False,False
+001362,T.E-08.24,Szczelina pod Niżnią Zbójnicką Turnią,5,49.238317,19.864111,77.4,0.0,0.006,0.52,,True,False,False
+001363,T.E-08.25,Jaskinia Ziobrowa,5,49.238906,19.863794,38.61,0.0,0.001,0.48,,True,False,False
+001364,T.E-08.27,Jaskinia pod Niżnią Zbójnicką Turnią,5,49.238317,19.864111,38.57,0.0,0.003,560.79,high_entrance_std,True,False,False
+001365,T.E-08.26,Mała Szczelina,5,49.23875,19.864086,272.5,0.0,0.0,1.6,,True,False,False
+001366,T.E-08.28,Sokole Okno,5,49.239122,19.860892,196.01,0.0,0.002,1.81,,True,False,False
+001367,T.E-08.29,Jaskinia Wodna pod Raptawicką Turnią,5,49.240889,19.863944,135.01,-0.004,0.002,3.08,,True,False,False
+001386,T.E-08.02,Jaskinia za Smrekiem,5,49.235194,19.86395,97.82,-0.001,0.001,0.98,,True,False,False
+001387,T.E-08.03,Jaskinia Raptawicka,5,49.239853,19.86225,59.04,0.0,0.0,0.88,,True,False,False
+001388,T.E-08.10,Dziura pod Mylną,5,49.238919,19.862175,197.01,-0.002,0.002,0.77,,True,False,False
+001389,T.E-08.11,Jaskinia przy Żlebie,5,49.238544,19.860686,77.18,0.0,0.002,0.58,,True,False,False
+001390,T.E-08.12,Dziura nad Mylną,5,49.2387,19.861053,59.11,0.013,0.002,1.23,,True,False,False
+001391,T.E-08.13,Szczelina nad Mylną,5,49.240053,19.861256,196.13,0.0,0.001,1.09,,True,False,False
+001392,T.E-08.14,Dziura nad Jaskinią Raptawicką I,5,49.239286,19.862042,51.24,-0.002,0.002,0.58,,True,False,False
+001393,T.E-08.15,Dziura nad Jaskinią Raptawicką II,5,49.239347,19.861767,195.3,0.016,0.0,0.71,,True,False,False
+001394,T.E-08.16,Dzwonnica,5,49.236478,19.864508,98.07,0.0,0.003,3.08,,True,False,False
+001395,T.E-08.17,Groby,5,49.236547,19.865292,98.38,0.0,0.002,1.8,,True,False,False
+001396,T.E-08.18,Jaskinia Poszukiwaczy Skarbów,5,49.236997,19.866011,118.33,0.0,0.001,3.32,,True,False,False
+001397,T.E-08.19,Dziura ze Znakami,5,49.236903,19.865792,78.93,-0.069,0.002,0.76,,True,False,False
+001398,T.E-08.20,Jaskinia Wodna pod Pisaną,5,49.240431,19.864697,19.28,-0.0,0.0,0.38,,True,False,False
+001399,T.E-08.31,Zamulona Dziura,5,49.238717,19.862658,195.72,-0.058,0.001,1.11,,True,False,False
+001400,T.E-08.21,Wyzior,5,49.239272,19.864392,98.23,0.011,0.0,2.4,,True,False,False
+001401,T.E-08.32,Jaskinia pod Jaworem,5,49.238867,19.861406,98.22,-0.001,0.001,2.5,,True,False,False
+001402,T.E-08.33,Schron przy Smoczej Jamie,5,49.237997,19.867208,77.76,0.0,0.001,0.62,,True,False,False
+001403,T.E-08.22,Dziura w Ścianie,5,49.235253,19.865211,77.06,-0.003,0.001,0.51,,True,False,False
+001404,T.E-08.34,Korytarzyk pod Zamkiem,5,49.237661,19.864992,77.2,0.0,0.001,0.49,,True,False,False
+001405,T.E-08.36,Szczelina nad Żlebem,5,49.238647,19.860314,77.17,0.012,0.001,0.63,,True,False,False
+001406,T.E-08.37,Raptawicki Tunelik,5,49.238892,19.860267,76.97,0.002,0.001,0.53,,True,False,False
+001407,T.E-08.39,Zbójnicki Korytarzyk,5,49.238047,19.864186,77.07,0.0,0.001,0.23,,True,False,False
+001408,T.E-09.01,Gawra,5,49.237147,19.874903,196.15,-0.002,0.001,1.19,,True,False,False
+001409,T.E-08.40,Zbójnicka Szczelina,5,49.237833,19.864189,77.16,0.001,0.002,0.55,,True,False,False
+001410,T.E-08.41,Szczelina przy Mostku,5,49.236117,19.861483,77.08,0.0,0.001,0.36,,True,False,False
+001411,T.E-08.42,Dziura nad Głazem,5,49.238317,19.864139,77.19,0.003,0.001,0.3,,True,False,False
+001412,T.E-09.02,Jaskinia Jagnięca,5,49.236933,19.875183,195.57,0.029,0.0,0.8,,True,False,False
+001413,T.E-08.43,Nyża nad Ziobrową,5,49.238556,19.864503,76.91,-0.021,0.001,0.18,,True,False,False
+001414,T.E-08.44,Nyża za Załomem,5,49.238278,19.86455,76.72,0.0,0.001,0.44,,True,False,False
+001416,T.E-09.03,Jaskinia Skoruszowa,5,49.236814,19.874114,195.94,0.003,0.0,1.29,,True,False,False
+001417,T.E-08.46,Szczelina pod Smoczą Jamą,5,49.238147,19.866833,77.23,-0.006,0.0,0.44,,True,False,False
+001418,T.E-08.47,Radkowa Dziura I,5,49.236956,19.866558,77.08,-0.01,0.001,0.69,,True,False,False
+001419,T.E-09.04,Jaskinia przy Perci,5,49.236617,19.874147,195.58,0.0,0.001,0.89,,True,False,False
+001420,T.E-08.48,Radkowa Dziura II,5,49.236933,19.866819,76.88,-0.047,0.001,0.58,,True,False,False
+001421,T.E-09.05,Jaskinia nad Arkadą,5,49.236747,19.873744,195.87,-0.005,0.001,0.87,,True,False,False
+001422,T.E-09.06,Szczelina przy Arkadzie,5,49.236719,19.873444,76.99,-0.154,0.003,0.28,,True,False,False
+001423,T.E-09.07,Arkada,5,49.236889,19.873439,195.74,0.0,0.0,0.85,,True,False,False
+001424,T.E-08.49,Żeleźniakowa Brama,5,49.24115,19.856958,77.8,0.0,0.007,0.61,,True,False,False
+001426,T.E-09.08,Jaskinia Owcza,5,49.237569,19.870431,98.15,0.001,0.002,1.77,,True,False,False
+001427,T.E-08.51,Zasłonięta Szczelina,5,49.240608,19.856767,77.0,0.0,0.0,0.59,,True,False,False
+001428,T.E-08.52,Omszała Szczelina w Żeleźniaku,5,49.2412,19.857439,77.14,0.031,0.002,0.58,,True,False,False
+001429,T.E-08.53,Płaska Komórka w Żeleźniaku,5,49.24115,19.856958,77.36,0.001,0.004,0.43,,True,False,False
+001430,T.E-08.54,Szczelina na Grzędzie,5,49.241961,19.857008,76.74,0.172,0.01,0.23,,True,False,False
+001431,T.E-08.55,Wnęka na Grzędzie,5,49.241639,19.856397,76.98,0.0,0.001,0.44,,True,False,False
+001432,T.E-08.56,Szczelina w Żlebie z Bramką II,5,49.242328,19.857686,77.32,0.0,0.002,0.43,,True,False,False
+001433,T.E-08.57,Schron pod Tunelem,5,49.242,19.856322,77.08,0.009,0.005,0.66,,True,False,False
+001434,T.E-08.58,Tunel w Żlebie z Bramką,5,49.241953,19.856253,76.78,0.027,0.003,0.45,,True,False,False
+001435,T.E-08.59,Jaskinia pod Bramką,5,49.241908,19.856117,77.17,-0.013,0.001,0.56,,True,False,False
+001436,T.E-08.60,Szczelina w Żlebie z Bramką I,5,49.242372,19.857822,76.88,0.0,0.002,0.48,,True,False,False
+001437,T.E-08.61,Meanderek nad Mylną,5,49.239269,19.862222,76.71,0.0,0.001,0.58,,True,False,False
+001438,T.E-08.62,Nyża przed Bramą,5,49.2426,19.858092,76.87,0.0,0.001,0.33,,True,False,False
+001439,T.E-08.63,Nyża w Smytniej,5,49.235911,19.858933,38.59,0.0,0.0,0.25,,True,False,False
+001440,T.E-09.09,Krakowskie Okno,5,49.236172,19.870833,195.99,0.036,0.0,0.91,,True,False,False
+001441,T.E-09.10,Jaskinia pod Oknem,5,49.236481,19.871086,135.38,-0.003,0.001,1.14,,True,False,False
+001442,T.E-09.11,Jaskinia z Konkrecjami Niżnia,5,49.235761,19.874014,195.78,0.004,0.002,0.84,,True,False,False
+001443,T.E-09.13,Dziura z Konkrecjami Wyżnia,5,49.235692,19.874264,195.66,-0.036,0.001,0.96,,True,False,False
+001444,T.E-09.14,Korytarzyk pod Jagnięcą,5,49.236781,19.875256,195.46,-0.02,0.001,0.44,,True,False,False
+001445,T.E-09.12,Jaskinia Czarna,7,49.244386,19.870372,11.8,-0.005,0.002,1.69,,True,False,False
+001446,T.E-10.01,Świstowa Szczelina,5,49.244733,19.896981,77.13,-0.003,0.001,0.4,,True,False,False
+001447,T.E-09.15,Dziura pod Arkadą,5,49.236778,19.873139,196.27,-0.01,0.0,0.78,,True,False,False
+001448,T.E-10.02,Studnia w Małej Świstówce,5,49.243939,19.895653,76.88,0.0,0.002,0.6,,True,False,False
+001449,T.E-09.16,Żółta Dziura,5,49.237356,19.871425,97.72,0.001,0.001,1.23,,True,False,False
+001450,T.E-10.03,Dziura nad Studnią,5,49.242211,19.896556,76.93,0.007,0.002,1.76,,True,False,False
+001451,T.E-10.04,Piwniczka,5,49.244847,19.894781,77.01,-0.002,0.001,0.63,,True,False,False
+001452,T.E-09.17,Dziura nad Zachodem,5,49.236314,19.877078,195.84,-0.001,0.0,1.76,,True,False,False
+001453,T.E-10.05,Ciasna Szczelina,5,49.244839,19.894094,76.91,0.006,0.001,0.78,,True,False,False
+001454,T.E-10.06,Mała Komora,5,49.244789,19.893408,77.22,0.032,0.003,0.96,,True,False,False
+001455,T.E-09.18,Dziura nad Zachodem Wyżnia,5,49.236211,19.875817,196.0,0.0,0.002,1.2,,True,False,False
+001456,T.E-10.07,Dziura na Półce,5,49.244981,19.894639,77.26,-0.008,0.002,0.82,,True,False,False
+001457,T.E-09.19,Schron pod Owczą I,5,49.236531,19.869986,195.74,0.001,0.0,0.81,,True,False,False
+001458,T.E-09.20,Schron pod Owczą II,5,49.236533,19.870194,195.89,-0.002,0.001,1.11,,True,False,False
+001459,T.E-11.01,Piwnica Miętusia,5,49.244703,19.897161,38.64,0.004,0.004,1.07,,True,False,False
+001460,T.E-09.21,Dudzia Dziura,5,49.235767,19.872492,195.73,-0.004,0.0,1.03,,True,False,False
+001461,T.E-09.22,Ukryty Schron,5,49.236217,19.873525,196.1,0.001,0.001,1.33,,True,False,False
+001462,T.E-09.23,Jaskinia Pajęcza,5,49.235528,19.873003,195.97,0.0,0.001,1.03,,True,False,False
+001463,T.E-09.24,Schron z Napisami,5,49.235756,19.871544,195.67,0.0,0.002,1.55,,True,False,False
+001464,T.E-09.25,Schron przy Arkadzie,5,49.23655,19.87375,196.05,0.001,0.001,1.47,,True,False,False
+001465,T.E-09.27,Dziura w Ździarach,5,49.242167,19.87825,195.52,-0.009,0.003,1.07,,True,False,False
+001466,T.E-09.28,Nyża w Ździarach,5,49.240731,19.880053,196.05,-0.001,0.002,1.42,,True,False,False
+001467,T.E-09.29,Szczelina w Ratuszu,5,49.237264,19.870533,195.91,-0.006,0.001,0.81,,True,False,False
+001468,T.E-09.30,Jaworowa Szczelina,5,49.237156,19.859261,195.42,-0.027,0.002,0.93,,True,False,False
+001469,T.E-11.02,Studnia w Dziurawem,5,49.242625,19.897578,38.61,0.0,0.001,0.79,,True,False,False
+001471,T.E-11.04,Jaskinia w Szerokiem,5,49.238189,19.899186,58.68,0.136,0.003,0.54,,True,False,False
+001472,T.E-11.05,Jaskinia Marmurowa,5,49.239694,19.899111,49.05,-0.001,0.001,0.61,,True,False,False
+001476,T.E-11.07,Jaskinia nad Piargiem,5,49.240675,19.905311,76.99,0.0,0.001,0.18,,True,False,False
+001477,T.E-11.08,Jaskinia pod Dachem,5,49.240678,19.905653,97.97,0.002,0.0,0.79,,True,False,False
+001478,T.E-11.11,Jaskinia Kozia,5,49.2377,19.908439,23.63,0.008,0.0,2.97,,True,False,False
+001479,T.E-09.31,Dziura nad Żlebem,5,49.237525,19.873069,195.46,-0.007,0.002,0.9,,True,False,False
+001480,T.E-11.12,Studnia w Kazalnicy,5,49.240636,19.901192,59.08,0.037,0.001,0.56,,True,False,False
+001481,T.E-09.32,Żółty Schron,5,49.237806,19.872525,195.89,0.0,0.003,1.25,,True,False,False
+001482,T.E-11.13,Studnia za Murem,5,49.240406,19.900717,28.23,0.003,0.001,0.75,,True,False,False
+001483,T.E-09.33,Nisza nad Żółtą Dziurą,5,49.237444,19.871367,196.21,-0.032,0.007,1.17,,True,False,False
+001485,T.E-09.34,Spękana Szczelina,5,49.235936,19.874533,195.31,0.0,0.001,1.04,,True,False,False
+001486,T.E-09.35,Dwuotworowa Szczelina,5,49.236833,19.87145,195.96,0.01,0.0,1.48,,True,False,False
+001487,T.E-11.15,Jaskinia pod Wierchem,5,49.23945,19.899433,38.52,0.009,0.004,0.61,,True,False,False
+001488,T.E-09.36,Schron w Upłazkowej Turni,5,49.237414,19.879361,77.1,-0.0,0.004,0.33,,True,False,False
+001489,T.E-11.16,Jaskinia Lodowa Mułowa,5,49.239117,19.90205,73.82,0.0,0.0,0.99,,True,False,False
+001490,T.E-11.36,Korytarz nad Dziurawem,5,49.241514,19.898836,117.77,-0.013,0.001,2.18,,True,False,False
+001491,T.E-11.17,Studnia w Progu Mułowym,5,49.238469,19.904947,77.23,0.0,0.0,0.46,,True,False,False
+001492,T.E-11.37,Omszała Szczelina,5,49.240981,19.899536,196.2,0.002,0.002,1.81,,True,False,False
+001493,T.E-11.38,Korytarz nad Piargiem,5,49.241217,19.905642,77.1,0.003,0.001,0.86,,True,False,False
+001494,T.E-11.39,Jaskinia przy Progu Mułowym,5,49.240442,19.904286,76.63,0.007,0.003,0.57,,True,False,False
+001496,T.E-11.40,Schron nad Kominami,5,49.240619,19.899544,271.01,0.002,0.002,2.29,,True,False,False
+001497,T.E-11.41,Jaskinia Barania,5,49.241056,19.910506,38.55,0.024,0.006,0.61,,True,False,False
+001498,T.E-11.19,Schron z Balkonem,5,49.238386,19.901103,38.66,0.013,0.002,0.45,,True,False,False
+001499,T.E-11.20,Dziura w Progu Litworowym,5,49.241764,19.906247,76.99,-0.003,0.0,0.46,,True,False,False
+001501,T.E-11.43,Szczelina w Ratuszu Miętusim,5,49.242569,19.905886,77.13,0.0,0.002,0.22,,True,False,False
+001502,T.E-11.21,Jaskinia za Płytą,5,49.243417,19.90985,77.12,0.0,0.002,1.4,,True,False,False
+001503,T.E-11.22,Dziura w Kominie,5,49.241947,19.897317,78.34,0.007,0.007,0.48,,True,False,False
+001504,T.E-11.23,Jaskinia przy Grzędzie,5,49.241294,19.899392,196.36,0.172,0.001,3.04,,True,False,False
+001505,T.E-11.24,Zawaliskowy Korytarz,5,49.241433,19.900006,196.32,-0.002,0.004,1.74,,True,False,False
+001507,T.E-11.44,Jaskinia Lodowa w Twardych Spadach,5,49.240631,19.900642,58.15,0.0,0.004,2.04,,True,False,False
+001508,T.E-11.45,Dziura nad Szlakiem,5,49.243944,19.908742,76.93,-0.008,0.001,0.55,,True,False,False
+001509,T.E-11.46,Jaskinia za Zaciskiem,5,49.240628,19.900231,98.26,0.0,0.001,1.12,,True,False,False
+001510,T.E-11.47,Jaskinia za Ratuszem Śnieżna,5,49.242967,19.909931,77.04,0.0,0.001,0.24,,True,False,False
+001512,T.E-11.49,Jaskinia za Ratuszem Szeroka,5,49.243142,19.909514,77.18,0.0,0.001,0.29,,True,False,False
+001513,T.E-11.50,Jaskinia za Ratuszem Owalna,5,49.243233,19.90965,77.01,-0.052,0.003,0.56,,True,False,False
+001514,T.E-11.51,Zimny Aven,5,49.241289,19.898842,195.6,0.0,0.001,1.53,,True,False,False
+001515,T.E-11.52,Harnasiowa Szczelina,5,49.241064,19.898847,77.48,-0.006,0.001,0.39,,True,False,False
+001516,T.E-11.26,Krucha Szczelina,5,49.241306,19.900697,196.6,0.0,0.0,1.12,,True,False,False
+001517,T.E-11.53,Szczelina na Drodze Steckiego,5,49.242083,19.906928,77.1,0.0,0.002,0.64,,True,False,False
+001518,T.E-11.27,Górne Kominy,5,49.240628,19.900367,48.89,-0.0,0.004,2.12,,True,False,False
+001519,T.E-11.54,Szczelina w Progu Mułowym,5,49.238681,19.903433,76.72,0.087,0.004,0.68,,True,False,False
+001520,T.E-11.28,Schron przy Studni,5,49.240636,19.901053,196.91,-0.067,0.002,1.83,,True,False,False
+001521,T.E-11.29,Jaskinia Lodowa Miętusia,5,49.240642,19.901742,118.59,-0.071,0.006,0.57,,True,False,False
+001522,T.E-11.55,Jaskinia Turoniowa,5,49.239403,19.908497,215.37,0.01,0.001,0.9,,True,False,False
+001523,T.E-11.30,Śnieżny Awen,5,49.240644,19.902083,77.2,-0.051,0.0,0.48,,True,False,False
+001524,T.E-11.56,Kobylarzowa Szczelina,5,49.244364,19.910311,77.1,0.001,0.0,0.69,,True,False,False
+001526,T.E-11.32,Schron w Progu Mułowym,5,49.2403,19.903808,196.06,-0.013,0.002,2.24,,True,False,False
+001527,T.E-11.33,Dziura pod Ratuszem,5,49.242208,19.905894,77.01,0.0,0.002,0.59,,True,False,False
+001528,T.E-11.34,Bliźniaczy Komin,5,49.242167,19.906103,196.0,-0.002,0.0,0.69,,True,False,False
+001529,T.E-11.35,Schron pod Twardymi Spadami,5,49.240633,19.900917,77.88,0.021,0.001,0.35,,True,False,False
+001530,T.E-11.57,Nisza w Kobylarzowej Turni,5,49.243986,19.908464,38.89,-0.011,0.004,0.76,,True,False,False
+001531,T.E-11.58,Wciągająca Szczelina,5,49.240367,19.910672,76.73,0.0,0.003,0.46,,True,False,False
+001532,T.E-11.59,Schron w Dolinie Litworowej,5,49.240506,19.911014,77.39,-0.002,0.001,0.31,,True,False,False
+001533,T.E-12.02,Niebieska Studnia,5,49.242692,19.914056,38.58,0.0,0.001,0.47,,True,False,False
+001534,T.E-11.60,Nyża pod Schronem w Dolinie Litworowej,5,49.240547,19.910875,76.99,0.0,0.001,0.22,,True,False,False
+001535,T.E-12.03,Jaskinia pod Wantą,5,49.240633,19.911461,15.5,0.016,0.001,1.14,,True,False,False
+001536,T.E-12.04,Dziura Małołącka Mała,5,49.239942,19.922372,76.97,-0.008,0.0,0.42,,True,False,False
+001537,T.E-12.07,Jaskinia Małołącka,5,49.238672,19.921764,19.29,-0.001,0.001,0.53,,True,False,False
+001539,T.E-11.61,Jaskinia nad Lodową Litworową,5,49.240228,19.906275,38.67,0.0,0.0,0.43,,True,False,False
+001540,T.E-12.09,Dolny Lej,5,49.240317,19.923972,97.85,-0.0,0.0,1.48,,True,False,False
+001541,T.E-11.62,Szczelina za Płytą,5,49.243419,19.910125,76.81,-0.052,0.002,0.76,,True,False,False
+001542,T.E-12.10,Jaskinia z Dolomitami,5,49.241644,19.920233,98.48,0.0,0.006,2.13,,True,False,False
+001543,T.E-11.63,Studzienka za Ratuszem,5,49.2431,19.909719,76.8,0.0,0.0,0.29,,True,False,False
+001544,T.E-12.11,Jaskinia pod Śnieżną Studnią,5,49.241947,19.922242,118.09,-0.002,0.0,7.47,,True,False,False
+001545,T.E-11.64,Szczelina nad Ptasią,5,49.239011,19.905211,77.19,-0.016,0.0,0.51,,True,False,False
+001546,T.E-11.65,Dziurka w Trawce,5,49.2425,19.909628,38.62,0.004,0.0,0.46,,True,False,False
+001547,T.E-12.12,Jaskinia Wyżnia Litworowa,5,49.239244,19.915572,38.6,0.005,0.001,0.45,,True,False,False
+001548,T.E-12.13,Dziura w Grzędzie II,5,49.238975,19.915717,195.77,0.0,0.0,0.57,,True,False,False
+001549,T.E-12.14,Dziura w Grzędzie I,5,49.238931,19.915856,195.69,-0.004,0.001,0.97,,True,False,False
+001550,T.E-12.15,Jaskinia Omszała,5,49.238664,19.921011,38.55,0.0,0.0,0.51,,True,False,False
+001551,T.E-12.16,Jaskinia Ciasna w Groniu,5,49.244928,19.917647,38.38,-0.039,0.005,0.41,,True,False,False
+001552,T.E-12.17,Kominek obok Ciasnej w Groniu,5,49.242678,19.917558,77.25,-0.104,0.005,0.21,,True,False,False
+001553,T.E-12.18,Nyża pod Ratuszem,5,49.244833,19.917031,77.16,0.0,0.003,0.71,,True,False,False
+001554,T.E-12.19,Dziura pod Żródłem Ratusz,5,49.244564,19.917172,77.14,0.0,0.001,0.38,,True,False,False
+001555,T.E-12.20,Szczelina nad Strzelistą,5,49.24435,19.918278,77.09,0.0,0.001,0.83,,True,False,False
+001556,T.E-12.21,Dziura w Wantach,5,49.244064,19.917506,38.73,0.027,0.004,0.35,,True,False,False
+001557,T.E-12.22,Jaskinia Mała Zaruskiego,5,49.244369,19.919428,77.14,0.011,0.003,0.93,,True,False,False
+001558,T.E-12.23,Jaskinia Trójkątna,5,49.243964,19.920278,76.9,0.0,0.003,0.63,,True,False,False
+001559,T.E-12.24,Awen w Ratuszu,5,49.243069,19.917217,38.43,-0.0,0.003,0.39,,True,False,False
+001560,T.E-12.25,Ukryta Dziura,5,49.242514,19.920025,38.44,-0.002,0.002,0.76,,True,False,False
+001561,T.E-12.26,Studnia z Kosówką,5,49.239606,19.921833,76.62,-0.027,0.001,0.3,,True,False,False
+001562,T.E-12.27,Królicza Jama,5,49.239806,19.920492,77.24,-0.005,0.001,0.38,,True,False,False
+001563,T.E-12.28,Średni Lej,5,49.239814,19.920592,38.56,0.0,0.0,0.78,,True,False,False
+001564,T.E-12.29,Świstowa Studnia,5,49.241236,19.924572,77.19,0.002,0.002,0.26,,True,False,False
+001565,T.E-12.30,Awen z Korkiem Śnieżnym,5,49.245064,19.917642,38.41,0.088,0.005,0.34,,True,False,False
+001566,T.E-12.31,Jaskinia pod Strzelistą,5,49.244936,19.918608,38.54,0.027,0.001,0.33,,True,False,False
+001567,T.E-12.32,Jaskinia Strzelista,5,49.244756,19.918542,97.93,0.001,0.0,1.14,,True,False,False
+001568,T.E-12.33,Komora Gwiaździsta,5,49.244942,19.919019,15.37,0.0,0.001,0.71,,True,False,False
+001569,T.E-12.34,Jaskinia w Wielkiej Turni,5,49.244911,19.920417,77.3,0.013,0.001,1.02,,True,False,False
+001570,T.E-12.35,Dziura pod Świstową Studnią,5,49.241211,19.924158,77.09,-0.008,0.002,0.39,,True,False,False
+001571,T.E-12.36,Wilczy Schron,5,49.241394,19.924392,195.6,0.002,0.0,1.65,,True,False,False
+001572,T.E-12.37,Górny Lej,5,49.240081,19.920056,19.28,0.006,0.0,0.4,,True,False,False
+001573,T.E-12.38,Jaskinia przy Przechodzie,5,49.241736,19.923964,85.61,0.005,0.002,1.45,,True,False,False
+001574,T.E-13.03,Mnichowa Studnia Wyżnia,5,49.243239,19.929636,77.21,0.006,0.002,0.41,,True,False,False
+001575,T.E-12.39,Studnia przy Przechodzie,5,49.241833,19.923597,196.43,-0.002,0.0,2.02,,True,False,False
+001576,T.E-12.40,Dziura w Litworowej,5,49.240353,19.914106,77.04,-0.0,0.001,0.23,,True,False,False
+001577,T.E-13.04,Zaspałkowa Szczelina,5,49.238619,19.927711,77.18,0.0,0.0,0.4,,True,False,False
+001578,T.E-12.41,Jaskinia w Trawie,5,49.240492,19.914583,77.01,0.004,0.004,0.48,,True,False,False
+001579,T.E-12.42,Jaskinia przy Ryglu,5,49.238244,19.914633,77.35,-0.002,0.001,1.01,,True,False,False
+001580,T.E-13.05,Jaskinia Pomarańczarnia,5,49.246175,19.928822,38.52,-0.0,0.001,0.67,,True,False,False
+001581,T.E-12.43,Jędrusiowa Dziura,5,49.242047,19.923414,118.11,0.017,0.0,1.44,,True,False,False
+001582,T.E-12.45,Jaskinia przy Jędrusiowej Dziurze,5,49.241953,19.923969,118.12,-0.001,0.0,8.71,,True,False,False
+001583,T.E-12.44,Schron pod Jędrusiową Dziurą,5,49.241978,19.923831,76.97,0.0,0.002,0.4,,True,False,False
+001584,T.E-13.06,Chuda Mnichowa Studnia,5,49.246211,19.928781,77.09,0.0,0.001,0.18,,True,False,False
+001586,T.E-13.07,Mała Mnichowa Studzienka,5,49.246317,19.928897,77.02,0.005,0.005,0.24,,True,False,False
+001587,T.E-12.47,Studnia na Szlaku,5,49.244217,19.913817,76.67,0.0,0.006,0.44,,True,False,False
+001588,T.E-12.48,Szczelina w Litworowej,5,49.239233,19.914544,77.03,-0.108,0.0,0.43,,True,False,False
+001591,T.E-12.50,Szara Studnia,5,49.244136,19.912372,38.52,0.0,0.002,0.66,,True,False,False
+001592,T.E-13.09,Bliźniacza Studnia,5,49.239889,19.925206,76.83,0.0,0.001,0.56,,True,False,False
+001593,T.E-12.51,Szczelina w Pośredniej Turni,5,49.243747,19.916506,77.03,0.0,0.0,0.47,,True,False,False
+001594,T.E-12.52,Szuflada Dolna,5,49.244431,19.917244,76.73,0.006,0.0,0.5,,True,False,False
+001595,T.E-13.10,Mnichowa Studnia,5,49.243264,19.928503,38.58,0.0,0.001,0.45,,True,False,False
+001596,T.E-12.53,Szuflada Górna,5,49.244386,19.917383,76.98,0.0,0.0,0.44,,True,False,False
+001597,T.E-12.54,Jaskinia pod Progiem,5,49.245317,19.913636,76.82,-0.006,0.001,0.34,,True,False,False
+001598,T.E-13.11,Jaskinia w Trawniczku,5,49.244372,19.927644,77.04,0.004,0.0,0.54,,True,False,False
+001599,T.E-12.55,Dziura pod Siodełkiem,5,49.245,19.914722,76.88,-0.035,0.002,0.43,,True,False,False
+001600,T.E-13.12,Dziurka nad Piargiem,5,49.244439,19.927547,76.99,0.0,0.002,0.56,,True,False,False
+001601,T.E-12.56,Dziura w Czerwonym Grzbiecie,5,49.243964,19.915469,77.94,0.0,0.001,0.41,,True,False,False
+001602,T.E-13.13,Mokry Schron,5,49.245028,19.927181,77.05,0.0,0.0,0.62,,True,False,False
+001603,T.E-12.58,Jaskinia Zośka,5,49.244997,19.914661,98.0,0.0,0.0,0.78,,True,False,False
+001605,T.E-13.14,Jaskinia za Mnichem,5,49.245533,19.927133,77.07,-0.002,0.003,0.31,,True,False,False
+001606,T.E-13.15,Duży Schron,5,49.244075,19.928364,76.94,0.0,0.001,0.39,,True,False,False
+001607,T.E-12.59,Zawalony Schron,5,49.245394,19.913233,76.8,-0.007,0.002,0.4,,True,False,False
+001608,T.E-12.60,Szczelina nad Dziurą w Wantach I,5,49.244233,19.920269,76.92,0.004,0.005,0.39,,True,False,False
+001609,T.E-12.61,Szczelina nad Dziurą w Wantach II,5,49.243939,19.917667,77.21,0.0,0.004,0.62,,True,False,False
+001610,T.E-12.62,Maćkowa Dziura,5,49.243822,19.918639,77.55,-0.05,0.004,0.29,,True,False,False
+001611,T.E-12.63,Nyża pod Wielką Turnią,5,49.243386,19.920908,76.96,0.005,0.004,1.61,,True,False,False
+001612,T.E-12.65,Nyża w Baranich Schodkach I,5,49.242975,19.920231,77.03,0.054,0.001,0.4,,True,False,False
+001613,T.E-12.66,Nyża w Baranich Schodkach II,5,49.242883,19.920231,76.79,0.05,0.003,0.29,,True,False,False
+001614,T.E-12.67,Komórka przy Średnim Leju,5,49.239822,19.920728,38.55,-0.009,0.002,1.23,,True,False,False
+001617,T.E-13.16,Dziura przy Lodowej Małołąckiej I,5,49.243175,19.928453,76.97,0.0,0.004,0.52,,True,False,False
+001618,T.E-13.17,Szczelina Mnichowa,5,49.245603,19.927311,76.96,0.0,0.002,0.59,,True,False,False
+001619,T.E-13.18,Szczelina w Mnichowych Turniach II,5,49.244742,19.928269,77.97,0.024,0.0,0.54,,True,False,False
+001620,T.E-13.19,Szczelina w Mnichowych Turniach I,5,49.244597,19.92765,76.84,0.039,0.001,0.8,,True,False,False
+001621,T.E-13.20,Dziura Mnichowa Mała,5,49.244175,19.929864,77.02,-0.07,0.001,0.37,,True,False,False
+001622,T.E-13.21,Dziura przy Lodowej Małołąckiej II,5,49.243194,19.928569,77.08,0.022,0.002,0.48,,True,False,False
+001623,T.E-13.22,Dziura przy Lodowej Małołąckiej III,5,49.243172,19.928719,77.01,-0.175,0.002,0.44,,True,False,False
+001624,T.E-13.23,Dziura pod Lodową Małołącką I,5,49.243181,19.928247,76.97,0.0,0.0,0.7,,True,False,False
+001626,T.E-13.26,Jaskinia w Piekle,5,49.244378,19.934783,76.77,0.0,0.305,0.6,high_ppm_cv,True,False,False
+001627,T.E-13.02,Jaskinia Lodowa Małołącka,5,49.243133,19.928519,89.64,0.0,0.0,0.96,,True,False,False
+001630,T.E-13.28,Dziura przy Piargu,5,49.238611,19.936944,76.91,0.01,0.001,0.37,,True,False,False
+001631,T.E-13.29,Szczelina w Kopie,5,49.238611,19.937222,77.02,0.007,0.002,0.68,,True,False,False
+001646,T.F-07.01,Kominki w Panienkach Smytniańskich,5,49.233439,19.854667,77.75,0.0,0.006,0.45,,True,False,False
+001647,T.F-07.02,Szczelina w Panienkach Smytniańskich,5,49.233378,19.853019,77.45,0.0,0.007,0.4,,True,False,False
+001648,T.F-08.01,Jaskinia Przeziorowa,5,49.234753,19.863753,98.04,0.019,0.001,1.08,,True,False,False
+001649,T.F-08.02,Szczelina w Ścianie,5,49.235011,19.865217,195.69,-0.003,0.002,0.91,,True,False,False
+001650,T.F-08.03,Jaskinia w Żarze,5,49.234339,19.863736,195.11,0.005,0.002,1.73,,True,False,False
+001651,T.F-08.04,Dziura za Modrzewiami,5,49.236142,19.864161,197.24,0.037,0.002,1.63,,True,False,False
+001653,T.F-09.02,Krakowska Piwnica,5,49.233181,19.877725,271.58,0.018,0.002,1.12,,True,False,False
+001654,T.F-09.03,Jaskinia Piarżysta,5,49.234469,19.874306,195.75,-0.073,0.001,1.41,,True,False,False
+001655,T.F-09.04,Jaskinia Zakosista,5,49.234325,19.874103,98.14,-0.0,0.001,2.26,,True,False,False
+001656,T.F-09.05,Dziura pod Smrekiem,5,49.234092,19.875153,196.11,0.0,0.0,2.4,,True,False,False
+001657,T.F-09.06,Jaskinia Ciasna,5,49.234608,19.873861,196.12,0.0,0.001,1.8,,True,False,False
+001658,T.F-09.07,Jaskinia Dwuotworowa Krakowska,5,49.234653,19.875689,77.11,0.0,0.0,0.26,,True,False,False
+001659,T.F-09.08,Trójkątny Schron,5,49.234736,19.875878,76.63,0.0,0.004,1.12,,True,False,False
+001660,T.F-09.09,Koliby,5,49.234575,19.876775,197.28,0.0,0.002,4.43,,True,False,False
+001661,T.F-09.10,Dziura pod Wantą,5,49.234836,19.876975,195.07,0.0,0.001,1.45,,True,False,False
+001662,T.E-25.01,Jaskinia Wołoszyńska Wyżnia,5,49.244067,20.088789,77.3,-0.018,0.002,0.29,,True,False,False
+001663,T.F-09.11,Jaskinia pod Okapem,5,49.23515,19.877736,135.85,0.0,0.001,1.64,,True,False,False
+001664,T.E-25.02,Jaskinia Wołoszyńska Niżnia,5,49.244431,20.089264,118.07,0.0,0.001,1.18,,True,False,False
+001665,T.F-09.12,Jaskinia Wysoka,5,49.233761,19.885161,11.81,-0.031,0.0,0.79,,True,False,False
+001666,T.F-11.01,Studzienka w Ciemniaku,5,49.231031,19.902983,77.06,0.035,0.001,1.08,,True,False,False
+001669,T.F-11.02,Dziura w Krzesanicy I,5,49.231389,19.9075,38.63,-0.004,0.001,0.37,,True,False,False
+001670,T.F-09.15,Schron przy Zakosistej,5,49.234458,19.873933,196.0,0.0,0.001,1.61,,True,False,False
+001671,T.F-11.03,Szczelina w Krzesanicy I,5,49.231611,19.907089,23.48,0.0,0.35,79.1,high_ppm_cv,True,False,False
+001672,T.F-11.04,Szczelina w Krzesanicy II,5,49.231619,19.907983,45.67,-0.161,0.002,0.53,,True,False,False
+001673,T.F-11.05,Szczelina w Krzesanicy III,5,49.231528,19.907983,38.6,-0.002,0.0,0.34,,True,False,False
+001674,T.F-11.06,Dziura w Krzesanicy II,5,49.231811,19.909214,76.92,0.079,0.002,0.93,,True,False,False
+001675,T.F-09.16,Schron z Watrą,5,49.234917,19.874019,195.41,0.0,0.002,3.59,,True,False,False
+001676,T.F-11.13,Szczelina w Ciemniaku,5,49.231669,19.900992,271.18,0.007,0.0,2.41,,True,False,False
+001677,T.F-11.14,Dziura w Ciemniaku,5,49.232014,19.901178,195.1,0.0,0.001,1.19,,True,False,False
+001678,T.F-09.17,Ósemka,5,49.234444,19.876242,195.82,0.0,0.006,1.86,,True,False,False
+001679,T.F-09.19,Jaskinia z Mostami,5,49.234483,19.875608,97.9,-0.034,0.001,1.76,,True,False,False
+001680,T.F-12.01,Litworowa Studnia,5,49.233944,19.915556,38.5,-0.003,0.001,0.4,,True,False,False
+001681,T.G-19.01,Wyżnia Szczelina w Zadnim Kościelcu,5,49.222781,20.014981,77.04,0.003,0.003,0.69,,True,False,False
+001682,T.F-09.20,Jaskinia Hakowa,5,49.234669,19.875536,195.14,0.0,0.0,0.51,,True,False,False
+001683,T.F-09.21,Dziura nad Trawiastym Progiem,5,49.234239,19.876425,194.69,0.0,0.004,0.83,,True,False,False
+001684,T.F-09.22,Jaskinia Gankowa,5,49.234306,19.875889,77.09,0.017,0.001,0.89,,True,False,False
+001685,T.F-09.23,Krasowa Nisza,5,49.234744,19.87655,97.98,0.0,0.001,0.56,,True,False,False
+001686,T.F-09.24,Gruzowa Dziura,5,49.23425,19.876781,77.46,0.0,0.009,0.6,,True,False,False
+001687,T.F-09.26,Ptasi Schron,5,49.232756,19.879178,195.79,-0.012,0.0,1.2,,True,False,False
+001688,T.F-09.27,Mokra Szczelina,5,49.235386,19.877894,194.63,0.0,0.001,1.3,,True,False,False
+001689,T.F-09.30,Korytarzyk w Żlebie Niedźwiedź,5,49.232517,19.879678,195.72,0.001,0.001,2.51,,True,False,False
+001690,T.F-09.31,Dziura w Wielkiej Turni,5,49.234892,19.873253,195.69,-0.002,0.0,0.86,,True,False,False
+001691,T.F-09.32,Szczelina pod Gankową I,5,49.234503,19.875883,194.94,0.0,0.004,3.89,,True,False,False
+001692,T.F-09.33,Szczelina pod Gankową II,5,49.234592,19.875894,195.52,0.0,0.001,1.01,,True,False,False
+001693,T.F-09.34,Szczelina pod Gankową III,5,49.234503,19.875925,195.88,0.0,0.002,0.9,,True,False,False
+001694,T.G-19.02,Szczelina w Zadnim Kościelcu,5,49.222861,20.014019,76.86,-0.001,0.001,0.2,,True,False,False
+001695,T.G-19.03,Schron w Zadnim Kościelcu,5,49.225625,20.011217,77.06,-0.04,0.001,0.5,,True,False,False
+001696,T.G-19.04,Schron przy Źródle,5,49.228481,20.008689,77.08,0.016,0.002,0.56,,True,False,False
+001697,T.G-22.01,Dziura nad Nową Roztoką,5,49.223517,20.060064,77.47,0.0,0.001,0.62,,True,False,False
+001698,T.G-22.02,Dziura nad Roztoką,5,49.223056,20.059444,77.18,0.0,0.0,0.65,,True,False,False
+001699,T.H-19.01,Świnicka Koleba,5,49.218917,20.015333,77.17,-0.013,0.0,0.37,,True,False,False
+001700,T.H-19.02,Świnicka Koleba Niżnia,5,49.218825,20.015061,77.06,-0.002,0.004,0.46,,True,False,False
+001701,T.F-10.01,Jaskinia Lodowa w Ciemniaku,5,49.233889,19.892083,49.04,0.003,0.001,1.65,,True,False,False
+001702,T.J-21.01,Dziura w Miedzianym Kosturze I,5,49.203889,20.046094,77.05,-0.003,0.001,0.58,,True,False,False
+001703,T.L-22.06,Cubryńska Dziura II,5,49.191428,20.056144,77.34,0.0,0.003,0.5,,True,False,False
+001704,T.J-21.02,Dziura w Miedzianym Kosturze II,5,49.204167,20.045833,76.73,0.009,0.001,0.55,,True,False,False
+001705,T.F-10.02,Szczelina nad Lodową,5,49.230917,19.889147,77.03,0.016,0.0,0.6,,True,False,False
+001706,T.F-10.03,Jaskinia Lodowa Krakowska,5,49.231297,19.889358,77.16,0.002,0.0,0.66,,True,False,False
+001707,T.F-10.04,Śnieżna Szczelina,5,49.231161,19.889142,76.92,-0.006,0.002,0.73,,True,False,False
+001708,T.F-10.05,Lustrzana Szczelina,5,49.231778,19.884994,195.68,0.012,0.002,1.68,,True,False,False
+001709,T.F-10.06,Kozi Schron,5,49.230569,19.887589,194.89,0.004,0.0,3.28,,True,False,False
+001710,T.F-10.07,Studnia Kuturniańska,5,49.233167,19.887489,77.12,-0.003,0.003,0.79,,True,False,False
+001711,T.F-10.08,Schron przy Studni Kuturniańskiej,5,49.233178,19.887722,271.65,0.0,0.001,3.08,,True,False,False
+001712,T.F-10.09,Jaskinia Zawaliskowa w Szerokiem,5,49.233458,19.894403,195.56,0.058,0.001,1.34,,True,False,False
+001713,T.F-10.10,Kamienista Szczelina,5,49.234178,19.894386,196.06,-0.004,0.0,1.57,,True,False,False
+001715,T.J-24.01,Dziura w Żabiem,5,49.210236,20.085911,38.49,0.016,0.0,0.42,,True,False,False
+001716,T.F-10.11,Szczelina pod Lodową,5,49.230917,19.889147,195.3,0.007,0.001,1.39,,True,False,False
+001717,T.J-24.02,Jaskinia Żabia Lodowa,5,49.211389,20.090278,76.93,-0.0,0.003,0.71,,True,False,False
+001718,T.F-10.12,Szczelina w Tomanowym Grzbiecie I,5,49.229667,19.896056,77.05,0.009,0.001,0.44,,True,False,False
+001719,T.J-24.03,Wielka Żabia Szpara,5,49.211389,20.090278,77.23,-0.001,0.002,188.88,high_entrance_std,True,False,False
+001720,T.F-10.13,Szczelina w Tomanowym Grzbiecie II,5,49.229825,19.895239,195.43,0.0,0.004,0.92,,True,False,False
+001721,T.F-10.14,Szczelina w Tomanowym Grzbiecie III,5,49.23,19.895578,269.96,-0.014,0.001,1.66,,True,False,False
+001723,T.F-10.15,Szczelina w Tomanowym Grzbiecie IV,5,49.230486,19.895706,76.92,0.0,0.003,0.71,,True,False,False
+001724,T.K-21.01,Studnia w Dziurawej Czubie,5,49.194158,20.043675,76.88,0.0,0.004,0.65,,True,False,False
+001725,T.F-10.16,Szczelina w Tomanowym Grzbiecie V,5,49.230533,19.895897,195.75,-0.011,0.001,1.45,,True,False,False
+001726,T.F-10.17,Szczelina w Tomanowym Grzbiecie VI,5,49.230336,19.8959,196.19,0.06,0.001,1.68,,True,False,False
+001727,T.L-22.01,Mnichowy Komin,5,49.193533,20.05535,76.7,0.015,0.004,0.22,,True,False,False
+001728,T.F-10.18,Dziura nad Zawaliskiem,5,49.231111,19.894722,38.32,0.01,0.001,0.34,,True,False,False
+001729,T.L-22.02,Studnia przy Mnichowym Kominie,5,49.193489,20.055419,77.09,0.012,0.001,0.41,,True,False,False
+001730,T.F-10.19,Dziura pod Zawaliskiem,5,49.231111,19.894722,38.51,0.0,0.003,0.86,,True,False,False
+001731,T.F-10.20,Dziura w Wysokim Grzbiecie,5,49.231908,19.896703,195.96,0.0,0.006,0.8,,True,False,False
+001732,T.L-22.03,Jaskinia przy Studni w Mnichu,5,49.193444,20.055419,76.95,0.0,0.002,0.77,,True,False,False
+001734,T.L-22.05,Cubryńska Dziura I,5,49.191472,20.056075,38.4,0.0,0.004,0.53,,True,False,False
+001747,T.L-22.07,Cubryńska Dziura III,5,49.191383,20.056078,38.58,0.0,0.004,0.41,,True,False,False
+001748,T.M-24.01,Szpara pod Rysami,5,49.181603,20.080953,38.61,-0.016,0.0,0.26,,True,False,False
+001749,T.Z-18.01,Jaskinia Jaszczurowska Wodna,5,49.282822,20.000961,38.57,0.0,0.002,0.54,,True,False,False
+004046,T.A-08.01,Schron w Żlebie Jaroniec,5,49.275389,19.857694,118.56,0.085,0.003,0.94,,True,False,False
+004047,T.A-05.02,Siwiańska Nyża,5,49.276556,19.826056,118.71,0.032,0.001,0.7,,True,False,False
+004048,T.A-04.01,Szczelina w Małych Koryciskach,5,49.271889,19.811528,117.77,0.001,0.001,0.7,,True,False,False
+004066,T.B-04.02,Wilcza Nora,5,49.269944,19.803806,473.4,-0.002,0.0,1.64,,True,False,False
+004067,T.B-04.03,Skośna Szpara,5,49.269181,19.804978,119.3,0.0,0.002,0.55,,True,False,False
+004068,T.B-04.04,Nyża w Wielkich Koryciskach,5,49.268661,19.806442,117.93,0.0,0.001,0.74,,True,False,False
+004069,T.B-04.05,Schron w Wielkich Koryciskach II,5,49.268794,19.806208,59.41,0.0,0.003,1.23,,True,False,False
+004070,T.B-04.06,Szczelina w Wielkich Koryciskach,5,49.268906,19.806367,119.02,0.0,0.002,0.58,,True,False,False
+004071,T.B-04.07,Schron nad Szczeliną w Wielkich Koryciskach,5,49.268983,19.806469,118.3,0.0,0.0,0.85,,True,False,False
+004072,T.B-09.17,Schron w Małym Reglu,5,49.269917,19.872361,118.81,-0.033,0.003,0.58,,True,False,False
+004073,T.B-09.18,Dziura w Czerwonym Groniku,5,49.266528,19.879383,118.34,-0.005,0.004,0.91,,True,False,False
+004074,T.B-09.19,Szczelina w Czerwonym Groniku,5,49.266642,19.879317,59.35,0.016,0.002,0.46,,True,False,False
+004075,T.B-12.10,Dziura w Jatkach,5,49.265833,19.921458,473.67,0.009,0.002,2.3,,True,False,False
+004086,T.D-08.63,Schron w Żlebie Goryckiego,5,49.250639,19.866139,118.6,0.029,0.001,0.67,,True,False,False
+004106,T.B-12.11,Schronisko w Dolinie za Bramką,5,49.266714,19.919392,118.9,0.0,0.001,1.66,,True,False,False
+004126,T.D-08.64,Dziurka w Organach,5,49.246797,19.865994,118.98,0.024,0.001,0.89,,True,False,False
+004146,T.D-08.65,Schron nad Progiem,5,49.247089,19.866056,118.16,0.0,0.0,0.92,,True,False,False
+004147,T.D-08.66,Schron nad Doliną,5,49.249636,19.863878,59.46,0.0,0.001,1.03,,True,False,False
+004166,T.D-12.25,Jaskinia pod Żebrem,5,49.247264,19.913022,118.12,0.012,0.0,1.11,,True,False,False
+004167,T.D-12.26,Korytarz nad Zagonem,5,49.247264,19.913022,236.37,0.0,0.001,1.2,,True,False,False
+004173,T.E-06.14,Schron w Piecach,5,49.243667,19.829944,237.01,0.0,0.0,3.16,,True,False,False
+004174,T.E-06.15,Nyża pod Jaskinią w Kosówkach,5,49.242672,19.839964,118.32,0.0,0.001,1.01,,True,False,False
+004175,T.E-08.35,Schron z Kijem,5,49.236311,19.864889,237.36,0.005,0.003,0.79,,True,False,False
+004176,T.E-08.38,Nasza Dziura,5,49.239036,19.864192,236.88,0.0,0.001,1.7,,True,False,False
+004186,T.E-08.64,Krowi Tunel,5,49.239139,19.863772,471.85,0.002,0.0,1.61,,True,False,False
+004206,T.B-14.04,Nyża za Półką,5,49.271425,19.943667,117.76,-0.049,0.003,0.25,,True,False,False
+004207,T.B-14.05,Schron nad Dziurą Wyżnią,5,49.271564,19.943278,117.95,0.004,0.004,0.53,,True,False,False
+004208,T.E-08.65,Ziobrowy Schron,5,49.238419,19.862219,236.73,0.01,0.001,2.89,,True,False,False
+004226,T.C-05.08,Grotka przy Huciskach,5,49.257486,19.814467,117.88,0.0,0.005,0.48,,True,False,False
+004246,T.E-11.67,Jaskinia Zapylna,5,49.240556,19.899444,237.18,0.001,0.001,1.78,,True,False,False
+004266,T.C-05.07,"Schronisko w Międzyścianach ""nad II""",5,49.252939,19.820217,271.26,0.0,0.001,2.3,,True,False,False
+004286,T.C-12.01,Dziura w Czarnej Turni I,5,49.262111,19.920583,118.24,-0.297,0.001,1.33,,True,False,False
+004287,T.C-12.02,Dziura w Czarnej Turni II,5,49.261972,19.920333,118.5,0.043,0.001,0.6,,True,False,False
+004288,T.C-12.03,Dziura w Czarnej Turni III,5,49.26225,19.92025,118.65,-0.057,0.003,1.35,,True,False,False
+004289,T.C-15.12,Kalacki Korytarzyk,5,49.255875,19.964261,118.7,0.0,0.003,0.62,,True,False,False
+004306,T.D-05.11,Dmuchająca Szczelina,5,49.247528,19.82025,118.03,-0.001,0.0,0.51,,True,False,False
+004307,T.D-05.12,Okap przed Bramą,5,49.247047,19.815083,59.04,-0.03,0.002,0.57,,True,False,False
+004326,T.E-08.68,Zbójnicka Rura,5,49.236519,19.865061,236.76,-0.01,0.001,1.81,,True,False,False
+004327,T.E-08.69,Serowa Dziura,5,49.236419,19.8651,236.96,0.038,0.002,2.12,,True,False,False
+004328,T.E-08.70,Jaskinia w Zbójnickiej Turni,5,49.236431,19.865281,236.23,0.09,0.001,5.96,,True,False,False
+004346,T.E-08.71,Korytarzyk w Szczelinie,5,49.237831,19.866611,59.24,0.0,0.001,1.39,,True,False,False
+004347,T.E-08.72,Schron za Smoczą Jamą,5,49.237939,19.867444,59.51,0.0,0.002,0.38,,True,False,False
+004348,T.E-08.73,Zbójnicka Piwnica,5,49.236431,19.865281,39.3,0.049,0.002,0.43,,True,False,False
+004349,T.E-08.74,Nyża ze Znakami,5,49.241472,19.855556,118.25,0.0,0.002,0.77,,True,False,False
+004350,T.E-09.26,Paszcza Rekina,5,49.236075,19.871133,118.15,-0.0,0.003,0.78,,True,False,False
+004351,T.E-09.37,Szczelina na Zakręcie I,5,49.236931,19.8723,59.37,0.0,0.0,0.4,,True,False,False
+004366,T.E-09.38,Szczelina na Zakręcie II,5,49.236931,19.8723,237.04,0.0,0.005,1.47,,True,False,False
+004367,T.E-09.39,Rura przy Oknie,5,49.236028,19.870694,236.5,0.0,0.003,1025.44,high_entrance_std,True,False,False
+004368,T.E-09.40,Jaskinia nad Percią,5,49.236631,19.874011,236.65,-0.003,0.002,1.93,,True,False,False
+004369,T.E-09.41,Mała Gawra,5,49.237031,19.8734,59.16,-0.005,0.001,0.34,,True,False,False
+004370,T.E-09.42,Szczelina za Ptakową Turnią,5,49.236581,19.876889,237.21,0.0,0.005,1.69,,True,False,False
+004371,T.E-09.43,Upłazkowa Koleba,5,49.237539,19.877461,236.78,0.0,0.003,2.02,,True,False,False
+004372,T.E-09.44,Upłazkowa Szczelina,5,49.237619,19.877431,237.1,0.012,0.001,1.16,,True,False,False
+004373,T.E-09.45,Lustrzany Korytarz,5,49.237531,19.87835,237.02,0.004,0.0,2.68,,True,False,False
+004374,T.E-09.46,Tunel pod Upłazkowym Przechodem,5,49.237889,19.877989,236.65,0.009,0.001,2.05,,True,False,False
+004386,T.A-06.01,Pasterski Schron,5,49.277306,19.830028,473.78,-0.001,0.001,4.41,,True,False,False
+004387,T.D-05.13,Okap nad Kościołem,5,49.246328,19.828139,59.06,0.0,0.002,0.46,,True,False,False
+004388,T.E-09.47,Dziura w Ździarach Wyżnia,5,49.242139,19.87825,473.09,0.0,0.001,1.04,,True,False,False
+004389,T.E-09.48,Okap w Ździarach,5,49.242222,19.8775,58.99,0.0,0.002,1.56,,True,False,False
+004390,T.E-09.49,Komin w Ździarach,5,49.24275,19.877978,118.17,0.004,0.001,0.5,,True,False,False
+004391,T.E-09.50,Schron w Organach,5,49.242611,19.874333,117.99,0.0,0.003,0.8,,True,False,False
+004392,T.D-05.14,Dmuchawa,5,49.246111,19.821,47.12,0.0,0.001,1.1,,True,False,False
+004394,T.D-06.17,Dudowy Okap,5,49.245861,19.83075,59.39,-0.006,0.001,0.36,,True,False,False
+004406,T.F-08.06,Jaskinia Ciepła,5,49.233469,19.865581,57.03,-0.0,0.003,0.45,,True,False,False
+004407,T.F-09.18,Schron przy Wielkiej Turni,5,49.234639,19.872569,59.15,0.0,0.002,0.31,,True,False,False
+004408,T.E-11.70,Jaskinia za Ratuszem Zimna,5,49.242889,19.908778,117.9,0.0,0.001,0.61,,True,False,False
+004409,T.E-12.70,Znana Studnia,5,49.242306,19.9115,471.02,-0.017,0.003,2.04,,True,False,False
+004410,T.F-09.25,Schron nad Zakosistą,5,49.234833,19.873583,59.15,-0.021,0.002,0.56,,True,False,False
+004411,T.E-12.71,Jaskinia Siwy Kocioł,5,49.242225,19.920203,59.07,-0.0,0.0,1.68,,True,False,False
+004412,T.F-09.28,Krakowska Szczelina,5,49.233281,19.878069,59.25,0.0,0.002,0.4,,True,False,False
+004413,T.F-08.05,Schron pod Przeziorową,5,49.234811,19.862658,118.5,-0.006,0.003,1.39,,True,False,False
+004414,T.F-09.29,Szczelina za Siedmiu Progami,5,49.233719,19.88345,237.22,0.0,0.002,2.71,,True,False,False
+004415,T.F-10.21,Jaskinia Zawaliskowa Tomanowa,5,49.229331,19.895581,59.2,0.0,0.0,2.53,,True,False,False
+004416,T.F-10.22,Mała Szczelina w Tomanowym Grzbiecie,5,49.22975,19.895219,236.5,0.0,0.003,3.82,,True,False,False
+004417,T.F-09.35,Krakowski Okap,5,49.232306,19.878556,59.0,0.003,0.003,0.49,,True,False,False
+004418,T.F-10.23,Drugi Krakowski Okap,5,49.232311,19.887411,238.13,0.0,0.003,2.05,,True,False,False
+004419,T.F-10.24,Druga Krakowska Szczelina,5,49.230881,19.8876,237.32,-0.003,0.0,2.39,,True,False,False
+004420,T.F-10.25,Mały Krakowski Schron,5,49.230869,19.88765,236.48,0.0,0.002,1.45,,True,False,False
+004421,T.F-11.07,Tomanowy Okap,5,49.230611,19.89815,59.25,0.0,0.001,0.53,,True,False,False
+004422,T.F-11.08,Szczelina przy Tomanowym Okapie,5,49.230611,19.89815,59.24,-0.061,0.002,0.76,,True,False,False
+004423,T.F-11.09,Schron nad Tomanową,5,49.230161,19.899031,236.94,0.0,0.002,0.69,,True,False,False
+004424,T.F-11.10,Okno nad Tomanową,5,49.2302,19.899331,59.09,0.0,0.001,0.6,,True,False,False
+004425,T.F-11.11,Rzędowa Szczelina,5,49.230189,19.899589,236.86,0.007,0.0,2.34,,True,False,False
+004426,T.F-11.12,Grota w Rzędach,5,49.230239,19.899639,236.35,0.0,0.002,2.11,,True,False,False
+004427,T.F-11.15,Niski Schron nad Tomanową,5,49.229831,19.901031,237.23,-0.007,0.003,1.97,,True,False,False
+004428,T.F-11.16,Niżni Okap nad Tomanową,5,49.229831,19.901031,236.98,0.0,0.0,1.8,,True,False,False
+004429,T.F-11.17,Wyżni Okap nad Tomanową,5,49.229831,19.901031,236.98,0.0,0.004,4.08,,True,False,False
+004430,T.F-11.18,Grota nad Małą Przełączką,5,49.228789,19.903919,59.21,0.0,0.003,0.97,,True,False,False
+004431,T.F-11.19,Tomanowa Szczelina I,5,49.228919,19.903831,117.96,0.0,0.0,0.49,,True,False,False
+004432,T.F-11.20,Tomanowa Szczelina II,5,49.228717,19.903972,118.63,-0.011,0.001,0.46,,True,False,False
+004433,T.F-11.21,Szczelina nad Tomanową I,5,49.229639,19.903411,59.01,-0.024,0.001,0.84,,True,False,False
+004434,T.F-11.22,Szczelina nad Tomanową II,5,49.22975,19.903269,236.33,0.0,0.004,1.83,,True,False,False
+004435,T.G-11.01,Dziura w Stole,5,49.223997,19.905089,236.27,0.0,0.003,3.09,,True,False,False
+004446,T.J-09.01,Jaskinia Maleńka w Smreczyńskim Wierchu,5,49.208947,19.888033,236.75,0.0,0.002,3.97,,True,False,False
+004447,T.J-10.01,Jaskinia w Smreczyńskim Wierchu,5,49.205739,19.885489,59.11,-0.03,0.001,0.72,,True,False,False
+004448,T.Z-21.01,Staszkowa Studnia,5,49.284167,20.045278,237.0,0.0,0.004,1.55,,True,False,False
+004466,T.F-09.38,Okap z Kurtyną,5,49.232631,19.87855,59.16,0.0,0.003,0.57,,True,False,False
+004486,T.D-08.67,Nisza w Organach,5,49.245917,19.866361,473.69,0.0,0.001,2.21,,True,False,False
+004487,T.D-08.68,Nisza w Organach II,5,49.245611,19.866194,58.96,0.012,0.0,0.78,,True,False,False
+004488,T.F-09.39,Krakowski Schron,5,49.234219,19.878011,236.77,0.0,0.001,2.62,,True,False,False
+004489,T.F-09.40,Komin w Niskiej Turni,5,49.234219,19.88305,236.51,0.0,0.003,1.3,,True,False,False
+004490,T.F-09.41,Szczelina nad Korytem,5,49.233931,19.883319,237.24,0.0,0.001,1.5,,True,False,False
+004491,T.F-09.42,Grota nad Korytem,5,49.233881,19.883431,235.57,0.0,0.003,2.32,,True,False,False
+004492,T.F-09.43,Jaskinia nad Beczką,5,49.233881,19.883731,235.94,0.007,0.003,3.07,,True,False,False
+004506,T.D-07.01,Dziura nad Zabijakiem I,5,49.249722,19.851333,118.54,0.0,0.002,0.9,,True,False,False
+004507,T.D-07.02,Dziura nad Zabijakiem II,5,49.249722,19.851333,119.03,0.0,0.001,0.75,,True,False,False
+004586,T.D-08.69,Szczelina przed Sową,5,49.248722,19.864472,118.43,0.0,0.002,0.67,,True,False,False
+004587,T.E-08.75,Szczelinka w Głębowcu,5,49.241083,19.855278,118.9,0.0,0.001,0.39,,True,False,False
+004588,T.F-09.44,Kościół,5,49.2354,19.875922,23.79,0.0,0.001,1.18,,True,False,False
+004718,T.D-22.03,Koszowa Dziura,5,49.248892,20.058133,118.01,0.026,0.001,1.42,,True,False,False
+004719,T.D-22.02,Jaskinia Koszowa,5,49.249139,20.059694,119.31,0.003,0.0,0.52,,True,False,False
+004720,T.D-22.04,Szczelina nad Lejem,5,49.249167,20.057556,118.51,0.019,0.002,0.49,,True,False,False
+004721,T.D-22.01,Wyżnia Koszowa Dziura,5,49.248722,20.058694,118.01,0.0,0.004,1.16,,True,False,False
+004766,T.E-12.72,Meander w Małołąckim Siodle,5,49.245389,19.912683,236.21,-0.01,0.001,0.87,,True,False,False
+004787,T.E-11.66,Jaskinia Niespodzianka,5,49.240556,19.899444,235.65,0.006,0.004,3.28,,True,False,False
+004846,T.A-16.01,Capkowa Szczelina,5,49.279167,19.973611,118.4,0.0,0.002,0.9,,True,False,False
+004867,T.E-11.72,Szczelina za Ratuszem,5,49.242933,19.9087,118.01,0.0,0.006,1.02,,True,False,False
+010865,T.E-04.02,Jaskinia Kokonowa,5,49.2433,19.803933,237.24,0.0,0.001,1.21,,True,False,False
+010935,T-Jaskinie Pawlikowskiego,Jaskinie Pawlikowskiego,5,49.239397,19.861542,47.24,0.0,0.0,1039.44,high_entrance_std,True,False,False
+011037,T.B-24.06,Filipczańskie Okno,5,49.272944,20.080778,236.77,0.0,0.002,1.04,,True,False,False
+011038,T.B-24.05,Szczelina za Paśnikiem,5,49.274028,20.075861,236.24,0.0,0.003,0.71,,True,False,False
+011039,T.A-24.04,Schron w Żlebie za Skałką,5,49.278361,20.078889,237.27,0.046,0.003,0.97,,True,False,False
+011040,T.A-23.02,Jaworzyński Schron,5,49.281833,20.072917,236.48,0.0,0.003,0.85,,True,False,False
+011041,T.A-24.06,Łężna Dziura,5,49.281972,20.07375,235.83,0.006,0.002,0.99,,True,False,False
+011042,T.A-24.05,Nyża nad Grotą w Jaworzyńskim Żlebie,5,49.281917,20.074,236.81,0.0,0.002,1.11,,True,False,False
+011043,T.A-23.03,Zbójnicka Kapliczka,5,49.281861,20.072444,236.93,0.002,0.001,0.69,,True,False,False
+011044,T.A-23.04,Schron przy Grocie w Jaworzyńskim Żlebie,5,49.282389,20.073944,236.55,0.0,0.001,0.68,,True,False,False
+011045,T.A-23.01,Okienko w Jaworzyńskim Żlebie,5,49.281028,20.072306,236.72,0.001,0.001,3.12,,True,False,False
+011046,T.A-06.03,Siwiańskie Okno,5,49.276667,19.826778,236.55,0.012,0.004,0.92,,True,False,False
+011047,T.A-05.01,Siwiański Schron,5,49.276528,19.824778,236.67,-0.0,0.002,0.88,,True,False,False
+011048,T.A-06.04,Schron pod Siwiańskim Oknem,5,49.276639,19.826722,237.15,0.0,0.001,0.56,,True,False,False
+011049,T.A-23.05,Dziura za Porzeczkami,5,49.28125,20.071861,236.91,-0.002,0.002,0.97,,True,False,False
+011050,T.A-22.01,Koziarska Dziura,5,49.283528,20.055194,236.61,0.0,0.003,1.26,,True,False,False
+011051,T.A-12.04,Jasiowa Nyża,5,49.272917,19.914139,235.4,-0.085,0.002,1.39,,True,False,False
+011053,T.B-15.01,Koleba nad Doliną Białego,5,49.265028,19.957389,237.16,0.0,0.001,0.88,,True,False,False
+011055,T.E-12.73,Dziura nad Śnieżną Studnią,5,49.241011,19.921983,236.03,-0.009,0.002,1.18,,True,False,False
+011056,T.E-10.08,Trzeszcząca Szczelina,5,49.243333,19.895667,237.09,0.0,0.003,3.45,,True,False,False
+011057,T.E-10.09,Świstowy Worek,5,49.242111,19.895889,236.66,0.0,0.004,1.71,,True,False,False
+011058,T.E-13.31,Mnichowy Korytarz,5,49.245119,19.927083,235.16,0.0,0.002,1.6,,True,False,False
+011059,T.E-13.32,Schron pod Mnichem,5,49.246308,19.926792,235.9,-0.009,0.001,1.02,,True,False,False
+011291,T.D-13.09,Kozie Okna,5,49.249089,19.925981,117.1,0.018,0.001,1.6,,True,False,False
+011292,T.D-13.10,Nyża przy Kozich Oknach,5,49.249058,19.926067,117.2,0.0,0.003,1.91,,True,False,False

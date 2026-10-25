@@ -129,3 +129,24 @@ class CatalogueBaselineTest(unittest.TestCase):
             with zipfile.ZipFile(archive, 'w') as target:
                 target.writestr(name, b'changed archive')
             self.assertEqual(baseline.verify_inputs(root, document), [name])
+
+
+class QaHistoryTest(unittest.TestCase):
+    def test_t09_qa_reports_keep_original_t02_hashes_in_separate_files(self):
+        import hashlib
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp)
+            (root/'data/caves/_reports').mkdir(parents=True)
+            (root/'data/history/t02-reports').mkdir(parents=True)
+            names=('summary.csv','flagged.csv','missing.csv')
+            hashes={}
+            for name in names:
+                path='data/caves/_reports/'+name
+                (root/path).write_text('new QA')
+                frozen=root/'data/history/t02-reports'/name
+                frozen.write_text('original '+name)
+                hashes[path]=hashlib.sha256(frozen.read_bytes()).hexdigest()
+            doc={'reference_commit':baseline.FROZEN_REFERENCE,'plans':[],'other_inputs_sha256':hashes}
+            self.assertEqual(baseline.verify_inputs(root,doc),[])
+            (root/'data/history/t02-reports/summary.csv').write_text('corrupt')
+            self.assertEqual(baseline.verify_inputs(root,doc),['data/caves/_reports/summary.csv'])

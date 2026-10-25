@@ -26,3 +26,9 @@ porównywane z oryginalnymi `after_implementation_sha256` raportu T06.
 Test nadal odtwarza 814 historycznych wejść T05 i sprawdza na bieżącym kodzie
 wszystkie zapisane wyniki geometrii. Rozdzielenie kodu historycznego od
 bieżącego nie zmienia żadnego hasha raportu, modelu ani tolerancji.
+
+T09 zachowuje `t02-reports/{summary,flagged,missing}.csv`: dokładne oryginalne
+bajty dawnych raportów spod `data/caves/_reports/`. Historyczny audyt nadal
+sprawdza pierwotne hashe `other_inputs_sha256` T02. Bieżące QA nadpisuje
+wyłącznie raporty robocze w `_reports`; oryginalny katalog i hashe T02,
+archiwum oraz raporty T05/T06/T07/T08 pozostają nienaruszone.

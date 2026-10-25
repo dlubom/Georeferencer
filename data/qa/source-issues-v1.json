@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-10-25",
+  "issues": [
+    {
+      "issue": {
+        "url": "https://github.com/dlubom/Georeferencer/issues/1",
+        "title": "Uwagi od ekipy",
+        "issue_number": 1,
+        "body": "Jaskinia Psia - pominięta (wejście w innym miejscu niż 0,0)\nJaskinia Kondracka - pominięta (brak planu)\nSchron Partyzantów - pominięta (kilka planów na jednym)\nDziura pod Zawaliskiem - pominięta (brak oznaczenia wejścia)\nJaskinia w Kociołku pod Bańdziochem - pominięta (brak planu)\nSchron nad Lejową - pominięta (kilka planów na jednym)\nJaskinia w Cycku - zrobiona (skala na podziałce inna niż na siatce)\nJaskinia pod Płytą - pominięta (brak planu)\nSchronisko nad Bramą - zrobiona (trójkąt krzywo umieszczony)\nNyża nad Olczyską I - zrobiona (trójkąt krzywo umieszczony)\nNyża nad Olczyską II - pominięta (brak oznaczenia wejścia)\nJaskinia Wilcza - pominięta (brak planu)\nBardzo Niska Nyża - pominięta (brak oznaczenia wejścia)\nSzczelina w Krzesanicy I - pominięta (niezgodne oznaczenia długości)\nJaskinia Lejbusiowa - pominięta (brak oznaczenia wejścia)\nSchron z Watrą - pominięta (brak oznaczenia wejścia)\nSzczelina przy Nyży z Kozicami - pominięta (kilka planów na jednym)\nJaskinia Wodna przy Pisanej - pominięta (brak planu)\nJaskinia Zawaliskowa Tomanowa - pominięta (trójkąt wejścia ewidentnie przesunięty względem siatki 0,0)\nJaskinia nad Kotlinami - pominięta (brak planu)\nJaskinia Świstacza - pominięta (niewyraźne oznaczenie wejścia)\nDziura nad Wantulami II - pominięta (brak planu)\nSzpara w Zagonnej Turni - pominięta (brak planu)\nPtasia Studnia - pominięta (wiele planów na jednym)\nSchron w Piecu - pominięta (niewyraźne oznaczenie wejścia)\nZaspałkowa Szpara - pominięta (brak planu)\nŁamana Dziura - pominięta (brak planu)\nJaskinia Lodowa Litworowa - pominięta (brak planu)\nJaskinia Mała w Mułowej - pominięta (błąd konwersji pliku tiff)\nKomin w Kazalnicy Miętusiej - pominięta (brak planu)\nSzczelina w Iglicy - pominięta (wiele planów na jednym (dwa tego samego, nie wiem który brać do klikania))\nJaskinia Pośrednia - pominięta (brak planu)\nSzczelina nad Ponorem - pominięta (brak planu)\nDziurka od Klucza - pominięta (brak planu)\nJaskinia Harda - pominięta (niewyraźne oznaczenie wejścia)\nSchron z Kołem - pominięta (brak wyraźnej podziałki)\nNisza nad Żółtą Dziurą - pominięta (brak planu)\nJaskinia Bańdzioch Kominiarski - pominięta (błąd konwersji pliku tiff)\nJaskinia nad Dachem - pominięta (brak planu)\nCzerwona Studzienka - pominięta (brak planu)\nLustrzana Szczelina - pominięta (brak planu)\nSzczelina przed Kufą - pominięta (brak planu)\nJaskinia Zimna - pominięta (bo zrobiona ręcznie już)\nKomin w Ratuszu - pominięta (brak planu)\nSchrony nad Okapami - pominięta (brak planu)\nNyża przy Kozich Oknach - pominięta (wiele planów na jednym)\nDziura w Czarnej Turni IV - pominięta (brak podziałki)\nJaskinia w Kobylarzowym Żlebie - pominięta (brak planu)\nJasny Awen - pominięta (brak planu)\nJaskinia Wielka Litworowa - pominięta (niewyraźne oznaczenie wejścia, brak punktu 0,0)\nJaskinia Śnieżna - pominięta (brak planu)\nJasiowa Dziura - pominięta (brak planu)\nSzczelina nad Wielką Litworową - pominięta (brak planu)\nJaskinia za Siedmiu Progami - pominięta (brak planu)\nSzczelina Miętusia - pominięta (brak planu)\nMała Żabia Szpara - pominięta (wiele planów na jednym)\nDziura z Konkrecjami Wyżnia - pominięta (brak planu)\nSzczelina nad Wyżniem - pominięta (brak planu)\nDziura w Organach III - pominięta (niewyraźne oznaczenie wejścia, punkt 9,9???)\nSzczelina w Mnichowych Turniach I - zrobiona (siatka krzywa zupełnie na X=0)\nKozi Schron - pominięta (brak oznaczenia wejścia)\nSchron przy Suchym Biwaku - pominięta (wiele planów na jednym)\nJaskinia Śnieżna Studnia - pominięta (niska jakość obrazu)\nTunel pod Siwarową Dziurą - pominięta (wiele planów na jednym)\nZagonna Studnia - pominięta (wiele planów na jednym)\nUpłazkowa Szczelina (Koleba) - pominięta (wg PIGu Szczelina i Koleba to dwie różne jaskinie)\nŻwirowa Dziura Niżnia - pominięta (wiele planów na jednym) - (przy którejś z tych chyba kiedyś już popełniłem błąd i przeklikałem mniejszą, choć plan zaczyna się dla większej)\nJaskinia Obłazkowa - pominięta (wiele planów na jednym)\nKomórka przy Średnim Leju - pominięta (wiele planów na jednym)\nJaskinia Wielka Śnieżna - pominięta (do obróbki ręcznej)\nJaskinia przy Jędrusiowej Dziurze - pominięta (wiele planów na jednym)\nJaskinia Miętusia - pominięta (błąd konwersji pliku TIFF)\nSzczelina nad Jaskinią Magurską - pominięta (podziałka zasłonięta napisem)\nJaskinia pod Wantą - zrobiona (ta może być jedną z mniej dokładnych, bo duża siatka, ale możliwość kliknięcia tylko w krótką podziałkę)\nPtasi Schron - pominięta (brak oznaczenia wejścia)\nZimna Szczelina II - pominięta (podziałka ma inną skalę niż siatka)\nZielone Kominy - pominięta (niewyraźne oznaczenie wejścia)\nSchron przy Studni Kuturniańskiej - pominięta (wiele planów na jednym)\nJaskinia Kokonowa - zrobiona (siatka jest ewidentnie przesunięta)\nJaskinie Pawlikowskiego - pominięta (wiele planów na jednym)\nWielka Szczelina - zrobiona (siatka krzywa)\nPiwnica - zrobiona (siatka krzywa)\nSchron w Małym Żlebku - zrobiona (siatka krzywa)\nJaskinia pod Wiśniakową Jamą - pominięta (wejście w innym punkcie niż 0;0)\nKrakowska Piwnica - pominięta (wejście w innym punkcie niż 0;0)\nJaskinia Bystrej - zrobiona (krzywa siatka)\nDziura za Modrzewiami - pominięta (niewyraźne oznaczenie wejścia)\nWyzior - zrobiona (trójkąt wyraźnie przesunięty względem siatki)\nJaskinia pod Niżnią Zbójnicką Turnią - pominięta (wiele planów na jednym)\nLisia Jama - pominięta (wiele planów na jednym)\nJaskinia Wysoka - pominięta (do ręcznego wykonania)\n",
+        "state": "open",
+        "user": {
+          "login": "dlubom",
+          "name": "dlubom",
+          "email": null,
+          "avatar_url": "https://avatars.githubusercontent.com/u/5931841?v=4",
+          "id": 5931841
+        },
+        "assignees": null,
+        "labels": null,
+        "milestone": null,
+        "state_reason": null,
+        "comments": 0,
+        "created_at": "2026-03-26T07:07:36Z",
+        "updated_at": "2026-04-09T09:28:37Z",
+        "closed_at": null,
+        "display_url": "https://github.com/dlubom/Georeferencer/issues/1",
+        "display_title": "Uwagi od ekipy"
+      },
+      "comments": []
+    },
+    {
+      "issue": {
+        "url": "https://github.com/dlubom/Georeferencer/issues/3",
+        "title": "Przejrzeć ręcznie wielootworowe dopasowania gps-kataster po v0.6.0",
+        "issue_number": 3,
+        "body": "Po release `v0.6.0` warto przy okazji ręcznie potwierdzić 6 dopasowań z `data/caves/_reports/gps_kataster_manual_review.csv`.\n\nAktualne wybory wyglądają sensownie i release nie jest przez to zablokowany. Jeśli któryś wybór okaże się błędny, wystarczy poprawić `coordinates.gps_kataster_object_id` w odpowiednim `meta.yaml`, przegenerować GeoTIFF i wypuścić kolejną wersję.\n\n## Do sprawdzenia\n\n- [ ] `001094` / `T.D-08.07` / Jaskinia Mroźna: wybrano `KSW-0081` — Jaskinia Mroźna - wyjście z trasy turystycznej; alternatywa `KSW-0256` — wejście na trasę turystyczną.\n- [ ] `001095` / `T.D-08.08` / Jaskinia Zimna: wybrano `KSW-0090` — otwór dolny; alternatywa `KSW-0257` — Jaskinia Biała / górny otwór Jaskini Zimnej.\n- [ ] `001229` / `T.D-12.10` / Jaskinia nad Korytem: wybrano `MLZ-0072` — otwór północno-zachodni; alternatywa `MLZ-0108` — otwór wschodni.\n- [ ] `001299` / `T.E-07.07` / Jaskinia Bańdzioch Kominiarski: wybrano `KSZ-0112` — otwór dolny; alternatywa `LEJ-0002` — otwór górny.\n- [ ] `001349` / `T.E-08.04` / Jaskinia Mylna: wybrano `KSZ-0064` — Jaskinia Mylna; alternatywa `KSZ-0113` — otwór północny.\n- [ ] `001445` / `T.E-09.12` / Jaskinia Czarna: wybrano `KSW-0201` — Jaskinia Czarna; alternatywa `KSW-0240` — Jaskinia Czarna III.\n\nŹródło: `data/caves/_reports/gps_kataster_manual_review.csv` w commicie `dda8967` / tagu `v0.6.0`.",
+        "state": "open",
+        "user": {
+          "login": "dlubom",
+          "name": "dlubom",
+          "email": null,
+          "avatar_url": "https://avatars.githubusercontent.com/u/5931841?v=4",
+          "id": 5931841
+        },
+        "assignees": [
+          {
+            "login": "dlubom",
+            "name": "dlubom",
+            "email": null,
+            "avatar_url": "https://avatars.githubusercontent.com/u/5931841?v=4",
+            "id": 5931841
+          }
+        ],
+        "labels": null,
+        "milestone": null,
+        "state_reason": null,
+        "comments": 0,
+        "created_at": "2026-05-17T17:58:34Z",
+        "updated_at": "2026-05-17T17:58:34Z",
+        "closed_at": null,
+        "display_url": "https://github.com/dlubom/Georeferencer/issues/3",
+        "display_title": "Przejrzeć ręcznie wielootworowe dopasowania gps-kataster po v0.6.0"
+      },
+      "comments": []
+    }
+  ]
+}
