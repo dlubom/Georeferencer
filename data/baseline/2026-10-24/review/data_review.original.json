@@ -1,0 +1,639 @@
+{
+  "head": "fad70f09992671a0da5a364dfea4a2c538f80e3d",
+  "counts": {
+    "submissions": 4048,
+    "test_rows": 7,
+    "orphan_assignments": 7,
+    "eligible_caves": 801,
+    "eligible_below_5_users": 0,
+    "eligible_below_5_non_test_users": 0,
+    "current_yaml": 814,
+    "manual_yaml": 13
+  },
+  "test_effects": [
+    {
+      "cave_id": "T.D-08.07",
+      "dir_id": "001094",
+      "n_all": 7,
+      "n_test": 2,
+      "n_real": 5,
+      "users_all": 7,
+      "users_real": 5,
+      "values": {
+        "entrance": {
+          "with_test": {
+            "x": 20693.96,
+            "y": 1732.92
+          },
+          "without_test": {
+            "x": 20694.01,
+            "y": 1732.56
+          },
+          "current": {
+            "x": 20693.96,
+            "y": 1732.92
+          }
+        },
+        "scale": {
+          "with_test": {
+            "pixels_per_meter": 59.09
+          },
+          "without_test": {
+            "pixels_per_meter": 59.03
+          },
+          "current": {
+            "pixels_per_meter": 59.09
+          }
+        },
+        "north": {
+          "with_test": {
+            "angle_deg": 49.99,
+            "all_skipped": false
+          },
+          "without_test": {
+            "angle_deg": 50.002,
+            "all_skipped": false
+          },
+          "current": {
+            "angle_deg": 50.0,
+            "all_skipped": false
+          }
+        },
+        "quality": {
+          "with_test": {
+            "ppm_cv": 0.002,
+            "ppm_values": [
+              59.15,
+              59.14,
+              59.03,
+              59.27,
+              59.02,
+              11.81,
+              59.04
+            ],
+            "entrance_std_px": 7042.09,
+            "outliers_removed": 1,
+            "flag": "high_entrance_std"
+          },
+          "without_test": {
+            "ppm_cv": 0.0,
+            "ppm_values": [
+              59.03,
+              59.27,
+              59.02,
+              11.81,
+              59.04
+            ],
+            "entrance_std_px": 1.16,
+            "outliers_removed": 2,
+            "flag": null
+          },
+          "current": {
+            "ppm_cv": 0.002,
+            "ppm_values": [
+              59.15,
+              59.14,
+              59.03,
+              59.27,
+              59.02,
+              11.81,
+              59.04
+            ],
+            "entrance_std_px": 7042.09,
+            "outliers_removed": 1,
+            "flag": "high_entrance_std"
+          }
+        }
+      }
+    },
+    {
+      "cave_id": "T.D-08.08",
+      "dir_id": "001095",
+      "n_all": 6,
+      "n_test": 1,
+      "n_real": 5,
+      "users_all": 6,
+      "users_real": 5,
+      "values": {
+        "entrance": {
+          "with_test": {
+            "x": 418.64,
+            "y": 2151.99
+          },
+          "without_test": {
+            "x": 418.64,
+            "y": 2152.03
+          },
+          "current": {
+            "x": 418.64,
+            "y": 2151.99
+          }
+        },
+        "scale": {
+          "with_test": {
+            "pixels_per_meter": 23.66
+          },
+          "without_test": {
+            "pixels_per_meter": 23.66
+          },
+          "current": {
+            "pixels_per_meter": 23.66
+          }
+        },
+        "north": {
+          "with_test": {
+            "angle_deg": 0.002,
+            "all_skipped": false
+          },
+          "without_test": {
+            "angle_deg": -0.033,
+            "all_skipped": false
+          },
+          "current": {
+            "angle_deg": 0.002,
+            "all_skipped": false
+          }
+        },
+        "quality": {
+          "with_test": {
+            "ppm_cv": 0.003,
+            "ppm_values": [
+              23.16,
+              23.62,
+              23.66,
+              23.56,
+              23.76,
+              23.74
+            ],
+            "entrance_std_px": 4.43,
+            "outliers_removed": 1,
+            "flag": null
+          },
+          "without_test": {
+            "ppm_cv": 0.003,
+            "ppm_values": [
+              23.62,
+              23.66,
+              23.56,
+              23.76,
+              23.74
+            ],
+            "entrance_std_px": 4.59,
+            "outliers_removed": 0,
+            "flag": null
+          },
+          "current": {
+            "ppm_cv": 0.003,
+            "ppm_values": [
+              23.16,
+              23.62,
+              23.66,
+              23.56,
+              23.76,
+              23.74
+            ],
+            "entrance_std_px": 4.43,
+            "outliers_removed": 1,
+            "flag": null
+          }
+        }
+      }
+    },
+    {
+      "cave_id": "T.D-08.14",
+      "dir_id": "001103",
+      "n_all": 7,
+      "n_test": 2,
+      "n_real": 5,
+      "users_all": 7,
+      "users_real": 5,
+      "values": {
+        "entrance": {
+          "with_test": {
+            "x": 516.37,
+            "y": 1880.43
+          },
+          "without_test": {
+            "x": 516.17,
+            "y": 1880.24
+          },
+          "current": {
+            "x": 516.37,
+            "y": 1880.43
+          }
+        },
+        "scale": {
+          "with_test": {
+            "pixels_per_meter": 29.61
+          },
+          "without_test": {
+            "pixels_per_meter": 29.67
+          },
+          "current": {
+            "pixels_per_meter": 29.61
+          }
+        },
+        "north": {
+          "with_test": {
+            "angle_deg": 0.0,
+            "all_skipped": false
+          },
+          "without_test": {
+            "angle_deg": 0.0,
+            "all_skipped": false
+          },
+          "current": {
+            "angle_deg": 0.0,
+            "all_skipped": false
+          }
+        },
+        "quality": {
+          "with_test": {
+            "ppm_cv": 0.011,
+            "ppm_values": [
+              29.49,
+              29.37,
+              29.67,
+              30.27,
+              29.56,
+              30.27,
+              29.61
+            ],
+            "entrance_std_px": 0.54,
+            "outliers_removed": 0,
+            "flag": null
+          },
+          "without_test": {
+            "ppm_cv": 0.011,
+            "ppm_values": [
+              29.67,
+              30.27,
+              29.56,
+              30.27,
+              29.61
+            ],
+            "entrance_std_px": 0.62,
+            "outliers_removed": 0,
+            "flag": null
+          },
+          "current": {
+            "ppm_cv": 0.011,
+            "ppm_values": [
+              29.49,
+              29.37,
+              29.67,
+              30.27,
+              29.56,
+              30.27,
+              29.61
+            ],
+            "entrance_std_px": 0.54,
+            "outliers_removed": 0,
+            "flag": null
+          }
+        }
+      }
+    },
+    {
+      "cave_id": "T.E-09.12",
+      "dir_id": "001445",
+      "n_all": 7,
+      "n_test": 2,
+      "n_real": 5,
+      "users_all": 6,
+      "users_real": 5,
+      "values": {
+        "entrance": {
+          "with_test": {
+            "x": 594.76,
+            "y": 4359.67
+          },
+          "without_test": {
+            "x": 594.77,
+            "y": 4358.41
+          },
+          "current": {
+            "x": 594.76,
+            "y": 4359.67
+          }
+        },
+        "scale": {
+          "with_test": {
+            "pixels_per_meter": 11.8
+          },
+          "without_test": {
+            "pixels_per_meter": 11.81
+          },
+          "current": {
+            "pixels_per_meter": 11.8
+          }
+        },
+        "north": {
+          "with_test": {
+            "angle_deg": -0.005,
+            "all_skipped": false
+          },
+          "without_test": {
+            "angle_deg": -0.005,
+            "all_skipped": false
+          },
+          "current": {
+            "angle_deg": -0.005,
+            "all_skipped": false
+          }
+        },
+        "quality": {
+          "with_test": {
+            "ppm_cv": 0.002,
+            "ppm_values": [
+              11.81,
+              11.77,
+              11.75,
+              11.81,
+              11.8,
+              11.81,
+              11.8
+            ],
+            "entrance_std_px": 1.69,
+            "outliers_removed": 0,
+            "flag": null
+          },
+          "without_test": {
+            "ppm_cv": 0.0,
+            "ppm_values": [
+              11.81,
+              11.81,
+              11.8,
+              11.81,
+              11.8
+            ],
+            "entrance_std_px": 1.32,
+            "outliers_removed": 0,
+            "flag": null
+          },
+          "current": {
+            "ppm_cv": 0.002,
+            "ppm_values": [
+              11.81,
+              11.77,
+              11.75,
+              11.81,
+              11.8,
+              11.81,
+              11.8
+            ],
+            "entrance_std_px": 1.69,
+            "outliers_removed": 0,
+            "flag": null
+          }
+        }
+      }
+    }
+  ],
+  "invalid_north": [
+    {
+      "cave_id": "T.B-04.04",
+      "dir_id": "004068",
+      "invalid_rows": 1,
+      "valid_rows": 0,
+      "north_values": [
+        0.0
+      ],
+      "current": {
+        "angle_deg": 0.0,
+        "all_skipped": false
+      },
+      "flag": null
+    },
+    {
+      "cave_id": "T.C-13.04",
+      "dir_id": "001050",
+      "invalid_rows": 1,
+      "valid_rows": 0,
+      "north_values": [
+        0.0
+      ],
+      "current": {
+        "angle_deg": 0.0,
+        "all_skipped": false
+      },
+      "flag": null
+    },
+    {
+      "cave_id": "T.D-12.11",
+      "dir_id": "001230",
+      "invalid_rows": 1,
+      "valid_rows": 1,
+      "north_values": [
+        0.0,
+        0.0
+      ],
+      "current": {
+        "angle_deg": 0.0,
+        "all_skipped": false
+      },
+      "flag": null
+    },
+    {
+      "cave_id": "T.D-12.23",
+      "dir_id": "001260",
+      "invalid_rows": 1,
+      "valid_rows": 1,
+      "north_values": [
+        0.0,
+        0.0
+      ],
+      "current": {
+        "angle_deg": 0.0,
+        "all_skipped": false
+      },
+      "flag": null
+    },
+    {
+      "cave_id": "T.D-17.19",
+      "dir_id": "001271",
+      "invalid_rows": 1,
+      "valid_rows": 2,
+      "north_values": [
+        -0.0225366395829462,
+        0.039243631729251,
+        0.0
+      ],
+      "current": {
+        "angle_deg": 0.0,
+        "all_skipped": false
+      },
+      "flag": null
+    },
+    {
+      "cave_id": "T.E-09.25",
+      "dir_id": "001464",
+      "invalid_rows": 1,
+      "valid_rows": 1,
+      "north_values": [
+        0.0,
+        0.0026525050635702
+      ],
+      "current": {
+        "angle_deg": 0.001,
+        "all_skipped": false
+      },
+      "flag": null
+    },
+    {
+      "cave_id": "T.E-11.70",
+      "dir_id": "004408",
+      "invalid_rows": 1,
+      "valid_rows": 2,
+      "north_values": [
+        -0.0021015219968412,
+        0.0,
+        0.0
+      ],
+      "current": {
+        "angle_deg": 0.0,
+        "all_skipped": false
+      },
+      "flag": null
+    },
+    {
+      "cave_id": "T.E-12.42",
+      "dir_id": "001579",
+      "invalid_rows": 1,
+      "valid_rows": 1,
+      "north_values": [
+        0.0,
+        -0.0037458702008512
+      ],
+      "current": {
+        "angle_deg": -0.002,
+        "all_skipped": false
+      },
+      "flag": null
+    },
+    {
+      "cave_id": "T.E-13.02",
+      "dir_id": "001627",
+      "invalid_rows": 1,
+      "valid_rows": 2,
+      "north_values": [
+        0.0,
+        0.0025819780169271,
+        0.0
+      ],
+      "current": {
+        "angle_deg": 0.0,
+        "all_skipped": false
+      },
+      "flag": null
+    },
+    {
+      "cave_id": "T.F-09.07",
+      "dir_id": "001658",
+      "invalid_rows": 1,
+      "valid_rows": 2,
+      "north_values": [
+        -0.1185746495801195,
+        0.0258205342418285,
+        0.0
+      ],
+      "current": {
+        "angle_deg": 0.0,
+        "all_skipped": false
+      },
+      "flag": null
+    }
+  ],
+  "north_spreads_over_1_deg": [
+    {
+      "cave_id": "T.B-09.10",
+      "dir_id": "000978",
+      "north_values": [
+        90.0,
+        0.0,
+        0.0016023339148021,
+        0.01940289507327
+      ],
+      "current": {
+        "angle_deg": 90.0,
+        "all_skipped": false
+      },
+      "flag": null
+    },
+    {
+      "cave_id": "T.D-09.07",
+      "dir_id": "001179",
+      "north_values": [
+        0.0154652805312295,
+        0.0,
+        90.09080148026474
+      ],
+      "current": {
+        "angle_deg": 0.0,
+        "all_skipped": false
+      },
+      "flag": null
+    },
+    {
+      "cave_id": "T.D-10.03",
+      "dir_id": "001189",
+      "north_values": [
+        -90.02196081854979,
+        -90.0,
+        0.00067608213547,
+        -89.73058611204489
+      ],
+      "current": {
+        "angle_deg": -90.0,
+        "all_skipped": false
+      },
+      "flag": null
+    }
+  ],
+  "manual_image_selection": {
+    "image_id_argument_declared_at": [
+      178
+    ],
+    "args_image_id_reads": [],
+    "first_plan_selection_at": 63,
+    "arbitrary_tif_fallback_at": 74
+  },
+  "reports": {
+    "summary_rows": 801,
+    "yaml_count": 814,
+    "missing_report_rows": 800,
+    "actual_missing_tif_or_tfw": 0,
+    "north_angle_changes": [
+      {
+        "dir_id": "000978",
+        "reported": 0.011,
+        "current": 90.0
+      },
+      {
+        "dir_id": "001094",
+        "reported": 49.99,
+        "current": 50.0
+      },
+      {
+        "dir_id": "001179",
+        "reported": 0.015,
+        "current": 0.0
+      },
+      {
+        "dir_id": "001189",
+        "reported": -89.865,
+        "current": -90.0
+      },
+      {
+        "dir_id": "001349",
+        "reported": 60.113,
+        "current": 60.0
+      },
+      {
+        "dir_id": "001351",
+        "reported": 59.994,
+        "current": 60.0
+      }
+    ]
+  }
+}

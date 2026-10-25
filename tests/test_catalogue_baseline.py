@@ -1,0 +1,62 @@
+"""Historyczny TFW musi pochodzić z pliku, także gdy różni się od computed."""
+import json
+import sys
+import tempfile
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "pipeline"))
+import catalogue_baseline as baseline
+
+
+class CatalogueBaselineTest(unittest.TestCase):
+    def test_capture_preserves_existing_tfw_bytes_without_regeneration(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            cave = root / "data/caves/001"
+            cave.mkdir(parents=True)
+            (cave / "meta.yaml").write_text("cave:\n  name: Test\ncoordinates:\n  gps_kataster_object_id: O1\ncomputed:\n  A: 999\n")
+            (cave / "image.tif").write_bytes(b"source image bytes")
+            tfw = "1.0000000000\n0\n0\n-1\n500.123456\n600.123456\n"
+            (cave / "image.tfw").write_text(tfw)
+            item = baseline.capture_plans(root, {"O1": {"measurement_id": "M1"}})[0]
+            self.assertEqual(item["historical_tfw"]["text"], tfw)
+            self.assertEqual(item["historical_tfw"]["parameters"]["A"], 1)
+            self.assertEqual(item["measurement"]["measurement_id"], "M1")
+            self.assertIn("data/caves/001/image.tif", item["sha256"])
+            self.assertEqual((cave / "image.tfw").read_text(), tfw)
+            self.assertIn("999", (cave / "meta.yaml").read_text())
+
+    def test_frozen_baseline_has_complete_historical_results_and_valid_hashes(self):
+        document = json.loads((ROOT / "data/baseline/2026-10-24/catalogue.json").read_text())
+        self.assertEqual(len(document["plans"]), 814)
+        self.assertEqual(len({p["dir_id"] for p in document["plans"]}), 814)
+        for plan in document["plans"]:
+            with self.subTest(plan=plan["dir_id"]):
+                self.assertEqual(set(plan["historical_tfw"]["parameters"]), set("ADBECF"))
+                self.assertTrue(plan["object_id"])
+                self.assertTrue(plan["measurement"]["measurement_id"])
+        self.assertEqual(baseline.verify_inputs(ROOT, document), [])
+
+    def test_geometry_delta_measures_translation_at_the_entrance(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            cave = root / "data/caves/001"
+            cave.mkdir(parents=True)
+            (cave / "meta.yaml").write_text("entrance:\n  x: 10\n  y: 20\n")
+            old = {"parameters": dict(A=1, B=0, D=0, E=-1, C=100, F=200)}
+            new = {"parameters": dict(A=1, B=0, D=0, E=-1, C=103, F=204)}
+            delta = baseline.geometry_delta(root, {"dir_id": "001"}, old, new)
+            self.assertEqual(delta, {"entrance_dx_m": 3, "entrance_dy_m": 4,
+                                     "entrance_distance_m": 5, "rotation_deg": 0,
+                                     "scale_m_per_pixel": 0})
+
+    def test_saved_recalculation_is_reproducible_and_cannot_replace_history(self):
+        document = json.loads(baseline.BASELINE.read_text())
+        saved = json.loads((baseline.BASELINE.parent / "recalculated-v1.3.1.json").read_text())
+        recalculated = baseline.recalculation(ROOT, document, baseline.DEFAULT_MANIFEST)
+        self.assertEqual(recalculated, saved)
+        self.assertTrue(saved["different_from_historical"])
+        self.assertFalse(any("error" in p for p in saved["plans"].values()))
+        self.assertEqual(baseline.verify_inputs(ROOT, document), [])

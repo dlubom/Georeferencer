@@ -1,0 +1,22 @@
+{
+  "reference_commit": "fad70f09992671a0da5a364dfea4a2c538f80e3d",
+  "adaptation": "Stały lokalny ROOT zastąpiono ROOT wyznaczanym względem __file__; logika sond bez zmian.",
+  "scripts": {
+    "data_review.py": {
+      "original_sha256": "6c754038582d5a2aae94a7dbf232f28d5e1fc2e21d3e88db047d5ea8c847b0de",
+      "portable_sha256": "eefeea479a0ad03322c306d7d598d4df23398b6fdfb921336e2279010d544e94"
+    },
+    "coordinates.py": {
+      "original_sha256": "c099f0928d99b3fc23fd68ff5507a08c10c3dbecb6bd7f80ccd672e9ecd81ee0",
+      "portable_sha256": "f1231d2f2109ed5d2270bfd60ca70ab9108ff0cbddc4390929422637ebdeab8a"
+    },
+    "convergence.py": {
+      "original_sha256": "219c3cf454fca8e46437b4a38330c7a005f797dd5dec867c8b7647bc6d3961d0",
+      "portable_sha256": "805c90f9aec1893b5766fa7d0e3dda8429c15b8a5c60c6fd89b09c18091479ee"
+    },
+    "geometry.py": {
+      "original_sha256": "0aa6c380c67a82c4d54167566a19e371f5ea7308802e4ed79fcd8ecce47cc3c4",
+      "portable_sha256": "6420cd0e1d14d763eceeaadce3d72806ea4163cd2f90481cbad2485f26ef8d8b"
+    }
+  }
+}

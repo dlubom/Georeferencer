@@ -1,0 +1,2 @@
+# Surowe snapshoty release: SHA-256 obejmuje oryginalne bajty, także CRLF.
+data/coordinate-source/*.csv -text whitespace=cr-at-eol

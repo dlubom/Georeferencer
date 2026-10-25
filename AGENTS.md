@@ -35,6 +35,8 @@ Skrypty Python do generacji georeferencjonowanych TIFFów z danych crowdsourcing
 - `01_extract_yaml.py` — jednorazowa ekstrakcja: parquet → edytowalne YAML-e (`data/caves/{dir_id}/meta.yaml`) + kopiowanie obrazów ze scrapera. Agregacja: mediana pikseli otworu, mediana pixels_per_meter (z IQR outlier removal), mediana kąta północy.
 - `02_generate_geotiff.py` — powtarzalny: YAML → render Jinja `coordinates.lat/lon` z `best-measurements.csv` → .tfw (World File) + GeoTIFF (EPSG:2180, kompresja CCITTFAX4). Weryfikuje wymiary obrazu vs YAML. CLI: `--cave ID | --all | --changed | --force`.
 - `gps_kataster_coordinates.py` — obsługa `best-measurements.csv` / GeoJSON. Runtime release używa tylko jawnego `coordinates.gps_kataster_object_id`; resolver po `pig_id`/`nr_inwent` jest przeznaczony do jednorazowej migracji i raportu mapowania.
+- `coordinate_source.py` — weryfikacja przypiętego release i SHA-256, odzyskanie snapshotu oraz raport wpływu aktualizacji. Build używa `data/coordinate-source/source.json`, bez automatycznego `latest`.
+- `catalogue_baseline.py` — odczyt historycznego punktu odniesienia 814 planów i osobne przeliczenie audytowe bez mutowania katalogu. Przy odtwarzaniu buildu, aktualizacji CSV lub użyciu historii w T05 przeczytaj [`docs/COORDINATE_SOURCE.md`](docs/COORDINATE_SOURCE.md). T05 bierze orientację z zapisanych historycznych TFW.
 - `03_report.py` — raporty QA: summary.csv, flagged.csv, missing.csv w `data/caves/_reports/`.
 - `04_find_missing.py` — porównanie rejestru PIG (JSONL) z istniejącymi jaskiniami; lista brakujących z planami, posortowana po długości.
 - `05_add_cave.py` — ręczne dodanie brakującej jaskini: tworzy katalog, kopiuje obrazy ze scrapera, generuje meta.yaml. Dane georeferencji (otwór, skala, kąt północy) z konsoli Georeferencer UI. Instrukcja: [`pipeline/MANUAL_ADD.md`](pipeline/MANUAL_ADD.md).
@@ -107,7 +109,7 @@ jupyter notebook analysis.ipynb
 ## Kluczowa konfiguracja
 
 - Obrazy źródłowe: `../Polish-Cave-Data-Scraper/` (`caves_mono/`, `caves_upscaled/`, `caves/`)
-- Aktualne współrzędne otworów: release [`dlubom/gps-kataster-obiektow-tatr`](https://github.com/dlubom/gps-kataster-obiektow-tatr), artefakt `best-measurements.csv`
+- Współrzędne buildu: przypięty release [`dlubom/gps-kataster-obiektow-tatr v1.3.1`](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v1.3.1), artefakt `best-measurements.csv`; opis i surowy snapshot w `data/coordinate-source/`. Aktualizacja wymaga PR z raportem planów/pomiarów i wpływu zgodnie z `docs/COORDINATE_SOURCE.md`.
 - Rejestr PIG (JSONL, źródło historyczne/manualne): `../Jaskiniowy-Kataster-Tatr-Zachodnich/doc/jaskinie_polski_pig_dump.jsonl`
 - Georeferencer UI (do ręcznych kliknięć): `../Polish-Cave-Data-Scraper/index.html` — loguje dane do meta.yaml w konsoli
 - <!-- GitHub Pages wyłączony — etap crowdsourcingowy zakończony -->

@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "catalogue-profile",
+      "title": "Kompletność i niezależność danych",
+      "queries": [
+        {
+          "id": "profile",
+          "source": {
+            "label": "Georeferencer fad70f0",
+            "files": [
+              "SUBMISSIONS.parquet",
+              "ASSIGNMENTS.parquet",
+              "data/caves/*/meta.yaml",
+              "data/caves/*/image.tif"
+            ],
+            "caveats": [
+              "Profil dotyczy lokalnego commitu fad70f0; nie weryfikuje aktualnego wydania z GitHub."
+            ]
+          },
+          "summary": "814 planów: 801 z crowdsourcingu i 13 dodanych ręcznie. Wszystkie obrazy mają wymiary zgodne z YAML; 801 grup nadal ma co najmniej pięciu różnych użytkowników po odrzuceniu rekordów TEST.",
+          "columns": [
+            "check",
+            "value"
+          ],
+          "rows": [
+            {
+              "check": "YAML",
+              "value": 814
+            },
+            {
+              "check": "Niezgodne wymiary obrazu",
+              "value": 0
+            },
+            {
+              "check": "Grupy z mniej niż 5 użytkownikami po wyłączeniu TEST",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "test-contamination",
+      "title": "Rekordy TEST wpływają na agregację",
+      "queries": [
+        {
+          "id": "test-rows",
+          "source": {
+            "label": "Dane i ekstraktor",
+            "files": [
+              "SUBMISSIONS.parquet",
+              "ASSIGNMENTS.parquet",
+              "pipeline/01_extract_yaml.py",
+              "data/caves/001094/meta.yaml"
+            ]
+          },
+          "summary": "7 rekordów oznaczonych TEST, wszystkie bez odpowiadającego przydziału, wchodzi do agregacji czterech planów. Dla Mroźnej rozrzut wynosi 7042.09 px; po ich wyłączeniu 1.16 px.",
+          "columns": [
+            "measure",
+            "value"
+          ],
+          "rows": [
+            {
+              "measure": "Rekordy TEST",
+              "value": 7
+            },
+            {
+              "measure": "Dotknięte plany",
+              "value": 4
+            },
+            {
+              "measure": "Mroźna: rozrzut z TEST [px]",
+              "value": 7042.09
+            },
+            {
+              "measure": "Mroźna: rozrzut bez TEST [px]",
+              "value": 1.16
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stale-qa",
+      "title": "Raport QA nie opisuje bieżących plików",
+      "queries": [
+        {
+          "id": "reports",
+          "source": {
+            "label": "Raporty i pliki katalogu",
+            "files": [
+              "data/caves/_reports/summary.csv",
+              "data/caves/_reports/missing.csv",
+              "pipeline/03_report.py"
+            ]
+          },
+          "summary": "summary.csv obejmuje 801 z 814 planów. missing.csv zawiera 800 pozycji, podczas gdy każdy z 814 katalogów ma image.tif i image.tfw.",
+          "columns": [
+            "measure",
+            "value"
+          ],
+          "rows": [
+            {
+              "measure": "Pozycje w summary.csv",
+              "value": 801
+            },
+            {
+              "measure": "Pozycje w missing.csv",
+              "value": 800
+            },
+            {
+              "measure": "Rzeczywiste braki TIFF lub TFW",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "test-coverage",
+      "title": "Testy istnieją, ale workflow ich nie uruchamiają",
+      "queries": [
+        {
+          "id": "test-run",
+          "source": {
+            "label": "Testy i workflow projektu",
+            "files": [
+              "tests/test_gps_kataster_coordinates.py",
+              "tests/test_generate_geotiff_strict.py",
+              "tests/test_release_workflow.py",
+              ".github/workflows/generate-geotiff.yml",
+              ".github/workflows/release-geotiff.yml"
+            ],
+            "caveats": [
+              "16 testów przeszło lokalnie na Pythonie 3.9.6. CI deklaruje Python 3.12; pełny build wydania nie był uruchamiany."
+            ]
+          },
+          "summary": "Wszystkie 16 istniejących testów przeszło. Dwa istniejące workflow nie wywołują testów i nie uruchamiają kontroli pull requestów."
+        }
+      ]
+    }
+  ]
+}
