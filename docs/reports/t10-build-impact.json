@@ -1,0 +1,183 @@
+{
+  "accepted_ci_build": {
+    "all_downloaded_hashes": "PASS",
+    "code_revision": "78c7281d4d5d9712cbec79a4bdf5c90fbace5472",
+    "files": 2443,
+    "generated": 814,
+    "plans": 814,
+    "reused": 0,
+    "run_id": "30292acc840b4428a75b7478a79d0a30",
+    "selection_full": true,
+    "selection_uncertain": false
+  },
+  "base_commit": "16f5cb2f3ea101b2552f9536673146c4ed8a6b74",
+  "catalogue_inputs_and_parameters_sha256": "d6232cb49ce84b5cab36c0420697464e6f6f68be4e0b9827333367196975832a",
+  "contract_changes": [
+    "Domyślne osobne wyniki i computed.json zamiast zapisu do źródeł",
+    "Pełne --changed według treści, bez mtime",
+    "ZIP: manifest i trzy artefakty na plan, zamiast płaskiego globu TIFF",
+    "Testy zakresu Git/wrappera na hoście, GDAL/historia/QA w przypiętym kontenerze"
+  ],
+  "exceptions_updated": false,
+  "full_catalogue_build": {
+    "code_revision": "1665939b0f91226a80c2ad7b1b7436b9cea8386c",
+    "generated": 814,
+    "plans": 814,
+    "reused": 0,
+    "run_id": "cefa42b92ac5441f956d865c3a282df6"
+  },
+  "geometry_functions_ast_identical": true,
+  "georeferencing_changed_plans": [],
+  "history_hashes_updated": false,
+  "new_plans": [],
+  "parameters_identical_to_t09": true,
+  "plans": 814,
+  "protected_paths": [
+    "data/caves",
+    "data/qa",
+    "data/baseline",
+    "data/history",
+    "data/coordinate-source",
+    "data/validation",
+    "data/classification",
+    "data/migrations",
+    "parquet",
+    "docs/reports/t05*",
+    "docs/reports/t06*",
+    "docs/reports/t07*",
+    "docs/reports/t08*",
+    "docs/reports/t09*"
+  ],
+  "publication_dry_runs": {
+    "manual": {
+      "CRC": "PASS",
+      "archive_sha256": "98b80c735887d7528c121e9eb8e65fb3ed53155afdd6670e5fbb2f92396509ce",
+      "code_revision": "78c7281d4d5d9712cbec79a4bdf5c90fbace5472",
+      "files": 2443,
+      "manifest_sha256": "b3972e32a8a66d933bb9dda101f9a3184239e9786507a75932e9ff26c4d25b02",
+      "plans": 814,
+      "publication": false,
+      "qa": {
+        "accepted": 1405,
+        "blocking": 0,
+        "origins": {
+          "crowdsourcing": 801,
+          "manual_historical": 13
+        },
+        "plans": 814,
+        "problems": 1405
+      }
+    },
+    "tag": {
+      "CRC": "PASS",
+      "archive_sha256": "1a045ef54be24ea70e1688c18642b7c938437ffd9c21d6d95eebf99f8520304e",
+      "code_revision": "78c7281d4d5d9712cbec79a4bdf5c90fbace5472",
+      "files": 2443,
+      "manifest_sha256": "b3972e32a8a66d933bb9dda101f9a3184239e9786507a75932e9ff26c4d25b02",
+      "plans": 814,
+      "publication": false,
+      "qa": {
+        "accepted": 1405,
+        "blocking": 0,
+        "origins": {
+          "crowdsourcing": 801,
+          "manual_historical": 13
+        },
+        "plans": 814,
+        "problems": 1405
+      }
+    }
+  },
+  "removed_plans": [],
+  "source_files_changed": [],
+  "task": "T10 / #15",
+  "verification": {
+    "code_ci": {
+      "check": "https://github.com/dlubom/Georeferencer/actions/runs/40214065975",
+      "container_seconds": 237.539,
+      "container_tests": 183,
+      "generation": "https://github.com/dlubom/Georeferencer/actions/runs/40214065972",
+      "host_tests": 7,
+      "revision": "78c7281d4d5d9712cbec79a4bdf5c90fbace5472",
+      "status": "PASS"
+    },
+    "container_seconds": 246.903,
+    "container_tests": 183,
+    "controlled_regression": {
+      "failures": 1,
+      "mutation": "Pominięcie if not report[passed] w tymczasowej kopii package_release.py",
+      "original_code": "PASS w końcowym ./scripts/check",
+      "seconds": 1.266,
+      "test": "PackageTest.test_qa_new_problem_stale_exception_and_technical_exception_block",
+      "tests": 1
+    },
+    "dangling_source_guard": {
+      "after": "PASS, 0.052 s",
+      "before": "3 FAIL",
+      "independent_seconds": 0.07,
+      "independent_tests": 2,
+      "open_findings": 0,
+      "regression_subcases": 3,
+      "source_hashes_unchanged": true
+    },
+    "environment": {
+      "GDAL": "3.12.4",
+      "OS": "Linux/amd64",
+      "PROJ_GDAL": "9.8.1",
+      "PROJ_pyproj": "9.8.1",
+      "Pillow": "13.0.0",
+      "PyYAML": "6.0.3",
+      "Python": "3.12.3",
+      "numpy": "2.5.4",
+      "pandas": "3.1.0",
+      "pip_check": "OK",
+      "pyarrow": "26.0.0",
+      "pyproj": "3.8.0"
+    },
+    "host_tests": 7,
+    "independent_review": {
+      "additional_range_cache_seconds": 8.171,
+      "additional_range_cache_tests": 4,
+      "cache_package_tests": 15,
+      "host_tests": 5,
+      "late_mutation_tests": 6,
+      "open_findings": 0,
+      "qa_tests": 20
+    },
+    "initial_ci": {
+      "check": "https://github.com/dlubom/Georeferencer/actions/runs/40210019064",
+      "generation": "https://github.com/dlubom/Georeferencer/actions/runs/40210019101",
+      "qa": {
+        "accepted": 1405,
+        "blocking": 0,
+        "plans": 814
+      },
+      "revision": "a67797f3dcda54c00292912d0e5eab8d5a5048f3"
+    },
+    "known_range_retry_regression": {
+      "after": "PASS: zgodny cache przy znanym zakresie, pełne przeliczenie przy uncertain",
+      "after_seconds": 4.891,
+      "before": "FAIL: oba warianty znanego zakresu wymuszały generację",
+      "tests": 2
+    },
+    "main_ruleset": {
+      "bypass_actors": [],
+      "enforcement": "active",
+      "id": 25796826,
+      "required_check": "Kontrola projektu",
+      "strict": true
+    },
+    "result": "PASS",
+    "runtime_scope_classification": {
+      "full": true,
+      "host_tests_after": 7,
+      "independent_findings": 0,
+      "independent_host_seconds": 1.802,
+      "real_pr_paths": 35,
+      "regression_before": "FAIL",
+      "tests_imported_by_production": false,
+      "uncertain": false
+    },
+    "total_tests": 190
+  }
+}

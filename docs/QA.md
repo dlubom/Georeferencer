@@ -16,6 +16,7 @@ python pipeline/03_report.py --run-dir /tmp/georeferencer-results/current \
 ```
 
 Kod zakończenia 0 oznacza brak problemów blokujących; 1 oznacza problem.
+Domyślne raporty trafiają do `build/qa`, poza źródłami i przebiegiem.
 `qa.json` zawiera wszystkie reguły, ich podstawy, wyjątki i uzgodnienie issues.
 `summary.csv`, `flagged.csv` i `missing.csv` zachowują nazwy raportów,
 ale ich aktualny schemat opisuje status wejść i wyników osobno.
@@ -39,7 +40,8 @@ jednego planu nie może potwierdzić kompletności całego katalogu.
 
 Stany to `current`, `missing`, `stale`, `corrupt`. Sprawdzane są hashe
 wszystkich źródeł planu, obecność/treść lokalnego rejestru, wspólny rejestr,
-pin/CSV, pełny rekord pomiaru, implementacja generatora/walidacji/modelu,
+pin/CSV, pełny rekord pomiaru, kod pipeline/schemat, lock/Dockerfile/wrapper i wersje
+środowiska (Python, GDAL/PROJ, pyproj i pakiety), fingerprint T10,
 źródła T02, parametry, orientation i computed. Mtime nie uczestniczy w ocenie.
 TFW i manifest muszą się zgadzać. GeoTIFF jest ponownie rzeczywiście czytany
 przez GDAL/Pillow: CRS, transformacja, rozmiary, kompresja i zdekodowane
@@ -110,4 +112,5 @@ Oryginalne summary/flagged/missing T02 są zachowane bajtowo w
 `data/history/t02-reports/`. Audyt historii sprawdza je **pierwotnymi** hashami
 katalogu T02, osobno od nowych CSV. Oryginalny kod QA nadal jest w niezmiennym
 `data/history/t02-inputs.zip`. Raporty T05/T06/T07/T08 i ich dowody pozostają.
-Przełączenie generacji/pakowania workflow jest zakresem T10/T11.
+T10 wymaga tego samego pełnego QA konkretnego przebiegu przed pakowaniem
+tag/manual; T11 niezależnie odbiera te zabezpieczenia i odtwarzalność.

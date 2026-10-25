@@ -119,15 +119,14 @@ class CoordinateSourceTest(unittest.TestCase):
         self.assertIn("SHA-256", result.stderr)
         self.assertFalse(output.exists())
 
-    def test_workflows_execute_verified_source_step_without_latest_override(self):
+    def test_workflows_use_pinned_build_entrypoint_without_latest_override(self):
         import yaml
         for name in ("release-geotiff.yml", "generate-geotiff.yml"):
             workflow = yaml.safe_load((ROOT / ".github/workflows" / name).read_text())
             job = next(iter(workflow["jobs"].values()))
-            step = next(s for s in job["steps"] if s.get("name") == "Download gps-kataster coordinates")
+            step = next(s for s in job["steps"] if './scripts/build generate ' in s.get('run', ''))
             self.assertNotIn("latest", step["run"])
             self.assertNotIn("gps_kataster_tag", json.dumps(workflow))
-            script = step["run"].replace("_gps-kataster/best-measurements.csv", str(self.root / "build.csv"))
-            result = subprocess.run(["sh", "-ec", script], cwd=ROOT, capture_output=True, text=True)
-            self.assertEqual(result.returncode, 0, result.stderr)
-            self.assertEqual((self.root / "build.csv").read_bytes(), source.verify(source.DEFAULT_MANIFEST).read_bytes())
+            self.assertNotIn('gps-kataster-best-measurements', step['run'])
+            # Generator sam weryfikuje snapshot. Próby CLI odrzucenia innych
+            # bajtów pozostają w test_validation i test_geotiff_output.

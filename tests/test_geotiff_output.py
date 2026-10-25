@@ -46,16 +46,16 @@ class OutputTest(unittest.TestCase):
                 '--image-registry', str(self.registry_path)]
         if output:
             args += ['--output-dir', str(self.output)]
-        return subprocess.run(args + list(extra), capture_output=True, text=True, timeout=60)
+        return subprocess.run(args + list(extra), cwd=self.root, capture_output=True, text=True, timeout=60)
 
     def run_ok(self, *extra):
         result = self.cli(*(extra or ('--all',)))
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         return (self.output / 'current').resolve(strict=True)
 
-    def api(self):
+    def api(self, force=True):
         return generator.process_output(generator.find_caves(self.data_dir), self.output, self.data_dir,
-                                        self.coordinates_path, self.registry_path)
+                                        self.coordinates_path, self.registry_path, force=force)
 
     def test_separate_output_preserves_sources_and_binds_manifest(self):
         before = hashes(self.data_dir)
@@ -104,17 +104,20 @@ class OutputTest(unittest.TestCase):
     def assert_matches_t03(self, legacy_name='legacy'):
         run = self.run_ok()
         new = run / '001131'
-        # Oddzielna kopia do przejściowego trybu T03, nigdy historia T02.
+        # Oddzielna kopia i zamrożony generator T06. Produkcyjny CLI T10
+        # nie udostępnia już zapisu do źródeł; hashe historii są niezmienione.
         legacy = self.root / legacy_name
         shutil.copytree(self.data_dir, legacy)
-        old_data = self.data_dir
-        self.data_dir = legacy
-        try:
-            result = self.cli('--all', output=False)
-            self.assertEqual(result.returncode, 0, result.stderr)
-        finally:
-            self.data_dir = old_data
         old = legacy / '001131'
+        from geometry_impact import load_generator
+        from gps_kataster_coordinates import load_best_measurements
+        frozen = ROOT / 'data/history/t06-code/02_generate_geotiff.py'
+        digest = json.loads((ROOT / 'docs/reports/t06-geometry-impact.json').read_text())['after_implementation_sha256']['02_generate_geotiff.py']
+        reference = load_generator(frozen, digest)
+        meta, params = reference.prepare_cave(old, load_best_measurements(self.coordinates_path),
+                                              json.loads(self.registry_path.read_text()))
+        ok, message = reference.process_prepared(old, meta, params)
+        self.assertTrue(ok, message)
         self.assertEqual((new / 'image.tfw').read_bytes(), (old / 'image.tfw').read_bytes())
         self.assertNotEqual((new / 'image.tfw').read_bytes(), (self.cave_dir / 'image.tfw').read_bytes())
         self.assertEqual(json.loads((new / 'computed.json').read_text()),
@@ -167,11 +170,11 @@ class OutputTest(unittest.TestCase):
             self.assertIn('wynik', result.stderr)
             self.assertEqual(before, hashes(self.data_dir))
 
-    def test_changed_mode_is_explicitly_deferred_to_t10(self):
+    def test_changed_mode_builds_complete_manifest_in_t10(self):
         result = self.cli('--changed')
-        self.assertNotEqual(result.returncode, 0)
-        self.assertIn('T10', result.stderr)
-        self.assertFalse(self.output.exists())
+        self.assertEqual(result.returncode, 0, result.stderr)
+        manifest = json.loads((self.output / 'current/manifest.json').read_text())
+        self.assertEqual([p['dir_id'] for p in manifest['plans']], ['001131'])
 
     def test_rejects_input_symlink_chain_through_current_to_external_file(self):
         for external_current in (True, False):
@@ -210,6 +213,23 @@ class OutputTest(unittest.TestCase):
         self.assertEqual((self.output / 'current').resolve(), old.parent)
         self.assertTrue(self.meta_path.is_file())
         self.assertEqual(hashes(self.data_dir), before)
+
+    def test_absent_optional_input_symlink_through_future_current_never_publishes(self):
+        for name in ('image-identity.json', 'image_future.jpg', 'future-plan'):
+            with self.subTest(name=name):
+                self.output = self.root / ('results-' + name)
+                link = (self.data_dir if name == 'future-plan' else self.cave_dir) / name
+                target = self.output / 'current/001131'
+                link.symlink_to(target if name == 'future-plan' else target / 'computed.json')
+                self.assertFalse(link.exists())
+                try:
+                    with self.assertRaisesRegex(ValueError, 'ścieżce wejścia'):
+                        self.api()
+                    self.assertFalse((self.output / 'current').exists())
+                    self.assertFalse(link.exists())
+                    self.assertTrue(link.is_symlink())
+                finally:
+                    link.unlink()
 
     def test_gdal_failure_and_false_success_never_publish_or_replace_complete_run(self):
         first = self.run_ok()
@@ -401,7 +421,7 @@ class OutputTest(unittest.TestCase):
                 self.assertEqual(sources, hashes(self.data_dir))
         self.assertFalse(list(self.output.glob('.staging-*')))
 
-    def test_legacy_serialization_preserves_accepted_orientation_numbers(self):
+    def test_default_output_preserves_source_precision_and_orientation_decision(self):
         from orientation import inputs_hash, record_decision
         meta = yaml.safe_load(self.meta_path.read_text())
         meta['north']['angle_deg'] = 0.123456789012345

@@ -34,11 +34,11 @@ Skrypty Python do generacji georeferencjonowanych TIFFów z danych crowdsourcing
 
 - `01_extract_yaml.py` — jednorazowa ekstrakcja: parquet → edytowalne YAML-e (`data/caves/{dir_id}/meta.yaml`) + kopiowanie obrazów ze scrapera. Agregacja: mediana pikseli otworu, mediana pixels_per_meter (z IQR outlier removal), mediana kąta północy.
 - `crowdsourcing.py` / `migrate_crowdsourcing.py` — bieżąca warstwa agregacji T07: jawny rejestr TEST, liczniki komponentów/użytkowników i selektywna migracja z ochroną ręcznych korekt. Czytaj [`docs/AGGREGATION.md`](docs/AGGREGATION.md); nie uruchamiaj pełnej ekstrakcji do aktualizacji istniejącego katalogu. Historyczne raporty T05/T06 odtwarzaj na ich wejściach, wpływ T07 jest osobnym raportem.
-- `02_generate_geotiff.py` — powtarzalny: YAML → render Jinja `coordinates.lat/lon` z `best-measurements.csv` → .tfw (World File) + GeoTIFF (EPSG:2180, kompresja CCITTFAX4). Weryfikuje wymiary obrazu vs YAML. CLI: `--cave ID | --all | --changed | --force`.
+- `02_generate_geotiff.py` — YAML i przypięty CSV → osobny przebieg TFW/GeoTIFF/computed + manifest, domyślnie `build/geotiff`. `--all`/`--changed` budują pełny katalog z cache według treści; `--cave ID` tworzy podzbiór, `--force` regeneruje. Przed zmianą selekcji/cache/pakowania przeczytaj [`docs/GENERATION_OUTPUT.md`](docs/GENERATION_OUTPUT.md). Standardowa generacja nie zapisuje do źródeł.
 - `gps_kataster_coordinates.py` — obsługa `best-measurements.csv` / GeoJSON. Runtime release używa tylko jawnego `coordinates.gps_kataster_object_id`; resolver po `pig_id`/`nr_inwent` jest przeznaczony do jednorazowej migracji i raportu mapowania.
 - `coordinate_source.py` — weryfikacja przypiętego release i SHA-256, odzyskanie snapshotu oraz raport wpływu aktualizacji. Build używa `data/coordinate-source/source.json`, bez automatycznego `latest`.
 - `catalogue_baseline.py` — odczyt historycznego punktu odniesienia 814 planów i osobne przeliczenie audytowe bez mutowania katalogu. Przy odtwarzaniu buildu, aktualizacji CSV lub użyciu historii w T05 przeczytaj [`docs/COORDINATE_SOURCE.md`](docs/COORDINATE_SOURCE.md). T05 bierze orientację z zapisanych historycznych TFW.
-- `03_report.py` — raporty QA: summary.csv, flagged.csv, missing.csv w `data/caves/_reports/`.
+- `03_report.py` — pełne QA T09, domyślnie `build/qa`; z `--run-dir` kontroluje dokładny komplet manifestu. `package_release.py` wymaga tego odbioru dla tag/manual i pakuje deklarowane pliki. Raporty i ZIP zapisuj poza przebiegiem.
 - `04_find_missing.py` — porównanie rejestru PIG (JSONL) z istniejącymi jaskiniami; lista brakujących z planami, posortowana po długości.
 - `05_add_cave.py` — bezpieczne dodanie jednego planu T08. Przed dodaniem lub zmianą tego narzędzia przeczytaj [`pipeline/MANUAL_ADD.md`](pipeline/MANUAL_ADD.md): rozdziela ID jaskini, grafiki, katalogu i otworu; wymaga hasha obrazu, pochodzenia parametrów i jawnej decyzji orientacji. Lokalny `image-identity.json` jest publikowany razem z planem po T03/T04. Podgląd niczego nie zapisuje; ponowienie nie nadpisuje.
 
@@ -78,8 +78,8 @@ data/caves/{dir_id}/
 
 ### CI/CD (`.github/workflows/`)
 - `check.yml` — każdy PR i push do `main` → `./scripts/check`; wymagana kontrola `Kontrola projektu`.
-- `generate-geotiff.yml` — na push do main gdy zmieni się `meta.yaml` → regeneruje .tfw + GeoTIFF. Obowiązkowa kontrola blokuje bezpośredni push commitu bota; okres przejściowy do T10 opisuje [ci/README.md](ci/README.md).
-- `release-geotiff.yml` — na tag `v*` → generuje wszystkie GeoTIFF-y → ZIP jako Release asset
+- `generate-geotiff.yml` — każdy push main/PR → pełny katalog według treści i zakresu zdarzenia, QA i artefakty (14 dni), contents:read; bez commit/push bota.
+- `release-geotiff.yml` — tag `v*` lub ręcznie z istniejącego tagu → pełny katalog → wspólna bramka manifestu/aktualności/T09 → ZIP. Generacja i wydanie używają przypiętego `scripts/build`; instrukcja: [ci/README.md](ci/README.md).
 
 ## Komendy deweloperskie
 
@@ -89,7 +89,10 @@ Przed przygotowaniem lub aktualizacją PR uruchom `./scripts/check` — tę sam�
 # Obowiązkowa kontrola lokalna i CI (wymaga działającego Dockera)
 ./scripts/check
 
-# Pipeline GeoTIFF
+# Pipeline GeoTIFF — referencyjne środowisko, źródła readonly
+./scripts/build generate --changed
+./scripts/build report --run-dir /build/geotiff/current --require-results
+# Poniżej bezpośredni Python (wyniki domyślnie build/geotiff)
 python -m venv .venv && source .venv/bin/activate
 pip install -r pipeline/requirements.txt
 brew install gdal                                    # macOS
@@ -130,4 +133,4 @@ jupyter notebook analysis.ipynb
 - **Zgłoszenia:** ~48 pól, w tym parametry World File (A-F)
 - **Pliki parquet:** `CAVES.parquet`, `USERS.parquet`, `ASSIGNMENTS.parquet`, `SUBMISSIONS.parquet`
 - **YAML:** `data/caves/{dir_id}/meta.yaml` — sekcje: cave, image, coordinates, entrance, scale, north, declination_deg, computed, quality
-- **Raporty:** `data/caves/_reports/summary.csv`, `flagged.csv`, `missing.csv`
+- **Raporty:** `build/qa/{qa.json,summary.csv,flagged.csv,missing.csv}`; wydanie przez manifest w `build/geotiff/current`. Historyczne raporty pozostają w `data/history/`.

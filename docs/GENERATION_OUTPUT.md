@@ -1,6 +1,6 @@
-# Generowanie do osobnego katalogu (T04)
+# Generowanie według treści do osobnego katalogu (T04/T10)
 
-Nowy tryb korzysta z tej samej obowiązkowej [walidacji T03](VALIDATION.md)
+Każde standardowe generowanie korzysta z tej samej obowiązkowej [walidacji T03](VALIDATION.md)
 i [przypiętego źródła współrzędnych](COORDINATE_SOURCE.md). Czyta źródłowe
 YAML-e i obrazy, ale niczego w nich nie zapisuje. Przykład z katalogu repozytorium:
 
@@ -11,7 +11,20 @@ python pipeline/02_generate_geotiff.py --all \
   --output-dir /tmp/georeferencer-results
 ```
 
-Wymagane są zależności z `pipeline/requirements.txt` oraz GDAL obsługujący
+Referencyjne uruchomienie lokalne i CI używa tego samego pinu środowiska:
+
+```sh
+./scripts/build generate --changed
+./scripts/build report --run-dir /build/geotiff/current --require-results
+# Próba wydania, bez komunikacji z GitHub:
+./scripts/build package --mode manual --run-dir /build/geotiff/current \
+  --reports-dir /build/release-qa --archive /build/geotiff-tatry-local.zip
+```
+
+Wrapper montuje checkout readonly w `/workspace`, a ignorowane `build/` w
+`/build`; kontener pracuje bez sieci. Bezpośredni Python domyślnie zapisuje
+wyniki w `build/geotiff`, raporty w `build/qa`. Wymagane są zależności z
+`pipeline/requirements.txt` oraz GDAL obsługujący
 `gdal_translate -a_gt`; odbiór odbywa się w przypiętym środowisku
 `./scripts/check`: GDAL 3.12.4, Linux/amd64. Jawny CSV, jeśli podany, musi
 być zgodny z pinem T02; `--gps-kataster-strict` pozostaje opcją zgodności.
@@ -29,12 +42,43 @@ być zgodny z pinem T02; `--gps-kataster-strict` pozostaje opcją zgodności.
       computed.json
 ```
 
-Przebieg zawiera dokładnie wybrany zestaw planów. `--cave` nie dołącza planu
-do poprzedniej partii; publikuje nowy komplet dla tego wyboru. Dla odbioru całego
-katalogu użyj `--all`. Przed pierwszym zapisem cały wybrany zestaw przechodzi
-preflight T03. Nowy tryb nie obsługuje `--changed` — wybór według zawartości
-jest zakresem T10. `--force` nie zmienia zachowania: każde wywołanie nowego
-trybu generuje nowy przebieg.
+`--all` i `--changed` budują **pełny aktualny katalog**. `--changed` nie
+używa mtime: wykonuje pełny preflight i skan treści, a poprawne wyniki kopiuje
+do nowego kompletnego przebiegu. Usunięte plany znikają z nowego manifestu.
+Również katalog bez YAML jest wejściem do walidacji, zamiast cichego pominięcia.
+Zbiór katalogów jest kontrolowany ponownie przed atomową publikacją.
+`--cave` publikuje jawny podzbiór, bez dołączania do poprzedniej partii;
+nie poświadcza całego katalogu w bramce QA. `--force` pomija cache.
+
+## Zakres Git i cache T10
+
+W CI `build_changes.py` działa na hoście z Git. Push używa `before..after`,
+a PR `merge-base(base,head)..head`, z obu końców rename (delete + add).
+Uwzględnia wszystkie commity, także dokumentację w ostatnim commicie,
+obrazy, nowe/usunięte plany i lokalne rejestry. Kod, środowisko, pin i wspólny rejestr obejmują cały katalog kandydatów.
+Przy znanym zakresie zgodny fingerprint nadal pozwala użyć cache, także przy
+ponowieniu tego samego eventu; sama obecność pliku w diffie nie unieważnia
+aktualnego wyniku. Nieznane wejście oznacza niepewność i pełne przeliczenie. Brak/niepoprawny ref,
+zerowa baza, płytka historia, nieprzodkowy push lub nieznany rodzaj zdarzenia
+wymusza pełne przeliczenie. Zakres jest zapisywany w `build/selection.json`
+i `manifest.build.selection`; pole `uncertain` odróżnia brak pewnej bazy
+od znanego szerokiego zakresu. Bezpośredni CLI przyjmuje `--selection-file`.
+Lokalne wywołanie bez zakresu korzysta z pełnego skanu treści.
+
+Zakres Git nigdy nie dowodzi aktualności. Fingerprint każdego planu obejmuje
+surowy YAML i wszystkie obrazy, lokalny rejestr **albo jawny brak**, wspólny
+rejestr, pin z hashem CSV i pełny wybrany pomiar, orientację, parametry,
+źródła T02, kod pipeline/schemat, wymagania/lock/Dockerfile/wrapper oraz
+wersje Python, GDAL (także build/PROJ), pyproj/PROJ i zainstalowanych pakietów.
+Nie zależy od mtime, daty uruchomienia, ścieżek checkoutu ani SHA commitu.
+Zmiana wspólnego wejścia unieważnia konserwatywnie wszystkie plany.
+
+Cache odczytuje tylko raz rozwiązany `current`. Zgodny fingerprint nie zwalnia
+z walidacji T03 ani rzeczywistego odczytu GeoTIFF. Brak, zły hash/JSON,
+niekompletny/dodatkowy plik, duplikat albo stary manifest oznacza regenerację.
+Kopie cache są zwykłymi plikami, niezależnymi od poprzednich przebiegów;
+są ponownie odbierane po skopiowaniu do stagingu. Manifest `build` podaje
+osobno `generated` i `reused`. Błąd późnego odbioru nie publikuje części partii.
 
 Pin, CSV i rejestr obrazu są weryfikowane i odczytywane z prywatnych snapshotów
 tych samych bajtów. Hash YAML-a i jego parsowanie korzystają z jednego odczytu.
@@ -66,6 +110,12 @@ Każdy krok łańcucha dowiązań plików wejściowych, CSV, pinu i rejestru ró
 musi leżeć poza katalogiem wyników. Dotyczy to także przejścia przez `current`
 do pliku zewnętrznego: publikacja mogłaby wtedy zmienić wejście.
 
+Kontrola ścieżek obejmuje także nieistniejące cele dowiązań rozpoznawanych
+wejść oraz dowiązania potencjalnych katalogów planów. Nie polega na `exists`,
+`is_file` ani `is_dir`: lokalny rejestr, JPEG lub katalog planu nie może
+pojawić się w źródłach dopiero w wyniku podmiany `current`. Hashe nadal
+opisują wyłącznie rzeczywiście odczytane pliki i jawny brak lokalnego rejestru.
+
 ## Co sprawdza odbiór
 
 Generator zapisuje świeżo obliczony TFW z precyzją T03 i przekazuje GDAL
@@ -83,6 +133,11 @@ zdekodowane piksele zgodne ze źródłem. Porównanie pikseli uwzględnia palet�
 jednobitowego TIFF-a. Obrazy źródłowe nadal podlegają rejestrowi SHA-256 T03.
 
 ## Manifest v1
+
+T10 rozszerza v1 o `content_version: t10-content-v1`, `environment`,
+`plans[].fingerprint` oraz `build.generated/reused/selection`. Stary przebieg
+bez tych dowodów jest nieaktualny i wymaga regeneracji; historia pozostaje
+czytelna. `implementation` używa ścieżek względem repozytorium.
 
 Manifest wiąże każdy plan z hashami surowego `meta.yaml` i źródłowych obrazów,
 pełnym rekordem wybranego pomiaru CSV (w tym object_id i measurement_id),
@@ -104,12 +159,33 @@ manifest i binarny TIFF nie muszą być identyczne. Zgodność z T03 jest osobny
 testem bieżącego kodu na kopiach danych. Integralność historii T02 i jej
 przeliczenie są nadal sprawdzane oddzielnie, z zamrożonym kodem i hashami.
 
-## Przejście do T10
+## Migracja odbiorców i bramka wydania T10
 
-Bez `--output-dir` CLI nadal obsługuje dotychczasowy zapis TFW/GeoTIFF i sekcji
-`computed` w źródłowym katalogu. Ten tryb pozostaje mutujący i nie otrzymuje
-gwarancji transakcyjnych nowego trybu. Istniejące workflow i wydanie pozostają
-przy dotychczasowym kontrakcie; ich przełączenie/wycofanie należy do T10/T11.
+Produkcja zapisuje wyłącznie osobny przebieg. Usunięto mutujący zapis
+`computed` i TFW do źródeł; historyczne YAML/TFW nadal są zachowane.
+`computed.json` zastępuje zapis wyliczonej sekcji do YAML. Modele T06,
+precyzja TFW, źródło historycznego kąta i assumed_grid T08 są niezmienione.
+
+Workflow generacji działa dla całego pusha i PR, bez filtrów plików,
+w przypiętym środowisku. Publikuje manifest, komplet wyników i raporty jako
+artefakty (14 dni), przy uprawnieniu contents:read. Cache Actions jest
+niewiążącą optymalizacją; nie zastępuje odbioru. Nie ma commitu/pusha bota.
+
+`package_release.py` jest jedyną wspólną bramką workflow tag/manual.
+Raz rozwiązuje current, wykonuje pełne QA T09 **ze wskazanym przebiegiem**,
+sprawdza aktualność kodu/środowiska/źródeł i dokładny komplet wyników.
+Raporty powstają poza przebiegiem. Nowa lub stara niedopuszczona niepewność,
+stary wyjątek oraz błąd techniczny/wyniku blokują ZIP. Rejestr wyjątków
+pozostaje niezmieniony; narzędzie nie ma automatycznego odświeżania podstaw.
+
+ZIP zawiera `manifest.json` i dokładnie trzy zadeklarowane pliki w każdym
+katalogu `plan_id/`. To świadoma zmiana poprzedniego płaskiego archiwum TIFF:
+identyfikatory i pochodzenie nie giną, a wynik ma komplet do niezależnego
+odbioru. Nie ma globu po TIFF-ach. Bajty plików są sprawdzane przy zapisie ZIP,
+komplet i źródła ponownie po QA; ZIP zastępuje wcześniejszą paczkę atomowo.
+Workflow tworzy wydanie dopiero po sukcesie tej samej komendy dla obu zdarzeń.
+Próby lokalne nigdy nie publikują. T11 niezależnie sprawdzi te bramki i doda
+odbiór odtwarzalności z czystego checkoutu.
 
 Testy regresji znajdują się w `tests/test_geotiff_output.py` i uruchamiają
 się przez wspólne `./scripts/check` bez nowych zależności.
@@ -130,5 +206,4 @@ Nie otrzymuje statusu grid ani verified. [Kontrakt T08](ORIENTATION.md).
 komplet bieżącego katalogu, manifest, hashe i zgodność istotnych wejść oraz
 ponownie odczytuje rzeczywisty GeoTIFF. Brak wyników bez wskazania przebiegu
 nie oznacza błędu źródeł. Stary TFW w danych nie jest dowodem aktualności.
-[Reguły, stany i wyjątki](QA.md). Workflow nadal korzystają z przejściowego
-kontraktu; ich przełączenie pozostaje zadaniem T10.
+[Reguły, stany i wyjątki](QA.md). Workflow i pakowanie wymagają tego odbioru już w T10.

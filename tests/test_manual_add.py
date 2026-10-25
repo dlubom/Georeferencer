@@ -210,7 +210,7 @@ class ManualAddTest(unittest.TestCase):
         self.assertFalse(meta['north']['all_skipped'])
         self.assertEqual(meta['north']['reference'], 'unknown')
 
-    def test_all_orientation_variants_pass_real_t04_and_legacy_cli(self):
+    def test_all_orientation_variants_pass_explicit_and_default_output_cli(self):
         for reference in ('unknown', 'grid', 'geographic', 'magnetic'):
             with self.subTest(reference=reference):
                 plan = self.add(reference=reference, plan_id='test-' + reference)
@@ -231,9 +231,10 @@ class ManualAddTest(unittest.TestCase):
                 world = generator.TRANSFORMER.transform(meta['coordinates']['lon'], meta['coordinates']['lat'])
                 for axis, expected in [(0, world[0]), (3, world[1])]:
                     self.assertAlmostEqual(gt[axis] + 2.25*gt[axis+1] + 3.5*gt[axis+2], expected, places=6)
-                result = subprocess.run(args, capture_output=True, text=True)
+                result = subprocess.run(args, cwd=self.root, capture_output=True, text=True)
                 self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-                validate_plan(plan, self.index)  # ponowienie starego CLI nie unieważnia decyzji
+                validate_plan(plan, self.index)
+                self.assertEqual(hashes(self.data), sources)
 
     def test_invalid_values_ids_and_pin_do_not_write(self):
         for option, value in [('--plan-id', '../escape'), ('--plan-id', '_hidden'),
@@ -362,7 +363,7 @@ class ManualAddTest(unittest.TestCase):
         current = (out / 'current').resolve()
         with patch.object(geotiff_output, 'translate_geotiff', side_effect=change):
             with self.assertRaisesRegex(ValueError, 'zmieniły'):
-                generator.process_output([plan], out, self.data)
+                generator.process_output([plan], out, self.data, force=True)
         self.assertEqual((out / 'current').resolve(), current)
         path.write_bytes(original)
         path.unlink()
@@ -392,6 +393,23 @@ class ManualAddTest(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'zmieni'):
                 generator.process_output([plan], output, self.data, registry_path=registry_path)
         self.assertFalse((output / 'current').exists())
+
+    def test_t10_cache_tracks_local_identity_content_and_requires_its_presence(self):
+        plan = self.add()
+        output = self.root / 'local-cache-results'
+        first = generator.process_output([plan], output, self.data)
+        identity = plan / 'image-identity.json'
+        original = identity.read_bytes()
+        identity.write_bytes(original + b'\n')
+        second = generator.process_output([plan], output, self.data)
+        manifest = json.loads((second / 'manifest.json').read_text())
+        self.assertEqual(manifest['build']['generated'], [plan.name])
+        self.assertNotEqual(json.loads((first / 'manifest.json').read_text())['plans'][0]['fingerprint'],
+                            manifest['plans'][0]['fingerprint'])
+        identity.unlink()
+        with self.assertRaises(ValueError):
+            generator.process_output([plan], output, self.data)
+        self.assertEqual((output / 'current').resolve(), second)
 
     def test_jsonl_provenance_hash_describes_the_bytes_actually_selected(self):
         original = self.jsonl.read_bytes()

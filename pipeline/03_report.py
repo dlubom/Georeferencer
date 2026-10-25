@@ -9,7 +9,7 @@ from qa import create_report, write_reports
 from orientation import summary as orientation_summary
 
 DATA_DIR = Path('data/caves')
-REPORTS_DIR = DATA_DIR / '_reports'
+REPORTS_DIR = Path('build/qa')
 
 
 def write_summary(metas):
@@ -26,7 +26,7 @@ def write_summary(metas):
 def main():
     parser = argparse.ArgumentParser(description='QA planów, reguły i jawne wyjątki T09')
     parser.add_argument('--data-dir', type=Path, default=DATA_DIR)
-    parser.add_argument('--reports-dir', type=Path, help='Domyślnie DATA_DIR/_reports')
+    parser.add_argument('--reports-dir', type=Path, default=REPORTS_DIR, help='Domyślnie build/qa')
     parser.add_argument('--run-dir', type=Path, help='Konkretny przebieg T04 lub jego current; dokładny komplet katalogu')
     parser.add_argument('--require-results', action='store_true', help='Brak wybranego przebiegu blokuje kontrolę')
     parser.add_argument('--image-registry', type=Path)
@@ -38,8 +38,12 @@ def main():
     if args.exceptions:
         import json
         kwargs['exceptions'] = json.loads(args.exceptions.read_text())
+    run = args.run_dir.resolve() if args.run_dir else None
+    if run and (args.reports_dir.resolve() == run or run in args.reports_dir.resolve().parents):
+        parser.error('Raporty muszą leżeć poza katalogiem kontrolowanego przebiegu')
+    kwargs['run_dir'] = run
     result = create_report(args.data_dir, **kwargs)
-    write_reports(result, args.reports_dir or args.data_dir / '_reports')
+    write_reports(result, args.reports_dir)
     counts = result['counts']
     print(f"QA: {counts['plans']} planów; {counts['accepted']} dopuszczonych niepewności; {counts['blocking']} problemów blokujących")
     return 0 if result['passed'] else 1

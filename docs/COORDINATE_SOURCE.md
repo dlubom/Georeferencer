@@ -25,14 +25,15 @@ python pipeline/coordinate_source.py verify --csv /tmp/georeferencer-downloaded.
 niezgodny hash przed zapisem; błędne pobranie nie zastępuje dotychczasowego pliku.
 Usunięcie albo podmiana assetu na GitHub nie niszczy kopii w Git.
 
-Oba workflow generacji wykonują `copy` przed generatorem i korzystają z jego
-zweryfikowanego wyniku. Ręczne wydanie używa opisu źródła z wybranego checkoutu
+Oba workflow używają `scripts/build` i przypiętego środowiska. Generator
+sam weryfikuje i snapshotuje pin/CSV przed obliczeniami. Ręczne wydanie używa opisu źródła z wybranego checkoutu
 tagu; usunięto parametr pozwalający zastąpić ten opis dowolnym tagiem. Stare tagi
 sprzed T02 nadal zawierają stary workflow — T02 nie przepisuje ich historii.
 Wybranie takiego tagu w bieżącym ręcznym workflow zakończy się błędem braku
 opisu/helpera, zamiast pobraniem zmiennego źródła. Odtwarzanie dawnego wydania
 wymaga jego własnego kodu i ustalenia ówczesnych źródeł.
-Przełączenie środowiska wydania, zapisu wyników i QA pozostaje zakresem T10/T11.
+T10 przełącza środowisko wydania, zapis wyników i pełne QA; T11 niezależnie
+sprawdzi bramki i odtwarzalność.
 
 Od T03 produkcyjny generator sam sprawdza pin T02. Jawny argument
 `--gps-kataster-best-measurements` musi odpowiadać hashowi z `source.json`;
@@ -47,10 +48,9 @@ python pipeline/02_generate_geotiff.py --cave 001131 \
   --gps-kataster-strict
 ```
 
-Dodanie `--output-dir /tmp/georeferencer-results` włącza nowy
-[niemutujący tryb T04](GENERATION_OUTPUT.md), z manifestem i kontrolą wyniku.
-Bez tej opcji ostatnie polecenie jest dotychczasowym, mutującym generatorem. Uruchamiaj je
-w roboczej kopii danych, gdy zamierzasz wygenerować wynik. **Nie jest poleceniem
+Generator zawsze używa [osobnego katalogu T04/T10](GENERATION_OUTPUT.md),
+z manifestem i kontrolą wyniku. Domyślnie jest to `build/geotiff`;
+`--output-dir /tmp/georeferencer-results` wskazuje inne miejsce. **Nie jest poleceniem
 odbioru T02.** Odbiór T02 używa odczytu i raportów opisanych niżej.
 
 ## Jawna aktualizacja źródła

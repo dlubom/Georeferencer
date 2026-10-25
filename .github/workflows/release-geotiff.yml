@@ -2,69 +2,56 @@ name: Release GeoTIFF
 
 on:
   push:
-    tags:
-      - 'v*'
+    tags: ['v*']
   workflow_dispatch:
     inputs:
       tag:
-        description: 'Tag do wygenerowania release (np. v0.5.2)'
+        description: 'Istniejący tag do wygenerowania release (np. v0.6.2)'
         required: true
         type: string
 
+permissions:
+  contents: read
+
 jobs:
   release:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
     permissions:
       contents: write
-
+    env:
+      RELEASE_TAG: ${{ inputs.tag || github.ref_name }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ inputs.tag || github.ref }}
-
-      - name: Install GDAL
-        run: sudo apt-get update && sudo apt-get install -y gdal-bin zip
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Install dependencies
-        run: pip install -r pipeline/requirements.txt
-
-      - name: Download gps-kataster coordinates
+          ref: ${{ inputs.tag && format('refs/tags/{0}', inputs.tag) || github.ref }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Sprawdź istniejący tag i checkout
         run: |
-          python pipeline/coordinate_source.py copy --output _gps-kataster/best-measurements.csv
-
-      - name: Generate all GeoTIFFs
-        run: >
-          python pipeline/02_generate_geotiff.py --all
-          --gps-kataster-best-measurements _gps-kataster/best-measurements.csv
-          --gps-kataster-strict
-
-      - name: Create archive
+          case "$RELEASE_TAG" in v[0-9]*) ;; *) exit 1 ;; esac
+          git check-ref-format "refs/tags/$RELEASE_TAG"
+          test "$(git rev-parse HEAD)" = "$(git rev-parse --verify "refs/tags/$RELEASE_TAG^{commit}")"
+      - name: Wygeneruj pełny katalog w przypiętym środowisku
+        run: ./scripts/build generate --all
+      - name: Wspólna bramka manifestu, aktualności, pełnego QA i ZIP
+        env:
+          RELEASE_MODE: ${{ github.event_name == 'workflow_dispatch' && 'manual' || 'tag' }}
         run: |
-          TAG="${{ inputs.tag || github.ref_name }}"
-          mkdir -p _release
-          for georef in data/caves/*/image_georef.tif; do
-            dir_id=$(basename "$(dirname "$georef")")
-            yaml="$(dirname "$georef")/meta.yaml"
-            inv=$(python3 -c "import yaml; m=yaml.safe_load(open('$yaml')); print(m['cave']['inventory_number'])")
-            name=$(python3 -c "import yaml; m=yaml.safe_load(open('$yaml')); print(m['cave']['name'])")
-            # Sanitize: spacje→_, usunięcie znaków problematycznych
-            safe_inv=$(echo "$inv" | tr ' /' '__' | tr -d "'\"")
-            safe_name=$(echo "$name" | tr ' /' '__' | tr -d "'\"")
-            cp "$georef" "_release/${dir_id}_${safe_inv}_${safe_name}.tif"
-          done
-          (
-            cd _release
-            zip -q -r "../geotiff-tatry-${TAG}.zip" .
-          )
-          echo "ARCHIVE=geotiff-tatry-${TAG}.zip" >> "$GITHUB_ENV"
-
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
+          ./scripts/build package --mode "$RELEASE_MODE" \
+            --run-dir /build/geotiff/current --reports-dir /build/release-qa \
+            --archive "/build/geotiff-tatry-${RELEASE_TAG}.zip"
+      - name: Udostępnij raport odbioru
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
-          tag_name: ${{ inputs.tag || github.ref_name }}
-          files: ${{ env.ARCHIVE }}
+          name: release-qa-${{ github.run_id }}
+          path: build/release-qa
+          if-no-files-found: error
+      - name: Opublikuj wyłącznie paczkę po wspólnej bramce
+        uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65 # v2
+        with:
+          tag_name: ${{ env.RELEASE_TAG }}
+          files: build/geotiff-tatry-${{ env.RELEASE_TAG }}.zip
+          fail_on_unmatched_files: true
           generate_release_notes: true

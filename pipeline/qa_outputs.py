@@ -9,8 +9,9 @@ import math
 from pathlib import Path
 
 from coordinate_source import ROOT, DEFAULT_MANIFEST, read_manifest, sha256
-from geotiff_output import check_geotiff, input_hashes, tfw_geotransform
+from geotiff_output import check_geotiff, input_hashes, tfw_geotransform, read_json
 import orientation
+import build_identity
 
 OUTPUTS = {'image.tfw', 'image_georef.tif', 'computed.json'}
 MODULES = ('02_generate_geotiff.py', 'geotiff_output.py', 'validation.py',
@@ -18,8 +19,7 @@ MODULES = ('02_generate_geotiff.py', 'geotiff_output.py', 'validation.py',
 
 
 def _implementation():
-    return {p.name: sha256(p) for p in [*(ROOT / 'pipeline' / n for n in MODULES),
-                                      orientation.BASELINE, orientation.ARCHIVE]}
+    return build_identity.implementation()
 
 
 def inspect_run(run_dir, plans, prepared, rows, registry_path, generator, require_results=False):
@@ -37,7 +37,9 @@ def inspect_run(run_dir, plans, prepared, rows, registry_path, generator, requir
         return states, problems
     try:
         run = Path(run_dir).resolve(strict=True)  # current jest rozwiązywany dokładnie raz
-        manifest = json.loads((run / 'manifest.json').read_text())
+        if (run / 'manifest.json').is_symlink():
+            raise ValueError('Manifest nie może być dowiązaniem')
+        manifest = read_json(run / 'manifest.json')
         if (not isinstance(manifest, dict) or type(manifest.get('schema_version')) is not int or manifest['schema_version'] != 1
                 or manifest.get('status') != 'complete' or not isinstance(manifest.get('plans'), list)):
             raise ValueError('Wymagany kompletny manifest T04 v1')
@@ -55,6 +57,7 @@ def inspect_run(run_dir, plans, prepared, rows, registry_path, generator, requir
             'image_registry': {'sha256': sha256(registry_path)},
             'orientation_sources': {p.name: sha256(p) for p in (orientation.BASELINE, orientation.ARCHIVE)},
             'implementation': _implementation(), 'geometry': generator.GEOMETRY,
+            'content_version': build_identity.CONTENT_VERSION, 'environment': build_identity.environment(),
         }.items():
             saved = manifest.get(name)
             if name == 'image_registry' and isinstance(saved, dict):
@@ -88,7 +91,7 @@ def inspect_run(run_dir, plans, prepared, rows, registry_path, generator, requir
                 params = record['parameters']
                 if values != [float(f'{params[k]:.{10 if k in "ADBE" else 6}f}') for k in ('A', 'D', 'B', 'E', 'C', 'F')]:
                     raise ValueError('TFW niezgodny z parameters manifestu')
-                computed = json.loads((target / 'computed.json').read_text())
+                computed = read_json(target / 'computed.json')
                 stale = common_stale[:]
                 inputs = input_hashes(directory)
                 if record.get('inputs') != inputs:
@@ -101,6 +104,10 @@ def inspect_run(run_dir, plans, prepared, rows, registry_path, generator, requir
                         stale.append('measurement')
                     if record.get('orientation') != orientation.summary(meta) or record.get('parameters') != params:
                         stale.append('calculation')
+                    fingerprint = build_identity.fingerprint(manifest, inputs,
+                        rows[meta['coordinates']['gps_kataster_object_id']], params, orientation.summary(meta))
+                    if record.get('fingerprint') != fingerprint:
+                        stale.append('fingerprint')
                     expected = copy.deepcopy(meta)
                     generator.update_computed_section(expected, params)
                     if computed != expected['computed']:

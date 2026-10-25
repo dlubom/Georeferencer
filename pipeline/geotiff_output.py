@@ -17,6 +17,21 @@ from pyproj import CRS
 from pyproj.exceptions import CRSError
 
 from coordinate_source import sha256
+import build_identity
+
+OUTPUTS = {'image.tfw', 'image_georef.tif', 'computed.json'}
+
+
+def read_json(path):
+    def unique(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError(f'Powtórzony klucz JSON: {key}')
+            result[key] = value
+        return result
+    return json.loads(Path(path).read_text(), object_pairs_hook=unique,
+                      parse_constant=lambda value: (_ for _ in ()).throw(ValueError(value)))
 
 
 def write_json(path, value):
@@ -24,11 +39,16 @@ def write_json(path, value):
                                     sort_keys=True, allow_nan=False) + '\n', encoding='utf-8')
 
 
-def input_files(cave_dir):
-    """Źródłowy YAML i obrazy; stary TFW/GeoTIFF nie są wejściem obliczeń."""
-    return [p for p in sorted(cave_dir.iterdir()) if p.is_file() and
+def input_paths(cave_dir):
+    """Potencjalne wejścia, także dangling symlinki do przyszłego current."""
+    return [p for p in sorted(cave_dir.iterdir()) if
             (p.name in {'meta.yaml', 'image-identity.json'} or (p.suffix.lower() in {'.tif', '.tiff', '.jpg', '.jpeg', '.png'}
                                       and p.name != 'image_georef.tif'))]
+
+
+def input_files(cave_dir):
+    """Źródłowy YAML i obrazy; stary TFW/GeoTIFF nie są wejściem obliczeń."""
+    return [p for p in input_paths(cave_dir) if p.is_file()]
 
 
 def input_hashes(cave_dir):
@@ -69,7 +89,11 @@ def validate_output_dir(output_dir, data_dir, caves, protected_files=()):
     for source in [Path(data_dir).resolve(), *(Path(c).resolve() for c in caves)]:
         if output == source or source in output.parents or output in source.parents:
             raise ValueError('Katalog wyników nie może nakładać się na źródłowy katalog danych')
-    for path in [*protected_files, *(p for cave in caves for p in input_files(cave))]:
+    # Dowiązanie może stać się wejściem dopiero po podmianie current.
+    # Sprawdzamy ścieżkę bez polegania na is_file()/is_dir()/exists().
+    potential_plans = [p for p in Path(data_dir).iterdir()
+                       if p.is_symlink() and not p.name.startswith(('_', '.'))]
+    for path in [*protected_files, *potential_plans, *(p for cave in caves for p in input_paths(cave))]:
         guard_input_path(path, output)
     # Nie przejmujemy istniejącego katalogu/pliku o nazwie current.
     current = output / 'current'
@@ -150,7 +174,46 @@ def check_geotiff(source, output, expected_transform):
             'size': list(output_size), 'decoded_pixels_sha256': output_pixels}
 
 
-def publish_run(output_dir, plans, provenance, write_tfw):
+def cached_records(output_dir):
+    """Cache jest wskazówką; wadliwy manifest oznacza regenerację."""
+    try:
+        run = (output_dir / 'current').resolve(strict=True)
+        manifest = read_json(run / 'manifest.json')
+        if (type(manifest['schema_version']) is not int or manifest['schema_version'] != 1
+                or manifest['status'] != 'complete'
+                or manifest['content_version'] != build_identity.CONTENT_VERSION):
+            return None, {}, {}
+        records = manifest['plans']
+        ids = [p['dir_id'] for p in records]
+        if (any(not isinstance(p, str) or Path(p).name != p or p in ('.', '..') for p in ids)
+                or len(set(ids)) != len(ids)
+                or {p.name for p in run.iterdir()} != set(ids) | {'manifest.json'}):
+            return None, {}, {}
+        return run, manifest, {p['dir_id']: p for p in records}
+    except (OSError, ValueError, KeyError, TypeError):
+        return None, {}, {}
+
+
+def check_record(target, record, source, parameters, computed):
+    """Komplet, hashe, obliczenie i rzeczywisty odbiór także przy cache hit."""
+    if (target.is_symlink() or {p.name for p in target.iterdir()} != OUTPUTS
+            or any(p.is_symlink() or not p.is_file() for p in target.iterdir())
+            or set(record['outputs']) != OUTPUTS):
+        raise ValueError('Niepoprawny komplet cache')
+    if any(sha256(target / name) != record['outputs'][name] for name in OUTPUTS):
+        raise ValueError('Niezgodny hash cache')
+    values = list(map(float, (target / 'image.tfw').read_text().splitlines()))
+    if values != [float(f'{parameters[k]:.{10 if k in "ADBE" else 6}f}') for k in ('A', 'D', 'B', 'E', 'C', 'F')]:
+        raise ValueError('Nieaktualny TFW cache')
+    if read_json(target / 'computed.json') != computed:
+        raise ValueError('Nieaktualny computed cache')
+    acceptance = check_geotiff(source, target / 'image_georef.tif', tfw_geotransform(target / 'image.tfw'))
+    if acceptance != record['acceptance']:
+        raise ValueError('Niezgodny odbiór cache')
+    return acceptance
+
+
+def publish_run(output_dir, plans, provenance, write_tfw, *, force=False, changed_plans=(), selection=None):
     """Zapisz i sprawdź całą partię, potem atomowo opublikuj current.
 
     plans zawiera zwalidowane dane oraz hashe sprzed preflightu.
@@ -166,32 +229,56 @@ def publish_run(output_dir, plans, provenance, write_tfw):
     staging.mkdir()
     published = False
     try:
-        records = []
+        records, generated, reused = [], [], []
+        previous, saved_provenance, cached = cached_records(output_dir)
         for plan in plans:
             cave_dir = plan['source_directory']
             if input_hashes(cave_dir) != plan['inputs']:
                 raise ValueError(f'plan {cave_dir.name}: wejścia zmieniły się podczas generacji')
             target = staging / cave_dir.name
             target.mkdir()
-            tfw_path = write_tfw(target, plan['params'])
-            transform = tfw_geotransform(tfw_path)
             output = target / 'image_georef.tif'
             # GDAL i odczyt pikseli otrzymują tę samą kopię sprawdzoną hashem T03.
             # Połączenie bezpośrednio ze zmiennym źródłem zostawiałoby wyścig A→B→A.
-            snapshot = target / '.input.tif'
+            snapshot = staging / '.inputs' / cave_dir.name / 'image.tif'
+            snapshot.parent.mkdir(parents=True)
             shutil.copyfile(cave_dir / 'image.tif', snapshot)
             if sha256(snapshot) != plan['inputs']['image.tif']:
                 raise ValueError(f'plan {cave_dir.name}: obraz zmienił się podczas kopiowania')
-            translate_geotiff(snapshot, output, transform)
-            acceptance = check_geotiff(snapshot, output, transform)
+            fingerprint = build_identity.fingerprint(provenance, plan['inputs'], plan['measurement'],
+                                                      plan['params'], plan['orientation'])
+            old = cached.get(cave_dir.name)
+            use_cache = False
+            if old and not force and cave_dir.name not in changed_plans:
+                try:
+                    saved = build_identity.fingerprint(saved_provenance, old['inputs'], old['measurement'],
+                                                       old['parameters'], old['orientation'])
+                    if old.get('fingerprint') == fingerprint == saved:
+                        check_record(previous / cave_dir.name, old, snapshot, plan['params'], plan['computed'])
+                        use_cache = True
+                except (OSError, ValueError, KeyError, TypeError):
+                    pass
+            if use_cache:
+                for name in sorted(OUTPUTS):
+                    shutil.copyfile(previous / cave_dir.name / name, target / name)
+                acceptance = check_record(target, old, snapshot, plan['params'], plan['computed'])
+                reused.append(cave_dir.name)
+            else:
+                tfw_path = write_tfw(target, plan['params'])
+                transform = tfw_geotransform(tfw_path)
+                translate_geotiff(snapshot, output, transform)
+                acceptance = check_geotiff(snapshot, output, transform)
+                write_json(target / 'computed.json', plan['computed'])
+                generated.append(cave_dir.name)
             snapshot.unlink()
-            write_json(target / 'computed.json', plan['computed'])
             records.append({
                 'dir_id': cave_dir.name, 'source_directory': str(cave_dir.resolve()),
                 'inputs': plan['inputs'], 'measurement': plan['measurement'],
                 'parameters': plan['params'], 'orientation': plan['orientation'], 'acceptance': acceptance,
+                'fingerprint': fingerprint,
                 'outputs': {p.name: sha256(p) for p in sorted(target.iterdir())},
             })
+        shutil.rmtree(staging / '.inputs', ignore_errors=True)
         # Weryfikacja także wcześniejszych planów i wspólnych źródeł po całej partii.
         for plan in plans:
             if input_hashes(plan['source_directory']) != plan['inputs']:
@@ -199,8 +286,16 @@ def publish_run(output_dir, plans, provenance, write_tfw):
         for path, digest in provenance['guarded_files'].items():
             if sha256(path) != digest:
                 raise ValueError(f'Wejście zmieniło się podczas generacji: {path}')
-        manifest = {key: value for key, value in provenance.items() if key != 'guarded_files'}
-        manifest.update(schema_version=1, status='complete', run_id=run_id, plans=records)
+        catalogue = provenance.get('catalogue_snapshot')
+        if catalogue is not None:
+            directory, ids = catalogue
+            current_ids = sorted(p.name for p in Path(directory).iterdir()
+                                 if p.is_dir() and not p.name.startswith(('_', '.')))
+            if current_ids != ids:
+                raise ValueError('Zbiór katalogów zmienił się podczas generacji')
+        manifest = {key: value for key, value in provenance.items() if key not in ('guarded_files', 'catalogue_snapshot')}
+        manifest.update(schema_version=1, status='complete', run_id=run_id, plans=records,
+                        build={'generated': generated, 'reused': reused, 'selection': selection})
         write_json(staging / 'manifest.json', manifest)
         os.replace(staging, destination)
         pointer.symlink_to(Path('runs') / run_id, target_is_directory=True)

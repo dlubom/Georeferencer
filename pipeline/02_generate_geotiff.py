@@ -23,12 +23,10 @@ import argparse
 import copy
 import hashlib
 import math
-import subprocess
 import sys
 import tempfile
 from pathlib import Path
 
-import yaml
 from pyproj import Transformer
 
 from gps_kataster_coordinates import (
@@ -40,6 +38,7 @@ from coordinate_source import DEFAULT_MANIFEST, read_manifest, read_rows, sha256
 from geotiff_output import input_hashes, publish_run, validate_output_dir
 from validation import ValidationError, fail, read_registry, validate_plan
 import orientation
+import build_identity
 
 DATA_DIR = Path("data/caves")
 TRANSFORMER = Transformer.from_crs("EPSG:4326", "EPSG:2180", always_xy=True)
@@ -56,11 +55,12 @@ def parse_args():
     group.add_argument("--cave", help="Dir ID jaskini (np. 001131)")
     group.add_argument("--all", action="store_true", help="Przetwórz wszystkie")
     group.add_argument("--changed", action="store_true",
-                       help="Przetwórz tylko zmienione (meta.yaml nowszy niż .tfw)")
+                       help="Pełny katalog z cache według treści wejść")
     p.add_argument("--force", action="store_true", help="Wymuszaj regenerację")
     p.add_argument("--data-dir", default="data/caves", help="Katalog danych")
-    p.add_argument("--output-dir", type=Path,
-                   help="Jawny katalog wyników bez zmiany źródeł (--cave lub --all)")
+    p.add_argument("--output-dir", type=Path, default=Path("build/geotiff"),
+                   help="Katalog wyników bez zmiany źródeł (domyślnie build/geotiff)")
+    p.add_argument("--selection-file", type=Path, help="Konserwatywny zakres Git z build_changes.py")
     p.add_argument(
         "--gps-kataster-best-measurements",
         help=(
@@ -143,36 +143,6 @@ def update_computed_section(meta, params):
     }
 
 
-def generate_geotiff(cave_dir):
-    """Generuj GeoTIFF przez gdal_translate."""
-    tif_path = cave_dir / "image.tif"
-    tfw_path = cave_dir / "image.tfw"
-    georef_path = cave_dir / "image_georef.tif"
-
-    if not tif_path.exists() or not tfw_path.exists():
-        return False, "Brak image.tif lub image.tfw"
-
-    cmd = [
-        "gdal_translate", "-of", "GTiff",
-        "-a_srs", "EPSG:2180",
-        "-co", "COMPRESS=CCITTFAX4",
-        str(tif_path), str(georef_path),
-    ]
-
-    result = subprocess.run(cmd, capture_output=True, text=True)
-    if result.returncode != 0:
-        return False, f"gdal_translate error: {result.stderr.strip()}"
-    return True, str(georef_path)
-
-
-def represent_float(dumper, value):
-    """Zachowaj wartość float: zapis nie może unieważnić hasha decyzji T05."""
-    if value != value:
-        return dumper.represent_scalar("tag:yaml.org,2002:null", "null")
-    text = str(value)
-    return dumper.represent_scalar("tag:yaml.org,2002:float", text)
-
-
 def validate_gps_kataster_object_id(meta, gps_kataster_index):
     """Niskopoziomowa kontrola jawnego ID; bez resolvera migracyjnego."""
     coordinates = meta.get("coordinates") or {}
@@ -197,20 +167,14 @@ def prepare_cave(cave_dir, gps_kataster_index, image_registry=None, meta_text=No
     return source_meta, params
 
 
-def process_prepared(cave_dir, source_meta, params):
-    """Przejściowy zapis w miejscu, zachowany dla dotychczasowych odbiorców do T10."""
-    write_tfw(cave_dir, params)
-    update_computed_section(source_meta, params)
-    yaml.add_representer(float, represent_float)
-    with open(cave_dir / "meta.yaml", "w", encoding="utf-8") as f:
-        yaml.dump(source_meta, f, default_flow_style=False, allow_unicode=True,
-                  sort_keys=False, width=120)
-    return generate_geotiff(cave_dir)
-
-
-def process_output(caves, output_dir, data_dir, coordinates_path=None, registry_path=None):
+def process_output(caves, output_dir, data_dir, coordinates_path=None, registry_path=None, *, force=False, changed_plans=(), selection=None, full_catalogue=True):
     """Nowy tryb: pin + preflight całej partii + sprawdzona publikacja poza źródłami."""
     output_dir = validate_output_dir(output_dir, data_dir, caves)
+    catalogue_snapshot = None
+    if full_catalogue:
+        catalogue_snapshot = (str(Path(data_dir).resolve()), [p.name for p in find_caves(data_dir)])
+        if catalogue_snapshot[1] != sorted(p.name for p in caves):
+            raise ValueError('Zbiór katalogów zmienił się przed preflight pełnego buildu')
     pipeline_dir = Path(__file__).resolve().parent
     registry_path = Path(registry_path) if registry_path else pipeline_dir.parent / 'data/validation/images-v1.json'
     # Hash, walidacja, indeks i rekord manifestu używają tych samych bajtów.
@@ -236,11 +200,9 @@ def process_output(caves, output_dir, data_dir, coordinates_path=None, registry_
         index = load_best_measurements(csv_snapshot)
         rows = read_rows(csv_snapshot)
         registry = read_registry(registry_snapshot)
+    implementation = build_identity.implementation()
     guarded_paths = [DEFAULT_MANIFEST, coordinates_path, registry_path,
-                     *(pipeline_dir / name for name in (
-                         '02_generate_geotiff.py', 'geotiff_output.py', 'validation.py',
-                         'coordinate_source.py', 'gps_kataster_coordinates.py', 'meta-schema-v1.json',
-                         'orientation.py')), *orientation_paths]
+                     *(pipeline_dir.parent / name for name in implementation), *orientation_paths]
     guarded = {str(p.resolve()): sha256(p) for p in guarded_paths}
     for p, raw in ((DEFAULT_MANIFEST, pin_bytes), (coordinates_path, csv_bytes),
                    (registry_path, registry_bytes)):
@@ -269,16 +231,20 @@ def process_output(caves, output_dir, data_dir, coordinates_path=None, registry_
                       'orientation': orientation.summary(meta),
                       'measurement': rows[meta['coordinates']['gps_kataster_object_id']]})
     provenance = {
+        'content_version': build_identity.CONTENT_VERSION,
+        'environment': build_identity.environment(),
         'geometry': copy.deepcopy(GEOMETRY),
         'coordinate_source': {**pin,
                               'manifest_sha256': guarded[str(DEFAULT_MANIFEST.resolve())]},
         'orientation_sources': {p.name: guarded[str(p.resolve())] for p in orientation_paths},
         'image_registry': {'path': str(registry_path.resolve()),
                            'sha256': guarded[str(registry_path.resolve())]},
-        'implementation': {p.name: guarded[str(p.resolve())] for p in guarded_paths[3:]},
+        'implementation': implementation,
         'guarded_files': guarded,
+        'catalogue_snapshot': catalogue_snapshot,
     }
-    return publish_run(output_dir, plans, provenance, write_tfw)
+    return publish_run(output_dir, plans, provenance, write_tfw, force=force,
+                       changed_plans=changed_plans, selection=selection)
 
 
 def process_cave(cave_dir, gps_kataster_index=None, gps_kataster_strict=False,
@@ -288,82 +254,44 @@ def process_cave(cave_dir, gps_kataster_index=None, gps_kataster_strict=False,
         source_meta, params = prepare_cave(cave_dir, gps_kataster_index, image_registry)
     except (ValueError, OSError) as exc:
         return False, str(exc)
-    return process_prepared(cave_dir, source_meta, params)
+    # Zgodność API walidacji T03. Generowanie wymaga osobnego przebiegu.
+    return True, params
 
 
 def find_caves(data_dir, changed_only=False):
-    """Znajdź katalogi jaskiń do przetworzenia."""
-    caves = []
-    for yaml_path in sorted(data_dir.glob("*/meta.yaml")):
-        cave_dir = yaml_path.parent
-        if cave_dir.name.startswith("_"):
-            continue
-
-        if changed_only:
-            tfw_path = cave_dir / "image.tfw"
-            if tfw_path.exists() and tfw_path.stat().st_mtime >= yaml_path.stat().st_mtime:
-                continue
-
-        caves.append(cave_dir)
-    return caves
+    """Każdy nieukryty katalog, także z brakującym YAML-em, podlega preflight."""
+    return [p for p in sorted(Path(data_dir).iterdir())
+            if p.is_dir() and not p.name.startswith(('_', '.'))]
 
 
 def main():
     args = parse_args()
     data_dir = Path(args.data_dir)
-    if args.output_dir and args.changed:
-        sys.exit('BŁĄD: --output-dir obsługuje --cave lub --all; tryb --changed należy do T10')
     try:
-        # Także jawny argument musi odpowiadać przypiętym bajtom. Brak argumentu
-        # oznacza wersjonowany snapshot, nigdy liczby z YAML ani latest.
-        path = verify(csv_path=args.gps_kataster_best_measurements)
-        gps_kataster_index = load_best_measurements(path)
-        registry = read_registry(args.image_registry) if args.image_registry else read_registry()
-    except (ValueError, OSError, KeyError) as exc:
-        sys.exit(f"BŁĄD katalogu/obrazu: {exc}")
-
-    if args.cave:
-        caves = [data_dir / args.cave]
-    elif args.all:
-        caves = find_caves(data_dir)
-    else:  # --changed
-        caves = find_caves(data_dir, changed_only=True)
-
-    if not caves:
-        print("Brak jaskiń do przetworzenia.")
-        return
-
-    if args.output_dir:
-        try:
-            destination = process_output(caves, args.output_dir, data_dir, path, args.image_registry)
-        except (ValueError, OSError) as exc:
-            sys.exit(f'BŁĄD generacji wyników: {exc}')
-        print(f'Gotowe: {len(caves)} OK; kompletny przebieg: {destination}')
-        return
-
-    # Preflight całego wybranego zestawu przed pierwszym zapisem artefaktu.
-    prepared = []
-    errors = []
-    for cave_dir in caves:
-        try:
-            prepared.append((cave_dir, *prepare_cave(cave_dir, gps_kataster_index, registry)))
-        except (ValueError, OSError) as exc:
-            errors.append(str(exc))
-    if errors:
-        for message in errors:
-            print(f"BŁĄD {message}", file=sys.stderr)
-        sys.exit(1)
-
-    print(f"Przetwarzanie {len(prepared)} jaskiń...")
-    failures = 0
-    for cave_dir, meta, params in prepared:
-        ok, message = process_prepared(cave_dir, meta, params)
-        if not ok:
-            print(f"BŁĄD {cave_dir.name}: {message}", file=sys.stderr)
-            failures += 1
-    print(f"Gotowe: {len(prepared) - failures} OK, {failures} błędów")
-    if failures:
-        sys.exit(1)
+        caves = [data_dir / args.cave] if args.cave else find_caves(data_dir)
+        selection = None
+        if args.selection_file:
+            import json
+            try:
+                selection = json.loads(args.selection_file.read_text())
+                if (not isinstance(selection, dict) or selection.get('schema_version') != 1
+                        or type(selection.get('full')) is not bool
+                        or type(selection.get('uncertain')) is not bool
+                        or not isinstance(selection.get('plans'), list)
+                        or any(not isinstance(p, str) for p in selection['plans'])):
+                    raise ValueError('Niepoprawny zakres')
+            except (OSError, ValueError):
+                selection = {'full': True, 'uncertain': True, 'plans': [], 'reason': 'niepoprawny zakres'}
+        destination = process_output(caves, args.output_dir, data_dir,
+            args.gps_kataster_best_measurements, args.image_registry,
+            # Znany zakres wyznacza kandydatów, lecz aktualność rozstrzyga treść.
+            # Ponowienie tego samego eventu może mieć już kompletny aktualny cache.
+            force=args.force or bool(selection and selection['uncertain']),
+            selection=selection,
+            full_catalogue=not args.cave)
+    except (ValueError, OSError) as exc:
+        sys.exit(f'BŁĄD generacji wyników: {exc}')
+    print(f'Gotowe: {len(caves)} OK; kompletny przebieg: {destination}')
 
 
 if __name__ == "__main__":

@@ -3,63 +3,55 @@ name: Generate GeoTIFF
 on:
   push:
     branches: [main]
-    paths:
-      - 'data/caves/**/meta.yaml'
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: geotiff-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   generate:
-    if: github.actor != 'github-actions[bot]'
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          fetch-depth: 2
-
-      - name: Install GDAL
-        run: sudo apt-get update && sudo apt-get install -y gdal-bin
-
-      - uses: actions/setup-python@v5
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
-          python-version: '3.12'
-
-      - name: Install dependencies
-        run: pip install -r pipeline/requirements.txt
-
-      - name: Download gps-kataster coordinates
-        run: |
-          python pipeline/coordinate_source.py copy --output _gps-kataster/best-measurements.csv
-
-      - name: Find changed caves
-        id: changed
-        run: |
-          DIRS=$(git diff HEAD~1 --name-only -- 'data/caves/*/meta.yaml' \
-            | sed 's|data/caves/\([^/]*\)/meta.yaml|\1|' \
-            | sort -u \
-            | tr '\n' ' ')
-          echo "dirs=$DIRS" >> "$GITHUB_OUTPUT"
-          echo "Zmienione jaskinie: $DIRS"
-
-      - name: Generate GeoTIFF
-        if: steps.changed.outputs.dirs != ''
-        run: |
-          for dir_id in ${{ steps.changed.outputs.dirs }}; do
-            echo "Generowanie: $dir_id"
-            python pipeline/02_generate_geotiff.py --cave "$dir_id" \
-              --gps-kataster-best-measurements _gps-kataster/best-measurements.csv \
-              --gps-kataster-strict
-          done
-
-      - name: Commit .tfw and updated meta.yaml
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/caves/*/image.tfw data/caves/*/meta.yaml
-          if git diff --staged --quiet; then
-            echo "Brak zmian do commitu"
-          else
-            git commit -m "Wygenerowano .tfw dla zmienionych jaskiń"
-            git push
-          fi
+          path: build/geotiff
+          key: geotiff-${{ runner.os }}-${{ github.ref }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            geotiff-${{ runner.os }}-${{ github.ref }}-
+            geotiff-${{ runner.os }}-refs/heads/main-
+      - name: Pełny katalog według treści i całego zakresu zdarzenia
+        run: ./scripts/build generate --changed
+      - name: Rozwiąż current dla QA i artefaktu
+        id: run
+        run: echo "directory=build/geotiff/$(readlink build/geotiff/current)" >> "$GITHUB_OUTPUT"
+      - name: Pełne QA źródeł i tego samego przebiegu
+        env:
+          RUN_DIRECTORY: ${{ steps.run.outputs.directory }}
+        run: ./scripts/build report --run-dir "/build/${RUN_DIRECTORY#build/}" --require-results --reports-dir /build/qa
+      - name: Udostępnij kompletny przebieg i manifest
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: geotiff-run-${{ github.run_id }}
+          path: ${{ steps.run.outputs.directory }}
+          if-no-files-found: error
+          retention-days: 14
+      - name: Udostępnij raporty i zakres zmian
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: geotiff-qa-${{ github.run_id }}
+          path: |
+            build/qa
+            build/selection.json
+          if-no-files-found: error
+          retention-days: 14
