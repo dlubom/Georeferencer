@@ -1,0 +1,79 @@
+{
+  "base_commit": "16f5cb2f3ea101b2552f9536673146c4ed8a6b74",
+  "catalogue_inputs_and_parameters_sha256": "d6232cb49ce84b5cab36c0420697464e6f6f68be4e0b9827333367196975832a",
+  "contract_changes": [
+    "Domyślne osobne wyniki i computed.json zamiast zapisu do źródeł",
+    "Pełne --changed według treści, bez mtime",
+    "ZIP: manifest i trzy artefakty na plan, zamiast płaskiego globu TIFF",
+    "Testy zakresu Git/wrappera na hoście, GDAL/historia/QA w przypiętym kontenerze"
+  ],
+  "exceptions_updated": false,
+  "geometry_functions_ast_identical": true,
+  "georeferencing_changed_plans": [],
+  "history_hashes_updated": false,
+  "new_plans": [],
+  "parameters_identical_to_t09": true,
+  "plans": 814,
+  "protected_paths": [
+    "data/caves",
+    "data/qa",
+    "data/baseline",
+    "data/history",
+    "data/coordinate-source",
+    "data/validation",
+    "data/classification",
+    "data/migrations",
+    "parquet",
+    "docs/reports/t05*",
+    "docs/reports/t06*",
+    "docs/reports/t07*",
+    "docs/reports/t08*",
+    "docs/reports/t09*"
+  ],
+  "removed_plans": [],
+  "source_files_changed": [],
+  "task": "T10 / #15",
+  "verification": {
+    "container_seconds": 283.565,
+    "container_tests": 180,
+    "controlled_regression": {
+      "failures": 1,
+      "mutation": "Pominięcie if not report[passed] w tymczasowej kopii package_release.py",
+      "original_code": "PASS w końcowym ./scripts/check",
+      "seconds": 1.266,
+      "test": "PackageTest.test_qa_new_problem_stale_exception_and_technical_exception_block",
+      "tests": 1
+    },
+    "environment": {
+      "GDAL": "3.12.4",
+      "OS": "Linux/amd64",
+      "PROJ_GDAL": "9.8.1",
+      "PROJ_pyproj": "9.8.1",
+      "Pillow": "13.0.0",
+      "PyYAML": "6.0.3",
+      "Python": "3.12.3",
+      "numpy": "2.5.4",
+      "pandas": "3.1.0",
+      "pip_check": "OK",
+      "pyarrow": "26.0.0",
+      "pyproj": "3.8.0"
+    },
+    "host_tests": 5,
+    "independent_review": {
+      "cache_package_tests": 15,
+      "host_tests": 5,
+      "late_mutation_tests": 6,
+      "open_findings": 0,
+      "qa_tests": 20
+    },
+    "main_ruleset": {
+      "bypass_actors": [],
+      "enforcement": "active",
+      "id": 25796826,
+      "required_check": "Kontrola projektu",
+      "strict": true
+    },
+    "result": "PASS",
+    "total_tests": 185
+  }
+}

@@ -26,3 +26,6 @@ __pycache__/
 
 # Generated GeoTIFFs
 data/caves/**/image_georef.tif
+
+# Wyniki T10, raporty, zakres Git i lokalne paczki
+build/

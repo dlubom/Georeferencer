@@ -1,0 +1,30 @@
+#!/bin/sh
+# Ten sam przypięty runtime co ./scripts/check; źródła readonly, wyniki w build/.
+set -eu
+root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+operation=${1:-generate}
+if [ "$#" -gt 0 ]; then shift; fi
+mkdir -p "$root/build"
+case "$operation" in
+    generate)
+        module=pipeline/02_generate_geotiff.py
+        if [ -n "${GITHUB_EVENT_PATH:-}" ]; then
+            python3 "$root/pipeline/build_changes.py" --repo "$root" \
+                --event "${GITHUB_EVENT_NAME:-unknown}" --event-file "$GITHUB_EVENT_PATH" \
+                --output "$root/build/selection.json"
+            set -- "$@" --selection-file /build/selection.json
+        fi
+        set -- --output-dir /build/geotiff "$@"
+        ;;
+    report) module=pipeline/03_report.py; set -- --reports-dir /build/qa "$@" ;;
+    package) module=pipeline/package_release.py ;;
+    *) echo 'Użycie: ./scripts/build generate|report|package [argumenty pipeline]' >&2; exit 2 ;;
+esac
+image_id=$(mktemp)
+trap 'rm -f "$image_id"' EXIT
+docker build --platform linux/amd64 --iidfile "$image_id" "$root/ci"
+docker run --rm --platform linux/amd64 --network none --read-only \
+    --tmpfs /tmp:rw,nosuid,size=512m \
+    --mount "type=bind,source=$root,target=/workspace,readonly" \
+    --mount "type=bind,source=$root/build,target=/build" \
+    "$(cat "$image_id")" python "$module" "$@"

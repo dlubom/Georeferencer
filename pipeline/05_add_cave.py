@@ -161,7 +161,7 @@ def accept_generation(plan_dir, data_dir, output_dir):
     spec = importlib.util.spec_from_file_location('manual_add_generator', ROOT / 'pipeline/02_generate_geotiff.py')
     generator = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(generator)
-    generator.process_output([plan_dir], output_dir, data_dir)
+    generator.process_output([plan_dir], output_dir, data_dir, full_catalogue=False)
 
 
 def publish_directory(source, destination):

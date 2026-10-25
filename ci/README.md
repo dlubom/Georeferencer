@@ -25,7 +25,8 @@ Próba GDAL tworzy syntetyczny TIFF 8×6, jawny rejestr jego tożsamości i przy
 
 ## Aktualizacja zależności
 
-`pipeline/requirements.txt` określa wejściowe wymagania projektu; `ci/requirements.lock` zamraża ich rozwiązanie dla kontroli. Kontrola porównuje SHA-256 wymagań z nagłówkiem locka, więc zmiana wymagań bez jego aktualizacji kończy się błędem. Dotychczasowe workflow generacji i wydania nadal korzystają z własnego środowiska; ich przełączenie jest zakresem T10/T11.
+`pipeline/requirements.txt` określa wejściowe wymagania projektu; `ci/requirements.lock` zamraża ich rozwiązanie dla kontroli. Kontrola porównuje SHA-256 wymagań z nagłówkiem locka, więc zmiana wymagań bez jego aktualizacji kończy się błędem. Workflow generacji i wydania od T10 korzystają z tego samego obrazu przez `scripts/build`.
+Fingerprint wyników obejmuje Dockerfile, lock i rzeczywiste wersje narzędzi.
 
 Aktualizację wykonuj jawnie w PR. Z katalogu repozytorium:
 
@@ -46,7 +47,33 @@ Stała nazwa checka to **`Kontrola projektu`**. Workflow działa dla PR-ów i ka
 
 T01 dodaje osobny aktywny ruleset dla `refs/heads/main`, wymagający tego checka od aplikacji GitHub Actions i testów względem aktualnego `main`, bez wyjątków omijających kontrolę. Przy zmianach ustawień najpierw odczytaj wszystkie istniejące rulesety i ochronę gałęzi; zachowaj ich pozostałe reguły. Stan ochrony jest konfiguracją GitHub, dlatego jego odczyt i link do udanego przebiegu na aktualnej rewizji PR należą do dowodów odbioru.
 
-**Okres przejściowy do T10:** stary `generate-geotiff.yml` próbuje dopisać commit bota bez testów na `main`; obowiązkowa kontrola blokuje taki push. Jeśli generator wyliczy różnice, aktualizacja TFW/metadanych wymaga sprawdzonego PR. Nie dodawaj obejścia dla bota. T10 zastępuje ten workflow generacją wyników poza danymi źródłowymi. Bez zmian pozostaje workflow wydania, którego utwardzenie odbiera T11.
+## Generacja i wydanie T10
+
+```sh
+./scripts/build generate --changed
+./scripts/build report --run-dir /build/geotiff/current --require-results
+./scripts/build package --mode manual --run-dir /build/geotiff/current \
+  --reports-dir /build/release-qa --archive /build/geotiff-tatry-local.zip
+```
+
+Kontener używa tego samego digestu i locka co testy, bez instalacji apt/pip
+w workflow, bez sieci podczas pracy. Checkout jest readonly; `build/` stanowi
+osobny zapisywalny mount `/build`. Polecenie package tworzy lokalny ZIP,
+nie publikuje wydania. Kontrakt manifestu/cache i obu bramek publikacji opisuje
+[GENERATION_OUTPUT.md](../docs/GENERATION_OUTPUT.md).
+
+Generacja działa dla każdego PR-a i pusha na main, bez filtrów ścieżek,
+z pełną historią Git. Publikuje artefakty i raporty na 14 dni, bez zapisu bota
+ani bypassów ochrony. Ręczna generacja z niepewnym zakresem wymusza pełny build.
+Tag i ręczne wydanie mają tę samą bezwarunkową bramkę QA+ZIP. Brak plików,
+manifestu, aktualności lub dopuszczenia T09 zatrzymuje publikację już w T10.
+
+`./scripts/check` najpierw wykonuje `tests/host/` w systemowym Pythonie 3
+(biblioteka standardowa, realny Git i wrapper Dockera), następnie cały zestaw
+`tests/` w przypiętym kontenerze. Obraz GDAL nie zawiera Git; testy hostowe
+sprawdzają dokładnie część uruchamianą na hoście. Oba zestawy są obowiązkowe,
+a dowody podają osobno ich liczby. Odbiór geometrii i historii pozostaje
+w kontenerze; żaden dotychczasowy test nie jest pomijany.
 
 ## Dowody w PR
 

@@ -144,9 +144,9 @@ class RasterGeometryTest(unittest.TestCase):
                '--cave', '001131', '--image-registry', str(self.registry_path)]
         if output:
             cmd += ['--output-dir', str(self.output)]
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
+        result = subprocess.run(cmd, cwd=self.root, capture_output=True, text=True, timeout=60)
         self.assertEqual(result.returncode, 0, result.stderr)
-        target = self.output / 'current/001131' if output else self.cave_dir
+        target = (self.output if output else self.root / 'build/geotiff') / 'current/001131'
         info = json.loads(subprocess.check_output(['gdalinfo', '-json', str(target / 'image_georef.tif')], text=True))
         return target, info['geoTransform']
 

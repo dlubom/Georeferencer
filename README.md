@@ -12,10 +12,10 @@ Wyniki dostępne jako GeoTIFF-y w [GitHub Releases](../../releases).
 
 ## Pipeline generacji GeoTIFF
 
-T04 dodaje jawny tryb `--output-dir /tmp/georeferencer-results`, który zapisuje
-sprawdzony komplet TFW, GeoTIFF, wartości wyliczonych i manifestu bez zmian
-w źródłach. [Instrukcja wyników i odbioru](docs/GENERATION_OUTPUT.md) opisuje
-`current`, zachowanie przy błędzie i przejściową obsługę starego trybu do T10.
+Generowanie T10 zapisuje kompletny przebieg TFW, GeoTIFF, computed i manifestu
+w `build/geotiff`, bez zmian źródeł. Cache wynika z zawartości i wersji
+obliczeń/środowiska. [Instrukcja wyników i odbioru](docs/GENERATION_OUTPUT.md)
+opisuje atomowe `current`, pełny katalog i bramki wydania.
 
 Zebrane dane crowdsourcingowe przetwarzane są automatycznym pipeline'em:
 
@@ -33,7 +33,9 @@ Każdy plik `meta.yaml` jest edytowalny — można ręcznie poprawić:
 - kąt północy (`north.angle_deg`)
 - deklinację (`declination_deg`)
 
-Zmiany przekazuj przez PR z wymaganą kontrolą `Kontrola projektu`. Dotychczasowy automat po pushu na `main` przelicza World File i GeoTIFF, ale ochrona gałęzi blokuje jego bezpośredni zapis commitu. Do przełączenia generacji w T10 zmienione TFW/metadane wymagają sprawdzonego PR — [opis okresu przejściowego](ci/README.md).
+Zmiany przekazuj przez PR z wymaganą kontrolą `Kontrola projektu`. Workflow
+buduje cały aktualny katalog z cache, przeprowadza QA i udostępnia artefakty
+oraz raporty. Nie zapisuje commitu bota do `main`.
 
 Współrzędne WGS84 nie są już traktowane jako lokalna prawda projektu. Każdy YAML wskazuje konkretny otwór w `gps-kataster-obiektow-tatr`, a release renderuje `lat/lon` z `best-measurements.csv`. Plan może wskazać kategorię `jaskinia_otwor` albo `sztolnia`; pozostałe kategorie mogą być obecne w katalogu. Jeśli automatyczne jednorazowe przypisanie otworu było błędne, popraw tylko `gps_kataster_object_id`. Przypadki z wieloma kandydatami są zebrane w `data/caves/_reports/gps_kataster_manual_review.csv`.
 
@@ -48,31 +50,34 @@ coordinates:
 
 Kontrola przed PR: `./scripts/check` (wymaga działającego Dockera). Uruchamia cały zestaw testów, w tym mały GeoTIFF przez rzeczywisty GDAL, w tym samym przypiętym środowisku co CI. [Instrukcja kontroli, wersje i aktualizacja zależności](ci/README.md).
 
-```bash
-python -m venv .venv && source .venv/bin/activate
-pip install -r pipeline/requirements.txt
-brew install gdal  # macOS
-
-# Zweryfikowane wejście zgodne z buildem (bez sieci)
-python pipeline/coordinate_source.py copy --output /tmp/georeferencer-best-measurements.csv
-
-# Generacja GeoTIFF dla jednej jaskini
-python pipeline/02_generate_geotiff.py --cave 001131 \
-  --gps-kataster-best-measurements /tmp/georeferencer-best-measurements.csv \
-  --gps-kataster-strict
-
-# Generacja dla wszystkich
-python pipeline/02_generate_geotiff.py --all \
-  --gps-kataster-best-measurements /tmp/georeferencer-best-measurements.csv \
-  --gps-kataster-strict
-
-# Raporty QA
-python pipeline/03_report.py
+```sh
+# Przypięte środowisko, źródła readonly, praca bez sieci
+./scripts/build generate --changed
+./scripts/build generate --cave 001131
+./scripts/build generate --all --force
+./scripts/build report --run-dir /build/geotiff/current --require-results
 ```
+
+Pełne QA katalogu wymaga przebiegu `--all`/`--changed`. `--cave` tworzy
+podzbiór do pracy nad wskazanym planem. Dla bezpośredniego Pythona użyj
+`pipeline/02_generate_geotiff.py` z tymi samymi opcjami; domyślny wynik to
+`build/geotiff`. Tylko wrapper gwarantuje referencyjne środowisko.
 
 ### Release
 
-Przy utworzeniu tagu `v*` (np. `v1.0`) GitHub Actions weryfikuje SHA-256 wersjonowanego snapshotu `best-measurements.csv` przypiętego do release gps-kataster **v1.3.1**, renderuje Jinja placeholdery `lat/lon`, generuje wszystkie GeoTIFF-y i publikuje je jako paczkę `.zip` w GitHub Releases. Ręczne uruchomienie używa tego samego opisu źródła z checkoutu wybranego tagu. Pliki nazywane są wg schematu: `{dir_id}_{numer_inwentarzowy}_{nazwa}.tif`. [Instrukcja źródła, aktualizacji i historycznego punktu odniesienia 814 planów](docs/COORDINATE_SOURCE.md) opisuje weryfikację, odtwarzanie i raport wpływu; T02 nie zmienia danych ani istniejących TFW.
+Tag `v*` i ręczne wydanie z istniejącego tagu używają tego samego przypiętego
+środowiska, źródła gps-kataster **v1.3.1** oraz obowiązkowej bramki manifestu,
+aktualności i pełnego QA T09. ZIP zawiera `manifest.json` i katalogi plan_id
+z GeoTIFF, TFW i computed.json. Próba bez publikacji:
+
+```sh
+./scripts/build generate --all
+./scripts/build package --mode manual --run-dir /build/geotiff/current \
+  --reports-dir /build/release-qa --archive /build/geotiff-tatry-local.zip
+```
+
+[Źródła i historia](docs/COORDINATE_SOURCE.md),
+[kontrakt wyników i paczki](docs/GENERATION_OUTPUT.md).
 
 ---
 

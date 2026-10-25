@@ -76,6 +76,9 @@ declination_deg: 0.0
             "001131": {"filename": "image_1_zoom_10.tif", "image_id": 1,
                           "width": 8, "height": 6,
                           "sha256": hashlib.sha256(self.image_path.read_bytes()).hexdigest()}}}))
+        output_temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(output_temporary.cleanup)
+        self.output = Path(output_temporary.name)
 
     def run_generator(self):
         return subprocess.run(
@@ -86,6 +89,7 @@ declination_deg: 0.0
                 "--gps-kataster-best-measurements", str(self.coordinates_path),
                 "--gps-kataster-strict",
                 "--image-registry", str(self.registry_path),
+                "--output-dir", str(self.output),
             ],
             cwd=self.data_dir,
             capture_output=True,
@@ -97,7 +101,7 @@ declination_deg: 0.0
         result = self.run_generator()
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
-        output_path = self.cave_dir / "image_georef.tif"
+        output_path = self.output / 'current' / self.cave_dir.name / 'image_georef.tif'
         info_result = subprocess.run(
             ["gdalinfo", "-json", str(output_path)],
             capture_output=True,
@@ -120,7 +124,7 @@ declination_deg: 0.0
         self.assertNotEqual(transform[1] * transform[5] - transform[2] * transform[4], 0)
         # To próba zapisu/odczytu GDAL, nie orzeczenie o konwencji otworu,
         # zbieżności południków ani korekcie półpiksela (osobne zadanie T06).
-        tfw = [float(line) for line in (self.cave_dir / "image.tfw").read_text().splitlines()]
+        tfw = [float(line) for line in (output_path.parent / "image.tfw").read_text().splitlines()]
         self.assertEqual(len(tfw), 6)
         self.assertTrue(all(math.isfinite(value) for value in tfw))
         with Image.open(self.image_path) as source, Image.open(output_path) as output:

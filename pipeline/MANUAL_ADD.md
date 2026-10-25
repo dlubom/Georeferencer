@@ -201,5 +201,4 @@ Nowy wpis rejestru jest wersjonowany **wraz z planem**. Nie dopisuj tego samego
 planu do wspólnego `images-v1.json`: konflikt jest błędem. Do PR dołącz cały
 nowy katalog źródeł, pochodzenie parametrów, decyzję, wynik T04 i raport wpływu.
 [Walidacja](../docs/VALIDATION.md) i [generacja](../docs/GENERATION_OUTPUT.md)
-obejmują oba rodzaje rejestru. Stary CLI bez `--output-dir` pozostaje mutujący
-do T10. Samo wdrożenie T08 nie dodaje rzeczywistych planów ani nie migruje katalogu.
+obejmują oba rodzaje rejestru. CLI T10 bez `--output-dir` zapisuje do `build/geotiff`, bez zmiany źródeł. Samo wdrożenie T08 nie dodaje rzeczywistych planów ani nie migruje katalogu.
