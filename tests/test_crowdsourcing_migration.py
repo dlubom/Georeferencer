@@ -48,7 +48,8 @@ class CrowdsourcingMigrationTest(unittest.TestCase):
         self.assertEqual(meta['entrance'], {'x': 20694.01, 'y': 1732.56})
         self.assertEqual(meta['scale']['pixels_per_meter'], 59.03)
         self.assertEqual(meta['north']['angle_deg'], 50.0)
-        self.assertEqual(meta['coordinates']['gps_kataster_object_id'], 'KSW-0081')
+        # Późniejsza ręczna korekta otworu nie zmienia zamrożonego raportu T07.
+        self.assertEqual(meta['coordinates']['gps_kataster_object_id'], 'KSW-0256')
         self.assertEqual(meta['north']['reference'], 'unknown')
         self.assertEqual(meta['orientation']['status'], 'unverified')
 

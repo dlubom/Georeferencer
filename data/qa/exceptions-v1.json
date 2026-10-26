@@ -4688,35 +4688,7 @@
       ]
     },
     {
-      "basis_sha256": "6e9a616e3eb0027dacd59ea9ed37f00dc808765310e210d828e4662afd690441",
-      "close_when": "Potwierdzenie symbolu i wybranego object_id na planie z dowodem oraz uzgodnieniem issue #3.",
-      "evidence": {
-        "alternative_object_id": "KSW-0256",
-        "basis": "Poprawność techniczna jawnego ID nie potwierdza wyboru symbolu otworu na planie; sprawa pozostaje do ręcznego potwierdzenia.",
-        "current_object_id": "KSW-0081",
-        "historical_selected_object_id": "KSW-0081",
-        "input_status": "valid",
-        "name": "Jaskinia Mroźna",
-        "note": "- [ ] `001094` / `T.D-08.07` / Jaskinia Mroźna: wybrano `KSW-0081` — Jaskinia Mroźna - wyjście z trasy turystycznej; alternatywa `KSW-0256` — wejście na trasę turystyczną.",
-        "plan_ids": [
-          "001094"
-        ],
-        "rule": "entrance.review",
-        "source": "https://github.com/dlubom/Georeferencer/issues/3",
-        "source_updated_at": "2026-05-17T17:58:34Z"
-      },
-      "plan_id": "001094",
-      "reason": "Nierozstrzygnięte dopasowanie z issue #3: jawne ID istnieje w pinie; to nie potwierdza symbolu otworu na planie.",
-      "rule": "entrance.review",
-      "sources": [
-        "docs/QA.md",
-        "docs/ORIENTATION.md",
-        "https://github.com/dlubom/Georeferencer/issues/3",
-        "data/qa/source-issues-v1.json"
-      ]
-    },
-    {
-      "basis_sha256": "8f63a591260eafeddbfcedb3ef6d2ebf134f7af078e9f7e74de5129983d72cc1",
+      "basis_sha256": "97f090536926be08275aaf6c84832f8c30b694fad647f582ebf3fc64450ee370",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "unknown",
@@ -4732,11 +4704,13 @@
         "uncertainty_reason": "Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano orientację historycznego TFW T02."
       },
       "plan_id": "001094",
-      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy.",
+      "reason": "Zmiana wyłącznie kotwicy na północny otwór KSW-0256. Północ nadal unknown/unverified; zachowano kąt TFW T02. Hipoteza magnetyczna i pozostałe rozbieżności wymagają osobnej weryfikacji w issue #32.",
       "rule": "orientation.unknown",
       "sources": [
         "docs/QA.md",
-        "docs/ORIENTATION.md"
+        "docs/ORIENTATION.md",
+        "docs/reports/2026-10-26-mrozna-anchor.md",
+        "https://github.com/dlubom/Georeferencer/issues/32"
       ]
     },
     {
