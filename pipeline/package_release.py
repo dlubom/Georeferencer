@@ -19,6 +19,7 @@ from validation import IMAGE_REGISTRY
 import build_identity
 import orientation
 import release_acceptance
+from release_layout import files_for_release
 
 
 def package_run(data_dir, run_dir, archive, reports_dir, *, mode='tag', qa_kwargs=None, require_clean_code=False):
@@ -57,23 +58,27 @@ def package_run(data_dir, run_dir, archive, reports_dir, *, mode='tag', qa_kwarg
     if not report['passed']:
         raise ValueError(f"Pełne QA wydania blokuje pakowanie: {report['counts']['blocking']} problemów")
     manifest = read_json(run / 'manifest.json')
+    files = files_for_release(manifest, data)
     manifest['release'] = {'version': release_acceptance.RELEASE_VERSION, 'mode': mode,
+        'files': files,
         'code': packaging_code,
         'run_id': manifest['run_id'], 'run_manifest_sha256': hashlib.sha256(manifest_bytes).hexdigest(),
         'qa': release_acceptance.qa_evidence(report)}
     release_bytes = (json.dumps(manifest, ensure_ascii=False, indent=2, sort_keys=True, allow_nan=False) + '\n').encode()
     expected = {'manifest.json': hashlib.sha256(manifest_bytes).hexdigest()}
-    for plan in manifest['plans']:
-        for name, digest in plan['outputs'].items():
-            expected[plan['dir_id'] + '/' + name] = digest
+    members = [('manifest.json', 'manifest.json', expected['manifest.json'])]
+    for item in files:
+        source = item['plan_id'] + '/' + item['output']
+        expected[source] = item['sha256']
+        members.append((item['archive_path'], source, item['sha256']))
     archive.parent.mkdir(parents=True, exist_ok=True)
     descriptor, temporary = tempfile.mkstemp(prefix='.package-', suffix='.zip', dir=archive.parent)
     os.close(descriptor)
     temporary = Path(temporary)
     try:
         with zipfile.ZipFile(temporary, 'w', compression=zipfile.ZIP_DEFLATED) as package:
-            for name, digest in sorted(expected.items()):
-                raw = (run / name).read_bytes()
+            for name, source, digest in sorted(members):
+                raw = (run / source).read_bytes()
                 if hashlib.sha256(raw).hexdigest() != digest:
                     raise ValueError(f'Wynik zmienił się po QA: {name}')
                 package.writestr(name, release_bytes if name == 'manifest.json' else raw)

@@ -1,8 +1,8 @@
 # Changelog
 
-## v0.7.0 — kandydat do zatwierdzenia
+## v0.7.0 — Kontrolowany GeoTIFF i współrzędne Pawlikowskiego (2026-10-26)
 
-Zmiany od opublikowanego v0.6.2; poniższa sekcja jest propozycją wydania.
+Zmiany od opublikowanego v0.6.2.
 
 ### Współrzędne
 
@@ -28,9 +28,12 @@ Zmiany od opublikowanego v0.6.2; poniższa sekcja jest propozycją wydania.
   ekstrakcji. Bezpieczne narzędzie dodawania planów T08 nie dodaje samo planów.
 - QA rozdziela błędy techniczne od jawnie dopuszczonych niepewności;
   oba tryby wydania korzystają ze wspólnej bramki i odbioru ZIP T11.
-- **Zmiana układu ZIP:** `manifest.json` i katalogi `plan_id/`, każdy
-  z `image_georef.tif`, `image.tfw`, `computed.json`, zamiast płaskich TIFF-ów.
-  Odbiorcy muszą uwzględnić nową ścieżkę. Katalog nadal zawiera 814 planów.
+- **Układ ZIP t11-v2:** czytelne TIFF-y bezpośrednio w korzeniu, np.
+  `001094_T.D-08.07_Jaskinia_Mroźna.tif`, oraz `manifest.json` z kompletnym
+  mapowaniem `plan_id/output/archive_path/sha256`. TFW i computed.json są
+  w `metadane/{plan_id}/`. Zachowano historyczną normalizację nazw v0.6.2
+  i nazwę archiwum `geotiff-tatry-v0.7.0.zip`. Katalog zawiera 814 planów.
+  Wewnętrzny przebieg generatora nadal używa katalogów `plan_id/`.
 
 ### Granice odbioru
 
@@ -41,7 +44,7 @@ Zmiany od opublikowanego v0.6.2; poniższa sekcja jest propozycją wydania.
   Obliczenia nie weryfikują terenowo progu/stacji, skali ani orientacji planu.
 - [Raport wpływu](docs/reports/coordinate-source-v1.3.2-impact.json),
   [odbiór](docs/plans/2026-10-25-gps-v1.3.2-odbior.md) oraz
-  [proponowana treść publikacji](docs/releases/v0.7.0-notes.md).
+  [treść publikacji](docs/releases/v0.7.0-notes.md).
 
 ---
 

@@ -13,6 +13,8 @@ import test_qa as qa_fixture
 class PackageTest(qa_fixture._QaFixture):
     def setUp(self):
         super().setUp()
+        self.meta_path.write_text(self.meta_path.read_text().replace(
+            "  name: Plan syntetyczny", "  name: Plan syntetyczny\n  inventory_number: T.X-01.02"))
         self.assertIsNotNone(importlib.util.find_spec('package_release'), 'Brak wspólnej bramki publikacji T10')
         import package_release
         self.package = package_release.package_run
@@ -32,8 +34,8 @@ class PackageTest(qa_fixture._QaFixture):
     def test_complete_package_has_exact_manifest_inventory_and_external_qa(self):
         self.pack()
         with zipfile.ZipFile(self.archive) as package:
-            self.assertEqual(set(package.namelist()), {'manifest.json', '001131/image.tfw',
-                '001131/image_georef.tif', '001131/computed.json'})
+            self.assertEqual(set(package.namelist()), {'manifest.json', 'metadane/001131/image.tfw',
+                '001131_T.X-01.02_Plan_syntetyczny.tif', 'metadane/001131/computed.json'})
             self.assertEqual(len(package.namelist()), 4)
         report = json.loads((self.reports / 'qa.json').read_text())
         self.assertTrue(report['passed'])
@@ -88,6 +90,28 @@ class PackageTest(qa_fixture._QaFixture):
                     with self.assertRaises(ValueError):
                         self.pack(mode=mode)
                     self.assertFalse(self.archive.exists())
+
+    def test_missing_inventory_and_unsafe_presentation_names_block_both_modes_atomically(self):
+        import yaml
+        original = yaml.safe_load(self.meta_path.read_text())
+        for field, value in (('inventory_number', None), ('inventory_number', 'X:stream'),
+                             ('name', 'bad\\path'), ('name', "''")):
+            metadata = copy.deepcopy(original)
+            if value is None:
+                del metadata['cave'][field]
+            else:
+                metadata['cave'][field] = value
+            self.meta_path.write_text(yaml.safe_dump(metadata, allow_unicode=True))
+            self.run = qa_fixture.generator.process_output([self.cave_dir], self.output,
+                self.data, self.coordinates_path, self.registry_path)
+            self.options['exceptions']['exceptions'] = [self.exception(self.report(), 'orientation.unknown')]
+            current = (self.output / 'current').readlink()
+            self.archive.write_bytes(b'previous correct package')
+            for mode in ('tag', 'manual'):
+                with self.subTest(field=field, value=value, mode=mode), self.assertRaisesRegex(ValueError, '001131.*' + field):
+                    self.pack(mode=mode)
+                self.assertEqual(self.archive.read_bytes(), b'previous correct package')
+                self.assertEqual((self.output / 'current').readlink(), current)
 
     def test_current_is_resolved_once_and_reports_must_stay_outside_run(self):
         import package_release
