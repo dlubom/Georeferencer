@@ -48,10 +48,13 @@ jobs:
           name: release-qa-${{ github.run_id }}
           path: build/release-qa
           if-no-files-found: error
+      - name: Udostępnij odebraną paczkę do odczytu na runnerze
+        run: sudo chmod a+r -- "build/geotiff-tatry-${RELEASE_TAG}.zip"
       - name: Opublikuj wyłącznie paczkę po wspólnej bramce
         uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65 # v2
         with:
           tag_name: ${{ env.RELEASE_TAG }}
           files: build/geotiff-tatry-${{ env.RELEASE_TAG }}.zip
           fail_on_unmatched_files: true
+          overwrite_files: false
           generate_release_notes: true

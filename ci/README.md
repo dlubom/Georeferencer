@@ -75,6 +75,15 @@ sprawdzają dokładnie część uruchamianą na hoście. Oba zestawy są obowią
 a dowody podają osobno ich liczby. Odbiór geometrii i historii pozostaje
 w kontenerze; żaden dotychczasowy test nie jest pomijany.
 
+
+ZIP z `mkstemp` powstaje w kontenerze root z trybem 0600. Po udanej
+bramce QA/ZIP workflow przyznaje odczyt gotowej paczki użytkownikowi
+runnera przez `sudo chmod a+r`, przed hostową akcją publikującą. Bajty
+archiwum pozostają niezmienione. Publikująca akcja ma jawne
+`overwrite_files: false`; istniejący asset nie jest zastępowany.
+Regresja w przypiętym kontenerze sprawdza rzeczywisty odczyt drugim UID
+przed i po tym kroku, bez zależności od mapowania UID w Docker Desktop.
+
 ## Dowody w PR
 
 Pełny odbiór wydania, dwa czyste zimne buildy i instrukcja niezależnego

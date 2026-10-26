@@ -1,0 +1,18 @@
+{
+  "assets_before_fix": [],
+  "cause": "root-owned mkstemp0600 versus different host publisher UID",
+  "draft_release": 424040195,
+  "error": "EACCES: permission denied, open build/geotiff-tatry-v0.7.0.zip",
+  "failed_run": 40297131295,
+  "failed_step": "Opublikuj wyłącznie paczkę po wspólnej bramce",
+  "generation_and_package_qa_passed": true,
+  "green_log_sha256": "553953d0ee31dc75f517effffdd97a5d721fe6fea8052481d72c8b79e0ae0036",
+  "local_mac_file_mode": "0o600",
+  "local_mac_uid": 501,
+  "local_reader_uid": 501,
+  "new_pipeline_or_coordinate_changes": false,
+  "red_log_sha256": "ca1dade5e969dcecf470bfd5cbb823cce2079a3557de88e33d508f72f2e48bb3",
+  "retry_strategy": "standard workflow_dispatch from fixed main; checkout same immutable tag, mode manual; no existing assets overwritten",
+  "rootcause_log_sha256": "04d8d466a363b6a712b8f6a2f3eac2ab7099551f25dccf1468a7393c045c3b28",
+  "tag_unchanged": "v0.7.0 ->20864e7111ab165f8a710c7915eeb0088104762b"
+}

@@ -1,0 +1,37 @@
+{
+  "base": "20864e7111ab165f8a710c7915eeb0088104762b",
+  "check_log_sha256": "8ecd077766e2cdae4f0ddc604494c6a1aaaedebb9c37f55c407c32f7ac43eeaf",
+  "command": "./scripts/check",
+  "container": {
+    "seconds": 280.091,
+    "tests": 212
+  },
+  "environment_reference": "docs/reports/v0.7.0-validation.json",
+  "green": {
+    "cases": 4,
+    "log_sha256": "553953d0ee31dc75f517effffdd97a5d721fe6fea8052481d72c8b79e0ae0036",
+    "passed": true
+  },
+  "host": {
+    "seconds": 2.252,
+    "tests": 7
+  },
+  "passed": true,
+  "pipeline_data_scripts_parquet_changes": [],
+  "red": {
+    "cases": 4,
+    "errors": 0,
+    "expected_failures": 2,
+    "log_sha256": "59ad5af6c75c99ae5d869cbac5e1b2e52830d34f2f833f5235b24079d3447f85",
+    "old_workflow_from_base": true,
+    "read_only_overlay": true
+  },
+  "reviewed_file_sha256": {
+    ".github/workflows/release-geotiff.yml": "ef5145b85dcf264e4e4ffe02e50b16d823e4da186b9252da37fb226633148076",
+    "ci/README.md": "6a601f9b33299e13dc9f94b5594aa3d963551ddea0a49f7bab77224f1fc1ff36",
+    "docs/plans/2026-10-26-release-permissions.md": "28d28bea0686422007c29a54369f87f8de084820648feab4780182d1beb271f3",
+    "tests/test_release_workflow.py": "771899ae3812667ceaa5cd2656185c2819e84863bd16c1a7371df2b308de3bf6"
+  },
+  "tag_unchanged": "v0.7.0 ->20864e7111ab165f8a710c7915eeb0088104762b",
+  "total": 219
+}

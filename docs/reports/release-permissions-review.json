@@ -1,0 +1,49 @@
+{
+  "Spec": {
+    "findings": [],
+    "independent_green": {
+      "passed": true,
+      "tests": 4
+    },
+    "independent_red": {
+      "errors": 0,
+      "failures": 2,
+      "tests": 4
+    },
+    "passed": true,
+    "report": "docs/reports/release-permissions-spec-review.json"
+  },
+  "Standards": {
+    "findings": [],
+    "passed": true,
+    "reviewer": "independent Standards agent",
+    "rules": [
+      "AGENTS.md",
+      "ci/README.md",
+      "docs/QA.md",
+      "docs/RELEASE_ACCEPTANCE.md"
+    ]
+  },
+  "base": "20864e7111ab165f8a710c7915eeb0088104762b",
+  "full_check": {
+    "container": 212,
+    "host": 7,
+    "passed": true,
+    "total": 219
+  },
+  "passed": true,
+  "protected_paths_unchanged": [
+    "pipeline",
+    "data",
+    "scripts",
+    "parquet"
+  ],
+  "publication_condition": "Final Git blobs must match reviewed hashes; protected exact-head CI and main CI before standard manual workflow on unchanged tag.",
+  "reviewed_file_sha256": {
+    ".github/workflows/release-geotiff.yml": "ef5145b85dcf264e4e4ffe02e50b16d823e4da186b9252da37fb226633148076",
+    "ci/README.md": "6a601f9b33299e13dc9f94b5594aa3d963551ddea0a49f7bab77224f1fc1ff36",
+    "docs/plans/2026-10-26-release-permissions.md": "28d28bea0686422007c29a54369f87f8de084820648feab4780182d1beb271f3",
+    "tests/test_release_workflow.py": "771899ae3812667ceaa5cd2656185c2819e84863bd16c1a7371df2b308de3bf6"
+  },
+  "tag_unchanged": "v0.7.0 ->20864e7111ab165f8a710c7915eeb0088104762b"
+}
