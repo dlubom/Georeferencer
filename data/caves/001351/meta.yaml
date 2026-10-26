@@ -1,6 +1,7 @@
 cave:
   inventory_number: T.E-08.05
   dir_id: '001351'
+  source_cave_id: '1351'
   name: Jaskinia Obłazkowa
   n_submissions: 5
 image:
@@ -9,7 +10,7 @@ image:
   width: 5692
   height: 2692
 coordinates:
-  gps_kataster_object_id: KSZ-0090
+  gps_kataster_object_id: KSZ-0064  # Kliknięcie wskazuje południowy otwór Mylnej na wspólnym planie.
   lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
   lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:

@@ -25,10 +25,21 @@ class CrowdsourcingMigrationTest(unittest.TestCase):
             # Raport T07 zachowuje dawną nazwę source.json i jego oryginalny hash.
             return sha256(historical_manifest if Path(path) == DEFAULT_MANIFEST else path)
 
-        # Odtwarzamy wejścia T07, bez podmiany aktywnego pinu ani zapisu katalogu.
+        from migrate_north import migrated_bytes
+        from orientation import load_context
+        temporary = tempfile.TemporaryDirectory()
+        cls.addClassCleanup(temporary.cleanup)
+        root = Path(temporary.name)
+        context = load_context()
+        for plan_id, plan in context['plans'].items():
+            path = root / f'data/caves/{plan_id}/meta.yaml'
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(migrated_bytes(context['originals'][plan_id], plan))
+
+        # Odtwarzamy zamrożone wejścia T07, bez cofania późniejszych korekt.
         with patch.object(migration, 'verify', lambda: verify(historical_manifest)), \
                 patch.object(migration, 'sha256', historical_hash):
-            cls.report, cls.writes = migration.migration()
+            cls.report, cls.writes = migration.migration(root)
 
     def test_real_mrozna_drops_test_spread_but_preserves_manual_north(self):
         meta = yaml.safe_load((ROOT / 'data/caves/001094/meta.yaml').read_text())
@@ -49,8 +60,11 @@ class CrowdsourcingMigrationTest(unittest.TestCase):
         self.assertEqual(report['minimum_non_test_users'], 5)
         self.assertEqual(report['test_affected_plans'], ['001094', '001095', '001103', '001445'])
         self.assertEqual(len(report['manual_plans_unchanged']), 13)
+        frozen = {p['dir_id']: p for p in json.loads(REPORT.read_text())['plans']}
         for path, raw in writes:
-            self.assertEqual(path.read_bytes(), raw)
+            expected = frozen[path.parent.name]
+            self.assertEqual(hashlib.sha256(raw).hexdigest(), expected['after_sha256'])
+            self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(), expected['before_sha256'])
         for plan in report['plans']:
             self.assertEqual(plan['geometry']['orientation']['delta_deg'], 0.0)
             self.assertEqual(plan['after']['coordinates'], plan['before']['coordinates'])
