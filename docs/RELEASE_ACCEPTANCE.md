@@ -99,13 +99,41 @@ hashe i komplet deklarowanych artefaktów. Następnie T09 sprawdza źródła,
 aktualność i rzeczywisty GeoTIFF: CRS, transformację, wymiary, jeden kanał
 1-bit, CCITTFAX4, zdekodowane piksele względem źródła.
 
-Manifest ZIP ma sekcję `release.version=t11-v1`, tryb, pochodzenie kodu
-pakowania `release.code`, run_id i SHA-256
-oryginalnego manifestu przebiegu. `release.qa` zapisuje politykę, liczniki,
-pełne zaakceptowane wyjątki (plan/reguła/evidence/basis/reason/sources/close_when)
-oraz hashe źródeł QA. Odbiorca odtwarza manifest przebiegu serializerem T04
-i weryfikuje jego hash. To addytywny kontrakt wydania; trzy pliki planu
-oraz manifest przebiegu v1 nie zmieniają układu.
+Nowe paczki mają `release.version=t11-v2`. Manifest przebiegu v1 i jego
+układ wewnętrzny pozostają bez zmian. Wydanie dodaje obowiązkowe
+`release.files`: dokładnie po trzy relacje na plan, każda z polami
+`plan_id`, `output`, `archive_path`, `sha256`, uporządkowane po plan_id/output.
+Przykład:
+
+```json
+{"plan_id":"001094","output":"image_georef.tif","archive_path":"001094_T.D-08.07_Jaskinia_Mroźna.tif","sha256":"<hash oryginalnego wyniku>"}
+```
+
+TFW i computed mają odpowiednio `metadane/001094/image.tfw` oraz
+`metadane/001094/computed.json`. Nie ma wpisów katalogowych ani drugiej
+kopii TIFF-a. [Dokładna reguła nazw](GENERATION_OUTPUT.md) pochodzi z
+workflow v0.6.2. Odbiornik wylicza ją ponownie z aktualnych metadanych
+sprawdzonych hashem `plans[].inputs["meta.yaml"]`; nie ufa ścieżce ani
+przypisaniu deklarowanemu w `release.files`. Sprawdza kompletną listę,
+wszystkie hashe i rzeczywisty ZIP, a dopiero potem odtwarza prywatny
+przebieg do pełnego QA. Wszystkie surowe ZipInfo przechodzą kontrolę
+ścieżek, typów i dowiązań **przed** tworzeniem zbioru/mapy nazw.
+Kolizje obejmują NFC i casefold, a duplikaty nigdy nie są gubione.
+
+Wersja kontraktu ZIP zmienia się, bo zmieniają się ścieżki konsumenckie
+oraz wymagane dowody mapowania. Nie zmienia to bajtów trzech wyników
+planu. Odbiornik nadal rozpoznaje `t11-v1` z dawnymi ścieżkami
+`plan_id/{image_georef.tif,image.tfw,computed.json}` i pełnym QA/aktualnością;
+nie przyjmuje nieznanych wersji. Samo rozpoznanie starego formatu nie
+zwalnia archiwum ze sprawdzenia kodu, środowiska i bieżących wejść.
+Historyczne dowody T11 i archiwa nie są przepisywane.
+
+Sekcja release zachowuje tryb, pochodzenie kodu pakowania `release.code`,
+run_id i SHA-256 oryginalnego manifestu przebiegu. `release.qa` zapisuje
+politykę, liczniki, pełne zaakceptowane wyjątki
+(plan/reguła/evidence/basis/reason/sources/close_when) oraz hashe źródeł QA.
+Odbiorca usuwa wyłącznie sekcję release, odtwarza manifest przebiegu
+serializerem T04 i weryfikuje jego hash.
 
 Manifest nie jest źródłem zgody na wyjątki. Odbiór zawsze ponownie egzekwuje
 **wersjonowany** `data/qa/exceptions-v1.json` i porównuje aktualne dowody.
@@ -179,3 +207,61 @@ Nie wolno zmieniać unknown na grid, statusu na verified ani utożsamiać
 pomiaru 0°, przyjętego obrotu 0° i null. Naprawa potwierdzonej usterki kodu
 wymaga regresji; decyzja o danych wymaga osobnego uzasadnienia i PR.
 Merge, tag, wydanie i produkcyjna publikacja wymagają osobnego polecenia.
+
+## Odbiór samej prezentacji ZIP t11-v2
+
+Dla zmiany nazw nie trzeba ponawiać dwóch zimnych buildów T11. Para T11
+pozostaje dowodem historycznym generatora; teraz obowiązują pełna kontrola
+aktualności i QA wszystkich planów. Konserwatywny fingerprint T10 obejmuje
+cały `pipeline/*.py`, więc pierwsza zmiana kodu pakowania wymaga **jednego**
+pełnego przeliczenia. Nie zawężamy fingerprintu w celu użycia starego cache.
+Kolejne commity dowodów/docs mogą używać wyników sprawdzonych według treści
+i środowiska, po ich rzeczywistym odczycie.
+
+Z czystego checkoutu końcowej implementacji:
+
+```sh
+./scripts/check
+./scripts/build generate --changed
+RELEASE_RUN="/build/geotiff/$(readlink build/geotiff/current)"
+./scripts/build report --run-dir "$RELEASE_RUN" --require-results
+./scripts/build package --mode tag --run-dir "$RELEASE_RUN" \
+  --reports-dir /build/readable-release/tag-qa \
+  --archive /build/readable-release/tag/geotiff-tatry-local.zip
+./scripts/build package --mode manual --run-dir "$RELEASE_RUN" \
+  --reports-dir /build/readable-release/manual-qa \
+  --archive /build/readable-release/manual/geotiff-tatry-local.zip
+./scripts/build accept --report /build/readable-release/tag-acceptance.json \
+  verify --archive /build/readable-release/tag/geotiff-tatry-local.zip
+./scripts/build accept --report /build/readable-release/manual-acceptance.json \
+  verify --archive /build/readable-release/manual/geotiff-tatry-local.zip
+```
+
+Reviewer dostaje rewizję, bazę i ten dokument oraz ścieżki do odebranych
+paczek/przebiegu. Czyta wersjonowane instrukcje z własnego czystego
+checkoutu (dla samej prezentacji wystarcza osobny worktree), przegląda
+diff, wykonuje `./scripts/check` oraz `accept verify` obu gotowych
+ZIP-ów w przypiętym środowisku. Może zamontować gotowy przebieg/paczki
+readonly; nie wykonuje kolejnego zimnego buildu wyłącznie z powodu nazw.
+Raporty zapisuje we własnym katalogu poza przebiegiem. Dodatkowo
+niezależnie od funkcji mapowania implementacji oblicza historyczną nazwę
+z YAML każdego planu; sprawdza wszystkie ZipInfo, CRC, komplet dokładnie
+`1 + 3*N` wpisów, SHA-256 i identyczność bajtów trzech wyników z przebiegiem.
+Raport podaje rewizję kodu/bazę, wersje środowiska, run_id, oba hashe ZIP,
+wyniki i otwarte findings. Zmiana samej dokumentacji nie wymaga ponowienia
+kontroli źródeł bez nowego powodu; końcowe paczki mają przejść pełny odbiór.
+
+Kontrolowany powrót starego układu w prywatnej kopii pakującego:
+
+```sh
+docker build --platform linux/amd64 --iidfile /tmp/readable-release-image ci
+docker run --rm --platform linux/amd64 --network none --read-only \
+  --tmpfs /tmp:rw,nosuid,size=512m \
+  --mount "type=bind,source=$PWD,target=/workspace,readonly" \
+  "$(cat /tmp/readable-release-image)" python docs/reports/readable-release-controlled-regression.py
+```
+
+Oczekiwane: jeden FAIL dokładnego układu ZIP, zero błędów środowiska,
+`Kontrolowana regresja wykryta: True`, kod skryptu 0. Poprawny kod musi
+osobno przejść `./scripts/check`. Nie zaliczamy próby na hostowym GDAL
+jako wyniku przypiętego środowiska.

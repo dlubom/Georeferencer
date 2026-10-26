@@ -1,0 +1,303 @@
+{
+  "artifact_verdict": "PASS",
+  "author_status_after_acceptance": "?? docs/reports/readable-release-generation.json\n?? docs/reports/readable-release-inventory.json\n?? docs/reports/readable-release-validation.json",
+  "author_status_at_source_review": "",
+  "author_worktree": "/Users/dariuszlubomski/.codex/worktrees/readable-release-names/Georeferencer",
+  "base": "addd87607b6356a8ade8fe3e0799d3472ff1af77",
+  "changed_files": [
+    "docs/GENERATION_OUTPUT.md",
+    "docs/RELEASE_ACCEPTANCE.md",
+    "docs/plans/2026-10-26-readable-release-names.md",
+    "docs/reports/readable-release-controlled-regression.py",
+    "docs/reports/readable-release-inventory.py",
+    "pipeline/package_release.py",
+    "pipeline/release_acceptance.py",
+    "pipeline/release_layout.py",
+    "tests/test_package_release.py",
+    "tests/test_release_acceptance.py",
+    "tests/test_release_layout.py"
+  ],
+  "commands": [
+    "git status --porcelain=v1 --branch; git rev-parse HEAD",
+    "git diff addd87607b6356a8ade8fe3e0799d3472ff1af77...852d2fcac32cd7e7555eedc22f660875634b0b53",
+    "git show v0.6.2:.github/workflows/release-geotiff.yml",
+    "./scripts/check",
+    "docker build --platform linux/amd64 --iidfile build/independent-review/runtime-image ci",
+    "docker run --rm --platform linux/amd64 --network none --read-only --tmpfs /tmp:rw,nosuid,size=512m --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-readable-release-names/Georeferencer,target=/workspace,readonly \"$(cat build/independent-review/runtime-image)\" python docs/reports/readable-release-controlled-regression.py",
+    "bash build/independent-review/run-archive-acceptance.sh"
+  ],
+  "completed_at_utc": "2026-10-26T07:36:29.938078+00:00",
+  "detached": true,
+  "findings": {
+    "Critical": [],
+    "Important": [],
+    "Minor": []
+  },
+  "historical_rule": {
+    "blob": "75b840e7f8037b6a2587878a255266359e368ca4",
+    "normalization": "ASCII space and slash to underscore; remove ASCII apostrophe and quote; preserve every other character",
+    "source": "v0.6.2:.github/workflows/release-geotiff.yml:63-71"
+  },
+  "merge_base": "addd87607b6356a8ade8fe3e0799d3472ff1af77",
+  "not_judged": [
+    "Field survey accuracy or interpretation of the 1405 current approved uncertainties.",
+    "A new cold-build reproducibility pair: versioned t11-v2 instructions require reuse of one freshly built full run for presentation acceptance.",
+    "Remote CI, PR delivery, merge/tag/release publishing, GPS PR #28 and unrelated workspaces."
+  ],
+  "overall_verdict": "PASS",
+  "protected_scope_diff": "EMPTY",
+  "protected_scope_paths": [
+    "data",
+    "parquet",
+    ".github",
+    "scripts",
+    "ci",
+    "pipeline/02_generate_geotiff.py",
+    "pipeline/geotiff_output.py",
+    "pipeline/qa.py",
+    "pipeline/qa_outputs.py",
+    "pipeline/orientation.py"
+  ],
+  "reviewed_at_utc": "2026-10-26T07:25:14.311235+00:00",
+  "reviewed_head": "852d2fcac32cd7e7555eedc22f660875634b0b53",
+  "reviewer_head_after_acceptance": "852d2fcac32cd7e7555eedc22f660875634b0b53",
+  "reviewer_tracked_status": "",
+  "reviewer_tracked_status_after_acceptance": "",
+  "schema_version": 1,
+  "source_verdict": "PASS",
+  "spec": {
+    "findings": [],
+    "sources": [
+      "docs/plans/2026-10-26-readable-release-names.md",
+      "docs/GENERATION_OUTPUT.md",
+      "docs/RELEASE_ACCEPTANCE.md",
+      "docs/QA.md",
+      "ci/README.md",
+      "docs/plans/2026-10-25-t11-odbior.md",
+      "docs/plans/2026-10-25-t11-review.md"
+    ]
+  },
+  "standards": {
+    "findings": [],
+    "smell_findings": [],
+    "sources": [
+      "AGENTS.md"
+    ]
+  },
+  "strengths": [
+    {
+      "detail": "Historical normalization is preserved; names are derived from required YAML strings and metadata bytes are verified against run inputs.",
+      "evidence": "pipeline/release_layout.py:33"
+    },
+    {
+      "detail": "Every exact output relation is rederived with SHA-256 and NFC/casefold collision checks; v1 and v2 are explicitly selected.",
+      "evidence": "pipeline/release_layout.py:54"
+    },
+    {
+      "detail": "Every raw ZipInfo is validated before name sets/maps; private extraction paths use plan/output identities, not presentation names.",
+      "evidence": "pipeline/release_acceptance.py:37"
+    },
+    {
+      "detail": "V2 mapping must equal the independently rederived complete relation list; full T09 freshness, GDAL/Pillow, and current exception evidence are rerun for v1 and v2.",
+      "evidence": "pipeline/release_acceptance.py:62"
+    },
+    {
+      "detail": "Tag/manual share one gate with one current resolution, readback of a temporary ZIP, and atomic replacement preserving the previous package on failure.",
+      "evidence": "pipeline/package_release.py:28"
+    },
+    {
+      "detail": "Adversarial tests cover cross-plan swaps including forged hashes; tests also cover malformed ZipInfo, CRC/DEFLATE, legacy freshness, both modes, and previous-package preservation.",
+      "evidence": "tests/test_release_acceptance.py:259"
+    }
+  ],
+  "verification": {
+    "archive_acceptance": {
+      "manual": {
+        "archive_sha256": "1a07d24bf4b1f3b11d79246c3ce4948425fdb91b192f245ddc7c47b32b04b069",
+        "files": 2443,
+        "host_archive": "/Users/dariuszlubomski/.codex/worktrees/readable-release-names/Georeferencer/build/readable-release/manual/geotiff-tatry-local.zip",
+        "passed": true,
+        "plans": 814,
+        "qa": {
+          "accepted": 1405,
+          "blocking": 0,
+          "origins": {
+            "crowdsourcing": 801,
+            "manual_historical": 13
+          },
+          "plans": 814,
+          "problems": 1405
+        },
+        "release_version": "t11-v2",
+        "report": "/Users/dariuszlubomski/.codex/worktrees/review-readable-release-names/Georeferencer/build/independent-review/manual-acceptance.json",
+        "run_id": "06dd5b3f1a7249f990075114c797a34c",
+        "run_manifest_sha256": "1b4ed64188b11f96811f282122d3e7edd8c13c805a61268b8dea4949feac6b63"
+      },
+      "tag": {
+        "archive_sha256": "cf018213953a749ff13d694ea9987f6b880a390a59d77b0eaed819a5ab99de13",
+        "files": 2443,
+        "host_archive": "/Users/dariuszlubomski/.codex/worktrees/readable-release-names/Georeferencer/build/readable-release/tag/geotiff-tatry-local.zip",
+        "passed": true,
+        "plans": 814,
+        "qa": {
+          "accepted": 1405,
+          "blocking": 0,
+          "origins": {
+            "crowdsourcing": 801,
+            "manual_historical": 13
+          },
+          "plans": 814,
+          "problems": 1405
+        },
+        "release_version": "t11-v2",
+        "report": "/Users/dariuszlubomski/.codex/worktrees/review-readable-release-names/Georeferencer/build/independent-review/tag-acceptance.json",
+        "run_id": "06dd5b3f1a7249f990075114c797a34c",
+        "run_manifest_sha256": "1b4ed64188b11f96811f282122d3e7edd8c13c805a61268b8dea4949feac6b63"
+      }
+    },
+    "archive_acceptance_command": "bash build/independent-review/run-archive-acceptance.sh",
+    "archive_acceptance_runner": {
+      "contents": "#!/bin/bash\nset -euo pipefail\nreview_root=/Users/dariuszlubomski/.codex/worktrees/review-readable-release-names/Georeferencer\nauthor_root=/Users/dariuszlubomski/.codex/worktrees/readable-release-names/Georeferencer\nreview_run=$author_root/build/geotiff/runs/06dd5b3f1a7249f990075114c797a34c\nreview_tag=$author_root/build/readable-release/tag/geotiff-tatry-local.zip\nreview_manual=$author_root/build/readable-release/manual/geotiff-tatry-local.zip\nreview_image=$(cat \"$review_root/build/independent-review/runtime-image\")\nreview_options=(--rm --platform linux/amd64 --network none --read-only --tmpfs /tmp:rw,nosuid,size=512m\n --mount \"type=bind,source=$review_root,target=/workspace,readonly\"\n --mount \"type=bind,source=$review_root/build,target=/build\"\n --mount \"type=bind,source=$review_run,target=/review-run,readonly\"\n --mount \"type=bind,source=$review_tag,target=/tag.zip,readonly\"\n --mount \"type=bind,source=$review_manual,target=/manual.zip,readonly\")\ndocker run \"${review_options[@]}\" \"$review_image\" python /build/independent-review/independent_inventory.py \\\n --run /review-run --tag /tag.zip --manual /manual.zip \\\n --report /build/independent-review/independent-inventory.json \\\n 2>&1 | tee \"$review_root/build/independent-review/independent-inventory.log\"\ndocker run \"${review_options[@]}\" \"$review_image\" python pipeline/release_acceptance.py \\\n --report /build/independent-review/tag-acceptance.json verify --archive /tag.zip \\\n 2>&1 | tee \"$review_root/build/independent-review/tag-acceptance.log\"\ndocker run \"${review_options[@]}\" \"$review_image\" python pipeline/release_acceptance.py \\\n --report /build/independent-review/manual-acceptance.json verify --archive /manual.zip \\\n 2>&1 | tee \"$review_root/build/independent-review/manual-acceptance.log\"\n",
+      "path": "/Users/dariuszlubomski/.codex/worktrees/review-readable-release-names/Georeferencer/build/independent-review/run-archive-acceptance.sh",
+      "sha256": "33bf8e317b9530ae02351c0f7c70dd079c9adf0a19ca4a733e24d760566671a6"
+    },
+    "archive_acceptance_runner_exit_code": 0,
+    "artifact_environment": {
+      "GDAL": "GDAL 3.12.4 \"Chicoutimi\", released 2026/04/22",
+      "GDAL build": "OGR_ENABLED=YES\nCURL_ENABLED=YES\nCURL_VERSION=8.5.0\nGEOS_ENABLED=YES\nGEOS_VERSION=3.12.1-CAPI-1.18.1\nPROJ_BUILD_VERSION=9.8.1\nPROJ_RUNTIME_VERSION=9.8.1\nCOMPILER=GCC 13.3.0",
+      "PROJ (pyproj)": "9.8.1",
+      "Python": "3.12.3",
+      "architecture": "x86_64",
+      "packages": {
+        "Jinja2": "3.1.6",
+        "MarkupSafe": "3.0.4",
+        "PyYAML": "6.0.3",
+        "certifi": "2026.10.23",
+        "numpy": "2.5.4",
+        "pandas": "3.1.0",
+        "pillow": "13.0.0",
+        "pip": "25.3",
+        "pyarrow": "26.0.0",
+        "pyproj": "3.8.0",
+        "python-dateutil": "3.0.0",
+        "six": "1.17.0",
+        "tzdata": "2026.5"
+      },
+      "system": "Linux"
+    },
+    "check": {
+      "command": "./scripts/check",
+      "container_seconds": 335.799,
+      "container_tests": 209,
+      "exit_code": 0,
+      "host_seconds": 1.991,
+      "host_tests": 7,
+      "log": "/Users/dariuszlubomski/.codex/worktrees/review-readable-release-names/Georeferencer/build/independent-review/check.log",
+      "sha256": "dab3f9312e1cdcfc25c4c2b85405c4013ad37c95c48da14ca91c29ebf24c1d89"
+    },
+    "controlled_regression": {
+      "command": "docker run --rm --platform linux/amd64 --network none --read-only --tmpfs /tmp:rw,nosuid,size=512m --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-readable-release-names/Georeferencer,target=/workspace,readonly \"$(cat build/independent-review/runtime-image)\" python docs/reports/readable-release-controlled-regression.py",
+      "detected": true,
+      "errors": 0,
+      "exit_code": 0,
+      "expected_assertion_failures": 1,
+      "log": "/Users/dariuszlubomski/.codex/worktrees/review-readable-release-names/Georeferencer/build/independent-review/controlled-regression.log",
+      "sha256": "9b2a038fd0d63f70627bf2eab220efa939fea9409d5c2f244d31862e37e3ab98",
+      "tests": 1
+    },
+    "docker_runtime_image": "sha256:2a052ac177f8aed1f836f34f66b7d97c34271f39808216428d91a94fd8110746",
+    "environment": {
+      "GDAL": "3.12.4",
+      "PROJ (GDAL)": "9.8.1",
+      "PROJ (pyproj)": "9.8.1",
+      "Python": "3.12.3",
+      "architecture": "x86_64",
+      "packages": {
+        "Jinja2": "3.1.6",
+        "MarkupSafe": "3.0.4",
+        "PyYAML": "6.0.3",
+        "certifi": "2026.10.23",
+        "numpy": "2.5.4",
+        "pandas": "3.1.0",
+        "pillow": "13.0.0",
+        "pip": "25.3",
+        "pyarrow": "26.0.0",
+        "pyproj": "3.8.0",
+        "python-dateutil": "3.0.0",
+        "six": "1.17.0",
+        "tzdata": "2026.5"
+      },
+      "system": "Linux"
+    },
+    "incomplete_sandbox_attempt": {
+      "container_tests": 0,
+      "host_tests": 7,
+      "reason": "Initial default sandbox blocked new worktree report directory and Docker socket. Full successful command was then run with required Docker access."
+    },
+    "independent_inventory": {
+      "archives": [
+        {
+          "all_historical_names": "PASS",
+          "archive": "/tag.zip",
+          "archive_bytes": 21568234,
+          "archive_sha256": "cf018213953a749ff13d694ea9987f6b880a390a59d77b0eaed819a5ab99de13",
+          "crc": "PASS",
+          "exact_inventory": "PASS",
+          "identical_output_bytes": 2442,
+          "mode": "tag",
+          "output_sha256": "PASS",
+          "raw_zipinfos": 2443,
+          "run_manifest_identical": true,
+          "tiffs_at_root": 814,
+          "validated_before_lookup": true
+        },
+        {
+          "all_historical_names": "PASS",
+          "archive": "/manual.zip",
+          "archive_bytes": 21568235,
+          "archive_sha256": "1a07d24bf4b1f3b11d79246c3ce4948425fdb91b192f245ddc7c47b32b04b069",
+          "crc": "PASS",
+          "exact_inventory": "PASS",
+          "identical_output_bytes": 2442,
+          "mode": "manual",
+          "output_sha256": "PASS",
+          "raw_zipinfos": 2443,
+          "run_manifest_identical": true,
+          "tiffs_at_root": 814,
+          "validated_before_lookup": true
+        }
+      ],
+      "outputs": 2442,
+      "passed": true,
+      "plans": 814,
+      "report": "/Users/dariuszlubomski/.codex/worktrees/review-readable-release-names/Georeferencer/build/independent-review/independent-inventory.json",
+      "script": "/Users/dariuszlubomski/.codex/worktrees/review-readable-release-names/Georeferencer/build/independent-review/independent_inventory.py",
+      "script_sha256": "24c4dc47628caa081e35fb03064704618d19c9d503a59f167f63e22dfeeeb6d1",
+      "sha256": "8060dce98a15513d5373251350a80b6bc87eb5c237d15b49ff7dd98ef38799dc"
+    },
+    "report_files": {
+      "check.log": "dab3f9312e1cdcfc25c4c2b85405c4013ad37c95c48da14ca91c29ebf24c1d89",
+      "controlled-regression.log": "9b2a038fd0d63f70627bf2eab220efa939fea9409d5c2f244d31862e37e3ab98",
+      "independent-inventory.json": "8060dce98a15513d5373251350a80b6bc87eb5c237d15b49ff7dd98ef38799dc",
+      "independent-inventory.log": "ffdfea204f191b9908376e23b888d07d4cb9f2396e608e9e8d4e6ca91cd5eaab",
+      "independent_inventory.py": "24c4dc47628caa081e35fb03064704618d19c9d503a59f167f63e22dfeeeb6d1",
+      "manual-acceptance.json": "b1a38f5196a24a1af3ffd54d998511b8b63e079a6cb5d1dddaeda533fe1d821e",
+      "manual-acceptance.log": "63c5668ac5b64845b25f8f0c132bf9fb8edd7992796f2a4ad260f85b302afb87",
+      "run-archive-acceptance.sh": "33bf8e317b9530ae02351c0f7c70dd079c9adf0a19ca4a733e24d760566671a6",
+      "tag-acceptance.json": "d029e6bbfbfe9c566220ba681b785b8bbc0c834ed6e8f33f0306fc70a25481a7",
+      "tag-acceptance.log": "c5c3e114f41247a4fe388515488fa87391087884f784da9afcac22576f78eeea"
+    },
+    "reviewer_owned_audit_script": "/Users/dariuszlubomski/.codex/worktrees/review-readable-release-names/Georeferencer/build/independent-review/independent_inventory.py",
+    "reviewer_owned_audit_script_sha256": "24c4dc47628caa081e35fb03064704618d19c9d503a59f167f63e22dfeeeb6d1",
+    "run": {
+      "current_after_acceptance": "runs/06dd5b3f1a7249f990075114c797a34c",
+      "generated": 814,
+      "host_path": "/Users/dariuszlubomski/.codex/worktrees/readable-release-names/Georeferencer/build/geotiff/runs/06dd5b3f1a7249f990075114c797a34c",
+      "manifest_sha256": "1b4ed64188b11f96811f282122d3e7edd8c13c805a61268b8dea4949feac6b63",
+      "manifest_unchanged": true,
+      "reused": 0,
+      "run_id": "06dd5b3f1a7249f990075114c797a34c"
+    }
+  },
+  "worktree": "/Users/dariuszlubomski/.codex/worktrees/review-readable-release-names/Georeferencer"
+}

@@ -1,0 +1,137 @@
+{
+  "base_commit": "addd87607b6356a8ade8fe3e0799d3472ff1af77",
+  "command": "./scripts/check",
+  "container_seconds": 282.21,
+  "container_tests": 209,
+  "environment": {
+    "GDAL": "3.12.4",
+    "PROJ (GDAL)": "9.8.1",
+    "PROJ (pyproj)": "9.8.1",
+    "Python": "3.12.3",
+    "architecture": "x86_64",
+    "packages": {
+      "Jinja2": "3.1.6",
+      "MarkupSafe": "3.0.4",
+      "PyYAML": "6.0.3",
+      "certifi": "2026.10.23",
+      "numpy": "2.5.4",
+      "pandas": "3.1.0",
+      "pillow": "13.0.0",
+      "pip": "25.3",
+      "pyarrow": "26.0.0",
+      "pyproj": "3.8.0",
+      "python-dateutil": "3.0.0",
+      "six": "1.17.0",
+      "tzdata": "2026.5"
+    },
+    "system": "Linux"
+  },
+  "host_tests": 7,
+  "passed": true,
+  "proofs": {
+    "check-implementation.log": {
+      "sha256": "9cb47a61112d13e12ab24521b290f202e73e7be1aa0971dff99ea205bf961066",
+      "tail": [
+        "test_uses_catalogue_numbers_for_agreeing_numeric_or_canonical_coordinates (test_validation.PlanValidationTest.test_uses_catalogue_numbers_for_agreeing_numeric_or_canonical_coordinates) ... ok",
+        "test_yaml_errors_and_duplicate_keys_are_reported_without_writes (test_validation.PlanValidationTest.test_yaml_errors_and_duplicate_keys_are_reported_without_writes) ... ok",
+        "",
+        "----------------------------------------------------------------------",
+        "Ran 209 tests in 282.210s",
+        "",
+        "OK"
+      ]
+    },
+    "controlled-regression.log": {
+      "sha256": "87f991ea86d167cdc7b3cad5ef3b06711859043757a30afce53893b1ae93792a",
+      "tail": [
+        "'001131_T.X-01.02_Plan_syntetyczny.tif'",
+        "",
+        "----------------------------------------------------------------------",
+        "Ran 1 test in 1.743s",
+        "",
+        "FAILED (failures=1)",
+        "Kontrolowana regresja wykryta: True"
+      ]
+    },
+    "green-deflate.log": {
+      "sha256": "c85feda2af10361c3f6a3b6f34aa4beef4e62bfb6a771dacff870db87965fec1",
+      "tail": [
+        "test_invalid_deflate_stream_has_a_readable_rejection (test_release_acceptance.AcceptanceTest.test_invalid_deflate_stream_has_a_readable_rejection) ... ok",
+        "",
+        "----------------------------------------------------------------------",
+        "Ran 1 test in 1.363s",
+        "",
+        "OK"
+      ]
+    },
+    "green-dos-directory.log": {
+      "sha256": "f99a3db1243edd63ffbd26effdc903ed789f5167988c5921888d47e68ce6271a",
+      "tail": [
+        "test_dos_directory_attribute_blocks_an_otherwise_valid_member (test_release_acceptance.AcceptanceTest.test_dos_directory_attribute_blocks_an_otherwise_valid_member) ... ok",
+        "",
+        "----------------------------------------------------------------------",
+        "Ran 1 test in 1.328s",
+        "",
+        "OK"
+      ]
+    },
+    "red-deflate.log": {
+      "sha256": "706bfd1c89faf9e2326f15a619e8ffe57549410491ab4911cbd23f8f73b89b99",
+      "tail": [
+        "    self.assertIsInstance(error, ValueError, 'Uszkodzenie ZIP musi dać czytelny błąd odbioru')",
+        "AssertionError: error('Error -3 while decompressing data: invalid block type') is not an instance of <class 'ValueError'> : Uszkodzenie ZIP musi dać czytelny błąd odbioru",
+        "",
+        "----------------------------------------------------------------------",
+        "Ran 1 test in 1.572s",
+        "",
+        "FAILED (failures=1)"
+      ]
+    },
+    "red-dos-directory.log": {
+      "sha256": "aec1cf977f54b950faf828ed4fca7cf42bbc8ea485aa137d0cc2026216065063",
+      "tail": [
+        "    with self.assertRaises(ValueError):",
+        "AssertionError: ValueError not raised",
+        "",
+        "----------------------------------------------------------------------",
+        "Ran 1 test in 1.670s",
+        "",
+        "FAILED (failures=1)"
+      ]
+    },
+    "red-layout.log": {
+      "sha256": "10876a5e7477c17bfe9726371c2c0aef01b8b5a6fe511185403b498960ef5092",
+      "tail": [
+        "    self.assertIsNotNone(importlib.util.find_spec('release_layout'),",
+        "AssertionError: unexpectedly None : Brak mapowania czytelnych nazw t11-v2",
+        "",
+        "----------------------------------------------------------------------",
+        "Ran 7 tests in 0.001s",
+        "",
+        "FAILED (failures=7)"
+      ]
+    },
+    "t11-regression-preserved.log": {
+      "sha256": "ca6c722d996048d460817bd028d0e0bde27c20d142b1e631fca01dc201c3ee40",
+      "tail": [
+        "AssertionError: ValueError not raised",
+        "",
+        "----------------------------------------------------------------------",
+        "Ran 1 test in 1.225s",
+        "",
+        "FAILED (failures=1)",
+        "Kontrolowana regresja wykryta: True"
+      ]
+    }
+  },
+  "schema_version": 1,
+  "scope": {
+    "GPS_PR_28_included": false,
+    "GPS_candidate_sha256_preserved": "44f0d4efcffe80defb43fb3856b8582bafc3b5c9987c1e97be8df4e01579a2fc",
+    "history_changes": false,
+    "pin": "v1.3.1",
+    "source_data_changes": false
+  },
+  "source_commit": "852d2fcac32cd7e7555eedc22f660875634b0b53",
+  "total_tests": 216
+}
