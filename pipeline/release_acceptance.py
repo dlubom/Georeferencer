@@ -2,8 +2,10 @@
 import argparse
 import hashlib
 import json
+import stat
 import tempfile
 import zipfile
+import zlib
 from pathlib import Path
 
 from coordinate_source import ROOT, sha256
@@ -12,7 +14,7 @@ import build_identity
 import orientation
 from qa import create_report
 
-RELEASE_VERSION = 't11-v1'
+from release_layout import RELEASE_VERSION, SUPPORTED_VERSIONS, check_path, path_key, files_for_release
 
 
 def qa_evidence(report):
@@ -33,51 +35,55 @@ def verify_archive(archive, data_dir=ROOT / 'data/caves', *, qa_kwargs=None):
     try:
         with zipfile.ZipFile(archive) as package, tempfile.TemporaryDirectory(prefix='t11-zip-') as temporary:
             entries = package.infolist()
+            # Każde surowe ZipInfo przed jakimkolwiek mapowaniem/zbiorem.
+            for entry in entries:
+                check_path(entry.orig_filename)
+                if entry.orig_filename != entry.filename:
+                    raise ValueError('ZIP: nazwa wpisu została obcięta')
+                kind = stat.S_IFMT(entry.external_attr >> 16)
+                if entry.is_dir() or entry.external_attr & 0x10 or kind not in (0, stat.S_IFREG) or entry.flag_bits & 1:
+                    raise ValueError('ZIP: niedozwolony katalog/dowiązanie/typ pliku lub szyfrowanie')
             names = [i.filename for i in entries]
-            if len(names) != len(set(names)) or names.count('manifest.json') != 1:
-                raise ValueError('ZIP: powtórzone pliki albo brak manifestu')
+            keys = [path_key(name) for name in names]
+            if len(keys) != len(set(keys)) or names.count('manifest.json') != 1:
+                raise ValueError('ZIP: kolizja/powtórzone pliki albo brak manifestu')
             run = Path(temporary)
             (run / 'manifest.json').write_bytes(package.read('manifest.json'))
             manifest = read_json(run / 'manifest.json')
             release = manifest.pop('release')
-            if (release['version'] != RELEASE_VERSION or release['mode'] not in ('tag', 'manual')
+            version = release['version']
+            if (version not in SUPPORTED_VERSIONS or release['mode'] not in ('tag', 'manual')
                     or release['run_id'] != manifest['run_id']):
                 raise ValueError('ZIP: niepoprawny kontrakt wydania/przebiegu')
             # Oryginalny manifest ma jednoznaczny serializer T04.
             write_json(run / 'manifest.json', manifest)
             if sha256(run / 'manifest.json') != release['run_manifest_sha256']:
                 raise ValueError('ZIP: niespójne powiązanie z manifestem przebiegu')
-            expected = {'manifest.json'}
-            ids = []
-            for plan in manifest['plans']:
-                plan_id = plan['dir_id']
-                if not isinstance(plan_id, str) or not plan_id or Path(plan_id).name != plan_id or plan_id in ('.', '..'):
-                    raise ValueError('ZIP: niepoprawna ścieżka planu')
-                ids.append(plan_id)
-                if set(plan['outputs']) != {'image.tfw', 'image_georef.tif', 'computed.json'}:
-                    raise ValueError('ZIP: niepoprawny komplet wyników planu')
-                expected.update(plan_id + '/' + name for name in plan['outputs'])
-            if len(ids) != len(set(ids)) or set(names) != expected:
-                raise ValueError('ZIP: brakujące, dodatkowe lub powtórzone wyniki')
-            for entry in entries:
-                if entry.is_dir() or (entry.external_attr >> 16) & 0o170000 == 0o120000:
-                    raise ValueError('ZIP: niedozwolony katalog/dowiązanie')
-                if entry.filename == 'manifest.json':
-                    continue
-                target = run / entry.filename
+            files = files_for_release(manifest, data_dir, version=version)
+            if version == RELEASE_VERSION and release.get('files') != files:
+                raise ValueError('ZIP: mapowanie wyników/nazw niezgodne ze źródłami i przebiegiem')
+            if set(names) != {'manifest.json', *(f['archive_path'] for f in files)}:
+                raise ValueError('ZIP: brakujące lub dodatkowe wyniki')
+            by_name = {entry.filename: entry for entry in entries}
+            for item in files:
+                # Nazwy prezentacyjne nigdy nie wybierają lokalnego celu.
+                target = run / item['plan_id'] / item['output']
                 if run not in target.resolve().parents:
                     raise ValueError('ZIP: ścieżka poza katalogiem prywatnym')
+                raw = package.read(by_name[item['archive_path']])  # strumień/CRC każdego ZipInfo
+                if hashlib.sha256(raw).hexdigest() != item['sha256']:
+                    raise ValueError(f"ZIP: niezgodny hash wyniku {item['archive_path']}")
                 target.parent.mkdir(exist_ok=True)
-                target.write_bytes(package.read(entry))  # odczyt strumienia i CRC każdego ZipInfo
+                target.write_bytes(raw)
             # T09 ponownie sprawdza cały katalog, hashe, rzeczywisty GDAL/Pillow
             # oraz aktualny rejestr wyjątków. Manifest nie udziela dopuszczenia.
             report = create_report(data_dir, run_dir=run, require_results=True, **(qa_kwargs or {}))
             if not report['passed'] or release['qa'] != qa_evidence(report):
                 raise ValueError('ZIP: QA blokuje wydanie lub dowody wyjątków są nieaktualne')
-            return {'passed': True, 'files': len(entries), 'plans': len(ids),
-                    'archive_sha256': sha256(archive), 'run_id': manifest['run_id'],
+            return {'passed': True, 'files': len(entries), 'plans': len(manifest['plans']),
+                    'archive_sha256': sha256(archive), 'release_version': version, 'run_id': manifest['run_id'],
                     'run_manifest_sha256': release['run_manifest_sha256'], 'qa': report['counts']}
-    except (OSError, KeyError, TypeError, zipfile.BadZipFile, RuntimeError) as exc:
+    except (OSError, KeyError, TypeError, AttributeError, UnicodeError, zipfile.BadZipFile, zlib.error, RuntimeError) as exc:
         raise ValueError(f'ZIP: błąd odbioru: {exc}') from exc
 
 

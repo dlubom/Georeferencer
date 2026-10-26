@@ -184,14 +184,40 @@ Raporty powstają poza przebiegiem. Nowa lub stara niedopuszczona niepewność,
 stary wyjątek oraz błąd techniczny/wyniku blokują ZIP. Rejestr wyjątków
 pozostaje niezmieniony; narzędzie nie ma automatycznego odświeżania podstaw.
 
-ZIP zawiera `manifest.json` i dokładnie trzy zadeklarowane pliki w każdym
-katalogu `plan_id/`. To świadoma zmiana poprzedniego płaskiego archiwum TIFF:
-identyfikatory i pochodzenie nie giną, a wynik ma komplet do niezależnego
-odbioru. Nie ma globu po TIFF-ach. Bajty plików są sprawdzane przy zapisie ZIP,
-komplet i źródła ponownie po QA; ZIP zastępuje wcześniejszą paczkę atomowo.
-Workflow tworzy wydanie dopiero po sukcesie tej samej komendy dla obu zdarzeń.
-Próby lokalne nigdy nie publikują. T11 niezależnie sprawdzi te bramki i doda
-odbiór odtwarzalności z czystego checkoutu.
+ZIP `t11-v2` zawiera czytelne GeoTIFF-y w korzeniu i sidecary w `metadane/`:
+
+```text
+001094_T.D-08.07_Jaskinia_Mroźna.tif
+manifest.json
+metadane/001094/image.tfw
+metadane/001094/computed.json
+```
+
+Jeden TIFF na plan, dokładnie trzy zadeklarowane wyniki na plan, bez kopii
+TIFF-a pod nazwą wewnętrzną. Przebieg generatora nadal używa
+`plan_id/{image_georef.tif,image.tfw,computed.json}`. Manifest przebiegu
+pozostaje niezmienny. Manifest ZIP dodaje `release.files` z relacjami
+`plan_id`, `output`, `archive_path`, `sha256`, sprawdzanymi względem
+wejściowego YAML-a, jego hasha i wyników. Nazwy pochodzą z wersjonowanych
+`cave.inventory_number` i `cave.name`, z prefiksem ID katalogu planu.
+Historyczna normalizacja v0.6.2 zamienia ASCII spacje i `/` na `_`, usuwa
+ASCII apostrofy i cudzysłowy; zachowuje polskie znaki, wielkość liter,
+kropki, myślniki i powtarzające się `_`. Brak tekstu, pusta nazwa po
+normalizacji, niebezpieczna ścieżka lub kolizja (także NFC/casefold)
+blokują paczkę. Nie ma fallbacków, pomijania ani sufiksów.
+
+Zmiana wersji kontraktu wydania jest konieczna, ponieważ zmieniają się
+ścieżki konsumenckie w ZIP i dochodzi obowiązkowe mapowanie wszystkich
+wyników; nie jest to zmiana georeferencji ani manifestu przebiegu v1.
+Odbiornik nadal rozpoznaje `t11-v1` i wykonuje jego pełną walidację,
+łącznie z aktualnością; nieznane wersje odrzuca. Stare dowody i archiwa
+pozostają historyczne, a zmiana kodu nie zwalnia ich z kontroli aktualności.
+
+Nie ma globu po TIFF-ach. Bajty plików są sprawdzane przy zapisie ZIP,
+komplet i źródła ponownie po QA; niezależny odbiór gotowego ZIP poprzedza
+atomową podmianę. Workflow tworzy wydanie dopiero po sukcesie tej samej
+komendy dla obu zdarzeń. Schemat `geotiff-tatry-${RELEASE_TAG}.zip`
+pozostaje bez zmian. Próby lokalne nigdy nie publikują.
 
 Testy regresji znajdują się w `tests/test_geotiff_output.py` i uruchamiają
 się przez wspólne `./scripts/check` bez nowych zależności.
