@@ -1,0 +1,184 @@
+{
+  "archive_source_note": "Paczki z czystego commitu implementacji. Końcowy commit dowodów zmienia wyłącznie dokumentację/raporty; aktualność zależy od treści i środowiska, nie od SHA dokumentacji.",
+  "artifact_audits_agree_for_all_2442_relations": true,
+  "contracts": {
+    "producer": "t11-v2",
+    "reader": [
+      "t11-v1",
+      "t11-v2"
+    ],
+    "run_manifest": 1
+  },
+  "generation_count": 1,
+  "independent_review": {
+    "archive_acceptance": {
+      "manual": {
+        "archive_sha256": "1a07d24bf4b1f3b11d79246c3ce4948425fdb91b192f245ddc7c47b32b04b069",
+        "files": 2443,
+        "host_archive": "/Users/dariuszlubomski/.codex/worktrees/readable-release-names/Georeferencer/build/readable-release/manual/geotiff-tatry-local.zip",
+        "passed": true,
+        "plans": 814,
+        "qa": {
+          "accepted": 1405,
+          "blocking": 0,
+          "origins": {
+            "crowdsourcing": 801,
+            "manual_historical": 13
+          },
+          "plans": 814,
+          "problems": 1405
+        },
+        "release_version": "t11-v2",
+        "report": "/Users/dariuszlubomski/.codex/worktrees/review-readable-release-names/Georeferencer/build/independent-review/manual-acceptance.json",
+        "run_id": "06dd5b3f1a7249f990075114c797a34c",
+        "run_manifest_sha256": "1b4ed64188b11f96811f282122d3e7edd8c13c805a61268b8dea4949feac6b63"
+      },
+      "tag": {
+        "archive_sha256": "cf018213953a749ff13d694ea9987f6b880a390a59d77b0eaed819a5ab99de13",
+        "files": 2443,
+        "host_archive": "/Users/dariuszlubomski/.codex/worktrees/readable-release-names/Georeferencer/build/readable-release/tag/geotiff-tatry-local.zip",
+        "passed": true,
+        "plans": 814,
+        "qa": {
+          "accepted": 1405,
+          "blocking": 0,
+          "origins": {
+            "crowdsourcing": 801,
+            "manual_historical": 13
+          },
+          "plans": 814,
+          "problems": 1405
+        },
+        "release_version": "t11-v2",
+        "report": "/Users/dariuszlubomski/.codex/worktrees/review-readable-release-names/Georeferencer/build/independent-review/tag-acceptance.json",
+        "run_id": "06dd5b3f1a7249f990075114c797a34c",
+        "run_manifest_sha256": "1b4ed64188b11f96811f282122d3e7edd8c13c805a61268b8dea4949feac6b63"
+      }
+    },
+    "check": {
+      "command": "./scripts/check",
+      "container_seconds": 335.799,
+      "container_tests": 209,
+      "exit_code": 0,
+      "host_seconds": 1.991,
+      "host_tests": 7,
+      "log": "/Users/dariuszlubomski/.codex/worktrees/review-readable-release-names/Georeferencer/build/independent-review/check.log",
+      "sha256": "dab3f9312e1cdcfc25c4c2b85405c4013ad37c95c48da14ca91c29ebf24c1d89"
+    },
+    "findings": {
+      "Critical": [],
+      "Important": [],
+      "Minor": []
+    },
+    "reports": {
+      "docs/plans/2026-10-26-readable-release-review.md": "2d641e2bb48cba887ffb91c882ad07e2609f887d60b41f3b32efe8f2b25bb040",
+      "docs/reports/readable-release-independent-inventory.json": "8060dce98a15513d5373251350a80b6bc87eb5c237d15b49ff7dd98ef38799dc",
+      "docs/reports/readable-release-independent-review.json": "9ff3fb76b86a6638f83f5997e7df0679fd9d17bc8d64f09f12de840fb51be48c",
+      "docs/reports/readable-release-review-audit.py": "24c4dc47628caa081e35fb03064704618d19c9d503a59f167f63e22dfeeeb6d1"
+    },
+    "reviewed_head": "852d2fcac32cd7e7555eedc22f660875634b0b53",
+    "verdict": "PASS"
+  },
+  "main": "addd87607b6356a8ade8fe3e0799d3472ff1af77",
+  "main_ruleset": {
+    "_links": {
+      "html": {
+        "href": "https://github.com/dlubom/Georeferencer/rules/25796826"
+      },
+      "self": {
+        "href": "https://api.github.com/repos/dlubom/Georeferencer/rulesets/25796826"
+      }
+    },
+    "bypass_actors": [],
+    "conditions": {
+      "ref_name": {
+        "exclude": [],
+        "include": [
+          "refs/heads/main"
+        ]
+      }
+    },
+    "created_at": "2026-10-24T22:32:26.548+02:00",
+    "current_user_can_bypass": "never",
+    "enforcement": "active",
+    "id": 25796826,
+    "name": "Wymagana kontrola projektu",
+    "node_id": "RRS_lACqUmVwb3NpdG9yec5DgmmDzgGJoNo",
+    "rules": [
+      {
+        "parameters": {
+          "do_not_enforce_on_create": false,
+          "required_status_checks": [
+            {
+              "context": "Kontrola projektu",
+              "integration_id": 15368
+            }
+          ],
+          "strict_required_status_checks_policy": true
+        },
+        "type": "required_status_checks"
+      }
+    ],
+    "source": "dlubom/Georeferencer",
+    "source_type": "Repository",
+    "target": "branch",
+    "updated_at": "2026-10-24T22:32:26.645+02:00"
+  },
+  "protected_diff": "",
+  "protected_paths": [
+    "data",
+    "parquet",
+    ".github",
+    "scripts",
+    "ci",
+    "pipeline/02_generate_geotiff.py",
+    "pipeline/geotiff_output.py",
+    "pipeline/build_identity.py",
+    "pipeline/qa.py",
+    "pipeline/qa_outputs.py",
+    "pipeline/orientation.py",
+    "docs/plans/2026-10-25-t11-odbior.md",
+    "docs/plans/2026-10-25-t11-review.md",
+    "docs/reports/t11-reproducibility.json",
+    "docs/reports/t11-delivery.json",
+    "docs/reports/t11-independent-review.json",
+    "docs/reports/t11-controlled-regression.py"
+  ],
+  "publication": false,
+  "qa": {
+    "manual": {
+      "all_current": true,
+      "command": "./scripts/build package --mode manual --run-dir /build/geotiff/runs/06dd5b3f1a7249f990075114c797a34c --reports-dir /build/readable-release/manual-qa --archive /build/readable-release/manual/geotiff-tatry-local.zip",
+      "counts": {
+        "accepted": 1405,
+        "blocking": 0,
+        "origins": {
+          "crowdsourcing": 801,
+          "manual_historical": 13
+        },
+        "plans": 814,
+        "problems": 1405
+      },
+      "qa_sha256": "dcae0f274498d0d1c6fc4b11a453803fe2f7049495c0ce38705f838be0248f09"
+    },
+    "tag": {
+      "all_current": true,
+      "command": "./scripts/build package --mode tag --run-dir /build/geotiff/runs/06dd5b3f1a7249f990075114c797a34c --reports-dir /build/readable-release/tag-qa --archive /build/readable-release/tag/geotiff-tatry-local.zip",
+      "counts": {
+        "accepted": 1405,
+        "blocking": 0,
+        "origins": {
+          "crowdsourcing": 801,
+          "manual_historical": 13
+        },
+        "plans": 814,
+        "problems": 1405
+      },
+      "qa_sha256": "9c4d31f76b63b8318445cbf932022bfc7173b27f490d3096204642d73045f3ef"
+    }
+  },
+  "repeated_cold_build_pair": false,
+  "run_and_current_unchanged_after_packaging": true,
+  "schema_version": 1,
+  "source_commit": "852d2fcac32cd7e7555eedc22f660875634b0b53"
+}

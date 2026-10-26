@@ -37,8 +37,8 @@ Pliki: pipeline/release_layout.py (nowy kontrakt/derywacja nazw), package_releas
 
 ## Zadanie 2 — pełny odbiór i dostarczenie
 
-- [ ] Z czystego commitu wykonać jeden pełny katalog w przypiętym środowisku, pełne QA i lokalne paczki tag/manual z jednego konkretnego run.
-- [ ] Niezależnie porównać wszystkie historyczne nazwy, ZipInfo, komplet wpisów i bajty 2442 wyników; accept verify obu archiwów.
-- [ ] Zlecić świeżemu agentowi review źródeł i odbiór gotowych paczek według zaktualizowanej instrukcji; poprawić potwierdzone błędy z regresją.
+- [x] Z czystego commitu wykonać jeden pełny katalog w przypiętym środowisku, pełne QA i lokalne paczki tag/manual z jednego konkretnego run.
+- [x] Niezależnie porównać wszystkie historyczne nazwy, ZipInfo, komplet wpisów i bajty 2442 wyników; accept verify obu archiwów.
+- [x] Zlecić świeżemu agentowi review źródeł i odbiór gotowych paczek według zaktualizowanej instrukcji; poprawić potwierdzone błędy z regresją.
 - [ ] Zapisać nowe dowody osobno od T11, ponowić wymagane kontrole po zmianach, wypchnąć końcowy commit i utworzyć PR.
 - [ ] Poczekać na terminalny wynik CI końcowej rewizji. Bez merge/tag/release/publikacji.
