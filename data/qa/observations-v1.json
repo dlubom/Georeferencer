@@ -922,19 +922,6 @@
     {
       "source": "https://github.com/dlubom/Georeferencer/issues/3",
       "source_updated_at": "2026-05-17T17:58:34Z",
-      "name": "Jaskinia Mroźna",
-      "note": "- [ ] `001094` / `T.D-08.07` / Jaskinia Mroźna: wybrano `KSW-0081` — Jaskinia Mroźna - wyjście z trasy turystycznej; alternatywa `KSW-0256` — wejście na trasę turystyczną.",
-      "plan_ids": [
-        "001094"
-      ],
-      "rule": "entrance.review",
-      "historical_selected_object_id": "KSW-0081",
-      "alternative_object_id": "KSW-0256",
-      "basis": "Poprawność techniczna jawnego ID nie potwierdza wyboru symbolu otworu na planie; sprawa pozostaje do ręcznego potwierdzenia."
-    },
-    {
-      "source": "https://github.com/dlubom/Georeferencer/issues/3",
-      "source_updated_at": "2026-05-17T17:58:34Z",
       "name": "Jaskinia Zimna",
       "note": "- [ ] `001095` / `T.D-08.08` / Jaskinia Zimna: wybrano `KSW-0090` — otwór dolny; alternatywa `KSW-0257` — Jaskinia Biała / górny otwór Jaskini Zimnej.",
       "plan_ids": [
