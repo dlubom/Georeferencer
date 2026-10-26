@@ -135,7 +135,9 @@ class CatalogueQaTest(unittest.TestCase):
         plans = {p['plan_id']: p for p in self.report['plans']}
         self.assertEqual(sum((p['components'] or {}).get('north', {}).get('observations', 0) for p in plans.values()), 1717)
         self.assertEqual(plans['001094']['components']['north']['observations'], 5)
-        self.assertEqual(plans['001094']['link_status'], 'explicit_valid_pending_review')
+        self.assertEqual(plans['001094']['link_status'], 'explicit_valid')
+        self.assertNotIn('entrance.review', plans['001094']['problems'])
+        self.assertIn('orientation.unknown', plans['001094']['problems'])
         self.assertNotIn('entrance.disagreement', plans['001094']['problems'])
         self.assertEqual(plans['001050']['north_measurements']['angle_deg'], None)
         self.assertEqual(plans['001230']['north_measurements']['angle_deg'], 0)
@@ -153,7 +155,10 @@ class CatalogueQaTest(unittest.TestCase):
             self.assertEqual({p.name: p.read_bytes() for p in first.iterdir()},
                              {p.name: p.read_bytes() for p in second.iterdir()})
         reconciliation = self.report['issue_reconciliation']
-        self.assertEqual(len([r for r in reconciliation if r['source'].endswith('/3')]), 6)
+        pending_entrances = [r for r in reconciliation if r['source'].endswith('/3')]
+        self.assertEqual(len(pending_entrances), 5)
+        self.assertEqual({p for r in pending_entrances for p in r['plan_ids']},
+                         {'001095', '001229', '001299', '001349', '001445'})
         self.assertTrue(all(r['source'].startswith('https://github.com/dlubom/Georeferencer/issues/') for r in reconciliation))
         self.assertTrue(any(r['status'] == 'unmatched_name_or_id' for r in reconciliation))
 
