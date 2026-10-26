@@ -6,6 +6,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 import yaml
 
@@ -16,8 +17,18 @@ sys.path.insert(0, str(ROOT / 'pipeline'))
 class CrowdsourcingMigrationTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        from migrate_crowdsourcing import migration
-        cls.report, cls.writes = migration()
+        import migrate_crowdsourcing as migration
+        from coordinate_source import DEFAULT_MANIFEST, sha256, verify
+        historical_manifest = ROOT / 'data/coordinate-source/source-v1.3.1.json'
+
+        def historical_hash(path):
+            # Raport T07 zachowuje dawną nazwę source.json i jego oryginalny hash.
+            return sha256(historical_manifest if Path(path) == DEFAULT_MANIFEST else path)
+
+        # Odtwarzamy wejścia T07, bez podmiany aktywnego pinu ani zapisu katalogu.
+        with patch.object(migration, 'verify', lambda: verify(historical_manifest)), \
+                patch.object(migration, 'sha256', historical_hash):
+            cls.report, cls.writes = migration.migration()
 
     def test_real_mrozna_drops_test_spread_but_preserves_manual_north(self):
         meta = yaml.safe_load((ROOT / 'data/caves/001094/meta.yaml').read_text())

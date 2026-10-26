@@ -66,9 +66,9 @@ podzbiór do pracy nad wskazanym planem. Dla bezpośredniego Pythona użyj
 ### Release
 
 Tag `v*` i ręczne wydanie z istniejącego tagu używają tego samego przypiętego
-środowiska, źródła gps-kataster **v1.3.1** oraz obowiązkowej bramki manifestu,
-aktualności i pełnego QA T09. ZIP zawiera `manifest.json` i katalogi plan_id
-z GeoTIFF, TFW i computed.json. Próba bez publikacji:
+środowiska, źródła gps-kataster **v1.3.2** oraz obowiązkowej bramki manifestu,
+aktualności i pełnego QA T09. ZIP t11-v2 zawiera czytelne TIFF-y w korzeniu,
+`manifest.json` z pełnym mapowaniem oraz `metadane/{plan_id}/{image.tfw,computed.json}`. Próba bez publikacji:
 
 ```sh
 ./scripts/build generate --all

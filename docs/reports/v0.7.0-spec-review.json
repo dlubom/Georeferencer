@@ -1,0 +1,404 @@
+{
+  "archive_acceptance": {
+    "manual": {
+      "archive_sha256": "30981cb36b40d5d9d034e3d6f4ffb134945d528898687c5e6ad9ce84c73f8ec7",
+      "files": 2443,
+      "passed": true,
+      "plans": 814,
+      "qa": {
+        "accepted": 1405,
+        "blocking": 0,
+        "origins": {
+          "crowdsourcing": 801,
+          "manual_historical": 13
+        },
+        "plans": 814,
+        "problems": 1405
+      },
+      "release_version": "t11-v2",
+      "run_id": "fcec1e537dfd4076bea9120c83ed1db2",
+      "run_manifest_sha256": "0b278929d583acfee4d9212753cc8023640ec4e77e3ded81cdf7422515d698fc"
+    },
+    "tag": {
+      "archive_sha256": "7b0f30fd729a21f3c3d66f820fd2a8dfdda85e76b5a21d1a3dfe3382d6caf39a",
+      "files": 2443,
+      "passed": true,
+      "plans": 814,
+      "qa": {
+        "accepted": 1405,
+        "blocking": 0,
+        "origins": {
+          "crowdsourcing": 801,
+          "manual_historical": 13
+        },
+        "plans": 814,
+        "problems": 1405
+      },
+      "release_version": "t11-v2",
+      "run_id": "fcec1e537dfd4076bea9120c83ed1db2",
+      "run_manifest_sha256": "0b278929d583acfee4d9212753cc8023640ec4e77e3ded81cdf7422515d698fc"
+    }
+  },
+  "base": "1899aa239ef813a7a890f7d5ed3a50c11479b44f",
+  "catalogue_comparison": {
+    "all_rotation_scale_crs_dimensions_pixels_unchanged": true,
+    "changed_tfw": [
+      "001349",
+      "001351",
+      "001387",
+      "010935"
+    ],
+    "code": {
+      "commit": "23a81c834690ff26e3637cb1431ba4ee32590d1f",
+      "dirty": "false"
+    },
+    "historical_t11_report_sha256": "aca30bb839e60bfe31dbd55d5fedfef6d076beccd7af1ddc6e5d0b1ffa8829b5",
+    "new_cold_pair": false,
+    "passed": true,
+    "plans": 814,
+    "qa": {
+      "accepted": 1405,
+      "blocking": 0,
+      "origins": {
+        "crowdsourcing": 801,
+        "manual_historical": 13
+      },
+      "plans": 814,
+      "problems": 1405
+    },
+    "run_id": "fcec1e537dfd4076bea9120c83ed1db2",
+    "run_manifest_sha256": "0b278929d583acfee4d9212753cc8023640ec4e77e3ded81cdf7422515d698fc",
+    "t11_cold_pair_preserved": true,
+    "unchanged_tfw": 810
+  },
+  "cold_build_pair": {
+    "existing_T11_preserved": true,
+    "new_pair_run": false
+  },
+  "commands": [
+    "git diff 1899aa239ef813a7a890f7d5ed3a50c11479b44f...23a81c834690ff26e3637cb1431ba4ee32590d1f",
+    "git log 1899aa239ef813a7a890f7d5ed3a50c11479b44f..23a81c834690ff26e3637cb1431ba4ee32590d1f --oneline",
+    "./scripts/check",
+    "docker build --platform linux/amd64 --iidfile build/v070-independent/runtime-image ci",
+    "git show 1899aa239ef813a7a890f7d5ed3a50c11479b44f:data/qa/exceptions-v1.json > build/v070-independent/prior-exceptions.json",
+    "docker run --rm --platform linux/amd64 --network none --read-only --tmpfs /tmp:rw,nosuid,size=512m --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer,target=/workspace,readonly --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer/build/v070-independent,target=/audit \"$(cat build/v070-independent/runtime-image)\" python docs/reports/coordinate-source-v1.3.2-independent-audit.py",
+    "docker run --rm --platform linux/amd64 --network none --read-only --tmpfs /tmp:rw,nosuid,size=512m --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer,target=/workspace,readonly --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer/build/v070-independent,target=/audit \"$(cat build/v070-independent/runtime-image)\" python docs/reports/readable-release-controlled-regression.py",
+    "docker run --rm --platform linux/amd64 --network none --read-only --tmpfs /tmp:rw,nosuid,size=512m --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer,target=/workspace,readonly --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer/build/v070-independent,target=/audit --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/pr28-v070-t11v2/Georeferencer/build/geotiff/runs/fcec1e537dfd4076bea9120c83ed1db2,target=/input-run,readonly \"$(cat build/v070-independent/runtime-image)\" python pipeline/03_report.py --run-dir /input-run --require-results --reports-dir /audit/full-qa",
+    "docker run --rm --platform linux/amd64 --network none --read-only --tmpfs /tmp:rw,nosuid,size=512m --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer,target=/workspace,readonly --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer/build/v070-independent,target=/audit --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/pr28-v070-t11v2/Georeferencer/build/pr28-v070/source-23a81c8,target=/packages,readonly \"$(cat build/v070-independent/runtime-image)\" python pipeline/release_acceptance.py --report /audit/tag-acceptance-source23.json verify --archive /packages/tag/geotiff-tatry-v0.7.0.zip",
+    "docker run --rm --platform linux/amd64 --network none --read-only --tmpfs /tmp:rw,nosuid,size=512m --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer,target=/workspace,readonly --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer/build/v070-independent,target=/audit --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/pr28-v070-t11v2/Georeferencer/build/pr28-v070/source-23a81c8,target=/packages,readonly \"$(cat build/v070-independent/runtime-image)\" python pipeline/release_acceptance.py --report /audit/manual-acceptance-source23.json verify --archive /packages/manual/geotiff-tatry-v0.7.0.zip",
+    "docker run --rm --platform linux/amd64 --network none --read-only --tmpfs /tmp:rw,nosuid,size=512m --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer,target=/workspace,readonly --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer/build/v070-independent,target=/audit --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/pr28-v070-t11v2/Georeferencer/build/geotiff/runs/fcec1e537dfd4076bea9120c83ed1db2,target=/input-run,readonly --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/pr28-v070-t11v2/Georeferencer/build/pr28-v070/source-23a81c8,target=/packages,readonly \"$(cat build/v070-independent/runtime-image)\" python docs/reports/readable-release-review-audit.py --run /input-run --tag /packages/tag/geotiff-tatry-v0.7.0.zip --manual /packages/manual/geotiff-tatry-v0.7.0.zip --report /audit/independent-inventory-source23.json",
+    "docker run --rm --platform linux/amd64 --network none --read-only --tmpfs /tmp:rw,nosuid,size=512m --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer,target=/workspace,readonly --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer/build/v070-independent,target=/audit \"$(cat build/v070-independent/runtime-image)\" python /audit/standalone-read-regression.py /workspace/docs/reports/v0.7.0-catalogue-audit.py",
+    "docker run --rm --platform linux/amd64 --network none --read-only --tmpfs /tmp:rw,nosuid,size=512m --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer,target=/workspace,readonly --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer/build/v070-independent,target=/audit --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer/build/v070-independent/v0.7.0-catalogue-audit.py,target=/workspace/docs/reports/v0.7.0-catalogue-audit.py,readonly \"$(cat build/v070-independent/runtime-image)\" python /audit/standalone-read-regression.py /workspace/docs/reports/v0.7.0-catalogue-audit.py",
+    "docker run --rm --platform linux/amd64 --network none --read-only --tmpfs /tmp:rw,nosuid,size=512m --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer,target=/workspace,readonly --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer/build/v070-independent,target=/audit --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/pr28-v070-t11v2/Georeferencer/build/geotiff/runs/fcec1e537dfd4076bea9120c83ed1db2,target=/input-run,readonly --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer/build/v070-independent/v0.7.0-catalogue-audit.py,target=/workspace/docs/reports/v0.7.0-catalogue-audit.py,readonly \"$(cat build/v070-independent/runtime-image)\" python docs/reports/v0.7.0-catalogue-audit.py --run /input-run --qa /audit/full-qa/qa.json --report /audit/catalogue-audit-fixed-overlay.json"
+  ],
+  "completed_at_utc": "2026-10-26T08:42:53.784367+00:00",
+  "detached": true,
+  "environment": {
+    "GDAL": "GDAL 3.12.4 \"Chicoutimi\", released 2026/04/22",
+    "GDAL build": "OGR_ENABLED=YES\nCURL_ENABLED=YES\nCURL_VERSION=8.5.0\nGEOS_ENABLED=YES\nGEOS_VERSION=3.12.1-CAPI-1.18.1\nPROJ_BUILD_VERSION=9.8.1\nPROJ_RUNTIME_VERSION=9.8.1\nCOMPILER=GCC 13.3.0",
+    "PROJ (pyproj)": "9.8.1",
+    "Python": "3.12.3",
+    "architecture": "x86_64",
+    "packages": {
+      "Jinja2": "3.1.6",
+      "MarkupSafe": "3.0.4",
+      "PyYAML": "6.0.3",
+      "certifi": "2026.10.23",
+      "numpy": "2.5.4",
+      "pandas": "3.1.0",
+      "pillow": "13.0.0",
+      "pip": "25.3",
+      "pyarrow": "26.0.0",
+      "pyproj": "3.8.0",
+      "python-dateutil": "3.0.0",
+      "six": "1.17.0",
+      "tzdata": "2026.5"
+    },
+    "system": "Linux"
+  },
+  "evidence_sha256": {
+    "catalogue-audit-fixed-overlay.json": "db7b21fd113189ea2d9b423ef5529d906e7eb11779a4509a833f290fbf2a3c88",
+    "catalogue-audit-initial-23a81c8.log": "54edfa42bb2588bd4761e97191ec9504718a522742d77bb7588cfe8d25607c77",
+    "check.log": "0406b34f542500d0a803688374247c532c37f81a6dec38bfc58e2ae6ccdc3446",
+    "controlled-regression.log": "5cd6ce786ea7bdf40fb62ec3d7a13a27e87842652a3df24de716605a19597c7e",
+    "full-qa/qa.json": "b47263ed9492e14885498376e4bcf0f75b964ef243403ff4f34a50dbdb6eb8fa",
+    "independent-inventory-source23.json": "f78c584d8627504fe7e635f512a85e1d296e228c5326ff41cd07fcb82f228913",
+    "independent-source-preservation.json": "4924c415fbc16b294efc8710e6832d70b18036d9a6fac212a2542915cddfd658",
+    "large-image-green.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "large-image-red.log": "d57e907a653e659001d7eb5678c47f0b64cb2036b233624425622a2b05af9fbd",
+    "manual-acceptance-source23.json": "6186a656903c3c6e61eef787da729c7df3b7e4557a04edb2a9d7b066495ec7b0",
+    "source-audit.json": "93bf264ce3f1de7a4bc9d735703def26faecc654a62604962d82e9c3a69cbcb1",
+    "tag-acceptance-source23.json": "ef2b3bff345a95105f1eecd8f3c22746cc65e8519a6d66dffea88d20bd7d9c78"
+  },
+  "full_qa": {
+    "all_outputs_current": 814,
+    "counts": {
+      "accepted": 1405,
+      "blocking": 0,
+      "origins": {
+        "crowdsourcing": 801,
+        "manual_historical": 13
+      },
+      "plans": 814,
+      "problems": 1405
+    },
+    "passed": true
+  },
+  "independent_inventory": {
+    "archives": [
+      {
+        "all_historical_names": "PASS",
+        "archive": "/packages/tag/geotiff-tatry-v0.7.0.zip",
+        "archive_bytes": 21567694,
+        "archive_sha256": "7b0f30fd729a21f3c3d66f820fd2a8dfdda85e76b5a21d1a3dfe3382d6caf39a",
+        "crc": "PASS",
+        "exact_inventory": "PASS",
+        "identical_output_bytes": 2442,
+        "mode": "tag",
+        "output_sha256": "PASS",
+        "raw_zipinfos": 2443,
+        "run_manifest_identical": true,
+        "tiffs_at_root": 814,
+        "validated_before_lookup": true
+      },
+      {
+        "all_historical_names": "PASS",
+        "archive": "/packages/manual/geotiff-tatry-v0.7.0.zip",
+        "archive_bytes": 21567695,
+        "archive_sha256": "30981cb36b40d5d9d034e3d6f4ffb134945d528898687c5e6ad9ce84c73f8ec7",
+        "crc": "PASS",
+        "exact_inventory": "PASS",
+        "identical_output_bytes": 2442,
+        "mode": "manual",
+        "output_sha256": "PASS",
+        "raw_zipinfos": 2443,
+        "run_manifest_identical": true,
+        "tiffs_at_root": 814,
+        "validated_before_lookup": true
+      }
+    ],
+    "historical_rule": "v0.6.2 workflow: ASCII spaces/slashes to underscores, remove ASCII apostrophe/quote, preserve every other character.",
+    "passed": true,
+    "report": "/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer/build/v070-independent/independent-inventory-source23.json",
+    "sha256": "f78c584d8627504fe7e635f512a85e1d296e228c5326ff41cd07fcb82f228913"
+  },
+  "not_judged": [
+    "Field survey accuracy and interpretation of the 1405 explicitly approved uncertainties.",
+    "Remote CI/protected merge/tag/release/public artifact; these remain the parent task gates."
+  ],
+  "overall_verdict": "PASS_WITH_CONFIRMED_FIX",
+  "resolved_findings": [
+    {
+      "file": "docs/reports/v0.7.0-catalogue-audit.py",
+      "fix": "Explicit Image.MAX_IMAGE_PIXELS=None in the standalone audit; no pipeline/source/cache changes.",
+      "fixed_overlay_sha256": {
+        "docs/reports/v0.7.0-catalogue-audit.py": "b955c6c2f5c9aa9ef3105fff117fe9c05259f397c0d61bd278626925acda24ba",
+        "tests/test_release_catalogue_audit.py": "16897b756ff0fe97c585102ad71375eb0cc9bb48473fcbd0a2dce322989565aa"
+      },
+      "id": "SPEC-1",
+      "large_catalogue_green": true,
+      "line": 38,
+      "problem": "Standalone audit stopped on Pillow DecompressionBombError for plan 001197 (28660x16266=466183560 px). Full T09 QA and release artifacts were valid.",
+      "publication_condition": "Commit the reviewed fix/test bytes and retain all required CI/main/release gates.",
+      "regression": "Fresh subprocess, 8x6 TIFF and artificial Pillow limit 10; actual decoded size and pixel SHA verified. RED exit1, GREEN exit0.",
+      "root_cause": "Standalone audit did not import validation.py, which configures Pillow for the registered large 1-bit catalogue.",
+      "severity": "Important",
+      "spec_quote": "pełne QA i rzeczywisty odczyt wszystkich GeoTIFF-ów"
+    }
+  ],
+  "reviewer_tracked_status_after": "",
+  "reviewer_worktree": "/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer",
+  "run": {
+    "code": {
+      "commit": "23a81c834690ff26e3637cb1431ba4ee32590d1f",
+      "dirty": "false"
+    },
+    "generated": 814,
+    "manifest_sha256": "0b278929d583acfee4d9212753cc8023640ec4e77e3ded81cdf7422515d698fc",
+    "path": "/Users/dariuszlubomski/.codex/worktrees/pr28-v070-t11v2/Georeferencer/build/geotiff/runs/fcec1e537dfd4076bea9120c83ed1db2",
+    "reused": 0,
+    "run_id": "fcec1e537dfd4076bea9120c83ed1db2"
+  },
+  "runtime_image_id": "sha256:70e33f207682120185b44a44a00a912d50138523b38aaa1e028e768e3ce16c9c",
+  "schema_version": 1,
+  "source_audit": {
+    "existing_objects_changed": [
+      "KSZ-0047",
+      "KSZ-0064",
+      "KSZ-0090",
+      "KSZ-0113"
+    ],
+    "explicit_plan_links_valid_and_unchanged": 814,
+    "full_field_report_matches_csv": true,
+    "geometry": [
+      {
+        "delta_e_m": -12.879152999958023,
+        "delta_n_m": -3.5011539999977686,
+        "distance_m": 13.34655990613417,
+        "plan_id": "001349",
+        "rotation_scale_unchanged": true
+      },
+      {
+        "delta_e_m": -12.947519000037573,
+        "delta_n_m": -3.562963000003947,
+        "distance_m": 13.42881058008233,
+        "plan_id": "001351",
+        "rotation_scale_unchanged": true
+      },
+      {
+        "delta_e_m": -12.849701999919489,
+        "delta_n_m": -3.480370999983279,
+        "distance_m": 13.312694084378997,
+        "plan_id": "001387",
+        "rotation_scale_unchanged": true
+      },
+      {
+        "delta_e_m": -12.879153999965638,
+        "delta_n_m": -3.5011540000268724,
+        "distance_m": 13.346560871128377,
+        "plan_id": "010935",
+        "rotation_scale_unchanged": true
+      }
+    ],
+    "independent_tfw_changed": [
+      "001349",
+      "001351",
+      "001387",
+      "010935"
+    ],
+    "independent_tfw_matches_t11": 814,
+    "inputs_orientation_aggregate_unchanged": true,
+    "objects_added": [
+      "KSZ-0114",
+      "KSZ-0115",
+      "KSZ-0116",
+      "KSZ-0117"
+    ],
+    "objects_removed": [],
+    "passed": true,
+    "qa_after": {
+      "accepted": 1405,
+      "blocking": 0,
+      "origins": {
+        "crowdsourcing": 801,
+        "manual_historical": 13
+      },
+      "plans": 814,
+      "problems": 1405
+    },
+    "qa_before": {
+      "accepted": 1405,
+      "blocking": 0,
+      "origins": {
+        "crowdsourcing": 801,
+        "manual_historical": 13
+      },
+      "plans": 814,
+      "problems": 1405
+    },
+    "qa_entries_identical": 1396,
+    "qa_entries_reviewed": 9,
+    "qa_evidence_and_close_conditions_unchanged": true,
+    "qa_stale": {
+      "accepted": 1396,
+      "blocking": 18,
+      "origins": {
+        "crowdsourcing": 801,
+        "manual_historical": 13
+      },
+      "plans": 814,
+      "problems": 1414
+    },
+    "source_objects_after": 1028,
+    "source_objects_before": 1024
+  },
+  "source_preservation": {
+    "added": [
+      "KSZ-0114",
+      "KSZ-0115",
+      "KSZ-0116",
+      "KSZ-0117"
+    ],
+    "base": "1899aa239ef813a7a890f7d5ed3a50c11479b44f",
+    "changed_existing": [
+      "KSZ-0047",
+      "KSZ-0064",
+      "KSZ-0090",
+      "KSZ-0113"
+    ],
+    "csv_hashes_verified": [
+      "v1.3.1",
+      "v1.3.2"
+    ],
+    "current_pin_exact_bytes_matches_v132": true,
+    "objects_after": 1028,
+    "objects_before": 1024,
+    "passed": true,
+    "prior_pin_exact_bytes_preserved": true,
+    "protected_diff_empty": true,
+    "qa_changed": [
+      {
+        "plan_id": "001349",
+        "rule": "entrance.disagreement"
+      },
+      {
+        "plan_id": "001349",
+        "rule": "entrance.review"
+      },
+      {
+        "plan_id": "001349",
+        "rule": "orientation.unknown"
+      },
+      {
+        "plan_id": "001351",
+        "rule": "orientation.unknown"
+      },
+      {
+        "plan_id": "001351",
+        "rule": "source.review"
+      },
+      {
+        "plan_id": "001387",
+        "rule": "orientation.unknown"
+      },
+      {
+        "plan_id": "010935",
+        "rule": "entrance.disagreement"
+      },
+      {
+        "plan_id": "010935",
+        "rule": "orientation.unknown"
+      },
+      {
+        "plan_id": "010935",
+        "rule": "source.review"
+      }
+    ],
+    "qa_evidence_and_close_when_preserved": true,
+    "qa_identical": 1396,
+    "removed": [],
+    "revision": "23a81c834690ff26e3637cb1431ba4ee32590d1f"
+  },
+  "source_revision": "23a81c834690ff26e3637cb1431ba4ee32590d1f",
+  "spec": {
+    "missing_partial_requirements": [],
+    "open_findings": [],
+    "scope_creep": [],
+    "summary": "Zakres GPS i t11-v2 zgodny ze spec. Jedna potwierdzona usterka nowego samodzielnego audytu (limit Pillow dla zweryfikowanych dużych planów) ma minimalną poprawkę sprawdzoną niezależnym RED/GREEN i pełnym GREEN wszystkich 814 GeoTIFF-ów. Poprawka oraz regresja są ocenione po hashach readonly nakładki; finalny commit ma zachować te bajty."
+  },
+  "tests": {
+    "command": "./scripts/check",
+    "container": {
+      "seconds": 339.676,
+      "tests": 209
+    },
+    "host": {
+      "seconds": 1.929,
+      "tests": 7
+    },
+    "new_regression_independently_red_green": true,
+    "original_code_revision": "23a81c834690ff26e3637cb1431ba4ee32590d1f",
+    "passed": true,
+    "total": 216
+  }
+}

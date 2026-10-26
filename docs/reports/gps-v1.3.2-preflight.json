@@ -1,0 +1,426 @@
+{
+  "checked_at": "2026-10-25 18:54:03 UTC",
+  "main": {
+    "commit": "addd87607b6356a8ade8fe3e0799d3472ff1af77",
+    "open_pull_requests": [],
+    "ruleset": {
+      "id": 25796826,
+      "name": "Wymagana kontrola projektu",
+      "target": "branch",
+      "source_type": "Repository",
+      "source": "dlubom/Georeferencer",
+      "enforcement": "active",
+      "conditions": {
+        "ref_name": {
+          "exclude": [],
+          "include": [
+            "refs/heads/main"
+          ]
+        }
+      },
+      "rules": [
+        {
+          "type": "required_status_checks",
+          "parameters": {
+            "strict_required_status_checks_policy": true,
+            "do_not_enforce_on_create": false,
+            "required_status_checks": [
+              {
+                "context": "Kontrola projektu",
+                "integration_id": 15368
+              }
+            ]
+          }
+        }
+      ],
+      "node_id": "RRS_lACqUmVwb3NpdG9yec5DgmmDzgGJoNo",
+      "created_at": "2026-10-24T22:32:26.548+02:00",
+      "updated_at": "2026-10-24T22:32:26.645+02:00",
+      "bypass_actors": [],
+      "current_user_can_bypass": "never",
+      "_links": {
+        "self": {
+          "href": "https://api.github.com/repos/dlubom/Georeferencer/rulesets/25796826"
+        },
+        "html": {
+          "href": "https://github.com/dlubom/Georeferencer/rules/25796826"
+        }
+      }
+    },
+    "classic_branch_protection": {
+      "connector_status": 403,
+      "cli_status": 404,
+      "message": "Branch not protected; active ruleset enforces protection"
+    },
+    "workflows": [
+      {
+        "id": 40222261090,
+        "name": "Generate GeoTIFF",
+        "sha": "addd87607b6356a8ade8fe3e0799d3472ff1af77",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/dlubom/Georeferencer/actions/runs/40222261090"
+      },
+      {
+        "id": 40222261102,
+        "name": "Kontrola PR i main",
+        "sha": "addd87607b6356a8ade8fe3e0799d3472ff1af77",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/dlubom/Georeferencer/actions/runs/40222261102"
+      }
+    ]
+  },
+  "georeferencer_releases": [
+    {
+      "tag": "v0.4",
+      "published": "2026-04-10T11:25:04Z",
+      "draft": true,
+      "prerelease": false
+    },
+    {
+      "tag": "v0.6.2",
+      "published": "2026-10-24T19:15:52Z",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "tag": "v0.6.1",
+      "published": "2026-05-18T07:38:52Z",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "tag": "v0.6.0",
+      "published": "2026-05-17T17:52:57Z",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "tag": "v0.5.2",
+      "published": "2026-05-10T08:15:24Z",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "tag": "v0.5.1",
+      "published": "2026-04-15T12:50:24Z",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "tag": "v0.5",
+      "published": "2026-04-15T10:18:13Z",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "tag": "v0.4.2",
+      "published": "2026-04-10T12:18:54Z",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "tag": "v0.4.1",
+      "published": "2026-04-10T11:52:53Z",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "tag": "v0.3",
+      "published": "2026-04-09T12:55:12Z",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "tag": "v0.2",
+      "published": "2026-04-08T12:38:35Z",
+      "draft": false,
+      "prerelease": false
+    },
+    {
+      "tag": "v0.1",
+      "published": "2026-04-08T12:26:46Z",
+      "draft": false,
+      "prerelease": false
+    }
+  ],
+  "latest_published_georeferencer": "v0.6.2",
+  "gps_releases": [
+    {
+      "tag": "v1.3.2",
+      "published": "2026-10-25T12:23:08Z",
+      "draft": false,
+      "prerelease": false,
+      "csv": [
+        {
+          "id": 674981417,
+          "size": 674407,
+          "digest": "sha256:6ef2607dacc02933240e820c42a0bab544790a38b5594a730fc4130b105c9ec0",
+          "url": "https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/download/v1.3.2/best-measurements.csv"
+        }
+      ]
+    },
+    {
+      "tag": "v1.3.1",
+      "published": "2026-10-24T18:13:07Z",
+      "draft": false,
+      "prerelease": false,
+      "csv": [
+        {
+          "id": 672956613,
+          "size": 672307,
+          "digest": "sha256:a783a4d124b43b9c9b864d79ca6a5c0183561f8972c755d58de2cfc1ea9b4d6f",
+          "url": "https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/download/v1.3.1/best-measurements.csv"
+        }
+      ]
+    },
+    {
+      "tag": "v1.3.0",
+      "published": "2026-10-24T15:52:46Z",
+      "draft": false,
+      "prerelease": false,
+      "csv": [
+        {
+          "id": 672664015,
+          "size": 673720,
+          "digest": "sha256:71dbf381200a30297899493037ff618a95ea853a4aa0ba0d150647810f43fa7c",
+          "url": "https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/download/v1.3.0/best-measurements.csv"
+        }
+      ]
+    },
+    {
+      "tag": "v1.2.1",
+      "published": "2026-10-24T10:45:51Z",
+      "draft": false,
+      "prerelease": false,
+      "csv": [
+        {
+          "id": 672001503,
+          "size": 673720,
+          "digest": "sha256:71dbf381200a30297899493037ff618a95ea853a4aa0ba0d150647810f43fa7c",
+          "url": "https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/download/v1.2.1/best-measurements.csv"
+        }
+      ]
+    },
+    {
+      "tag": "v1.2.0",
+      "published": "2026-10-23T15:08:50Z",
+      "draft": false,
+      "prerelease": false,
+      "csv": [
+        {
+          "id": 669488771,
+          "size": 660503,
+          "digest": "sha256:786e15e314f6f8c9357b62e56bb4122a550812bc33fd6dfc2d0aec5d9d84fc8b",
+          "url": "https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/download/v1.2.0/best-measurements.csv"
+        }
+      ]
+    },
+    {
+      "tag": "v1.1.2",
+      "published": "2026-10-22T07:54:45Z",
+      "draft": false,
+      "prerelease": false,
+      "csv": [
+        {
+          "id": 665104954,
+          "size": 626452,
+          "digest": "sha256:25345b194222e52744bb71437d9d71b1d5bfe6d8000674a82e4e9312d13d09d4",
+          "url": "https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/download/v1.1.2/best-measurements.csv"
+        }
+      ]
+    },
+    {
+      "tag": "v1.1.1",
+      "published": "2026-10-19T11:37:08Z",
+      "draft": false,
+      "prerelease": false,
+      "csv": [
+        {
+          "id": 656102258,
+          "size": 625734,
+          "digest": "sha256:afd8ee27d6093ce1f6229d9411b74a419e3cb90340985ccfe812d780fb01c79f",
+          "url": "https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/download/v1.1.1/best-measurements.csv"
+        }
+      ]
+    },
+    {
+      "tag": "v1.1.0",
+      "published": "2026-10-16T15:18:40Z",
+      "draft": false,
+      "prerelease": false,
+      "csv": [
+        {
+          "id": 647720052,
+          "size": 625940,
+          "digest": "sha256:d1a28ceada188ac0347df0e8fda5617effc68d53909cbfdc7cc20d0a4e5d8e3b",
+          "url": "https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/download/v1.1.0/best-measurements.csv"
+        }
+      ]
+    },
+    {
+      "tag": "v1.0.4",
+      "published": "2026-10-16T11:38:10Z",
+      "draft": false,
+      "prerelease": false,
+      "csv": [
+        {
+          "id": 647143868,
+          "size": 625940,
+          "digest": "sha256:d1a28ceada188ac0347df0e8fda5617effc68d53909cbfdc7cc20d0a4e5d8e3b",
+          "url": "https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/download/v1.0.4/best-measurements.csv"
+        }
+      ]
+    },
+    {
+      "tag": "v1.0.3",
+      "published": "2026-10-15T19:06:25Z",
+      "draft": false,
+      "prerelease": false,
+      "csv": [
+        {
+          "id": 644872223,
+          "size": 624663,
+          "digest": "sha256:d9b481ec705b46dafbcaf3712b1713c103c25ee04265f0515b24827afd6b25c0",
+          "url": "https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/download/v1.0.3/best-measurements.csv"
+        }
+      ]
+    },
+    {
+      "tag": "v1.0.2",
+      "published": "2026-05-21T21:28:32Z",
+      "draft": false,
+      "prerelease": false,
+      "csv": [
+        {
+          "id": 426488753,
+          "size": 605021,
+          "digest": "sha256:86b16a35077d80294e6df1c95f6e820ac7f444807c3607449411df0caca75ee8",
+          "url": "https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/download/v1.0.2/best-measurements.csv"
+        }
+      ]
+    },
+    {
+      "tag": "v1.0.1",
+      "published": "2026-05-17T06:55:56Z",
+      "draft": false,
+      "prerelease": false,
+      "csv": [
+        {
+          "id": 422343574,
+          "size": 605021,
+          "digest": "sha256:86b16a35077d80294e6df1c95f6e820ac7f444807c3607449411df0caca75ee8",
+          "url": "https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/download/v1.0.1/best-measurements.csv"
+        }
+      ]
+    },
+    {
+      "tag": "v1.0.0",
+      "published": "2026-05-17T06:01:00Z",
+      "draft": false,
+      "prerelease": false,
+      "csv": [
+        {
+          "id": 422316151,
+          "size": 604954,
+          "digest": "sha256:aaf8aa19cb483ae3562bb7708847bbd97f904884b160a246ee9744ecdc1cbf52",
+          "url": "https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/download/v1.0.0/best-measurements.csv"
+        }
+      ]
+    },
+    {
+      "tag": "v2026.05.5",
+      "published": "2026-05-16T20:10:55Z",
+      "draft": false,
+      "prerelease": false,
+      "csv": [
+        {
+          "id": 422028066,
+          "size": 329744,
+          "digest": "sha256:839d3d52387beec4d1be017b6d8a91664cf86551702f0209665fb57886a4586f",
+          "url": "https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/download/v2026.05.5/best-measurements.csv"
+        }
+      ]
+    },
+    {
+      "tag": "v2026.05.4",
+      "published": "2026-05-16T19:39:47Z",
+      "draft": false,
+      "prerelease": false,
+      "csv": [
+        {
+          "id": 422010531,
+          "size": 327837,
+          "digest": "sha256:feecc195bccb3801178d0a6793f10dfd23880a89eba9d2a18516d7e6d7a7356b",
+          "url": "https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/download/v2026.05.4/best-measurements.csv"
+        }
+      ]
+    },
+    {
+      "tag": "v2026.05.3",
+      "published": "2026-05-16T16:36:49Z",
+      "draft": false,
+      "prerelease": false,
+      "csv": [
+        {
+          "id": 421923578,
+          "size": 327156,
+          "digest": "sha256:639d893d7eb244ac0f2fc25a341c65e270d26b73113b88bb539e6e13b3138e32",
+          "url": "https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/download/v2026.05.3/best-measurements.csv"
+        }
+      ]
+    },
+    {
+      "tag": "v2026.05.2",
+      "published": "2026-05-16T15:55:31Z",
+      "draft": false,
+      "prerelease": false,
+      "csv": [
+        {
+          "id": 421904667,
+          "size": 180952,
+          "digest": "sha256:bc2d560bd62fc331bab9611a0a269a4d85b6a3acbaa9bfdf503feb4480ff863e",
+          "url": "https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/download/v2026.05.2/best-measurements.csv"
+        }
+      ]
+    },
+    {
+      "tag": "v2026.05.1",
+      "published": "2026-05-16T14:33:59Z",
+      "draft": false,
+      "prerelease": false,
+      "csv": [
+        {
+          "id": 421869050,
+          "size": 170796,
+          "digest": "sha256:c19280832172eebc483b8a09b9f37f31dce7658121678c6b81c060c42f219dcf",
+          "url": "https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/download/v2026.05.1/best-measurements.csv"
+        }
+      ]
+    }
+  ],
+  "selected_gps_release": {
+    "tag": "v1.3.2",
+    "url": "https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v1.3.2",
+    "body": "\n### Dodano\n\n- Górny otwór Raptawickiej i trzy Okna Pawlikowskiego jako odrębne obiekty.\n\n### Zmieniono\n\n- Wybrano osiem pozycji Best z jedną kotwicą Raptawickiej, ustaloną z ortofoto\n  i ALS (H1140,8 m PL-KRON86-NH). Pozostałe otwory wyznacza sieć JKTZ\n  po przywróceniu ciągu powierzchniowego Obłazkowa–Raptawicka.\n- Wzorcem obliczeń jest Survex 1.4.24. Różnicę względem Walls oraz przyjętą\n  deklinację powierzchni 4,83° opisano w źródłach.\n\nNowe Best pozostają nieweryfikowane, z nieznaną dokładnością. Dotychczasowe\npomiary zachowano. Katalog zawiera 1028 obiektów i 1934 pomiary.\n\n\n<details>\n<summary>Statystyki wydania (PL)</summary>\n\nWydanie: **v1.3.2** · commit: <code>13d734213328e5491c1a5c3171e2cb0fdcef705c</code>  \nWygenerowano: 2026-10-25T12:22:35Z\n\nJeden punkt odpowiada jednemu obiektowi, np. otworowi; jedna jaskinia może mieć kilka otworów. Historia zawiera także starsze i odrzucone pomiary. Weryfikacja oznacza ocenę w projekcie, nie zawsze sprawdzenie w terenie. Brak dokładności nie oznacza zera metrów błędu. Źródło pomiaru nie jest oceną jego jakości. Sposób wyznaczenia pozycji wynika z zapisanej metody i udokumentowanych tagów. GNSS nie oznacza automatycznie pomiaru geodezyjnego; dowiązanie LiDAR lub sieci do GNSS nie jest bezpośrednim pomiarem GNSS otworu. Zestawienie nie określa kompletności rozpoznania Tatr.\n\n| Co liczymy | Liczba |\n| --- | --- |\n| Obiekty / punkty do pobrania | 1028 |\n| Jaskinie / pozycje katalogowe | 1019 |\n| Wszystkie zachowane pomiary | 1934 |\n\n| Rodzaj obiektu | Punkty do pobrania |\n| --- | --- |\n| Otwory jaskiń | 1000 |\n| Sztolnie | 28 |\n| Ponory | 0 |\n| Wywierzyska | 0 |\n| Inne | 0 |\n\n| Źródło | Punkty do pobrania | Cała historia pomiarów |\n| --- | --- | --- |\n| TPN | 1011 | 1055 |\n| PIG | 0 | 858 |\n| Opracowania własne | 10 | 10 |\n| geoportal | 0 | 0 |\n| Publikacje | 0 | 0 |\n| Inne | 7 | 11 |\n\n| Sposób wyznaczenia pozycji | Punkty do pobrania | Cała historia pomiarów |\n| --- | --- | --- |\n| Odbiornik GPS | 0 | 0 |\n| GNSS (rodzaj nieudokumentowany) | 3 | 3 |\n| LiDAR dowiązany GNSS | 2 | 2 |\n| Sieć pomiarowa | 8 | 10 |\n| Punkt dowiązania — pierwotna metoda nieznana | 0 | 1 |\n| Smartfon | 0 | 1 |\n| Mapa topograficzna | 0 | 0 |\n| Zapis źródłowy — metoda pierwotna nieznana | 1013 | 1915 |\n| Inne ustalenie | 2 | 2 |\n| Inne | 0 | 0 |\n\n| Weryfikacja pomiaru | Punkty do pobrania | Cała historia pomiarów |\n| --- | --- | --- |\n| Zweryfikowane | 2 | 2 |\n| Nieweryfikowane | 1026 | 1928 |\n| Odrzucone | 0 | 4 |\n\n| Dokładność pozioma punktów do pobrania | Liczba |\n| --- | --- |\n| Podana w źródle | 0 |\n| Nie podano — nieznana | 1028 |\n\n</details>\n\n<details>\n<summary>Release statistics (EN)</summary>\n\nRelease: **v1.3.2** · commit: <code>13d734213328e5491c1a5c3171e2cb0fdcef705c</code>  \nGenerated: 2026-10-25T12:22:35Z\n\nOne point represents one object, such as an entrance; a cave may have several entrances. History includes older and rejected measurements. Verification means a project assessment, not necessarily a field check. Missing accuracy does not mean zero error. A measurement source is not a quality rating. Position determination follows the recorded method and documented tags. GNSS does not automatically mean a geodetic survey; a GNSS-anchored LiDAR or network position is not a direct GNSS entrance measurement. These figures do not measure completeness across the Tatras.\n\n| What is counted | Count |\n| --- | --- |\n| Objects / downloadable points | 1028 |\n| Caves / catalog entries | 1019 |\n| All preserved measurements | 1934 |\n\n| Object type | Downloadable points |\n| --- | --- |\n| Cave entrances | 1000 |\n| Adits | 28 |\n| Sink points | 0 |\n| Karst springs | 0 |\n| Other | 0 |\n\n| Source | Downloadable points | Full measurement history |\n| --- | --- | --- |\n| TPN | 1011 | 1055 |\n| PIG | 0 | 858 |\n| Project work | 10 | 10 |\n| geoportal | 0 | 0 |\n| Publications | 0 | 0 |\n| Other | 7 | 11 |\n\n| Position determination method | Downloadable points | Full measurement history |\n| --- | --- | --- |\n| GPS receiver | 0 | 0 |\n| GNSS (type undocumented) | 3 | 3 |\n| GNSS-anchored LiDAR | 2 | 2 |\n| Survey network | 8 | 10 |\n| Survey anchor — original method unknown | 0 | 1 |\n| Smartphone | 0 | 1 |\n| Topographic map | 0 | 0 |\n| Source record — original method unknown | 1013 | 1915 |\n| Other determination | 2 | 2 |\n| Other | 0 | 0 |\n\n| Measurement verification | Downloadable points | Full measurement history |\n| --- | --- | --- |\n| Verified | 2 | 2 |\n| Unverified | 1026 | 1928 |\n| Rejected | 0 | 4 |\n\n| Horizontal accuracy of downloadable points | Count |\n| --- | --- |\n| Declared in the source | 0 |\n| Not provided — unknown | 1028 |\n\n</details>\n\n<details>\n<summary>Štatistiky vydania (SK)</summary>\n\nVydanie: **v1.3.2** · commit: <code>13d734213328e5491c1a5c3171e2cb0fdcef705c</code>  \nVygenerované: 2026-10-25T12:22:35Z\n\nJeden bod predstavuje jeden objekt, napríklad vchod; jaskyňa môže mať viac vchodov. História zahŕňa aj staršie a zamietnuté merania. Overenie znamená posúdenie v projekte, nie vždy kontrolu v teréne. Chýbajúca presnosť neznamená nulovú chybu. Zdroj merania nie je hodnotením kvality. Spôsob určenia polohy vychádza zo zaznamenanej metódy a doložených značiek. GNSS automaticky neznamená geodetické meranie; poloha z LiDAR alebo siete naviazanej na GNSS nie je priamym meraním vchodu pomocou GNSS. Prehľad nevyjadruje úplnosť preskúmania Tatier.\n\n| Čo počítame | Počet |\n| --- | --- |\n| Objekty / body na stiahnutie | 1028 |\n| Jaskyne / katalógové záznamy | 1019 |\n| Všetky zachované merania | 1934 |\n\n| Druh objektu | Body na stiahnutie |\n| --- | --- |\n| Jaskynné vchody | 1000 |\n| Štôlne | 28 |\n| Ponory | 0 |\n| Vyvieračky | 0 |\n| Iné | 0 |\n\n| Zdroj | Body na stiahnutie | Celá história meraní |\n| --- | --- | --- |\n| TPN | 1011 | 1055 |\n| PIG | 0 | 858 |\n| Vlastné spracovanie | 10 | 10 |\n| geoportal | 0 | 0 |\n| Publikácie | 0 | 0 |\n| Iné | 7 | 11 |\n\n| Spôsob určenia polohy | Body na stiahnutie | Celá história meraní |\n| --- | --- | --- |\n| Prijímač GPS | 0 | 0 |\n| GNSS (druh nezdokumentovaný) | 3 | 3 |\n| LiDAR naviazaný na GNSS | 2 | 2 |\n| Meračská sieť | 8 | 10 |\n| Bod pripojenia — pôvodná metóda neznáma | 0 | 1 |\n| Smartfón | 0 | 1 |\n| Topografická mapa | 0 | 0 |\n| Zdrojový záznam — pôvodná metóda neznáma | 1013 | 1915 |\n| Iné určenie | 2 | 2 |\n| Iné | 0 | 0 |\n\n| Overenie merania | Body na stiahnutie | Celá história meraní |\n| --- | --- | --- |\n| Overené | 2 | 2 |\n| Neoverené | 1026 | 1928 |\n| Zamietnuté | 0 | 4 |\n\n| Vodorovná presnosť bodov na stiahnutie | Počet |\n| --- | --- |\n| Uvedená v zdroji | 0 |\n| Neuvedená — neznáma | 1028 |\n\n</details>\n"
+  },
+  "changes_to_protection": false,
+  "selected_gps_tag": {
+    "tag": "v1.3.2",
+    "tag_object": "462528f7c16051dd207662853166a43d80ebdc5e",
+    "commit": "13d734213328e5491c1a5c3171e2cb0fdcef705c"
+  },
+  "issues_rechecked": [
+    {
+      "number": 1,
+      "state": "open",
+      "updated_at": "2026-04-09T09:28:37Z"
+    },
+    {
+      "number": 3,
+      "state": "open",
+      "updated_at": "2026-05-17T17:58:34Z"
+    }
+  ]
+}

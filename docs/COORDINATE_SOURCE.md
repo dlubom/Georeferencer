@@ -1,12 +1,16 @@
 # Współrzędne i historyczny punkt odniesienia
 
 Build korzysta z [data/coordinate-source/source.json](../data/coordinate-source/source.json):
-release **v1.3.1** repozytorium `dlubom/gps-kataster-obiektow-tatr`, artefakt
+release **v1.3.2** repozytorium `dlubom/gps-kataster-obiektow-tatr`, artefakt
 `best-measurements.csv`, SHA-256
-`a783a4d124b43b9c9b864d79ca6a5c0183561f8972c755d58de2cfc1ea9b4d6f`.
+`6ef2607dacc02933240e820c42a0bab544790a38b5594a730fc4130b105c9ec0`.
 Surowe bajty CSV są wersjonowane obok opisu. Hash pobranego pliku potwierdzono
-z digestem assetu [release v1.3.1](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v1.3.1).
-To pierwsze jawne przypięcie; nie jest deklaracją źródła dawnych TFW.
+z digestem assetu [release v1.3.2](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v1.3.2).
+Poprzedni CSV i dokładny opis zachowano jako `best-measurements-v1.3.1.csv`
+i `source-v1.3.1.json`. Nowy opis jest też w `source-v1.3.2.json`.
+[Raport aktualizacji](reports/coordinate-source-v1.3.2-impact.json) obejmuje cały
+katalog; [odbiór i ponowna ocena dziewięciu wyjątków](plans/2026-10-25-gps-v1.3.2-odbior.md)
+wyjaśniają zakres zmiany. Żaden pin nie jest deklaracją źródła dawnych TFW.
 
 ## Użycie i odtworzenie snapshotu
 
@@ -130,7 +134,7 @@ docker run --rm --platform linux/amd64 --network none \
   --mount "type=bind,source=$PWD,target=/workspace,readonly" \
   --mount "type=bind,source=$audit_dir,target=/audit" \
   "$(cat /tmp/georeferencer-audit-image)" \
-  python pipeline/catalogue_baseline.py recalculate --output /audit/recalculated.json
+  python -c 'from pathlib import Path; import json,sys; sys.path.insert(0,"pipeline"); import catalogue_baseline as b; Path("/audit/recalculated.json").write_text(json.dumps(b.recalculation(b.ROOT,json.loads(b.BASELINE.read_text()),b.ROOT/"data/coordinate-source/source-v1.3.1.json"),ensure_ascii=False,indent=2)+"\n")'
 cmp "$audit_dir/recalculated.json" data/baseline/2026-10-24/recalculated-v1.3.1.json
 ```
 

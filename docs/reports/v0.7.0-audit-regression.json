@@ -1,0 +1,27 @@
+{
+  "failed_original_catalogue_plan": "001197",
+  "finding": "SPEC-1",
+  "fix": "Explicit Image.MAX_IMAGE_PIXELS=None only in the new audit helper. No pipeline, data or fingerprint change.",
+  "green": {
+    "exit_code": 0,
+    "log_sha256": "a71fea19119b82b463d47a7ff6f39ca0ad32ce0512297d96c9f38366ab239580",
+    "tests": 1
+  },
+  "independent_full_catalogue_green": true,
+  "large_catalogue_green_report_sha256": "db7b21fd113189ea2d9b423ef5529d906e7eb11779a4509a833f290fbf2a3c88",
+  "original_failure_log_sha256": "54edfa42bb2588bd4761e97191ec9504718a522742d77bb7588cfe8d25607c77",
+  "pixels": 466183560,
+  "red": {
+    "exit_code": 1,
+    "expected_failure": "PIL.Image.DecompressionBombError: Image size (48 pixels) exceeds limit of 20 pixels",
+    "log_sha256": "b229c2788b2d671e87ed8b52e2345588f2e7dbbec3fb8d3759dd65578d8d270c"
+  },
+  "regression": "Fresh Python subprocess, 8x6 TIFF, limit10, actual decoded dimensions and SHA256.",
+  "reviewed_file_sha256": {
+    "docs/reports/v0.7.0-catalogue-audit.py": "b955c6c2f5c9aa9ef3105fff117fe9c05259f397c0d61bd278626925acda24ba",
+    "tests/test_release_catalogue_audit.py": "16897b756ff0fe97c585102ad71375eb0cc9bb48473fcbd0a2dce322989565aa"
+  },
+  "root_cause": "Standalone audit omitted explicit trusted-image Pillow policy; incidental imports in other commands configured it.",
+  "source_revision": "23a81c834690ff26e3637cb1431ba4ee32590d1f",
+  "status": "resolved_by_reviewed_fix"
+}

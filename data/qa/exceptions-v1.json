@@ -14377,22 +14377,24 @@
       ]
     },
     {
-      "basis_sha256": "4dde32c820cc5e62f6ede5d86d7f342b2c54077e1a28269ccde356d237d9c1d2",
+      "basis_sha256": "b27542bde49d705e5669b9a9ced9786ac73b34a5feb7cae8f6f9e4dea37e41d9",
       "close_when": "Ręczne wskazanie symbolu wybranego otworu na dokładnie tym obrazie, z raportem wpływu.",
       "evidence": {
         "entrance_std_px": 1386.3630508058664,
         "threshold": 10
       },
       "plan_id": "001349",
-      "reason": "Rozrzut ważnych kliknięć otworu przekracza próg QA; nie jest dowodem błędnego ID ani podstawą przesuwania planu.",
+      "reason": "Mylna: rozrzut 1386.3630508058664 px nadal przekracza 10 px; hash obrazu i kliknięcia nie zmieniły się. KSZ-0064 m-004 przesuwa cały wynik o 13.346560 m, bez zmiany rozrzutu. Wyjątek nie rozstrzyga poprawności wskazanego symbolu.",
       "rule": "entrance.disagreement",
       "sources": [
         "docs/QA.md",
-        "docs/ORIENTATION.md"
+        "docs/ORIENTATION.md",
+        "docs/plans/2026-10-25-gps-v1.3.2-odbior.md",
+        "docs/reports/coordinate-source-v1.3.2-impact.json"
       ]
     },
     {
-      "basis_sha256": "968f75e1780f5bfa125299e0409585c48c9af944ccb15e836da9d18e392d8c71",
+      "basis_sha256": "02e2af71c4aece8b8417000ae1442534b8c1a76486ea9eb4436bd218ae2ed367",
       "close_when": "Potwierdzenie symbolu i wybranego object_id na planie z dowodem oraz uzgodnieniem issue #3.",
       "evidence": {
         "alternative_object_id": "KSZ-0113",
@@ -14410,17 +14412,19 @@
         "source_updated_at": "2026-05-17T17:58:34Z"
       },
       "plan_id": "001349",
-      "reason": "Nierozstrzygnięte dopasowanie z issue #3: jawne ID istnieje w pinie; to nie potwierdza symbolu otworu na planie.",
+      "reason": "Mylna: wybrane KSZ-0064 i alternatywne KSZ-0113 nadal istnieją jako odrębne otwory. Oba mają nowe Best (m-004 i m-002); nie zamieniono wyboru. Issue #3 pozostaje otwarte z tą samą uwagą. Nowe współrzędne nie potwierdzają dopasowania symbolu; warunek zamknięcia pozostaje.",
       "rule": "entrance.review",
       "sources": [
         "docs/QA.md",
         "docs/ORIENTATION.md",
         "https://github.com/dlubom/Georeferencer/issues/3",
-        "data/qa/source-issues-v1.json"
+        "data/qa/source-issues-v1.json",
+        "docs/plans/2026-10-25-gps-v1.3.2-odbior.md",
+        "docs/reports/coordinate-source-v1.3.2-impact.json"
       ]
     },
     {
-      "basis_sha256": "3379705921891900f7ce098d334dd246c937d41d13ee67084763674219500685",
+      "basis_sha256": "b73d2d6c6e5e536b165ccbaa01b3901fd059ae8b8364da6b28bc10ced0d62af8",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "unknown",
@@ -14436,11 +14440,13 @@
         "uncertainty_reason": "Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano orientację historycznego TFW T02."
       },
       "plan_id": "001349",
-      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy.",
+      "reason": "Mylna: północ unknown/unverified; kąt nadal pochodzi wyłącznie z TFW T02 89d31fa354f0fb6556a6c30be8af73b8a52f03a516fd83a1131ac009173df874. Zmiana KSZ-0064 m-003→m-004 nie dostarcza dowodu rodzaju północy; delta obrotu i skali wynosi zero.",
       "rule": "orientation.unknown",
       "sources": [
         "docs/QA.md",
-        "docs/ORIENTATION.md"
+        "docs/ORIENTATION.md",
+        "docs/plans/2026-10-25-gps-v1.3.2-odbior.md",
+        "docs/reports/coordinate-source-v1.3.2-impact.json"
       ]
     },
     {
@@ -14495,7 +14501,7 @@
       ]
     },
     {
-      "basis_sha256": "4c5572a4f54dacba766768f261afdffde6a8199a84926fc539df26415327bbb3",
+      "basis_sha256": "ffd8a658c2225be319ce25b4b6e792f0fc7d2b21f7f650337dc681f9465a0f61",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "unknown",
@@ -14511,15 +14517,17 @@
         "uncertainty_reason": "Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano orientację historycznego TFW T02."
       },
       "plan_id": "001351",
-      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy.",
+      "reason": "Obłazkowa: północ unknown/unverified; kąt wyłącznie z TFW T02 7c106c8e773f080b5b344c5942f4ada3b880c03b2065ddc123732f1c888d0983. KSZ-0090 m-004 przesuwa położenie o 13.428811 m, nie zmienia skali ani obrotu i nie dokumentuje północy.",
       "rule": "orientation.unknown",
       "sources": [
         "docs/QA.md",
-        "docs/ORIENTATION.md"
+        "docs/ORIENTATION.md",
+        "docs/plans/2026-10-25-gps-v1.3.2-odbior.md",
+        "docs/reports/coordinate-source-v1.3.2-impact.json"
       ]
     },
     {
-      "basis_sha256": "fcadaed3a43f766bee226ed2a67d6c7117bf06f965aa432d273b3ca22437f62a",
+      "basis_sha256": "a8abb96eff937894782a6b5b89c5845ac26e9a312f438d10067933cd76a4cdf6",
       "close_when": "Ręczne porównanie konkretnej uwagi z aktualnym obrazem, otworem i georeferencją oraz zapis rozstrzygnięcia ze źródłem.",
       "evidence": {
         "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania.",
@@ -14535,13 +14543,15 @@
         "source_updated_at": "2026-04-09T09:28:37Z"
       },
       "plan_id": "001351",
-      "reason": "Uwaga historyczna z issue #1 nadal wymaga interpretacji symbolu, skali lub siatki. Bieżący obraz przechodzi T03; dawne pominięcie/konwersja nie są obecnym błędem technicznym.",
+      "reason": "Obłazkowa: ta sama uwaga issue #1 o wielu planach na jednym obrazie nadal otwarta. Nie zmieniono obrazu, jego ID ani wybranego KSZ-0090; nowe m-004 zmienia dowiązanie, nie rozstrzyga interpretacji grafiki. Dopuszczenie dotyczy wyłącznie tej uwagi, nie ewentualnych błędów odczytu.",
       "rule": "source.review",
       "sources": [
         "docs/QA.md",
         "docs/ORIENTATION.md",
         "https://github.com/dlubom/Georeferencer/issues/1",
-        "data/qa/source-issues-v1.json"
+        "data/qa/source-issues-v1.json",
+        "docs/plans/2026-10-25-gps-v1.3.2-odbior.md",
+        "docs/reports/coordinate-source-v1.3.2-impact.json"
       ]
     },
     {
@@ -15229,7 +15239,7 @@
       ]
     },
     {
-      "basis_sha256": "862f65e1d4893977a505058d28be4becb22ff4faf90c00f5859bc9e065134cab",
+      "basis_sha256": "b58ea81c5973e83cc18217cf8da80db78a59884a937743a0a29387abc6ec3550",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "unknown",
@@ -15245,11 +15255,13 @@
         "uncertainty_reason": "Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano orientację historycznego TFW T02."
       },
       "plan_id": "001387",
-      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy.",
+      "reason": "Raptawicka: północ unknown/unverified; kąt wyłącznie z TFW T02 00ac8ce99e6a3764522049a6355da4080db0a4e0d1e2ec6464ea106fbdcff451. Nowa kotwica KSZ-0047 m-004 pozostaje nieweryfikowana, z nieznaną dokładnością. Przesunięcie 13.312694 m nie potwierdza orientacji; delta obrotu i skali zero.",
       "rule": "orientation.unknown",
       "sources": [
         "docs/QA.md",
-        "docs/ORIENTATION.md"
+        "docs/ORIENTATION.md",
+        "docs/plans/2026-10-25-gps-v1.3.2-odbior.md",
+        "docs/reports/coordinate-source-v1.3.2-impact.json"
       ]
     },
     {
@@ -34028,22 +34040,24 @@
       ]
     },
     {
-      "basis_sha256": "81664e1d139ef74b96ae5a6e4752370540310f34dfae822c853b639ed0671c32",
+      "basis_sha256": "af0ed2edcb7e89cec37f6301e2def59597c6f60f143c70642f97374baa143221",
       "close_when": "Ręczne wskazanie symbolu wybranego otworu na dokładnie tym obrazie, z raportem wpływu.",
       "evidence": {
         "entrance_std_px": 1039.4426850202583,
         "threshold": 10
       },
       "plan_id": "010935",
-      "reason": "Rozrzut ważnych kliknięć otworu przekracza próg QA; nie jest dowodem błędnego ID ani podstawą przesuwania planu.",
+      "reason": "Pawlikowskiego: rozrzut 1039.4426850202583 px nadal przekracza 10 px; nie zmieniono obrazu, kliknięć ani wybranego KSZ-0064. Nowe m-004 przesuwa wynik o 13.346561 m, nie redukuje rozrzutu. Potwierdzenie symbolu nadal wymaga ręcznego odbioru planu.",
       "rule": "entrance.disagreement",
       "sources": [
         "docs/QA.md",
-        "docs/ORIENTATION.md"
+        "docs/ORIENTATION.md",
+        "docs/plans/2026-10-25-gps-v1.3.2-odbior.md",
+        "docs/reports/coordinate-source-v1.3.2-impact.json"
       ]
     },
     {
-      "basis_sha256": "c190663533f72aeae5985144f2e6529cfb76ad937965a16ee2208735bc50d74d",
+      "basis_sha256": "82747288c7a329468fe90e8e7a8403fbe48d804ed64fc41cb0c2b7bb0a6f84c4",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "unknown",
@@ -34059,15 +34073,17 @@
         "uncertainty_reason": "Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano orientację historycznego TFW T02."
       },
       "plan_id": "010935",
-      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy.",
+      "reason": "Pawlikowskiego: północ unknown/unverified; kąt wyłącznie z TFW T02 b2494d2528d40450afa9cd3b7343f29aa529f91d046991f3dcd83b0cc3c23689. Zmiana KSZ-0064 m-003→m-004 nie jest nową decyzją północy; skala, obrót i rozróżnienie pochodzenia kąta pozostają.",
       "rule": "orientation.unknown",
       "sources": [
         "docs/QA.md",
-        "docs/ORIENTATION.md"
+        "docs/ORIENTATION.md",
+        "docs/plans/2026-10-25-gps-v1.3.2-odbior.md",
+        "docs/reports/coordinate-source-v1.3.2-impact.json"
       ]
     },
     {
-      "basis_sha256": "4c66e4360ac5cf6998a61d57d1a03aa687b4de3cb194f29fdced6fcfcdd58d25",
+      "basis_sha256": "3f14ae95c5d36f3f64d2d03fe18edd41de9df32a5d6e92002c07fef06bd28fff",
       "close_when": "Ręczne porównanie konkretnej uwagi z aktualnym obrazem, otworem i georeferencją oraz zapis rozstrzygnięcia ze źródłem.",
       "evidence": {
         "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania.",
@@ -34083,13 +34099,15 @@
         "source_updated_at": "2026-04-09T09:28:37Z"
       },
       "plan_id": "010935",
-      "reason": "Uwaga historyczna z issue #1 nadal wymaga interpretacji symbolu, skali lub siatki. Bieżący obraz przechodzi T03; dawne pominięcie/konwersja nie są obecnym błędem technicznym.",
+      "reason": "Pawlikowskiego: uwaga issue #1 o wielu planach na jednym obrazie pozostaje otwarta. Obraz i powiązanie z południowym otworem Mylnej KSZ-0064 pozostają takie same. Nowe m-004 nie rozstrzyga uwagi źródłowej ani nie potwierdza kartograficznie całego systemu.",
       "rule": "source.review",
       "sources": [
         "docs/QA.md",
         "docs/ORIENTATION.md",
         "https://github.com/dlubom/Georeferencer/issues/1",
-        "data/qa/source-issues-v1.json"
+        "data/qa/source-issues-v1.json",
+        "docs/plans/2026-10-25-gps-v1.3.2-odbior.md",
+        "docs/reports/coordinate-source-v1.3.2-impact.json"
       ]
     },
     {

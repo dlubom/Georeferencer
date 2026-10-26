@@ -71,7 +71,8 @@ class OutputTest(unittest.TestCase):
         self.assertEqual(plan['inputs']['image.tif'], before['001131/image.tif'])
         self.assertEqual(plan['measurement']['object_id'], 'KSZ-0033')
         self.assertTrue(plan['measurement']['measurement_id'])
-        self.assertEqual(manifest['coordinate_source']['release'], 'v1.3.1')
+        from coordinate_source import DEFAULT_MANIFEST, read_manifest
+        self.assertEqual(manifest['coordinate_source']['release'], read_manifest(DEFAULT_MANIFEST)['release'])
         self.assertEqual(manifest['coordinate_source']['sha256'],
                          hashlib.sha256(self.coordinates_path.read_bytes()).hexdigest())
         self.assertTrue(manifest['implementation'])

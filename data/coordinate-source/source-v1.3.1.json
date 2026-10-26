@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "repository": "dlubom/gps-kataster-obiektow-tatr",
+  "release": "v1.3.1",
+  "asset": "best-measurements.csv",
+  "sha256": "a783a4d124b43b9c9b864d79ca6a5c0183561f8972c755d58de2cfc1ea9b4d6f",
+  "snapshot": "best-measurements-v1.3.1.csv"
+}

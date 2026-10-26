@@ -1,0 +1,448 @@
+{
+  "archive_review": {
+    "actual_geotiff_checked_by_accept": [
+      "EPSG:2180",
+      "TFW/geotransform agreement",
+      "dimensions",
+      "single 1-bit channel",
+      "CCITTFAX4",
+      "decoded pixels versus source"
+    ],
+    "archive": "build/gps-v1.3.2-candidate/geotiff-tatry-v0.7.0-candidate-e9522d33ce40.zip",
+    "archive_bytes": 21377604,
+    "archive_sha256": "8ef37abc35149b235bb0f01075c2ec5f1e1d861c148ae663edfa3af1deccd9e4",
+    "build_code": {
+      "commit": "e9522d33ce40134d6589e3231f4443716e06f4f2",
+      "dirty": "false"
+    },
+    "generated": 814,
+    "implementation_and_environment_versus_t11": {
+      "environment": {
+        "GDAL": "GDAL 3.12.4 \"Chicoutimi\", released 2026/04/22",
+        "GDAL build": "OGR_ENABLED=YES\nCURL_ENABLED=YES\nCURL_VERSION=8.5.0\nGEOS_ENABLED=YES\nGEOS_VERSION=3.12.1-CAPI-1.18.1\nPROJ_BUILD_VERSION=9.8.1\nPROJ_RUNTIME_VERSION=9.8.1\nCOMPILER=GCC 13.3.0",
+        "PROJ (pyproj)": "9.8.1",
+        "Python": "3.12.3",
+        "architecture": "x86_64",
+        "packages": {
+          "Jinja2": "3.1.6",
+          "MarkupSafe": "3.0.4",
+          "PyYAML": "6.0.3",
+          "certifi": "2026.10.23",
+          "numpy": "2.5.4",
+          "pandas": "3.1.0",
+          "pillow": "13.0.0",
+          "pip": "25.3",
+          "pyarrow": "26.0.0",
+          "pyproj": "3.8.0",
+          "python-dateutil": "3.0.0",
+          "six": "1.17.0",
+          "tzdata": "2026.5"
+        },
+        "system": "Linux"
+      },
+      "environment_exactly_matches_t11": true,
+      "implementation_exactly_matches_t11": true,
+      "implementation_files": 26,
+      "passed": true,
+      "prior_t11_cold_builds": 2,
+      "t11_reproducibility_sha256": "aca30bb839e60bfe31dbd55d5fedfef6d076beccd7af1ddc6e5d0b1ffa8829b5"
+    },
+    "independent_acceptance": {
+      "archive_sha256": "8ef37abc35149b235bb0f01075c2ec5f1e1d861c148ae663edfa3af1deccd9e4",
+      "files": 2443,
+      "passed": true,
+      "plans": 814,
+      "qa": {
+        "accepted": 1405,
+        "blocking": 0,
+        "origins": {
+          "crowdsourcing": 801,
+          "manual_historical": 13
+        },
+        "plans": 814,
+        "problems": 1405
+      },
+      "run_id": "e77c72e32ca04867a68bb804c1ecd539",
+      "run_manifest_sha256": "f3bcf274e895d3013bf3b098d437cb4c1680bff15c9f2b1bf3beedc1b5114052"
+    },
+    "independent_host_zipinfo_crc_sha256": {
+      "archive": "/Users/dariuszlubomski/proj/Georeferencer/build/gps-v1.3.2-candidate/geotiff-tatry-v0.7.0-candidate-e9522d33ce40.zip",
+      "archive_bytes": 21377604,
+      "archive_sha256": "8ef37abc35149b235bb0f01075c2ec5f1e1d861c148ae663edfa3af1deccd9e4",
+      "code": {
+        "commit": "e9522d33ce40134d6589e3231f4443716e06f4f2",
+        "dirty": "false"
+      },
+      "crc_checked": 2443,
+      "csv_sha256": "6ef2607dacc02933240e820c42a0bab544790a38b5594a730fc4130b105c9ec0",
+      "directories": 0,
+      "duplicates": 0,
+      "files": 2443,
+      "mode": "manual",
+      "passed": true,
+      "plans": 814,
+      "qa": {
+        "accepted": 1405,
+        "blocking": 0,
+        "origins": {
+          "crowdsourcing": 801,
+          "manual_historical": 13
+        },
+        "plans": 814,
+        "problems": 1405
+      },
+      "release_code": {
+        "commit": "e9522d33ce40134d6589e3231f4443716e06f4f2",
+        "dirty": "false"
+      },
+      "run_id": "e77c72e32ca04867a68bb804c1ecd539",
+      "run_manifest_sha256": "f3bcf274e895d3013bf3b098d437cb4c1680bff15c9f2b1bf3beedc1b5114052",
+      "sha256_checked": 2443,
+      "source_input_hashes_checked": true,
+      "symlinks": 0,
+      "tfw_changed_from_t11": [
+        "001349",
+        "001351",
+        "001387",
+        "010935"
+      ],
+      "zip_manifest_sha256": "d5723bd26dea912c210929aa6076a69c0c44fdc5d09e09e2bed6ec40d15a6ce2"
+    },
+    "mode": "manual",
+    "packaging_code": {
+      "commit": "e9522d33ce40134d6589e3231f4443716e06f4f2",
+      "dirty": "false"
+    },
+    "qa": {
+      "accepted": 1405,
+      "blocking": 0,
+      "origins": {
+        "crowdsourcing": 801,
+        "manual_historical": 13
+      },
+      "plans": 814,
+      "problems": 1405
+    },
+    "reused": 0,
+    "run_directory": "build/geotiff/runs/e77c72e32ca04867a68bb804c1ecd539",
+    "run_id": "e77c72e32ca04867a68bb804c1ecd539",
+    "run_manifest_sha256": "f3bcf274e895d3013bf3b098d437cb4c1680bff15c9f2b1bf3beedc1b5114052",
+    "zip_manifest_sha256": "d5723bd26dea912c210929aa6076a69c0c44fdc5d09e09e2bed6ec40d15a6ce2"
+  },
+  "axes": {
+    "specification": {
+      "open_findings": []
+    },
+    "standards": {
+      "open_findings": []
+    }
+  },
+  "base_revision": "addd87607b6356a8ade8fe3e0799d3472ff1af77",
+  "evidence_sha256": {
+    "build/gps-v1.3.2-candidate/check-final.log": "78f37f3d54822bc65abe68e88fe42e35b72c583c25dee668f9d40904a03c2a14",
+    "build/gps-v1.3.2-review/archive-acceptance-e9522.json": "3fc654f6f852f698f3199e0c555b3fc333c3718dfd8e3dbced8ef1f561372a6b",
+    "build/gps-v1.3.2-review/archive-host-readback-e9522.json": "6d5cc898f498b4f4b63c229128a506404d9075eb6bd64da39c0c16e01886e920",
+    "build/gps-v1.3.2-review/environment-t11-e9522.json": "9e3d0d95c27247a87985d4733a11876bdf552fb085af8764c7871068d61bbd8c",
+    "build/gps-v1.3.2-review/github-readback.json": "45f2b724b34e6a94fadce11dd2536651cdfd645a47dac64d162def18afcef32c",
+    "build/gps-v1.3.2-review/protected-inputs-final.json": "85c1cdf2147e78b530eccb820588eaf5585204599c6dc72ab2be9d8655150bd4",
+    "build/gps-v1.3.2-review/protected_audit.py": "e1b7f53a539d76b71bf8446b4e8428e2c228e9fea15fad0cafd2454d5720e871",
+    "build/gps-v1.3.2-review/source-audit.log": "93bf264ce3f1de7a4bc9d735703def26faecc654a62604962d82e9c3a69cbcb1",
+    "build/gps-v1.3.2-review/source_audit.py": "29ab36b739a8faa21c8cab2f51093c7d7f463533a290b24b57cace7b4c4bc422",
+    "build/gps-v1.3.2-review/zip_readback.py": "f7a02b0a68656540b4d37445277dd5e0fea8dd6aaedf2ff4d631a1169213ed66",
+    "docs/reports/coordinate-source-v1.3.2-impact.json": "fde9b439a7dd0d2317409df378c3c90e86874654aaf6acdce431c81c61c77237",
+    "docs/reports/coordinate-source-v1.3.2-independent-audit.py": "29ab36b739a8faa21c8cab2f51093c7d7f463533a290b24b57cace7b4c4bc422",
+    "docs/reports/coordinate-source-v1.3.2-independent-source.json": "93bf264ce3f1de7a4bc9d735703def26faecc654a62604962d82e9c3a69cbcb1",
+    "docs/reports/coordinate-source-v1.3.2-preservation.json": "8e25992ab9371c15f4e6a35f187da95609dcef2ce0c13a56b561be216ba96a50",
+    "docs/reports/coordinate-source-v1.3.2-qa-review.json": "0ab3bf8cf88bcc7ee5a07b1cbf154f6e2f346dacbd2783a45be84ffe5d9766b3",
+    "docs/reports/coordinate-source-v1.3.2-validation.json": "f531984907131821d14cfc79f407f620deba5c8a082c9a33274b411cd4f36892",
+    "docs/reports/t11-reproducibility.json": "aca30bb839e60bfe31dbd55d5fedfef6d076beccd7af1ddc6e5d0b1ffa8829b5"
+  },
+  "limitations": [
+    "Nie tworzono nowego klonu ani dodatkowego zimnego buildu. Dwa zimne buildy T11 są wcześniejszym wersjonowanym dowodem; osobno potwierdzono identyczność kodu/środowiska i odebrano nowy ZIP.",
+    "Pełne ./scripts/check wykonał autor; reviewer niezależnie wykonał pełne źródłowe QA obu pinów, wzór TFW, kontrolę zachowania bajtów oraz odbiór ZIP i hostowe CRC/SHA.",
+    "PASS oznacza odbiór techniczny, nie terenowe potwierdzenie symbolu otworu, progu/stacji, skali lub rodzaju północy. Unknown/unverified oraz nieznana dokładność pozostają; issues #1/#3 są otwarte.",
+    "Review dotyczy wskazanego czystego SHA i konkretnego ZIP. Późniejszy commit wyłącznie dowodów/dokumentacji może ciepło odświeżyć proweniencję; zmieniony końcowy ZIP wymaga osobnego odbioru bez dopisywania kolejnego wersjonowanego raportu.",
+    "Reviewer nie zmieniał danych źródłowych, Git, ochrony main ani zdalnych zasobów. Utworzono wyłącznie dozwolone pliki scratch i ten raport. Bez merge, tagu, release lub publikacji."
+  ],
+  "material_commands_executed": [
+    "git status --porcelain",
+    "git rev-parse HEAD",
+    "git diff --check addd87607b6356a8ade8fe3e0799d3472ff1af77",
+    "PYTHONDONTWRITEBYTECODE=1 python3 build/gps-v1.3.2-review/protected_audit.py",
+    "docker run --rm --platform linux/amd64 --network none --read-only --env PYTHONDONTWRITEBYTECODE=1 --tmpfs /tmp:rw,nosuid,size=512m --mount type=bind,source=/Users/dariuszlubomski/proj/Georeferencer,target=/workspace,readonly --mount type=bind,source=/Users/dariuszlubomski/proj/Georeferencer/build/gps-v1.3.2-review,target=/audit sha256:f85d4844e4a5fa1153f460a509c74a71968d8dc7cedb4805f7c9f9dc639ec9fd python /audit/source_audit.py",
+    "./scripts/build accept --report /build/gps-v1.3.2-review/archive-acceptance-e9522.json verify --archive /build/gps-v1.3.2-candidate/geotiff-tatry-v0.7.0-candidate-e9522d33ce40.zip",
+    "PYTHONDONTWRITEBYTECODE=1 python3 build/gps-v1.3.2-review/zip_readback.py --archive build/gps-v1.3.2-candidate/geotiff-tatry-v0.7.0-candidate-e9522d33ce40.zip --revision e9522d33ce40134d6589e3231f4443716e06f4f2 --output build/gps-v1.3.2-review/archive-host-readback-e9522.json"
+  ],
+  "open_findings": [],
+  "passed": true,
+  "pull_request": "https://github.com/dlubom/Georeferencer/pull/28",
+  "release_proposal_review": {
+    "changelog": "CHANGELOG.md",
+    "notes": "docs/releases/v0.7.0-notes.md",
+    "open_findings": [],
+    "previous_published": "v0.6.2",
+    "scope": "T01–T11, nowy układ ZIP plan_id, osobno wpływ aktualizacji GPS względem T11 oraz ograniczenia kartograficzne.",
+    "version": "v0.7.0"
+  },
+  "resolved_findings": [
+    {
+      "cause": "Recepta CLI T07 po aktualizacji runtime hashowała aktywny source.json, więc cmp z zamrożonym raportem T07 nie odtwarzał jego wejść.",
+      "effect": "Udokumentowana kontrola odtworzenia T07 kończyła się różnicą pinu mimo niezmienionych danych historycznych.",
+      "file": "docs/AGGREGATION.md",
+      "original_line": 81,
+      "requested_fix": "Jawnie odtworzyć zachowany manifest/CSV v1.3.1 i oryginalną nazwę pinu, bez zmiany pipeline ani hashy raportu.",
+      "resolution": "Zaktualizowano receptę w docs/AGGREGATION.md; lokalny scoped patch verify/sha256 korzysta z rzeczywistych zachowanych bajtów. Tak samo działa historyczna fixture testu. Pipeline i raport T07 są identyczne z bazą.",
+      "severity": "P2",
+      "status": "resolved"
+    }
+  ],
+  "reviewed_at_utc": "2026-10-25T19:26:42.398743+00:00",
+  "reviewed_documents": [
+    "AGENTS.md",
+    "docs/COORDINATE_SOURCE.md",
+    "docs/GENERATION_OUTPUT.md",
+    "docs/QA.md",
+    "docs/VALIDATION.md",
+    "docs/ORIENTATION.md",
+    "docs/AGGREGATION.md",
+    "docs/RELEASE_ACCEPTANCE.md",
+    "docs/plans/2026-10-25-gps-v1.3.2-odbior.md",
+    "ci/README.md",
+    "CHANGELOG.md",
+    "docs/releases/v0.7.0-notes.md"
+  ],
+  "reviewed_revision": "e9522d33ce40134d6589e3231f4443716e06f4f2",
+  "schema_version": 1,
+  "source_review": {
+    "existing_objects_changed": [
+      "KSZ-0047",
+      "KSZ-0064",
+      "KSZ-0090",
+      "KSZ-0113"
+    ],
+    "explicit_plan_links_valid_and_unchanged": 814,
+    "full_field_report_matches_csv": true,
+    "geometry": [
+      {
+        "delta_e_m": -12.879152999958023,
+        "delta_n_m": -3.5011539999977686,
+        "distance_m": 13.34655990613417,
+        "plan_id": "001349",
+        "rotation_scale_unchanged": true
+      },
+      {
+        "delta_e_m": -12.947519000037573,
+        "delta_n_m": -3.562963000003947,
+        "distance_m": 13.42881058008233,
+        "plan_id": "001351",
+        "rotation_scale_unchanged": true
+      },
+      {
+        "delta_e_m": -12.849701999919489,
+        "delta_n_m": -3.480370999983279,
+        "distance_m": 13.312694084378997,
+        "plan_id": "001387",
+        "rotation_scale_unchanged": true
+      },
+      {
+        "delta_e_m": -12.879153999965638,
+        "delta_n_m": -3.5011540000268724,
+        "distance_m": 13.346560871128377,
+        "plan_id": "010935",
+        "rotation_scale_unchanged": true
+      }
+    ],
+    "historical_fixtures_use_preserved_v1_3_1": true,
+    "historical_hashes_not_rewritten": true,
+    "independent_tfw_changed": [
+      "001349",
+      "001351",
+      "001387",
+      "010935"
+    ],
+    "independent_tfw_matches_t11": 814,
+    "inputs_orientation_aggregate_unchanged": true,
+    "live_github_readback": {
+      "issues": [
+        {
+          "body_sha256": "8f1406112c3b77fac7decbd6f8c3521b05a6e7e838194492780cc2f7a2bf4e04",
+          "comments": 0,
+          "number": 1,
+          "state": "open",
+          "updated_at": "2026-04-09T09:28:37Z",
+          "url": "https://github.com/dlubom/Georeferencer/issues/1"
+        },
+        {
+          "body_sha256": "098a5cb825bd5fd849dd7b9d376c8702b4eb91389c7f40e01a07236743241f19",
+          "comments": 0,
+          "number": 3,
+          "state": "open",
+          "updated_at": "2026-05-17T17:58:34Z",
+          "url": "https://github.com/dlubom/Georeferencer/issues/3"
+        }
+      ],
+      "release": {
+        "asset": [
+          {
+            "digest": "sha256:6ef2607dacc02933240e820c42a0bab544790a38b5594a730fc4130b105c9ec0",
+            "id": 674981417,
+            "name": "best-measurements.csv",
+            "size": 674407,
+            "url": "https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/download/v1.3.2/best-measurements.csv"
+          }
+        ],
+        "draft": false,
+        "prerelease": false,
+        "published_at": "2026-10-25T12:23:08Z",
+        "tag": "v1.3.2",
+        "url": "https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v1.3.2"
+      }
+    },
+    "measured_zero_assumed_zero_and_null_remain_distinct": true,
+    "new_csv_bytes": 674407,
+    "new_csv_sha256": "6ef2607dacc02933240e820c42a0bab544790a38b5594a730fc4130b105c9ec0",
+    "objects_added": [
+      "KSZ-0114",
+      "KSZ-0115",
+      "KSZ-0116",
+      "KSZ-0117"
+    ],
+    "objects_removed": [],
+    "old_csv_sha256": "a783a4d124b43b9c9b864d79ca6a5c0183561f8972c755d58de2cfc1ea9b4d6f",
+    "passed": true,
+    "pin_is_explicit_without_latest": true,
+    "preservation": {
+      "active_source_manifest_equals_versioned_candidate": true,
+      "base": "addd87607b6356a8ade8fe3e0799d3472ff1af77",
+      "extra_protected_files": [],
+      "original_reports_plans_and_csv_byte_identical": 32,
+      "previous_source_manifest_preserved_exactly": true,
+      "protected_files_byte_identical": 4146,
+      "protected_roots": [
+        "data/caves",
+        "data/history",
+        "data/baseline",
+        "data/migrations",
+        "data/classification",
+        "data/validation",
+        "parquet",
+        "pipeline",
+        "ci",
+        "scripts",
+        ".github/workflows"
+      ],
+      "source_issue_bodies_states_and_timestamps_match_live_readback": true
+    },
+    "qa_after": {
+      "accepted": 1405,
+      "blocking": 0,
+      "origins": {
+        "crowdsourcing": 801,
+        "manual_historical": 13
+      },
+      "plans": 814,
+      "problems": 1405
+    },
+    "qa_before": {
+      "accepted": 1405,
+      "blocking": 0,
+      "origins": {
+        "crowdsourcing": 801,
+        "manual_historical": 13
+      },
+      "plans": 814,
+      "problems": 1405
+    },
+    "qa_entries_identical": 1396,
+    "qa_entries_reviewed": 9,
+    "qa_evidence_and_close_conditions_unchanged": true,
+    "qa_evidence_and_close_when_preserved_for_all_nine": true,
+    "qa_review_entries": [
+      {
+        "basis_after": "b27542bde49d705e5669b9a9ced9786ac73b34a5feb7cae8f6f9e4dea37e41d9",
+        "basis_before": "4dde32c820cc5e62f6ede5d86d7f342b2c54077e1a28269ccde356d237d9c1d2",
+        "plan_id": "001349",
+        "rule": "entrance.disagreement"
+      },
+      {
+        "basis_after": "02e2af71c4aece8b8417000ae1442534b8c1a76486ea9eb4436bd218ae2ed367",
+        "basis_before": "968f75e1780f5bfa125299e0409585c48c9af944ccb15e836da9d18e392d8c71",
+        "plan_id": "001349",
+        "rule": "entrance.review"
+      },
+      {
+        "basis_after": "b73d2d6c6e5e536b165ccbaa01b3901fd059ae8b8364da6b28bc10ced0d62af8",
+        "basis_before": "3379705921891900f7ce098d334dd246c937d41d13ee67084763674219500685",
+        "plan_id": "001349",
+        "rule": "orientation.unknown"
+      },
+      {
+        "basis_after": "ffd8a658c2225be319ce25b4b6e792f0fc7d2b21f7f650337dc681f9465a0f61",
+        "basis_before": "4c5572a4f54dacba766768f261afdffde6a8199a84926fc539df26415327bbb3",
+        "plan_id": "001351",
+        "rule": "orientation.unknown"
+      },
+      {
+        "basis_after": "a8abb96eff937894782a6b5b89c5845ac26e9a312f438d10067933cd76a4cdf6",
+        "basis_before": "fcadaed3a43f766bee226ed2a67d6c7117bf06f965aa432d273b3ca22437f62a",
+        "plan_id": "001351",
+        "rule": "source.review"
+      },
+      {
+        "basis_after": "b58ea81c5973e83cc18217cf8da80db78a59884a937743a0a29387abc6ec3550",
+        "basis_before": "862f65e1d4893977a505058d28be4becb22ff4faf90c00f5859bc9e065134cab",
+        "plan_id": "001387",
+        "rule": "orientation.unknown"
+      },
+      {
+        "basis_after": "af0ed2edcb7e89cec37f6301e2def59597c6f60f143c70642f97374baa143221",
+        "basis_before": "81664e1d139ef74b96ae5a6e4752370540310f34dfae822c853b639ed0671c32",
+        "plan_id": "010935",
+        "rule": "entrance.disagreement"
+      },
+      {
+        "basis_after": "82747288c7a329468fe90e8e7a8403fbe48d804ed64fc41cb0c2b7bb0a6f84c4",
+        "basis_before": "c190663533f72aeae5985144f2e6529cfb76ad937965a16ee2208735bc50d74d",
+        "plan_id": "010935",
+        "rule": "orientation.unknown"
+      },
+      {
+        "basis_after": "3f14ae95c5d36f3f64d2d03fe18edd41de9df32a5d6e92002c07fef06bd28fff",
+        "basis_before": "4c66e4360ac5cf6998a61d57d1a03aa687b4de3cb194f29fdced6fcfcdd58d25",
+        "plan_id": "010935",
+        "rule": "source.review"
+      }
+    ],
+    "qa_stale": {
+      "accepted": 1396,
+      "blocking": 18,
+      "origins": {
+        "crowdsourcing": 801,
+        "manual_historical": 13
+      },
+      "plans": 814,
+      "problems": 1414
+    },
+    "runtime_tests_use_active_pin": true,
+    "source_objects_after": 1028,
+    "source_objects_before": 1024,
+    "technical_exceptions_added": false,
+    "unknown_unverified_and_t08_assumed_grid_preserved": true
+  },
+  "validation": {
+    "full_project_check": {
+      "command": "./scripts/check",
+      "container_seconds": 303.514,
+      "container_tests": 191,
+      "evidence": "build/gps-v1.3.2-candidate/check-final.log",
+      "host_tests": 7,
+      "passed": true,
+      "review_method": "Odczyt terminalnego logu autora; reviewer nie powtarzał całego zestawu.",
+      "total": 198
+    },
+    "git_diff_check_passed": true,
+    "independent_archive_acceptance_passed": true,
+    "independent_host_readback_passed": true,
+    "independent_source_audit_passed": true
+  }
+}

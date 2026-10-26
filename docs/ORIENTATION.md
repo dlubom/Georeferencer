@@ -121,7 +121,14 @@ Path('/tmp/t05-north.json').write_text(
 PY
 cmp /tmp/t05-north.json data/migrations/t05-north.json
 python pipeline/catalogue_baseline.py verify
-python pipeline/catalogue_baseline.py recalculate --output /tmp/recalculated.json
+PYTHONPATH=pipeline python - <<'PY'
+import json
+from pathlib import Path
+import catalogue_baseline as b
+old_pin = b.ROOT / 'data/coordinate-source/source-v1.3.1.json'
+result = b.recalculation(b.ROOT, json.loads(b.BASELINE.read_text()), old_pin)
+Path('/tmp/recalculated.json').write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
+PY
 cmp /tmp/recalculated.json data/baseline/2026-10-24/recalculated-v1.3.1.json
 ./scripts/check
 ```

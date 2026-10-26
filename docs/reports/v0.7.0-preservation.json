@@ -1,0 +1,108 @@
+{
+  "all_data_identical_to_prior_pr28": true,
+  "base": "1899aa239ef813a7a890f7d5ed3a50c11479b44f",
+  "historical_pr28": "bfb56c28b68c2672a13ebc5f21951348c75e5dc7",
+  "passed": true,
+  "pipeline_scripts_ci_workflows_identical_to_pr29_main": true,
+  "protected_source_paths_identical_to_main": [
+    "data/caves",
+    "parquet",
+    "data/history",
+    "data/baseline",
+    "data/migrations",
+    "data/validation"
+  ],
+  "qa_entries_changed": [
+    {
+      "changed_fields": [
+        "basis_sha256",
+        "reason",
+        "sources"
+      ],
+      "evidence_and_close_when_unchanged": true,
+      "plan_id": "001349",
+      "rule": "entrance.disagreement"
+    },
+    {
+      "changed_fields": [
+        "basis_sha256",
+        "reason",
+        "sources"
+      ],
+      "evidence_and_close_when_unchanged": true,
+      "plan_id": "001349",
+      "rule": "entrance.review"
+    },
+    {
+      "changed_fields": [
+        "basis_sha256",
+        "reason",
+        "sources"
+      ],
+      "evidence_and_close_when_unchanged": true,
+      "plan_id": "001349",
+      "rule": "orientation.unknown"
+    },
+    {
+      "changed_fields": [
+        "basis_sha256",
+        "reason",
+        "sources"
+      ],
+      "evidence_and_close_when_unchanged": true,
+      "plan_id": "001351",
+      "rule": "orientation.unknown"
+    },
+    {
+      "changed_fields": [
+        "basis_sha256",
+        "reason",
+        "sources"
+      ],
+      "evidence_and_close_when_unchanged": true,
+      "plan_id": "001351",
+      "rule": "source.review"
+    },
+    {
+      "changed_fields": [
+        "basis_sha256",
+        "reason",
+        "sources"
+      ],
+      "evidence_and_close_when_unchanged": true,
+      "plan_id": "001387",
+      "rule": "orientation.unknown"
+    },
+    {
+      "changed_fields": [
+        "basis_sha256",
+        "reason",
+        "sources"
+      ],
+      "evidence_and_close_when_unchanged": true,
+      "plan_id": "010935",
+      "rule": "entrance.disagreement"
+    },
+    {
+      "changed_fields": [
+        "basis_sha256",
+        "reason",
+        "sources"
+      ],
+      "evidence_and_close_when_unchanged": true,
+      "plan_id": "010935",
+      "rule": "orientation.unknown"
+    },
+    {
+      "changed_fields": [
+        "basis_sha256",
+        "reason",
+        "sources"
+      ],
+      "evidence_and_close_when_unchanged": true,
+      "plan_id": "010935",
+      "rule": "source.review"
+    }
+  ],
+  "qa_entries_identical": 1396
+}

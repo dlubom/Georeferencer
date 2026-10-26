@@ -70,7 +70,8 @@ declination_deg: 0.0
         self.meta_path.write_text(yaml.safe_dump(attach_orientation(yaml.safe_load(self.meta_path.read_text()),
             hashlib.sha256(self.image_path.read_bytes()).hexdigest()),
                                                   allow_unicode=True, sort_keys=False))
-        self.coordinates_path = ROOT / "data/coordinate-source/best-measurements-v1.3.1.csv"
+        from coordinate_source import verify
+        self.coordinates_path = verify()
         self.registry_path = self.data_dir / "images.json"
         self.registry_path.write_text(json.dumps({"schema_version": 1, "plans": {
             "001131": {"filename": "image_1_zoom_10.tif", "image_id": 1,

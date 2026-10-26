@@ -75,13 +75,32 @@ planów TEST; przebudowa raportów QA pozostaje T09.
 
 ## Odtworzenie i zapis
 
-W przypiętym środowisku [wspólnej kontroli](../ci/README.md):
+W przypiętym środowisku [wspólnej kontroli](../ci/README.md), bez zapisu
+katalogu. Po aktualizacji runtime do v1.3.2 odtworzenie historycznego T07
+wymaga zachowanego CSV i opisu v1.3.1. Poniższa rekonstrukcja wejścia
+zachowuje w raporcie oryginalną nazwę `source.json` oraz liczy rzeczywisty
+hash jego zachowanych bajtów; nie podmienia aktywnego pinu ani nie zmienia
+oczekiwanego raportu. Tak samo działa test historyczny w `./scripts/check`.
 
 ```sh
-python pipeline/migrate_crowdsourcing.py --report /tmp/t07-impact.json
+PYTHONPATH=pipeline python - <<'PY'
+import json
+from pathlib import Path
+from unittest.mock import patch
+import migrate_crowdsourcing as migration
+from coordinate_source import DEFAULT_MANIFEST, ROOT, sha256, verify
+
+pin = ROOT / 'data/coordinate-source/source-v1.3.1.json'
+def historical_hash(path):
+    return sha256(pin if Path(path) == DEFAULT_MANIFEST else path)
+
+with patch.object(migration, 'verify', lambda: verify(pin)), \
+        patch.object(migration, 'sha256', historical_hash):
+    report, _ = migration.migration()
+Path('/tmp/t07-impact.json').write_text(
+    json.dumps(report, ensure_ascii=False, indent=2, allow_nan=False) + '\n')
+PY
 cmp /tmp/t07-impact.json docs/reports/t07-aggregation-impact.json
-# Jawne zastosowanie tylko T07, po obejrzeniu raportu:
-python pipeline/migrate_crowdsourcing.py --apply --report /tmp/t07-impact.json
 ./scripts/check
 ```
 

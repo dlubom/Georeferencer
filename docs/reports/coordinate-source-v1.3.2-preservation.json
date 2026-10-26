@@ -1,0 +1,21 @@
+{
+  "base": "addd87607b6356a8ade8fe3e0799d3472ff1af77",
+  "protected_files_byte_identical": 4146,
+  "protected_roots": [
+    "data/caves",
+    "data/history",
+    "data/baseline",
+    "data/migrations",
+    "data/classification",
+    "data/validation",
+    "parquet",
+    "pipeline",
+    "ci",
+    "scripts",
+    ".github/workflows"
+  ],
+  "extra_protected_files": [],
+  "prior_exceptions_sha256": "b4d1f614c60b6af504666ae33cc6084c71ed2344fc7fcb065b33e3c9e73e199e",
+  "original_reports_plans_and_csv_byte_identical": 32,
+  "source_issue_bodies_states_and_timestamps_match_live": true
+}

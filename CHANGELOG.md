@@ -1,5 +1,53 @@
 # Changelog
 
+## v0.7.0 — Kontrolowany GeoTIFF i współrzędne Pawlikowskiego (2026-10-26)
+
+Zmiany od opublikowanego v0.6.2.
+
+### Współrzędne
+
+- Jawny pin gps-kataster v1.3.2, zweryfikowany SHA-256 i wersjonowany CSV.
+  Zachowano CSV/opis v1.3.1. Cztery istniejące obiekty zmieniają Best,
+  cztery nowe pozostają bez automatycznych powiązań z planami.
+- Względem T11 przesuwają się wyłącznie plany 001349 (Mylna),
+  001351 (Obłazkowa), 001387 (Raptawicka) i 010935 (Pawlikowskiego),
+  o 13.31–13.43 m, bez zmiany skali ani obrotu. Dziewięć unieważnionych
+  wyjątków QA oceniono indywidualnie; pozostałe 1396 pozostaje bez zmian.
+
+### Pipeline i format paczki — T01–T11
+
+- Wspólna kontrola w przypiętym Linux/Python/GDAL, jawne źródła i zachowana
+  historia 814 planów. Pełna walidacja ID, obrazów, parametrów i proweniencji.
+- Wyniki powstają poza źródłami, z cache według treści, kompletnym manifestem
+  i rzeczywistym odczytem wszystkich GeoTIFF-ów przed publikacją przebiegu.
+- Jawna niepewność północy i modele geographic/magnetic/grid, poprawna
+  konwencja narożnika kliknięć i półpiksela TFW/GDAL. Historyczne unknown
+  zachowuje kąt TFW T02; nowe unknown wymaga osobnego assumed_grid.
+- Selektywna agregacja T07 wyklucza siedem jawnych TEST, rozdziela ważne
+  komponenty i zachowuje ręczne korekty. Zmieniono 12 YAML-i; brak ponownej
+  ekstrakcji. Bezpieczne narzędzie dodawania planów T08 nie dodaje samo planów.
+- QA rozdziela błędy techniczne od jawnie dopuszczonych niepewności;
+  oba tryby wydania korzystają ze wspólnej bramki i odbioru ZIP T11.
+- **Układ ZIP t11-v2:** czytelne TIFF-y bezpośrednio w korzeniu, np.
+  `001094_T.D-08.07_Jaskinia_Mroźna.tif`, oraz `manifest.json` z kompletnym
+  mapowaniem `plan_id/output/archive_path/sha256`. TFW i computed.json są
+  w `metadane/{plan_id}/`. Zachowano historyczną normalizację nazw v0.6.2
+  i nazwę archiwum `geotiff-tatry-v0.7.0.zip`. Katalog zawiera 814 planów.
+  Wewnętrzny przebieg generatora nadal używa katalogów `plan_id/`.
+
+### Granice odbioru
+
+- PASS oznacza odbiór techniczny i egzekwowanie 1405 znanych niepewności,
+  nie terenowe potwierdzenie kartografii. Wszystkie historyczne północe
+  nadal są unknown/unverified; issues #1/#3 pozostają otwarte.
+- Nowe Best Pawlikowskiego są nieweryfikowane i mają nieznaną dokładność.
+  Obliczenia nie weryfikują terenowo progu/stacji, skali ani orientacji planu.
+- [Raport wpływu](docs/reports/coordinate-source-v1.3.2-impact.json),
+  [odbiór](docs/plans/2026-10-25-gps-v1.3.2-odbior.md) oraz
+  [treść publikacji](docs/releases/v0.7.0-notes.md).
+
+---
+
 ## v0.6.2 — Korekta dowiązania planów i obsługa sztolni (2026-10-24)
 
 ### Poprawki georeferencji

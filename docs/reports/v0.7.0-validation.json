@@ -1,0 +1,58 @@
+{
+  "audit_regression": "docs/reports/v0.7.0-audit-regression.json",
+  "command": "./scripts/check",
+  "container": {
+    "seconds": 354.667,
+    "tests": 210
+  },
+  "controlled_t11_v1_regression": {
+    "detected": true,
+    "errors": 0,
+    "expected_failures": 1,
+    "log_sha256": "106a57f35c9e5f52b457e9537daea399b3ec2e9e2da6003f7ddd2896f312fcf6",
+    "script_exit_code": 0
+  },
+  "environment": {
+    "GDAL": "GDAL 3.12.4 \"Chicoutimi\", released 2026/04/22",
+    "GDAL build": "OGR_ENABLED=YES\nCURL_ENABLED=YES\nCURL_VERSION=8.5.0\nGEOS_ENABLED=YES\nGEOS_VERSION=3.12.1-CAPI-1.18.1\nPROJ_BUILD_VERSION=9.8.1\nPROJ_RUNTIME_VERSION=9.8.1\nCOMPILER=GCC 13.3.0",
+    "PROJ (pyproj)": "9.8.1",
+    "Python": "3.12.3",
+    "architecture": "x86_64",
+    "packages": {
+      "Jinja2": "3.1.6",
+      "MarkupSafe": "3.0.4",
+      "PyYAML": "6.0.3",
+      "certifi": "2026.10.23",
+      "numpy": "2.5.4",
+      "pandas": "3.1.0",
+      "pillow": "13.0.0",
+      "pip": "25.3",
+      "pyarrow": "26.0.0",
+      "pyproj": "3.8.0",
+      "python-dateutil": "3.0.0",
+      "six": "1.17.0",
+      "tzdata": "2026.5"
+    },
+    "system": "Linux"
+  },
+  "host": {
+    "seconds": 2.631,
+    "tests": 7
+  },
+  "log_sha256": "c473dec5e21ce487224fb3cc6ba5cf10cd0fa56d40e2f54ef4ce160d336cceac",
+  "passed": true,
+  "prior_check": {
+    "container": 209,
+    "container_seconds": 292.007,
+    "host": 7,
+    "log_sha256": "a7d349bea2e5772a36f34ed364481214834e0cddc649c7ad49a73fb8de3093ca",
+    "total": 216
+  },
+  "scope_after_source_commit": [
+    "docs/reports/v0.7.0-catalogue-audit.py",
+    "tests/test_release_catalogue_audit.py",
+    "release evidence and acceptance documentation"
+  ],
+  "source_revision": "23a81c834690ff26e3637cb1431ba4ee32590d1f",
+  "total": 217
+}
