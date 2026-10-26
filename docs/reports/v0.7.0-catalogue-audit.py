@@ -5,9 +5,15 @@ import json
 import sys
 from pathlib import Path
 
+from PIL import Image
+
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'pipeline'))
 from geotiff_output import check_geotiff, tfw_geotransform
+
+# T09 wcześniej weryfikuje źródła T03; katalog zawiera duże obrazy 1-bit.
+# Ta samodzielna komenda nie zależy od konfiguracji ubocznych importów.
+Image.MAX_IMAGE_PIXELS = None
 
 
 def digest(raw):

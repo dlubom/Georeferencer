@@ -1,0 +1,130 @@
+{
+  "checked_on": "2026-10-26",
+  "classic_protection": "HTTP404; active repository ruleset applies",
+  "gps": {
+    "asset_id": 674981417,
+    "bytes": 674407,
+    "download_identical_to_versioned_snapshot": true,
+    "downloaded_sha256": "6ef2607dacc02933240e820c42a0bab544790a38b5594a730fc4130b105c9ec0",
+    "publisher_digest": "sha256:6ef2607dacc02933240e820c42a0bab544790a38b5594a730fc4130b105c9ec0",
+    "release": "v1.3.2"
+  },
+  "main": "1899aa239ef813a7a890f7d5ed3a50c11479b44f",
+  "pr28": {
+    "baseRefOid": "addd87607b6356a8ade8fe3e0799d3472ff1af77",
+    "headRefOid": "bfb56c28b68c2672a13ebc5f21951348c75e5dc7",
+    "mergeStateStatus": "BEHIND",
+    "state": "OPEN",
+    "statusCheckRollup": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-25T19:38:47Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/dlubom/Georeferencer/actions/runs/40226680027/job/121269419730",
+        "name": "generate",
+        "startedAt": "2026-10-25T19:34:37Z",
+        "status": "COMPLETED",
+        "workflowName": "Generate GeoTIFF"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-25T19:39:35Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/dlubom/Georeferencer/actions/runs/40226680084/job/121269419859",
+        "name": "Kontrola projektu",
+        "startedAt": "2026-10-25T19:34:36Z",
+        "status": "COMPLETED",
+        "workflowName": "Kontrola PR i main"
+      }
+    ]
+  },
+  "pr29": {
+    "headRefOid": "124de5e73e4f2c6712e27c0cd68396adbb8c7333",
+    "mergeCommit": {
+      "oid": "1899aa239ef813a7a890f7d5ed3a50c11479b44f"
+    },
+    "state": "MERGED",
+    "statusCheckRollup": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-26T07:46:16Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/dlubom/Georeferencer/actions/runs/40287471805/job/121454434364",
+        "name": "generate",
+        "startedAt": "2026-10-26T07:42:51Z",
+        "status": "COMPLETED",
+        "workflowName": "Generate GeoTIFF"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-26T07:46:53Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/dlubom/Georeferencer/actions/runs/40287471616/job/121454433706",
+        "name": "Kontrola projektu",
+        "startedAt": "2026-10-26T07:42:51Z",
+        "status": "COMPLETED",
+        "workflowName": "Kontrola PR i main"
+      }
+    ]
+  },
+  "release_v0_7_0_absent": true,
+  "ruleset": {
+    "_links": {
+      "html": {
+        "href": "https://github.com/dlubom/Georeferencer/rules/25796826"
+      },
+      "self": {
+        "href": "https://api.github.com/repos/dlubom/Georeferencer/rulesets/25796826"
+      }
+    },
+    "bypass_actors": [],
+    "conditions": {
+      "ref_name": {
+        "exclude": [],
+        "include": [
+          "refs/heads/main"
+        ]
+      }
+    },
+    "created_at": "2026-10-24T22:32:26.548+02:00",
+    "current_user_can_bypass": "never",
+    "enforcement": "active",
+    "id": 25796826,
+    "name": "Wymagana kontrola projektu",
+    "node_id": "RRS_lACqUmVwb3NpdG9yec5DgmmDzgGJoNo",
+    "rules": [
+      {
+        "parameters": {
+          "do_not_enforce_on_create": false,
+          "required_status_checks": [
+            {
+              "context": "Kontrola projektu",
+              "integration_id": 15368
+            }
+          ],
+          "strict_required_status_checks_policy": true
+        },
+        "type": "required_status_checks"
+      }
+    ],
+    "source": "dlubom/Georeferencer",
+    "source_type": "Repository",
+    "target": "branch",
+    "updated_at": "2026-10-24T22:32:26.645+02:00"
+  },
+  "source_issues": [
+    {
+      "comments": 0,
+      "number": 1,
+      "state": "open",
+      "updated_at": "2026-04-09T09:28:37Z"
+    },
+    {
+      "comments": 0,
+      "number": 3,
+      "state": "open",
+      "updated_at": "2026-05-17T17:58:34Z"
+    }
+  ],
+  "tag_v0_7_0_absent": true
+}

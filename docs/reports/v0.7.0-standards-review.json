@@ -1,0 +1,57 @@
+{
+  "axis": "Standards",
+  "base": "1899aa239ef813a7a890f7d5ed3a50c11479b44f",
+  "commands": [
+    "git diff BASE...REV",
+    "git log BASE..REV --format=full",
+    "git diff --name-only BASE REV -- pipeline scripts ci .github data/caves data/history data/baseline data/migrations data/validation parquet",
+    "git status --porcelain",
+    "independent Git blob and JSON/CSV readback"
+  ],
+  "follow_up": {
+    "commands": [
+      "git diff",
+      "read audit/test and pipeline/validation.py:18",
+      "shasum -a 256"
+    ],
+    "hard_findings": [],
+    "passed": true,
+    "protected_runtime_source_diff": "empty",
+    "reason": "SPEC-1: explicit Pillow configuration in independent audit, fresh-subprocess real TIFF regression",
+    "reviewed_file_sha256": {
+      "docs/reports/v0.7.0-catalogue-audit.py": "b955c6c2f5c9aa9ef3105fff117fe9c05259f397c0d61bd278626925acda24ba",
+      "tests/test_release_catalogue_audit.py": "16897b756ff0fe97c585102ad71375eb0cc9bb48473fcbd0a2dce322989565aa"
+    },
+    "smell_findings": []
+  },
+  "hard_findings": [],
+  "passed": true,
+  "reviewed_head": "23a81c834690ff26e3637cb1431ba4ee32590d1f",
+  "reviewer": "independent agent v070_standards",
+  "scope": "Read-only Standards; separate Spec reviewer executes independent check and archive acceptance.",
+  "smell_findings": [],
+  "spec": "docs/plans/2026-10-26-v0.7.0-odbior.md",
+  "standards": [
+    "AGENTS.md",
+    "docs/GENERATION_OUTPUT.md",
+    "docs/QA.md",
+    "docs/RELEASE_ACCEPTANCE.md",
+    "ci/README.md"
+  ],
+  "verified": {
+    "changed_fields_only": [
+      "basis_sha256",
+      "reason",
+      "sources"
+    ],
+    "checkout_clean": true,
+    "commit_policy_passed": true,
+    "current_pin_sha256": "6ef2607dacc02933240e820c42a0bab544790a38b5594a730fc4130b105c9ec0",
+    "docs_t11_v2_correct": true,
+    "evidence_close_when_preserved": true,
+    "previous_pin_bytes_preserved": true,
+    "protected_paths_diff": "empty",
+    "qa_entries_changed": 9,
+    "qa_entries_identical": 1396
+  }
+}

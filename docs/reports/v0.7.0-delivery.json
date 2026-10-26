@@ -1,0 +1,185 @@
+{
+  "all_zip_names_crc_hashes_output_bytes_checked": true,
+  "archive_name": "geotiff-tatry-v0.7.0.zip",
+  "archives": {
+    "manual": {
+      "archive_sha256": "30981cb36b40d5d9d034e3d6f4ffb134945d528898687c5e6ad9ce84c73f8ec7",
+      "files": 2443,
+      "passed": true,
+      "plans": 814,
+      "qa": {
+        "accepted": 1405,
+        "blocking": 0,
+        "origins": {
+          "crowdsourcing": 801,
+          "manual_historical": 13
+        },
+        "plans": 814,
+        "problems": 1405
+      },
+      "release_version": "t11-v2",
+      "run_id": "fcec1e537dfd4076bea9120c83ed1db2",
+      "run_manifest_sha256": "0b278929d583acfee4d9212753cc8023640ec4e77e3ded81cdf7422515d698fc"
+    },
+    "tag": {
+      "archive_sha256": "7b0f30fd729a21f3c3d66f820fd2a8dfdda85e76b5a21d1a3dfe3382d6caf39a",
+      "files": 2443,
+      "passed": true,
+      "plans": 814,
+      "qa": {
+        "accepted": 1405,
+        "blocking": 0,
+        "origins": {
+          "crowdsourcing": 801,
+          "manual_historical": 13
+        },
+        "plans": 814,
+        "problems": 1405
+      },
+      "release_version": "t11-v2",
+      "run_id": "fcec1e537dfd4076bea9120c83ed1db2",
+      "run_manifest_sha256": "0b278929d583acfee4d9212753cc8023640ec4e77e3ded81cdf7422515d698fc"
+    }
+  },
+  "base": "1899aa239ef813a7a890f7d5ed3a50c11479b44f",
+  "build_code": {
+    "commit": "23a81c834690ff26e3637cb1431ba4ee32590d1f",
+    "dirty": "false"
+  },
+  "catalogue": {
+    "all_rotation_scale_crs_dimensions_pixels_unchanged": true,
+    "changed_tfw": [
+      "001349",
+      "001351",
+      "001387",
+      "010935"
+    ],
+    "code": {
+      "commit": "23a81c834690ff26e3637cb1431ba4ee32590d1f",
+      "dirty": "false"
+    },
+    "historical_t11_report_sha256": "aca30bb839e60bfe31dbd55d5fedfef6d076beccd7af1ddc6e5d0b1ffa8829b5",
+    "new_cold_pair": false,
+    "passed": true,
+    "plans": 814,
+    "qa": {
+      "accepted": 1405,
+      "blocking": 0,
+      "origins": {
+        "crowdsourcing": 801,
+        "manual_historical": 13
+      },
+      "plans": 814,
+      "problems": 1405
+    },
+    "run_id": "fcec1e537dfd4076bea9120c83ed1db2",
+    "run_manifest_sha256": "0b278929d583acfee4d9212753cc8023640ec4e77e3ded81cdf7422515d698fc",
+    "t11_cold_pair_preserved": true,
+    "unchanged_tfw": 810
+  },
+  "cold_pair": {
+    "new_pair": false,
+    "preserved_report_sha256": "aca30bb839e60bfe31dbd55d5fedfef6d076beccd7af1ddc6e5d0b1ffa8829b5"
+  },
+  "coordinate_source": {
+    "asset": "best-measurements.csv",
+    "manifest_sha256": "f77744342d1231f8d4093515f77029a886d18e49a9815d78f70d3e537446d786",
+    "release": "v1.3.2",
+    "repository": "dlubom/gps-kataster-obiektow-tatr",
+    "schema_version": 1,
+    "sha256": "6ef2607dacc02933240e820c42a0bab544790a38b5594a730fc4130b105c9ec0",
+    "snapshot": "best-measurements-v1.3.2.csv"
+  },
+  "environment": {
+    "GDAL": "GDAL 3.12.4 \"Chicoutimi\", released 2026/04/22",
+    "GDAL build": "OGR_ENABLED=YES\nCURL_ENABLED=YES\nCURL_VERSION=8.5.0\nGEOS_ENABLED=YES\nGEOS_VERSION=3.12.1-CAPI-1.18.1\nPROJ_BUILD_VERSION=9.8.1\nPROJ_RUNTIME_VERSION=9.8.1\nCOMPILER=GCC 13.3.0",
+    "PROJ (pyproj)": "9.8.1",
+    "Python": "3.12.3",
+    "architecture": "x86_64",
+    "packages": {
+      "Jinja2": "3.1.6",
+      "MarkupSafe": "3.0.4",
+      "PyYAML": "6.0.3",
+      "certifi": "2026.10.23",
+      "numpy": "2.5.4",
+      "pandas": "3.1.0",
+      "pillow": "13.0.0",
+      "pip": "25.3",
+      "pyarrow": "26.0.0",
+      "pyproj": "3.8.0",
+      "python-dateutil": "3.0.0",
+      "six": "1.17.0",
+      "tzdata": "2026.5"
+    },
+    "system": "Linux"
+  },
+  "evidence_sha256": {
+    "docs/reports/v0.7.0-audit-regression.json": "a7a5ac958a9a0ca5ec45f06d56ee7631fde18925dd99f492f87891349008b316",
+    "docs/reports/v0.7.0-catalogue.json": "db7b21fd113189ea2d9b423ef5529d906e7eb11779a4509a833f290fbf2a3c88",
+    "docs/reports/v0.7.0-independent-inventory.json": "f78c584d8627504fe7e635f512a85e1d296e228c5326ff41cd07fcb82f228913",
+    "docs/reports/v0.7.0-independent-review.json": "dae42c006804cf47ed4ec512e8abbd601f6555d0e1a87606ab81b439ca4b05a3",
+    "docs/reports/v0.7.0-preflight.json": "99d91585d05de587c5c7d77332dcda8d5df65777d9241d2815c7e4e98aeb3a6f",
+    "docs/reports/v0.7.0-preservation.json": "2b41ded31c181be5da621e9054569d5f8197c4227fd1894a3b7094e1b8d34e51",
+    "docs/reports/v0.7.0-source-audit.json": "93bf264ce3f1de7a4bc9d735703def26faecc654a62604962d82e9c3a69cbcb1",
+    "docs/reports/v0.7.0-spec-review.json": "e749bbac3ace35a38b82d91bd2f0fb1f622b9684645cc77c224a05675205599d",
+    "docs/reports/v0.7.0-standards-review.json": "60ac42186f1be84cf4ea82e963888b0525a830958d9e14e6c424808cd4454367",
+    "docs/reports/v0.7.0-validation.json": "c7ee127d90357c085e277b3393d7950ceb230f2954980dcb4b303a0cbe71d342"
+  },
+  "generated": 814,
+  "historical_candidate": "bfb56c28b68c2672a13ebc5f21951348c75e5dc7 / t11-v1 (preserved, superseded)",
+  "implementation_sha256": {
+    "ci/Dockerfile": "2c0b74b607a50346a3fe2e31cf0e073685457b046c44087314044a89bfd9552e",
+    "ci/requirements.lock": "da24f6f00ad1b797d2005bd8ffdf41ead849adb574f868354e1426f4ad901d05",
+    "pipeline/01_extract_yaml.py": "fc9990cebce9d9c0e3710bef18909dde6c7796471c13a5445240e47a999d1462",
+    "pipeline/02_generate_geotiff.py": "7394901a10fdca0235219891b02e5bdb58d796b33b6d17fc32700979868c82d2",
+    "pipeline/03_report.py": "4aa6928399876413cdb3c1ef31edceb4dd5b51a75b315a68f4333405cd9e2651",
+    "pipeline/04_find_missing.py": "a95df96277f0067777c68e3cf54bdee9f9576c5477d985d213def75cda156fcd",
+    "pipeline/05_add_cave.py": "99533d711679314d8c84df8ada4e845362df29553a334093150bbc57220b465f",
+    "pipeline/build_changes.py": "e93f178c33dc7ca032eea329c7596c3f614ad847169160b53cc79bbd1e057875",
+    "pipeline/build_identity.py": "3f89ee88eb3157acb8b745311eb0989a7fa624386ca6c5b3229c2fffc8f03ad3",
+    "pipeline/catalogue_baseline.py": "5ac53dfc15bca4dfaabc99e6f022b569f978330e3e0588c849e3f9fed9798887",
+    "pipeline/coordinate_source.py": "f707721d01e9034c4eaf24117103f8bdec489f27a48da0167414b0bf8b00fc8d",
+    "pipeline/crowdsourcing.py": "1231f29d076f5c647be32aa612b7a78b44435a7b6a781a46c27b22ff13493a5f",
+    "pipeline/geometry_impact.py": "210b0a1d5f50dfb94fd14549b997e22b113d1db6f21137d26e2c2d336bbd75ad",
+    "pipeline/geotiff_output.py": "c6f4d6e31fc01e114faadfc074b702e23215b6bc0eda9f84f87ca38b4a3555ac",
+    "pipeline/gps_kataster_coordinates.py": "bd50210840415e98b9987500ef0df97f46a5afc47c0cd7428a0392dae93a804b",
+    "pipeline/meta-schema-v1.json": "570a05e6ff1c11bbbb7d54fe74576c3bf464a8a10d216c28ddc65d92a13ed810",
+    "pipeline/migrate_crowdsourcing.py": "1d18fc992c2dbeec78d4fa48ec7d0443640517b61e89307ac7795480c31d20aa",
+    "pipeline/migrate_north.py": "3aaaa5eeb07e478b0d405c1ec94f4cc818fbf9e269dc8e4af5dc4104c1399fe1",
+    "pipeline/orientation.py": "57d85106b0f4f98e57a32cd8d1236d3924b346118a79333743f706267f64a020",
+    "pipeline/package_release.py": "5ef9d4237c4dc8de405312f5c4a0883ae0017d7aa4173d9ed78fcee39ac9162b",
+    "pipeline/qa.py": "680d4fd87ab02b44403e2688ee9d8aed415e35f0db02a633b8dcebb18bc13d94",
+    "pipeline/qa_outputs.py": "860af0cd8a75a19944885819b3bcec03eccc53c2e4308f26d39c9f962b2dfcdc",
+    "pipeline/release_acceptance.py": "95c3a8ee9da54dbe6a7589346d5925bfcbb6fe8e72260d76a2971e419ddb419f",
+    "pipeline/release_layout.py": "5722ca46f058d9ec8cb602f1e9670a18f9dbe501bc2548e9f03540318c2de9bd",
+    "pipeline/requirements.txt": "c8be5ff72abd22f9b970418832ee26dccae3b6fe2a62f7ff217e7fe82a372973",
+    "pipeline/validation.py": "97f2501d2a77718ef1798f7b8c50ab8289a7dacc2b506724bdb6e04b778a00e8",
+    "scripts/build": "472f432c2e7e5d000655e2e3ce60751b5ad2fa1e69bcecccfc5d9f39789894d9"
+  },
+  "independent_inventory": "docs/reports/v0.7.0-independent-inventory.json",
+  "preservation": "docs/reports/v0.7.0-preservation.json",
+  "qa": {
+    "accepted": 1405,
+    "blocking": 0,
+    "origins": {
+      "crowdsourcing": 801,
+      "manual_historical": 13
+    },
+    "plans": 814,
+    "problems": 1405
+  },
+  "release_contract": "t11-v2",
+  "reused": 0,
+  "review": "docs/reports/v0.7.0-independent-review.json",
+  "reviewed_fix_test_sha256": {
+    "docs/reports/v0.7.0-catalogue-audit.py": "b955c6c2f5c9aa9ef3105fff117fe9c05259f397c0d61bd278626925acda24ba",
+    "tests/test_release_catalogue_audit.py": "16897b756ff0fe97c585102ad71375eb0cc9bb48473fcbd0a2dce322989565aa"
+  },
+  "run_id": "fcec1e537dfd4076bea9120c83ed1db2",
+  "run_manifest_sha256": "0b278929d583acfee4d9212753cc8023640ec4e77e3ded81cdf7422515d698fc",
+  "schema_version": 1,
+  "scope": "Pre-publication local delivery of PR28 after PR29; remote final-head/main/tag/public-readback gates are tracked separately.",
+  "scope_after_source_revision": "Only standalone audit correction, its fresh-subprocess regression, and evidence/docs; pipeline/scripts/ci/workflows/data/parquet identical. The candidates honestly retain source23 code provenance; final CI must verify the evidence commit.",
+  "source_revision": "23a81c834690ff26e3637cb1431ba4ee32590d1f",
+  "validation": "docs/reports/v0.7.0-validation.json"
+}

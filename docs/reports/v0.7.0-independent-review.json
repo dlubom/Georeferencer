@@ -1,0 +1,79 @@
+{
+  "Spec": {
+    "confirmed_by": [
+      "independent RED/GREEN in fresh subprocess",
+      "all814 actual GeoTIFF readback",
+      "tag and manual accept plus independent inventory"
+    ],
+    "open_findings": [],
+    "report": "docs/reports/v0.7.0-spec-review.json",
+    "resolved_findings": [
+      "SPEC-1"
+    ]
+  },
+  "Standards": {
+    "follow_up_passed": true,
+    "hard_findings": [],
+    "report": "docs/reports/v0.7.0-standards-review.json",
+    "smell_findings": []
+  },
+  "archives": {
+    "manual": {
+      "archive_sha256": "30981cb36b40d5d9d034e3d6f4ffb134945d528898687c5e6ad9ce84c73f8ec7",
+      "files": 2443,
+      "passed": true,
+      "plans": 814,
+      "qa": {
+        "accepted": 1405,
+        "blocking": 0,
+        "origins": {
+          "crowdsourcing": 801,
+          "manual_historical": 13
+        },
+        "plans": 814,
+        "problems": 1405
+      },
+      "release_version": "t11-v2",
+      "run_id": "fcec1e537dfd4076bea9120c83ed1db2",
+      "run_manifest_sha256": "0b278929d583acfee4d9212753cc8023640ec4e77e3ded81cdf7422515d698fc"
+    },
+    "tag": {
+      "archive_sha256": "7b0f30fd729a21f3c3d66f820fd2a8dfdda85e76b5a21d1a3dfe3382d6caf39a",
+      "files": 2443,
+      "passed": true,
+      "plans": 814,
+      "qa": {
+        "accepted": 1405,
+        "blocking": 0,
+        "origins": {
+          "crowdsourcing": 801,
+          "manual_historical": 13
+        },
+        "plans": 814,
+        "problems": 1405
+      },
+      "release_version": "t11-v2",
+      "run_id": "fcec1e537dfd4076bea9120c83ed1db2",
+      "run_manifest_sha256": "0b278929d583acfee4d9212753cc8023640ec4e77e3ded81cdf7422515d698fc"
+    }
+  },
+  "base": "1899aa239ef813a7a890f7d5ed3a50c11479b44f",
+  "candidate_run": {
+    "code": {
+      "commit": "23a81c834690ff26e3637cb1431ba4ee32590d1f",
+      "dirty": "false"
+    },
+    "generated": 814,
+    "manifest_sha256": "0b278929d583acfee4d9212753cc8023640ec4e77e3ded81cdf7422515d698fc",
+    "path": "/Users/dariuszlubomski/.codex/worktrees/pr28-v070-t11v2/Georeferencer/build/geotiff/runs/fcec1e537dfd4076bea9120c83ed1db2",
+    "reused": 0,
+    "run_id": "fcec1e537dfd4076bea9120c83ed1db2"
+  },
+  "final_commit_condition": "Reviewed file bytes must be identical in final Git blobs; final head CI and protected merge/main/release/public readback remain separate gates.",
+  "passed": true,
+  "reviewed_file_sha256": {
+    "docs/reports/v0.7.0-catalogue-audit.py": "b955c6c2f5c9aa9ef3105fff117fe9c05259f397c0d61bd278626925acda24ba",
+    "tests/test_release_catalogue_audit.py": "16897b756ff0fe97c585102ad71375eb0cc9bb48473fcbd0a2dce322989565aa"
+  },
+  "source_revision": "23a81c834690ff26e3637cb1431ba4ee32590d1f"
+}
