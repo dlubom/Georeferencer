@@ -14501,7 +14501,7 @@
       ]
     },
     {
-      "basis_sha256": "ffd8a658c2225be319ce25b4b6e792f0fc7d2b21f7f650337dc681f9465a0f61",
+      "basis_sha256": "856fbe59a2ced6aa63f3a611aabf7283e9c8096bac2c2d768e647056240386bd",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "unknown",
@@ -14517,39 +14517,11 @@
         "uncertainty_reason": "Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano orientację historycznego TFW T02."
       },
       "plan_id": "001351",
-      "reason": "Obłazkowa: północ unknown/unverified; kąt wyłącznie z TFW T02 7c106c8e773f080b5b344c5942f4ada3b880c03b2065ddc123732f1c888d0983. KSZ-0090 m-004 przesuwa położenie o 13.428811 m, nie zmienia skali ani obrotu i nie dokumentuje północy.",
+      "reason": "Kliknięcie wskazuje południowy otwór Mylnej: KSZ-0064. Korekta o 33.453244 m zachowuje skalę i historyczny kąt TFW T02; północ pozostaje unknown/unverified.",
       "rule": "orientation.unknown",
       "sources": [
         "docs/QA.md",
         "docs/ORIENTATION.md",
-        "docs/plans/2026-10-25-gps-v1.3.2-odbior.md",
-        "docs/reports/coordinate-source-v1.3.2-impact.json"
-      ]
-    },
-    {
-      "basis_sha256": "a8abb96eff937894782a6b5b89c5845ac26e9a312f438d10067933cd76a4cdf6",
-      "close_when": "Ręczne porównanie konkretnej uwagi z aktualnym obrazem, otworem i georeferencją oraz zapis rozstrzygnięcia ze źródłem.",
-      "evidence": {
-        "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania.",
-        "current_object_id": "KSZ-0090",
-        "input_status": "valid",
-        "name": "Jaskinia Obłazkowa",
-        "note": "Jaskinia Obłazkowa - pominięta (wiele planów na jednym)",
-        "plan_ids": [
-          "001351"
-        ],
-        "rule": "source.review",
-        "source": "https://github.com/dlubom/Georeferencer/issues/1",
-        "source_updated_at": "2026-04-09T09:28:37Z"
-      },
-      "plan_id": "001351",
-      "reason": "Obłazkowa: ta sama uwaga issue #1 o wielu planach na jednym obrazie nadal otwarta. Nie zmieniono obrazu, jego ID ani wybranego KSZ-0090; nowe m-004 zmienia dowiązanie, nie rozstrzyga interpretacji grafiki. Dopuszczenie dotyczy wyłącznie tej uwagi, nie ewentualnych błędów odczytu.",
-      "rule": "source.review",
-      "sources": [
-        "docs/QA.md",
-        "docs/ORIENTATION.md",
-        "https://github.com/dlubom/Georeferencer/issues/1",
-        "data/qa/source-issues-v1.json",
         "docs/plans/2026-10-25-gps-v1.3.2-odbior.md",
         "docs/reports/coordinate-source-v1.3.2-impact.json"
       ]

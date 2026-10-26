@@ -675,17 +675,6 @@
     {
       "source": "https://github.com/dlubom/Georeferencer/issues/1",
       "source_updated_at": "2026-04-09T09:28:37Z",
-      "name": "Jaskinia Obłazkowa",
-      "note": "Jaskinia Obłazkowa - pominięta (wiele planów na jednym)",
-      "plan_ids": [
-        "001351"
-      ],
-      "rule": "source.review",
-      "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania."
-    },
-    {
-      "source": "https://github.com/dlubom/Georeferencer/issues/1",
-      "source_updated_at": "2026-04-09T09:28:37Z",
       "name": "Komórka przy Średnim Leju",
       "note": "Komórka przy Średnim Leju - pominięta (wiele planów na jednym)",
       "plan_ids": [

@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.7.1 — Kotwica planu Obłazkowej (2026-10-26)
+
+- Poprawiono kotwicę wspólnego planu Mylnej i Obłazkowej `001351` na
+  południowy otwór Mylnej (`KSZ-0064`): przesunięcie o 33,453 m,
+  z zachowaniem obrazu, skali i obrotu.
+- Historyczny test T07 odtwarza zamrożone wejścia, zachowując niezależność
+  od późniejszych ręcznych korekt katalogu.
+- Zapewniono odczyt odebranego ZIP-a na runnerze i ochronę istniejących
+  assetów wydania przed nadpisaniem.
+
 ## v0.7.0 — Kontrolowany GeoTIFF i współrzędne Pawlikowskiego (2026-10-26)
 
 Zmiany od opublikowanego v0.6.2.
