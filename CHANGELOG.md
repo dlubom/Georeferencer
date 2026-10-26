@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.7.2 — Kotwica północnego otworu Mroźnej (2026-10-26)
+
+- Poprawiono przypisanie planu Mroźnej `001094` do otworu północnego
+  (`KSW-0081` → `KSW-0256`): przesunięcie o 354,163 m, z zachowaniem
+  obrazu, punktu kliknięcia, skali i obrotu.
+- Rozstrzygnięto wybór otworu w QA. Orientacja planu nadal ma status
+  `unknown/unverified`; wydanie nie wprowadza poprawki deklinacyjnej.
+- Dalszą weryfikację rodzaju północy, daty pomiarów i zgodności z GPS
+  opisano w [issue #32](https://github.com/dlubom/Georeferencer/issues/32).
+
 ## v0.7.1 — Kotwica planu Obłazkowej (2026-10-26)
 
 - Poprawiono kotwicę wspólnego planu Mylnej i Obłazkowej `001351` na
