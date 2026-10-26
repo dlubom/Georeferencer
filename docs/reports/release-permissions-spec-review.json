@@ -1,0 +1,110 @@
+{
+  "Spec": {
+    "open_findings": [],
+    "summary": "Naprawa jest ograniczona do odczytu już odebranego ZIP na runnerze i zakazu nadpisywania assetów. Kolejność pełne QA → chmod → publikacja zachowana; błąd chmod blokuje publikację. Zmieniają się wyłącznie uprawnienia pliku, bez zmiany bajtów, wyników ani źródeł. Tag pozostaje niezmienny, a poprawiony workflow_dispatch nadal pobierze kod 20864e7 z istniejącego tagu. Tryb publicznej paczki będzie manual."
+  },
+  "base": "20864e7111ab165f8a710c7915eeb0088104762b",
+  "commands": [
+    "git diff 20864e7111ab165f8a710c7915eeb0088104762b -- .github/workflows/release-geotiff.yml tests/test_release_workflow.py ci/README.md",
+    "cat docs/plans/2026-10-26-release-permissions.md (worktree autora; plik nieśledzony podczas review)",
+    "docker run --rm --platform linux/amd64 --network none --read-only --tmpfs /tmp:rw,nosuid,size=512m --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer,target=/workspace,readonly --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer/build/v070-independent/permissions-fix/test_release_workflow.py,target=/workspace/tests/test_release_workflow.py,readonly sha256:70e33f207682120185b44a44a00a912d50138523b38aaa1e028e768e3ce16c9c python -m unittest discover -s tests -p test_release_workflow.py -v",
+    "docker run --rm --platform linux/amd64 --network none --read-only --tmpfs /tmp:rw,nosuid,size=512m --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer,target=/workspace,readonly --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer/build/v070-independent/permissions-fix/test_release_workflow.py,target=/workspace/tests/test_release_workflow.py,readonly --mount type=bind,source=/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer/build/v070-independent/permissions-fix/release-geotiff.yml,target=/workspace/.github/workflows/release-geotiff.yml,readonly sha256:70e33f207682120185b44a44a00a912d50138523b38aaa1e028e768e3ce16c9c python -m unittest discover -s tests -p test_release_workflow.py -v",
+    "GitHub fetch_file: repository_full_name=softprops/action-gh-release, ref=3bb12739c298aeb8a4eeaf626c5b8d85266b0e65, path=action.yml/src/github.ts/src/util.ts (3 odczyty)",
+    "gh api repos/dlubom/Georeferencer/releases/424040195",
+    "gh api repos/dlubom/Georeferencer/git/ref/tags/v0.7.0",
+    "gh api repos/dlubom/Georeferencer/git/tags/041d11dc063bef67c5c867a873ab7d2d15386514"
+  ],
+  "completed_at_utc": "2026-10-26T09:32:08.368398+00:00",
+  "live_pre_retry": {
+    "assets": 0,
+    "draft": true,
+    "evidence_sha256": {
+      "draft-before-retry.json": "ffb8af5fa06d94d916122474c27122751c2bdb54d3c6a29f77f612307803e093",
+      "tag-object-before-retry.json": "be9ed15272ce1f72aaee4a9830661e34deb4952b73c612f55cb04d09455e282e",
+      "tag-ref-before-retry.json": "56491660f835f9089cbc1d0e8b4fc231f52f431d671db97fbe6bc3e22e69ca49"
+    },
+    "release_id": 424040195,
+    "tag": "v0.7.0",
+    "tag_commit": "20864e7111ab165f8a710c7915eeb0088104762b",
+    "tag_object": "041d11dc063bef67c5c867a873ab7d2d15386514"
+  },
+  "not_repeated": [
+    "Generacja katalogu",
+    "Para zimnych buildów T11",
+    "Pełny check reviewera; po zmianie wykonano niezależną regresję, pełny check autora pozostaje bramką."
+  ],
+  "passed": true,
+  "pinned_action_verification": {
+    "finding": "overwrite_files ma domyślnie true; łańcuch false jest parsowany na false, a istniejący asset jest pomijany przed ścieżką usuwania. Brak nadpisania potwierdzono kontraktem i źródłem dokładnego pinu.",
+    "ref": "3bb12739c298aeb8a4eeaf626c5b8d85266b0e65",
+    "repository": "softprops/action-gh-release",
+    "sources": [
+      {
+        "blob": "b471d236bc28052c1d78c3d6b57ee480d192da6a",
+        "path": "action.yml",
+        "url": "https://github.com/softprops/action-gh-release/blob/3bb12739c298aeb8a4eeaf626c5b8d85266b0e65/action.yml"
+      },
+      {
+        "blob": "0141c44410341befe78ddd0c17d72f4d8a8b2683",
+        "path": "src/github.ts",
+        "url": "https://github.com/softprops/action-gh-release/blob/3bb12739c298aeb8a4eeaf626c5b8d85266b0e65/src/github.ts#L321"
+      },
+      {
+        "blob": "49a81d9ba16c45893e8fa764d408f76b2be0b992",
+        "path": "src/util.ts",
+        "url": "https://github.com/softprops/action-gh-release/blob/3bb12739c298aeb8a4eeaf626c5b8d85266b0e65/src/util.ts#L108"
+      }
+    ]
+  },
+  "protected_paths_unchanged": [
+    "pipeline",
+    "scripts",
+    "data",
+    "parquet",
+    "ci/Dockerfile",
+    "ci/requirements.lock",
+    ".github/workflows/check.yml",
+    ".github/workflows/generate-geotiff.yml"
+  ],
+  "publication_verdict": "Nie wydano; publiczny ZIP nie został przekazany do odbioru.",
+  "regression": {
+    "GREEN": {
+      "errors": 0,
+      "exit_code": 0,
+      "log_sha256": "2c1e51e157ec87d9f9f31b121593376821a6917014766e1bae61c7508583f12e",
+      "passed": 4,
+      "tests": 4
+    },
+    "RED": {
+      "errors": 0,
+      "exit_code": 1,
+      "expected_failures": 2,
+      "log_sha256": "82b8ae6696a1674a3e6b356503e8acc196ebfa4a826978de53ddd79bd864aae7",
+      "tests": 4
+    },
+    "behavior": "UID 0 tworzy plik 0600; UID 65534 otrzymuje PermissionError. Rzeczywisty run kroku workflow nadaje 0644, po czym UID 65534 odczytuje identyczne bajty i SHA-256. Sudo jest funkcją passthrough, ponieważ test już działa jako root.",
+    "environment": "Przypięty Linux/amd64 Docker, runtime z ci/Dockerfile/lock zaakceptowanego20864e7; źródła readonly."
+  },
+  "remaining_gates": [
+    "Pełny check autora",
+    "Git blob readback",
+    "Terminalne CI osobnego PR",
+    "Chroniony merge z oczekiwanym head SHA",
+    "Terminalne CI poprawionego main",
+    "Standardowy workflow_dispatch z niezmienionym tagiem",
+    "Faktyczne pobranie i niezależny odbiór publicznego ZIP"
+  ],
+  "reviewed_as": "Cztery pliki WIP identyczne do zachowanych kopii readonly; wymagane potwierdzenie Git blobów po commicie.",
+  "reviewed_file_sha256": {
+    ".github/workflows/release-geotiff.yml": "ef5145b85dcf264e4e4ffe02e50b16d823e4da186b9252da37fb226633148076",
+    "ci/README.md": "6a601f9b33299e13dc9f94b5594aa3d963551ddea0a49f7bab77224f1fc1ff36",
+    "docs/plans/2026-10-26-release-permissions.md": "28d28bea0686422007c29a54369f87f8de084820648feab4780182d1beb271f3",
+    "tests/test_release_workflow.py": "771899ae3812667ceaa5cd2656185c2819e84863bd16c1a7371df2b308de3bf6"
+  },
+  "reviewer_checkout_clean": true,
+  "reviewer_worktree": "/Users/dariuszlubomski/.codex/worktrees/review-pr28-v070-spec/Georeferencer",
+  "runtime_image_id": "sha256:70e33f207682120185b44a44a00a912d50138523b38aaa1e028e768e3ce16c9c",
+  "schema_version": 1,
+  "scope": "Niezależny Spec review WIP naprawy uprawnień archiwum przed ponowieniem publikacji.",
+  "verdict": "PASS"
+}

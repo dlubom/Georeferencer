@@ -1,4 +1,9 @@
 """T10: oba zdarzenia wymagają tej samej bramki przed publikacją."""
+import hashlib
+import os
+import subprocess
+import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -42,6 +47,59 @@ class ReleaseWorkflowTest(unittest.TestCase):
             self.assertNotIn(unsafe, commands)
         self.assertIn('./scripts/build generate --changed', commands)
         self.assertIn('--require-results', commands)
+
+    def test_qa_archive_is_readable_by_another_user_without_changing_bytes(self):
+        self.assertEqual(os.geteuid(), 0, 'Regresja wymaga przypiętego kontenera')
+        steps = self.workflow('release-geotiff.yml')['jobs']['release']['steps']
+        permission = next((i for i, step in enumerate(steps)
+            if step.get('name') == 'Udostępnij odebraną paczkę do odczytu na runnerze'), None)
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            root.chmod(0o755)
+            (root / 'build').mkdir(mode=0o755)
+            archive = root / 'build/geotiff-tatry-v1.2.3.zip'
+            archive.write_bytes(bytes(range(256)) * 5)
+            archive.chmod(0o600)  # mkstemp w kontenerze root, odbiorca hostowy ma inne UID
+            before = hashlib.sha256(archive.read_bytes()).hexdigest()
+
+            def reader_identity():
+                os.setgroups([])
+                os.setgid(65534)
+                os.setuid(65534)
+
+            def read_as_publisher():
+                return subprocess.run([sys.executable, '-c',
+                    'from pathlib import Path; import sys; print(Path(sys.argv[1]).read_bytes().hex())',
+                    str(archive)], capture_output=True, text=True, preexec_fn=reader_identity)
+
+            denied = read_as_publisher()
+            self.assertNotEqual(denied.returncode, 0)
+            self.assertIn('PermissionError', denied.stderr)
+            self.assertIsNotNone(permission, 'Brak przekazania prawa odczytu ZIP po QA')
+            gate = next(i for i, step in enumerate(steps) if './scripts/build package ' in step.get('run', ''))
+            publish = next(i for i, step in enumerate(steps)
+                if step.get('uses', '').startswith('softprops/action-gh-release@'))
+            self.assertLess(gate, permission)
+            self.assertLess(permission, publish)
+            self.assertNotIn('if', steps[permission])
+            self.assertNotIn('continue-on-error', steps[permission])
+            # W teście już jesteśmy root; wykonujemy rzeczywisty chmod z workflow.
+            environment = dict(os.environ, RELEASE_TAG='v1.2.3')
+            command = 'sudo() { "$@"; }\n' + steps[permission]['run']
+            result = subprocess.run(['sh', '-eu', '-c', command],
+                cwd=root, env=environment, capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            received = read_as_publisher()
+            self.assertEqual(received.returncode, 0, received.stderr)
+            self.assertEqual(bytes.fromhex(received.stdout), archive.read_bytes())
+            self.assertEqual(hashlib.sha256(archive.read_bytes()).hexdigest(), before)
+            self.assertEqual(archive.stat().st_mode & 0o777, 0o644)
+
+    def test_publisher_never_overwrites_an_existing_release_asset(self):
+        steps = self.workflow('release-geotiff.yml')['jobs']['release']['steps']
+        publish = next(step for step in steps
+            if step.get('uses', '').startswith('softprops/action-gh-release@'))
+        self.assertEqual(publish['with'].get('overwrite_files'), 'false')
 
 
 if __name__ == '__main__':
