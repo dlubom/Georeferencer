@@ -119,6 +119,33 @@ class CoordinateSourceTest(unittest.TestCase):
         self.assertIn("SHA-256", result.stderr)
         self.assertFalse(output.exists())
 
+    def test_impact_includes_new_manual_plan_without_a_historical_sidecar(self):
+        plan_id = '001459-pza-2024'
+        self.assertFalse((ROOT / 'data/caves' / plan_id / 'image.tfw').exists())
+        pin = source.read_manifest(source.DEFAULT_MANIFEST)
+        rows = source.read_rows(source.verify())
+        rows['MTZ-0017']['lat'] = str(float(rows['MTZ-0017']['lat']) + .001)
+        candidate = self.root / 'manual-candidate.csv'
+        with candidate.open('w', newline='') as stream:
+            writer = csv.DictWriter(stream, fieldnames=next(iter(rows.values())).keys())
+            writer.writeheader()
+            writer.writerows(rows.values())
+        pin.update(snapshot=candidate.name, sha256=source.sha256(candidate))
+        manifest = self.root / 'manual-candidate.json'
+        manifest.write_text(json.dumps(pin))
+        output = self.root / 'manual-impact.json'
+        result = subprocess.run([sys.executable, str(ROOT / 'pipeline/coordinate_source.py'),
+            'impact', '--candidate', str(manifest), '--output', str(output)],
+            capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        report = json.loads(output.read_text())
+        self.assertEqual(report['affected_plans'], ['001459', plan_id])
+        self.assertEqual([p['dir_id'] for p in report['geometry']['plans']], ['001459', plan_id])
+        for plan in report['geometry']['plans']:
+            self.assertNotIn('error', plan['before'])
+            self.assertNotIn('error', plan['after'])
+            self.assertGreater(plan['delta']['entrance_distance_m'], 100)
+
     def test_workflows_use_pinned_build_entrypoint_without_latest_override(self):
         import yaml
         for name in ("release-geotiff.yml", "generate-geotiff.yml"):

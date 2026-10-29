@@ -120,10 +120,17 @@ def main():
             pin = read_manifest(args.manifest)
             write_verified(verify(args.manifest).read_bytes(), pin["sha256"], args.output)
         else:
-            from catalogue_baseline import capture_plans, coordinate_impact
+            import yaml
+            from catalogue_baseline import coordinate_impact
             before = read_rows(verify(args.manifest))
             after = read_rows(verify(args.candidate))
-            plans = capture_plans(ROOT, before)
+            # Bieżący katalog obejmuje T08 bez historycznego image.tfw.
+            # Pełną walidację i oba przeliczenia wykonuje coordinate_impact.
+            plans = []
+            for path in sorted((ROOT / "data/caves").glob("*/meta.yaml")):
+                meta = yaml.safe_load(path.read_text(encoding="utf-8"))
+                plans.append({"dir_id": path.parent.name,
+                              "object_id": meta["coordinates"]["gps_kataster_object_id"]})
             report = compare(before, after, plans)
             report.update({"before_source": read_manifest(args.manifest),
                            "after_source": read_manifest(args.candidate),

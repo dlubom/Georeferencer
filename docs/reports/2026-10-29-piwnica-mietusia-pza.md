@@ -101,6 +101,30 @@ Wyniki niezależnego odczytu i regresji:
 Stary katalog `001459` pozostał bajtowo bez zmian. Zmiana dodaje jeden plan
 (814 → 815) i jeden przejrzany wyjątek; nie zmienia pomiarów innych planów.
 
+## Zgodność raportu aktualizacji współrzędnych z nowym T08
+
+Pierwszy pełny przebieg testów ujawnił rzeczywistą regresję:
+`coordinate_source.py impact` używał historycznego `capture_plans`, które
+wymaga `image.tfw` przy każdym źródłowym YAML-u. T08 poprawnie nie zapisuje
+tego wygenerowanego pliku do źródeł, więc dodanie nowego planu blokowało CLI.
+
+Poprawiono wyłącznie odczyt bieżącej listy planów w komendzie `impact`:
+pobiera ID planu i object_id z YAML-i, a istniejąca funkcja
+`coordinate_impact` nadal waliduje każdy plan i przelicza obie geometrie.
+Historyczne `capture_plans`, archiwa i ich hashe pozostają bez zmian.
+Test z celową zmianą współrzędnych MTZ-0017 obejmuje teraz oba plany Piwnicy,
+bez tworzenia historycznego TFW dla nowego obrazu. Przed poprawką dwa testy
+CLI kończyły się brakiem pliku; po poprawce wszystkie 9 testów źródła
+współrzędnych przechodzi lokalnie. To dodatkowy dowód red/green.
+
+Diagnostyczny pełny zestaw na starym macOS (pierwsza rewizja `bf879b4`):
+216 testów, 514 nieudanych asercji/podprzypadków i 18 błędów. Poza naprawionym
+CLI obejmuje porównania historycznej numeryki/wersji, bazowe QA oraz testy
+ścieżek `/var` kontra `/private/var` i uprawnień wymagających root w Linux.
+Wynik ten nie zastępuje wymaganego `./scripts/check` w kontenerze.
+Bieżące wyniki przypiętej kontroli i generacji są w opisie
+[draft PR #34](https://github.com/dlubom/Georeferencer/pull/34).
+
 ## Odtworzenie rastra i generacji
 
 Pobierz wskazany PDF i sprawdź SHA-256

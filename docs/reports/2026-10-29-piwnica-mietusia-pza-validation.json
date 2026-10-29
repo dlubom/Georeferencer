@@ -59,5 +59,25 @@
     "plans": 814,
     "blocking": 12,
     "note": "Stary lokalny pandas/numpy/pyarrow zmienia podstawy sześciu niepewności trzech planów (004073,004446,011046); nie aktualizowano wyjątków."
+  },
+  "isolated_plan_t09": {
+    "input_status": "valid",
+    "output_status": "current",
+    "blocking": 0,
+    "accepted_interpretive_uncertainties": 1,
+    "scope": "Wyłącznie nowy plan, nie pełny katalog 815 planów."
+  },
+  "coordinate_impact_regression": {
+    "before": "Dwa testy CLI odrzucone przez brak źródłowego image.tfw nowego T08",
+    "after": "9 testów źródła współrzędnych PASS",
+    "new_case": "Zmiana MTZ-0017 obejmuje 001459 i 001459-pza-2024; brak wymogu źródłowego TFW"
+  },
+  "diagnostic_full_suite": {
+    "revision": "bf879b4",
+    "environment": "stary macOS, poza referencyjnym kontenerem",
+    "tests": 216,
+    "failures_including_subtests": 514,
+    "errors": 18,
+    "note": "Nie jest odbiorem; jedna ujawniona regresja CLI impact została naprawiona, pozostałe dotyczą środowiska/ścieżek/wymagań Linux."
   }
 }
