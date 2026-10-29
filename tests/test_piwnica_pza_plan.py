@@ -57,7 +57,6 @@ class PiwnicaPzaPlanTest(unittest.TestCase):
         coords = self.resolved['coordinates']
         expected = Transformer.from_crs(4326, 2180, always_xy=True).transform(coords['lon'], coords['lat'])
         self.assertLess(math.dist(world((entrance['x'], entrance['y'])), expected), 1e-7)
-        self.assertLess(abs(38.45 / 38.64 - 1), .01)
 
     def test_measured_north_does_not_claim_a_verified_reference(self):
         north = self.source['measurements']['north']

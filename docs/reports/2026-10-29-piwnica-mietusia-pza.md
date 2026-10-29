@@ -1,134 +1,38 @@
 # Piwnica Miętusia — dodatkowy plan z publikacji PZA
 
-Dodano `001459-pza-2024`, rzut poziomy ze strony 17
+Plan `001459-pza-2024` pochodzi ze strony 17
 [Polish Caving 2017–2025](https://pza.org.pl/wp-content/uploads/2025/07/POLISH-CAVING-2017-2025.pdf#page=17).
-Podpis rysunku: **Zestawienie: P. Graczyk, 2024**. Publikacja pochodzi z 2025 r.
-Artykuł na stronie 16 osobno wspomina aktualizację długości do 2940 m;
-nie utożsamiamy tej liczby z zakresem rysunku podpisanego 2024.
+Rysunek: **Zestawienie: P. Graczyk, 2024**. Wzmianka artykułu o 2940 m
+nie potwierdza objęcia tej długości rysunkiem podpisanym 2024.
 
-## Obraz i tożsamość
-
-| Parametr | Historyczny `001459` | Nowy `001459-pza-2024` |
-| --- | --- | --- |
-| Wymiary mono | 2122 × 1628 | 7630 × 5020 |
-| Skala | 38,64 px/m | 38,45 px/m |
-| Piksel terenowy | około 2,588 cm | około 2,601 cm |
-| Format | TIFF 1-bit | TIFF 1-bit, CCITTFAX4 |
-| Kotwica | MTZ-0017 | MTZ-0017 |
-| Źródłowa jaskinia | PIG 001459 | PIG 001459 |
-
-Większe wymiary wynikają z większego zasięgu rysunku. Rozdzielczość terenowa
-różni się o około 0,49%. Wycięto całą ramkę górnego planu wraz z tytułem,
-autorami, siatką i legendą. Przekrój W–E z dolnej części strony nie jest
-georeferencjonowany. PDF zawiera rysunek wektorowy, więc raster 1100 dpi
-powstał przez bezpośrednie renderowanie, bez AI i interpolacyjnego powiększania
-niskiej jakości skanu.
-
-`image_upscaled.jpg` to kolorowy raster w wymiarach TIFF-a.
-`image_original.jpg` to jego podgląd 3815 × 2510 (relacja 1:2 jak w katalogu),
-**nie skan źródłowy CBDG**. Dokładne pochodzenie, hash całego PDF-u, kadr,
-próg binaryzacji i pomiary zapisano w
+Wycięto górny rzut poziomy bez dolnego przekroju W–E. Wektorowy PDF
+wyrenderowano w 1100 dpi do TIFF-a 1-bit/CCITTFAX4, 7630 × 5020.
+Hash PDF-u, kadr, pomiary i pochodzenie JPG-ów są w
 [`source.json`](../../data/caves/001459-pza-2024/source.json).
+ID `20250017` należy do `local:pza-polish-caving`, nie do PIG/CBDG.
 
-ID obrazu `20250017` ma jawną przestrzeń `local:pza-polish-caving` i spełnia
-liczbowy kontrakt schematu v1; **nie jest graphics_id PIG/CBDG**.
-Dlatego nie tworzono fikcyjnego wpisu JSONL dla CLI `05_add_cave.py`.
-Plan przygotowano w prywatnym stagingu i odebrano tymi samymi funkcjami
-T03/T04 (`validate_plan`, `accept_generation`), po czym opublikowano katalog
-przez `publish_directory` bez zastępowania celu. Ma własny
-`image-identity.json` i początkową decyzję T08; nie zmieniono rejestru T02/T03.
+## Pomiary i orientacja
 
-## Własne pomiary na nowym obrazie mono
+Kliki dotyczą nowego obrazu mono: początek w narożniku, środek piksela (.5,.5).
 
-Układ narożnika rastra: x w prawo, y w dół, środek pierwszego piksela (0,5; 0,5).
-
-- Otwór: **(6194,5; 275,5)**, środek trójkąta na przecięciu siatki 0/0,
-  obok strzałki i opisu „1396,0 m n.p.m.”. Wysokość z podpisu nie zastępuje
-  żadnego pomiaru katalogu współrzędnych.
-- Skala: **769 px / 20 m = 38,45 px/m**, końce (1582,5; 353,5) i
-  (2351,5; 353,5). Niezależnie: 3075 px między liniami siatki -80 i 0
-  odpowiada 80 m, czyli 38,4375 px/m (różnica około 0,033%).
-- Północ: pionowa oś N, od (2455,5; 430,5) do (2455,5; 260,5), **zmierzone 0°**.
-  Mierzono oś strzałki, nie skośny bok półgrota.
+| Parametr | Pomiar |
+| --- | --- |
+| Otwór | (6194,5; 275,5), środek trójkąta przy siatce 0/0 i opisie 1396,0 m |
+| Skala | (1582,5; 353,5) → (2351,5; 353,5): 769 px / 20 m = 38,45 px/m |
+| Kontrola skali | Siatka x=3119,5 → 6194,5: 3075 px / 80 m = 38,4375 px/m |
+| Północ | Oś N (2455,5; 430,5) → (2455,5; 260,5): zmierzone 0° |
 
 ![Punkty ręcznej georeferencji](assets/piwnica-pza-manual-points.png)
 
-Kotwica: przypięty gps-kataster **v1.3.2**, obiekt **MTZ-0017**,
-pomiar **m-002**; zgodne nazwa, numer T.E-11.01 i PIG 1459.
-Nie zmieniano pinu współrzędnych.
+Kotwica: przypięty gps-kataster **v1.3.2**, obiekt **MTZ-0017**, pomiar **m-002**.
+Rodzaj północy nie jest opisany: `unknown/unverified`. Jawnie przyjęto N jako
+geograficzną i obrót **+0,679677158507°** w EPSG:2180 (`assumed_grid`).
+Wyjątek QA `orientation.unknown` wymaga potwierdzenia autora, jawnej decyzji
+i ponownego odbioru. Nie przyjęto poprawki magnetycznej.
 
-## Jawna niepewność orientacji
+## Odtworzenie rastra
 
-Samo „N” nie dokumentuje rodzaju północy. `north.reference=unknown`,
-`angle_origin=measured`, `angle_deg=0`, `orientation.status=unverified`.
-Nie przenoszono kliknięć ani historycznej orientacji T02 starego obrazu.
-
-Dla nowego planu jawnie przyjęto kierunek N jako geograficzny i obrót
-**+0,679677158507°** względem wschodniej osi EPSG:2180:
-zmierzone 0° + zbieżność PROJ w MTZ-0017, zgodnie ze znakiem T06.
-Jest to `assumed_grid`, a nie dowód rodzaju północy. Brak podstawy do
-poprawki magnetycznej. Zapisano jeden konkretny wyjątek QA
-`orientation.unknown`, z aktualną podstawą, źródłem i warunkiem zamknięcia:
-potwierdzenie autora, jawna decyzja i ponowny odbiór. Nie odświeżano starych
-wyjątków. Przy samym przyjęciu północy siatki różnica na odległości 160 m
-wyniosłaby około 1,90 m; nie jest to oszacowanie pełnej niepewności planu.
-
-## Odbiór i dowody
-
-- T03 i rzeczywisty T04: PASS; odczyt GDAL/Pillow, EPSG:2180, jeden bit,
-  CCITTFAX4, zgodne wymiary i wszystkie zdekodowane piksele.
-- Niezależny odczyt `gdalinfo` i zastosowanie geotransformacji do pomiarów:
-  podziałka ma 19,999999973 m, błąd numeryczny kotwicy około 0,000000403 m.
-  To tolerancje obliczeń, nie dokładność terenowa GPS ani interpretacji otworu.
-- Trzy testy `tests/test_piwnica_pza_plan.py`: PASS. Sprawdzają tożsamość
-  publikacji, rozmiary, geometrię niezależnych punktów i zachowanie niepewności.
-- Kontrolowana regresja: skala × 1,1 w kopii pamięciowej powoduje błąd testu
-  podziałki (18,18 m zamiast 20 m). Źródła nie były mutowane.
-- `./scripts/check` uruchomiono lokalnie: 7 testów hostowych PASS,
-  po 35 s oczekiwania na nieodpowiadający Docker przerwano lokalne wywołanie.
-  Pełny odbiór w przypiętym Linux/Python 3.12/GDAL potwierdza CI tego PR-a.
-- Lokalny macOS: Python 3.9.6, GDAL 3.13.3, pyproj 3.6.1/PROJ 9.3.0.
-  Do odbioru użyto wspólnej bazy `/opt/homebrew/share/proj`, ponieważ
-  starsza baza pyproj nie identyfikuje nowego opisu ETRF2000-PL z GDAL.
-  Nie zmieniano zależności ani walidatora projektu.
-- Stary lokalny stos pandas/numpy/pyarrow daje już na bazowym `b905a70`
-  12 blokad QA: sześć nieaktualnych podstaw i sześć niepewności trzech planów
-  `004073`, `004446`, `011046`. Nie aktualizowano tych wyjątków na podstawie
-  niereferencyjnego środowiska; kontrola CI pozostaje rozstrzygająca.
-
-Wyniki niezależnego odczytu i regresji:
-[`2026-10-29-piwnica-mietusia-pza-validation.json`](2026-10-29-piwnica-mietusia-pza-validation.json).
-Stary katalog `001459` pozostał bajtowo bez zmian. Zmiana dodaje jeden plan
-(814 → 815) i jeden przejrzany wyjątek; nie zmienia pomiarów innych planów.
-
-## Zgodność raportu aktualizacji współrzędnych z nowym T08
-
-Pierwszy pełny przebieg testów ujawnił rzeczywistą regresję:
-`coordinate_source.py impact` używał historycznego `capture_plans`, które
-wymaga `image.tfw` przy każdym źródłowym YAML-u. T08 poprawnie nie zapisuje
-tego wygenerowanego pliku do źródeł, więc dodanie nowego planu blokowało CLI.
-
-Poprawiono wyłącznie odczyt bieżącej listy planów w komendzie `impact`:
-pobiera ID planu i object_id z YAML-i, a istniejąca funkcja
-`coordinate_impact` nadal waliduje każdy plan i przelicza obie geometrie.
-Historyczne `capture_plans`, archiwa i ich hashe pozostają bez zmian.
-Test z celową zmianą współrzędnych MTZ-0017 obejmuje teraz oba plany Piwnicy,
-bez tworzenia historycznego TFW dla nowego obrazu. Przed poprawką dwa testy
-CLI kończyły się brakiem pliku; po poprawce wszystkie 9 testów źródła
-współrzędnych przechodzi lokalnie. To dodatkowy dowód red/green.
-
-Diagnostyczny pełny zestaw na starym macOS (pierwsza rewizja `bf879b4`):
-216 testów, 514 nieudanych asercji/podprzypadków i 18 błędów. Poza naprawionym
-CLI obejmuje porównania historycznej numeryki/wersji, bazowe QA oraz testy
-ścieżek `/var` kontra `/private/var` i uprawnień wymagających root w Linux.
-Wynik ten nie zastępuje wymaganego `./scripts/check` w kontenerze.
-Bieżące wyniki przypiętej kontroli i generacji są w opisie
-[draft PR #34](https://github.com/dlubom/Georeferencer/pull/34).
-
-## Odtworzenie rastra i generacji
-
-Pobierz wskazany PDF i sprawdź SHA-256
-`42d71568af15ded62ad3e3f6cb5f1fd3535d118506d35fe3589e1e89cd2ffe14`.
+Sprawdź hash PDF-u z `source.json`, następnie wykonaj:
 
 ```sh
 pdftoppm -f 17 -l 17 -r 1100 -x 855 -y 733 -W 7630 -H 5020 \
@@ -142,12 +46,15 @@ im.convert('L').point(lambda p: 255 if p >= 200 else 0, mode='1').save(
     '/tmp/piwnica-image.tif', compression='group4', dpi=(1100, 1100))
 ```
 
-Bajty rastra zależą od wersji renderera/fontów; zmiana renderowania wymaga
-nowych kliknięć i nowej decyzji, a nie automatycznej aktualizacji hasha.
-Standardowa generacja z zapisanych, zweryfikowanych źródeł:
+Zmiana rastra wymaga nowych kliknięć i decyzji orientacji.
 
-```sh
-./scripts/check
-./scripts/build generate --changed
-./scripts/build report --run-dir /build/geotiff/current --require-results
-```
+## Odbiór i wpływ
+
+T03/T04: zgodne piksele, wymiary, EPSG:2180 i kompresja. Niezależny odczyt
+GeoTIFF-a daje 19,999999973 m podziałki i błąd kotwicy 0,000000403 m
+(kontrola numeryczna, nie dokładność terenowa). Test wykrywa zmianę skali +10%.
+Plan odebrano w stagingu funkcjami T03/T04 i opublikowano bez zastępowania celu.
+Stary `001459` pozostał bajtowo bez zmian; katalog rośnie z 814 do 815 planów.
+Poprawka `coordinate_source.py impact` usuwa wymóg historycznego TFW nowego T08;
+test regresji obejmuje oba plany Piwnicy. Historia i hashe pozostają bez zmian.
+Wyniki `./scripts/check`, wersje środowiska i CI: [PR #34](https://github.com/dlubom/Georeferencer/pull/34).
