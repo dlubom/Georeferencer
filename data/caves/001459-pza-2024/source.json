@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "source_cave_id": "001459",
+  "inventory_number": "T.E-11.01",
+  "document": {
+    "title": "Polish Caving 2017–2025",
+    "publisher": "Polski Związek Alpinizmu",
+    "url": "https://pza.org.pl/wp-content/uploads/2025/07/POLISH-CAVING-2017-2025.pdf",
+    "sha256": "42d71568af15ded62ad3e3f6cb5f1fd3535d118506d35fe3589e1e89cd2ffe14",
+    "page": 17,
+    "page_count": 88,
+    "accessed": "2026-10-29"
+  },
+  "drawing": {
+    "title": "T.E-11.01 Piwnica Miętusia — Plan",
+    "compilation": "P. Graczyk, 2024",
+    "extent": "Cały górny rzut poziomy w ramce; bez dolnego przekroju W–E.",
+    "note": "Publikacja z 2025 r.; rysunek podpisany 2024, bez deklaracji objęcia wszystkich 2940 m wymienionych w aktualizacji artykułu."
+  },
+  "identity": {
+    "image_id": 20250017,
+    "namespace": "local:pza-polish-caving",
+    "note": "Lokalny liczbowy identyfikator obrazu wymagany przez schemat v1; nie jest graphics_id PIG/CBDG."
+  },
+  "extraction": {
+    "renderer": "pdftoppm (Poppler)",
+    "dpi": 1100,
+    "page": 17,
+    "crop_pixels": {
+      "x": 855,
+      "y": 733,
+      "width": 7630,
+      "height": 5020
+    },
+    "coordinate_convention": "Układ narożnika pełnej strony po renderowaniu; x w prawo, y w dół.",
+    "mono": "RGB → Pillow L; próg 200, bez ditheringu; TIFF 1-bit, CCITTFAX4.",
+    "image_original_jpg": "Podgląd rastra PDF pomniejszony Lanczos 2× do 3815×2510; nie oryginalny skan CBDG.",
+    "image_upscaled_jpg": "Bezpośredni kolorowy raster wektorowego PDF 7630×5020; bez AI/waifu2x."
+  },
+  "measurements": {
+    "coordinate_convention": "Układ narożnika image.tif: (0,0) lewy górny narożnik; środek pierwszego piksela (0.5,0.5).",
+    "entrance": {
+      "x": 6194.5,
+      "y": 275.5,
+      "basis": "Środek trójkąta otworu na przecięciu linii 0,0/0,0, obok 1396,0 m n.p.m. i czarnej strzałki."
+    },
+    "scale": {
+      "start": [
+        1582.5,
+        353.5
+      ],
+      "end": [
+        2351.5,
+        353.5
+      ],
+      "meters": 20,
+      "pixels_per_meter": 38.45,
+      "cross_check": "Siatka 20 m: pionowe linie x=3119.5 i x=6194.5 obejmują 80 m, dając 38.4375 px/m."
+    },
+    "north": {
+      "shaft_start": [
+        2455.5,
+        430.5
+      ],
+      "shaft_end": [
+        2455.5,
+        260.5
+      ],
+      "angle_deg": 0.0,
+      "basis": "Pionowa oś strzałki N; pomiar osi, nie skośnej krawędzi półgrota.",
+      "reference": "unknown",
+      "note": "Brak legendy rozstrzygającej północ geograficzną, magnetyczną lub siatkową."
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "plan_id": "001459-pza-2024",
+  "local_environment": {
+    "Python": "3.9.6",
+    "GDAL": "GDAL 3.13.3 \"Iowa City\", released 2026/08/13",
+    "PROJ_database": "/opt/homebrew/share/proj (wspólna z GDAL; starsza baza pyproj 9.3 nie rozpoznaje obecnego ETRF2000-PL)"
+  },
+  "image": {
+    "size": [
+      7630,
+      5020
+    ],
+    "bit_depth": {
+      "IMAGE_STRUCTURE": {
+        "NBITS": "1"
+      }
+    },
+    "compression": {
+      "COMPRESSION": "CCITTFAX4",
+      "INTERLEAVE": "BAND"
+    },
+    "decoded_pixels_equal": true
+  },
+  "independent_geometry": {
+    "entrance_world_xy": [
+      565283.3599971206,
+      153407.71000111202
+    ],
+    "expected_world_xy": [
+      565283.3599974556,
+      153407.7100013364
+    ],
+    "entrance_error_m": 4.0324325358330193e-07,
+    "printed_20m_ruler_m": 19.999999972679547,
+    "geoTransform": [
+      565122.1810057573,
+      0.0260059724,
+      0.000308513,
+      153412.9635627297,
+      0.000308513,
+      -0.0260059724
+    ]
+  },
+  "controlled_regression": {
+    "mutation": "scale.pixels_per_meter × 1.1 w kopii pamięciowej",
+    "detected_by": "test_printed_ruler_and_independently_projected_entrance",
+    "failures": 1,
+    "message": "AssertionError: 18.18181818175966 != 20 within 8 places (1.8181818182403404 difference)"
+  },
+  "original_plan_001459_unchanged": true,
+  "initial_t03_t04": "passed",
+  "new_plan_tests": 3,
+  "scripts_check": {
+    "host_tests": 7,
+    "host_result": "passed",
+    "container_result": "timeout: Docker nie odpowiada; wymagane potwierdzenie CI"
+  },
+  "local_qa_baseline": {
+    "plans": 814,
+    "blocking": 12,
+    "note": "Stary lokalny pandas/numpy/pyarrow zmienia podstawy sześciu niepewności trzech planów (004073,004446,011046); nie aktualizowano wyjątków."
+  }
+}
