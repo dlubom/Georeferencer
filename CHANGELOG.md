@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.7.3 — Nowszy plan Piwnicy Miętusiej (2026-10-29)
+
+- Dodano osobny plan Piwnicy Miętusiej `001459-pza-2024` z publikacji PZA
+  *Polish Caving 2017–2025*, strona 17 (zestawienie: P. Graczyk, 2024).
+  Zachowano dotychczasowy plan `001459`; katalog zawiera teraz 815 planów.
+- Ręcznie wyznaczono otwór, skalę i kierunek strzałki N na nowym rastrze.
+  Plan dowiązano do `MTZ-0017` z przypiętych współrzędnych gps-kataster v1.3.2;
+  zapisano pochodzenie obrazu i pomiarów.
+- Orientacja nowego planu pozostaje `unknown/unverified`. Jawnie przyjęty obrót
+  +0,679677° względem siatki EPSG:2180 wymaga potwierdzenia rodzaju północy
+  przez autora. Nie zastosowano poprawki magnetycznej.
+- Naprawiono `coordinate_source.py impact`: raport aktualizacji współrzędnych
+  obejmuje także nowe plany bez historycznego TFW, z zachowaniem weryfikacji
+  obu źródeł CSV i walidacji przeliczeń.
+
 ## v0.7.2 — Kotwica północnego otworu Mroźnej (2026-10-26)
 
 - Poprawiono przypisanie planu Mroźnej `001094` do otworu północnego

@@ -35227,6 +35227,32 @@
         "https://github.com/dlubom/Georeferencer/issues/1",
         "data/qa/source-issues-v1.json"
       ]
+    },
+    {
+      "basis_sha256": "484273a66bc7eab1de4b639b75d55a6b3d2809000cd0c0095676c8f973f2bd36",
+      "close_when": "Potwierdzenie rodzaju północy i ewentualnej epoki/deklinacji przez autora zestawienia; następnie jawna decyzja orientacji, ponowna generacja i przegląd tego wyjątku.",
+      "evidence": {
+        "angle_origin": "measured",
+        "grid_assumption": {
+          "convention": "image_x_ccw_from_grid_east",
+          "crs": "EPSG:2180",
+          "reason": "Rodzaj północy N nieopisany w publikacji. Roboczo przyjęto kierunek geograficzny i obrót osi x względem EPSG:2180 +0.679677158507° (zmierzone 0° + zbieżność PROJ w MTZ-0017); bez udokumentowanej deklinacji. To jawne założenie, nie ustalenie rodzaju północy; wymaga potwierdzenia autora.",
+          "rotation_deg": 0.6796771585070671
+        },
+        "historical": null,
+        "mode": "assumed_grid",
+        "north_reference": "unknown",
+        "status": "unverified",
+        "uncertainty_reason": "Rodzaj północy N nieopisany w publikacji. Roboczo przyjęto kierunek geograficzny i obrót osi x względem EPSG:2180 +0.679677158507° (zmierzone 0° + zbieżność PROJ w MTZ-0017); bez udokumentowanej deklinacji. To jawne założenie, nie ustalenie rodzaju północy; wymaga potwierdzenia autora."
+      },
+      "plan_id": "001459-pza-2024",
+      "reason": "Ręcznie zmierzono pionową strzałkę N, lecz PZA nie definiuje rodzaju północy. Dopuszczono robocze przyjęcie kierunku geograficznego i obrót +0.679677158507° w EPSG:2180; status pozostaje unknown/unverified.",
+      "rule": "orientation.unknown",
+      "sources": [
+        "data/caves/001459-pza-2024/source.json",
+        "docs/reports/2026-10-29-piwnica-mietusia-pza.md",
+        "https://pza.org.pl/wp-content/uploads/2025/07/POLISH-CAVING-2017-2025.pdf#page=17"
+      ]
     }
   ],
   "schema_version": 1

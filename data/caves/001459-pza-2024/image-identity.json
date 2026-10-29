@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "plans": {
+    "001459-pza-2024": {
+      "filename": "pza-polish-caving-2017-2025-p17-plan.tif",
+      "image_id": 20250017,
+      "id_namespace": "local:pza-polish-caving",
+      "width": 7630,
+      "height": 5020,
+      "sha256": "c6720085cfb8b816e2249eb3d77d31a6b96dbcbc2748864a416b3b235f08b0ff"
+    }
+  },
+  "orientation_origin": {
+    "kind": "manual_t08",
+    "plan_id": "001459-pza-2024",
+    "inputs_sha256": "11b2788514754eeadba5ecfc0c2b7ccd48298b1b3d5d906b9d0f85df37efea2e",
+    "reason": "Rodzaj północy N nieopisany w publikacji. Roboczo przyjęto kierunek geograficzny i obrót osi x względem EPSG:2180 +0.679677158507° (zmierzone 0° + zbieżność PROJ w MTZ-0017); bez udokumentowanej deklinacji. To jawne założenie, nie ustalenie rodzaju północy; wymaga potwierdzenia autora.",
+    "date": "2026-10-29"
+  }
+}

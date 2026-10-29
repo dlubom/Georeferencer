@@ -1,0 +1,91 @@
+cave:
+  dir_id: 001459-pza-2024
+  source_cave_id: 001459
+  name: Piwnica Miętusia
+  inventory_number: T.E-11.01
+  n_submissions: 0
+image:
+  filename: pza-polish-caving-2017-2025-p17-plan.tif
+  image_id: 20250017
+  id_namespace: local:pza-polish-caving
+  width: 7630
+  height: 5020
+coordinates:
+  gps_kataster_object_id: MTZ-0017
+  lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
+  lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
+entrance:
+  x: 6194.5
+  y: 275.5
+scale:
+  pixels_per_meter: 38.45
+north:
+  reference: unknown
+  angle_deg: 0.0
+  angle_origin: measured
+  all_skipped: false
+  evidence: 'source.json: strzałka N w lewym górnym polu, oś (2455.5,430.5) → (2455.5,260.5);
+    zmierzone 0°, rodzaj północy nieopisany.'
+declination_deg: 0.0
+declination:
+  status: unknown
+  basis: Brak udokumentowanej deklinacji i rodzaju północy; wartość 0 nie jest poprawką
+    magnetyczną.
+orientation:
+  mode: assumed_grid
+  status: unverified
+  image_sha256: c6720085cfb8b816e2249eb3d77d31a6b96dbcbc2748864a416b3b235f08b0ff
+  uncertainty_reason: Rodzaj północy N nieopisany w publikacji. Roboczo przyjęto kierunek
+    geograficzny i obrót osi x względem EPSG:2180 +0.679677158507° (zmierzone 0° +
+    zbieżność PROJ w MTZ-0017); bez udokumentowanej deklinacji. To jawne założenie,
+    nie ustalenie rodzaju północy; wymaga potwierdzenia autora.
+  grid_assumption:
+    rotation_deg: 0.6796771585070671
+    crs: EPSG:2180
+    convention: image_x_ccw_from_grid_east
+    reason: Rodzaj północy N nieopisany w publikacji. Roboczo przyjęto kierunek geograficzny
+      i obrót osi x względem EPSG:2180 +0.679677158507° (zmierzone 0° + zbieżność
+      PROJ w MTZ-0017); bez udokumentowanej deklinacji. To jawne założenie, nie ustalenie
+      rodzaju północy; wymaga potwierdzenia autora.
+  decisions: []
+  origin:
+    kind: manual_t08
+    plan_id: 001459-pza-2024
+    inputs_sha256: 11b2788514754eeadba5ecfc0c2b7ccd48298b1b3d5d906b9d0f85df37efea2e
+    reason: Rodzaj północy N nieopisany w publikacji. Roboczo przyjęto kierunek geograficzny
+      i obrót osi x względem EPSG:2180 +0.679677158507° (zmierzone 0° + zbieżność
+      PROJ w MTZ-0017); bez udokumentowanej deklinacji. To jawne założenie, nie ustalenie
+      rodzaju północy; wymaga potwierdzenia autora.
+    date: '2026-10-29'
+computed: {}
+quality:
+  flag: manual
+provenance:
+  method: manual_t08
+  date: '2026-10-29'
+  image:
+    source_cave_id: 001459
+    graphics_id: 20250017
+    graphics_id_namespace: local:pza-polish-caving
+    path: data/caves/001459-pza-2024/image.tif
+    sha256: c6720085cfb8b816e2249eb3d77d31a6b96dbcbc2748864a416b3b235f08b0ff
+    source: source.json; PDF PZA, strona 17, górny rzut poziomy
+  registry:
+    path: data/caves/001459-pza-2024/source.json
+    sha256: 72c4ef75168e855f0c98f9e66e6be6c16ef5204c99a6d4a1a477e3d9effad399
+    kind: external_publication_manifest
+  entrance:
+    method: manual_click
+    source: 'source.json: środek trójkąta otworu, przecięcie siatki 0/0, (6194.5,275.5).'
+  scale:
+    method: manual_measurement
+    source: 'source.json: 20 m od (1582.5,353.5) do (2351.5,353.5), 769 px / 20 m
+      = 38.45 px/m; kontrola siatką 80 m.'
+  coordinates:
+    schema_version: 1
+    repository: dlubom/gps-kataster-obiektow-tatr
+    release: v1.3.2
+    asset: best-measurements.csv
+    sha256: 6ef2607dacc02933240e820c42a0bab544790a38b5594a730fc4130b105c9ec0
+    snapshot: best-measurements-v1.3.2.csv
+    object_id: MTZ-0017
