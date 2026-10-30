@@ -28,6 +28,11 @@ class PiwnicaPzaPlanTest(unittest.TestCase):
         cls.meta, cls.resolved = validate_plan(PLAN, load_best_measurements(verify()))
         cls.source = json.loads((PLAN / 'source.json').read_text())
 
+    def test_export_selects_only_current_piwnica_plan(self):
+        selected = {path.name for path in generator.find_caves(ROOT / 'data/caves')}
+        self.assertIn(PLAN.name, selected)
+        self.assertNotIn('001459', selected)
+
     def test_external_publication_identity_and_two_raster_sizes(self):
         self.assertEqual(self.meta['cave']['source_cave_id'], '001459')
         self.assertEqual(self.meta['coordinates']['gps_kataster_object_id'], 'MTZ-0017')

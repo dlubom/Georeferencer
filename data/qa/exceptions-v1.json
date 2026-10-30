@@ -17946,57 +17946,6 @@
       ]
     },
     {
-      "basis_sha256": "bb6e6d61767aee3419bdb0123661dc158085daa703a222f3953a0d1480b82441",
-      "close_when": "Co najmniej 3 niezależne ważne pomiary albo udokumentowana ręczna interpretacja strzałki i decyzja orientacji.",
-      "evidence": {
-        "invalid_submission_ids": [],
-        "observations": 2,
-        "skipped_submission_ids": [
-          "SUB_1771769934311_5622",
-          "SUB_1773005061806_8144",
-          "SUB_1775126361200_4264"
-        ],
-        "submission_ids": [
-          "SUB_1770041621168_2412",
-          "SUB_1771003948554_2052"
-        ],
-        "users": 2
-      },
-      "plan_id": "001459",
-      "reason": "Niewystarczająca liczba niezależnych user_id ważnych strzałek T07 do progu QA; nie wpływa na zachowany kąt T02.",
-      "rule": "north.low_support",
-      "sources": [
-        "docs/QA.md",
-        "docs/ORIENTATION.md",
-        "docs/AGGREGATION.md",
-        "data/classification/test-submissions-v1.json"
-      ]
-    },
-    {
-      "basis_sha256": "519628d28e7c680c7d8048ac6569decb70c6fdbfd5ee04052309bcb138ef70cc",
-      "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
-      "evidence": {
-        "angle_origin": "unknown",
-        "grid_assumption": null,
-        "historical": {
-          "catalogue_sha256": "b9031ff93f9ca9a1930f3574cd2eddddfd8690235be4bee2610b993858df3541",
-          "plan_id": "001459",
-          "tfw_sha256": "e6828a56ae1c559a0985cb3a45fd3455206f191766cbb5ba1f69cec77a9db92f"
-        },
-        "mode": "historical_tfw",
-        "north_reference": "unknown",
-        "status": "unverified",
-        "uncertainty_reason": "Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano orientację historycznego TFW T02."
-      },
-      "plan_id": "001459",
-      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy.",
-      "rule": "orientation.unknown",
-      "sources": [
-        "docs/QA.md",
-        "docs/ORIENTATION.md"
-      ]
-    },
-    {
       "basis_sha256": "31a210b62e04898530e6ee9577e2fde0e69c67e16b4423fa47fd5e876e2af48f",
       "close_when": "Co najmniej 3 niezależne ważne pomiary albo udokumentowana ręczna interpretacja strzałki i decyzja orientacji.",
       "evidence": {

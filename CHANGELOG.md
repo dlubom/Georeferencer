@@ -1,5 +1,11 @@
 # Changelog
 
+## Niewydane
+
+- Wycofano z eksportu stary plan Piwnicy Miętusiej `001459`, zachowując jego
+  pliki w `data/archive/caves/001459`. W bieżącym katalogu 814 planów pozostaje
+  wyłącznie nowszy plan PZA `001459-pza-2024`.
+
 ## v0.7.3 — Nowszy plan Piwnicy Miętusiej (2026-10-29)
 
 - Dodano osobny plan Piwnicy Miętusiej `001459-pza-2024` z publikacji PZA

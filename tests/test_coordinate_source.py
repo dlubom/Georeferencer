@@ -139,8 +139,8 @@ class CoordinateSourceTest(unittest.TestCase):
             capture_output=True, text=True)
         self.assertEqual(result.returncode, 0, result.stderr)
         report = json.loads(output.read_text())
-        self.assertEqual(report['affected_plans'], ['001459', plan_id])
-        self.assertEqual([p['dir_id'] for p in report['geometry']['plans']], ['001459', plan_id])
+        self.assertEqual(report['affected_plans'], [plan_id])
+        self.assertEqual([p['dir_id'] for p in report['geometry']['plans']], [plan_id])
         for plan in report['geometry']['plans']:
             self.assertNotIn('error', plan['before'])
             self.assertNotIn('error', plan['after'])
