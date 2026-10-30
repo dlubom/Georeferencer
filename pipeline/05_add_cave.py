@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import argparse
 from contextlib import contextmanager
+from datetime import date
 import copy
 import ctypes
 import errno
@@ -99,6 +100,10 @@ def required(args, *fields):
 def build_meta(args, cave, image_meta, filename, raw, width, height, pin, jsonl_sha256):
     required(args, 'plan_id', 'gps_kataster_object_id', 'entrance_x', 'entrance_y', 'pixels_per_meter',
              'image_sha256', 'entrance_source', 'scale_source', 'north_reference', 'decision_reason', 'decision_date')
+    try:
+        date.fromisoformat(args.decision_date)
+    except ValueError as exc:
+        raise ValueError('--decision-date: wymagana poprawna data YYYY-MM-DD') from exc
     identifier(args.plan_id, 'plan-id')
     check_bytes(raw, args.image_sha256)
     if args.north_skipped:
