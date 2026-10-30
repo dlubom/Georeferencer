@@ -13,7 +13,6 @@ import yaml
 from pyproj import Transformer
 
 from test_orientation import ROOT, generator, resolved
-from orientation import inputs_hash, record_decision
 import test_gdal_smoke as fixture
 
 # Symetryczna sieczna południka: 0.0001° (~11 m) w każdą stronę.
@@ -39,10 +38,8 @@ def establish(meta, reference, angle=0.0, declination=0.0):
     meta['declination'] = {'status': 'documented', 'sign_convention': 'east_positive',
                            'basis': 'Jawna wartość syntetycznego wzorca: wschód dodatni, zachód ujemny.',
                            'epoch': '2000.0 (epoka syntetyczna)'}
-    accepted = meta['orientation']['decisions']
-    if accepted and accepted[-1]['after_sha256'] == inputs_hash(meta):
-        return meta
-    return record_decision(meta, 'Próba modelu, bez potwierdzenia źródłowych metadanych.', '2026-10-25')
+    meta['orientation']['mode'] = 'reference' if reference != 'unknown' else 'historical_tfw'
+    return meta
 
 
 def arrow_vector(params, angle, ppm):

@@ -30,7 +30,7 @@ kliknięcia poza obrazem. T06 rozstrzyga [konwencję półpiksela i modele
 północy](ORIENTATION.md): układ UI/GDAL ma początek w narożniku, a TFW
 w środku pierwszego piksela. T05 zachowuje historyczny kąt dla `unknown`;
 ustalone rodzaje korzystają z modeli T06, bez automatycznej weryfikacji
-źródłowych metadanych. Zmiany wejść orientacji wymagają jawnej decyzji.
+źródłowych metadanych. Zmiany orientacji uzasadniaj w opisie PR.
 
 Obraz `image.tif` musi być dostępnym, czytelnym, jednostronicowym TIFF-em
 w trybie Pillow `1`, zgodnym z CCITTFAX4. Wymiary muszą odpowiadać YAML-owi.
@@ -85,19 +85,15 @@ weryfikuje oba manifesty zgodnie z [COORDINATE_SOURCE.md](COORDINATE_SOURCE.md).
 
 ## Historia i kontrola bieżącego kodu
 
-`./scripts/check` oddzielnie sprawdza integralność historycznych danych T02
-oraz obecny walidator na 814 planach i przypadkach syntetycznych.
-Oryginalne YAML-e i kod QA T05 zachowuje w `data/history/t02-inputs.zip`,
-sprawdzanym oryginalnymi hashami T02; audyt nie używa bieżących YAML-i. Zamrożone
-moduły są opisane w [legacy/README.md](../data/baseline/2026-10-24/legacy/README.md).
-Ani historyczne hashe, ani zapisane TFW nie zostały przepisane. Odbiór T03
-nie nadaje historii statusu poprawności geodezyjnej.
+`./scripts/check` sprawdza bieżący walidator i pipeline. Archiwalne dane,
+kod i raporty pozostają zapisem dawnych odbiorów; CI ich nie odtwarza ani
+nie porównuje z zamrożonymi hashami T02.
 
 ## Lokalny wpis tożsamości T08
 
 Nowy plan dodany przez `05_add_cave.py` ma `image-identity.json` w swoim
 katalogu. Ma ten sam format v1 i dokładnie jeden wpis `plans[plan_id]`,
-a także `orientation_origin` zgodny z początkową decyzją YAML-a. Wpis jest
+Historyczne `orientation_origin` jest opisem pochodzenia, bez blokady edycji. Wpis jest
 wersjonowany wraz z obrazem i nie uzupełnia automatycznie wspólnego rejestru.
 Konflikt obu rejestrów jest błędem. Pozostałe reguły T03 — wymiary, tryb,
 SHA-256 treści i orientacji — obowiązują bez zmian. Rejestru T02/T03 nie

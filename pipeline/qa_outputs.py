@@ -55,7 +55,7 @@ def inspect_run(run_dir, plans, prepared, rows, registry_path, generator, requir
         for name, current in {
             'coordinate_source': pin,
             'image_registry': {'sha256': sha256(registry_path)},
-            'orientation_sources': {p.name: sha256(p) for p in (orientation.BASELINE, orientation.ARCHIVE)},
+            'orientation_sources': {p.name: sha256(p) for p in (orientation.BASELINE,)},
             'implementation': _implementation(), 'geometry': generator.GEOMETRY,
             'content_version': build_identity.CONTENT_VERSION, 'environment': build_identity.environment(),
         }.items():

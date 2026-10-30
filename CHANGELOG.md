@@ -2,6 +2,8 @@
 
 ## Niewydane
 
+- Uproszczono edycję orientacji: usunięto audyt historii T02, jednorazowe migratory i obowiązkowy łańcuch decyzji. Zachowano dotychczasową geometrię oraz walidację bieżącego pipeline'u.
+
 - Wycofano stary plan Piwnicy Miętusiej `001459` do `data/archive/caves/001459`;
   w eksporcie pozostaje nowszy plan PZA `001459-pza-2024` (814 planów).
 - Poprawiono skalę Juhaskiej `001212`: 194,9 → 97,85 px/m. Siatka 0/−20

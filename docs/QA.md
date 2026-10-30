@@ -109,8 +109,8 @@ awaria konwersji nie jest automatycznie obecnym błędem technicznym.
 Raport nie tworzy duplikatów issues i nie zamyka żadnej ze spraw.
 
 Oryginalne summary/flagged/missing T02 są zachowane bajtowo w
-`data/history/t02-reports/`. Audyt historii sprawdza je **pierwotnymi** hashami
-katalogu T02, osobno od nowych CSV. Oryginalny kod QA nadal jest w niezmiennym
-`data/history/t02-inputs.zip`. Raporty T05/T06/T07/T08 i ich dowody pozostają.
+`data/history/t02-reports/`, a dawny kod QA w `data/history/t02-inputs.zip`.
+Te archiwa i raporty T05/T06/T07/T08 pozostają zapisem dawnych odbiorów;
+bieżące CI ich nie odtwarza.
 T10 wymaga tego samego pełnego QA konkretnego przebiegu przed pakowaniem
 tag/manual; T11 niezależnie odbiera te zabezpieczenia i odtwarzalność.

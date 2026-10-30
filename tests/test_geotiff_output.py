@@ -86,48 +86,6 @@ class OutputTest(unittest.TestCase):
         for name, digest in plan['outputs'].items():
             self.assertEqual(digest, hashlib.sha256((run / '001131' / name).read_bytes()).hexdigest())
 
-    def test_matches_current_t03_on_same_inputs_despite_conflicting_sidecar(self):
-        self.assert_matches_t03()
-
-    def test_t03_parity_for_nonzero_angles_scales_and_declination(self):
-        for number, (angle, ppm, declination) in enumerate(((37.25, 3.1234567, 5.0),
-                                                          (-125.75, 0.18, -4.5))):
-            with self.subTest(angle=angle, ppm=ppm):
-                meta = yaml.safe_load(self.meta_path.read_text())
-                meta['north']['angle_deg'] = angle
-                meta['scale']['pixels_per_meter'] = ppm
-                meta['declination_deg'] = declination
-                from orientation import record_decision
-                meta = record_decision(meta, 'Jawna zmiana danych orientacji próby T04.', '2026-10-25')
-                self.meta_path.write_text(yaml.safe_dump(meta))
-                self.assert_matches_t03('legacy-' + str(number))
-
-    def assert_matches_t03(self, legacy_name='legacy'):
-        run = self.run_ok()
-        new = run / '001131'
-        # Oddzielna kopia i zamrożony generator T06. Produkcyjny CLI T10
-        # nie udostępnia już zapisu do źródeł; hashe historii są niezmienione.
-        legacy = self.root / legacy_name
-        shutil.copytree(self.data_dir, legacy)
-        old = legacy / '001131'
-        from geometry_impact import load_generator
-        from gps_kataster_coordinates import load_best_measurements
-        frozen = ROOT / 'data/history/t06-code/02_generate_geotiff.py'
-        digest = json.loads((ROOT / 'docs/reports/t06-geometry-impact.json').read_text())['after_implementation_sha256']['02_generate_geotiff.py']
-        reference = load_generator(frozen, digest)
-        meta, params = reference.prepare_cave(old, load_best_measurements(self.coordinates_path),
-                                              json.loads(self.registry_path.read_text()))
-        ok, message = reference.process_prepared(old, meta, params)
-        self.assertTrue(ok, message)
-        self.assertEqual((new / 'image.tfw').read_bytes(), (old / 'image.tfw').read_bytes())
-        self.assertNotEqual((new / 'image.tfw').read_bytes(), (self.cave_dir / 'image.tfw').read_bytes())
-        self.assertEqual(json.loads((new / 'computed.json').read_text()),
-                         yaml.safe_load((old / 'meta.yaml').read_text())['computed'])
-        for name in ('geoTransform', 'size', 'coordinateSystem'):
-            self.assertEqual(self.info(new / 'image_georef.tif')[name],
-                             self.info(old / 'image_georef.tif')[name])
-        with Image.open(new / 'image_georef.tif') as a, Image.open(old / 'image_georef.tif') as b:
-            self.assertEqual(a.tobytes(), b.tobytes())
 
     def info(self, path):
         return json.loads(subprocess.check_output(['gdalinfo', '-json', str(path)], text=True))
@@ -383,32 +341,31 @@ class OutputTest(unittest.TestCase):
                     with self.assertRaises(ValueError):
                         geotiff_output.check_geotiff(self.image_path, original, expected)
 
-    def test_orientation_archive_uses_hashed_snapshot_during_aba_edit(self):
-        archive = self.root / 'history.zip'
-        original = generator.orientation.ARCHIVE.read_bytes()
+    def test_orientation_catalogue_uses_hashed_snapshot_during_aba_edit(self):
+        archive = self.root / 'catalogue.json'
+        original = generator.orientation.BASELINE.read_bytes()
         archive.write_bytes(original)
         real_load = generator.orientation.load_context
 
         def aba(*args, **kwargs):
-            archive.write_bytes(b'changed archive during load')
+            archive.write_bytes(b'changed catalogue during load')
             try:
                 return real_load(*args, **kwargs)
             finally:
                 archive.write_bytes(original)
 
-        with patch.object(generator.orientation, 'ARCHIVE', archive), patch.object(generator.orientation, 'load_context', side_effect=aba):
+        with patch.object(generator.orientation, 'BASELINE', archive), patch.object(generator.orientation, 'load_context', side_effect=aba):
             run = self.api()
         manifest = json.loads((run / 'manifest.json').read_text())
-        self.assertEqual(manifest['orientation_sources']['history.zip'], hashlib.sha256(original).hexdigest())
+        self.assertEqual(manifest['orientation_sources']['catalogue.json'], hashlib.sha256(original).hexdigest())
         self.assertEqual(manifest['plans'][0]['orientation']['status'], 'unverified')
 
     def test_incomplete_reference_aborts_preflight_and_keeps_current(self):
-        from orientation import record_decision
         first = self.run_ok()
         before = hashes(first)
         meta = yaml.safe_load(self.meta_path.read_text())
         meta['north'].update(reference='geographic', evidence='Jawne źródło z legendy planu')
-        meta = record_decision(meta, 'Ustalono rodzaj w próbie preflight.', '2026-10-25')
+        meta['orientation']['mode'] = 'reference'
         del meta['north']['evidence']
         self.meta_path.write_text(yaml.safe_dump(meta))
         sources = hashes(self.data_dir)
@@ -422,20 +379,17 @@ class OutputTest(unittest.TestCase):
                 self.assertEqual(sources, hashes(self.data_dir))
         self.assertFalse(list(self.output.glob('.staging-*')))
 
-    def test_default_output_preserves_source_precision_and_orientation_decision(self):
-        from orientation import inputs_hash, record_decision
+    def test_default_output_preserves_source_precision(self):
         meta = yaml.safe_load(self.meta_path.read_text())
         meta['north']['angle_deg'] = 0.123456789012345
         meta['declination_deg'] = -0.123456789012345
-        meta = record_decision(meta, 'Precyzyjna jawna korekta opisu; zachowujemy TFW.', '2026-10-25')
         self.meta_path.write_text(yaml.safe_dump(meta))
-        accepted = inputs_hash(meta)
         first = self.cli('--all', output=False)
         self.assertEqual(first.returncode, 0, first.stderr)
         saved = yaml.safe_load(self.meta_path.read_text())
         self.assertEqual(saved['north']['angle_deg'], 0.123456789012345)
         self.assertEqual(saved['declination_deg'], -0.123456789012345)
-        self.assertEqual(inputs_hash(saved), accepted)
+        self.assertEqual(saved, meta)
         second = self.cli('--all', output=False)
         self.assertEqual(second.returncode, 0, second.stderr)
 

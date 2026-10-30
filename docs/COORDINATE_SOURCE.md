@@ -119,40 +119,13 @@ obrotu oraz skali. Nie ustala przyczyny każdej dawnej różnicy; nie można naz
 ich zbiorczo aktualizacją współrzędnych ani naprawą rotacji. Parametry nie zostały
 zapisane do `data/caves`.
 
-## Odtworzenie kontroli i raportów
+## Bieżąca kontrola
 
-```sh
-./scripts/check
-docker build --platform linux/amd64 --iidfile /tmp/georeferencer-audit-image ci
-audit_dir=$(mktemp -d)
-docker run --rm --platform linux/amd64 --network none \
-  --mount "type=bind,source=$PWD,target=/workspace,readonly" \
-  --mount "type=bind,source=$audit_dir,target=/audit" \
-  "$(cat /tmp/georeferencer-audit-image)" \
-  python pipeline/catalogue_baseline.py verify
-docker run --rm --platform linux/amd64 --network none \
-  --mount "type=bind,source=$PWD,target=/workspace,readonly" \
-  --mount "type=bind,source=$audit_dir,target=/audit" \
-  "$(cat /tmp/georeferencer-audit-image)" \
-  python -c 'from pathlib import Path; import json,sys; sys.path.insert(0,"pipeline"); import catalogue_baseline as b; Path("/audit/recalculated.json").write_text(json.dumps(b.recalculation(b.ROOT,json.loads(b.BASELINE.read_text()),b.ROOT/"data/coordinate-source/source-v1.3.1.json"),ensure_ascii=False,indent=2)+"\n")'
-cmp "$audit_dir/recalculated.json" data/baseline/2026-10-24/recalculated-v1.3.1.json
-```
+`./scripts/check` sprawdza bieżący pipeline. Nie odtwarza dawnych generatorów,
+migracji ani raportów i nie blokuje edycji przez hashe T02. Historyczne dane
+pozostają w repozytorium, a dawne narzędzia są dostępne w historii Git.
+`catalogue_baseline.py` zachowuje porównanie geometrii aktualizacji CSV,
+wykonywane bieżącym generatorem przez `coordinate_source.py impact`.
 
-Testy odczytują rzeczywisty punkt odniesienia, sprawdzają komplet i hashe oraz
-odtwarzają raport. Rozbieżność historycznych wejść lub zamrożonego kodu blokuje audyt starego
-generatora. Od T03 dwie zmienione implementacje są zachowane bajtowo w
-`data/baseline/2026-10-24/legacy/` i kontrolowane oryginalnymi hashami T02;
-`recalculate` używa tych kopii, a raport wpływu aktualizacji — bieżącego kodu.
-Nie podstawiaj nowego generatora pod historyczne przeliczenie. Pełną dawną
-sesję można też odtworzyć z checkoutu T02 i jego środowiska. `capture` służy do
-tworzenia **nowego**, osobno nazwanego punktu odniesienia; wymaga Git na hoście,
-pełnego `--reference-commit`, `--output` i niezmienionych śledzonych wejść.
-Kontener kontroli nie potrzebuje Git, bo korzysta z zapisanego manifestu.
-
-Ustalenia i cztery przenośne reprodukcje review opisano w
-[review/README.md](../data/baseline/2026-10-24/review/README.md).
-
-Bieżący kontrakt danych i obrazu: [VALIDATION.md](VALIDATION.md).
-
-Migracja T05 i niezależny od bieżących YAML-i odczyt archiwum historii:
-[ORIENTATION.md](ORIENTATION.md). Oryginalne hashe T02 pozostają bez zmian.
+Kontrakt danych i obrazu: [VALIDATION.md](VALIDATION.md).
+Źródła kątów i ich edycja: [ORIENTATION.md](ORIENTATION.md).

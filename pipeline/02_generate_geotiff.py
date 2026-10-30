@@ -179,7 +179,7 @@ def process_output(caves, output_dir, data_dir, coordinates_path=None, registry_
     registry_path = Path(registry_path) if registry_path else pipeline_dir.parent / 'data/validation/images-v1.json'
     # Hash, walidacja, indeks i rekord manifestu używają tych samych bajtów.
     # Osobne odczyty oryginału mogłyby przy edycji A→B→A związać hash A z obliczeniem B.
-    orientation_paths = [orientation.BASELINE, orientation.ARCHIVE]
+    orientation_paths = [orientation.BASELINE]
     validate_output_dir(output_dir, data_dir, caves, orientation_paths)
     orientation_bytes = [p.read_bytes() for p in orientation_paths]
     orientation_context = orientation.load_context(*orientation_bytes)
