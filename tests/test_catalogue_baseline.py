@@ -39,6 +39,30 @@ class CatalogueBaselineTest(unittest.TestCase):
                 self.assertTrue(plan["measurement"]["measurement_id"])
         self.assertEqual(baseline.verify_inputs(ROOT, document), [])
 
+    def test_archived_plan_keeps_original_hash_checks_without_hiding_active_corruption(self):
+        import hashlib
+        import zipfile
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = 'data/caves/001/image.tif'
+            archived = root / 'data/archive/caves/001/image.tif'
+            archived.parent.mkdir(parents=True)
+            archived.write_bytes(b'original image')
+            history = root / 'data/history/t02-inputs.zip'
+            history.parent.mkdir()
+            with zipfile.ZipFile(history, 'w') as archive:
+                archive.writestr('data/caves/001/meta.yaml', b'original metadata')
+            document = {'reference_commit': baseline.FROZEN_REFERENCE,
+                        'plans': [{'dir_id': '001', 'sha256': {
+                            source: hashlib.sha256(b'original image').hexdigest()}}]}
+            self.assertEqual(baseline.verify_inputs(root, document), [])
+            archived.write_bytes(b'corrupted archive')
+            self.assertEqual(baseline.verify_inputs(root, document), [source])
+            archived.write_bytes(b'original image')
+            # Obecny plan z brakującym obrazem nie może skorzystać z archiwum.
+            (root / 'data/caves/001').mkdir(parents=True)
+            self.assertEqual(baseline.verify_inputs(root, document), [source])
+
     def test_t08_frozen_adder_is_checked_with_original_hash_and_never_current_code(self):
         import hashlib
         with tempfile.TemporaryDirectory() as tmp:

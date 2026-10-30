@@ -31,7 +31,15 @@ def historical_path(root, path):
         return root / 'data/history/05_add_cave-t02.py'
     if path in FROZEN_MODULES:
         return root / "data/baseline/2026-10-24/legacy" / Path(path).name
-    return root / path
+    source = root / path
+    parts = Path(path).parts
+    # Wycofany plan ma te same bajty i hashe T02 poza aktywnym katalogiem.
+    # Brak pojedynczego pliku w nadal aktywnym planie musi pozostać błędem.
+    if len(parts) == 4 and parts[:2] == ('data', 'caves') and not source.parent.exists():
+        archived = root / 'data/archive' / Path(*parts[1:])
+        if archived.parent.is_dir():
+            return archived
+    return source
 
 
 def historical_bytes(root, path):
