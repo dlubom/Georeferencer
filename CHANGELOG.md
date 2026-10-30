@@ -2,6 +2,11 @@
 
 ## Niewydane
 
+- Poprawiono skalę Jaskini Juhaskiej `001212` (`T.D-14.01`): 194,9 →
+  97,85 px/m na podstawie siatki 0/−10/−20. Plan był liniowo 1,992 razy
+  za mały wskutek konfliktu siatki z podziałką „1 m”. Zachowano zakotwiczenie
+  otworu i historyczny obrót; orientacja nadal `unknown/unverified`.
+  [Pomiar i uzasadnienie](docs/reports/2026-10-30-juhaska-scale.md).
 - Wycofano z eksportu stary plan Piwnicy Miętusiej `001459`, zachowując jego
   pliki w `data/archive/caves/001459`. W bieżącym katalogu 814 planów pozostaje
   wyłącznie nowszy plan PZA `001459-pza-2024`.
