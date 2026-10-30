@@ -8796,7 +8796,7 @@
       ]
     },
     {
-      "basis_sha256": "ff622793c2bde5aeabc7bd8fdb93f5e7376ebd6de3a8966f278e853e29caf08e",
+      "basis_sha256": "78a4abd9361723ec8f8ee84183c2b041a4a505e159874e250cf86a0ba200c5c4",
       "close_when": "Co najmniej 3 niezależne ważne pomiary albo udokumentowana ręczna interpretacja strzałki i decyzja orientacji.",
       "evidence": {
         "invalid_submission_ids": [],
@@ -8823,7 +8823,7 @@
       ]
     },
     {
-      "basis_sha256": "ef8184df5436f68f657ce4b280a8fbd7d5b2e2225c99bec896929f0945e9e048",
+      "basis_sha256": "28e6b44f2a4d280f672ad01203e22fc68b6d4bcf1a31837dfe26842df481d562",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "unknown",
@@ -8847,7 +8847,7 @@
       ]
     },
     {
-      "basis_sha256": "78e75eaf3ea8f992522ec0c178cf53c5ed59ce057037d7aa73cfcce88d31caac",
+      "basis_sha256": "d9ece4c0f8a6b5ea4cf7c0d1524872bcbb4fbf4abafa5993c91573a43aa3b5bb",
       "close_when": "Nowy zweryfikowany zestaw pomiarów źródłowych bez konfliktu skali; historycznego snapshotu zgłoszeń nie zmieniamy w tej korekcie.",
       "evidence": {
         "ppm_cv": 0.3065559095096817,
@@ -8859,7 +8859,7 @@
       "sources": [
         "docs/QA.md",
         "docs/ORIENTATION.md",
-        "docs/reports/2026-10-30-juhaska-scale.md"
+        "CHANGELOG.md"
       ]
     },
     {

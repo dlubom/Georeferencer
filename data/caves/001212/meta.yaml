@@ -16,7 +16,7 @@ entrance:
   x: 551.1
   y: 603.52
 scale:
-  # Ręczny pomiar siatki 0/-20: docs/reports/2026-10-30-juhaska-scale.md
+  # Siatka 0/-20: y=603.5..2560.5 px; 1957 px / 20 m.
   pixels_per_meter: 97.85
 north:
   reference: unknown
