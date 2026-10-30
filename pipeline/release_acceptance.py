@@ -148,7 +148,7 @@ def main():
         protected = [*(ROOT / p for p in build_identity.implementation()),
                      *(ROOT / p for p in qa_evidence({'policy': {}, 'counts': {}, 'problems': []})['sources_sha256']),
                      *sorted((ROOT / 'data/coordinate-source').iterdir()),
-                     ROOT / 'data/validation/images-v1.json', orientation.BASELINE, orientation.ARCHIVE,
+                     ROOT / 'data/validation/images-v1.json', orientation.BASELINE,
                      getattr(args, 'archive', None)]
         for path in protected:
             if path is not None:

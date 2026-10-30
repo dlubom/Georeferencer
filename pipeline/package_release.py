@@ -39,7 +39,7 @@ def package_run(data_dir, run_dir, archive, reports_dir, *, mode='tag', qa_kwarg
     registry = Path(options.get('registry_path', IMAGE_REGISTRY))
     pin = read_manifest(DEFAULT_MANIFEST)
     common_paths = [DEFAULT_MANIFEST, DEFAULT_MANIFEST.parent / pin['snapshot'], registry,
-        orientation.BASELINE, orientation.ARCHIVE, *(ROOT / p for p in build_identity.implementation()),
+        orientation.BASELINE, *(ROOT / p for p in build_identity.implementation()),
         ROOT / 'parquet/SUBMISSIONS.parquet', *sorted((ROOT / 'data/qa').glob('*.json')),
         *sorted((ROOT / 'data/classification').glob('*.json'))]
     for path in common_paths:

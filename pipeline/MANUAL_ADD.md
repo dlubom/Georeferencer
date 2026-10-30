@@ -63,9 +63,9 @@ kątem strzałki. Dla unknown nie stosuje się zbieżności ani deklinacji.
 Kąt strzałki i przyjęty obrót mogą się różnić.
 
 Każdy nowy plan ma status `unverified`, początkową decyzję z datą i powodem,
-hash wejść orientacji oraz hash obrazu. Nowy unknown używa `assumed_grid`.
+oraz hash obrazu. Nowy unknown używa `assumed_grid`.
 Nie ma historycznego TFW T02 ani prawa do kąta/wyjątku innego planu.
-[ORIENTATION.md](../docs/ORIENTATION.md) opisuje dalsze decyzje po edycji.
+[ORIENTATION.md](../docs/ORIENTATION.md) opisuje bezpośrednią edycję orientacji w PR.
 
 ## Pełne wywołania na danych syntetycznych
 

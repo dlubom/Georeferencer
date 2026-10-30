@@ -310,8 +310,7 @@ class PlanValidationTest(unittest.TestCase):
         self.meta['extra'].append(self.meta['extra'])
         self.reject('extra')
 
-    def test_replaced_image_requires_orientation_decision_even_with_new_registry(self):
-        from orientation import record_decision
+    def test_replaced_image_requires_consistent_hashes(self):
         from validation import validate_plan
         Image.new('1', (8, 6), 1).save(self.cave / 'image.tif')
         digest = hashlib.sha256((self.cave / 'image.tif').read_bytes()).hexdigest()
@@ -319,10 +318,6 @@ class PlanValidationTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'orientation'):
             validate_plan(self.cave, self.index, self.registry)
         self.meta['orientation']['image_sha256'] = digest
-        self.save()
-        with self.assertRaisesRegex(ValueError, 'decyzj'):
-            validate_plan(self.cave, self.index, self.registry)
-        self.meta = record_decision(self.meta, 'Nowy obraz z nowymi kliknięciami; świadomie zachowano orientację T02.', '2026-10-25')
         self.save()
         validate_plan(self.cave, self.index, self.registry)
 

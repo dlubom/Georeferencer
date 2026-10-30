@@ -175,8 +175,6 @@ def validate_image(meta, cave_dir, registry, identity_text=None, image_path=None
         if identity is not None:
             fail(plan, 'image-identity.json', 'konflikt lokalnego i wspólnego rejestru obrazów')
         identity = local['plans'][plan]
-        if local.get('orientation_origin') != meta.get('orientation', {}).get('origin'):
-            fail(plan, 'orientation.origin', 'niezgodność początkowej decyzji z lokalnym rejestrem')
         if meta.get('orientation', {}).get('origin', {}).get('kind') != 'manual_t08':
             fail(plan, 'image-identity.json', 'lokalny rejestr wymaga pochodzenia manual_t08')
     if not isinstance(identity, dict):
@@ -197,7 +195,7 @@ def validate_image(meta, cave_dir, registry, identity_text=None, image_path=None
         if sha256(path) != identity.get('sha256'):
             fail(plan, 'image.sha256', 'podmieniony obraz; hash inny niż zadeklarowane wejście')
         if meta['orientation']['image_sha256'] != identity.get('sha256'):
-            fail(plan, 'orientation.image_sha256', 'zmiana treści obrazu wymaga jawnego hasha i decyzji orientacji')
+            fail(plan, 'orientation.image_sha256', 'hash obrazu niezgodny z metadanymi orientacji')
     except (OSError, ValueError) as exc:
         if isinstance(exc, ValidationError):
             raise

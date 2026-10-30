@@ -8,7 +8,7 @@ Z katalogu repozytorium uruchom:
 
 Wymagany jest działający Docker z BuildKit i obsługą `linux/amd64` (na Apple Silicon zapewnia ją Docker Desktop). Pierwszy build pobiera obraz i pakiety. Sam zestaw testów działa bez sieci. Repozytorium jest zamontowane tylko do odczytu, a pliki testowe powstają w `/tmp` kontenera. Nie jest potrzebny systemowy Python, GDAL ani sąsiedni katalog gps-kataster.
 
-Ta sama komenda jest jedynym krokiem testowym w `.github/workflows/check.yml`. Uruchamia wszystkie testy znalezione w `tests/`; brak testów lub choć jeden błąd daje niezerowy status. T01 dostarczył 16 wcześniejszych testów, dwa testy CLI z prawdziwym GDAL i test kontraktu workflow. T02 rozszerza zestaw o weryfikację przypiętego CSV, raport aktualizacji, integralność 814 historycznych planów i odtwarzalność ich oddzielnego przeliczenia. T03 dodaje walidację całego bieżącego katalogu i przypadków błędnych; historyczne przeliczenie używa zamrożonych kopii starego kodu, kontrolowanych hashami T02. Aktualną liczbę testów wypisuje log kontroli. Nowe zadania dodają testy do tego samego zestawu.
+Ta sama komenda jest jedynym krokiem testowym w `.github/workflows/check.yml`. Uruchamia wszystkie testy znalezione w `tests/`; brak testów lub choć jeden błąd daje niezerowy status. T01 dostarczył 16 wcześniejszych testów, dwa testy CLI z prawdziwym GDAL i test kontraktu workflow. Kontrola obejmuje przypięte współrzędne, bieżące dane, geometrię, generację i QA. Nie odtwarza historycznych migracji ani generatorów. Aktualną liczbę testów wypisuje log kontroli. Nowe zadania dodają testy do tego samego zestawu.
 
 Próba GDAL tworzy syntetyczny TIFF 8×6, jawny rejestr jego tożsamości i przypięty CSV współrzędnych, uruchamia generator, odczytuje wynik przez `gdalinfo` i Pillow, sprawdza EPSG:2180, kompresję, wymiary, skończoną nieosobliwą transformację i zgodność pikseli. Drugi przypadek wymaga błędu CLI dla niezgodnych wymiarów. Nie potwierdza to poprawności orientacji istniejących planów ani konwencji półpiksela — ich odbiór należy do T05/T06.
 
@@ -72,8 +72,7 @@ manifestu, aktualności lub dopuszczenia T09 zatrzymuje publikację już w T10.
 (biblioteka standardowa, realny Git i wrapper Dockera), następnie cały zestaw
 `tests/` w przypiętym kontenerze. Obraz GDAL nie zawiera Git; testy hostowe
 sprawdzają dokładnie część uruchamianą na hoście. Oba zestawy są obowiązkowe,
-a dowody podają osobno ich liczby. Odbiór geometrii i historii pozostaje
-w kontenerze; żaden dotychczasowy test nie jest pomijany.
+a dowody podają osobno ich liczby. Odbiór bieżącej geometrii pozostaje w kontenerze.
 
 
 ZIP z `mkstemp` powstaje w kontenerze root z trybem 0600. Po udanej

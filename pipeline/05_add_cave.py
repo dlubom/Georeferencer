@@ -123,7 +123,7 @@ def build_meta(args, cave, image_meta, filename, raw, width, height, pin, jsonl_
         north['evidence'] = args.north_source
     orient = {'mode': 'assumed_grid' if args.north_reference == 'unknown' else 'reference',
               'status': 'unverified', 'image_sha256': orientation.digest(raw),
-              'uncertainty_reason': args.decision_reason, 'decisions': []}
+              'uncertainty_reason': args.decision_reason}
     if args.north_reference == 'unknown':
         orient['grid_assumption'] = {'rotation_deg': args.assumed_grid_angle, 'crs': 'EPSG:2180',
                                     'convention': args.grid_angle_convention, 'reason': args.decision_reason}
@@ -151,7 +151,6 @@ def build_meta(args, cave, image_meta, filename, raw, width, height, pin, jsonl_
             'scale': {'method': 'manual_measurement', 'source': args.scale_source},
             'coordinates': {**pin, 'object_id': args.gps_kataster_object_id}}}
     orient['origin'] = {'kind': 'manual_t08', 'plan_id': args.plan_id,
-                        'inputs_sha256': orientation.inputs_hash(meta),
                         'reason': args.decision_reason, 'date': args.decision_date}
     return meta
 
@@ -227,7 +226,7 @@ def add_plan(args):
     if os.path.lexists(target):
         raise ValueError(f'Plan już istnieje: {target}; dodawanie nigdy nie nadpisuje')
     identity = {'schema_version': 1, 'plans': {args.plan_id: {
-        **meta['image'], 'sha256': orientation.digest(raw)}}, 'orientation_origin': meta['orientation']['origin']}
+        **meta['image'], 'sha256': orientation.digest(raw)}}}
     identity_text = json.dumps(identity, ensure_ascii=False, indent=2) + '\n'
     yaml_text = yaml.safe_dump(meta, allow_unicode=True, sort_keys=False)
     # Dry-run: pełny T03 bez zapisu i bez tymczasowych plików.

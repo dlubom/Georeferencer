@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'pipeline'))
 from validation import validate_plan, read_registry
 from gps_kataster_coordinates import load_best_measurements
-from orientation import record_decision, rotation, validate_orientation
+from orientation import rotation, validate_orientation
 
 spec = importlib.util.spec_from_file_location('manual_add', ROOT / 'pipeline/05_add_cave.py')
 adder = importlib.util.module_from_spec(spec)
@@ -189,14 +189,8 @@ class ManualAddTest(unittest.TestCase):
         resolved['entrance']['x'] += .25
         self.assertEqual(rotation(resolved), 17.25)
         resolved['orientation']['grid_assumption']['rotation_deg'] += 2
-        with self.assertRaisesRegex(ValueError, 'decyzj'):
-            validate_orientation(resolved)
-        resolved = record_decision(resolved, 'Nowe jawne przyjęcie obrotu', '2026-10-25')
+        validate_orientation(resolved)
         self.assertEqual(rotation(resolved), 19.25)
-        resolved['orientation']['historical'] = copy.deepcopy(
-            yaml.safe_load((ROOT / 'data/caves/001131/meta.yaml').read_text())['orientation']['historical'])
-        with self.assertRaisesRegex(ValueError, 'T02|historical'):
-            validate_orientation(resolved)
 
     def test_unknown_measured_zero_is_distinct_from_skipped(self):
         args = self.argv(reference='unknown')
@@ -308,7 +302,7 @@ class ManualAddTest(unittest.TestCase):
         self.assertEqual(list(target.iterdir()), [])
         self.assertEqual(list(self.data.iterdir()), [target])
 
-    def test_local_registration_conflict_missing_origin_and_provenance_are_errors(self):
+    def test_local_registration_conflict_and_missing_provenance_are_errors(self):
         plan = self.add()
         path = plan / 'image-identity.json'
         raw = path.read_bytes()
@@ -327,16 +321,6 @@ class ManualAddTest(unittest.TestCase):
             meta.pop(field)
             with self.assertRaisesRegex(ValueError, 'provenance'):
                 validate_plan(plan, self.index, meta_text=yaml.safe_dump(meta))
-        meta = yaml.safe_load(original)
-        meta['orientation']['origin']['reason'] = 'podmieniony korzeń'
-        with self.assertRaisesRegex(ValueError, 'origin'):
-            validate_plan(plan, self.index, meta_text=yaml.safe_dump(meta))
-
-    def test_t02_plan_cannot_replace_history_with_t08_origin(self):
-        meta = yaml.safe_load((ROOT / 'data/caves/001131/meta.yaml').read_text())
-        meta['orientation']['origin'] = {'kind': 'manual_t08'}
-        with self.assertRaises(ValueError):
-            validate_orientation(meta)
 
     def test_t04_uses_local_registration_snapshot_and_guards_changed_identity(self):
         plan = self.add(reference='unknown')

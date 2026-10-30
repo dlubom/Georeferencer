@@ -187,8 +187,6 @@ class ManualQaTest(unittest.TestCase):
         path=helper.data/'manual-unknown/meta.yaml'
         meta=yaml.safe_load(path.read_text())
         meta['orientation']['grid_assumption']['rotation_deg']=0.0
-        from orientation import record_decision
-        meta=record_decision(meta,'Jawnie przyjęto zero w próbie QA','2026-10-25')
         path.write_text(yaml.safe_dump(meta))
         result=create_report(helper.data, aggregates={}, observations=[], exceptions={'schema_version':1,'exceptions':[]})
         unknown=next(p for p in result['plans'] if p['plan_id']=='manual-unknown')
