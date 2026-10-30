@@ -48,10 +48,11 @@ def angle(params):
 
 class OrientationTest(unittest.TestCase):
     def test_all_migrated_plans_keep_angle_from_saved_tfw(self):
+        from catalogue_baseline import historical_path
         index = load_best_measurements(ROOT / 'data/coordinate-source/best-measurements-v1.3.1.csv')
         for plan in catalogue()['plans']:
             with self.subTest(plan=plan['dir_id']):
-                meta = yaml.safe_load((ROOT / 'data/caves' / plan['dir_id'] / 'meta.yaml').read_text())
+                meta = yaml.safe_load(historical_path(ROOT, f"data/caves/{plan['dir_id']}/meta.yaml").read_text())
                 row = index.by_object_id[meta['coordinates']['gps_kataster_object_id']]
                 meta['coordinates'].update(lat=row.lat, lon=row.lon)
                 expected = angle(plan['historical_tfw']['parameters'])

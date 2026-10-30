@@ -8796,7 +8796,7 @@
       ]
     },
     {
-      "basis_sha256": "77b8d7802fb4a01bca2ad47500c17b10cd11e32f657433dd1b1ba5405dcbf41d",
+      "basis_sha256": "78a4abd9361723ec8f8ee84183c2b041a4a505e159874e250cf86a0ba200c5c4",
       "close_when": "Co najmniej 3 niezależne ważne pomiary albo udokumentowana ręczna interpretacja strzałki i decyzja orientacji.",
       "evidence": {
         "invalid_submission_ids": [],
@@ -8823,7 +8823,7 @@
       ]
     },
     {
-      "basis_sha256": "18922b37d5ca0d3aba736bb39f600a0288d9e3b04216f0778e1cb44a1b1209de",
+      "basis_sha256": "28e6b44f2a4d280f672ad01203e22fc68b6d4bcf1a31837dfe26842df481d562",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "unknown",
@@ -8847,18 +8847,19 @@
       ]
     },
     {
-      "basis_sha256": "843b38358e00d8e74a371accc8e05e9f4e59a1faadb0d002784a74e5200996d7",
-      "close_when": "Ręczne potwierdzenie właściwej skali z konkretną podziałką/siatką i raportem wpływu.",
+      "basis_sha256": "d9ece4c0f8a6b5ea4cf7c0d1524872bcbb4fbf4abafa5993c91573a43aa3b5bb",
+      "close_when": "Nowy zweryfikowany zestaw pomiarów źródłowych bez konfliktu skali; historycznego snapshotu zgłoszeń nie zmieniamy w tej korekcie.",
       "evidence": {
         "ppm_cv": 0.3065559095096817,
         "threshold": 0.1
       },
       "plan_id": "001212",
-      "reason": "Rozrzut ważnych skal po IQR przekracza próg QA; nie rozstrzygamy automatycznie podziałki ani deformacji skanu.",
+      "reason": "Rozrzut surowych skal T07 pozostaje w historii. Ręczny pomiar dwóch interwałów siatki potwierdza 97,85 px/m; konflikt z podziałką 1 m rozstrzygnięto dla bieżącej georeferencji 2026-10-30.",
       "rule": "scale.disagreement",
       "sources": [
         "docs/QA.md",
-        "docs/ORIENTATION.md"
+        "docs/ORIENTATION.md",
+        "CHANGELOG.md"
       ]
     },
     {
@@ -17938,57 +17939,6 @@
         "uncertainty_reason": "Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano orientację historycznego TFW T02."
       },
       "plan_id": "001458",
-      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy.",
-      "rule": "orientation.unknown",
-      "sources": [
-        "docs/QA.md",
-        "docs/ORIENTATION.md"
-      ]
-    },
-    {
-      "basis_sha256": "bb6e6d61767aee3419bdb0123661dc158085daa703a222f3953a0d1480b82441",
-      "close_when": "Co najmniej 3 niezależne ważne pomiary albo udokumentowana ręczna interpretacja strzałki i decyzja orientacji.",
-      "evidence": {
-        "invalid_submission_ids": [],
-        "observations": 2,
-        "skipped_submission_ids": [
-          "SUB_1771769934311_5622",
-          "SUB_1773005061806_8144",
-          "SUB_1775126361200_4264"
-        ],
-        "submission_ids": [
-          "SUB_1770041621168_2412",
-          "SUB_1771003948554_2052"
-        ],
-        "users": 2
-      },
-      "plan_id": "001459",
-      "reason": "Niewystarczająca liczba niezależnych user_id ważnych strzałek T07 do progu QA; nie wpływa na zachowany kąt T02.",
-      "rule": "north.low_support",
-      "sources": [
-        "docs/QA.md",
-        "docs/ORIENTATION.md",
-        "docs/AGGREGATION.md",
-        "data/classification/test-submissions-v1.json"
-      ]
-    },
-    {
-      "basis_sha256": "519628d28e7c680c7d8048ac6569decb70c6fdbfd5ee04052309bcb138ef70cc",
-      "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
-      "evidence": {
-        "angle_origin": "unknown",
-        "grid_assumption": null,
-        "historical": {
-          "catalogue_sha256": "b9031ff93f9ca9a1930f3574cd2eddddfd8690235be4bee2610b993858df3541",
-          "plan_id": "001459",
-          "tfw_sha256": "e6828a56ae1c559a0985cb3a45fd3455206f191766cbb5ba1f69cec77a9db92f"
-        },
-        "mode": "historical_tfw",
-        "north_reference": "unknown",
-        "status": "unverified",
-        "uncertainty_reason": "Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano orientację historycznego TFW T02."
-      },
-      "plan_id": "001459",
       "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy.",
       "rule": "orientation.unknown",
       "sources": [
