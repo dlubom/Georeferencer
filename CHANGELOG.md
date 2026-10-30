@@ -1,6 +1,6 @@
 # Changelog
 
-## Niewydane
+## v0.7.4 — Korekty planów i uproszczenie orientacji (2026-10-30)
 
 - Uproszczono edycję orientacji: usunięto audyt historii T02, jednorazowe migratory i obowiązkowy łańcuch decyzji. Zachowano dotychczasową geometrię oraz walidację bieżącego pipeline'u.
 
