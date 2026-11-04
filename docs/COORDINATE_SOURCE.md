@@ -1,16 +1,15 @@
 # Współrzędne i historyczny punkt odniesienia
 
 Build korzysta z [data/coordinate-source/source.json](../data/coordinate-source/source.json):
-release **v1.3.2** repozytorium `dlubom/gps-kataster-obiektow-tatr`, artefakt
+release **v1.3.3** repozytorium `dlubom/gps-kataster-obiektow-tatr`, artefakt
 `best-measurements.csv`, SHA-256
-`6ef2607dacc02933240e820c42a0bab544790a38b5594a730fc4130b105c9ec0`.
-Surowe bajty CSV są wersjonowane obok opisu. Hash pobranego pliku potwierdzono
-z digestem assetu [release v1.3.2](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v1.3.2).
-Poprzedni CSV i dokładny opis zachowano jako `best-measurements-v1.3.1.csv`
-i `source-v1.3.1.json`. Nowy opis jest też w `source-v1.3.2.json`.
-[Raport aktualizacji](reports/coordinate-source-v1.3.2-impact.json) obejmuje cały
-katalog; [odbiór i ponowna ocena dziewięciu wyjątków](plans/2026-10-25-gps-v1.3.2-odbior.md)
-wyjaśniają zakres zmiany. Żaden pin nie jest deklaracją źródła dawnych TFW.
+`641f49c1ea5011027e06b2b468023acc9c0fa8a263699850718e0af66f19a33a`.
+Surowy CSV i opis są wersjonowane jako `best-measurements-v1.3.3.csv`
+i `source-v1.3.3.json`. Hash pobranego pliku jest zgodny z digestem assetu
+[release v1.3.3](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v1.3.3).
+Zachowano snapshoty i opisy v1.3.1 oraz v1.3.2.
+[Raport wpływu v1.3.3](reports/coordinate-source-v1.3.3-impact.json) obejmuje
+zmiany pomiarów i wynikowej geometrii. Żaden pin nie jest deklaracją źródła dawnych TFW.
 
 ## Użycie i odtworzenie snapshotu
 
