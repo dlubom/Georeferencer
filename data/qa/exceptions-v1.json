@@ -52,7 +52,7 @@
       ]
     },
     {
-      "basis_sha256": "29e9f0de1770bdcbfd6c2e839f1a571401aa210e249563b971faf7e1ffcdc584",
+      "basis_sha256": "d80b335ae400bcd3d7df5cafc493f3ad266c269625e806f13866302b53d79b21",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "assumed",
@@ -68,15 +68,16 @@
         "uncertainty_reason": "Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano orientację historycznego TFW T02."
       },
       "plan_id": "000491",
-      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy.",
+      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy. Aktualizacja Best MTW-0010 (m-002 → m-003) przesuwa plan o 0,54 m przy tej samej skali i rotacji. Pomiar otworu nie ustala rodzaju północy na planie.",
       "rule": "orientation.unknown",
       "sources": [
         "docs/QA.md",
-        "docs/ORIENTATION.md"
+        "docs/ORIENTATION.md",
+        "docs/reports/coordinate-source-v1.3.3-impact.json"
       ]
     },
     {
-      "basis_sha256": "4cec414750342d4c95400c6bcafd843e59c592141ccaf3da8749157b56dc936d",
+      "basis_sha256": "27922d850629259699e532b2bfdaa1e1b5c5a133cea150e90fdc057402c4f9c6",
       "close_when": "Ręczne porównanie konkretnej uwagi z aktualnym obrazem, otworem i georeferencją oraz zapis rozstrzygnięcia ze źródłem.",
       "evidence": {
         "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania.",
@@ -92,13 +93,14 @@
         "source_updated_at": "2026-04-09T09:28:37Z"
       },
       "plan_id": "000491",
-      "reason": "Uwaga historyczna z issue #1 nadal wymaga interpretacji symbolu, skali lub siatki. Bieżący obraz przechodzi T03; dawne pominięcie/konwersja nie są obecnym błędem technicznym.",
+      "reason": "Uwaga historyczna z issue #1 nadal wymaga interpretacji symbolu, skali lub siatki. Bieżący obraz przechodzi T03; dawne pominięcie/konwersja nie są obecnym błędem technicznym. Aktualizacja Best MTW-0010 (m-002 → m-003) przesuwa plan o 0,54 m przy tej samej skali i rotacji. Uwaga źródłowa i przypisanie otworu pozostają aktualne po zmianie pomiaru.",
       "rule": "source.review",
       "sources": [
         "docs/QA.md",
         "docs/ORIENTATION.md",
         "https://github.com/dlubom/Georeferencer/issues/1",
-        "data/qa/source-issues-v1.json"
+        "data/qa/source-issues-v1.json",
+        "docs/reports/coordinate-source-v1.3.3-impact.json"
       ]
     },
     {
@@ -18350,7 +18352,7 @@
       ]
     },
     {
-      "basis_sha256": "43b4cc8b53b422d7c27f3fa72c2ca203600ee046fc1622fc1e0de9ecb4719791",
+      "basis_sha256": "bcf118c36392c2e5e51c3caf623239392a64a18fa0cf4aae58f0f11adbeead83",
       "close_when": "Co najmniej 3 niezależne ważne pomiary albo udokumentowana ręczna interpretacja strzałki i decyzja orientacji.",
       "evidence": {
         "invalid_submission_ids": [],
@@ -18367,17 +18369,18 @@
         "users": 1
       },
       "plan_id": "001471",
-      "reason": "Niewystarczająca liczba niezależnych user_id ważnych strzałek T07 do progu QA; nie wpływa na zachowany kąt T02.",
+      "reason": "Niewystarczająca liczba niezależnych user_id ważnych strzałek T07 do progu QA; nie wpływa na zachowany kąt T02. Aktualizacja Best MTZ-0055 (m-002 → m-003) przesuwa plan o 56,23 m przy tej samej skali i rotacji. Liczba niezależnych wskazań północy nadal jest poniżej progu QA.",
       "rule": "north.low_support",
       "sources": [
         "docs/QA.md",
         "docs/ORIENTATION.md",
         "docs/AGGREGATION.md",
-        "data/classification/test-submissions-v1.json"
+        "data/classification/test-submissions-v1.json",
+        "docs/reports/coordinate-source-v1.3.3-impact.json"
       ]
     },
     {
-      "basis_sha256": "23da55cd1c2c0ed860b9b9d81a0b7abcd54fdc91df9aa4ddec7f4992ba006b10",
+      "basis_sha256": "5a443d34f85c578c8e509a0327baf936503fbb9fa09fe9b5860ad213818a0e67",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "unknown",
@@ -18393,15 +18396,16 @@
         "uncertainty_reason": "Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano orientację historycznego TFW T02."
       },
       "plan_id": "001471",
-      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy.",
+      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy. Aktualizacja Best MTZ-0055 (m-002 → m-003) przesuwa plan o 56,23 m przy tej samej skali i rotacji. Pomiar otworu nie ustala rodzaju północy na planie.",
       "rule": "orientation.unknown",
       "sources": [
         "docs/QA.md",
-        "docs/ORIENTATION.md"
+        "docs/ORIENTATION.md",
+        "docs/reports/coordinate-source-v1.3.3-impact.json"
       ]
     },
     {
-      "basis_sha256": "6cdddb07b8c30df2b25863be1543926cd28663d271e3a6f04e6bcb19816f049c",
+      "basis_sha256": "a5e0055c05af97e59f23d3f132a31f177c708feab858f0a12e69b7757af126f4",
       "close_when": "Co najmniej 3 niezależne ważne pomiary albo udokumentowana ręczna interpretacja strzałki i decyzja orientacji.",
       "evidence": {
         "invalid_submission_ids": [],
@@ -18418,17 +18422,18 @@
         "users": 2
       },
       "plan_id": "001472",
-      "reason": "Niewystarczająca liczba niezależnych user_id ważnych strzałek T07 do progu QA; nie wpływa na zachowany kąt T02.",
+      "reason": "Niewystarczająca liczba niezależnych user_id ważnych strzałek T07 do progu QA; nie wpływa na zachowany kąt T02. Aktualizacja Best MTZ-0018 (m-003 → m-004) przesuwa plan o 0,60 m przy tej samej skali i rotacji. Liczba niezależnych wskazań północy nadal jest poniżej progu QA.",
       "rule": "north.low_support",
       "sources": [
         "docs/QA.md",
         "docs/ORIENTATION.md",
         "docs/AGGREGATION.md",
-        "data/classification/test-submissions-v1.json"
+        "data/classification/test-submissions-v1.json",
+        "docs/reports/coordinate-source-v1.3.3-impact.json"
       ]
     },
     {
-      "basis_sha256": "5d44ec86b7b9c81fe78e692a8886cdbdc7d7f400e41714ce7808572ba93916b2",
+      "basis_sha256": "46662b8b2f3ee83ba2f602b27751942a9314df4b7f66011de86f5a6016349d78",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "unknown",
@@ -18444,11 +18449,12 @@
         "uncertainty_reason": "Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano orientację historycznego TFW T02."
       },
       "plan_id": "001472",
-      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy.",
+      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy. Aktualizacja Best MTZ-0018 (m-003 → m-004) przesuwa plan o 0,60 m przy tej samej skali i rotacji. Pomiar otworu nie ustala rodzaju północy na planie.",
       "rule": "orientation.unknown",
       "sources": [
         "docs/QA.md",
-        "docs/ORIENTATION.md"
+        "docs/ORIENTATION.md",
+        "docs/reports/coordinate-source-v1.3.3-impact.json"
       ]
     },
     {
@@ -18577,7 +18583,7 @@
       ]
     },
     {
-      "basis_sha256": "014ea93c0c1ed229ac26e9cb68ff38b77d7b4445ca4bd271bcf5724afa22b403",
+      "basis_sha256": "e617f4569d0956afb89f43e3a2680f26d94a4fec52e9fad6028a489f650596ad",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "unknown",
@@ -18593,11 +18599,12 @@
         "uncertainty_reason": "Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano orientację historycznego TFW T02."
       },
       "plan_id": "001478",
-      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy.",
+      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy. Aktualizacja Best MTW-0013 (m-002 → m-003) przesuwa plan o 7,77 m przy tej samej skali i rotacji. Pomiar otworu nie ustala rodzaju północy na planie.",
       "rule": "orientation.unknown",
       "sources": [
         "docs/QA.md",
-        "docs/ORIENTATION.md"
+        "docs/ORIENTATION.md",
+        "docs/reports/coordinate-source-v1.3.3-impact.json"
       ]
     },
     {
@@ -19095,7 +19102,7 @@
       ]
     },
     {
-      "basis_sha256": "380b74cb80bf6416ac42e345d5edd8d0fd7ab6a4b992cf5d6aebbe3730c8ce65",
+      "basis_sha256": "d02eef43ae70ac95dd7dbd91bc89fa3060b57372b84f7063959e0fd7daaf7b91",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "assumed",
@@ -19111,15 +19118,16 @@
         "uncertainty_reason": "Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano orientację historycznego TFW T02."
       },
       "plan_id": "001495",
-      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy.",
+      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy. Aktualizacja Best MTZ-0027 (m-003 → m-004) przesuwa plan o 2,00 m przy tej samej skali i rotacji. Pomiar otworu nie ustala rodzaju północy na planie.",
       "rule": "orientation.unknown",
       "sources": [
         "docs/QA.md",
-        "docs/ORIENTATION.md"
+        "docs/ORIENTATION.md",
+        "docs/reports/coordinate-source-v1.3.3-impact.json"
       ]
     },
     {
-      "basis_sha256": "62d0ba9ba743f0f501700319e5c7abde415949eb0480d84dcf02da7cc4f320f5",
+      "basis_sha256": "176f08b21c1b42e50729a20ef752beac93de074c2193f1cc1fc50794fd2bbd29",
       "close_when": "Ręczne porównanie konkretnej uwagi z aktualnym obrazem, otworem i georeferencją oraz zapis rozstrzygnięcia ze źródłem.",
       "evidence": {
         "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania.",
@@ -19135,13 +19143,14 @@
         "source_updated_at": "2026-04-09T09:28:37Z"
       },
       "plan_id": "001495",
-      "reason": "Uwaga historyczna z issue #1 nadal wymaga interpretacji symbolu, skali lub siatki. Bieżący obraz przechodzi T03; dawne pominięcie/konwersja nie są obecnym błędem technicznym.",
+      "reason": "Uwaga historyczna z issue #1 nadal wymaga interpretacji symbolu, skali lub siatki. Bieżący obraz przechodzi T03; dawne pominięcie/konwersja nie są obecnym błędem technicznym. Aktualizacja Best MTZ-0027 (m-003 → m-004) przesuwa plan o 2,00 m przy tej samej skali i rotacji. Uwaga źródłowa i przypisanie otworu pozostają aktualne po zmianie pomiaru.",
       "rule": "source.review",
       "sources": [
         "docs/QA.md",
         "docs/ORIENTATION.md",
         "https://github.com/dlubom/Georeferencer/issues/1",
-        "data/qa/source-issues-v1.json"
+        "data/qa/source-issues-v1.json",
+        "docs/reports/coordinate-source-v1.3.3-impact.json"
       ]
     },
     {
@@ -19700,7 +19709,7 @@
       ]
     },
     {
-      "basis_sha256": "273d12fa97ba5ec4bbbc2c558b1587d3065cdd8d1b7580e9c9171183eb020b94",
+      "basis_sha256": "760e67e037bef9941b18f7bfd02c9acfb3c21590e41edb7f0a1c7b4c38bc0718",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "assumed",
@@ -19716,15 +19725,16 @@
         "uncertainty_reason": "Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano orientację historycznego TFW T02."
       },
       "plan_id": "001511",
-      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy.",
+      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy. Aktualizacja Best MTZ-0013 (m-002 → m-003) przesuwa plan o 29,45 m przy tej samej skali i rotacji. Pomiar otworu nie ustala rodzaju północy na planie.",
       "rule": "orientation.unknown",
       "sources": [
         "docs/QA.md",
-        "docs/ORIENTATION.md"
+        "docs/ORIENTATION.md",
+        "docs/reports/coordinate-source-v1.3.3-impact.json"
       ]
     },
     {
-      "basis_sha256": "8d478c367bd2746e605a18b2962dd47beb71ef6bd6bf35afae8e467bdbff1910",
+      "basis_sha256": "7e27c1480198684cc071deff73fc1238afc3c85adf67edb81ca7f573b4ef4409",
       "close_when": "Ręczne porównanie konkretnej uwagi z aktualnym obrazem, otworem i georeferencją oraz zapis rozstrzygnięcia ze źródłem.",
       "evidence": {
         "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania.",
@@ -19740,13 +19750,14 @@
         "source_updated_at": "2026-04-09T09:28:37Z"
       },
       "plan_id": "001511",
-      "reason": "Uwaga historyczna z issue #1 nadal wymaga interpretacji symbolu, skali lub siatki. Bieżący obraz przechodzi T03; dawne pominięcie/konwersja nie są obecnym błędem technicznym.",
+      "reason": "Uwaga historyczna z issue #1 nadal wymaga interpretacji symbolu, skali lub siatki. Bieżący obraz przechodzi T03; dawne pominięcie/konwersja nie są obecnym błędem technicznym. Aktualizacja Best MTZ-0013 (m-002 → m-003) przesuwa plan o 29,45 m przy tej samej skali i rotacji. Uwaga źródłowa i przypisanie otworu pozostają aktualne po zmianie pomiaru.",
       "rule": "source.review",
       "sources": [
         "docs/QA.md",
         "docs/ORIENTATION.md",
         "https://github.com/dlubom/Georeferencer/issues/1",
-        "data/qa/source-issues-v1.json"
+        "data/qa/source-issues-v1.json",
+        "docs/reports/coordinate-source-v1.3.3-impact.json"
       ]
     },
     {
@@ -20527,7 +20538,7 @@
       ]
     },
     {
-      "basis_sha256": "9a6c48647291aa912ab19b5c44f115ac37b2acf995633b2a5a0c16996dc40e36",
+      "basis_sha256": "bf2956cd9a9d398b2432f361af9ffde0edc916ee506786f9556c698fd13ff60b",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "unknown",
@@ -20543,11 +20554,12 @@
         "uncertainty_reason": "Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano orientację historycznego TFW T02."
       },
       "plan_id": "001533",
-      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy.",
+      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy. Aktualizacja Best MTW-0036 (m-002 → m-003) przesuwa plan o 2,46 m przy tej samej skali i rotacji. Pomiar otworu nie ustala rodzaju północy na planie.",
       "rule": "orientation.unknown",
       "sources": [
         "docs/QA.md",
-        "docs/ORIENTATION.md"
+        "docs/ORIENTATION.md",
+        "docs/reports/coordinate-source-v1.3.3-impact.json"
       ]
     },
     {
@@ -20602,7 +20614,7 @@
       ]
     },
     {
-      "basis_sha256": "23da529d95bea0638383fb59e1c05c01e54bac17905a43e67e7c008c97f38ba8",
+      "basis_sha256": "9bba4e86bdc5ee34d31bb7a755c33ec9e0dcc59642c90134fe0d5b2c2a733bea",
       "close_when": "Co najmniej 3 niezależne ważne pomiary albo udokumentowana ręczna interpretacja strzałki i decyzja orientacji.",
       "evidence": {
         "invalid_submission_ids": [],
@@ -20619,17 +20631,18 @@
         "users": 2
       },
       "plan_id": "001535",
-      "reason": "Niewystarczająca liczba niezależnych user_id ważnych strzałek T07 do progu QA; nie wpływa na zachowany kąt T02.",
+      "reason": "Niewystarczająca liczba niezależnych user_id ważnych strzałek T07 do progu QA; nie wpływa na zachowany kąt T02. Aktualizacja Best MTW-0054 (m-002 → m-003) przesuwa plan o 0,75 m przy tej samej skali i rotacji. Liczba niezależnych wskazań północy nadal jest poniżej progu QA.",
       "rule": "north.low_support",
       "sources": [
         "docs/QA.md",
         "docs/ORIENTATION.md",
         "docs/AGGREGATION.md",
-        "data/classification/test-submissions-v1.json"
+        "data/classification/test-submissions-v1.json",
+        "docs/reports/coordinate-source-v1.3.3-impact.json"
       ]
     },
     {
-      "basis_sha256": "4fd76d2232b34665195fcbadae7812c98c568dff419eab00f88dfdb023d6264f",
+      "basis_sha256": "779dabfc007081711dc9591a08b1cbbd9485aabf06eef27950d9ce065a994e82",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "unknown",
@@ -20645,15 +20658,16 @@
         "uncertainty_reason": "Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano orientację historycznego TFW T02."
       },
       "plan_id": "001535",
-      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy.",
+      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy. Aktualizacja Best MTW-0054 (m-002 → m-003) przesuwa plan o 0,75 m przy tej samej skali i rotacji. Pomiar otworu nie ustala rodzaju północy na planie.",
       "rule": "orientation.unknown",
       "sources": [
         "docs/QA.md",
-        "docs/ORIENTATION.md"
+        "docs/ORIENTATION.md",
+        "docs/reports/coordinate-source-v1.3.3-impact.json"
       ]
     },
     {
-      "basis_sha256": "2e7fa2297625ed7b7b836da05aaf50c21a1e54bd2ee93165081ea584bd88f839",
+      "basis_sha256": "f5f85a3803ed8cce62fd6e79491d189f2dad157f40658605342f7a8a4b14b5c3",
       "close_when": "Ręczne porównanie konkretnej uwagi z aktualnym obrazem, otworem i georeferencją oraz zapis rozstrzygnięcia ze źródłem.",
       "evidence": {
         "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania.",
@@ -20669,13 +20683,14 @@
         "source_updated_at": "2026-04-09T09:28:37Z"
       },
       "plan_id": "001535",
-      "reason": "Uwaga historyczna z issue #1 nadal wymaga interpretacji symbolu, skali lub siatki. Bieżący obraz przechodzi T03; dawne pominięcie/konwersja nie są obecnym błędem technicznym.",
+      "reason": "Uwaga historyczna z issue #1 nadal wymaga interpretacji symbolu, skali lub siatki. Bieżący obraz przechodzi T03; dawne pominięcie/konwersja nie są obecnym błędem technicznym. Aktualizacja Best MTW-0054 (m-002 → m-003) przesuwa plan o 0,75 m przy tej samej skali i rotacji. Uwaga źródłowa i przypisanie otworu pozostają aktualne po zmianie pomiaru.",
       "rule": "source.review",
       "sources": [
         "docs/QA.md",
         "docs/ORIENTATION.md",
         "https://github.com/dlubom/Georeferencer/issues/1",
-        "data/qa/source-issues-v1.json"
+        "data/qa/source-issues-v1.json",
+        "docs/reports/coordinate-source-v1.3.3-impact.json"
       ]
     },
     {
@@ -21185,7 +21200,7 @@
       ]
     },
     {
-      "basis_sha256": "a1212c1894cac3bed7d79adcb357fab2eb98a862a52ad47ebc14ffb4a00f34e9",
+      "basis_sha256": "0d504d07801bb7679551f1ca23c53f2b1571ea05411c439f2279673853f4ce4f",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "unknown",
@@ -21201,15 +21216,16 @@
         "uncertainty_reason": "Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano orientację historycznego TFW T02."
       },
       "plan_id": "001547",
-      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy.",
+      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy. Aktualizacja Best MTW-0008 (m-002 → m-003) przesuwa plan o 1,50 m przy tej samej skali i rotacji. Pomiar otworu nie ustala rodzaju północy na planie.",
       "rule": "orientation.unknown",
       "sources": [
         "docs/QA.md",
-        "docs/ORIENTATION.md"
+        "docs/ORIENTATION.md",
+        "docs/reports/coordinate-source-v1.3.3-impact.json"
       ]
     },
     {
-      "basis_sha256": "142d89234975e8af9057149c7b2c19312fba4c93c4ec919ad6ca2f3e01718835",
+      "basis_sha256": "984e194c2b2ab28b4b36f24a2c6bbe6392ecd152757dcdda3f1dd79eab98860f",
       "close_when": "Co najmniej 3 niezależne ważne pomiary albo udokumentowana ręczna interpretacja strzałki i decyzja orientacji.",
       "evidence": {
         "invalid_submission_ids": [],
@@ -21226,17 +21242,18 @@
         "users": 1
       },
       "plan_id": "001548",
-      "reason": "Niewystarczająca liczba niezależnych user_id ważnych strzałek T07 do progu QA; nie wpływa na zachowany kąt T02.",
+      "reason": "Niewystarczająca liczba niezależnych user_id ważnych strzałek T07 do progu QA; nie wpływa na zachowany kąt T02. Aktualizacja Best MTW-0016 (m-002 → m-003) przesuwa plan o 0,39 m przy tej samej skali i rotacji. Liczba niezależnych wskazań północy nadal jest poniżej progu QA.",
       "rule": "north.low_support",
       "sources": [
         "docs/QA.md",
         "docs/ORIENTATION.md",
         "docs/AGGREGATION.md",
-        "data/classification/test-submissions-v1.json"
+        "data/classification/test-submissions-v1.json",
+        "docs/reports/coordinate-source-v1.3.3-impact.json"
       ]
     },
     {
-      "basis_sha256": "9b390ced2504fb9133060bb572ca5d68523488e442010af3a6f81d99b38f0fef",
+      "basis_sha256": "761a47ca556ddc84e26506c77ac351708a1a0ece268b0ab674f92774c9977f87",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "unknown",
@@ -21252,15 +21269,16 @@
         "uncertainty_reason": "Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano orientację historycznego TFW T02."
       },
       "plan_id": "001548",
-      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy.",
+      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy. Aktualizacja Best MTW-0016 (m-002 → m-003) przesuwa plan o 0,39 m przy tej samej skali i rotacji. Pomiar otworu nie ustala rodzaju północy na planie.",
       "rule": "orientation.unknown",
       "sources": [
         "docs/QA.md",
-        "docs/ORIENTATION.md"
+        "docs/ORIENTATION.md",
+        "docs/reports/coordinate-source-v1.3.3-impact.json"
       ]
     },
     {
-      "basis_sha256": "0b098a7211c2c35a424c8ce0b0344265350ef30e918f3806ba01339a31d893d5",
+      "basis_sha256": "6e42471f836311280a99451cdcb72cfacf8a7ae529d703a248776582f1de8209",
       "close_when": "Co najmniej 3 niezależne ważne pomiary albo udokumentowana ręczna interpretacja strzałki i decyzja orientacji.",
       "evidence": {
         "invalid_submission_ids": [],
@@ -21277,17 +21295,18 @@
         "users": 2
       },
       "plan_id": "001549",
-      "reason": "Niewystarczająca liczba niezależnych user_id ważnych strzałek T07 do progu QA; nie wpływa na zachowany kąt T02.",
+      "reason": "Niewystarczająca liczba niezależnych user_id ważnych strzałek T07 do progu QA; nie wpływa na zachowany kąt T02. Aktualizacja Best MTW-0050 (m-002 → m-003) przesuwa plan o 1,38 m przy tej samej skali i rotacji. Liczba niezależnych wskazań północy nadal jest poniżej progu QA.",
       "rule": "north.low_support",
       "sources": [
         "docs/QA.md",
         "docs/ORIENTATION.md",
         "docs/AGGREGATION.md",
-        "data/classification/test-submissions-v1.json"
+        "data/classification/test-submissions-v1.json",
+        "docs/reports/coordinate-source-v1.3.3-impact.json"
       ]
     },
     {
-      "basis_sha256": "84577d81304e9a2d04ca4bb00cebe7c7117d5bd93e64d7dcf859f01c27a009cd",
+      "basis_sha256": "9564c85f9e4932352e8358b3e871acbef0f89312043fb32cccb8d6381fd72dd9",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "unknown",
@@ -21303,11 +21322,12 @@
         "uncertainty_reason": "Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano orientację historycznego TFW T02."
       },
       "plan_id": "001549",
-      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy.",
+      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy. Aktualizacja Best MTW-0050 (m-002 → m-003) przesuwa plan o 1,38 m przy tej samej skali i rotacji. Pomiar otworu nie ustala rodzaju północy na planie.",
       "rule": "orientation.unknown",
       "sources": [
         "docs/QA.md",
-        "docs/ORIENTATION.md"
+        "docs/ORIENTATION.md",
+        "docs/reports/coordinate-source-v1.3.3-impact.json"
       ]
     },
     {

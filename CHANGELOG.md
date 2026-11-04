@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.7.5 — Współrzędne GPS Kataster v1.3.3 (2026-11-04)
+
+- Przypięto zweryfikowany CSV z [GPS Kataster v1.3.3](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v1.3.3) z pomiarami Marka Jędrzejczaka.
+- Przesunięto 11 planów o 0,39–56,23 m, zachowując ich skalę i obrót.
+  Największe przesunięcia dotyczą planów `001471` (56,23 m)
+  i `001511` (29,45 m).
+  [Raport wpływu](docs/reports/coordinate-source-v1.3.3-impact.json)
+
 ## v0.7.4 — Korekty planów i uproszczenie orientacji (2026-10-30)
 
 - Uproszczono edycję orientacji: usunięto audyt historii T02, jednorazowe migratory i obowiązkowy łańcuch decyzji. Zachowano dotychczasową geometrię oraz walidację bieżącego pipeline'u.
