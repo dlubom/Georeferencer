@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.7.6 — Kotwica planu Lodowej Małołąckiej (2026-11-10)
+
+- Dowiązano plan Lodowej Małołąckiej `001627` do otworu dolnego (`MLW-0011`).
+  Korekta przesuwa raster o 9,89 m przy tej samej skali i orientacji.
+  [PR #40](https://github.com/dlubom/Georeferencer/pull/40)
+
 ## v0.7.5 — Współrzędne GPS Kataster v1.3.3 (2026-11-04)
 
 - Przypięto zweryfikowany CSV z [GPS Kataster v1.3.3](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v1.3.3) z pomiarami Marka Jędrzejczaka.

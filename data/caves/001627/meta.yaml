@@ -9,7 +9,7 @@ image:
   width: 6222
   height: 4884
 coordinates:
-  gps_kataster_object_id: MLW-0024
+  gps_kataster_object_id: MLW-0011
   lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
   lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:
