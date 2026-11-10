@@ -1,5 +1,11 @@
 # Changelog
 
+## Niewydane
+
+- Poprawiono kotwicę planu Lodowej Małołąckiej `001627`: wskazany na planie
+  otwór dolny jest teraz dowiązany do `MLW-0011`. Plan przesuwa się o 9,89 m;
+  punkt kliknięcia, skala i obrót pozostają bez zmian.
+
 ## v0.7.5 — Współrzędne GPS Kataster v1.3.3 (2026-11-04)
 
 - Przypięto zweryfikowany CSV z [GPS Kataster v1.3.3](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v1.3.3) z pomiarami Marka Jędrzejczaka.

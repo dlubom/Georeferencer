@@ -24232,7 +24232,7 @@
       ]
     },
     {
-      "basis_sha256": "b7e05375147910ceaa37b8a0b5e7049c36d26dbc4a5f914b20245c7b1f35289f",
+      "basis_sha256": "882e3efc513ae7e80f8aa0b411ef5d79ac4c11a0f5864b0130be370652ff6e7a",
       "close_when": "Co najmniej 3 niezależne ważne pomiary albo udokumentowana ręczna interpretacja strzałki i decyzja orientacji.",
       "evidence": {
         "invalid_submission_ids": [
@@ -24260,7 +24260,7 @@
       ]
     },
     {
-      "basis_sha256": "5b300a162b10c6ee851b66ee7b5eb9bd5340ebbdb6bb1209d8400a0503bc1214",
+      "basis_sha256": "34eb2ac8c19828730891fe8f98a17948ca6076203177e0037394d7f83899da71",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "measured",
