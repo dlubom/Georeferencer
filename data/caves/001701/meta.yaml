@@ -1,60 +1,88 @@
 cave:
-  inventory_number: T.F-10.01
   dir_id: '001701'
+  source_cave_id: '001701'
   name: Jaskinia Lodowa w Ciemniaku
-  n_submissions: 5
+  inventory_number: T.F-10.01
+  n_submissions: 0
 image:
-  filename: image_1217_zoom_10.tif
-  image_id: 1217
-  width: 5330
-  height: 5056
+  filename: barabach-2023-rycina-2.tif
+  image_id: 20230002
+  id_namespace: local:geographia-polonica
+  width: 1286
+  height: 1071
 coordinates:
   gps_kataster_object_id: KSW-0173
   lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
   lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
 entrance:
-  x: 362.96
-  y: 3654.84
+  x: 68.6
+  y: 675.2
 scale:
-  pixels_per_meter: 49.04
+  pixels_per_meter: 10.3408
 north:
   reference: unknown
-  angle_origin: unknown
-  angle_deg: 0.0030000000
+  angle_deg: 0.0
+  angle_origin: measured
   all_skipped: false
+  evidence: source.json, ryc. 2. Oś strzałki Ng od (172.5, 223.5) do (172.5, 161.5),
+    równoległa do pionu rastra. Wynik 0° od pionu, z rozdzielczością pomiaru ok. 1°.
 declination_deg: 0.0
-computed:
-  convergence_deg: -0.6760000000
-  total_rotation_deg: -0.6730000000
-  A: 0.0203901106
-  D: -0.0002394976
-  B: -0.0002394976
-  E: -0.0203901106
-  C: 564945.854532
-  F: 152287.249516
-quality:
-  ppm_cv: 0.0010000000
-  ppm_values:
-  - 49.0
-  - 49.0
-  - 49.06
-  - 49.04
-  - 49.12
-  entrance_std_px: 1.65
-  outliers_removed: 0
-  flag: null
 declination:
   status: unknown
-  basis: Historyczna wartość declination_deg; brak udokumentowanej podstawy i konwencji
-    znaku.
+  basis: Rycina nie podaje deklinacji. Model korzysta z założenia kierunku geograficznego
+    Ng.
 orientation:
-  mode: historical_tfw
+  mode: assumed_grid
   status: unverified
-  uncertainty_reason: Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano
-    orientację historycznego TFW T02.
-  image_sha256: bd49419887172f505aad31989a9414b2546ac4573fdc44dbeeb8fc1d68f2123b
-  historical:
-    catalogue_sha256: b9031ff93f9ca9a1930f3574cd2eddddfd8690235be4bee2610b993858df3541
-    plan_id: '001701'
-    tfw_sha256: 16236ca0a55fc8b9b683360a75c14329090089bcfd68d0f142099f8a220284ae
+  image_sha256: 03be55e3b645d409a198bbc271d90e482ded09a8328576b303ec443bad11b9a7
+  uncertainty_reason: Rycina oznacza północ jako Ng. Roboczo przyjęto północ geograficzną
+    i zbieżność EPSG:2180 w punkcie KSW-0173 (+0.67597568°). Rozwinięcie oznaczenia
+    wymaga potwierdzenia u autorów.
+  grid_assumption:
+    rotation_deg: 0.67597568
+    crs: EPSG:2180
+    convention: image_x_ccw_from_grid_east
+    reason: Rycina oznacza północ jako Ng. Roboczo przyjęto północ geograficzną i
+      zbieżność EPSG:2180 w punkcie KSW-0173 (+0.67597568°). Rozwinięcie oznaczenia
+      wymaga potwierdzenia u autorów.
   decisions: []
+  origin:
+    kind: manual_t08
+    plan_id: '001701'
+    inputs_sha256: 085ab8042320c8ffb0751e504c9af9b63fa608c92d15aaaf2db2059ca550e575
+    reason: 'Wymiana podkładu na rycinę 2 z pomiarów z 2021 r. zgodnie z issue #42.'
+    date: '2026-11-11'
+computed: {}
+quality:
+  flag: manual
+provenance:
+  method: manual_t08
+  date: '2026-11-11'
+  image:
+    source_cave_id: '001701'
+    graphics_id: 20230002
+    graphics_id_namespace: local:geographia-polonica
+    path: data/caves/001701/image.tif
+    sha256: 03be55e3b645d409a198bbc271d90e482ded09a8328576b303ec443bad11b9a7
+    source: source.json. Barabach i in. (2023), ryc. 2, s. 408, DOI 10.7163/GPol.0262,
+      CC BY 4.0.
+  registry:
+    path: data/caves/001701/source.json
+    sha256: 085ab8042320c8ffb0751e504c9af9b63fa608c92d15aaaf2db2059ca550e575
+    kind: external_publication_manifest
+  entrance:
+    method: manual_click
+    source: source.json. Symbol wejścia do Koziej Koleby na zachodnim krańcu Wielkiego
+      Korytarza, na przecięciu linii 0/0. Artykuł (s. 408) wskazuje jedno wejście.
+  scale:
+    method: manual_measurement
+    source: source.json. Dopasowanie prostych do środków linii siatki co 10 m na obu
+      osiach ryciny.
+  coordinates:
+    schema_version: 1
+    repository: dlubom/gps-kataster-obiektow-tatr
+    release: v1.3.3
+    asset: best-measurements.csv
+    sha256: 641f49c1ea5011027e06b2b468023acc9c0fa8a263699850718e0af66f19a33a
+    snapshot: best-measurements-v1.3.3.csv
+    object_id: KSW-0173

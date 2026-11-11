@@ -172,7 +172,15 @@ def validate_image(meta, cave_dir, registry, identity_text=None, image_path=None
         local = json.loads(local_path.read_text(encoding='utf-8') if identity_text is None else identity_text)
         if type(local.get('schema_version')) is not int or local['schema_version'] != 1 or set(local.get('plans', {})) != {plan}:
             fail(plan, 'image-identity.json', 'wymagany rejestr v1 dokładnie tego planu')
-        if identity is not None:
+        if 'replaces_image_sha256' in local:
+            previous = local['replaces_image_sha256']
+            if (not isinstance(previous, str) or len(previous) != 64
+                    or not isinstance(identity, dict) or identity.get('sha256') != previous):
+                fail(plan, 'image-identity.json.replaces_image_sha256',
+                     'wymagany SHA-256 zastępowanego obrazu ze wspólnego rejestru')
+            if meta['orientation']['mode'] == 'historical_tfw':
+                fail(plan, 'orientation.mode', 'wymagana orientacja dla nowej grafiki')
+        elif identity is not None:
             fail(plan, 'image-identity.json', 'konflikt lokalnego i wspólnego rejestru obrazów')
         identity = local['plans'][plan]
         if meta.get('orientation', {}).get('origin', {}).get('kind') != 'manual_t08':
