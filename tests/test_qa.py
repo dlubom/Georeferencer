@@ -133,7 +133,8 @@ class CatalogueQaTest(unittest.TestCase):
         self.assertEqual(sum(self.report['counts']['origins'].values()),len(actual))
         self.assertTrue(self.report['passed'], self.report['counts'])
         plans = {p['plan_id']: p for p in self.report['plans']}
-        self.assertEqual(sum((p['components'] or {}).get('north', {}).get('observations', 0) for p in plans.values()), 1715)
+        # Trzy pomiary północy grafiki 1217 dotyczą archiwalnego rastra.
+        self.assertEqual(sum((p['components'] or {}).get('north', {}).get('observations', 0) for p in plans.values()), 1712)
         self.assertEqual(plans['001094']['components']['north']['observations'], 5)
         self.assertEqual(plans['001094']['link_status'], 'explicit_valid')
         self.assertNotIn('entrance.review', plans['001094']['problems'])

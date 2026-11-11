@@ -95,9 +95,11 @@ Nowy plan dodany przez `05_add_cave.py` ma `image-identity.json` w swoim
 katalogu. Ma ten sam format v1 i dokładnie jeden wpis `plans[plan_id]`,
 Historyczne `orientation_origin` jest opisem pochodzenia, bez blokady edycji. Wpis jest
 wersjonowany wraz z obrazem i nie uzupełnia automatycznie wspólnego rejestru.
-Konflikt obu rejestrów jest błędem. Pozostałe reguły T03 — wymiary, tryb,
-SHA-256 treści i orientacji — obowiązują bez zmian. Rejestru T02/T03 nie
-odświeżamy. Nowy plan nie może przejąć historycznej orientacji innego ID.
+Przy wymianie grafiki z zachowaniem ID planu lokalny wpis wskazuje w
+`replaces_image_sha256` dokładny hash poprzedniego obrazu ze wspólnego
+rejestru. Bez takiego odwołania dwa wpisy dla tego samego ID są błędem.
+Do nowego obrazu stosuje się pełną kontrolę wymiarów, trybu i SHA-256.
+Wymiana obrazu wymaga pomiaru lub założenia orientacji dla nowej grafiki.
 
 Schemat dopuszcza null dla `north.angle_deg` wyłącznie dla nowego unknown
 w trybie assumed_grid, przy jawnym braku pomiaru. Dodatkowa walidacja T08

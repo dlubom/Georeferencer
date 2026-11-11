@@ -26756,27 +26756,28 @@
       ]
     },
     {
-      "basis_sha256": "cd0669aa27fdee1e68530f43d356e2047acb8a902a32daee08f012f4f41cd82e",
-      "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
+      "basis_sha256": "e5ecd6a36a72dc2dba4e4b7df5cd9f10de5bfe0e020db1306691566e5dd50600",
+      "close_when": "Potwierdzenie znaczenia oznaczenia Ng w źródle lub u autorów planu.",
       "evidence": {
-        "angle_origin": "unknown",
-        "grid_assumption": null,
-        "historical": {
-          "catalogue_sha256": "b9031ff93f9ca9a1930f3574cd2eddddfd8690235be4bee2610b993858df3541",
-          "plan_id": "001701",
-          "tfw_sha256": "16236ca0a55fc8b9b683360a75c14329090089bcfd68d0f142099f8a220284ae"
+        "angle_origin": "measured",
+        "grid_assumption": {
+          "convention": "image_x_ccw_from_grid_east",
+          "crs": "EPSG:2180",
+          "reason": "Rycina oznacza północ jako Ng. Roboczo przyjęto północ geograficzną i zbieżność EPSG:2180 w punkcie KSW-0173 (+0.67597568°). Rozwinięcie oznaczenia wymaga potwierdzenia u autorów.",
+          "rotation_deg": 0.67597568
         },
-        "mode": "historical_tfw",
+        "historical": null,
+        "mode": "assumed_grid",
         "north_reference": "unknown",
         "status": "unverified",
-        "uncertainty_reason": "Nie ustalono rodzaju północy ani podstawy deklinacji; zachowano orientację historycznego TFW T02."
+        "uncertainty_reason": "Rycina oznacza północ jako Ng. Roboczo przyjęto północ geograficzną i zbieżność EPSG:2180 w punkcie KSW-0173 (+0.67597568°). Rozwinięcie oznaczenia wymaga potwierdzenia u autorów."
       },
       "plan_id": "001701",
-      "reason": "Zachowany niezweryfikowany kąt TFW T02; bieżący katalog nie ustala rodzaju źródłowej północy.",
+      "reason": "Na rycinie zmierzono pionową strzałkę Ng. Dopuszczono robocze odczytanie jej jako północy geograficznej i obrót osi x o +0.67597568° względem siatki EPSG:2180.",
       "rule": "orientation.unknown",
       "sources": [
-        "docs/QA.md",
-        "docs/ORIENTATION.md"
+        "data/caves/001701/source.json",
+        "https://github.com/dlubom/Georeferencer/issues/42"
       ]
     },
     {

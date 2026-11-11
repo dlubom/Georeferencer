@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.7.7 — Nowy plan Lodowej w Ciemniaku (2026-11-11)
+
+- Plan `001701` wykorzystuje rycinę 2 z pomiarów z 2021 r. (Barabach i in.,
+  2023, CC BY 4.0). Dowiązano Kozią Kolebę do `KSW-0173` i zmierzono
+  skalę 10,34 px/m. Oznaczenie `Ng` przyjęto roboczo jako północ geograficzną.
+  Grafikę 1217 i jej metadane przeniesiono do archiwum.
+  [Issue #42](https://github.com/dlubom/Georeferencer/issues/42)
+- Jednobitowy GeoTIFF oddaje zasięg lodu rastrem punktowym. Zachowano
+  kolorowy JPEG wyodrębniony z PDF-u. [Źródło i pomiary](data/caves/001701/source.json)
+
 ## v0.7.6 — Kotwica planu Lodowej Małołąckiej (2026-11-10)
 
 - Dowiązano plan Lodowej Małołąckiej `001627` do otworu dolnego (`MLW-0011`).

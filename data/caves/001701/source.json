@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "source_cave_id": "001701",
+  "inventory_number": "T.F-10.01",
+  "document": {
+    "title": "Jaskinia Lodowa w Ciemniaku (Ice Cave in Ciemniak), Western Tatra, Poland – over a century-long investigations of climate warming-caused degradation of subterranean ice mass",
+    "authors": [
+      "Jan Barabach",
+      "Witold Szczuciński",
+      "Ditta Kicińska",
+      "Zuzanna Palińska",
+      "Grzegorz Rachlewicz"
+    ],
+    "publisher": "Instytut Geografii i Przestrzennego Zagospodarowania PAN",
+    "citation": "Geographia Polonica, 2023, 96(4), s. 405–430",
+    "doi": "10.7163/GPol.0262",
+    "url": "https://rcin.org.pl/Content/240185/WA51_276513_r2023-t96-no4_G-Polonica-Barabach.pdf#page=4",
+    "printed_page": 408,
+    "pdf_page": 4,
+    "figure": 2,
+    "accessed": "2026-11-11",
+    "sha256": "e54c3264eae45067e6efbb8890786dd0697fe554e40ace9961d26c07ec27f006",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "drawing": {
+    "authors": [
+      "Jan Barabach",
+      "Michał Filipiak",
+      "Adam Łada"
+    ],
+    "drawn_year": 2022,
+    "surveyors": [
+      "Michał Amborski",
+      "Jan Barabach",
+      "Martyna Gruszka",
+      "Zuzanna Palińska",
+      "Grzegorz Sokół"
+    ],
+    "survey_year": 2021,
+    "ice_extent_date": "2021-09-11"
+  },
+  "extraction": {
+    "command": "pdfimages -f 4 -l 4 -j barabach-2023.pdf fig2",
+    "pdf_image_object": "10 0 R",
+    "embedded_jpeg": {
+      "path": "image_original.jpg",
+      "sha256": "49569b143437d3fe08139598b3635200af4350e561b57c451c70f75df9b16037"
+    },
+    "tiff": {
+      "path": "image.tif",
+      "sha256": "03be55e3b645d409a198bbc271d90e482ded09a8328576b303ec443bad11b9a7",
+      "width": 1286,
+      "height": 1071
+    },
+    "changes": "Cała rycina w natywnej rozdzielczości. Konwersja Pillow do trybu 1 z ditheringiem Floyd–Steinberg oddaje niebieskie pola lodu rastrem punktowym. TIFF CCITT Group 4 zawiera atrybucję. GeoTIFF dodaje georeferencję EPSG:2180."
+  },
+  "measurements": {
+    "pixel_convention": "Początek w lewym górnym narożniku rastra, x w prawo, y w dół. Środek pierwszego piksela ma współrzędne (0.5, 0.5).",
+    "entrance": {
+      "x": 68.6,
+      "y": 675.2,
+      "object_id": "KSW-0173",
+      "basis": "Symbol wejścia do Koziej Koleby na zachodnim krańcu Wielkiego Korytarza, na przecięciu linii 0/0. Artykuł (s. 408) wskazuje jedno wejście."
+    },
+    "scale": {
+      "grid_interval_m": 10,
+      "x_lines_m": [
+        0,
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        100
+      ],
+      "x_line_centers_px": [
+        68.5526,
+        172.0484,
+        275.4474,
+        378.7656,
+        482.3462,
+        585.6154,
+        689.0077,
+        792.3871,
+        895.6912,
+        999.2727,
+        1102.7258
+      ],
+      "y_lines_m": [
+        -20,
+        -10,
+        0,
+        10,
+        20,
+        30,
+        40,
+        50
+      ],
+      "y_line_centers_px": [
+        881.8683,
+        778.5,
+        675.7124,
+        571.6322,
+        468.3678,
+        364.8429,
+        261.5359,
+        158.1586
+      ],
+      "px_per_m_x": 10.34036,
+      "px_per_m_y": 10.34126,
+      "fit_origin_px": [
+        68.6055,
+        675.1962
+      ],
+      "max_residual_px": [
+        0.1434,
+        0.5162
+      ],
+      "pixels_per_meter": 10.3408,
+      "basis": "Dopasowanie prostych do środków linii siatki co 10 m na obu osiach ryciny."
+    },
+    "north": {
+      "label": "Ng",
+      "shaft_start_px": [
+        172.5,
+        223.5
+      ],
+      "tip_px": [
+        172.5,
+        161.5
+      ],
+      "angle_deg": 0,
+      "grid_rotation_deg": 0.67597568,
+      "basis": "Oś strzałki Ng od (172.5, 223.5) do (172.5, 161.5), równoległa do pionu rastra. Wynik 0° od pionu, z rozdzielczością pomiaru ok. 1°.",
+      "assumption": "Rycina oznacza północ jako Ng. Roboczo przyjęto północ geograficzną i zbieżność EPSG:2180 w punkcie KSW-0173 (+0.67597568°). Rozwinięcie oznaczenia wymaga potwierdzenia u autorów."
+    }
+  },
+  "previous_image": {
+    "image_id": 1217,
+    "sha256": "bd49419887172f505aad31989a9414b2546ac4573fdc44dbeeb8fc1d68f2123b",
+    "archive": "../../archive/caves/001701"
+  }
+}

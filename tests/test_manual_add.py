@@ -322,6 +322,41 @@ class ManualAddTest(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'provenance'):
                 validate_plan(plan, self.index, meta_text=yaml.safe_dump(meta))
 
+    def test_local_replacement_must_match_previous_registered_image(self):
+        plan = self.add()
+        registry = read_registry()
+        path = plan / 'image-identity.json'
+        local = json.loads(path.read_text())
+        previous = {'filename': 'old.tif', 'image_id': 9, 'width': 8, 'height': 6,
+                    'sha256': 'a' * 64}
+        registry['plans'][plan.name] = previous
+        local['replaces_image_sha256'] = previous['sha256']
+        path.write_text(json.dumps(local))
+        meta, _ = validate_plan(plan, self.index, registry)
+        self.assertEqual(meta['image']['image_id'], 102)
+
+        registry['plans'][plan.name] = {**previous, 'sha256': 'b' * 64}
+        with self.assertRaisesRegex(ValueError, 'replaces_image_sha256'):
+            validate_plan(plan, self.index, registry)
+        del registry['plans'][plan.name]
+        with self.assertRaisesRegex(ValueError, 'replaces_image_sha256'):
+            validate_plan(plan, self.index, registry)
+
+    def test_local_replacement_rejects_historical_orientation_for_new_image(self):
+        plan = self.add()
+        registry = read_registry()
+        registry['plans'][plan.name] = {'sha256': 'a' * 64}
+        path = plan / 'image-identity.json'
+        local = json.loads(path.read_text())
+        local['replaces_image_sha256'] = 'a' * 64
+        path.write_text(json.dumps(local))
+        meta = yaml.safe_load((plan / 'meta.yaml').read_text())
+        meta['north']['reference'] = 'unknown'
+        meta['orientation']['mode'] = 'historical_tfw'
+
+        with self.assertRaisesRegex(ValueError, 'orientation.mode'):
+            validate_plan(plan, self.index, registry, meta_text=yaml.safe_dump(meta))
+
     def test_t04_uses_local_registration_snapshot_and_guards_changed_identity(self):
         plan = self.add(reference='unknown')
         path = plan / 'image-identity.json'

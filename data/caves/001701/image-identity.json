@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "replaces_image_sha256": "bd49419887172f505aad31989a9414b2546ac4573fdc44dbeeb8fc1d68f2123b",
+  "plans": {
+    "001701": {
+      "filename": "barabach-2023-rycina-2.tif",
+      "image_id": 20230002,
+      "id_namespace": "local:geographia-polonica",
+      "width": 1286,
+      "height": 1071,
+      "sha256": "03be55e3b645d409a198bbc271d90e482ded09a8328576b303ec443bad11b9a7"
+    }
+  },
+  "orientation_origin": {
+    "kind": "manual_t08",
+    "plan_id": "001701",
+    "inputs_sha256": "085ab8042320c8ffb0751e504c9af9b63fa608c92d15aaaf2db2059ca550e575",
+    "reason": "Wymiana podkładu na rycinę 2 z pomiarów z 2021 r. zgodnie z issue #42.",
+    "date": "2026-11-11"
+  }
+}
