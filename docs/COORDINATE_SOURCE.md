@@ -1,15 +1,20 @@
 # Współrzędne i historyczny punkt odniesienia
 
 Build korzysta z [data/coordinate-source/source.json](../data/coordinate-source/source.json):
-release **v1.3.3** repozytorium `dlubom/gps-kataster-obiektow-tatr`, artefakt
+release **v2.1.2** repozytorium `dlubom/gps-kataster-obiektow-tatr`, artefakt
 `best-measurements.csv`, SHA-256
-`641f49c1ea5011027e06b2b468023acc9c0fa8a263699850718e0af66f19a33a`.
-Surowy CSV i opis są wersjonowane jako `best-measurements-v1.3.3.csv`
-i `source-v1.3.3.json`. Hash pobranego pliku jest zgodny z digestem assetu
-[release v1.3.3](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v1.3.3).
-Zachowano snapshoty i opisy v1.3.1 oraz v1.3.2.
-[Raport wpływu v1.3.3](reports/coordinate-source-v1.3.3-impact.json) obejmuje
-zmiany pomiarów i wynikowej geometrii. Żaden pin nie jest deklaracją źródła dawnych TFW.
+`61874fca2441cc364c3f09d30a56210e863c595fddad417d1bc7e694d72edcf6`.
+Surowy CSV i opis są wersjonowane jako `best-measurements-v2.1.2.csv`
+i `source-v2.1.2.json`. Hash pobranego pliku jest zgodny z digestem assetu
+[release v2.1.2](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v2.1.2).
+Zachowano snapshoty i opisy v1.3.1–v1.3.3.
+
+[Raport wpływu v2.1.2](reports/coordinate-source-v2.1.2-impact.json) opisuje zmiany
+rekordów i geometrii. Kotwicę Mnichowej Studni Wyżniej (`001574`) przypisano
+do `MLW-0054`, które przejęło dotychczasowe współrzędne TPN. Ponowne przeliczenie
+po tej zmianie dało identyczne TFW dla 814 planów. Porównanie samego CSV
+w sekcji `geometry` używa powiązań v0.7.7, a `applied_geometry` uwzględnia nową kotwicę.
+Żaden pin nie jest deklaracją źródła dawnych TFW.
 
 ## Użycie i odtworzenie snapshotu
 

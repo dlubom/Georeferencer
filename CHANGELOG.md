@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.7.8 — GPS Kataster v2.1.2 (2026-11-12)
+
+- Przypięto zweryfikowany CSV z [GPS Kataster v2.1.2](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v2.1.2).
+- Plan Mnichowej Studni Wyżniej (`001574`) przypisano do górnego otworu
+  `MLW-0054`, który przejął dotychczasowe współrzędne TPN. Przeliczenie
+  potwierdziło identyczną georeferencję wszystkich 814 planów.
+  [Raport wpływu](docs/reports/coordinate-source-v2.1.2-impact.json)
+
 ## v0.7.7 — Nowy plan Lodowej w Ciemniaku (2026-11-11)
 
 - Plan `001701` wykorzystuje rycinę 2 z pomiarów z 2021 r. (Barabach i in.,
