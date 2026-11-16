@@ -1,15 +1,21 @@
 # Współrzędne i historyczny punkt odniesienia
 
 Build korzysta z [data/coordinate-source/source.json](../data/coordinate-source/source.json):
-release **v2.1.2** repozytorium `dlubom/gps-kataster-obiektow-tatr`, artefakt
+release **v2.1.3** repozytorium `dlubom/gps-kataster-obiektow-tatr`, artefakt
 `best-measurements.csv`, SHA-256
-`61874fca2441cc364c3f09d30a56210e863c595fddad417d1bc7e694d72edcf6`.
-Surowy CSV i opis są wersjonowane jako `best-measurements-v2.1.2.csv`
-i `source-v2.1.2.json`. Hash pobranego pliku jest zgodny z digestem assetu
-[release v2.1.2](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v2.1.2).
-Zachowano snapshoty i opisy v1.3.1–v1.3.3.
+`91ab60c62fbfd726da1ccf5788f3c57753153b3103b09e461365af574cd57264`.
+Surowy CSV i opis są wersjonowane jako `best-measurements-v2.1.3.csv`
+i `source-v2.1.3.json`. Hash pobranego pliku jest zgodny z digestem assetu
+[release v2.1.3](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v2.1.3).
+Zachowano snapshoty i opisy v1.3.1–v1.3.3 oraz v2.1.2.
 
-[Raport wpływu v2.1.2](reports/coordinate-source-v2.1.2-impact.json) opisuje zmiany
+[Raport wpływu v2.1.3](reports/coordinate-source-v2.1.3-impact.json) porównuje
+CSV z v2.1.2 na tych samych 814 planach. Zmieniono 23 rekordy Best, z których
+15 to kotwice planów. Przesunęło się 13 planów o 0,22–12,35 m, z zachowaniem
+skali i obrotu. Niebieska Studnia i Jaskinia pod Wantą zmieniły rekord pomiaru,
+ale zachowały położenie. Nie zmieniano przypisań otworów w YAML.
+
+[Poprzedni raport wpływu v2.1.2](reports/coordinate-source-v2.1.2-impact.json) opisuje zmiany
 rekordów i geometrii. Kotwicę Mnichowej Studni Wyżniej (`001574`) przypisano
 do `MLW-0054`, które przejęło dotychczasowe współrzędne TPN. Ponowne przeliczenie
 po tej zmianie dało identyczne TFW dla 814 planów. Porównanie samego CSV
