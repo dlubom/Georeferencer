@@ -1,0 +1,3572 @@
+{
+  "affected_plans": [
+    "000491",
+    "001187",
+    "001299",
+    "001459-pza-2024",
+    "001471",
+    "001472",
+    "001478",
+    "001495",
+    "001511",
+    "001533",
+    "001535",
+    "001547",
+    "001548",
+    "001549",
+    "001665"
+  ],
+  "changes": [
+    {
+      "object_id": "KSW-0189",
+      "plans": [
+        "001665"
+      ],
+      "fields": {
+        "best_reason": {
+          "before": "Supplied Wysoka7Progow GNSS point is the reviewed current coordinate.",
+          "after": "Korekta pomiaru, przyjęta jako Best decyzją Dariusza Lubomskiego z 2026-11-16; zastępuje m-003."
+        },
+        "elevation_m": {
+          "before": "1486.69",
+          "after": "1486.69145451"
+        },
+        "lat": {
+          "before": "49.2336413",
+          "after": "49.2335781361"
+        },
+        "lon": {
+          "before": "19.88454604",
+          "after": "19.8846039325"
+        },
+        "measurement_id": {
+          "before": "m-003",
+          "after": "m-004"
+        },
+        "measurement_notes": {
+          "before": "Source provided as unknown GNSS for Wysoka7Progow. The point lies on the existing Jaskinia Wysoka object rather than creating a separate cave.",
+          "after": "Wynik po korekcie obliczeń magnetycznych, przyjęty 2026-11-16. Pozycja otworu z domiaru od punktu GNSS; długość domiaru 48.48 m. Zastępuje w Best m-003; dawny pomiar zachowano ze statusem odrzucony. Dostępne są końcowe współrzędne, bez obserwacji i obliczeń domiaru; nie wykonano niezależnego przeliczenia ciągu. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane."
+        },
+        "method": {
+          "before": "gnss",
+          "after": "siec_pomiarowa"
+        },
+        "observed_date": {
+          "before": "2026-05-16",
+          "after": "2025-11-08"
+        },
+        "source_ref": {
+          "before": "unknown:gnss:Wysoka7Progow",
+          "after": "unknown:gnss:Wysoka7Progow:correction-2026-11-16"
+        },
+        "x_1992": {
+          "before": "152168.790223",
+          "after": "152161.819802"
+        },
+        "y_1992": {
+          "before": "564375.070059",
+          "after": "564379.36537"
+        }
+      },
+      "before": {
+        "object_id": "KSW-0189",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Wysoka - Wysoka7Progow",
+        "cave_id": "C-0665",
+        "measurement_id": "m-003",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "Supplied Wysoka7Progow GNSS point is the reviewed current coordinate.",
+        "lat": "49.2336413",
+        "lon": "19.88454604",
+        "x_1992": "152168.790223",
+        "y_1992": "564375.070059",
+        "elevation_m": "1486.69",
+        "source": "inne",
+        "source_ref": "unknown:gnss:Wysoka7Progow",
+        "nr_inwent": "T.F-09.12",
+        "pig_id": "1665",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1665",
+        "tpn_globalid": "{BA5BC846-7368-45FC-8C32-8A02085FF431}",
+        "observed_at": "",
+        "observed_date": "2026-05-16",
+        "method": "gnss",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review. Multi-opening review 2026-05-16 added supplied Wysoka7Progow unknown-GNSS point to this existing Jaskinia Wysoka object.",
+        "cave_notes": "Opis PIG:1665 obejmuje cały system. Porównanie morfometrii w C-1053.\nPIG aliases: SYSTEM Jaskinia Wysoka\nPIG sector: D. Kościeliska - Wsch.\nPIG source state year: 2013\nMulti-opening review 2026-05-16: supplied Wysoka7Progow unknown-GNSS point was added to KSW-0189 and kept on the existing Jaskinia Wysoka cave record.",
+        "measurement_notes": "Source provided as unknown GNSS for Wysoka7Progow. The point lies on the existing Jaskinia Wysoka object rather than creating a separate cave.",
+        "cave_length_m": "",
+        "cave_depth_m": "",
+        "cave_denivelation_m": "",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "",
+        "system_cave_id": "C-1053",
+        "cave_system_name": "Jaskinia Wysoka–Za Siedmiu Progami–Pośrednia",
+        "system_length_m": "11660",
+        "system_depth_m": "288",
+        "system_denivelation_m": "435",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": "KKTJ 2026-07, PDF 06, s. 2, lp. 55"
+      },
+      "after": {
+        "object_id": "KSW-0189",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Wysoka - Wysoka7Progow",
+        "cave_id": "C-0665",
+        "measurement_id": "m-004",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "Korekta pomiaru, przyjęta jako Best decyzją Dariusza Lubomskiego z 2026-11-16; zastępuje m-003.",
+        "lat": "49.2335781361",
+        "lon": "19.8846039325",
+        "x_1992": "152161.819802",
+        "y_1992": "564379.36537",
+        "elevation_m": "1486.69145451",
+        "source": "inne",
+        "source_ref": "unknown:gnss:Wysoka7Progow:correction-2026-11-16",
+        "nr_inwent": "T.F-09.12",
+        "pig_id": "1665",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1665",
+        "tpn_globalid": "{BA5BC846-7368-45FC-8C32-8A02085FF431}",
+        "observed_at": "",
+        "observed_date": "2025-11-08",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review. Multi-opening review 2026-05-16 added supplied Wysoka7Progow unknown-GNSS point to this existing Jaskinia Wysoka object.",
+        "cave_notes": "Opis PIG:1665 obejmuje cały system. Porównanie morfometrii w C-1053.\nPIG aliases: SYSTEM Jaskinia Wysoka\nPIG sector: D. Kościeliska - Wsch.\nPIG source state year: 2013\nMulti-opening review 2026-05-16: supplied Wysoka7Progow unknown-GNSS point was added to KSW-0189 and kept on the existing Jaskinia Wysoka cave record.",
+        "measurement_notes": "Wynik po korekcie obliczeń magnetycznych, przyjęty 2026-11-16. Pozycja otworu z domiaru od punktu GNSS; długość domiaru 48.48 m. Zastępuje w Best m-003; dawny pomiar zachowano ze statusem odrzucony. Dostępne są końcowe współrzędne, bez obserwacji i obliczeń domiaru; nie wykonano niezależnego przeliczenia ciągu. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane.",
+        "cave_length_m": "",
+        "cave_depth_m": "",
+        "cave_denivelation_m": "",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "",
+        "system_cave_id": "C-1053",
+        "cave_system_name": "Jaskinia Wysoka–Za Siedmiu Progami–Pośrednia",
+        "system_length_m": "11660",
+        "system_depth_m": "288",
+        "system_denivelation_m": "435",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": "KKTJ 2026-07, PDF 06, s. 2, lp. 55"
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "KSW-0264",
+      "plans": [],
+      "fields": {
+        "best_mode": {
+          "before": "auto",
+          "after": "manual"
+        },
+        "best_reason": {
+          "before": "",
+          "after": "Wynik istniejącej sieci po dowiązaniu do skorygowanego KSW-0189/m-004; ponowne przeliczenie i wybór Best na polecenie Dariusza Lubomskiego z 2026-11-16."
+        },
+        "computed_best_measurement_id": {
+          "before": "m-001",
+          "after": "m-002"
+        },
+        "lat": {
+          "before": "49.2338725272",
+          "after": "49.2338093081"
+        },
+        "lon": {
+          "before": "19.8843292794",
+          "after": "19.8843871612"
+        },
+        "measurement_id": {
+          "before": "m-001",
+          "after": "m-002"
+        },
+        "measurement_notes": {
+          "before": "Wynik sieci JKTZ 77963f9ea8268556197a16e9b391cb0539b5a4ee, stacja Wysoka7Progow:W7-500, Survex 1.4.24. Jedyna kotwica systemu: Wysoka7Progow:W7-0 = KSW-0189/m-003 z GPS v2.1.1. Współrzędne stacji odczytano z niezmienionego modelu po wyrównaniu, UTM 34N, zapis .3d/CSV co 0,01 m; następnie przeliczono do EPSG:4326. Dokładność terenowa i datum wysokości nieznane. Data 2026-11-12 oznacza wyznaczenie wyniku, nie pomiar terenowy. Zachowano zastępcze DECL=0 i istniejące połączenia; brak oryginalnych protokołów. Podstawa tożsamości: III.SRV:45–46; karta PIG 1667 other_entrances i legenda PIG 1665; J01-08. Pełne pochodzenie: data/sources/jktz/wysoka-entrances-2026-11-12/README.md. Nie używać jako niezależnego fixa tej samej sieci.",
+          "after": "Ponowne wyznaczenie pozycji stacji Wysoka7Progow:W7-500 z sieci JKTZ 77963f9ea8268556197a16e9b391cb0539b5a4ee po zmianie jedynej kotwicy Wysoka7Progow:W7-0 na pomiar KSW-0189/m-004. Survex 1.4.24; pozostałe źródła, połączenia, wyrównanie i zastępcze DECL=0 zachowane. Wynik .3d/CSV w EPSG:32634 co 0,01 m przeliczono do EPSG:4326. Datum wysokości pochodzi z nowej kotwicy PL-EVRF2007-NH, nie z transformacji poziomej. Dokładności terenowe i rzeczywista deklinacja podziemnych pomiarów pozostają nieznane. observed_date oznacza datę obliczenia, nie nowego pomiaru terenowego. Tożsamość: III.SRV:45–46; karta PIG 1667 other_entrances i legenda PIG 1665; J01-08. Pochodzenie: data/sources/jktz/wysoka-entrances-2026-11-16/README.md. Wynik zależny od tej samej sieci; nie używać jako niezależnego fixa JKTZ."
+        },
+        "observed_date": {
+          "before": "2026-11-12",
+          "after": "2026-11-16"
+        },
+        "source_ref": {
+          "before": "JKTZ:77963f9ea8268556197a16e9b391cb0539b5a4ee:Wysoka7Progow:W7-500",
+          "after": "JKTZ:77963f9ea8268556197a16e9b391cb0539b5a4ee:Wysoka7Progow:W7-500:anchor=KSW-0189/m-004"
+        },
+        "x_1992": {
+          "before": "152194.303094",
+          "after": "152187.32652"
+        },
+        "y_1992": {
+          "before": "564358.994523",
+          "after": "564363.289091"
+        }
+      },
+      "before": {
+        "object_id": "KSW-0264",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia za Siedmiu Progami - otwór górny 04",
+        "cave_id": "C-0412",
+        "measurement_id": "m-001",
+        "best_mode": "auto",
+        "computed_best_measurement_id": "m-001",
+        "best_reason": "",
+        "lat": "49.2338725272",
+        "lon": "19.8843292794",
+        "x_1992": "152194.303094",
+        "y_1992": "564358.994523",
+        "elevation_m": "1472.29",
+        "source": "wlasne",
+        "source_ref": "JKTZ:77963f9ea8268556197a16e9b391cb0539b5a4ee:Wysoka7Progow:W7-500",
+        "nr_inwent": "T.F-09.13",
+        "pig_id": "1667",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1667",
+        "tpn_globalid": "",
+        "observed_at": "",
+        "observed_date": "2026-11-12",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Jaskinia za Siedmiu Progami - otwór górny 04; Wysoka7Progow:W7-500. III.SRV:45–46; karta PIG 1667 other_entrances i legenda PIG 1665; J01-08. Otwór systemu C-1053 poprzez jaskinię C-0412. Nie dodano fixa JKTZ ani niezależnego pomiaru terenowego. Pochodzenie i ograniczenia: data/sources/jktz/wysoka-entrances-2026-11-12/README.md.",
+        "cave_notes": "PIG:1667, stan 2013 podaje głębokość 216 m. Zakres lub zgodność z pozostałymi wymiarami wymaga potwierdzenia.\nPIG aliases: SYSTEM Jaskinia Wysoka\nPIG sector: D. Kościeliska - Wsch.\nPIG source state year: 2013",
+        "measurement_notes": "Wynik sieci JKTZ 77963f9ea8268556197a16e9b391cb0539b5a4ee, stacja Wysoka7Progow:W7-500, Survex 1.4.24. Jedyna kotwica systemu: Wysoka7Progow:W7-0 = KSW-0189/m-003 z GPS v2.1.1. Współrzędne stacji odczytano z niezmienionego modelu po wyrównaniu, UTM 34N, zapis .3d/CSV co 0,01 m; następnie przeliczono do EPSG:4326. Dokładność terenowa i datum wysokości nieznane. Data 2026-11-12 oznacza wyznaczenie wyniku, nie pomiar terenowy. Zachowano zastępcze DECL=0 i istniejące połączenia; brak oryginalnych protokołów. Podstawa tożsamości: III.SRV:45–46; karta PIG 1667 other_entrances i legenda PIG 1665; J01-08. Pełne pochodzenie: data/sources/jktz/wysoka-entrances-2026-11-12/README.md. Nie używać jako niezależnego fixa tej samej sieci.",
+        "cave_length_m": "6150",
+        "cave_depth_m": "",
+        "cave_denivelation_m": "222",
+        "cave_denivelation_qualifier": "approximate",
+        "cave_morphometry_source_ref": "PIG:1667, stan 2013",
+        "system_cave_id": "C-1053",
+        "cave_system_name": "Jaskinia Wysoka–Za Siedmiu Progami–Pośrednia",
+        "system_length_m": "11660",
+        "system_depth_m": "288",
+        "system_denivelation_m": "435",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": "KKTJ 2026-07, PDF 06, s. 2, lp. 55"
+      },
+      "after": {
+        "object_id": "KSW-0264",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia za Siedmiu Progami - otwór górny 04",
+        "cave_id": "C-0412",
+        "measurement_id": "m-002",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "Wynik istniejącej sieci po dowiązaniu do skorygowanego KSW-0189/m-004; ponowne przeliczenie i wybór Best na polecenie Dariusza Lubomskiego z 2026-11-16.",
+        "lat": "49.2338093081",
+        "lon": "19.8843871612",
+        "x_1992": "152187.32652",
+        "y_1992": "564363.289091",
+        "elevation_m": "1472.29",
+        "source": "wlasne",
+        "source_ref": "JKTZ:77963f9ea8268556197a16e9b391cb0539b5a4ee:Wysoka7Progow:W7-500:anchor=KSW-0189/m-004",
+        "nr_inwent": "T.F-09.13",
+        "pig_id": "1667",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1667",
+        "tpn_globalid": "",
+        "observed_at": "",
+        "observed_date": "2026-11-16",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Jaskinia za Siedmiu Progami - otwór górny 04; Wysoka7Progow:W7-500. III.SRV:45–46; karta PIG 1667 other_entrances i legenda PIG 1665; J01-08. Otwór systemu C-1053 poprzez jaskinię C-0412. Nie dodano fixa JKTZ ani niezależnego pomiaru terenowego. Pochodzenie i ograniczenia: data/sources/jktz/wysoka-entrances-2026-11-12/README.md.",
+        "cave_notes": "PIG:1667, stan 2013 podaje głębokość 216 m. Zakres lub zgodność z pozostałymi wymiarami wymaga potwierdzenia.\nPIG aliases: SYSTEM Jaskinia Wysoka\nPIG sector: D. Kościeliska - Wsch.\nPIG source state year: 2013",
+        "measurement_notes": "Ponowne wyznaczenie pozycji stacji Wysoka7Progow:W7-500 z sieci JKTZ 77963f9ea8268556197a16e9b391cb0539b5a4ee po zmianie jedynej kotwicy Wysoka7Progow:W7-0 na pomiar KSW-0189/m-004. Survex 1.4.24; pozostałe źródła, połączenia, wyrównanie i zastępcze DECL=0 zachowane. Wynik .3d/CSV w EPSG:32634 co 0,01 m przeliczono do EPSG:4326. Datum wysokości pochodzi z nowej kotwicy PL-EVRF2007-NH, nie z transformacji poziomej. Dokładności terenowe i rzeczywista deklinacja podziemnych pomiarów pozostają nieznane. observed_date oznacza datę obliczenia, nie nowego pomiaru terenowego. Tożsamość: III.SRV:45–46; karta PIG 1667 other_entrances i legenda PIG 1665; J01-08. Pochodzenie: data/sources/jktz/wysoka-entrances-2026-11-16/README.md. Wynik zależny od tej samej sieci; nie używać jako niezależnego fixa JKTZ.",
+        "cave_length_m": "6150",
+        "cave_depth_m": "",
+        "cave_denivelation_m": "222",
+        "cave_denivelation_qualifier": "approximate",
+        "cave_morphometry_source_ref": "PIG:1667, stan 2013",
+        "system_cave_id": "C-1053",
+        "cave_system_name": "Jaskinia Wysoka–Za Siedmiu Progami–Pośrednia",
+        "system_length_m": "11660",
+        "system_depth_m": "288",
+        "system_denivelation_m": "435",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": "KKTJ 2026-07, PDF 06, s. 2, lp. 55"
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "KSW-0265",
+      "plans": [],
+      "fields": {
+        "best_mode": {
+          "before": "auto",
+          "after": "manual"
+        },
+        "best_reason": {
+          "before": "",
+          "after": "Wynik istniejącej sieci po dowiązaniu do skorygowanego KSW-0189/m-004; ponowne przeliczenie i wybór Best na polecenie Dariusza Lubomskiego z 2026-11-16."
+        },
+        "computed_best_measurement_id": {
+          "before": "m-001",
+          "after": "m-002"
+        },
+        "lat": {
+          "before": "49.2337881284",
+          "after": "49.2337249092"
+        },
+        "lon": {
+          "before": "19.8845320112",
+          "after": "19.8845898928"
+        },
+        "measurement_id": {
+          "before": "m-001",
+          "after": "m-002"
+        },
+        "measurement_notes": {
+          "before": "Wynik sieci JKTZ 77963f9ea8268556197a16e9b391cb0539b5a4ee, stacja Wysoka7Progow:W-300, Survex 1.4.24. Jedyna kotwica systemu: Wysoka7Progow:W7-0 = KSW-0189/m-003 z GPS v2.1.1. Współrzędne stacji odczytano z niezmienionego modelu po wyrównaniu, UTM 34N, zapis .3d/CSV co 0,01 m; następnie przeliczono do EPSG:4326. Dokładność terenowa i datum wysokości nieznane. Data 2026-11-12 oznacza wyznaczenie wyniku, nie pomiar terenowy. Zachowano zastępcze DECL=0 i istniejące połączenia; brak oryginalnych protokołów. Podstawa tożsamości: IV.SRV:64–65 i OTWORY.SRV:405–407; karta PIG 1665 other_entrances; J01-09. Pełne pochodzenie: data/sources/jktz/wysoka-entrances-2026-11-12/README.md. Nie używać jako niezależnego fixa tej samej sieci.",
+          "after": "Ponowne wyznaczenie pozycji stacji Wysoka7Progow:W-300 z sieci JKTZ 77963f9ea8268556197a16e9b391cb0539b5a4ee po zmianie jedynej kotwicy Wysoka7Progow:W7-0 na pomiar KSW-0189/m-004. Survex 1.4.24; pozostałe źródła, połączenia, wyrównanie i zastępcze DECL=0 zachowane. Wynik .3d/CSV w EPSG:32634 co 0,01 m przeliczono do EPSG:4326. Datum wysokości pochodzi z nowej kotwicy PL-EVRF2007-NH, nie z transformacji poziomej. Dokładności terenowe i rzeczywista deklinacja podziemnych pomiarów pozostają nieznane. observed_date oznacza datę obliczenia, nie nowego pomiaru terenowego. Tożsamość: IV.SRV:64–65 i OTWORY.SRV:405–407; karta PIG 1665 other_entrances; J01-09. Pochodzenie: data/sources/jktz/wysoka-entrances-2026-11-16/README.md. Wynik zależny od tej samej sieci; nie używać jako niezależnego fixa JKTZ."
+        },
+        "observed_date": {
+          "before": "2026-11-12",
+          "after": "2026-11-16"
+        },
+        "source_ref": {
+          "before": "JKTZ:77963f9ea8268556197a16e9b391cb0539b5a4ee:Wysoka7Progow:W-300",
+          "after": "JKTZ:77963f9ea8268556197a16e9b391cb0539b5a4ee:Wysoka7Progow:W-300:anchor=KSW-0189/m-004"
+        },
+        "x_1992": {
+          "before": "152185.095982",
+          "after": "152178.119409"
+        },
+        "y_1992": {
+          "before": "564373.858281",
+          "after": "564378.15286"
+        }
+      },
+      "before": {
+        "object_id": "KSW-0265",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Wysoka - otwór górny 02",
+        "cave_id": "C-0665",
+        "measurement_id": "m-001",
+        "best_mode": "auto",
+        "computed_best_measurement_id": "m-001",
+        "best_reason": "",
+        "lat": "49.2337881284",
+        "lon": "19.8845320112",
+        "x_1992": "152185.095982",
+        "y_1992": "564373.858281",
+        "elevation_m": "1498.68",
+        "source": "wlasne",
+        "source_ref": "JKTZ:77963f9ea8268556197a16e9b391cb0539b5a4ee:Wysoka7Progow:W-300",
+        "nr_inwent": "T.F-09.12",
+        "pig_id": "1665",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1665",
+        "tpn_globalid": "",
+        "observed_at": "",
+        "observed_date": "2026-11-12",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Jaskinia Wysoka - otwór górny 02; Wysoka7Progow:W-300. IV.SRV:64–65 i OTWORY.SRV:405–407; karta PIG 1665 other_entrances; J01-09. Otwór systemu C-1053 poprzez jaskinię C-0665. Nie dodano fixa JKTZ ani niezależnego pomiaru terenowego. Pochodzenie i ograniczenia: data/sources/jktz/wysoka-entrances-2026-11-12/README.md.",
+        "cave_notes": "Opis PIG:1665 obejmuje cały system. Porównanie morfometrii w C-1053.\nPIG aliases: SYSTEM Jaskinia Wysoka\nPIG sector: D. Kościeliska - Wsch.\nPIG source state year: 2013\nMulti-opening review 2026-05-16: supplied Wysoka7Progow unknown-GNSS point was added to KSW-0189 and kept on the existing Jaskinia Wysoka cave record.",
+        "measurement_notes": "Wynik sieci JKTZ 77963f9ea8268556197a16e9b391cb0539b5a4ee, stacja Wysoka7Progow:W-300, Survex 1.4.24. Jedyna kotwica systemu: Wysoka7Progow:W7-0 = KSW-0189/m-003 z GPS v2.1.1. Współrzędne stacji odczytano z niezmienionego modelu po wyrównaniu, UTM 34N, zapis .3d/CSV co 0,01 m; następnie przeliczono do EPSG:4326. Dokładność terenowa i datum wysokości nieznane. Data 2026-11-12 oznacza wyznaczenie wyniku, nie pomiar terenowy. Zachowano zastępcze DECL=0 i istniejące połączenia; brak oryginalnych protokołów. Podstawa tożsamości: IV.SRV:64–65 i OTWORY.SRV:405–407; karta PIG 1665 other_entrances; J01-09. Pełne pochodzenie: data/sources/jktz/wysoka-entrances-2026-11-12/README.md. Nie używać jako niezależnego fixa tej samej sieci.",
+        "cave_length_m": "",
+        "cave_depth_m": "",
+        "cave_denivelation_m": "",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "",
+        "system_cave_id": "C-1053",
+        "cave_system_name": "Jaskinia Wysoka–Za Siedmiu Progami–Pośrednia",
+        "system_length_m": "11660",
+        "system_depth_m": "288",
+        "system_denivelation_m": "435",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": "KKTJ 2026-07, PDF 06, s. 2, lp. 55"
+      },
+      "after": {
+        "object_id": "KSW-0265",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Wysoka - otwór górny 02",
+        "cave_id": "C-0665",
+        "measurement_id": "m-002",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "Wynik istniejącej sieci po dowiązaniu do skorygowanego KSW-0189/m-004; ponowne przeliczenie i wybór Best na polecenie Dariusza Lubomskiego z 2026-11-16.",
+        "lat": "49.2337249092",
+        "lon": "19.8845898928",
+        "x_1992": "152178.119409",
+        "y_1992": "564378.15286",
+        "elevation_m": "1498.68",
+        "source": "wlasne",
+        "source_ref": "JKTZ:77963f9ea8268556197a16e9b391cb0539b5a4ee:Wysoka7Progow:W-300:anchor=KSW-0189/m-004",
+        "nr_inwent": "T.F-09.12",
+        "pig_id": "1665",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1665",
+        "tpn_globalid": "",
+        "observed_at": "",
+        "observed_date": "2026-11-16",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Jaskinia Wysoka - otwór górny 02; Wysoka7Progow:W-300. IV.SRV:64–65 i OTWORY.SRV:405–407; karta PIG 1665 other_entrances; J01-09. Otwór systemu C-1053 poprzez jaskinię C-0665. Nie dodano fixa JKTZ ani niezależnego pomiaru terenowego. Pochodzenie i ograniczenia: data/sources/jktz/wysoka-entrances-2026-11-12/README.md.",
+        "cave_notes": "Opis PIG:1665 obejmuje cały system. Porównanie morfometrii w C-1053.\nPIG aliases: SYSTEM Jaskinia Wysoka\nPIG sector: D. Kościeliska - Wsch.\nPIG source state year: 2013\nMulti-opening review 2026-05-16: supplied Wysoka7Progow unknown-GNSS point was added to KSW-0189 and kept on the existing Jaskinia Wysoka cave record.",
+        "measurement_notes": "Ponowne wyznaczenie pozycji stacji Wysoka7Progow:W-300 z sieci JKTZ 77963f9ea8268556197a16e9b391cb0539b5a4ee po zmianie jedynej kotwicy Wysoka7Progow:W7-0 na pomiar KSW-0189/m-004. Survex 1.4.24; pozostałe źródła, połączenia, wyrównanie i zastępcze DECL=0 zachowane. Wynik .3d/CSV w EPSG:32634 co 0,01 m przeliczono do EPSG:4326. Datum wysokości pochodzi z nowej kotwicy PL-EVRF2007-NH, nie z transformacji poziomej. Dokładności terenowe i rzeczywista deklinacja podziemnych pomiarów pozostają nieznane. observed_date oznacza datę obliczenia, nie nowego pomiaru terenowego. Tożsamość: IV.SRV:64–65 i OTWORY.SRV:405–407; karta PIG 1665 other_entrances; J01-09. Pochodzenie: data/sources/jktz/wysoka-entrances-2026-11-16/README.md. Wynik zależny od tej samej sieci; nie używać jako niezależnego fixa JKTZ.",
+        "cave_length_m": "",
+        "cave_depth_m": "",
+        "cave_denivelation_m": "",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "",
+        "system_cave_id": "C-1053",
+        "cave_system_name": "Jaskinia Wysoka–Za Siedmiu Progami–Pośrednia",
+        "system_length_m": "11660",
+        "system_depth_m": "288",
+        "system_denivelation_m": "435",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": "KKTJ 2026-07, PDF 06, s. 2, lp. 55"
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "KSW-0266",
+      "plans": [],
+      "fields": {
+        "best_mode": {
+          "before": "auto",
+          "after": "manual"
+        },
+        "best_reason": {
+          "before": "",
+          "after": "Wynik istniejącej sieci po dowiązaniu do skorygowanego KSW-0189/m-004; ponowne przeliczenie i wybór Best na polecenie Dariusza Lubomskiego z 2026-11-16."
+        },
+        "computed_best_measurement_id": {
+          "before": "m-001",
+          "after": "m-002"
+        },
+        "lat": {
+          "before": "49.2336680529",
+          "after": "49.2336048338"
+        },
+        "lon": {
+          "before": "19.8844962526",
+          "after": "19.884554134"
+        },
+        "measurement_id": {
+          "before": "m-001",
+          "after": "m-002"
+        },
+        "measurement_notes": {
+          "before": "Wynik sieci JKTZ 77963f9ea8268556197a16e9b391cb0539b5a4ee, stacja Wysoka7Progow:W7-P500, Survex 1.4.24. Jedyna kotwica systemu: Wysoka7Progow:W7-0 = KSW-0189/m-003 z GPS v2.1.1. Współrzędne stacji odczytano z niezmienionego modelu po wyrównaniu, UTM 34N, zapis .3d/CSV co 0,01 m; następnie przeliczono do EPSG:4326. Dokładność terenowa i datum wysokości nieznane. Data 2026-11-12 oznacza wyznaczenie wyniku, nie pomiar terenowy. Zachowano zastępcze DECL=0 i istniejące połączenia; brak oryginalnych protokołów. Podstawa tożsamości: PIONY.SRV:535–536; przyjęta rekonstrukcja JKTZ PR #146; karta PIG 1668 other_entrances; J01-10. Pełne pochodzenie: data/sources/jktz/wysoka-entrances-2026-11-12/README.md. Nie używać jako niezależnego fixa tej samej sieci. Numeracja i połączenia Pośredniej mają status przyjętej rekonstrukcji PR #146, bez protokołu i weryfikacji terenowej.",
+          "after": "Ponowne wyznaczenie pozycji stacji Wysoka7Progow:W7-P500 z sieci JKTZ 77963f9ea8268556197a16e9b391cb0539b5a4ee po zmianie jedynej kotwicy Wysoka7Progow:W7-0 na pomiar KSW-0189/m-004. Survex 1.4.24; pozostałe źródła, połączenia, wyrównanie i zastępcze DECL=0 zachowane. Wynik .3d/CSV w EPSG:32634 co 0,01 m przeliczono do EPSG:4326. Datum wysokości pochodzi z nowej kotwicy PL-EVRF2007-NH, nie z transformacji poziomej. Dokładności terenowe i rzeczywista deklinacja podziemnych pomiarów pozostają nieznane. observed_date oznacza datę obliczenia, nie nowego pomiaru terenowego. Tożsamość: PIONY.SRV:535–536; przyjęta rekonstrukcja JKTZ PR #146; karta PIG 1668 other_entrances; J01-10. Pochodzenie: data/sources/jktz/wysoka-entrances-2026-11-16/README.md. Wynik zależny od tej samej sieci; nie używać jako niezależnego fixa JKTZ."
+        },
+        "observed_date": {
+          "before": "2026-11-12",
+          "after": "2026-11-16"
+        },
+        "source_ref": {
+          "before": "JKTZ:77963f9ea8268556197a16e9b391cb0539b5a4ee:Wysoka7Progow:W7-P500",
+          "after": "JKTZ:77963f9ea8268556197a16e9b391cb0539b5a4ee:Wysoka7Progow:W7-P500:anchor=KSW-0189/m-004"
+        },
+        "x_1992": {
+          "before": "152171.721024",
+          "after": "152164.744459"
+        },
+        "y_1992": {
+          "before": "564371.411932",
+          "after": "564375.706503"
+        }
+      },
+      "before": {
+        "object_id": "KSW-0266",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Pośrednia - otwór środkowy 06",
+        "cave_id": "C-0499",
+        "measurement_id": "m-001",
+        "best_mode": "auto",
+        "computed_best_measurement_id": "m-001",
+        "best_reason": "",
+        "lat": "49.2336680529",
+        "lon": "19.8844962526",
+        "x_1992": "152171.721024",
+        "y_1992": "564371.411932",
+        "elevation_m": "1486.77",
+        "source": "wlasne",
+        "source_ref": "JKTZ:77963f9ea8268556197a16e9b391cb0539b5a4ee:Wysoka7Progow:W7-P500",
+        "nr_inwent": "T.F-09.14",
+        "pig_id": "1668",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1668",
+        "tpn_globalid": "",
+        "observed_at": "",
+        "observed_date": "2026-11-12",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Jaskinia Pośrednia - otwór środkowy 06; Wysoka7Progow:W7-P500. PIONY.SRV:535–536; przyjęta rekonstrukcja JKTZ PR #146; karta PIG 1668 other_entrances; J01-10. Otwór systemu C-1053 poprzez jaskinię C-0499. Nie dodano fixa JKTZ ani niezależnego pomiaru terenowego. Pochodzenie i ograniczenia: data/sources/jktz/wysoka-entrances-2026-11-12/README.md.",
+        "cave_notes": "PIG:1668, stan 2013 podaje głębokość 11 m. Zakres lub zgodność z pozostałymi wymiarami wymaga potwierdzenia.\nPIG aliases: SYSTEM Jaskinia Wysoka\nPIG sector: D. Kościeliska - Wsch.\nPIG source state year: 2013",
+        "measurement_notes": "Wynik sieci JKTZ 77963f9ea8268556197a16e9b391cb0539b5a4ee, stacja Wysoka7Progow:W7-P500, Survex 1.4.24. Jedyna kotwica systemu: Wysoka7Progow:W7-0 = KSW-0189/m-003 z GPS v2.1.1. Współrzędne stacji odczytano z niezmienionego modelu po wyrównaniu, UTM 34N, zapis .3d/CSV co 0,01 m; następnie przeliczono do EPSG:4326. Dokładność terenowa i datum wysokości nieznane. Data 2026-11-12 oznacza wyznaczenie wyniku, nie pomiar terenowy. Zachowano zastępcze DECL=0 i istniejące połączenia; brak oryginalnych protokołów. Podstawa tożsamości: PIONY.SRV:535–536; przyjęta rekonstrukcja JKTZ PR #146; karta PIG 1668 other_entrances; J01-10. Pełne pochodzenie: data/sources/jktz/wysoka-entrances-2026-11-12/README.md. Nie używać jako niezależnego fixa tej samej sieci. Numeracja i połączenia Pośredniej mają status przyjętej rekonstrukcji PR #146, bez protokołu i weryfikacji terenowej.",
+        "cave_length_m": "46",
+        "cave_depth_m": "",
+        "cave_denivelation_m": "11",
+        "cave_denivelation_qualifier": "approximate",
+        "cave_morphometry_source_ref": "PIG:1668, stan 2013",
+        "system_cave_id": "C-1053",
+        "cave_system_name": "Jaskinia Wysoka–Za Siedmiu Progami–Pośrednia",
+        "system_length_m": "11660",
+        "system_depth_m": "288",
+        "system_denivelation_m": "435",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": "KKTJ 2026-07, PDF 06, s. 2, lp. 55"
+      },
+      "after": {
+        "object_id": "KSW-0266",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Pośrednia - otwór środkowy 06",
+        "cave_id": "C-0499",
+        "measurement_id": "m-002",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "Wynik istniejącej sieci po dowiązaniu do skorygowanego KSW-0189/m-004; ponowne przeliczenie i wybór Best na polecenie Dariusza Lubomskiego z 2026-11-16.",
+        "lat": "49.2336048338",
+        "lon": "19.884554134",
+        "x_1992": "152164.744459",
+        "y_1992": "564375.706503",
+        "elevation_m": "1486.77",
+        "source": "wlasne",
+        "source_ref": "JKTZ:77963f9ea8268556197a16e9b391cb0539b5a4ee:Wysoka7Progow:W7-P500:anchor=KSW-0189/m-004",
+        "nr_inwent": "T.F-09.14",
+        "pig_id": "1668",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1668",
+        "tpn_globalid": "",
+        "observed_at": "",
+        "observed_date": "2026-11-16",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Jaskinia Pośrednia - otwór środkowy 06; Wysoka7Progow:W7-P500. PIONY.SRV:535–536; przyjęta rekonstrukcja JKTZ PR #146; karta PIG 1668 other_entrances; J01-10. Otwór systemu C-1053 poprzez jaskinię C-0499. Nie dodano fixa JKTZ ani niezależnego pomiaru terenowego. Pochodzenie i ograniczenia: data/sources/jktz/wysoka-entrances-2026-11-12/README.md.",
+        "cave_notes": "PIG:1668, stan 2013 podaje głębokość 11 m. Zakres lub zgodność z pozostałymi wymiarami wymaga potwierdzenia.\nPIG aliases: SYSTEM Jaskinia Wysoka\nPIG sector: D. Kościeliska - Wsch.\nPIG source state year: 2013",
+        "measurement_notes": "Ponowne wyznaczenie pozycji stacji Wysoka7Progow:W7-P500 z sieci JKTZ 77963f9ea8268556197a16e9b391cb0539b5a4ee po zmianie jedynej kotwicy Wysoka7Progow:W7-0 na pomiar KSW-0189/m-004. Survex 1.4.24; pozostałe źródła, połączenia, wyrównanie i zastępcze DECL=0 zachowane. Wynik .3d/CSV w EPSG:32634 co 0,01 m przeliczono do EPSG:4326. Datum wysokości pochodzi z nowej kotwicy PL-EVRF2007-NH, nie z transformacji poziomej. Dokładności terenowe i rzeczywista deklinacja podziemnych pomiarów pozostają nieznane. observed_date oznacza datę obliczenia, nie nowego pomiaru terenowego. Tożsamość: PIONY.SRV:535–536; przyjęta rekonstrukcja JKTZ PR #146; karta PIG 1668 other_entrances; J01-10. Pochodzenie: data/sources/jktz/wysoka-entrances-2026-11-16/README.md. Wynik zależny od tej samej sieci; nie używać jako niezależnego fixa JKTZ.",
+        "cave_length_m": "46",
+        "cave_depth_m": "",
+        "cave_denivelation_m": "11",
+        "cave_denivelation_qualifier": "approximate",
+        "cave_morphometry_source_ref": "PIG:1668, stan 2013",
+        "system_cave_id": "C-1053",
+        "cave_system_name": "Jaskinia Wysoka–Za Siedmiu Progami–Pośrednia",
+        "system_length_m": "11660",
+        "system_depth_m": "288",
+        "system_denivelation_m": "435",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": "KKTJ 2026-07, PDF 06, s. 2, lp. 55"
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "KSW-0267",
+      "plans": [],
+      "fields": {
+        "best_mode": {
+          "before": "auto",
+          "after": "manual"
+        },
+        "best_reason": {
+          "before": "",
+          "after": "Wynik istniejącej sieci po dowiązaniu do skorygowanego KSW-0189/m-004; ponowne przeliczenie i wybór Best na polecenie Dariusza Lubomskiego z 2026-11-16."
+        },
+        "computed_best_measurement_id": {
+          "before": "m-001",
+          "after": "m-002"
+        },
+        "lat": {
+          "before": "49.2337719703",
+          "after": "49.2337088411"
+        },
+        "lon": {
+          "before": "19.8844796261",
+          "after": "19.8845375057"
+        },
+        "measurement_id": {
+          "before": "m-001",
+          "after": "m-002"
+        },
+        "measurement_notes": {
+          "before": "Wynik sieci JKTZ 77963f9ea8268556197a16e9b391cb0539b5a4ee, stacja Wysoka7Progow:W7-P507, Survex 1.4.24. Jedyna kotwica systemu: Wysoka7Progow:W7-0 = KSW-0189/m-003 z GPS v2.1.1. Współrzędne stacji odczytano z niezmienionego modelu po wyrównaniu, UTM 34N, zapis .3d/CSV co 0,01 m; następnie przeliczono do EPSG:4326. Dokładność terenowa i datum wysokości nieznane. Data 2026-11-12 oznacza wyznaczenie wyniku, nie pomiar terenowy. Zachowano zastępcze DECL=0 i istniejące połączenia; brak oryginalnych protokołów. Podstawa tożsamości: III.SRV:85–92; przyjęta rekonstrukcja JKTZ PR #146; karta PIG 1668 other_entrances; J01-10. Pełne pochodzenie: data/sources/jktz/wysoka-entrances-2026-11-12/README.md. Nie używać jako niezależnego fixa tej samej sieci. Numeracja i połączenia Pośredniej mają status przyjętej rekonstrukcji PR #146, bez protokołu i weryfikacji terenowej.",
+          "after": "Ponowne wyznaczenie pozycji stacji Wysoka7Progow:W7-P507 z sieci JKTZ 77963f9ea8268556197a16e9b391cb0539b5a4ee po zmianie jedynej kotwicy Wysoka7Progow:W7-0 na pomiar KSW-0189/m-004. Survex 1.4.24; pozostałe źródła, połączenia, wyrównanie i zastępcze DECL=0 zachowane. Wynik .3d/CSV w EPSG:32634 co 0,01 m przeliczono do EPSG:4326. Datum wysokości pochodzi z nowej kotwicy PL-EVRF2007-NH, nie z transformacji poziomej. Dokładności terenowe i rzeczywista deklinacja podziemnych pomiarów pozostają nieznane. observed_date oznacza datę obliczenia, nie nowego pomiaru terenowego. Tożsamość: III.SRV:85–92; przyjęta rekonstrukcja JKTZ PR #146; karta PIG 1668 other_entrances; J01-10. Pochodzenie: data/sources/jktz/wysoka-entrances-2026-11-16/README.md. Wynik zależny od tej samej sieci; nie używać jako niezależnego fixa JKTZ."
+        },
+        "observed_date": {
+          "before": "2026-11-12",
+          "after": "2026-11-16"
+        },
+        "source_ref": {
+          "before": "JKTZ:77963f9ea8268556197a16e9b391cb0539b5a4ee:Wysoka7Progow:W7-P507",
+          "after": "JKTZ:77963f9ea8268556197a16e9b391cb0539b5a4ee:Wysoka7Progow:W7-P507:anchor=KSW-0189/m-004"
+        },
+        "x_1992": {
+          "before": "152183.255682",
+          "after": "152176.289106"
+        },
+        "y_1992": {
+          "before": "564370.066875",
+          "after": "564374.361188"
+        }
+      },
+      "before": {
+        "object_id": "KSW-0267",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Pośrednia - otwór górny 07",
+        "cave_id": "C-0499",
+        "measurement_id": "m-001",
+        "best_mode": "auto",
+        "computed_best_measurement_id": "m-001",
+        "best_reason": "",
+        "lat": "49.2337719703",
+        "lon": "19.8844796261",
+        "x_1992": "152183.255682",
+        "y_1992": "564370.066875",
+        "elevation_m": "1488.18",
+        "source": "wlasne",
+        "source_ref": "JKTZ:77963f9ea8268556197a16e9b391cb0539b5a4ee:Wysoka7Progow:W7-P507",
+        "nr_inwent": "T.F-09.14",
+        "pig_id": "1668",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1668",
+        "tpn_globalid": "",
+        "observed_at": "",
+        "observed_date": "2026-11-12",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Jaskinia Pośrednia - otwór górny 07; Wysoka7Progow:W7-P507. III.SRV:85–92; przyjęta rekonstrukcja JKTZ PR #146; karta PIG 1668 other_entrances; J01-10. Otwór systemu C-1053 poprzez jaskinię C-0499. Nie dodano fixa JKTZ ani niezależnego pomiaru terenowego. Pochodzenie i ograniczenia: data/sources/jktz/wysoka-entrances-2026-11-12/README.md.",
+        "cave_notes": "PIG:1668, stan 2013 podaje głębokość 11 m. Zakres lub zgodność z pozostałymi wymiarami wymaga potwierdzenia.\nPIG aliases: SYSTEM Jaskinia Wysoka\nPIG sector: D. Kościeliska - Wsch.\nPIG source state year: 2013",
+        "measurement_notes": "Wynik sieci JKTZ 77963f9ea8268556197a16e9b391cb0539b5a4ee, stacja Wysoka7Progow:W7-P507, Survex 1.4.24. Jedyna kotwica systemu: Wysoka7Progow:W7-0 = KSW-0189/m-003 z GPS v2.1.1. Współrzędne stacji odczytano z niezmienionego modelu po wyrównaniu, UTM 34N, zapis .3d/CSV co 0,01 m; następnie przeliczono do EPSG:4326. Dokładność terenowa i datum wysokości nieznane. Data 2026-11-12 oznacza wyznaczenie wyniku, nie pomiar terenowy. Zachowano zastępcze DECL=0 i istniejące połączenia; brak oryginalnych protokołów. Podstawa tożsamości: III.SRV:85–92; przyjęta rekonstrukcja JKTZ PR #146; karta PIG 1668 other_entrances; J01-10. Pełne pochodzenie: data/sources/jktz/wysoka-entrances-2026-11-12/README.md. Nie używać jako niezależnego fixa tej samej sieci. Numeracja i połączenia Pośredniej mają status przyjętej rekonstrukcji PR #146, bez protokołu i weryfikacji terenowej.",
+        "cave_length_m": "46",
+        "cave_depth_m": "",
+        "cave_denivelation_m": "11",
+        "cave_denivelation_qualifier": "approximate",
+        "cave_morphometry_source_ref": "PIG:1668, stan 2013",
+        "system_cave_id": "C-1053",
+        "cave_system_name": "Jaskinia Wysoka–Za Siedmiu Progami–Pośrednia",
+        "system_length_m": "11660",
+        "system_depth_m": "288",
+        "system_denivelation_m": "435",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": "KKTJ 2026-07, PDF 06, s. 2, lp. 55"
+      },
+      "after": {
+        "object_id": "KSW-0267",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Pośrednia - otwór górny 07",
+        "cave_id": "C-0499",
+        "measurement_id": "m-002",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "Wynik istniejącej sieci po dowiązaniu do skorygowanego KSW-0189/m-004; ponowne przeliczenie i wybór Best na polecenie Dariusza Lubomskiego z 2026-11-16.",
+        "lat": "49.2337088411",
+        "lon": "19.8845375057",
+        "x_1992": "152176.289106",
+        "y_1992": "564374.361188",
+        "elevation_m": "1488.18",
+        "source": "wlasne",
+        "source_ref": "JKTZ:77963f9ea8268556197a16e9b391cb0539b5a4ee:Wysoka7Progow:W7-P507:anchor=KSW-0189/m-004",
+        "nr_inwent": "T.F-09.14",
+        "pig_id": "1668",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1668",
+        "tpn_globalid": "",
+        "observed_at": "",
+        "observed_date": "2026-11-16",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Jaskinia Pośrednia - otwór górny 07; Wysoka7Progow:W7-P507. III.SRV:85–92; przyjęta rekonstrukcja JKTZ PR #146; karta PIG 1668 other_entrances; J01-10. Otwór systemu C-1053 poprzez jaskinię C-0499. Nie dodano fixa JKTZ ani niezależnego pomiaru terenowego. Pochodzenie i ograniczenia: data/sources/jktz/wysoka-entrances-2026-11-12/README.md.",
+        "cave_notes": "PIG:1668, stan 2013 podaje głębokość 11 m. Zakres lub zgodność z pozostałymi wymiarami wymaga potwierdzenia.\nPIG aliases: SYSTEM Jaskinia Wysoka\nPIG sector: D. Kościeliska - Wsch.\nPIG source state year: 2013",
+        "measurement_notes": "Ponowne wyznaczenie pozycji stacji Wysoka7Progow:W7-P507 z sieci JKTZ 77963f9ea8268556197a16e9b391cb0539b5a4ee po zmianie jedynej kotwicy Wysoka7Progow:W7-0 na pomiar KSW-0189/m-004. Survex 1.4.24; pozostałe źródła, połączenia, wyrównanie i zastępcze DECL=0 zachowane. Wynik .3d/CSV w EPSG:32634 co 0,01 m przeliczono do EPSG:4326. Datum wysokości pochodzi z nowej kotwicy PL-EVRF2007-NH, nie z transformacji poziomej. Dokładności terenowe i rzeczywista deklinacja podziemnych pomiarów pozostają nieznane. observed_date oznacza datę obliczenia, nie nowego pomiaru terenowego. Tożsamość: III.SRV:85–92; przyjęta rekonstrukcja JKTZ PR #146; karta PIG 1668 other_entrances; J01-10. Pochodzenie: data/sources/jktz/wysoka-entrances-2026-11-16/README.md. Wynik zależny od tej samej sieci; nie używać jako niezależnego fixa JKTZ.",
+        "cave_length_m": "46",
+        "cave_depth_m": "",
+        "cave_denivelation_m": "11",
+        "cave_denivelation_qualifier": "approximate",
+        "cave_morphometry_source_ref": "PIG:1668, stan 2013",
+        "system_cave_id": "C-1053",
+        "cave_system_name": "Jaskinia Wysoka–Za Siedmiu Progami–Pośrednia",
+        "system_length_m": "11660",
+        "system_depth_m": "288",
+        "system_denivelation_m": "435",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": "KKTJ 2026-07, PDF 06, s. 2, lp. 55"
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "KSZ-0112",
+      "plans": [
+        "001299"
+      ],
+      "fields": {
+        "best_reason": {
+          "before": "Operator retains the supplied GNSS point for the lower opening; future TPN records must not replace this selection automatically. Source provenance and verification status remain unchanged.",
+          "after": "Korekta pomiaru, przyjęta jako Best decyzją Dariusza Lubomskiego z 2026-11-16; zastępuje m-001."
+        },
+        "computed_best_measurement_id": {
+          "before": "m-001",
+          "after": "m-002"
+        },
+        "elevation_m": {
+          "before": "1451.06",
+          "after": "1451.06380929"
+        },
+        "lat": {
+          "before": "49.24258746",
+          "after": "49.2425735116"
+        },
+        "lon": {
+          "before": "19.8495785",
+          "after": "19.8495335649"
+        },
+        "measurement_id": {
+          "before": "m-001",
+          "after": "m-002"
+        },
+        "measurement_notes": {
+          "before": "Source provided as unknown GNSS for Bandzioch Kominiarski Dolny. PIG dump places the lower/main and upper openings separately for Jaskinia Bańdzioch Kominiarski.",
+          "after": "Wynik po korekcie obliczeń magnetycznych, przyjęty 2026-11-16. Pozycja otworu z domiaru od punktu GNSS; długość domiaru 19.35 m. Zastępuje w Best m-001; dawny pomiar zachowano ze statusem odrzucony. Dostępne są końcowe współrzędne, bez obserwacji i obliczeń domiaru; nie wykonano niezależnego przeliczenia ciągu. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane."
+        },
+        "method": {
+          "before": "gnss",
+          "after": "siec_pomiarowa"
+        },
+        "observed_date": {
+          "before": "2026-05-16",
+          "after": "2025-11-10"
+        },
+        "source_ref": {
+          "before": "unknown:gnss:BandziochKominiarskiDolny",
+          "after": "unknown:gnss:BandziochKominiarskiDolny:correction-2026-11-16"
+        },
+        "x_1992": {
+          "before": "153133.849466",
+          "after": "153132.262593"
+        },
+        "y_1992": {
+          "before": "561819.079782",
+          "after": "561815.827555"
+        }
+      },
+      "before": {
+        "object_id": "KSZ-0112",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Bańdzioch Kominiarski - otwór dolny",
+        "cave_id": "C-0078",
+        "measurement_id": "m-001",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-001",
+        "best_reason": "Operator retains the supplied GNSS point for the lower opening; future TPN records must not replace this selection automatically. Source provenance and verification status remain unchanged.",
+        "lat": "49.24258746",
+        "lon": "19.8495785",
+        "x_1992": "153133.849466",
+        "y_1992": "561819.079782",
+        "elevation_m": "1451.06",
+        "source": "inne",
+        "source_ref": "unknown:gnss:BandziochKominiarskiDolny",
+        "nr_inwent": "T.E-07.07",
+        "pig_id": "1299",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1299",
+        "tpn_globalid": "",
+        "observed_at": "",
+        "observed_date": "2026-05-16",
+        "method": "gnss",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Created during multi-opening review from a supplied unknown-GNSS point. The existing LEJ-0002 object is treated as the upper opening; this object records the lower opening.",
+        "cave_notes": "PIG sector: D. Lejowa\nPIG source state year: 2020\nMulti-opening review 2026-05-16: PIG dump states other_entrances=\"2 - ku N, 1682, m n.p.m.\"; LEJ-0002 is treated as the upper opening and KSZ-0112 was created from the supplied lower-opening GNSS point.",
+        "measurement_notes": "Source provided as unknown GNSS for Bandzioch Kominiarski Dolny. PIG dump places the lower/main and upper openings separately for Jaskinia Bańdzioch Kominiarski.",
+        "cave_length_m": "10010",
+        "cave_depth_m": "546",
+        "cave_denivelation_m": "562",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 05, s. 1, lp. 29",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "after": {
+        "object_id": "KSZ-0112",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Bańdzioch Kominiarski - otwór dolny",
+        "cave_id": "C-0078",
+        "measurement_id": "m-002",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "Korekta pomiaru, przyjęta jako Best decyzją Dariusza Lubomskiego z 2026-11-16; zastępuje m-001.",
+        "lat": "49.2425735116",
+        "lon": "19.8495335649",
+        "x_1992": "153132.262593",
+        "y_1992": "561815.827555",
+        "elevation_m": "1451.06380929",
+        "source": "inne",
+        "source_ref": "unknown:gnss:BandziochKominiarskiDolny:correction-2026-11-16",
+        "nr_inwent": "T.E-07.07",
+        "pig_id": "1299",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1299",
+        "tpn_globalid": "",
+        "observed_at": "",
+        "observed_date": "2025-11-10",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Created during multi-opening review from a supplied unknown-GNSS point. The existing LEJ-0002 object is treated as the upper opening; this object records the lower opening.",
+        "cave_notes": "PIG sector: D. Lejowa\nPIG source state year: 2020\nMulti-opening review 2026-05-16: PIG dump states other_entrances=\"2 - ku N, 1682, m n.p.m.\"; LEJ-0002 is treated as the upper opening and KSZ-0112 was created from the supplied lower-opening GNSS point.",
+        "measurement_notes": "Wynik po korekcie obliczeń magnetycznych, przyjęty 2026-11-16. Pozycja otworu z domiaru od punktu GNSS; długość domiaru 19.35 m. Zastępuje w Best m-001; dawny pomiar zachowano ze statusem odrzucony. Dostępne są końcowe współrzędne, bez obserwacji i obliczeń domiaru; nie wykonano niezależnego przeliczenia ciągu. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane.",
+        "cave_length_m": "10010",
+        "cave_depth_m": "546",
+        "cave_denivelation_m": "562",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 05, s. 1, lp. 29",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "MTW-0004",
+      "plans": [],
+      "fields": {
+        "best_mode": {
+          "before": "auto",
+          "after": "manual"
+        },
+        "best_reason": {
+          "before": "",
+          "after": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16."
+        },
+        "elevation_m": {
+          "before": "1525.858298",
+          "after": "1520.4333843"
+        },
+        "lat": {
+          "before": "49.2408583882",
+          "after": "49.2408537873"
+        },
+        "lon": {
+          "before": "19.9050742888",
+          "after": "19.9050784368"
+        },
+        "measurement_id": {
+          "before": "m-002",
+          "after": "m-003"
+        },
+        "measurement_notes": {
+          "before": "TPN source-record measurement imported after operator review; not field-verified.\nTPN WER_LOK: 11-03-2020 FF",
+          "after": "Otwór domierzony od punktu GNSS; długość domiaru 4.97 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Michał Bochynek, Sławomir Boruta (Speleoclub Wrocław); Sprzęt: BRIC4 SN: 0143. Źródło otrzymane 2026-11-16: Zestawienie wiersz 16, Report wiersz 399. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane."
+        },
+        "method": {
+          "before": "source_record",
+          "after": "siec_pomiarowa"
+        },
+        "observed_date": {
+          "before": "2024-07-30",
+          "after": "2026-11-12"
+        },
+        "source": {
+          "before": "TPN",
+          "after": "wlasne"
+        },
+        "source_ref": {
+          "before": "TPN:{84C4BA72-E422-48DF-9815-6925B25376F3}",
+          "after": "MJ:correction-2026-11-16:Zestawienie!C16:E16"
+        },
+        "x_1992": {
+          "before": "152988.53",
+          "after": "152988.022292"
+        },
+        "y_1992": {
+          "before": "565859.45",
+          "after": "565859.757955"
+        }
+      },
+      "before": {
+        "object_id": "MTW-0004",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia nad Dachem",
+        "cave_id": "C-0072",
+        "measurement_id": "m-002",
+        "best_mode": "auto",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "",
+        "lat": "49.2408583882",
+        "lon": "19.9050742888",
+        "x_1992": "152988.53",
+        "y_1992": "565859.45",
+        "elevation_m": "1525.858298",
+        "source": "TPN",
+        "source_ref": "TPN:{84C4BA72-E422-48DF-9815-6925B25376F3}",
+        "nr_inwent": "T.E-11.09",
+        "pig_id": "1474",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1474",
+        "tpn_globalid": "{84C4BA72-E422-48DF-9815-6925B25376F3}",
+        "observed_at": "",
+        "observed_date": "2024-07-30",
+        "method": "source_record",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG aliases: SYSTEM Ptasia Studnia\nPIG sector: D. Miętusia - Wsch.\nPIG source state year: 2013",
+        "measurement_notes": "TPN source-record measurement imported after operator review; not field-verified.\nTPN WER_LOK: 11-03-2020 FF",
+        "cave_length_m": "750",
+        "cave_depth_m": "140",
+        "cave_denivelation_m": "163",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "PIG:1474, stan 2013",
+        "system_cave_id": "C-1049",
+        "cave_system_name": "System Ptasiej",
+        "system_length_m": "7330",
+        "system_depth_m": "352",
+        "system_denivelation_m": "352",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 3, lp. 68"
+      },
+      "after": {
+        "object_id": "MTW-0004",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia nad Dachem",
+        "cave_id": "C-0072",
+        "measurement_id": "m-003",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16.",
+        "lat": "49.2408537873",
+        "lon": "19.9050784368",
+        "x_1992": "152988.022292",
+        "y_1992": "565859.757955",
+        "elevation_m": "1520.4333843",
+        "source": "wlasne",
+        "source_ref": "MJ:correction-2026-11-16:Zestawienie!C16:E16",
+        "nr_inwent": "T.E-11.09",
+        "pig_id": "1474",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1474",
+        "tpn_globalid": "{84C4BA72-E422-48DF-9815-6925B25376F3}",
+        "observed_at": "",
+        "observed_date": "2026-11-12",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG aliases: SYSTEM Ptasia Studnia\nPIG sector: D. Miętusia - Wsch.\nPIG source state year: 2013",
+        "measurement_notes": "Otwór domierzony od punktu GNSS; długość domiaru 4.97 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Michał Bochynek, Sławomir Boruta (Speleoclub Wrocław); Sprzęt: BRIC4 SN: 0143. Źródło otrzymane 2026-11-16: Zestawienie wiersz 16, Report wiersz 399. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane.",
+        "cave_length_m": "750",
+        "cave_depth_m": "140",
+        "cave_denivelation_m": "163",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "PIG:1474, stan 2013",
+        "system_cave_id": "C-1049",
+        "cave_system_name": "System Ptasiej",
+        "system_length_m": "7330",
+        "system_depth_m": "352",
+        "system_denivelation_m": "352",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 3, lp. 68"
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "MTW-0008",
+      "plans": [
+        "001547"
+      ],
+      "fields": {
+        "best_reason": {
+          "before": "Zweryfikowany przez Marka Jędrzejczaka pomiar z 2026-10-17; przyjęty jako obowiązujący na polecenie Dariusza Lubomskiego z 2026-11-02.",
+          "after": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16."
+        },
+        "computed_best_measurement_id": {
+          "before": "m-003",
+          "after": "m-002"
+        },
+        "lat": {
+          "before": "49.2395253405",
+          "after": "49.239526814"
+        },
+        "lon": {
+          "before": "19.9152487678",
+          "after": "19.9152438441"
+        },
+        "measurement_id": {
+          "before": "m-003",
+          "after": "m-004"
+        },
+        "measurement_notes": {
+          "before": "Otwór domierzony BRIC4 od punktu GNSS. Obliczenia i weryfikacja: Marek Jędrzejczak; potwierdzenie D. Lubomskiego z 2026-11-02.",
+          "after": "Otwór domierzony od punktu GNSS; długość domiaru 4.70 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Michał Bochynek, Sławomir Boruta, Arkadiusz Kruk, Weronika Garlińska,  (Speleoclub Wrocław); Sprzęt: BRIC4 SN: 0143. Korekta wcześniejszego m-003; dawny pomiar zachowano ze statusem odrzucony. Źródło otrzymane 2026-11-16: Zestawienie wiersz 12, Report wiersz 298. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane."
+        },
+        "source_ref": {
+          "before": "MJ:20261017:Zestawienie!B12:D12",
+          "after": "MJ:correction-2026-11-16:Zestawienie!C12:E12"
+        },
+        "verification_status": {
+          "before": "zweryfikowany",
+          "after": "nieweryfikowany"
+        },
+        "x_1992": {
+          "before": "152849.291546",
+          "after": "152849.450959"
+        },
+        "y_1992": {
+          "before": "566601.598812",
+          "after": "566601.238545"
+        }
+      },
+      "before": {
+        "object_id": "MTW-0008",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Wyżnia Litworowa",
+        "cave_id": "C-0107",
+        "measurement_id": "m-003",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-003",
+        "best_reason": "Zweryfikowany przez Marka Jędrzejczaka pomiar z 2026-10-17; przyjęty jako obowiązujący na polecenie Dariusza Lubomskiego z 2026-11-02.",
+        "lat": "49.2395253405",
+        "lon": "19.9152487678",
+        "x_1992": "152849.291546",
+        "y_1992": "566601.598812",
+        "elevation_m": "1919.57356309",
+        "source": "wlasne",
+        "source_ref": "MJ:20261017:Zestawienie!B12:D12",
+        "nr_inwent": "T.E-12.12",
+        "pig_id": "1547",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1547",
+        "tpn_globalid": "{62739B69-C1E4-464C-A7F9-B54B78EBF17C}",
+        "observed_at": "",
+        "observed_date": "2026-10-17",
+        "method": "siec_pomiarowa",
+        "verification_status": "zweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG sector: D. Miętusia - Wsch.\nPIG source state year: 2010",
+        "measurement_notes": "Otwór domierzony BRIC4 od punktu GNSS. Obliczenia i weryfikacja: Marek Jędrzejczak; potwierdzenie D. Lubomskiego z 2026-11-02.",
+        "cave_length_m": "61",
+        "cave_depth_m": "35",
+        "cave_denivelation_m": "35",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 3, lp. 79",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "after": {
+        "object_id": "MTW-0008",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Wyżnia Litworowa",
+        "cave_id": "C-0107",
+        "measurement_id": "m-004",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16.",
+        "lat": "49.239526814",
+        "lon": "19.9152438441",
+        "x_1992": "152849.450959",
+        "y_1992": "566601.238545",
+        "elevation_m": "1919.57356309",
+        "source": "wlasne",
+        "source_ref": "MJ:correction-2026-11-16:Zestawienie!C12:E12",
+        "nr_inwent": "T.E-12.12",
+        "pig_id": "1547",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1547",
+        "tpn_globalid": "{62739B69-C1E4-464C-A7F9-B54B78EBF17C}",
+        "observed_at": "",
+        "observed_date": "2026-10-17",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG sector: D. Miętusia - Wsch.\nPIG source state year: 2010",
+        "measurement_notes": "Otwór domierzony od punktu GNSS; długość domiaru 4.70 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Michał Bochynek, Sławomir Boruta, Arkadiusz Kruk, Weronika Garlińska,  (Speleoclub Wrocław); Sprzęt: BRIC4 SN: 0143. Korekta wcześniejszego m-003; dawny pomiar zachowano ze statusem odrzucony. Źródło otrzymane 2026-11-16: Zestawienie wiersz 12, Report wiersz 298. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane.",
+        "cave_length_m": "61",
+        "cave_depth_m": "35",
+        "cave_denivelation_m": "35",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 3, lp. 79",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "MTW-0010",
+      "plans": [
+        "000491"
+      ],
+      "fields": {
+        "best_reason": {
+          "before": "Zweryfikowany przez Marka Jędrzejczaka pomiar z 2026-10-17; przyjęty jako obowiązujący na polecenie Dariusza Lubomskiego z 2026-11-02.",
+          "after": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16."
+        },
+        "computed_best_measurement_id": {
+          "before": "m-003",
+          "after": "m-002"
+        },
+        "lat": {
+          "before": "49.2385162553",
+          "after": "49.2385157324"
+        },
+        "lon": {
+          "before": "19.9147617762",
+          "after": "19.9147586436"
+        },
+        "measurement_id": {
+          "before": "m-003",
+          "after": "m-004"
+        },
+        "measurement_notes": {
+          "before": "Otwór domierzony BRIC4 od punktu GNSS. Obliczenia i weryfikacja: Marek Jędrzejczak; potwierdzenie D. Lubomskiego z 2026-11-02.",
+          "after": "Otwór domierzony od punktu GNSS; długość domiaru 3.02 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Michał Bochynek, Sławomir Boruta (Speleoclub Wrocław); Sprzęt: BRIC4 SN: 0143. Korekta wcześniejszego m-003; dawny pomiar zachowano ze statusem odrzucony. Źródło otrzymane 2026-11-16: Zestawienie wiersz 9, Report wiersz 225. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane."
+        },
+        "source_ref": {
+          "before": "MJ:20261017:Zestawienie!B9:D9",
+          "after": "MJ:correction-2026-11-16:Zestawienie!C9:E9"
+        },
+        "verification_status": {
+          "before": "zweryfikowany",
+          "after": "nieweryfikowany"
+        },
+        "x_1992": {
+          "before": "152736.718723",
+          "after": "152736.657851"
+        },
+        "y_1992": {
+          "before": "566567.517712",
+          "after": "566567.290452"
+        }
+      },
+      "before": {
+        "object_id": "MTW-0010",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Wielka Litworowa",
+        "cave_id": "C-0120",
+        "measurement_id": "m-003",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-003",
+        "best_reason": "Zweryfikowany przez Marka Jędrzejczaka pomiar z 2026-10-17; przyjęty jako obowiązujący na polecenie Dariusza Lubomskiego z 2026-11-02.",
+        "lat": "49.2385162553",
+        "lon": "19.9147617762",
+        "x_1992": "152736.718723",
+        "y_1992": "566567.517712",
+        "elevation_m": "1904.73177469",
+        "source": "wlasne",
+        "source_ref": "MJ:20261017:Zestawienie!B9:D9",
+        "nr_inwent": "T.E-12.01",
+        "pig_id": "491",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/491",
+        "tpn_globalid": "{A34CAD7D-C9F0-4951-B83C-23248B05B900}",
+        "observed_at": "",
+        "observed_date": "2026-10-17",
+        "method": "siec_pomiarowa",
+        "verification_status": "zweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG aliases: SYSTEM Jaskinia Wielka Śnieżna\nPIG sector: D. Miętusia - Wsch.\nPIG source state year: 2013",
+        "measurement_notes": "Otwór domierzony BRIC4 od punktu GNSS. Obliczenia i weryfikacja: Marek Jędrzejczak; potwierdzenie D. Lubomskiego z 2026-11-02.",
+        "cave_length_m": "7185",
+        "cave_depth_m": "354",
+        "cave_denivelation_m": "370",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "PIG:491, stan 2013",
+        "system_cave_id": "C-0295",
+        "cave_system_name": "Jaskinia Wielka Śnieżna",
+        "system_length_m": "23753",
+        "system_depth_m": "808",
+        "system_denivelation_m": "824",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": "KKTJ 2026-07, PDF 09, s. 2, lp. 53"
+      },
+      "after": {
+        "object_id": "MTW-0010",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Wielka Litworowa",
+        "cave_id": "C-0120",
+        "measurement_id": "m-004",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16.",
+        "lat": "49.2385157324",
+        "lon": "19.9147586436",
+        "x_1992": "152736.657851",
+        "y_1992": "566567.290452",
+        "elevation_m": "1904.73177469",
+        "source": "wlasne",
+        "source_ref": "MJ:correction-2026-11-16:Zestawienie!C9:E9",
+        "nr_inwent": "T.E-12.01",
+        "pig_id": "491",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/491",
+        "tpn_globalid": "{A34CAD7D-C9F0-4951-B83C-23248B05B900}",
+        "observed_at": "",
+        "observed_date": "2026-10-17",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG aliases: SYSTEM Jaskinia Wielka Śnieżna\nPIG sector: D. Miętusia - Wsch.\nPIG source state year: 2013",
+        "measurement_notes": "Otwór domierzony od punktu GNSS; długość domiaru 3.02 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Michał Bochynek, Sławomir Boruta (Speleoclub Wrocław); Sprzęt: BRIC4 SN: 0143. Korekta wcześniejszego m-003; dawny pomiar zachowano ze statusem odrzucony. Źródło otrzymane 2026-11-16: Zestawienie wiersz 9, Report wiersz 225. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane.",
+        "cave_length_m": "7185",
+        "cave_depth_m": "354",
+        "cave_denivelation_m": "370",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "PIG:491, stan 2013",
+        "system_cave_id": "C-0295",
+        "cave_system_name": "Jaskinia Wielka Śnieżna",
+        "system_length_m": "23753",
+        "system_depth_m": "808",
+        "system_denivelation_m": "824",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": "KKTJ 2026-07, PDF 09, s. 2, lp. 53"
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "MTW-0013",
+      "plans": [
+        "001478"
+      ],
+      "fields": {
+        "best_reason": {
+          "before": "Profesjonalny pomiar Marka Jędrzejczaka z 2026-10-17, zweryfikowany i przyjęty jako obowiązujący decyzją Dariusza Lubomskiego z 2026-11-02; wysokości tego pomiaru mają pierwszeństwo przed historycznym opisem i przekrojem PIG.",
+          "after": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16."
+        },
+        "computed_best_measurement_id": {
+          "before": "m-003",
+          "after": "m-002"
+        },
+        "lat": {
+          "before": "49.2388021758",
+          "after": "49.2388037899"
+        },
+        "lon": {
+          "before": "19.9081552023",
+          "after": "19.9081342835"
+        },
+        "measurement_id": {
+          "before": "m-003",
+          "after": "m-004"
+        },
+        "measurement_notes": {
+          "before": "Otwór domierzony BRIC4 od punktu GNSS. Obliczenia i weryfikacja: Marek Jędrzejczak; potwierdzenie D. Lubomskiego z 2026-11-02.",
+          "after": "Otwór domierzony od punktu GNSS; długość domiaru 11.66 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Michał Bochynek, Sławomir Boruta, Weronika Garlińska (Speleoclub Wrocław); Sprzęt: BRIC4 SN: 0143. Korekta wcześniejszego m-003; dawny pomiar zachowano ze statusem odrzucony. Źródło otrzymane 2026-11-16: Zestawienie wiersz 7, Report wiersz 161. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane."
+        },
+        "source_ref": {
+          "before": "MJ:20261017:Zestawienie!B7:D7",
+          "after": "MJ:correction-2026-11-16:Zestawienie!C7:E7"
+        },
+        "verification_status": {
+          "before": "zweryfikowany",
+          "after": "nieweryfikowany"
+        },
+        "x_1992": {
+          "before": "152762.70111",
+          "after": "152762.862219"
+        },
+        "y_1992": {
+          "before": "566086.379528",
+          "after": "566084.855137"
+        }
+      },
+      "before": {
+        "object_id": "MTW-0013",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Kozia - otwór I",
+        "cave_id": "C-0135",
+        "measurement_id": "m-003",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-003",
+        "best_reason": "Profesjonalny pomiar Marka Jędrzejczaka z 2026-10-17, zweryfikowany i przyjęty jako obowiązujący decyzją Dariusza Lubomskiego z 2026-11-02; wysokości tego pomiaru mają pierwszeństwo przed historycznym opisem i przekrojem PIG.",
+        "lat": "49.2388021758",
+        "lon": "19.9081552023",
+        "x_1992": "152762.70111",
+        "y_1992": "566086.379528",
+        "elevation_m": "1836.99207226",
+        "source": "wlasne",
+        "source_ref": "MJ:20261017:Zestawienie!B7:D7",
+        "nr_inwent": "T.E-11.11",
+        "pig_id": "1478",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1478",
+        "tpn_globalid": "{AF271E37-C205-48CA-B546-B3F0663ED2F4}",
+        "observed_at": "",
+        "observed_date": "2026-10-17",
+        "method": "siec_pomiarowa",
+        "verification_status": "zweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.\n\nNumeracja I (zachodni, MTW-0013) i II (wschodni, MTW-0076) według planu S. Kotarby 1998 w PIG T.E-11.11 oraz raportu Marka Jędrzejczaka. Obowiązujące wysokości z profesjonalnego pomiaru Marka z 2026-10-17: I 1836,9920722623917 m, II 1839,468682246115 m PL-EVRF2007-NH. II jest wyżej o około 2,48 m; historyczny opis i przekrój PIG podają II niżej o 2,8 m. Dariusz Lubomski 2026-11-02 rozstrzygnął rozbieżność na rzecz dokładniejszego pomiaru Marka; numerację zachowano. Dariusz Lubomski 2026-11-04 potwierdził poprawność Koziej w zakresie #43. Nazwy nie używają określeń górny/dolny. PIG: https://jaskiniepolski.pgi.gov.pl/Details/Information/1478.",
+        "cave_notes": "PIG aliases: Szczelina w Kozim Grzbiecie, Jaskinia Nova, Jaskinia Machajowa\nPIG sector: D. Miętusia - Wsch.\nPIG source state year: 2013\n\nNumeracja I (zachodni, MTW-0013) i II (wschodni, MTW-0076) według planu S. Kotarby 1998 w PIG T.E-11.11 oraz raportu Marka Jędrzejczaka. Obowiązujące wysokości z profesjonalnego pomiaru Marka z 2026-10-17: I 1836,9920722623917 m, II 1839,468682246115 m PL-EVRF2007-NH. II jest wyżej o około 2,48 m; historyczny opis i przekrój PIG podają II niżej o 2,8 m. Dariusz Lubomski 2026-11-02 rozstrzygnął rozbieżność na rzecz dokładniejszego pomiaru Marka; numerację zachowano. Dariusz Lubomski 2026-11-04 potwierdził poprawność Koziej w zakresie #43. Nazwy nie używają określeń górny/dolny. PIG: https://jaskiniepolski.pgi.gov.pl/Details/Information/1478.",
+        "measurement_notes": "Otwór domierzony BRIC4 od punktu GNSS. Obliczenia i weryfikacja: Marek Jędrzejczak; potwierdzenie D. Lubomskiego z 2026-11-02.",
+        "cave_length_m": "3470",
+        "cave_depth_m": "376",
+        "cave_denivelation_m": "389",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 3, lp. 73",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "after": {
+        "object_id": "MTW-0013",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Kozia - otwór I",
+        "cave_id": "C-0135",
+        "measurement_id": "m-004",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16.",
+        "lat": "49.2388037899",
+        "lon": "19.9081342835",
+        "x_1992": "152762.862219",
+        "y_1992": "566084.855137",
+        "elevation_m": "1836.99207226",
+        "source": "wlasne",
+        "source_ref": "MJ:correction-2026-11-16:Zestawienie!C7:E7",
+        "nr_inwent": "T.E-11.11",
+        "pig_id": "1478",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1478",
+        "tpn_globalid": "{AF271E37-C205-48CA-B546-B3F0663ED2F4}",
+        "observed_at": "",
+        "observed_date": "2026-10-17",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.\n\nNumeracja I (zachodni, MTW-0013) i II (wschodni, MTW-0076) według planu S. Kotarby 1998 w PIG T.E-11.11 oraz raportu Marka Jędrzejczaka. Obowiązujące wysokości z profesjonalnego pomiaru Marka z 2026-10-17: I 1836,9920722623917 m, II 1839,468682246115 m PL-EVRF2007-NH. II jest wyżej o około 2,48 m; historyczny opis i przekrój PIG podają II niżej o 2,8 m. Dariusz Lubomski 2026-11-02 rozstrzygnął rozbieżność na rzecz dokładniejszego pomiaru Marka; numerację zachowano. Dariusz Lubomski 2026-11-04 potwierdził poprawność Koziej w zakresie #43. Nazwy nie używają określeń górny/dolny. PIG: https://jaskiniepolski.pgi.gov.pl/Details/Information/1478.",
+        "cave_notes": "PIG aliases: Szczelina w Kozim Grzbiecie, Jaskinia Nova, Jaskinia Machajowa\nPIG sector: D. Miętusia - Wsch.\nPIG source state year: 2013\n\nNumeracja I (zachodni, MTW-0013) i II (wschodni, MTW-0076) według planu S. Kotarby 1998 w PIG T.E-11.11 oraz raportu Marka Jędrzejczaka. Obowiązujące wysokości z profesjonalnego pomiaru Marka z 2026-10-17: I 1836,9920722623917 m, II 1839,468682246115 m PL-EVRF2007-NH. II jest wyżej o około 2,48 m; historyczny opis i przekrój PIG podają II niżej o 2,8 m. Dariusz Lubomski 2026-11-02 rozstrzygnął rozbieżność na rzecz dokładniejszego pomiaru Marka; numerację zachowano. Dariusz Lubomski 2026-11-04 potwierdził poprawność Koziej w zakresie #43. Nazwy nie używają określeń górny/dolny. PIG: https://jaskiniepolski.pgi.gov.pl/Details/Information/1478.",
+        "measurement_notes": "Otwór domierzony od punktu GNSS; długość domiaru 11.66 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Michał Bochynek, Sławomir Boruta, Weronika Garlińska (Speleoclub Wrocław); Sprzęt: BRIC4 SN: 0143. Korekta wcześniejszego m-003; dawny pomiar zachowano ze statusem odrzucony. Źródło otrzymane 2026-11-16: Zestawienie wiersz 7, Report wiersz 161. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane.",
+        "cave_length_m": "3470",
+        "cave_depth_m": "376",
+        "cave_denivelation_m": "389",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 3, lp. 73",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "MTW-0016",
+      "plans": [
+        "001548"
+      ],
+      "fields": {
+        "best_reason": {
+          "before": "Zweryfikowany pomiar Marka Jędrzejczaka z 2026-10-17, przyjęty jako obowiązujący. Oznaczenie II i ID MTW-0016 zgodne z wierszem 10 poprawionego arkusza Zestawienie.",
+          "after": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16."
+        },
+        "computed_best_measurement_id": {
+          "before": "m-003",
+          "after": "m-002"
+        },
+        "lat": {
+          "before": "49.2393168685",
+          "after": "49.2393156286"
+        },
+        "lon": {
+          "before": "19.9152855161",
+          "after": "19.9152879025"
+        },
+        "measurement_id": {
+          "before": "m-003",
+          "after": "m-004"
+        },
+        "measurement_notes": {
+          "before": "Otwór domierzony BRIC4 od punktu GNSS. Obliczenia i weryfikacja: Marek Jędrzejczak; potwierdzenie D. Lubomskiego z 2026-11-02.",
+          "after": "Otwór domierzony od punktu GNSS; długość domiaru 3.42 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Michał Bochynek, Weronika Garlińska, Sławomir Boruta, Arkadiusz Kruk (Speleoclub Wrocław); Sprzęt: BRIC4 SN: 0143. Korekta wcześniejszego m-003; dawny pomiar zachowano ze statusem odrzucony. Źródło otrzymane 2026-11-16: Zestawienie wiersz 10, Report wiersz 256. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane."
+        },
+        "source_ref": {
+          "before": "MJ:20261017:Zestawienie!B10:D10",
+          "after": "MJ:correction-2026-11-16:Zestawienie!C10:E10"
+        },
+        "verification_status": {
+          "before": "zweryfikowany",
+          "after": "nieweryfikowany"
+        },
+        "x_1992": {
+          "before": "152826.15548",
+          "after": "152826.019792"
+        },
+        "y_1992": {
+          "before": "566604.553272",
+          "after": "566604.728597"
+        }
+      },
+      "before": {
+        "object_id": "MTW-0016",
+        "category": "jaskinia_otwor",
+        "name_local": "Dziura w Grzędzie II",
+        "cave_id": "C-0154",
+        "measurement_id": "m-003",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-003",
+        "best_reason": "Zweryfikowany pomiar Marka Jędrzejczaka z 2026-10-17, przyjęty jako obowiązujący. Oznaczenie II i ID MTW-0016 zgodne z wierszem 10 poprawionego arkusza Zestawienie.",
+        "lat": "49.2393168685",
+        "lon": "19.9152855161",
+        "x_1992": "152826.15548",
+        "y_1992": "566604.553272",
+        "elevation_m": "1923.06641474",
+        "source": "wlasne",
+        "source_ref": "MJ:20261017:Zestawienie!B10:D10",
+        "nr_inwent": "T.E-12.13",
+        "pig_id": "1548",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1548",
+        "tpn_globalid": "{F3355D36-4418-4AC1-B715-C60B0BC60E95}",
+        "observed_at": "",
+        "observed_date": "2026-10-17",
+        "method": "siec_pomiarowa",
+        "verification_status": "zweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review. Poprawiony XLS Marka Jędrzejczaka przypisuje wiersz 10 do otworu II (MTW-0016). Pierwotny XLS i PDF miały zamienione oznaczenia I i II.",
+        "cave_notes": "PIG sector: D. Miętusia - Wsch.\nPIG source state year: 2010",
+        "measurement_notes": "Otwór domierzony BRIC4 od punktu GNSS. Obliczenia i weryfikacja: Marek Jędrzejczak; potwierdzenie D. Lubomskiego z 2026-11-02.",
+        "cave_length_m": "7",
+        "cave_depth_m": "4",
+        "cave_denivelation_m": "4",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 3, lp. 78",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "after": {
+        "object_id": "MTW-0016",
+        "category": "jaskinia_otwor",
+        "name_local": "Dziura w Grzędzie II",
+        "cave_id": "C-0154",
+        "measurement_id": "m-004",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16.",
+        "lat": "49.2393156286",
+        "lon": "19.9152879025",
+        "x_1992": "152826.019792",
+        "y_1992": "566604.728597",
+        "elevation_m": "1923.06641474",
+        "source": "wlasne",
+        "source_ref": "MJ:correction-2026-11-16:Zestawienie!C10:E10",
+        "nr_inwent": "T.E-12.13",
+        "pig_id": "1548",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1548",
+        "tpn_globalid": "{F3355D36-4418-4AC1-B715-C60B0BC60E95}",
+        "observed_at": "",
+        "observed_date": "2026-10-17",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review. Poprawiony XLS Marka Jędrzejczaka przypisuje wiersz 10 do otworu II (MTW-0016). Pierwotny XLS i PDF miały zamienione oznaczenia I i II.",
+        "cave_notes": "PIG sector: D. Miętusia - Wsch.\nPIG source state year: 2010",
+        "measurement_notes": "Otwór domierzony od punktu GNSS; długość domiaru 3.42 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Michał Bochynek, Weronika Garlińska, Sławomir Boruta, Arkadiusz Kruk (Speleoclub Wrocław); Sprzęt: BRIC4 SN: 0143. Korekta wcześniejszego m-003; dawny pomiar zachowano ze statusem odrzucony. Źródło otrzymane 2026-11-16: Zestawienie wiersz 10, Report wiersz 256. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane.",
+        "cave_length_m": "7",
+        "cave_depth_m": "4",
+        "cave_denivelation_m": "4",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 3, lp. 78",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "MTW-0023",
+      "plans": [],
+      "fields": {
+        "best_mode": {
+          "before": "auto",
+          "after": "manual"
+        },
+        "best_reason": {
+          "before": "",
+          "after": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16."
+        },
+        "elevation_m": {
+          "before": "1574.186504",
+          "after": "1575.208386"
+        },
+        "lat": {
+          "before": "49.2407775482",
+          "after": "49.2407642487"
+        },
+        "lon": {
+          "before": "19.9055153249",
+          "after": "19.905507022"
+        },
+        "measurement_id": {
+          "before": "m-002",
+          "after": "m-003"
+        },
+        "measurement_notes": {
+          "before": "TPN source-record measurement imported after operator review; not field-verified.\nTPN WER_LOK: 11-03-2020 FF",
+          "after": "Otwór domierzony od punktu GNSS; długość domiaru 4.84 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Michał Bochynek, Sławomir Boruta (Speleoclub Wrocław); Sprzęt: BRIC4 SN: 0143. Źródło otrzymane 2026-11-16: Zestawienie wiersz 17, Report wiersz 430. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane."
+        },
+        "method": {
+          "before": "source_record",
+          "after": "siec_pomiarowa"
+        },
+        "observed_date": {
+          "before": "2024-07-30",
+          "after": "2026-11-12"
+        },
+        "source": {
+          "before": "TPN",
+          "after": "wlasne"
+        },
+        "source_ref": {
+          "before": "TPN:{70F662B2-3D79-4BCA-9C24-971DD57D8DBF}",
+          "after": "MJ:correction-2026-11-16:Zestawienie!C17:E17"
+        },
+        "x_1992": {
+          "before": "152979.93",
+          "after": "152978.444738"
+        },
+        "y_1992": {
+          "before": "565891.65",
+          "after": "565891.063523"
+        }
+      },
+      "before": {
+        "object_id": "MTW-0023",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Lodowa Litworowa",
+        "cave_id": "C-0273",
+        "measurement_id": "m-002",
+        "best_mode": "auto",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "",
+        "lat": "49.2407775482",
+        "lon": "19.9055153249",
+        "x_1992": "152979.93",
+        "y_1992": "565891.65",
+        "elevation_m": "1574.186504",
+        "source": "TPN",
+        "source_ref": "TPN:{70F662B2-3D79-4BCA-9C24-971DD57D8DBF}",
+        "nr_inwent": "T.E-11.10",
+        "pig_id": "1475",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1475",
+        "tpn_globalid": "{70F662B2-3D79-4BCA-9C24-971DD57D8DBF}",
+        "observed_at": "",
+        "observed_date": "2024-07-30",
+        "method": "source_record",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG aliases: SYSTEM Ptasia Studnia\nPIG sector: D. Miętusia - Wsch.\nPIG source state year: 2013",
+        "measurement_notes": "TPN source-record measurement imported after operator review; not field-verified.\nTPN WER_LOK: 11-03-2020 FF",
+        "cave_length_m": "460",
+        "cave_depth_m": "150",
+        "cave_denivelation_m": "150",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "PIG:1475, stan 2013",
+        "system_cave_id": "C-1049",
+        "cave_system_name": "System Ptasiej",
+        "system_length_m": "7330",
+        "system_depth_m": "352",
+        "system_denivelation_m": "352",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 3, lp. 68"
+      },
+      "after": {
+        "object_id": "MTW-0023",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Lodowa Litworowa",
+        "cave_id": "C-0273",
+        "measurement_id": "m-003",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16.",
+        "lat": "49.2407642487",
+        "lon": "19.905507022",
+        "x_1992": "152978.444738",
+        "y_1992": "565891.063523",
+        "elevation_m": "1575.208386",
+        "source": "wlasne",
+        "source_ref": "MJ:correction-2026-11-16:Zestawienie!C17:E17",
+        "nr_inwent": "T.E-11.10",
+        "pig_id": "1475",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1475",
+        "tpn_globalid": "{70F662B2-3D79-4BCA-9C24-971DD57D8DBF}",
+        "observed_at": "",
+        "observed_date": "2026-11-12",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG aliases: SYSTEM Ptasia Studnia\nPIG sector: D. Miętusia - Wsch.\nPIG source state year: 2013",
+        "measurement_notes": "Otwór domierzony od punktu GNSS; długość domiaru 4.84 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Michał Bochynek, Sławomir Boruta (Speleoclub Wrocław); Sprzęt: BRIC4 SN: 0143. Źródło otrzymane 2026-11-16: Zestawienie wiersz 17, Report wiersz 430. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane.",
+        "cave_length_m": "460",
+        "cave_depth_m": "150",
+        "cave_denivelation_m": "150",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "PIG:1475, stan 2013",
+        "system_cave_id": "C-1049",
+        "cave_system_name": "System Ptasiej",
+        "system_length_m": "7330",
+        "system_depth_m": "352",
+        "system_denivelation_m": "352",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 3, lp. 68"
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "MTW-0036",
+      "plans": [
+        "001533"
+      ],
+      "fields": {
+        "best_reason": {
+          "before": "Zweryfikowany przez Marka Jędrzejczaka pomiar z 2026-10-17; przyjęty jako obowiązujący na polecenie Dariusza Lubomskiego z 2026-11-02.",
+          "after": "Aktualne opracowanie pomiaru GNSS bez domiaru; współrzędne bez zmiany. Przyjęte jako Best decyzją Dariusza Lubomskiego z 2026-11-16."
+        },
+        "measurement_id": {
+          "before": "m-003",
+          "after": "m-004"
+        },
+        "measurement_notes": {
+          "before": "GNSS w otworze. Obliczenia i weryfikacja: Marek Jędrzejczak; potwierdzenie D. Lubomskiego z 2026-11-02.",
+          "after": "Bezpośredni pomiar GNSS otworu, bez domiaru. Wartości końcowe nie zmieniły się; korekta znaku uchylenia magnetycznego nie dotyczy tego punktu. Nowy rekord zachowuje aktualne źródło. Źródło otrzymane 2026-11-16: Zestawienie wiersz 13, Report wiersz 315. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane."
+        },
+        "source_ref": {
+          "before": "MJ:20261017:Zestawienie!B13:D13",
+          "after": "MJ:correction-2026-11-16:Zestawienie!C13:E13"
+        },
+        "verification_status": {
+          "before": "zweryfikowany",
+          "after": "nieweryfikowany"
+        }
+      },
+      "before": {
+        "object_id": "MTW-0036",
+        "category": "jaskinia_otwor",
+        "name_local": "Niebieska Studnia",
+        "cave_id": "C-0430",
+        "measurement_id": "m-003",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-003",
+        "best_reason": "Zweryfikowany przez Marka Jędrzejczaka pomiar z 2026-10-17; przyjęty jako obowiązujący na polecenie Dariusza Lubomskiego z 2026-11-02.",
+        "lat": "49.2431646397",
+        "lon": "19.9135968945",
+        "x_1992": "153252.29",
+        "y_1992": "566476.51",
+        "elevation_m": "1853.23333333",
+        "source": "wlasne",
+        "source_ref": "MJ:20261017:Zestawienie!B13:D13",
+        "nr_inwent": "T.E-12.02",
+        "pig_id": "1533",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1533",
+        "tpn_globalid": "{89420AE8-EB72-4145-B5F7-A9ABC06D6828}",
+        "observed_at": "",
+        "observed_date": "2026-10-17",
+        "method": "gnss",
+        "verification_status": "zweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG aliases: Jaskinia Niebieska Studnia\nPIG sector: D. Miętusia - Wsch.\nPIG source state year: 2010",
+        "measurement_notes": "GNSS w otworze. Obliczenia i weryfikacja: Marek Jędrzejczak; potwierdzenie D. Lubomskiego z 2026-11-02.",
+        "cave_length_m": "75",
+        "cave_depth_m": "42",
+        "cave_denivelation_m": "42",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 4, lp. 102",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "after": {
+        "object_id": "MTW-0036",
+        "category": "jaskinia_otwor",
+        "name_local": "Niebieska Studnia",
+        "cave_id": "C-0430",
+        "measurement_id": "m-004",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-003",
+        "best_reason": "Aktualne opracowanie pomiaru GNSS bez domiaru; współrzędne bez zmiany. Przyjęte jako Best decyzją Dariusza Lubomskiego z 2026-11-16.",
+        "lat": "49.2431646397",
+        "lon": "19.9135968945",
+        "x_1992": "153252.29",
+        "y_1992": "566476.51",
+        "elevation_m": "1853.23333333",
+        "source": "wlasne",
+        "source_ref": "MJ:correction-2026-11-16:Zestawienie!C13:E13",
+        "nr_inwent": "T.E-12.02",
+        "pig_id": "1533",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1533",
+        "tpn_globalid": "{89420AE8-EB72-4145-B5F7-A9ABC06D6828}",
+        "observed_at": "",
+        "observed_date": "2026-10-17",
+        "method": "gnss",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG aliases: Jaskinia Niebieska Studnia\nPIG sector: D. Miętusia - Wsch.\nPIG source state year: 2010",
+        "measurement_notes": "Bezpośredni pomiar GNSS otworu, bez domiaru. Wartości końcowe nie zmieniły się; korekta znaku uchylenia magnetycznego nie dotyczy tego punktu. Nowy rekord zachowuje aktualne źródło. Źródło otrzymane 2026-11-16: Zestawienie wiersz 13, Report wiersz 315. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane.",
+        "cave_length_m": "75",
+        "cave_depth_m": "42",
+        "cave_denivelation_m": "42",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 4, lp. 102",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "position_changed": false
+    },
+    {
+      "object_id": "MTW-0050",
+      "plans": [
+        "001549"
+      ],
+      "fields": {
+        "best_reason": {
+          "before": "Zweryfikowany pomiar Marka Jędrzejczaka z 2026-10-17, przyjęty jako obowiązujący. Oznaczenie I i ID MTW-0050 zgodne z wierszem 11 poprawionego arkusza Zestawienie.",
+          "after": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16."
+        },
+        "computed_best_measurement_id": {
+          "before": "m-003",
+          "after": "m-002"
+        },
+        "lat": {
+          "before": "49.2392771127",
+          "after": "49.2392737018"
+        },
+        "lon": {
+          "before": "19.9153087878",
+          "after": "19.9152992134"
+        },
+        "measurement_id": {
+          "before": "m-003",
+          "after": "m-004"
+        },
+        "measurement_notes": {
+          "before": "Otwór domierzony BRIC4 od punktu GNSS. Obliczenia i weryfikacja: Marek Jędrzejczak; potwierdzenie D. Lubomskiego z 2026-11-02.",
+          "after": "Otwór domierzony od punktu GNSS; długość domiaru 6.94 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Michał Bochynek, Weronika Garlińska, Sławomir Boruta, Arkadiusz Kruk (Speleoclub Wrocław); Sprzęt: BRIC4 SN: 0143. Korekta wcześniejszego m-003; dawny pomiar zachowano ze statusem odrzucony. Źródło otrzymane 2026-11-16: Zestawienie wiersz 11, Report wiersz 267. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane."
+        },
+        "source_ref": {
+          "before": "MJ:20261017:Zestawienie!B11:D11",
+          "after": "MJ:correction-2026-11-16:Zestawienie!C11:E11"
+        },
+        "verification_status": {
+          "before": "zweryfikowany",
+          "after": "nieweryfikowany"
+        },
+        "x_1992": {
+          "before": "152821.75774",
+          "after": "152821.370238"
+        },
+        "y_1992": {
+          "before": "566606.300178",
+          "after": "566605.608056"
+        }
+      },
+      "before": {
+        "object_id": "MTW-0050",
+        "category": "jaskinia_otwor",
+        "name_local": "Dziura w Grzędzie I",
+        "cave_id": "C-0642",
+        "measurement_id": "m-003",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-003",
+        "best_reason": "Zweryfikowany pomiar Marka Jędrzejczaka z 2026-10-17, przyjęty jako obowiązujący. Oznaczenie I i ID MTW-0050 zgodne z wierszem 11 poprawionego arkusza Zestawienie.",
+        "lat": "49.2392771127",
+        "lon": "19.9153087878",
+        "x_1992": "152821.75774",
+        "y_1992": "566606.300178",
+        "elevation_m": "1924.98906952",
+        "source": "wlasne",
+        "source_ref": "MJ:20261017:Zestawienie!B11:D11",
+        "nr_inwent": "T.E-12.14",
+        "pig_id": "1549",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1549",
+        "tpn_globalid": "{F6542EAD-9776-4622-A7F3-EB6446DEC297}",
+        "observed_at": "",
+        "observed_date": "2026-10-17",
+        "method": "siec_pomiarowa",
+        "verification_status": "zweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review. Poprawiony XLS Marka Jędrzejczaka przypisuje wiersz 11 do otworu I (MTW-0050). Pierwotny XLS i PDF miały zamienione oznaczenia I i II.",
+        "cave_notes": "PIG sector: D. Miętusia - Wsch.\nPIG source state year: 2010",
+        "measurement_notes": "Otwór domierzony BRIC4 od punktu GNSS. Obliczenia i weryfikacja: Marek Jędrzejczak; potwierdzenie D. Lubomskiego z 2026-11-02.",
+        "cave_length_m": "20",
+        "cave_depth_m": "9",
+        "cave_denivelation_m": "9",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 3, lp. 77",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "after": {
+        "object_id": "MTW-0050",
+        "category": "jaskinia_otwor",
+        "name_local": "Dziura w Grzędzie I",
+        "cave_id": "C-0642",
+        "measurement_id": "m-004",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16.",
+        "lat": "49.2392737018",
+        "lon": "19.9152992134",
+        "x_1992": "152821.370238",
+        "y_1992": "566605.608056",
+        "elevation_m": "1924.98906952",
+        "source": "wlasne",
+        "source_ref": "MJ:correction-2026-11-16:Zestawienie!C11:E11",
+        "nr_inwent": "T.E-12.14",
+        "pig_id": "1549",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1549",
+        "tpn_globalid": "{F6542EAD-9776-4622-A7F3-EB6446DEC297}",
+        "observed_at": "",
+        "observed_date": "2026-10-17",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review. Poprawiony XLS Marka Jędrzejczaka przypisuje wiersz 11 do otworu I (MTW-0050). Pierwotny XLS i PDF miały zamienione oznaczenia I i II.",
+        "cave_notes": "PIG sector: D. Miętusia - Wsch.\nPIG source state year: 2010",
+        "measurement_notes": "Otwór domierzony od punktu GNSS; długość domiaru 6.94 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Michał Bochynek, Weronika Garlińska, Sławomir Boruta, Arkadiusz Kruk (Speleoclub Wrocław); Sprzęt: BRIC4 SN: 0143. Korekta wcześniejszego m-003; dawny pomiar zachowano ze statusem odrzucony. Źródło otrzymane 2026-11-16: Zestawienie wiersz 11, Report wiersz 267. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane.",
+        "cave_length_m": "20",
+        "cave_depth_m": "9",
+        "cave_denivelation_m": "9",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 3, lp. 77",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "MTW-0054",
+      "plans": [
+        "001535"
+      ],
+      "fields": {
+        "best_reason": {
+          "before": "Zweryfikowany przez Marka Jędrzejczaka pomiar z 2026-10-17; przyjęty jako obowiązujący na polecenie Dariusza Lubomskiego z 2026-11-02.",
+          "after": "Aktualne opracowanie pomiaru GNSS bez domiaru; współrzędne bez zmiany. Przyjęte jako Best decyzją Dariusza Lubomskiego z 2026-11-16."
+        },
+        "measurement_id": {
+          "before": "m-003",
+          "after": "m-004"
+        },
+        "measurement_notes": {
+          "before": "GNSS w otworze. Obliczenia i weryfikacja: Marek Jędrzejczak; potwierdzenie D. Lubomskiego z 2026-11-02.",
+          "after": "Bezpośredni pomiar GNSS otworu, bez domiaru. Wartości końcowe nie zmieniły się; korekta znaku uchylenia magnetycznego nie dotyczy tego punktu. Nowy rekord zachowuje aktualne źródło. Źródło otrzymane 2026-11-16: Zestawienie wiersz 14, Report wiersz 332. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane."
+        },
+        "source_ref": {
+          "before": "MJ:20261017:Zestawienie!B14:D14",
+          "after": "MJ:correction-2026-11-16:Zestawienie!C14:E14"
+        },
+        "verification_status": {
+          "before": "zweryfikowany",
+          "after": "nieweryfikowany"
+        }
+      },
+      "before": {
+        "object_id": "MTW-0054",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia pod Wantą",
+        "cave_id": "C-0711",
+        "measurement_id": "m-003",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-003",
+        "best_reason": "Zweryfikowany przez Marka Jędrzejczaka pomiar z 2026-10-17; przyjęty jako obowiązujący na polecenie Dariusza Lubomskiego z 2026-11-02.",
+        "lat": "49.2415825272",
+        "lon": "19.9114219384",
+        "x_1992": "153074.553333",
+        "y_1992": "566320.373333",
+        "elevation_m": "1790.88666667",
+        "source": "wlasne",
+        "source_ref": "MJ:20261017:Zestawienie!B14:D14",
+        "nr_inwent": "T.E-12.03",
+        "pig_id": "1535",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1535",
+        "tpn_globalid": "{9306F8A3-B212-4456-B121-7B821EE13B60}",
+        "observed_at": "",
+        "observed_date": "2026-10-17",
+        "method": "gnss",
+        "verification_status": "zweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG aliases: Litworowy Dzwon\nPIG sector: D. Miętusia - Wsch.\nPIG source state year: 2013",
+        "measurement_notes": "GNSS w otworze. Obliczenia i weryfikacja: Marek Jędrzejczak; potwierdzenie D. Lubomskiego z 2026-11-02.",
+        "cave_length_m": "520",
+        "cave_depth_m": "158",
+        "cave_denivelation_m": "172",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 3, lp. 83",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "after": {
+        "object_id": "MTW-0054",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia pod Wantą",
+        "cave_id": "C-0711",
+        "measurement_id": "m-004",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-003",
+        "best_reason": "Aktualne opracowanie pomiaru GNSS bez domiaru; współrzędne bez zmiany. Przyjęte jako Best decyzją Dariusza Lubomskiego z 2026-11-16.",
+        "lat": "49.2415825272",
+        "lon": "19.9114219384",
+        "x_1992": "153074.553333",
+        "y_1992": "566320.373333",
+        "elevation_m": "1790.88666667",
+        "source": "wlasne",
+        "source_ref": "MJ:correction-2026-11-16:Zestawienie!C14:E14",
+        "nr_inwent": "T.E-12.03",
+        "pig_id": "1535",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1535",
+        "tpn_globalid": "{9306F8A3-B212-4456-B121-7B821EE13B60}",
+        "observed_at": "",
+        "observed_date": "2026-10-17",
+        "method": "gnss",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG aliases: Litworowy Dzwon\nPIG sector: D. Miętusia - Wsch.\nPIG source state year: 2013",
+        "measurement_notes": "Bezpośredni pomiar GNSS otworu, bez domiaru. Wartości końcowe nie zmieniły się; korekta znaku uchylenia magnetycznego nie dotyczy tego punktu. Nowy rekord zachowuje aktualne źródło. Źródło otrzymane 2026-11-16: Zestawienie wiersz 14, Report wiersz 332. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane.",
+        "cave_length_m": "520",
+        "cave_depth_m": "158",
+        "cave_denivelation_m": "172",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 3, lp. 83",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "position_changed": false
+    },
+    {
+      "object_id": "MTW-0076",
+      "plans": [],
+      "fields": {
+        "best_reason": {
+          "before": "Profesjonalny pomiar Marka Jędrzejczaka z 2026-10-17, zweryfikowany i przyjęty jako obowiązujący decyzją Dariusza Lubomskiego z 2026-11-02; wysokości tego pomiaru mają pierwszeństwo przed historycznym opisem i przekrojem PIG.",
+          "after": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16."
+        },
+        "computed_best_measurement_id": {
+          "before": "m-001",
+          "after": "m-002"
+        },
+        "lat": {
+          "before": "49.2388004782",
+          "after": "49.238806742"
+        },
+        "lon": {
+          "before": "19.9094316705",
+          "after": "19.9094329999"
+        },
+        "measurement_id": {
+          "before": "m-001",
+          "after": "m-002"
+        },
+        "measurement_notes": {
+          "before": "Otwór domierzony BRIC4 od punktu GNSS. Obliczenia i weryfikacja: Marek Jędrzejczak; potwierdzenie D. Lubomskiego z 2026-11-02.",
+          "after": "Otwór domierzony od punktu GNSS; długość domiaru 5.80 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Michał Bochynek, Arkadiusz Kruk, Sławomir Boruta (Speleoclub Wrocław); Sprzęt: BRIC4 SN: 0143. Korekta wcześniejszego m-001; dawny pomiar zachowano ze statusem odrzucony. Źródło otrzymane 2026-11-16: Zestawienie wiersz 8, Report wiersz 193. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane."
+        },
+        "source_ref": {
+          "before": "MJ:20261017:Zestawienie!B8:D8",
+          "after": "MJ:correction-2026-11-16:Zestawienie!C8:E8"
+        },
+        "verification_status": {
+          "before": "zweryfikowany",
+          "after": "nieweryfikowany"
+        },
+        "x_1992": {
+          "before": "152763.628497",
+          "after": "152764.325782"
+        },
+        "y_1992": {
+          "before": "566179.269145",
+          "after": "566179.357515"
+        }
+      },
+      "before": {
+        "object_id": "MTW-0076",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Kozia - otwór II",
+        "cave_id": "C-0135",
+        "measurement_id": "m-001",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-001",
+        "best_reason": "Profesjonalny pomiar Marka Jędrzejczaka z 2026-10-17, zweryfikowany i przyjęty jako obowiązujący decyzją Dariusza Lubomskiego z 2026-11-02; wysokości tego pomiaru mają pierwszeństwo przed historycznym opisem i przekrojem PIG.",
+        "lat": "49.2388004782",
+        "lon": "19.9094316705",
+        "x_1992": "152763.628497",
+        "y_1992": "566179.269145",
+        "elevation_m": "1839.46868225",
+        "source": "wlasne",
+        "source_ref": "MJ:20261017:Zestawienie!B8:D8",
+        "nr_inwent": "T.E-11.11",
+        "pig_id": "1478",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1478",
+        "tpn_globalid": "",
+        "observed_at": "",
+        "observed_date": "2026-10-17",
+        "method": "siec_pomiarowa",
+        "verification_status": "zweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Numeracja I (zachodni, MTW-0013) i II (wschodni, MTW-0076) według planu S. Kotarby 1998 w PIG T.E-11.11 oraz raportu Marka Jędrzejczaka. Obowiązujące wysokości z profesjonalnego pomiaru Marka z 2026-10-17: I 1836,9920722623917 m, II 1839,468682246115 m PL-EVRF2007-NH. II jest wyżej o około 2,48 m; historyczny opis i przekrój PIG podają II niżej o 2,8 m. Dariusz Lubomski 2026-11-02 rozstrzygnął rozbieżność na rzecz dokładniejszego pomiaru Marka; numerację zachowano. Dariusz Lubomski 2026-11-04 potwierdził poprawność Koziej w zakresie #43. Nazwy nie używają określeń górny/dolny. PIG: https://jaskiniepolski.pgi.gov.pl/Details/Information/1478.",
+        "cave_notes": "PIG aliases: Szczelina w Kozim Grzbiecie, Jaskinia Nova, Jaskinia Machajowa\nPIG sector: D. Miętusia - Wsch.\nPIG source state year: 2013\n\nNumeracja I (zachodni, MTW-0013) i II (wschodni, MTW-0076) według planu S. Kotarby 1998 w PIG T.E-11.11 oraz raportu Marka Jędrzejczaka. Obowiązujące wysokości z profesjonalnego pomiaru Marka z 2026-10-17: I 1836,9920722623917 m, II 1839,468682246115 m PL-EVRF2007-NH. II jest wyżej o około 2,48 m; historyczny opis i przekrój PIG podają II niżej o 2,8 m. Dariusz Lubomski 2026-11-02 rozstrzygnął rozbieżność na rzecz dokładniejszego pomiaru Marka; numerację zachowano. Dariusz Lubomski 2026-11-04 potwierdził poprawność Koziej w zakresie #43. Nazwy nie używają określeń górny/dolny. PIG: https://jaskiniepolski.pgi.gov.pl/Details/Information/1478.",
+        "measurement_notes": "Otwór domierzony BRIC4 od punktu GNSS. Obliczenia i weryfikacja: Marek Jędrzejczak; potwierdzenie D. Lubomskiego z 2026-11-02.",
+        "cave_length_m": "3470",
+        "cave_depth_m": "376",
+        "cave_denivelation_m": "389",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 3, lp. 73",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "after": {
+        "object_id": "MTW-0076",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Kozia - otwór II",
+        "cave_id": "C-0135",
+        "measurement_id": "m-002",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16.",
+        "lat": "49.238806742",
+        "lon": "19.9094329999",
+        "x_1992": "152764.325782",
+        "y_1992": "566179.357515",
+        "elevation_m": "1839.46868225",
+        "source": "wlasne",
+        "source_ref": "MJ:correction-2026-11-16:Zestawienie!C8:E8",
+        "nr_inwent": "T.E-11.11",
+        "pig_id": "1478",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1478",
+        "tpn_globalid": "",
+        "observed_at": "",
+        "observed_date": "2026-10-17",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Numeracja I (zachodni, MTW-0013) i II (wschodni, MTW-0076) według planu S. Kotarby 1998 w PIG T.E-11.11 oraz raportu Marka Jędrzejczaka. Obowiązujące wysokości z profesjonalnego pomiaru Marka z 2026-10-17: I 1836,9920722623917 m, II 1839,468682246115 m PL-EVRF2007-NH. II jest wyżej o około 2,48 m; historyczny opis i przekrój PIG podają II niżej o 2,8 m. Dariusz Lubomski 2026-11-02 rozstrzygnął rozbieżność na rzecz dokładniejszego pomiaru Marka; numerację zachowano. Dariusz Lubomski 2026-11-04 potwierdził poprawność Koziej w zakresie #43. Nazwy nie używają określeń górny/dolny. PIG: https://jaskiniepolski.pgi.gov.pl/Details/Information/1478.",
+        "cave_notes": "PIG aliases: Szczelina w Kozim Grzbiecie, Jaskinia Nova, Jaskinia Machajowa\nPIG sector: D. Miętusia - Wsch.\nPIG source state year: 2013\n\nNumeracja I (zachodni, MTW-0013) i II (wschodni, MTW-0076) według planu S. Kotarby 1998 w PIG T.E-11.11 oraz raportu Marka Jędrzejczaka. Obowiązujące wysokości z profesjonalnego pomiaru Marka z 2026-10-17: I 1836,9920722623917 m, II 1839,468682246115 m PL-EVRF2007-NH. II jest wyżej o około 2,48 m; historyczny opis i przekrój PIG podają II niżej o 2,8 m. Dariusz Lubomski 2026-11-02 rozstrzygnął rozbieżność na rzecz dokładniejszego pomiaru Marka; numerację zachowano. Dariusz Lubomski 2026-11-04 potwierdził poprawność Koziej w zakresie #43. Nazwy nie używają określeń górny/dolny. PIG: https://jaskiniepolski.pgi.gov.pl/Details/Information/1478.",
+        "measurement_notes": "Otwór domierzony od punktu GNSS; długość domiaru 5.80 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Michał Bochynek, Arkadiusz Kruk, Sławomir Boruta (Speleoclub Wrocław); Sprzęt: BRIC4 SN: 0143. Korekta wcześniejszego m-001; dawny pomiar zachowano ze statusem odrzucony. Źródło otrzymane 2026-11-16: Zestawienie wiersz 8, Report wiersz 193. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane.",
+        "cave_length_m": "3470",
+        "cave_depth_m": "376",
+        "cave_denivelation_m": "389",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 3, lp. 73",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "MTZ-0013",
+      "plans": [
+        "001511"
+      ],
+      "fields": {
+        "best_reason": {
+          "before": "Zweryfikowany przez Marka Jędrzejczaka pomiar z 2026-10-17; przyjęty jako obowiązujący na polecenie Dariusza Lubomskiego z 2026-11-02.",
+          "after": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16."
+        },
+        "computed_best_measurement_id": {
+          "before": "m-003",
+          "after": "m-002"
+        },
+        "lat": {
+          "before": "49.2384874886",
+          "after": "49.2384894954"
+        },
+        "lon": {
+          "before": "19.9008028431",
+          "after": "19.9008042777"
+        },
+        "measurement_id": {
+          "before": "m-003",
+          "after": "m-004"
+        },
+        "measurement_notes": {
+          "before": "Otwór domierzony BRIC4 od punktu GNSS. Obliczenia i weryfikacja: Marek Jędrzejczak; potwierdzenie D. Lubomskiego z 2026-11-02.",
+          "after": "Otwór domierzony od punktu GNSS; długość domiaru 2.42 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Michał Bochynek, Arkadiusz Kruk (Speleoclub Wrocław); Sprzęt: BRIC4 SN: 0143. Korekta wcześniejszego m-003; dawny pomiar zachowano ze statusem odrzucony. Źródło otrzymane 2026-11-16: Zestawienie wiersz 5, Report wiersz 99. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane."
+        },
+        "source_ref": {
+          "before": "MJ:20261017:Zestawienie!B5:D5",
+          "after": "MJ:correction-2026-11-16:Zestawienie!C5:E5"
+        },
+        "verification_status": {
+          "before": "zweryfikowany",
+          "after": "nieweryfikowany"
+        },
+        "x_1992": {
+          "before": "152721.33068",
+          "after": "152721.554951"
+        },
+        "y_1992": {
+          "before": "565551.771934",
+          "after": "565551.873671"
+        }
+      },
+      "before": {
+        "object_id": "MTZ-0013",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Lejbusiowa",
+        "cave_id": "C-0160",
+        "measurement_id": "m-003",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-003",
+        "best_reason": "Zweryfikowany przez Marka Jędrzejczaka pomiar z 2026-10-17; przyjęty jako obowiązujący na polecenie Dariusza Lubomskiego z 2026-11-02.",
+        "lat": "49.2384874886",
+        "lon": "19.9008028431",
+        "x_1992": "152721.33068",
+        "y_1992": "565551.771934",
+        "elevation_m": "1834.98101805",
+        "source": "wlasne",
+        "source_ref": "MJ:20261017:Zestawienie!B5:D5",
+        "nr_inwent": "T.E-11.48",
+        "pig_id": "1511",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1511",
+        "tpn_globalid": "{5473F2D1-AC72-40E9-A7E7-B09E7867E9FA}",
+        "observed_at": "",
+        "observed_date": "2026-10-17",
+        "method": "siec_pomiarowa",
+        "verification_status": "zweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG aliases: Szczelina nad Jaskinią Marmurową\nPIG sector: D. Miętusia - Zach.\nPIG source state year: 2010",
+        "measurement_notes": "Otwór domierzony BRIC4 od punktu GNSS. Obliczenia i weryfikacja: Marek Jędrzejczak; potwierdzenie D. Lubomskiego z 2026-11-02.",
+        "cave_length_m": "83",
+        "cave_depth_m": "49",
+        "cave_denivelation_m": "49",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 2, lp. 42",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "after": {
+        "object_id": "MTZ-0013",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Lejbusiowa",
+        "cave_id": "C-0160",
+        "measurement_id": "m-004",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16.",
+        "lat": "49.2384894954",
+        "lon": "19.9008042777",
+        "x_1992": "152721.554951",
+        "y_1992": "565551.873671",
+        "elevation_m": "1834.98101805",
+        "source": "wlasne",
+        "source_ref": "MJ:correction-2026-11-16:Zestawienie!C5:E5",
+        "nr_inwent": "T.E-11.48",
+        "pig_id": "1511",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1511",
+        "tpn_globalid": "{5473F2D1-AC72-40E9-A7E7-B09E7867E9FA}",
+        "observed_at": "",
+        "observed_date": "2026-10-17",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG aliases: Szczelina nad Jaskinią Marmurową\nPIG sector: D. Miętusia - Zach.\nPIG source state year: 2010",
+        "measurement_notes": "Otwór domierzony od punktu GNSS; długość domiaru 2.42 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Michał Bochynek, Arkadiusz Kruk (Speleoclub Wrocław); Sprzęt: BRIC4 SN: 0143. Korekta wcześniejszego m-003; dawny pomiar zachowano ze statusem odrzucony. Źródło otrzymane 2026-11-16: Zestawienie wiersz 5, Report wiersz 99. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane.",
+        "cave_length_m": "83",
+        "cave_depth_m": "49",
+        "cave_denivelation_m": "49",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 2, lp. 42",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "MTZ-0016",
+      "plans": [
+        "001187"
+      ],
+      "fields": {
+        "best_mode": {
+          "before": "auto",
+          "after": "manual"
+        },
+        "best_reason": {
+          "before": "",
+          "after": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16."
+        },
+        "elevation_m": {
+          "before": "1383.993046",
+          "after": "1392.9460172"
+        },
+        "lat": {
+          "before": "49.2454610045",
+          "after": "49.2454007979"
+        },
+        "lon": {
+          "before": "19.8948992419",
+          "after": "19.8947565319"
+        },
+        "measurement_id": {
+          "before": "m-002",
+          "after": "m-003"
+        },
+        "measurement_notes": {
+          "before": "TPN source-record measurement imported after operator review; not field-verified.\nTPN WER_LOK: 11-06-2021 FF ortofoto",
+          "after": "Otwór domierzony od punktu GNSS; długość domiaru 8.05 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Stanisław Mielczarek, Agnieszka Samborska, Jan Grzeszek (Speleoklub Warszawski); Sprzęt: DistoX id 4027. Źródło otrzymane 2026-11-16: Zestawienie wiersz 19, Report wiersz 502. observed_date zachowuje datę 2025-11-10 z Zestawienia i obliczenia deklinacji. Obserwacje kotwicy GNSS w Report są datowane 2024-07-20; źródło nie podaje odrębnej daty terenowego domiaru. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,20 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane."
+        },
+        "method": {
+          "before": "source_record",
+          "after": "siec_pomiarowa"
+        },
+        "observed_date": {
+          "before": "2024-07-30",
+          "after": "2025-11-10"
+        },
+        "source": {
+          "before": "TPN",
+          "after": "wlasne"
+        },
+        "source_ref": {
+          "before": "TPN:{0C95E94F-DB98-4FB9-AFFC-5CFE073C5E5F}",
+          "after": "MJ:correction-2026-11-16:Zestawienie!C19:E19"
+        },
+        "x_1992": {
+          "before": "153491.23",
+          "after": "153484.416105"
+        },
+        "y_1992": {
+          "before": "565113",
+          "after": "565102.695689"
+        }
+      },
+      "before": {
+        "object_id": "MTZ-0016",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Miętusia Wyżnia",
+        "cave_id": "C-0169",
+        "measurement_id": "m-002",
+        "best_mode": "auto",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "",
+        "lat": "49.2454610045",
+        "lon": "19.8948992419",
+        "x_1992": "153491.23",
+        "y_1992": "565113",
+        "elevation_m": "1383.993046",
+        "source": "TPN",
+        "source_ref": "TPN:{0C95E94F-DB98-4FB9-AFFC-5CFE073C5E5F}",
+        "nr_inwent": "T.D-10.01",
+        "pig_id": "1187",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1187",
+        "tpn_globalid": "{0C95E94F-DB98-4FB9-AFFC-5CFE073C5E5F}",
+        "observed_at": "",
+        "observed_date": "2024-07-30",
+        "method": "source_record",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG sector: D. Miętusia - Zach.\nPIG source state year: 2013",
+        "measurement_notes": "TPN source-record measurement imported after operator review; not field-verified.\nTPN WER_LOK: 11-06-2021 FF ortofoto",
+        "cave_length_m": "776",
+        "cave_depth_m": "108",
+        "cave_denivelation_m": "145",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 1, lp. 6",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "after": {
+        "object_id": "MTZ-0016",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Miętusia Wyżnia",
+        "cave_id": "C-0169",
+        "measurement_id": "m-003",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16.",
+        "lat": "49.2454007979",
+        "lon": "19.8947565319",
+        "x_1992": "153484.416105",
+        "y_1992": "565102.695689",
+        "elevation_m": "1392.9460172",
+        "source": "wlasne",
+        "source_ref": "MJ:correction-2026-11-16:Zestawienie!C19:E19",
+        "nr_inwent": "T.D-10.01",
+        "pig_id": "1187",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1187",
+        "tpn_globalid": "{0C95E94F-DB98-4FB9-AFFC-5CFE073C5E5F}",
+        "observed_at": "",
+        "observed_date": "2025-11-10",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG sector: D. Miętusia - Zach.\nPIG source state year: 2013",
+        "measurement_notes": "Otwór domierzony od punktu GNSS; długość domiaru 8.05 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Stanisław Mielczarek, Agnieszka Samborska, Jan Grzeszek (Speleoklub Warszawski); Sprzęt: DistoX id 4027. Źródło otrzymane 2026-11-16: Zestawienie wiersz 19, Report wiersz 502. observed_date zachowuje datę 2025-11-10 z Zestawienia i obliczenia deklinacji. Obserwacje kotwicy GNSS w Report są datowane 2024-07-20; źródło nie podaje odrębnej daty terenowego domiaru. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,20 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane.",
+        "cave_length_m": "776",
+        "cave_depth_m": "108",
+        "cave_denivelation_m": "145",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 1, lp. 6",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "MTZ-0017",
+      "plans": [
+        "001459-pza-2024"
+      ],
+      "fields": {
+        "best_mode": {
+          "before": "auto",
+          "after": "manual"
+        },
+        "best_reason": {
+          "before": "",
+          "after": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16."
+        },
+        "elevation_m": {
+          "before": "1391.520085",
+          "after": "1392.86832224"
+        },
+        "lat": {
+          "before": "49.24469143",
+          "after": "49.2446856066"
+        },
+        "lon": {
+          "before": "19.8972267166",
+          "after": "19.897223828"
+        },
+        "measurement_id": {
+          "before": "m-002",
+          "after": "m-003"
+        },
+        "measurement_notes": {
+          "before": "TPN source-record measurement imported after operator review; not field-verified.\nTPN WER_LOK: 29-05-2020 FF ortofotomapa",
+          "after": "Otwór domierzony od punktu GNSS; długość domiaru 23.03 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Stanisław Mielczarek, Agnieszka Samborska, Jan Grzeszek (Speleoklub Warszawski); Sprzęt: DistoX id 4027. Źródło otrzymane 2026-11-16: Zestawienie wiersz 18, Report wiersz 467. observed_date zachowuje datę 2025-11-10 z Zestawienia i obliczenia deklinacji. Obserwacje kotwicy GNSS w Report są datowane 2024-07-20; źródło nie podaje odrębnej daty terenowego domiaru. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane."
+        },
+        "method": {
+          "before": "source_record",
+          "after": "siec_pomiarowa"
+        },
+        "observed_date": {
+          "before": "2025-09-23",
+          "after": "2025-11-10"
+        },
+        "source": {
+          "before": "TPN",
+          "after": "wlasne"
+        },
+        "source_ref": {
+          "before": "TPN:{29EBB2CB-8AAB-4EF1-A8DC-7728AE2CC368}",
+          "after": "MJ:correction-2026-11-16:Zestawienie!C18:E18"
+        },
+        "x_1992": {
+          "before": "153407.71",
+          "after": "153407.060321"
+        },
+        "y_1992": {
+          "before": "565283.36",
+          "after": "565283.157502"
+        }
+      },
+      "before": {
+        "object_id": "MTZ-0017",
+        "category": "jaskinia_otwor",
+        "name_local": "Piwnica Miętusia",
+        "cave_id": "C-0172",
+        "measurement_id": "m-002",
+        "best_mode": "auto",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "",
+        "lat": "49.24469143",
+        "lon": "19.8972267166",
+        "x_1992": "153407.71",
+        "y_1992": "565283.36",
+        "elevation_m": "1391.520085",
+        "source": "TPN",
+        "source_ref": "TPN:{29EBB2CB-8AAB-4EF1-A8DC-7728AE2CC368}",
+        "nr_inwent": "T.E-11.01",
+        "pig_id": "1459",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1459",
+        "tpn_globalid": "{29EBB2CB-8AAB-4EF1-A8DC-7728AE2CC368}",
+        "observed_at": "",
+        "observed_date": "2025-09-23",
+        "method": "source_record",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG:1459, stan 2013 podaje długość 196 m wobec 2940 m w KKTJ, głębokość 6,1 m wobec 129 m w KKTJ, deniwelacja 16,3 m wobec 138 m w KKTJ.\nPIG sector: D. Miętusia - Zach.\nPIG source state year: 2013\n\nTPN API, odczyt 2026-10-22, stan rekordu 2026-05-31, GLOBALID {29EBB2CB-8AAB-4EF1-A8DC-7728AE2CC368} (MTZ-0017): DLUGOSC=3700 m; wcześniejszy eksport TPN podawał 2300 m. To informacja katalogowa TPN, bez niezależnej weryfikacji; wcześniejsze dane PIG pozostają odrębnym źródłem. Źródło: https://gis.tpn.pl/server/rest/services/Topografia___wektor_MIL1/MapServer/6.",
+        "measurement_notes": "TPN source-record measurement imported after operator review; not field-verified.\nTPN WER_LOK: 29-05-2020 FF ortofotomapa",
+        "cave_length_m": "2940",
+        "cave_depth_m": "129",
+        "cave_denivelation_m": "138",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 1, lp. 14",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "after": {
+        "object_id": "MTZ-0017",
+        "category": "jaskinia_otwor",
+        "name_local": "Piwnica Miętusia",
+        "cave_id": "C-0172",
+        "measurement_id": "m-003",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16.",
+        "lat": "49.2446856066",
+        "lon": "19.897223828",
+        "x_1992": "153407.060321",
+        "y_1992": "565283.157502",
+        "elevation_m": "1392.86832224",
+        "source": "wlasne",
+        "source_ref": "MJ:correction-2026-11-16:Zestawienie!C18:E18",
+        "nr_inwent": "T.E-11.01",
+        "pig_id": "1459",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1459",
+        "tpn_globalid": "{29EBB2CB-8AAB-4EF1-A8DC-7728AE2CC368}",
+        "observed_at": "",
+        "observed_date": "2025-11-10",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG:1459, stan 2013 podaje długość 196 m wobec 2940 m w KKTJ, głębokość 6,1 m wobec 129 m w KKTJ, deniwelacja 16,3 m wobec 138 m w KKTJ.\nPIG sector: D. Miętusia - Zach.\nPIG source state year: 2013\n\nTPN API, odczyt 2026-10-22, stan rekordu 2026-05-31, GLOBALID {29EBB2CB-8AAB-4EF1-A8DC-7728AE2CC368} (MTZ-0017): DLUGOSC=3700 m; wcześniejszy eksport TPN podawał 2300 m. To informacja katalogowa TPN, bez niezależnej weryfikacji; wcześniejsze dane PIG pozostają odrębnym źródłem. Źródło: https://gis.tpn.pl/server/rest/services/Topografia___wektor_MIL1/MapServer/6.",
+        "measurement_notes": "Otwór domierzony od punktu GNSS; długość domiaru 23.03 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Stanisław Mielczarek, Agnieszka Samborska, Jan Grzeszek (Speleoklub Warszawski); Sprzęt: DistoX id 4027. Źródło otrzymane 2026-11-16: Zestawienie wiersz 18, Report wiersz 467. observed_date zachowuje datę 2025-11-10 z Zestawienia i obliczenia deklinacji. Obserwacje kotwicy GNSS w Report są datowane 2024-07-20; źródło nie podaje odrębnej daty terenowego domiaru. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane.",
+        "cave_length_m": "2940",
+        "cave_depth_m": "129",
+        "cave_denivelation_m": "138",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 1, lp. 14",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "MTZ-0018",
+      "plans": [
+        "001472"
+      ],
+      "fields": {
+        "best_reason": {
+          "before": "Zweryfikowany przez Marka Jędrzejczaka pomiar z 2026-10-17; przyjęty jako obowiązujący na polecenie Dariusza Lubomskiego z 2026-11-02.",
+          "after": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16."
+        },
+        "computed_best_measurement_id": {
+          "before": "m-004",
+          "after": "m-003"
+        },
+        "lat": {
+          "before": "49.2393777266",
+          "after": "49.2393655848"
+        },
+        "lon": {
+          "before": "19.9008192585",
+          "after": "19.9008174593"
+        },
+        "measurement_id": {
+          "before": "m-004",
+          "after": "m-005"
+        },
+        "measurement_notes": {
+          "before": "Otwór domierzony BRIC4 od punktu GNSS. Obliczenia i weryfikacja: Marek Jędrzejczak; potwierdzenie D. Lubomskiego z 2026-11-02.",
+          "after": "Otwór domierzony od punktu GNSS; długość domiaru 8.06 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Michał Bochynek, Arkadiusz Kruk (Speleoclub Wrocław); Sprzęt: BRIC4 SN: 0143. Korekta wcześniejszego m-004; dawny pomiar zachowano ze statusem odrzucony. Źródło otrzymane 2026-11-16: Zestawienie wiersz 3, Report wiersz 36. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane."
+        },
+        "source_ref": {
+          "before": "MJ:20261017:Zestawienie!B3:D3",
+          "after": "MJ:correction-2026-11-16:Zestawienie!C3:E3"
+        },
+        "verification_status": {
+          "before": "zweryfikowany",
+          "after": "nieweryfikowany"
+        },
+        "x_1992": {
+          "before": "152820.281071",
+          "after": "152818.930135"
+        },
+        "y_1992": {
+          "before": "565551.788179",
+          "after": "565551.673327"
+        }
+      },
+      "before": {
+        "object_id": "MTZ-0018",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Marmurowa",
+        "cave_id": "C-0184",
+        "measurement_id": "m-004",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-004",
+        "best_reason": "Zweryfikowany przez Marka Jędrzejczaka pomiar z 2026-10-17; przyjęty jako obowiązujący na polecenie Dariusza Lubomskiego z 2026-11-02.",
+        "lat": "49.2393777266",
+        "lon": "19.9008192585",
+        "x_1992": "152820.281071",
+        "y_1992": "565551.788179",
+        "elevation_m": "1767.35018365",
+        "source": "wlasne",
+        "source_ref": "MJ:20261017:Zestawienie!B3:D3",
+        "nr_inwent": "T.E-11.05",
+        "pig_id": "1472",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1472",
+        "tpn_globalid": "{C5BCC87D-2F7E-42B5-8433-F72C556B8618}",
+        "observed_at": "",
+        "observed_date": "2026-10-17",
+        "method": "siec_pomiarowa",
+        "verification_status": "zweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG sector: D. Miętusia - Zach.\nPIG source state year: 2013",
+        "measurement_notes": "Otwór domierzony BRIC4 od punktu GNSS. Obliczenia i weryfikacja: Marek Jędrzejczak; potwierdzenie D. Lubomskiego z 2026-11-02.",
+        "cave_length_m": "681",
+        "cave_depth_m": "126",
+        "cave_denivelation_m": "150.5",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 2, lp. 40",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "after": {
+        "object_id": "MTZ-0018",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Marmurowa",
+        "cave_id": "C-0184",
+        "measurement_id": "m-005",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-003",
+        "best_reason": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16.",
+        "lat": "49.2393655848",
+        "lon": "19.9008174593",
+        "x_1992": "152818.930135",
+        "y_1992": "565551.673327",
+        "elevation_m": "1767.35018365",
+        "source": "wlasne",
+        "source_ref": "MJ:correction-2026-11-16:Zestawienie!C3:E3",
+        "nr_inwent": "T.E-11.05",
+        "pig_id": "1472",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1472",
+        "tpn_globalid": "{C5BCC87D-2F7E-42B5-8433-F72C556B8618}",
+        "observed_at": "",
+        "observed_date": "2026-10-17",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG sector: D. Miętusia - Zach.\nPIG source state year: 2013",
+        "measurement_notes": "Otwór domierzony od punktu GNSS; długość domiaru 8.06 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Michał Bochynek, Arkadiusz Kruk (Speleoclub Wrocław); Sprzęt: BRIC4 SN: 0143. Korekta wcześniejszego m-004; dawny pomiar zachowano ze statusem odrzucony. Źródło otrzymane 2026-11-16: Zestawienie wiersz 3, Report wiersz 36. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane.",
+        "cave_length_m": "681",
+        "cave_depth_m": "126",
+        "cave_denivelation_m": "150.5",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 2, lp. 40",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "MTZ-0027",
+      "plans": [
+        "001495"
+      ],
+      "fields": {
+        "best_reason": {
+          "before": "Zweryfikowany przez Marka Jędrzejczaka pomiar z 2026-10-17; przyjęty jako obowiązujący na polecenie Dariusza Lubomskiego z 2026-11-02.",
+          "after": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16."
+        },
+        "computed_best_measurement_id": {
+          "before": "m-004",
+          "after": "m-003"
+        },
+        "lat": {
+          "before": "49.2382580851",
+          "after": "49.2382561419"
+        },
+        "lon": {
+          "before": "19.9022256061",
+          "after": "19.9022169601"
+        },
+        "measurement_id": {
+          "before": "m-004",
+          "after": "m-005"
+        },
+        "measurement_notes": {
+          "before": "Otwór domierzony BRIC4 od punktu GNSS. Obliczenia i weryfikacja: Marek Jędrzejczak; potwierdzenie D. Lubomskiego z 2026-11-02.",
+          "after": "Otwór domierzony od punktu GNSS; długość domiaru 5.69 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Michał Bochynek, Arkadiusz Kruk (Speleoclub Wrocław); Sprzęt: BRIC4 SN: 0143. Korekta wcześniejszego m-004; dawny pomiar zachowano ze statusem odrzucony. Źródło otrzymane 2026-11-16: Zestawienie wiersz 6, Report wiersz 130. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane."
+        },
+        "source_ref": {
+          "before": "MJ:20261017:Zestawienie!B6:D6",
+          "after": "MJ:correction-2026-11-16:Zestawienie!C6:E6"
+        },
+        "verification_status": {
+          "before": "zweryfikowany",
+          "after": "nieweryfikowany"
+        },
+        "x_1992": {
+          "before": "152697.07003",
+          "after": "152696.846576"
+        },
+        "y_1992": {
+          "before": "565655.609802",
+          "after": "565654.983206"
+        }
+      },
+      "before": {
+        "object_id": "MTZ-0027",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Mała w Mułowej",
+        "cave_id": "C-0341",
+        "measurement_id": "m-004",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-004",
+        "best_reason": "Zweryfikowany przez Marka Jędrzejczaka pomiar z 2026-10-17; przyjęty jako obowiązujący na polecenie Dariusza Lubomskiego z 2026-11-02.",
+        "lat": "49.2382580851",
+        "lon": "19.9022256061",
+        "x_1992": "152697.07003",
+        "y_1992": "565655.609802",
+        "elevation_m": "1752.74137589",
+        "source": "wlasne",
+        "source_ref": "MJ:20261017:Zestawienie!B6:D6",
+        "nr_inwent": "T.E-11.18",
+        "pig_id": "1495",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1495",
+        "tpn_globalid": "{23287A45-D91F-46D7-A9B2-2C6EBFDA9764}",
+        "observed_at": "",
+        "observed_date": "2026-10-17",
+        "method": "siec_pomiarowa",
+        "verification_status": "zweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG sector: D. Miętusia - Zach.\nPIG source state year: 2013",
+        "measurement_notes": "Otwór domierzony BRIC4 od punktu GNSS. Obliczenia i weryfikacja: Marek Jędrzejczak; potwierdzenie D. Lubomskiego z 2026-11-02.",
+        "cave_length_m": "3863",
+        "cave_depth_m": "555",
+        "cave_denivelation_m": "555",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 2, lp. 43",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "after": {
+        "object_id": "MTZ-0027",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia Mała w Mułowej",
+        "cave_id": "C-0341",
+        "measurement_id": "m-005",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-003",
+        "best_reason": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16.",
+        "lat": "49.2382561419",
+        "lon": "19.9022169601",
+        "x_1992": "152696.846576",
+        "y_1992": "565654.983206",
+        "elevation_m": "1752.74137589",
+        "source": "wlasne",
+        "source_ref": "MJ:correction-2026-11-16:Zestawienie!C6:E6",
+        "nr_inwent": "T.E-11.18",
+        "pig_id": "1495",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1495",
+        "tpn_globalid": "{23287A45-D91F-46D7-A9B2-2C6EBFDA9764}",
+        "observed_at": "",
+        "observed_date": "2026-10-17",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG sector: D. Miętusia - Zach.\nPIG source state year: 2013",
+        "measurement_notes": "Otwór domierzony od punktu GNSS; długość domiaru 5.69 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Michał Bochynek, Arkadiusz Kruk (Speleoclub Wrocław); Sprzęt: BRIC4 SN: 0143. Korekta wcześniejszego m-004; dawny pomiar zachowano ze statusem odrzucony. Źródło otrzymane 2026-11-16: Zestawienie wiersz 6, Report wiersz 130. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane.",
+        "cave_length_m": "3863",
+        "cave_depth_m": "555",
+        "cave_denivelation_m": "555",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 2, lp. 43",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "MTZ-0055",
+      "plans": [
+        "001471"
+      ],
+      "fields": {
+        "best_reason": {
+          "before": "Zweryfikowany przez Marka Jędrzejczaka pomiar z 2026-10-17; przyjęty jako obowiązujący na polecenie Dariusza Lubomskiego z 2026-11-02.",
+          "after": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16."
+        },
+        "computed_best_measurement_id": {
+          "before": "m-003",
+          "after": "m-002"
+        },
+        "lat": {
+          "before": "49.2386946914",
+          "after": "49.2386986616"
+        },
+        "lon": {
+          "before": "19.8992201392",
+          "after": "19.8992303599"
+        },
+        "measurement_id": {
+          "before": "m-003",
+          "after": "m-004"
+        },
+        "measurement_notes": {
+          "before": "Otwór domierzony BRIC4 od punktu GNSS. Obliczenia i weryfikacja: Marek Jędrzejczak; potwierdzenie D. Lubomskiego z 2026-11-02.",
+          "after": "Otwór domierzony od punktu GNSS; długość domiaru 9.95 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Michał Bochynek, Arkadiusz Kruk, Weronika Garlińska (Speleoclub Wrocław); Sprzęt: BRIC4 SN: 0143. Korekta wcześniejszego m-003; dawny pomiar zachowano ze statusem odrzucony. Źródło otrzymane 2026-11-16: Zestawienie wiersz 4, Report wiersz 68. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane."
+        },
+        "source_ref": {
+          "before": "MJ:20261017:Zestawienie!B4:D4",
+          "after": "MJ:correction-2026-11-16:Zestawienie!C4:E4"
+        },
+        "verification_status": {
+          "before": "zweryfikowany",
+          "after": "nieweryfikowany"
+        },
+        "x_1992": {
+          "before": "152742.987638",
+          "after": "152743.437705"
+        },
+        "y_1992": {
+          "before": "565436.325582",
+          "after": "565437.06409"
+        }
+      },
+      "before": {
+        "object_id": "MTZ-0055",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia w Szerokiem",
+        "cave_id": "C-0728",
+        "measurement_id": "m-003",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-003",
+        "best_reason": "Zweryfikowany przez Marka Jędrzejczaka pomiar z 2026-10-17; przyjęty jako obowiązujący na polecenie Dariusza Lubomskiego z 2026-11-02.",
+        "lat": "49.2386946914",
+        "lon": "19.8992201392",
+        "x_1992": "152742.987638",
+        "y_1992": "565436.325582",
+        "elevation_m": "1828.54360463",
+        "source": "wlasne",
+        "source_ref": "MJ:20261017:Zestawienie!B4:D4",
+        "nr_inwent": "T.E-11.04",
+        "pig_id": "1471",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1471",
+        "tpn_globalid": "{A7462111-5667-464E-AC98-6191F66412C5}",
+        "observed_at": "",
+        "observed_date": "2026-10-17",
+        "method": "siec_pomiarowa",
+        "verification_status": "zweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG aliases: Jaskinia w Szerokim, W Szerokim\nPIG sector: D. Miętusia - Zach.\nPIG source state year: 2010",
+        "measurement_notes": "Otwór domierzony BRIC4 od punktu GNSS. Obliczenia i weryfikacja: Marek Jędrzejczak; potwierdzenie D. Lubomskiego z 2026-11-02.",
+        "cave_length_m": "40",
+        "cave_depth_m": "13.5",
+        "cave_denivelation_m": "13.5",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 2, lp. 38",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "after": {
+        "object_id": "MTZ-0055",
+        "category": "jaskinia_otwor",
+        "name_local": "Jaskinia w Szerokiem",
+        "cave_id": "C-0728",
+        "measurement_id": "m-004",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-002",
+        "best_reason": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16.",
+        "lat": "49.2386986616",
+        "lon": "19.8992303599",
+        "x_1992": "152743.437705",
+        "y_1992": "565437.06409",
+        "elevation_m": "1828.54360463",
+        "source": "wlasne",
+        "source_ref": "MJ:correction-2026-11-16:Zestawienie!C4:E4",
+        "nr_inwent": "T.E-11.04",
+        "pig_id": "1471",
+        "pig_url": "https://jaskiniepolski.pgi.gov.pl/Details/Information/1471",
+        "tpn_globalid": "{A7462111-5667-464E-AC98-6191F66412C5}",
+        "observed_at": "",
+        "observed_date": "2026-10-17",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from PIG source record after operator review.",
+        "cave_notes": "PIG aliases: Jaskinia w Szerokim, W Szerokim\nPIG sector: D. Miętusia - Zach.\nPIG source state year: 2010",
+        "measurement_notes": "Otwór domierzony od punktu GNSS; długość domiaru 9.95 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Michał Bochynek, Arkadiusz Kruk, Weronika Garlińska (Speleoclub Wrocław); Sprzęt: BRIC4 SN: 0143. Korekta wcześniejszego m-003; dawny pomiar zachowano ze statusem odrzucony. Źródło otrzymane 2026-11-16: Zestawienie wiersz 4, Report wiersz 68. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane.",
+        "cave_length_m": "40",
+        "cave_depth_m": "13.5",
+        "cave_denivelation_m": "13.5",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 2, lp. 38",
+        "system_cave_id": "",
+        "cave_system_name": "",
+        "system_length_m": "",
+        "system_depth_m": "",
+        "system_denivelation_m": "",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": ""
+      },
+      "position_changed": true
+    },
+    {
+      "object_id": "MTZ-0066",
+      "plans": [],
+      "fields": {
+        "best_reason": {
+          "before": "Współrzędne Wojciecha Rolińskiego lepiej odpowiadają podnóżu ściany na fotomapie i NMT TPN niż orientacyjny punkt TPN. Wysokość gruntu z powtarzalnego odczytu NMT TPN; wysokość samego otworu do weryfikacji.",
+          "after": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16."
+        },
+        "elevation_m": {
+          "before": "1446.8",
+          "after": "1454.73024774"
+        },
+        "lat": {
+          "before": "49.2407333333",
+          "after": "49.2406601284"
+        },
+        "lon": {
+          "before": "19.90425",
+          "after": "19.9042773863"
+        },
+        "measurement_id": {
+          "before": "m-003",
+          "after": "m-004"
+        },
+        "measurement_notes": {
+          "before": "Współrzędne Wojciecha Rolińskiego z m-002; wysokość gruntu 1446.8 m n.p.m. według legendy TPN, odczyt NMT 2026-10-22: https://gis.tpn.pl/server/rest/services/Topografia___wysoko%C5%9Bci_MIL1/MapServer Model nmt_05m_mggp_2019, nalot 14-15.10.2019; datum i dokładność pionowa nieznane, najnowszość niepotwierdzona. Wysokość samego otworu do weryfikacji. Dla porównania: około 1455 m wg Nowak (2023), s. 87, bez podanej metody wyznaczenia: https://kp.org.pl/images/pp/artyku%C5%82y_od_2019/1_2023_XXXIV_1/Nowak_2023_Nietoperze_Ptasia%20Studnia_Tatry.pdf observed_date oznacza datę ustalenia, nie pomiaru terenowego.",
+          "after": "Otwór domierzony od punktu GNSS; długość domiaru 10.73 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Michał Bochynek, Sławomir Boruta (Speleoclub Wrocław); Sprzęt: BRIC4 SN: 0143. Źródło otrzymane 2026-11-16: Zestawienie wiersz 15, Report wiersz 366. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane."
+        },
+        "method": {
+          "before": "ustalenie",
+          "after": "siec_pomiarowa"
+        },
+        "observed_date": {
+          "before": "2026-10-22",
+          "after": "2026-11-12"
+        },
+        "source": {
+          "before": "inne",
+          "after": "wlasne"
+        },
+        "source_ref": {
+          "before": "WR:2026-10-19; TPN:NMT:nmt_05m_mggp_2019",
+          "after": "MJ:correction-2026-11-16:Zestawienie!C15:E15"
+        },
+        "x_1992": {
+          "before": "152973.914671",
+          "after": "152965.802901"
+        },
+        "y_1992": {
+          "before": "565799.635944",
+          "after": "565801.726011"
+        }
+      },
+      "before": {
+        "object_id": "MTZ-0066",
+        "category": "jaskinia_otwor",
+        "name_local": "Ptasia Studnia dolny otwór",
+        "cave_id": "C-0997",
+        "measurement_id": "m-003",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-001",
+        "best_reason": "Współrzędne Wojciecha Rolińskiego lepiej odpowiadają podnóżu ściany na fotomapie i NMT TPN niż orientacyjny punkt TPN. Wysokość gruntu z powtarzalnego odczytu NMT TPN; wysokość samego otworu do weryfikacji.",
+        "lat": "49.2407333333",
+        "lon": "19.90425",
+        "x_1992": "152973.914671",
+        "y_1992": "565799.635944",
+        "elevation_m": "1446.8",
+        "source": "inne",
+        "source_ref": "WR:2026-10-19; TPN:NMT:nmt_05m_mggp_2019",
+        "nr_inwent": "",
+        "pig_id": "",
+        "pig_url": "",
+        "tpn_globalid": "{964DB8E1-2BE8-4126-A9D2-2DA687C5CD0D}",
+        "observed_at": "",
+        "observed_date": "2026-10-22",
+        "method": "ustalenie",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from TPN source record after operator review.",
+        "cave_notes": "TPN length: 0\nTPN depth: 0\nTPN denivelation: 0\nTPN notes: lokalizacja orientacyjna\nPrzynależność do Systemu Ptasiej podaje pole SYSTEM w archiwum TPN dla GLOBALID {964DB8E1-2BE8-4126-A9D2-2DA687C5CD0D} (obiekt MTZ-0066).",
+        "measurement_notes": "Współrzędne Wojciecha Rolińskiego z m-002; wysokość gruntu 1446.8 m n.p.m. według legendy TPN, odczyt NMT 2026-10-22: https://gis.tpn.pl/server/rest/services/Topografia___wysoko%C5%9Bci_MIL1/MapServer Model nmt_05m_mggp_2019, nalot 14-15.10.2019; datum i dokładność pionowa nieznane, najnowszość niepotwierdzona. Wysokość samego otworu do weryfikacji. Dla porównania: około 1455 m wg Nowak (2023), s. 87, bez podanej metody wyznaczenia: https://kp.org.pl/images/pp/artyku%C5%82y_od_2019/1_2023_XXXIV_1/Nowak_2023_Nietoperze_Ptasia%20Studnia_Tatry.pdf observed_date oznacza datę ustalenia, nie pomiaru terenowego.",
+        "cave_length_m": "",
+        "cave_depth_m": "",
+        "cave_denivelation_m": "",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "",
+        "system_cave_id": "C-1049",
+        "cave_system_name": "System Ptasiej",
+        "system_length_m": "7330",
+        "system_depth_m": "352",
+        "system_denivelation_m": "352",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 3, lp. 68"
+      },
+      "after": {
+        "object_id": "MTZ-0066",
+        "category": "jaskinia_otwor",
+        "name_local": "Ptasia Studnia dolny otwór",
+        "cave_id": "C-0997",
+        "measurement_id": "m-004",
+        "best_mode": "manual",
+        "computed_best_measurement_id": "m-001",
+        "best_reason": "Wynik GNSS z domiarem po korekcie znaku uchylenia magnetycznego, przyjęty jako Best decyzją Dariusza Lubomskiego z 2026-11-16.",
+        "lat": "49.2406601284",
+        "lon": "19.9042773863",
+        "x_1992": "152965.802901",
+        "y_1992": "565801.726011",
+        "elevation_m": "1454.73024774",
+        "source": "wlasne",
+        "source_ref": "MJ:correction-2026-11-16:Zestawienie!C15:E15",
+        "nr_inwent": "",
+        "pig_id": "",
+        "pig_url": "",
+        "tpn_globalid": "{964DB8E1-2BE8-4126-A9D2-2DA687C5CD0D}",
+        "observed_at": "",
+        "observed_date": "2026-11-12",
+        "method": "siec_pomiarowa",
+        "verification_status": "nieweryfikowany",
+        "horizontal_accuracy_m": "",
+        "vertical_accuracy_m": "",
+        "object_notes": "Imported from TPN source record after operator review.",
+        "cave_notes": "TPN length: 0\nTPN depth: 0\nTPN denivelation: 0\nTPN notes: lokalizacja orientacyjna\nPrzynależność do Systemu Ptasiej podaje pole SYSTEM w archiwum TPN dla GLOBALID {964DB8E1-2BE8-4126-A9D2-2DA687C5CD0D} (obiekt MTZ-0066).",
+        "measurement_notes": "Otwór domierzony od punktu GNSS; długość domiaru 10.73 m. Poprawny znak: azymut PL-1992 = azymut magnetyczny + (deklinacja - zbieżność południków). Obliczył Marek Jędrzejczak (Speleoclub Wrocław). Pomiary; Zespół: Michał Bochynek, Sławomir Boruta (Speleoclub Wrocław); Sprzęt: BRIC4 SN: 0143. Źródło otrzymane 2026-11-16: Zestawienie wiersz 15, Report wiersz 366. Przyjęty do Best przez Dariusza Lubomskiego 2026-11-16. Kontrola rachunkowa źródła nie jest nową weryfikacją terenową; status pozostaje nieweryfikowany. Deklaracja źródła: dokładność GNSS < 0,10 m; nie określa osobno dokładności poziomej i pionowej końcowego punktu otworu. Obie dokładności pozostają nieznane.",
+        "cave_length_m": "",
+        "cave_depth_m": "",
+        "cave_denivelation_m": "",
+        "cave_denivelation_qualifier": "",
+        "cave_morphometry_source_ref": "",
+        "system_cave_id": "C-1049",
+        "cave_system_name": "System Ptasiej",
+        "system_length_m": "7330",
+        "system_depth_m": "352",
+        "system_denivelation_m": "352",
+        "system_denivelation_qualifier": "",
+        "system_morphometry_source_ref": "KKTJ 2026-07, PDF 08, s. 3, lp. 68"
+      },
+      "position_changed": true
+    }
+  ],
+  "before_source": {
+    "schema_version": 1,
+    "repository": "dlubom/gps-kataster-obiektow-tatr",
+    "release": "v2.1.2",
+    "asset": "best-measurements.csv",
+    "sha256": "61874fca2441cc364c3f09d30a56210e863c595fddad417d1bc7e694d72edcf6",
+    "snapshot": "best-measurements-v2.1.2.csv"
+  },
+  "after_source": {
+    "schema_version": 1,
+    "repository": "dlubom/gps-kataster-obiektow-tatr",
+    "release": "v2.1.3",
+    "asset": "best-measurements.csv",
+    "sha256": "91ab60c62fbfd726da1ccf5788f3c57753153b3103b09e461365af574cd57264",
+    "snapshot": "best-measurements-v2.1.3.csv"
+  },
+  "geometry": {
+    "interpretation": "Przeliczenie tym samym generatorem; zmiana współrzędnych, bez naprawy rotacji.",
+    "generator_sha256": "87c97bf3b480894d22084f6859e31111abdff1437a500838c49478f5be3a1337",
+    "plans": [
+      {
+        "dir_id": "000491",
+        "before": {
+          "tfw_text": "0.0632961261\n-0.0007654722\n-0.0007654722\n-0.0632961261\n566365.249667\n152819.918466\n",
+          "parameters": {
+            "A": 0.0632961261,
+            "D": -0.0007654722,
+            "B": -0.0007654722,
+            "E": -0.0632961261,
+            "C": 566365.249667,
+            "F": 152819.918466
+          }
+        },
+        "after": {
+          "tfw_text": "0.0632961261\n-0.0007654722\n-0.0007654722\n-0.0632961261\n566365.022412\n152819.857597\n",
+          "parameters": {
+            "A": 0.0632961261,
+            "D": -0.0007654722,
+            "B": -0.0007654722,
+            "E": -0.0632961261,
+            "C": 566365.022412,
+            "F": 152819.857597
+          }
+        },
+        "delta": {
+          "entrance_dx_m": -0.22725500003434718,
+          "entrance_dy_m": -0.06086900000809692,
+          "entrance_distance_m": 0.23526553126753788,
+          "rotation_deg": 0.0,
+          "scale_m_per_pixel": 0.0
+        },
+        "scale_input_changed": false,
+        "north_input_changed": false
+      },
+      {
+        "dir_id": "001187",
+        "before": {
+          "tfw_text": "0.0422982759\n-0.0004960476\n-0.0004960476\n-0.0422982759\n564918.172929\n153609.674231\n",
+          "parameters": {
+            "A": 0.0422982759,
+            "D": -0.0004960476,
+            "B": -0.0004960476,
+            "E": -0.0422982759,
+            "C": 564918.172929,
+            "F": 153609.674231
+          }
+        },
+        "after": {
+          "tfw_text": "0.0422982759\n-0.0004960476\n-0.0004960476\n-0.0422982759\n564907.868611\n153602.860338\n",
+          "parameters": {
+            "A": 0.0422982759,
+            "D": -0.0004960476,
+            "B": -0.0004960476,
+            "E": -0.0422982759,
+            "C": 564907.868611,
+            "F": 153602.860338
+          }
+        },
+        "delta": {
+          "entrance_dx_m": -10.304317999980412,
+          "entrance_dy_m": -6.813893000013195,
+          "entrance_distance_m": 12.353465394793039,
+          "rotation_deg": 0.0,
+          "scale_m_per_pixel": 0.0
+        },
+        "scale_input_changed": false,
+        "north_input_changed": false
+      },
+      {
+        "dir_id": "001299",
+        "before": {
+          "tfw_text": "0.0281636672\n-0.0003163442\n-0.0003163442\n-0.0281636672\n561308.963187\n153245.335639\n",
+          "parameters": {
+            "A": 0.0281636672,
+            "D": -0.0003163442,
+            "B": -0.0003163442,
+            "E": -0.0281636672,
+            "C": 561308.963187,
+            "F": 153245.335639
+          }
+        },
+        "after": {
+          "tfw_text": "0.0281636672\n-0.0003163442\n-0.0003163442\n-0.0281636672\n561305.710958\n153243.748761\n",
+          "parameters": {
+            "A": 0.0281636672,
+            "D": -0.0003163442,
+            "B": -0.0003163442,
+            "E": -0.0281636672,
+            "C": 561305.710958,
+            "F": 153243.748761
+          }
+        },
+        "delta": {
+          "entrance_dx_m": -3.2522289999760687,
+          "entrance_dy_m": -1.5868780000018887,
+          "entrance_distance_m": 3.618725639665894,
+          "rotation_deg": 0.0,
+          "scale_m_per_pixel": 0.0
+        },
+        "scale_input_changed": false,
+        "north_input_changed": false
+      },
+      {
+        "dir_id": "001459-pza-2024",
+        "before": {
+          "tfw_text": "0.0260059724\n0.0003085130\n0.0003085130\n-0.0260059724\n565122.194163\n153412.950714\n",
+          "parameters": {
+            "A": 0.0260059724,
+            "D": 0.000308513,
+            "B": 0.000308513,
+            "E": -0.0260059724,
+            "C": 565122.194163,
+            "F": 153412.950714
+          }
+        },
+        "after": {
+          "tfw_text": "0.0260059724\n0.0003085130\n0.0003085130\n-0.0260059724\n565121.991665\n153412.301039\n",
+          "parameters": {
+            "A": 0.0260059724,
+            "D": 0.000308513,
+            "B": 0.000308513,
+            "E": -0.0260059724,
+            "C": 565121.991665,
+            "F": 153412.301039
+          }
+        },
+        "delta": {
+          "entrance_dx_m": -0.20249799999874085,
+          "entrance_dy_m": -0.6496749999932945,
+          "entrance_distance_m": 0.6805020540893152,
+          "rotation_deg": 0.0,
+          "scale_m_per_pixel": 0.0
+        },
+        "scale_input_changed": false,
+        "north_input_changed": false
+      },
+      {
+        "dir_id": "001471",
+        "before": {
+          "tfw_text": "0.0170408103\n-0.0001621189\n-0.0001621189\n-0.0170408103\n565424.205374\n152759.501438\n",
+          "parameters": {
+            "A": 0.0170408103,
+            "D": -0.0001621189,
+            "B": -0.0001621189,
+            "E": -0.0170408103,
+            "C": 565424.205374,
+            "F": 152759.501438
+          }
+        },
+        "after": {
+          "tfw_text": "0.0170408103\n-0.0001621189\n-0.0001621189\n-0.0170408103\n565424.943881\n152759.951506\n",
+          "parameters": {
+            "A": 0.0170408103,
+            "D": -0.0001621189,
+            "B": -0.0001621189,
+            "E": -0.0170408103,
+            "C": 565424.943881,
+            "F": 152759.951506
+          }
+        },
+        "delta": {
+          "entrance_dx_m": 0.7385070000309497,
+          "entrance_dy_m": 0.45006800000555813,
+          "entrance_distance_m": 0.8648432191580832,
+          "rotation_deg": 0.0,
+          "scale_m_per_pixel": 0.0
+        },
+        "scale_input_changed": false,
+        "north_input_changed": false
+      },
+      {
+        "dir_id": "001472",
+        "before": {
+          "tfw_text": "0.0203859100\n-0.0002431326\n-0.0002431326\n-0.0203859100\n565504.960276\n152831.862772\n",
+          "parameters": {
+            "A": 0.02038591,
+            "D": -0.0002431326,
+            "B": -0.0002431326,
+            "E": -0.02038591,
+            "C": 565504.960276,
+            "F": 152831.862772
+          }
+        },
+        "after": {
+          "tfw_text": "0.0203859100\n-0.0002431326\n-0.0002431326\n-0.0203859100\n565504.845422\n152830.511839\n",
+          "parameters": {
+            "A": 0.02038591,
+            "D": -0.0002431326,
+            "B": -0.0002431326,
+            "E": -0.02038591,
+            "C": 565504.845422,
+            "F": 152830.511839
+          }
+        },
+        "delta": {
+          "entrance_dx_m": -0.11485399992670864,
+          "entrance_dy_m": -1.3509329999797046,
+          "entrance_distance_m": 1.3558065539498358,
+          "rotation_deg": 0.0,
+          "scale_m_per_pixel": 0.0
+        },
+        "scale_input_changed": false,
+        "north_input_changed": false
+      },
+      {
+        "dir_id": "001478",
+        "before": {
+          "tfw_text": "0.0423161072\n-0.0005020951\n-0.0005020951\n-0.0423161072\n566010.013530\n152806.425297\n",
+          "parameters": {
+            "A": 0.0423161072,
+            "D": -0.0005020951,
+            "B": -0.0005020951,
+            "E": -0.0423161072,
+            "C": 566010.01353,
+            "F": 152806.425297
+          }
+        },
+        "after": {
+          "tfw_text": "0.0423161072\n-0.0005020951\n-0.0005020951\n-0.0423161072\n566008.489136\n152806.586403\n",
+          "parameters": {
+            "A": 0.0423161072,
+            "D": -0.0005020951,
+            "B": -0.0005020951,
+            "E": -0.0423161072,
+            "C": 566008.489136,
+            "F": 152806.586403
+          }
+        },
+        "delta": {
+          "entrance_dx_m": -1.5243939999490976,
+          "entrance_dy_m": 0.1611059999850113,
+          "entrance_distance_m": 1.5328836258216016,
+          "rotation_deg": 0.0,
+          "scale_m_per_pixel": 0.0
+        },
+        "scale_input_changed": false,
+        "north_input_changed": false
+      },
+      {
+        "dir_id": "001495",
+        "before": {
+          "tfw_text": "0.0316681723\n-0.0003777282\n-0.0003777282\n-0.0316681723\n564925.112644\n152965.362310\n",
+          "parameters": {
+            "A": 0.0316681723,
+            "D": -0.0003777282,
+            "B": -0.0003777282,
+            "E": -0.0316681723,
+            "C": 564925.112644,
+            "F": 152965.36231
+          }
+        },
+        "after": {
+          "tfw_text": "0.0316681723\n-0.0003777282\n-0.0003777282\n-0.0316681723\n564924.486052\n152965.138849\n",
+          "parameters": {
+            "A": 0.0316681723,
+            "D": -0.0003777282,
+            "B": -0.0003777282,
+            "E": -0.0316681723,
+            "C": 564924.486052,
+            "F": 152965.138849
+          }
+        },
+        "delta": {
+          "entrance_dx_m": -0.62659200001508,
+          "entrance_dy_m": -0.2234609999868553,
+          "entrance_distance_m": 0.6652460845416704,
+          "rotation_deg": 0.0,
+          "scale_m_per_pixel": 0.0
+        },
+        "scale_input_changed": false,
+        "north_input_changed": false
+      },
+      {
+        "dir_id": "001511",
+        "before": {
+          "tfw_text": "0.0102091196\n-0.0001215272\n-0.0001215272\n-0.0102091196\n565516.148285\n152739.017539\n",
+          "parameters": {
+            "A": 0.0102091196,
+            "D": -0.0001215272,
+            "B": -0.0001215272,
+            "E": -0.0102091196,
+            "C": 565516.148285,
+            "F": 152739.017539
+          }
+        },
+        "after": {
+          "tfw_text": "0.0102091196\n-0.0001215272\n-0.0001215272\n-0.0102091196\n565516.250024\n152739.241807\n",
+          "parameters": {
+            "A": 0.0102091196,
+            "D": -0.0001215272,
+            "B": -0.0001215272,
+            "E": -0.0102091196,
+            "C": 565516.250024,
+            "F": 152739.241807
+          }
+        },
+        "delta": {
+          "entrance_dx_m": 0.10173899994697422,
+          "entrance_dy_m": 0.22426800001994707,
+          "entrance_distance_m": 0.24626603489551172,
+          "rotation_deg": 0.0,
+          "scale_m_per_pixel": 0.0
+        },
+        "scale_input_changed": false,
+        "north_input_changed": false
+      },
+      {
+        "dir_id": "001547",
+        "before": {
+          "tfw_text": "0.0259048667\n-0.0003111879\n-0.0003111879\n-0.0259048667\n566590.832690\n152855.023351\n",
+          "parameters": {
+            "A": 0.0259048667,
+            "D": -0.0003111879,
+            "B": -0.0003111879,
+            "E": -0.0259048667,
+            "C": 566590.83269,
+            "F": 152855.023351
+          }
+        },
+        "after": {
+          "tfw_text": "0.0259048667\n-0.0003111879\n-0.0003111879\n-0.0259048667\n566590.472421\n152855.182772\n",
+          "parameters": {
+            "A": 0.0259048667,
+            "D": -0.0003111879,
+            "B": -0.0003111879,
+            "E": -0.0259048667,
+            "C": 566590.472421,
+            "F": 152855.182772
+          }
+        },
+        "delta": {
+          "entrance_dx_m": -0.3602689999388531,
+          "entrance_dy_m": 0.1594209999893792,
+          "entrance_distance_m": 0.393965490309183,
+          "rotation_deg": 0.0,
+          "scale_m_per_pixel": 0.0
+        },
+        "scale_input_changed": false,
+        "north_input_changed": false
+      },
+      {
+        "dir_id": "001548",
+        "before": {
+          "tfw_text": "0.0051076610\n-0.0000618059\n-0.0000618059\n-0.0051076610\n566601.900756\n152829.994875\n",
+          "parameters": {
+            "A": 0.005107661,
+            "D": -6.18059e-05,
+            "B": -6.18059e-05,
+            "E": -0.005107661,
+            "C": 566601.900756,
+            "F": 152829.994875
+          }
+        },
+        "after": {
+          "tfw_text": "0.0051076610\n-0.0000618059\n-0.0000618059\n-0.0051076610\n566602.076077\n152829.859181\n",
+          "parameters": {
+            "A": 0.005107661,
+            "D": -6.18059e-05,
+            "B": -6.18059e-05,
+            "E": -0.005107661,
+            "C": 566602.076077,
+            "F": 152829.859181
+          }
+        },
+        "delta": {
+          "entrance_dx_m": 0.17532100004609674,
+          "entrance_dy_m": -0.13569399999687448,
+          "entrance_distance_m": 0.2216987025048077,
+          "rotation_deg": 0.0,
+          "scale_m_per_pixel": 0.0
+        },
+        "scale_input_changed": false,
+        "north_input_changed": false
+      },
+      {
+        "dir_id": "001549",
+        "before": {
+          "tfw_text": "0.0051097447\n-0.0000621881\n-0.0000621881\n-0.0051097447\n566604.542235\n152824.257468\n",
+          "parameters": {
+            "A": 0.0051097447,
+            "D": -6.21881e-05,
+            "B": -6.21881e-05,
+            "E": -0.0051097447,
+            "C": 566604.542235,
+            "F": 152824.257468
+          }
+        },
+        "after": {
+          "tfw_text": "0.0051097447\n-0.0000621881\n-0.0000621881\n-0.0051097447\n566603.850109\n152823.869968\n",
+          "parameters": {
+            "A": 0.0051097447,
+            "D": -6.21881e-05,
+            "B": -6.21881e-05,
+            "E": -0.0051097447,
+            "C": 566603.850109,
+            "F": 152823.869968
+          }
+        },
+        "delta": {
+          "entrance_dx_m": -0.6921259999508038,
+          "entrance_dy_m": -0.3874999999825377,
+          "entrance_distance_m": 0.7932179081402329,
+          "rotation_deg": 0.0,
+          "scale_m_per_pixel": 0.0
+        },
+        "scale_input_changed": false,
+        "north_input_changed": false
+      },
+      {
+        "dir_id": "001665",
+        "before": {
+          "tfw_text": "0.0846676689\n-0.0010358459\n-0.0010358459\n-0.0846676689\n564199.939250\n152320.026109\n",
+          "parameters": {
+            "A": 0.0846676689,
+            "D": -0.0010358459,
+            "B": -0.0010358459,
+            "E": -0.0846676689,
+            "C": 564199.93925,
+            "F": 152320.026109
+          }
+        },
+        "after": {
+          "tfw_text": "0.0846676689\n-0.0010358459\n-0.0010358459\n-0.0846676689\n564204.234564\n152313.055691\n",
+          "parameters": {
+            "A": 0.0846676689,
+            "D": -0.0010358459,
+            "B": -0.0010358459,
+            "E": -0.0846676689,
+            "C": 564204.234564,
+            "F": 152313.055691
+          }
+        },
+        "delta": {
+          "entrance_dx_m": 4.295313999988139,
+          "entrance_dy_m": -6.970418000011705,
+          "entrance_distance_m": 8.187578973871414,
+          "rotation_deg": 0.0,
+          "scale_m_per_pixel": 0.0
+        },
+        "scale_input_changed": false,
+        "north_input_changed": false
+      }
+    ]
+  }
+}

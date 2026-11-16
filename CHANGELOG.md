@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.7.9 — GPS Kataster v2.1.3 (2026-11-16)
+
+- Przypięto zweryfikowany CSV z [GPS Kataster v2.1.3](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v2.1.3).
+- Przesunęło się 13 z 814 planów o 0,22–12,35 m, przy tej samej skali
+  i tym samym obrocie. Największe zmiany dotyczą Miętusiej Wyżniej (12,35 m),
+  Wysokiej (8,19 m) i Bańdziocha Kominiarskiego (3,62 m).
+- Niebieska Studnia i Jaskinia pod Wantą zachowały położenie mimo zmiany
+  rekordu pomiaru. Dokładność nowych punktów pozostaje nieznana.
+  [Raport wpływu](docs/reports/coordinate-source-v2.1.3-impact.json)
+
 ## v0.7.8 — GPS Kataster v2.1.2 (2026-11-12)
 
 - Przypięto zweryfikowany CSV z [GPS Kataster v2.1.2](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v2.1.2).

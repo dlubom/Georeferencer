@@ -52,7 +52,7 @@
       ]
     },
     {
-      "basis_sha256": "eaf54edf27920d59fc678f20cb61c967d66b2c78180113af9bcde33a3a9bcc11",
+      "basis_sha256": "15ed5d48921a4f1dc65ddb43cf3e4805f51763df5170a4e4c271da08cf5bd8f9",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "assumed",
@@ -77,7 +77,7 @@
       ]
     },
     {
-      "basis_sha256": "a5fe130b9ed430df4de1db5f5b2150198682722faa62b546de25cc00876ae4f8",
+      "basis_sha256": "054a265da429817389f96c4401c480d0333664418eb1806dba36bbae285beddf",
       "close_when": "Ręczne porównanie konkretnej uwagi z aktualnym obrazem, otworem i georeferencją oraz zapis rozstrzygnięcia ze źródłem.",
       "evidence": {
         "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania.",
@@ -7828,7 +7828,7 @@
       ]
     },
     {
-      "basis_sha256": "ca6a3386169098d4c45ee6ab10af68babaa1b82b6436fd9324763170c37f4c35",
+      "basis_sha256": "203fd789f713f0107e2527a0e6768552ba5fda81b84f23ff9e64e4c25b9993b7",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "unknown",
@@ -12303,7 +12303,7 @@
       ]
     },
     {
-      "basis_sha256": "476e98d6192ced848263ebfd2618b11c186f46a82d7414f84373b3bd7ff9fcd2",
+      "basis_sha256": "167adc4fb730042a786f16292316819853ec4a6acf19aad817ee5cf1f22907f8",
       "close_when": "Potwierdzenie symbolu i wybranego object_id na planie z dowodem oraz uzgodnieniem issue #3.",
       "evidence": {
         "alternative_object_id": "LEJ-0002",
@@ -12331,7 +12331,7 @@
       ]
     },
     {
-      "basis_sha256": "b528fd3a7de1bc23a1907a6d3f20fbcdbfee96ea58b8cd0bc2293f5c7d542c69",
+      "basis_sha256": "f3a5226cc1412827f69fcffcaaf6ef316ca4610347d63939976afaaf4809bb41",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "assumed",
@@ -12355,7 +12355,7 @@
       ]
     },
     {
-      "basis_sha256": "af9fe6dbf648954c84c7648bbdd8ab4582e24e081e13e64490d5353e6c862540",
+      "basis_sha256": "00d3258a0a59a5e7e1e92011050c3497e60fe8dbc383665720bf726a635e86a7",
       "close_when": "Ręczne porównanie konkretnej uwagi z aktualnym obrazem, otworem i georeferencją oraz zapis rozstrzygnięcia ze źródłem.",
       "evidence": {
         "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania.",
@@ -18352,7 +18352,7 @@
       ]
     },
     {
-      "basis_sha256": "1d54f75dc938fce0e39849ff5fcbef722d11047e13b0f2ad5b4d36ae9c1340d3",
+      "basis_sha256": "22e14452abf3462a5ad090434c7feae30d0784a6d6a2cfd9464c21d5720f91f2",
       "close_when": "Co najmniej 3 niezależne ważne pomiary albo udokumentowana ręczna interpretacja strzałki i decyzja orientacji.",
       "evidence": {
         "invalid_submission_ids": [],
@@ -18380,7 +18380,7 @@
       ]
     },
     {
-      "basis_sha256": "cb8c9acdc0297b0ed5132f0492b74d9e699d978c01fa6bea426ea0ad5f8acb8f",
+      "basis_sha256": "9a3d19ef5be3371dcf388c244e8a0db122c9a5bc7981ebebfe8b01201e9c40c1",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "unknown",
@@ -18405,7 +18405,7 @@
       ]
     },
     {
-      "basis_sha256": "bdda19c78fe1eec24c5bc53e9742d061c8bab9fa64fc20fcda3475a284ed4a83",
+      "basis_sha256": "a45203b8336eb2112cddd7e72d7bfd24bfbe6a7b37f15339a029132fe5739785",
       "close_when": "Co najmniej 3 niezależne ważne pomiary albo udokumentowana ręczna interpretacja strzałki i decyzja orientacji.",
       "evidence": {
         "invalid_submission_ids": [],
@@ -18433,7 +18433,7 @@
       ]
     },
     {
-      "basis_sha256": "45561730f87d7b69225c14c857845ddb145b7d840cc14ea4ceda585eb9c57d6a",
+      "basis_sha256": "e5e0fa29576843f08824ffa27dd3d17f7faff72a492316ca879f939b01ce4643",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "unknown",
@@ -18583,7 +18583,7 @@
       ]
     },
     {
-      "basis_sha256": "53f004c9f225607f73c48d15301352e47b5895e5ab088e1fed1b01488d197ef8",
+      "basis_sha256": "7cf6802f61b66ccabc33f66fe854b65d10196b417044e7fb17670cd258aa9ada",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "unknown",
@@ -19102,7 +19102,7 @@
       ]
     },
     {
-      "basis_sha256": "7ca20ade95770db0dbc30391d9399cd274344d52ef248b6594b5b8968da06f5d",
+      "basis_sha256": "ae8116d29d12048a723c70f0b44dca3448f47c1c8bb2df8c8027c8218caaf1be",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "assumed",
@@ -19127,7 +19127,7 @@
       ]
     },
     {
-      "basis_sha256": "069512ba14e7bb5e498d1cf8fb68029f4860fd9f100d8337017e7f4168545df9",
+      "basis_sha256": "15f27959fd6390e14fe826ed134ca5a6736328eca895aa187b5a65b13e8ff39c",
       "close_when": "Ręczne porównanie konkretnej uwagi z aktualnym obrazem, otworem i georeferencją oraz zapis rozstrzygnięcia ze źródłem.",
       "evidence": {
         "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania.",
@@ -19709,7 +19709,7 @@
       ]
     },
     {
-      "basis_sha256": "905bd5287e91d2732ccef4373e35e50b113e71dd299401ec2db362c9bdd4a260",
+      "basis_sha256": "f13c832aa1400565d2416bb566d625a54fd39e435cf47637b584e7c46ae831d6",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "assumed",
@@ -19734,7 +19734,7 @@
       ]
     },
     {
-      "basis_sha256": "d1e3f968a92170ffb408ec46b34fb513c769167a2d96fae89d87a577be5f7a05",
+      "basis_sha256": "21d04cd19db45bc9d1376c4f02d270a00f37da1d6645fc64e7ae7b8cf6d5c252",
       "close_when": "Ręczne porównanie konkretnej uwagi z aktualnym obrazem, otworem i georeferencją oraz zapis rozstrzygnięcia ze źródłem.",
       "evidence": {
         "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania.",
@@ -20538,7 +20538,7 @@
       ]
     },
     {
-      "basis_sha256": "c1bede43e147c6967186cc04691cb37a0014e7aaf255daf3317f6d42773e54cc",
+      "basis_sha256": "d9268dfeb3c209b98feda0ae4ab76f104829005ffe6047d5596eeb5fcf45fae4",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "unknown",
@@ -20614,7 +20614,7 @@
       ]
     },
     {
-      "basis_sha256": "646603ec663f0fbce64920e6797d189b2434e9695407d67335fc318063d139f5",
+      "basis_sha256": "d373c81f2e572c851e4e49dae333b3564fe23ed1665e46e832929c4d7e7a0bef",
       "close_when": "Co najmniej 3 niezależne ważne pomiary albo udokumentowana ręczna interpretacja strzałki i decyzja orientacji.",
       "evidence": {
         "invalid_submission_ids": [],
@@ -20642,7 +20642,7 @@
       ]
     },
     {
-      "basis_sha256": "c77d91365e3bb55565cf1935b1e83adfb5281c86bc896165b9725c64a64f7494",
+      "basis_sha256": "082ede250086a58731a4d4056545f6687f3928025d8a1a1faab38b6894fc67fa",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "unknown",
@@ -20667,7 +20667,7 @@
       ]
     },
     {
-      "basis_sha256": "ad3d85afabe59b0ca6f0a0d90d6e4b3e323fa812ab8e40a637fac4acbe33aa98",
+      "basis_sha256": "fea1f361807fbc98eb4ad21797fe8d3cf0b74f4b730856886f6cfa36a8ae7496",
       "close_when": "Ręczne porównanie konkretnej uwagi z aktualnym obrazem, otworem i georeferencją oraz zapis rozstrzygnięcia ze źródłem.",
       "evidence": {
         "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania.",
@@ -21200,7 +21200,7 @@
       ]
     },
     {
-      "basis_sha256": "394fbf99dc2bddef1b6dacf10d9d744c28e8c188aeba46693ac0e3511f279e67",
+      "basis_sha256": "cf3f36425531e93cbd68a8332c575146eb8eaee9b044eab335b58a5e20710981",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "unknown",
@@ -21225,7 +21225,7 @@
       ]
     },
     {
-      "basis_sha256": "0ce07fc8676db3a2bacb2ffbfc4bdfa5fae544f878b6c2c16aa9bb67774fbe66",
+      "basis_sha256": "9345c91549f364feb9b143b8c2b6af9d133b72748a823bda3c185c80655cd3f7",
       "close_when": "Co najmniej 3 niezależne ważne pomiary albo udokumentowana ręczna interpretacja strzałki i decyzja orientacji.",
       "evidence": {
         "invalid_submission_ids": [],
@@ -21253,7 +21253,7 @@
       ]
     },
     {
-      "basis_sha256": "f430ccb9a97134e91f53f84fcf66ba841f5db4ab95db8ec761ae854656d293ca",
+      "basis_sha256": "4e9df5af16f792f278c2e3f1668931cf4794e69b1d3c1c5b5315ac2234e4bd7d",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "unknown",
@@ -21278,7 +21278,7 @@
       ]
     },
     {
-      "basis_sha256": "4224e6da1a18c7780f5e33b89ea6a43ef63584dfb87935c976d29e16c4afef24",
+      "basis_sha256": "8b706ee2c7663da4e808f7465058227f1ddfd49035a46b536f0076a1fe9c6e7a",
       "close_when": "Co najmniej 3 niezależne ważne pomiary albo udokumentowana ręczna interpretacja strzałki i decyzja orientacji.",
       "evidence": {
         "invalid_submission_ids": [],
@@ -21306,7 +21306,7 @@
       ]
     },
     {
-      "basis_sha256": "5210e15cc0cfd01bd8b453a890a326d5a701c51c8dc7fc459370c1e3078183fe",
+      "basis_sha256": "f95a3ac33d1b8270593987729483124ebb642c217145ed8fbf0eacc8428e323f",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "unknown",
@@ -25105,7 +25105,7 @@
       ]
     },
     {
-      "basis_sha256": "6c2e627daa6f96258b429b5b2875c83648a08317db416cbe924aa6937e3af5bf",
+      "basis_sha256": "545e53f2d1c0a37bb60d7f8a6836218043880895f0386a0848bc0a98810d91d4",
       "close_when": "Co najmniej 3 niezależne ważne pomiary albo udokumentowana ręczna interpretacja strzałki i decyzja orientacji.",
       "evidence": {
         "invalid_submission_ids": [],
@@ -25132,7 +25132,7 @@
       ]
     },
     {
-      "basis_sha256": "20b83f471cdb13085d662abdca4930a87b7476611f0d2f1abfc1361b1bde3843",
+      "basis_sha256": "ad96599514e0a2d282089fd4db2b320aa62d819f99db7da9719079a09b344588",
       "close_when": "Udokumentowanie rodzaju północy i pomiaru w tym planie oraz jawna decyzja orientacji.",
       "evidence": {
         "angle_origin": "unknown",
@@ -25156,7 +25156,7 @@
       ]
     },
     {
-      "basis_sha256": "b9180a88dd9c0a745d5316ac7c5ea5c309bc4345cdd4cee5d813551aba146260",
+      "basis_sha256": "f4ed575f7e0dedaeb7961fb7f9db60471fd350746ca5d6b7d8dd940c66d9321d",
       "close_when": "Ręczne porównanie konkretnej uwagi z aktualnym obrazem, otworem i georeferencją oraz zapis rozstrzygnięcia ze źródłem.",
       "evidence": {
         "basis": "Historyczna uwaga ekipy; aktualna czytelność obrazu jest kontrolowana T03. Interpretacja symbolu/skali/siatki wymaga ręcznego porównania.",
@@ -35201,7 +35201,7 @@
       ]
     },
     {
-      "basis_sha256": "2813d2a9fd2bd6fb52c25ef562c1db7001d523227583d25b3b6c9e14973667bd",
+      "basis_sha256": "3c840ec3b4ed0464123c6decd08561b83ec1702d408592fc1ec5b73125662a03",
       "close_when": "Potwierdzenie rodzaju północy i ewentualnej epoki/deklinacji przez autora zestawienia; następnie jawna decyzja orientacji, ponowna generacja i przegląd tego wyjątku.",
       "evidence": {
         "angle_origin": "measured",
