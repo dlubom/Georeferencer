@@ -1,6 +1,6 @@
 # Changelog
 
-## Niewydane
+## v0.7.11 — Plan Jaskini Cynamonowej (2026-11-17)
 
 - Dodano rzut poziomy Jaskini Cynamonowej (`cynamonowa-jaskinie-101`), rysunek
   A. Klewara i M. Ciszewskiego z 2018 r. z kwartalnika *Jaskinie* 4 (101),
