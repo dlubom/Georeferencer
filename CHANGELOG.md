@@ -1,6 +1,6 @@
 # Changelog
 
-## Niewydane
+## v0.7.10 — Korekta skali Zbójeckiej Dziury (2026-11-17)
 
 - Poprawiono skalę planu Zbójeckiej Dziury (`001067`) z 97,60 na 39,48 px/m
   według podziałki 10 m z pierwodruku J. Nowaka. Wymiary liniowe rastra
