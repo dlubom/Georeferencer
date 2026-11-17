@@ -1,5 +1,12 @@
 # Changelog
 
+## Niewydane
+
+- Poprawiono skalę planu Zbójeckiej Dziury (`001067`) z 97,60 na 39,48 px/m
+  według podziałki 10 m z pierwodruku J. Nowaka. Wymiary liniowe rastra
+  na mapie wzrosły około 2,47 raza.
+  [Jaskinie 3(36), 2004, s. 6](https://web.archive.org/web/20241213160906id_/http://www.jaskinie.org.pl/files/Jaskinie__36_2004.pdf#page=6)
+
 ## v0.7.9 — GPS Kataster v2.1.3 (2026-11-16)
 
 - Przypięto zweryfikowany CSV z [GPS Kataster v2.1.3](https://github.com/dlubom/gps-kataster-obiektow-tatr/releases/tag/v2.1.3).

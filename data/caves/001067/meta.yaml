@@ -16,7 +16,8 @@ entrance:
   x: 1521.83
   y: 1581.76
 scale:
-  pixels_per_meter: 97.6
+  # Podziałka 10 m z pierwodruku J. Nowaka, Jaskinie 3(36), 2004, s. 6.
+  pixels_per_meter: 39.48
 north:
   reference: unknown
   angle_origin: unknown
