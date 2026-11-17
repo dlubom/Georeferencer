@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "plans": {
+    "cynamonowa-jaskinie-101": {
+      "filename": "jaskinie-101-s33-plan.tif",
+      "image_id": 1010033,
+      "width": 633,
+      "height": 510,
+      "id_namespace": "local:jaskinie-101",
+      "sha256": "2cd9b6ede1b1ecf20382b93b6f12a35719516e696038c6558b8ffa0e0e2c0c27"
+    }
+  }
+}
