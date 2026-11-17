@@ -1,0 +1,82 @@
+cave:
+  dir_id: cynamonowa-jaskinie-101
+  source_cave_id: C-1043
+  name: Jaskinia Cynamonowa
+  inventory_number: C-1043
+  n_submissions: 0
+image:
+  filename: jaskinie-101-s33-plan.tif
+  image_id: 1010033
+  width: 633
+  height: 510
+  id_namespace: local:jaskinie-101
+coordinates:
+  gps_kataster_object_id: CHZ-0035
+  lat: '{{ gps_kataster.objects[gps_kataster_object_id].lat }}'
+  lon: '{{ gps_kataster.objects[gps_kataster_object_id].lon }}'
+entrance:
+  x: 581.0
+  y: 145.0
+scale:
+  pixels_per_meter: 28.4
+north:
+  reference: unknown
+  angle_deg: 0.0
+  angle_origin: measured
+  all_skipped: false
+  evidence: source.json, pionowa oś strzałki N. Rodzaj północy nieokreślony.
+declination_deg: 0.0
+declination:
+  status: unknown
+  basis: Nie użyto deklinacji; brak ustalonej podstawy magnetycznej.
+orientation:
+  mode: assumed_grid
+  status: unverified
+  image_sha256: 2cd9b6ede1b1ecf20382b93b6f12a35719516e696038c6558b8ffa0e0e2c0c27
+  uncertainty_reason: Oznaczenie N nie ma określonego rodzaju. Roboczo zinterpretowano pionową strzałkę
+    jako północ geograficzną, co daje obrót +0.608910246° w EPSG:2180. Orientacja wymaga potwierdzenia
+    autorów.
+  grid_assumption:
+    rotation_deg: 0.6089102455658008
+    crs: EPSG:2180
+    convention: image_x_ccw_from_grid_east
+    reason: Oznaczenie N nie ma określonego rodzaju. Roboczo zinterpretowano pionową strzałkę jako północ
+      geograficzną, co daje obrót +0.608910246° w EPSG:2180. Orientacja wymaga potwierdzenia autorów.
+  origin:
+    kind: manual_t08
+    plan_id: cynamonowa-jaskinie-101
+    reason: Oznaczenie N nie ma określonego rodzaju. Roboczo zinterpretowano pionową strzałkę jako północ
+      geograficzną, co daje obrót +0.608910246° w EPSG:2180. Orientacja wymaga potwierdzenia autorów.
+    date: '2026-11-17'
+computed: {}
+quality:
+  flag: manual
+provenance:
+  method: manual_t08
+  date: '2026-11-17'
+  image:
+    source_cave_id: C-1043
+    graphics_id: 1010033
+    graphics_id_namespace: local:jaskinie-101
+    path: data/caves/cynamonowa-jaskinie-101/image.tif
+    sha256: 2cd9b6ede1b1ecf20382b93b6f12a35719516e696038c6558b8ffa0e0e2c0c27
+    source: source.json, PDF s. 33, rzut poziomy.
+  registry:
+    path: data/caves/cynamonowa-jaskinie-101/source.json
+    sha256: fc3446e818337d6a0f141b2ffb3d9f9347880de1ec681bcf8e47da183df4c2b5
+    kind: external_publication_manifest
+  entrance:
+    method: manual_click
+    source: source.json, punkt 0/0 przy wschodnim otworze.
+  scale:
+    method: manual_measurement
+    source: 'source.json, siatka −15/0 m: 426 px na 15 m.'
+  coordinates:
+    schema_version: 1
+    repository: dlubom/gps-kataster-obiektow-tatr
+    release: v2.1.3
+    asset: best-measurements.csv
+    sha256: 91ab60c62fbfd726da1ccf5788f3c57753153b3103b09e461365af574cd57264
+    snapshot: best-measurements-v2.1.3.csv
+    object_id: CHZ-0035
+  inventory_number_source: Identyfikator jaskini w GPS Kataster. W artykule brak numeru inwentarza PIG.

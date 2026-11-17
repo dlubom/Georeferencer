@@ -1,5 +1,13 @@
 # Changelog
 
+## Niewydane
+
+- Dodano rzut poziomy Jaskini Cynamonowej (`cynamonowa-jaskinie-101`), rysunek
+  A. Klewara i M. Ciszewskiego z 2018 r. z kwartalnika *Jaskinie* 4 (101),
+  s. 33. Plan dowiązano do otworu `CHZ-0035` z GPS Kataster v2.1.3
+  i zmierzono skalę 28,4 px/m. Rodzaj północy pozostaje nieustalony.
+  [Źródło i pomiary](data/caves/cynamonowa-jaskinie-101/source.json)
+
 ## v0.7.10 — Korekta skali Zbójeckiej Dziury (2026-11-17)
 
 - Poprawiono skalę planu Zbójeckiej Dziury (`001067`) z 97,60 na 39,48 px/m

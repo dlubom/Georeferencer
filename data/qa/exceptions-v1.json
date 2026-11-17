@@ -35225,6 +35225,31 @@
         "docs/reports/2026-10-29-piwnica-mietusia-pza.md",
         "https://pza.org.pl/wp-content/uploads/2025/07/POLISH-CAVING-2017-2025.pdf#page=17"
       ]
+    },
+    {
+      "basis_sha256": "ee04ce5d1bce2338f30c0d98448638e0111a216b66887d21c85d1a29f8fce72e",
+      "close_when": "Autorzy ustalą rodzaj północy na rysunku, a orientacja zostanie zweryfikowana.",
+      "evidence": {
+        "angle_origin": "measured",
+        "grid_assumption": {
+          "convention": "image_x_ccw_from_grid_east",
+          "crs": "EPSG:2180",
+          "reason": "Oznaczenie N nie ma określonego rodzaju. Roboczo zinterpretowano pionową strzałkę jako północ geograficzną, co daje obrót +0.608910246° w EPSG:2180. Orientacja wymaga potwierdzenia autorów.",
+          "rotation_deg": 0.6089102455658008
+        },
+        "historical": null,
+        "mode": "assumed_grid",
+        "north_reference": "unknown",
+        "status": "unverified",
+        "uncertainty_reason": "Oznaczenie N nie ma określonego rodzaju. Roboczo zinterpretowano pionową strzałkę jako północ geograficzną, co daje obrót +0.608910246° w EPSG:2180. Orientacja wymaga potwierdzenia autorów."
+      },
+      "plan_id": "cynamonowa-jaskinie-101",
+      "reason": "Do generacji przyjęto geograficzną interpretację strzałki N. Rodzaj północy rysunku pozostaje nieustalony.",
+      "rule": "orientation.unknown",
+      "sources": [
+        "data/caves/cynamonowa-jaskinie-101/source.json",
+        "http://jaskinie.org.pl/files/Jaskinie__101_2020.pdf#page=33"
+      ]
     }
   ],
   "schema_version": 1
