@@ -31161,6 +31161,31 @@
       ]
     },
     {
+      "basis_sha256": "1f74f48a8350832177cf0542806f1a8c895f7cb4b3adfe44b4dee26240ef539c",
+      "close_when": "Potwierdzić rodzaj północy z dokumentacji pomiarowej lub u autora ryciny i udokumentować decyzję orientacji.",
+      "evidence": {
+        "angle_origin": "measured",
+        "grid_assumption": {
+          "convention": "image_x_ccw_from_grid_east",
+          "crs": "EPSG:2180",
+          "reason": "Roboczo zinterpretowano pionowe N jako północ geograficzną. Położenie głównych zakrętów odpowiada poligonowi JKTZ. Rodzaj północy wymaga potwierdzenia.",
+          "rotation_deg": 0.6836331368113575
+        },
+        "historical": null,
+        "mode": "assumed_grid",
+        "north_reference": "unknown",
+        "status": "unverified",
+        "uncertainty_reason": "Roboczo zinterpretowano pionowe N jako północ geograficzną. Położenie głównych zakrętów odpowiada poligonowi JKTZ. Rodzaj północy wymaga potwierdzenia."
+      },
+      "plan_id": "004393",
+      "reason": "W artykule podano pionowe N bez rodzaju północy. Przyjętą interpretację sprawdzono wizualnie na poligonie JKTZ z tego samego pomiaru.",
+      "rule": "orientation.unknown",
+      "sources": [
+        "data/caves/004393/source.json",
+        "docs/ORIENTATION.md"
+      ]
+    },
+    {
       "basis_sha256": "6a3895c2e493cba6153d2fad89de52a0fa993544ddc7bafe17bcd23d5410f3c0",
       "close_when": "Co najmniej 3 niezależne ważne pomiary albo udokumentowana ręczna interpretacja strzałki i decyzja orientacji.",
       "evidence": {
