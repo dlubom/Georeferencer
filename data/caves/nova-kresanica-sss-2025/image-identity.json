@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "plans": {
+    "nova-kresanica-sss-2025": {
+      "filename": "spravodaj-4-2025-s19-plan.tif",
+      "image_id": 4025021,
+      "width": 1276,
+      "height": 824,
+      "id_namespace": "local:spravodaj-4-2025",
+      "sha256": "9e93031289428c12160c7994e5bf8530dbb80688561b890b0686b119d068bcd7"
+    }
+  }
+}
