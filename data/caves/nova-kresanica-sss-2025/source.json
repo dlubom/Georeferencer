@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "document": {
+    "title": "Objevy v Nové Kresanici",
+    "authors": [
+      "Tereza Nečasová",
+      "Eva Kryštofová",
+      "Zdeněk Dvořák",
+      "Pavel Chaloupský"
+    ],
+    "publication": "Spravodaj SSS 4/2025, s. 15–19",
+    "url": "https://sss.sk/wp-content/uploads/2026/03/Spravodaj_4_2025.pdf#page=21",
+    "sha256": "9a0f40badd53a8d617baec2a787510ec19cb95d260a35bd9a1ab5024d9dd77bb",
+    "page": 19,
+    "pdf_page": 21,
+    "accessed": "2026-11-20"
+  },
+  "drawing": {
+    "type": "rzut poziomy z ryciny Nová Kresanica",
+    "authors": [
+      "Juraj Szunyog",
+      "Peter Holúbek",
+      "Zdeněk Dvořák",
+      "Pavel Herich"
+    ],
+    "years": "2003–2025",
+    "permission": "Opiekun repozytorium potwierdził 2026-11-20 zgodę redakcji SSS na udostępnienie georeferencjonowanej kopii w publicznym PR."
+  },
+  "identity": {
+    "cave_id": "C-1003",
+    "cave_id_source": "GPS Kataster",
+    "inventory_number": "NDJ 2919",
+    "inventory_number_source": "Zoznam jaskýň Slovenskej republiky, SMOPaJ, wpis 6046.",
+    "image_id": 4025021,
+    "image_id_namespace": "local:spravodaj-4-2025"
+  },
+  "extraction": {
+    "command": "pdftoppm -f 21 -l 21 -r 240 -png Spravodaj_4_2025.pdf strona",
+    "page_crop_px": [
+      114,
+      593,
+      1390,
+      1417
+    ],
+    "scope": "Zachowano rzut, nazwy, autorstwo, skalę, legendę i oznaczenie odkrycia. Profil pionowy i ramkę wyłączono maską, bez przerysowywania ciągów.",
+    "color": "image_original.jpg. Wycinek barwny zapisano jako JPEG (Pillow, jakość 97, 4:4:4).",
+    "color_sha256": "5e91d22b5ddabbf5911e7d95484ed16c3e7ecad3039f0bdd57485e01c90e7621",
+    "mono": "TIFF 1-bit CCITTFAX4. Zachowano ciemne kreski, a barwne wypełnienia oddano rastrem punktowym Bayera 4 × 4 z konturem."
+  },
+  "measurements": {
+    "pixel_convention": "Narożnik obrazu (0,0), środek pierwszego piksela (0.5,0.5).",
+    "entrance": {
+      "x": 1227.0,
+      "y": 115.0,
+      "basis": "source.json. Koniec obrysu chodnika Vstupná chodba przy znaku otworu."
+    },
+    "scale": {
+      "x_px_from": 37,
+      "x_px_to": 279,
+      "meters": 40,
+      "pixels_per_meter": 6.05
+    },
+    "north": {
+      "angle_deg": 0.0,
+      "reference": "unknown",
+      "assumed_grid_angle_deg": 0.6923651136301455
+    }
+  },
+  "anchor": {
+    "object_id": "SK-0001",
+    "measurement_id": "m-001",
+    "catalogue_release": "v2.1.3",
+    "horizontal_accuracy": "brak wartości w katalogu"
+  },
+  "comparison": {
+    "url": "https://github.com/dlubom/Jaskiniowy-Kataster-Tatr-Zachodnich/releases/tag/v2.0.5",
+    "source": "JKTZ v2.0.5, exports/caves/NovaKresanica.shp",
+    "result": "Zgodny ogólny przebieg chodnika wejściowego i starszych ciągów. Lokalne rozbieżności w dalszych partiach. Nowych partii nie ma w porównywanym poligonie."
+  }
+}

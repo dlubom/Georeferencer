@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "plans": {
+    "004393": {
+      "filename": "jaskinie-68-s20-plan.tif",
+      "image_id": 680020,
+      "width": 489,
+      "height": 764,
+      "id_namespace": "local:jaskinie-68",
+      "sha256": "6e2392e7862c69a15f704982c744eafed76c0c5fb3e0fd920495dad91cefa5d6"
+    }
+  }
+}

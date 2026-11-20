@@ -31161,6 +31161,31 @@
       ]
     },
     {
+      "basis_sha256": "1f74f48a8350832177cf0542806f1a8c895f7cb4b3adfe44b4dee26240ef539c",
+      "close_when": "Potwierdzić rodzaj północy z dokumentacji pomiarowej lub u autora ryciny i udokumentować decyzję orientacji.",
+      "evidence": {
+        "angle_origin": "measured",
+        "grid_assumption": {
+          "convention": "image_x_ccw_from_grid_east",
+          "crs": "EPSG:2180",
+          "reason": "Roboczo zinterpretowano pionowe N jako północ geograficzną. Położenie głównych zakrętów odpowiada poligonowi JKTZ. Rodzaj północy wymaga potwierdzenia.",
+          "rotation_deg": 0.6836331368113575
+        },
+        "historical": null,
+        "mode": "assumed_grid",
+        "north_reference": "unknown",
+        "status": "unverified",
+        "uncertainty_reason": "Roboczo zinterpretowano pionowe N jako północ geograficzną. Położenie głównych zakrętów odpowiada poligonowi JKTZ. Rodzaj północy wymaga potwierdzenia."
+      },
+      "plan_id": "004393",
+      "reason": "W artykule podano pionowe N bez rodzaju północy. Przyjętą interpretację sprawdzono wizualnie na poligonie JKTZ z tego samego pomiaru.",
+      "rule": "orientation.unknown",
+      "sources": [
+        "data/caves/004393/source.json",
+        "docs/ORIENTATION.md"
+      ]
+    },
+    {
       "basis_sha256": "6a3895c2e493cba6153d2fad89de52a0fa993544ddc7bafe17bcd23d5410f3c0",
       "close_when": "Co najmniej 3 niezależne ważne pomiary albo udokumentowana ręczna interpretacja strzałki i decyzja orientacji.",
       "evidence": {
@@ -35249,6 +35274,31 @@
       "sources": [
         "data/caves/cynamonowa-jaskinie-101/source.json",
         "http://jaskinie.org.pl/files/Jaskinie__101_2020.pdf#page=33"
+      ]
+    },
+    {
+      "basis_sha256": "fbb8d97506914a93b636e045128e230ac3fba23d8b2e20479571fcdc255b87b0",
+      "close_when": "Potwierdzić rodzaj północy u autorów planu i udokumentować decyzję orientacji.",
+      "evidence": {
+        "angle_origin": "measured",
+        "grid_assumption": {
+          "convention": "image_x_ccw_from_grid_east",
+          "crs": "EPSG:2180",
+          "reason": "Oś strzałki jest pionowa. Rodzaj północy nie wynika z legendy. Przyjęto roboczo północ geograficzną. Poligon JKTZ potwierdza ogólny układ starszych ciągów. W dalszych partiach widać lokalne rozbieżności.",
+          "rotation_deg": 0.6923651136301455
+        },
+        "historical": null,
+        "mode": "assumed_grid",
+        "north_reference": "unknown",
+        "status": "unverified",
+        "uncertainty_reason": "Oś strzałki jest pionowa. Rodzaj północy nie wynika z legendy. Przyjęto roboczo północ geograficzną. Poligon JKTZ potwierdza ogólny układ starszych ciągów. W dalszych partiach widać lokalne rozbieżności."
+      },
+      "plan_id": "nova-kresanica-sss-2025",
+      "reason": "Rycina podaje pionową strzałkę. Rodzaj północy pozostaje nieustalony. Roboczy kąt sprawdzono wizualnie na poligonie JKTZ sprzed odkryć 2025.",
+      "rule": "orientation.unknown",
+      "sources": [
+        "data/caves/nova-kresanica-sss-2025/source.json",
+        "docs/ORIENTATION.md"
       ]
     }
   ],
